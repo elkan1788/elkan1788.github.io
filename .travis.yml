@@ -16,6 +16,7 @@ addons:
 
 env:
   - HUGO_VERSION=0.80.0
+  - COMMIT_ID=$TRAVIS_BUILD_ID
 
 before_install:
   - export TZ='Asia/Shanghai'
@@ -35,6 +36,7 @@ script:
 before_deploy:
   - pwd
   - ls -al 
+  - wget -O ./public/README.md https://github.com/elkan1788/elkan1788.github.io/blob/hugo/README.md
   - cat ./README.md
   - cat ./themes/NexT/README.md
 
@@ -59,3 +61,4 @@ after_deploy:
   - ls -al 
   - ls -al ./public
   - echo $(travis_build_id)
+  - echo $COMMIT_ID
