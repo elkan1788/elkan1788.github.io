@@ -1,0 +1,54 @@
+# 站点基本配置
+title: "Don't forget your dreams!"
+url: "//www.xn--7qv19ae78e.cn"
+highlighter: rouge
+paginate: 10
+author:
+    name: 凡梦星尘
+    github: elkan1788/elkan1788.github.io
+    email: elkan1788@gmail.com
+    twitter:
+    facebook:
+    googleplus:
+    weibo:
+atom_path: /atom.xml
+rss_path: /rss.xml
+keywords:  "开源,编程,mpsdk4j,博客,休闲"
+description:  "Don't forget your dreams! Run faster!"
+
+gems: [jekyll-paginate]
+
+# 站点生成配置
+markdown: kramdown
+redcarpet:
+    extensions: ["fenced_code_blocks", "tables", "highlight", "strikethrough"]
+permalink: /:categories/:year-:month/:title.html
+
+assets_path: /assets
+sass:
+    sass_dir: assets/_sass
+    style: :compressed
+
+cdn: 
+    static: "http://7xpume.com1.z0.glb.clouddn.com"
+    img: "http://7xi700.com1.z0.glb.clouddn.com"
+    img-ext: "-alias"
+
+# 文章评论
+comments:
+    duoshuo:
+        name: lisenhui
+        rcomments:
+            num: 10
+            avatar: 0
+            time: 0
+            title: 0
+            admin: 1
+            length: 26
+
+# 网站统计
+analytics:
+    baidu:
+        siteid: 62c81b4e91c30f2305d5e590dacbe192
+    google:
+        siteid: UA-61491374-3

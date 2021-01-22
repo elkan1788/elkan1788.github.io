@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+    <div class="container">
+      {% include header.html %}
+
+      <article class="wrapper">
+        <div id="search-loader" class="img-wrap">
+          <div class="loading">
+            <img src="{{ site.assets_path }}/img/loading.png">
+          </div>
+        </div>
+        <div class="row clearfix">
+          {{ content }}
+        </div>
+      </article>
+
+      {% include footer.html %}
+    </div>
+
+    <script src="{% if site.cdn.static %}{{ site.cdn.static }}{% else %}{{ site.assets_path }}/js{% endif %}/jquery.min.js"></script>
+    <script src="{% if site.cdn.static %}{{ site.cdn.static }}{% else %}{{ site.assets_path }}/js{% endif %}/bootstrap.min.js"></script>
+    <script src="{% if site.cdn.static %}{{ site.cdn.static }}{% else %}{{ site.assets_path }}/js{% endif %}/webcore.min.js"></script>
+    <script src="{% if site.cdn.static %}{{ site.cdn.static }}{% else %}{{ site.assets_path }}/js{% endif %}/jquery.qrcode.min.js"></script>
+				
+    <script type="text/javascript">
+      $("#code").qrcode({
+        width: 150,
+        height: 150,
+        text: "http:{{ site.url }}{{ page.url }}"
+      });
+    </script>
+
+    {% include baidu-analytics.html %}
+    
+
+    {% if site.comments.duoshuo.name %}
+    <!-- duoshuo Begin -->
+    <!--<script type="text/javascript">
+      var duoshuoQuery = {short_name:"{{ site.comments.duoshuo.name }}"};
+      (function() {
+        var ds = document.createElement('script');
+        ds.type = 'text/javascript';ds.async = true;
+        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+        ds.charset = 'UTF-8';
+        (document.getElementsByTagName('head')[0] ||
+        document.getElementsByTagName('body')[0]).appendChild(ds);
+      })();
+    </script>-->
+    <!-- duoshuo End -->
+    <!-- 来必力City版安装代码 -->
+	<div id="lv-container" data-id="city" data-uid="MTAyMC8yOTk0Ny82NTEy">
+	<script type="text/javascript">
+	   (function(d, s) {
+	       var j, e = d.getElementsByTagName(s)[0];
+
+	       if (typeof LivereTower === 'function') { return; }
+
+	       j = d.createElement(s);
+	       j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+	       j.async = true;
+
+	       e.parentNode.insertBefore(j, e);
+	   })(document, 'script');
+	</script>
+	<noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+	</div>
+    <!-- City版安装代码已完成 -->
+    {% endif %}
+    
+    {% include google-analytics.html %}
+    <script type="text/javascript">var cnzz_protocol = (("https:" == document.location.protocol) ? " https://" : " http://");document.write(unescape("%3Cspan id='cnzz_stat_icon_1263207327'%3E%3C/span%3E%3Cscript src='" + cnzz_protocol + "s22.cnzz.com/z_stat.php%3Fid%3D1263207327' type='text/javascript'%3E%3C/script%3E"));</script>
+  </body>
+</html>
