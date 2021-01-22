@@ -1,0 +1,33 @@
+---
+title: Python在命令行即时输出
+slug: python-output-conosle-intime
+date: 2017-08-13 14:19:14
+tags:
+  - Python
+categories:
+  - Python
+---
+
+在程序遇到问题需要DEBUG时，通过会增加一些**`print`**语句输出。于是乎按惯例也在`Python`的代码中加入print调试，然后输入`python xxxx.py`，满怀信心的期待着调试信息的满屏滚动，结果是过了好阵子才显示出来。为何会这样呢？
+
+根据网友建议增加个`-u`参数就OK，后来查了下原因：`Python`在默认情况会先把`print`输出到缓冲中，待缓冲满或程序后才会输出。所以可以在运行`Python`程序时加入此参数是非常的有用。
+<!--more-->
+
+```
+python -u xxxx.py
+```
+
+除此之外还支持别的参数，参考如下
+
+- `-B` 参数，在import时候，不产生pyc或者pyo文件
+- `-c` 参数，直接运行python语句
+- `-i` 参数，运行完python脚本文件以后打开一个python环境，方便查看运行结果
+- `-m` 参数，将模块按照脚本执行
+- `-V` 参数，输出Python的版本
+- `-O` 参数，产生一个优化的pyo文件（和-B 参数一起使用无效）
+- `-v` 参数，会输出每一个模块引用信息，包括从何处引用的，以及何时被清除的
+- `-u` 参数，在print记录时候很有用，使用这个参数 会强制 stdin, stdout 和 stderr变为无缓冲的，会立刻输出出来，而不是等缓冲区满了才会打印数据。
+
+参考:
+
+- [Python命令行参数学习](http://blog.163.com/weak_time/blog/static/25852809120169333247925/)
