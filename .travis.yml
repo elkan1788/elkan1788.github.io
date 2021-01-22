@@ -26,7 +26,9 @@ install:
   - echo 'Hugo engine env is ready.'
 
 script:
-  - hugo -t NexT
+  - hugo -t NexT  
+  - pwd
+  - ls -al
   - cp README.md ./public
   - cp LICENSE ./public
   - cp .gitignore ./public
@@ -39,10 +41,9 @@ deploy:
   github-token: $GITHUB_PAGES
   fqdn: lisenhui.cn
   keep-history: true
+  commit_message: "Update blog site by TravisCI with build $TRAVIS_BUILD_NUMBER"
   on:
     branch: hugo
 
 after_script:
-  - pwd
-  - ls -al
   - echo 'Deploy blog site success.'
