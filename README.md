@@ -1,3 +1,4 @@
+[![Build Status](https://api.travis-ci.com/elkan1788/my-hexo-blog.svg?branch=hugo)](https://travis-ci.com/elkan1788/my-hexo-blog)
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 

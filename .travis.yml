@@ -1,0 +1,40 @@
+language: go
+sudo: required
+
+branches:
+  only:
+    - hugo
+
+cache:
+  directories:
+    - themes
+
+before_install:
+  - export TZ='Asia/Shanghai'
+
+install:
+  - wget https://github.com/gohugoio/hugo/releases/download/v0.80.0/hugo_0.80.0_Linux-64bit.tar.gz
+  - tar -xzvf hugo_0.80.0_Linux-64bit.tar.gz
+  - chmod +x hugo
+  - export PATH=$PATH:$PWD
+  - hugo version  
+  - echo 'Hugo engine env is ready!'
+  - git config --global user.email "elkan1788@gmail.com"
+  - git config --global user.name "凡梦星尘"
+  - git config user.name
+  - git config user.email
+  - echo 'Start clone github repo.'
+  - git clone -b hugo https://github.com/elkan1788/elkan1788.github.io.git hugo
+  - git clone -b main https://github.com/elkan1788/elkan1788.github.io.git blog
+  - pwd
+  - ls -al
+
+script:
+  - cd hugo
+  - hugo -t NexT
+  - cp -r public/* ../blog
+  - cd ../blog
+  - git add *
+  - git commit -m 'Rebuilding site by travis-ci auto.'
+  - git push
+  - echo 'Deploy blog site success.'
