@@ -26,10 +26,8 @@ install:
   - echo 'Hugo engine env is ready.'
 
 script:
-  - hugo -t NexT  
-  - pwd
-  - ls -al
-  - cat README.md
+  - hugo -t NexT
+  - wget -P ./public https://github.com/elkan1788/elkan1788.github.io/blob/hugo/README.md
   - cp LICENSE ./public
   - cp .gitignore ./public
 
@@ -45,5 +43,7 @@ deploy:
   on:
     branch: hugo
 
-after_script:
-  - echo 'Deploy blog site success.'
+after_script:    
+  - pwd
+  - ls -al
+  - echo 'Deploy[$TRAVIS_BUILD_NUMBER] blog site success.'
