@@ -13,7 +13,7 @@ before_install:
   - export TZ='Asia/Shanghai'
   - git config --global user.email "elkan1788@gmail.com"
   - git config --global user.name "凡梦星尘"
-  - yum groupinstall chinese-support
+#  - yum groupinstall chinese-support
   - export LANG="zh_CN.UTF-8"
 
 
