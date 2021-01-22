@@ -13,6 +13,11 @@ addons:
   ssh_known_hosts:
     - github.com
 
+env:
+ global:
+   # Github Pages
+   - GH_REF: https://github.com/elkan1788/elkan1788.github.io.git
+
 before_install:
   - export TZ='Asia/Shanghai'
 #  - git config --global user.email "elkan1788@gmail.com"
@@ -34,24 +39,6 @@ script:
   # 运行hugo命令
   - hugo -t NexT
 
-after_script:
-  # 部署
-  - cd ./public
-  - git init
-  - git config user.name "凡梦星尘"
-  - git config user.email "elkan1788@gmail.com"
-  - git add .
-  - git commit -m "Update Blog By TravisCI With Build $TRAVIS_BUILD_NUMBER"
-  # Github Pages
-  - git push --force --quiet "https://$GITHUB_TOKEN@${GH_REF}" main:main
-  # Github Pages
-  - git push --quiet "https://$GITHUB_TOKEN@${GH_REF}" master:master --tags
-
-env:
- global:
-   # Github Pages
-   - GH_REF: https://github.com/elkan1788/elkan1788.github.io.git
-
 deploy:
   provider: pages # 重要，指定这是一份github pages的部署配置
   skip-cleanup: true # 重要，不能省略
@@ -62,3 +49,16 @@ deploy:
   keep-history: true # 是否保持target-branch分支的提交记录
   on:
     branch: hugo # 博客源码的分支
+
+after_script:
+  # 部署
+  - cd ./public
+  - git init
+  - git config user.name "凡梦星尘"
+  - git config user.email "elkan1788@gmail.com"
+  - git add .
+  - git commit -m "Update Blog By TravisCI With Build $TRAVIS_BUILD_NUMBER"
+  - git push --force --quiet "https://$GITHUB_TOKEN@${GH_REF}" main:main
+  - pwd
+  - ls -al
+  - echo 'Deploy blog site success.'
