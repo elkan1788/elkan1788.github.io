@@ -1,7 +1,7 @@
 Title =  "Loving life and dreams."
 LanguageCode = "zh-CN"
 BaseUrl = "https://lisenhui.cn/"
-Theme =  "hugo-theme-next"
+Theme =  "NexT"
 MetaDataFormat =  "yaml"
 PaginatePath =  "p"
 Paginate = 10
