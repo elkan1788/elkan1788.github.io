@@ -27,8 +27,9 @@ install:
 
 script:
   - hugo -t NexT
-  - cp LICENSE ./public
-  - cp .gitignore ./public
+  - cp -r LICENSE ./public
+  - cp -r .gitignore ./public
+  - cp -r themes/NexT/README.md ./public
 
 deploy:
   provider: pages
@@ -38,7 +39,7 @@ deploy:
   github-token: $GITHUB_PAGES
   fqdn: lisenhui.cn
   keep-history: true
-  commit_message: "Update blog site by TravisCI with build $TRAVIS_BUILD_NUMBER"
+  commit_message: "Update blog site by TravisCI with build $TRAVIS_BUILD_ID"
   on:
     branch: hugo
 
@@ -46,4 +47,4 @@ after_script:
   - pwd
   - ls -al 
   - ls -al ./public
-  - echo $TRAVIS_BUILD_NUMBER
+  - echo $TRAVIS_BUILD_ID
