@@ -29,7 +29,7 @@ script:
   - hugo -t NexT  
   - pwd
   - ls -al
-  - cp README.md ./public
+  - cat README.md
   - cp LICENSE ./public
   - cp .gitignore ./public
 
