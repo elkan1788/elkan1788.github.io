@@ -61,7 +61,7 @@
   <link rel="assets" href="https://github.githubassets.com/">
   
 
-  <meta name="request-id" content="A01A:0AED:53FC6F:77E783:600AEBF2" data-pjax-transient="true"/><meta name="html-safe-nonce" content="ac2eea423bdae99aa5bca40f5f5040085ca319c8e98f65cd6a32583855c7763f" data-pjax-transient="true"/><meta name="visitor-payload" content="eyJyZWZlcnJlciI6IiIsInJlcXVlc3RfaWQiOiJBMDFBOjBBRUQ6NTNGQzZGOjc3RTc4Mzo2MDBBRUJGMiIsInZpc2l0b3JfaWQiOiIzMTIyMzQxMDc1NzU1OTIwMzcwIiwicmVnaW9uX2VkZ2UiOiJpYWQiLCJyZWdpb25fcmVuZGVyIjoiaWFkIn0=" data-pjax-transient="true"/><meta name="visitor-hmac" content="979c75772a436d4898d6136bebdee9af222047b936216b4892cdcca52ef3fb9c" data-pjax-transient="true"/>
+  <meta name="request-id" content="A21A:4B94:12BC096:1A98EC4:600AEC81" data-pjax-transient="true"/><meta name="html-safe-nonce" content="cc69ed2cf42639e7eb948a11a66a7b12736f94e0e315aadf68a6b5b2deebe2fe" data-pjax-transient="true"/><meta name="visitor-payload" content="eyJyZWZlcnJlciI6IiIsInJlcXVlc3RfaWQiOiJBMjFBOjRCOTQ6MTJCQzA5NjoxQTk4RUM0OjYwMEFFQzgxIiwidmlzaXRvcl9pZCI6IjQyMzE5Mjg5MTU4NTE2Njg2MDkiLCJyZWdpb25fZWRnZSI6ImlhZCIsInJlZ2lvbl9yZW5kZXIiOiJpYWQifQ==" data-pjax-transient="true"/><meta name="visitor-hmac" content="a2322e23b024ae38004aca0013488fa2a5b7c60b0a70b2166329564f262871a8" data-pjax-transient="true"/>
 
     <meta name="hovercard-subject-tag" content="repository:331833187" data-pjax-transient>
 
@@ -310,7 +310,7 @@
           spellcheck="false"
           autocomplete="off"
           >
-          <input type="hidden" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf" value="39QW4oHsnQS1zXGwGPBMN2Ji65UbKMe9H2uI4B/RX2h/Im9QQ+pY30FQMq9WkbV/+qlJmCirzAy42fRbXu9dEw==" />
+          <input type="hidden" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf" value="IjLJXUtOQijTx3GZ0soKw8BI9bTb4FEqvMjvTjXAq9yWU1bd2tWBD6D3yUxh7ZBK1rjqgsuh3kzKnYyj8G7KJg==" />
           <input type="hidden" class="js-site-search-type-field" name="type" >
             <img src="https://github.githubassets.com/images/search-key-slash.svg" alt="" class="mr-2 header-search-key-slash">
 
@@ -709,7 +709,7 @@
   
 
 
-    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/elkan1788/elkan1788.github.io/blob/e9fda4d82a37d44dfce953fd8aed17699df54ee4/README.md">Permalink</a>
+    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/elkan1788/elkan1788.github.io/blob/5b54b99a2dc0b5b9fec9034c72b9eb2d20c0959b/README.md">Permalink</a>
 
     <!-- blob contrib key: blob_contributors:v22:c3c44f2b19175277bb015cd51b11347207d7924f25eff9b7e58baa0311113ee6 -->
 
@@ -776,76 +776,17 @@
 
 
     <div class="Box d-flex flex-column flex-shrink-0 mb-3">
-      
-  <div class="Box-header Box-header--blue Details js-details-container">
-      <div class="d-flex flex-items-center">
-        <span class="flex-shrink-0 ml-n1 mr-n1 mt-n1 mb-n1">
-          <a rel="author" data-skip-pjax="true" data-hovercard-type="user" data-hovercard-url="/users/elkan1788/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/elkan1788"><img class="avatar avatar-user" src="https://avatars.githubusercontent.com/u/1217096?s=48&amp;v=4" width="24" height="24" alt="@elkan1788" /></a>
-        </span>
-        <div class="flex-1 d-flex flex-items-center ml-3 min-width-0">
-          <div class="css-truncate css-truncate-overflow">
-            <a class="text-bold link-gray-dark" rel="author" data-hovercard-type="user" data-hovercard-url="/users/elkan1788/hovercard" data-octo-click="hovercard-link-click" data-octo-dimensions="link_type:self" href="/elkan1788">elkan1788</a>
-
-              <span>
-                <a data-pjax="true" title="update README content." class="link-gray" href="/elkan1788/elkan1788.github.io/commit/0d754ea0ab6f9aeb51fdb2446d4b112360bd6016">update README content.</a>
-              </span>
-          </div>
-
-
-          <span class="ml-2">
-            <include-fragment accept="text/fragment+html" src="/elkan1788/elkan1788.github.io/commit/0d754ea0ab6f9aeb51fdb2446d4b112360bd6016/rollup?direction=e" class="d-inline"></include-fragment>
-          </span>
+      <include-fragment src="/elkan1788/elkan1788.github.io/contributors/hugo/README.md" class="commit-loader">
+        <div class="Box-header Box-header--blue d-flex flex-items-center">
+          <div class="Skeleton avatar avatar-user flex-shrink-0 ml-n1 mr-n1 mt-n1 mb-n1" style="width:24px;height:24px;"></div>
+          <div class="Skeleton Skeleton--text col-5 ml-2">&nbsp;</div>
         </div>
-        <div class="ml-3 d-flex flex-shrink-0 flex-items-center flex-justify-end text-gray no-wrap">
-          <span class="d-none d-md-inline">
-            <span>Latest commit</span>
-            <a class="text-small text-mono link-gray" href="/elkan1788/elkan1788.github.io/commit/0d754ea0ab6f9aeb51fdb2446d4b112360bd6016" data-pjax>0d754ea</a>
-            <span itemprop="dateModified"><relative-time datetime="2021-01-22T13:49:10Z" class="no-wrap">Jan 22, 2021</relative-time></span>
-          </span>
 
-          <a data-pjax href="/elkan1788/elkan1788.github.io/commits/hugo/README.md" class="ml-3 no-wrap link-gray-dark no-underline">
-            <svg class="octicon octicon-history text-gray" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M1.643 3.143L.427 1.927A.25.25 0 000 2.104V5.75c0 .138.112.25.25.25h3.646a.25.25 0 00.177-.427L2.715 4.215a6.5 6.5 0 11-1.18 4.458.75.75 0 10-1.493.154 8.001 8.001 0 101.6-5.684zM7.75 4a.75.75 0 01.75.75v2.992l2.028.812a.75.75 0 01-.557 1.392l-2.5-1A.75.75 0 017 8.25v-3.5A.75.75 0 017.75 4z"></path></svg>
-            <span class="d-none d-sm-inline">
-              <strong>History</strong>
-            </span>
-          </a>
+        <div class="Box-body d-flex flex-items-center" >
+          <div class="Skeleton Skeleton--text col-1">&nbsp;</div>
+          <span class="text-red h6 loader-error">Cannot retrieve contributors at this time</span>
         </div>
-      </div>
-
-  </div>
-
-  <div class="Box-body d-flex flex-items-center flex-auto border-bottom-0 flex-wrap" >
-    <details class="details-reset details-overlay details-overlay-dark lh-default text-gray-dark float-left mr-3" id="blob_contributors_box">
-      <summary class="link-gray-dark">
-        <svg class="octicon octicon-people text-gray" height="16" viewBox="0 0 16 16" version="1.1" width="16" aria-hidden="true"><path fill-rule="evenodd" d="M5.5 3.5a2 2 0 100 4 2 2 0 000-4zM2 5.5a3.5 3.5 0 115.898 2.549 5.507 5.507 0 013.034 4.084.75.75 0 11-1.482.235 4.001 4.001 0 00-7.9 0 .75.75 0 01-1.482-.236A5.507 5.507 0 013.102 8.05 3.49 3.49 0 012 5.5zM11 4a.75.75 0 100 1.5 1.5 1.5 0 01.666 2.844.75.75 0 00-.416.672v.352a.75.75 0 00.574.73c1.2.289 2.162 1.2 2.522 2.372a.75.75 0 101.434-.44 5.01 5.01 0 00-2.56-3.012A3 3 0 0011 4z"></path></svg>
-        <strong>1</strong>
-        
-        contributor
-      </summary>
-      <details-dialog
-        class="Box Box--overlay d-flex flex-column anim-fade-in fast"
-        aria-label="Users who have contributed to this file"
-        src="/elkan1788/elkan1788.github.io/contributors-list/hugo/README.md" preload>
-        <div class="Box-header">
-          <button class="Box-btn-octicon btn-octicon float-right" type="button" aria-label="Close dialog" data-close-dialog>
-            <svg class="octicon octicon-x" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M3.72 3.72a.75.75 0 011.06 0L8 6.94l3.22-3.22a.75.75 0 111.06 1.06L9.06 8l3.22 3.22a.75.75 0 11-1.06 1.06L8 9.06l-3.22 3.22a.75.75 0 01-1.06-1.06L6.94 8 3.72 4.78a.75.75 0 010-1.06z"></path></svg>
-          </button>
-          <h3 class="Box-title">
-            Users who have contributed to this file
-          </h3>
-        </div>
-        <include-fragment>
-          <svg viewBox="0 0 16 16" fill="none" style="box-sizing: content-box; color: var(--color-icon-primary);" class="my-3 mx-auto d-block" width="32" height="32">
-  <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-opacity="0.25" stroke-width="2" vector-effect="non-scaling-stroke" />
-  <path d="M15 8a7.002 7.002 0 00-7-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" vector-effect="non-scaling-stroke">
-    <animateTransform attributeName="transform" type="rotate" from="0 8 8" to="360 8 8" dur="1s" repeatCount="indefinite" />
-  </path>
-</svg>
-        </include-fragment>
-      </details-dialog>
-    </details>
-  </div>
-    </div>
+</include-fragment>    </div>
 
 
 
