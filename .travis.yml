@@ -18,7 +18,6 @@ before_install:
   - export LANG="zh_CN.UTF-8"
 
 install:
-  # 安装最新的hugo
   - wget https://github.com/gohugoio/hugo/releases/download/v0.80.0/hugo_0.80.0_Linux-64bit.tar.gz
   - tar -xzvf hugo_0.80.0_Linux-64bit.tar.gz
   - chmod +x hugo
@@ -41,4 +40,6 @@ deploy:
     branch: hugo
 
 after_script:
+  - pwd
+  - ls -al
   - echo 'Deploy blog site success.'
