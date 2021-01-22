@@ -11,23 +11,31 @@ cache:
 
 before_install:
   - export TZ='Asia/Shanghai'
-
-install:
-  - locale -a |grep "zh_CN"
+  - openssl aes-256-cbc -K $encrypted_f217180e22ee_key -iv $encrypted_f217180e22ee_iv -in -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
+  - chmod 600 ~/.ssh/id_rsa
+  - eval $(ssh-agent)
+  - ssh-add ~/.ssh/id_rsa
+  - git config --global user.email "elkan1788@gmail.com"
+  - git config --global user.name "凡梦星尘"
+  - yum groupinstall chinese-support
   - export LANG="zh_CN.UTF-8"
+
+
+install:  
+  - echo 'Check Language environment.'
+  - locale -a |grep "zh_CN"  
+  - echo $LANG
   - wget https://github.com/gohugoio/hugo/releases/download/v0.80.0/hugo_0.80.0_Linux-64bit.tar.gz
   - tar -xzvf hugo_0.80.0_Linux-64bit.tar.gz
   - chmod +x hugo
   - export PATH=$PATH:$PWD
   - hugo version  
   - echo 'Hugo engine env is ready!'
-  - git config --global user.email "elkan1788@gmail.com"
-  - git config --global user.name "凡梦星尘"
   - git config user.name
   - git config user.email
   - echo 'Start clone github repo.'
-  - git clone -b hugo https://github.com/elkan1788/elkan1788.github.io.git hugo-res
-  - git clone -b main https://github.com/elkan1788/elkan1788.github.io.git blog
+  - git clone -b hugo git@github.com:elkan1788/elkan1788.github.io.git github
+  - git clone -b main git@github.com:elkan1788/elkan1788.github.io.git blog
   - pwd
   - ls -al
 
