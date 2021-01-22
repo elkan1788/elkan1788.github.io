@@ -9,7 +9,7 @@ gtag('js',new Date());gtag('config','UA-61491374-4 ');</script></head><body item
 &nbsp;</span></span>
 <span>|
 <i class="fa fa-file-word-o fa-fw"></i><span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>1712 字</span></span>
+<span class=leancloud-world-count>1705 字</span></span>
 <span>|
 <i class="fa fa-eye fa-fw"></i><span class=post-meta-item-text>阅读：</span>
 <span class=leancloud-view-count>4分钟</span></span>
@@ -79,7 +79,7 @@ branches:
     - master
 </code></pre></div><p>如果不确定所编写的脚本是否正确，可借助<code>Travis CI</code>进行校验，命令如下：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>travis lint .travis.yml 
 Hooray, .travis.yml looks valid :)
-</code></pre></div><h3 id=编辑deploysh脚本>编辑<code>deploy.sh</code>脚本</h3><p>接下来就是编写个发布博客文章到Pages服务器的脚本，主要的流程如下：</p><p>{% note info %}</p><ul><li>解密<code>SSH</code>私钥，并输出到指定的目录</li><li>修改私钥的文件权限，启动<code>SSH Agent</code>， 添加私钥</li><li>设置<code>Git</code>配置，主要是用户名，邮箱地址</li><li>使用<code>Hexo</code>命令->清理，生成，发布</li></ul><p>{% endnote %}</p><p>脚本内容参考如下：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e>#!/bin/bash
+</code></pre></div><h3 id=编辑deploysh脚本>编辑<code>deploy.sh</code>脚本</h3><p>接下来就是编写个发布博客文章到Pages服务器的脚本，主要的流程如下：</p><blockquote class=blockquote-center><ul><li>解密<code>SSH</code>私钥，并输出到指定的目录</li><li>修改私钥的文件权限，启动<code>SSH Agent</code>， 添加私钥</li><li>设置<code>Git</code>配置，主要是用户名，邮箱地址</li><li>使用<code>Hexo</code>命令->清理，生成，发布</li></ul></blockquote><p>脚本内容参考如下：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=color:#75715e>#!/bin/bash
 </span><span style=color:#75715e></span><span style=color:#75715e># Decrypt the private SSH key</span>
 openssl aes-256-cbc -K $encrypted_c9744fe6174f_key -iv $encrypted_c9744fe6174f_iv -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
 

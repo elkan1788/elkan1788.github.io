@@ -78,7 +78,7 @@ gtag('js',new Date());gtag('config','UA-61491374-4 ');</script></head><body item
 &nbsp;</span></span>
 <span>|
 <i class="fa fa-file-word-o fa-fw"></i><span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>1712 字</span></span>
+<span class=leancloud-world-count>1705 字</span></span>
 <span>|
 <i class="fa fa-eye fa-fw"></i><span class=post-meta-item-text>阅读：</span>
 <span class=leancloud-view-count>4分钟</span></span></div></header><div class=post-body itemprop=articleBody><p>通常我们都是在本地用<code>hexo deploy</code>发布博客文章到远程的Pages服务器，可别忘记了我们是还需要提交代码的，所以是不是觉得有点麻烦还得分开两步进行操作。这时突然想起是否可用<code>Travis CI</code>工具来完成这个布署的操作呢？答案是肯定的，整体的流程大致如下：</p><ul><li>在本地(又或者Github网站)上编辑文章</li><li>提交文章到Github服务器</li><li>Travis CI收到通知，同步最新的Github代码，并执行用户自定义好的<code>Travis</code>脚本生成静态博客</li><li>最终再把生成好的博客推送到指定的Pages服务器</li></ul><p>只是这其中有点比较麻烦的问题就是如何保护我们的私钥，还好<code>Travis CI</code>已经为我们准备好啦，那么就开始我们的捣腾之旅吧。</p></div><div class="post-more-link text-center"><a class=btn href=https://lisenhui.cn/2017/08/19/use-travis-ci-push-hexo-blog/ rel=contents>阅读全文 &#187;</a></div><footer class=post-footer><div class=post-eof></div></footer></article><article class="post post-type-normal" itemscope itemtype=http://schema.org/Article><header class=post-header><h1 class=post-title itemprop="name headline"><a class=post-title-link href=https://lisenhui.cn/2017/08/17/pymssql-azure-mssql-datasource-connect/ itemprop=url>pymssql连接azure云的MSSQL数据库</a></h1><div class=post-meta><span class=post-time><i class="fa fa-calendar-o fa-fw"></i><span class=post-meta-item-text>时间：</span>
