@@ -9,42 +9,33 @@ cache:
   directories:
     - themes
 
+addons:
+  ssh_known_hosts:
+    - github.com
+
 before_install:
   - export TZ='Asia/Shanghai'
   - git config --global user.email "elkan1788@gmail.com"
   - git config --global user.name "凡梦星尘"
-#  - yum groupinstall chinese-support
   - export LANG="zh_CN.UTF-8"
 
 
 install:  
-  - echo 'Check Language environment.'
-  - locale -a |grep "zh_CN"  
-  - echo $LANG
   - wget https://github.com/gohugoio/hugo/releases/download/v0.80.0/hugo_0.80.0_Linux-64bit.tar.gz
   - tar -xzvf hugo_0.80.0_Linux-64bit.tar.gz
   - chmod +x hugo
   - export PATH=$PATH:$PWD
   - hugo version  
   - echo 'Hugo engine env is ready!'
-  - git config user.name
-  - git config user.email
-  - echo 'Start clone github repo.'
-  - git clone -b hugo https://github.com/elkan1788/elkan1788.github.io.git github
-  - pwd
   - ls -al
+  - pwd
+ 
+ deploy:
+  provider: script
+  script: sh .travis/deploy.sh 
+  on:
+    branch: hugo
+
 
 script:
-  - cd github
-  - openssl aes-256-cbc -K $encrypted_f217180e22ee_key -iv $encrypted_f217180e22ee_iv -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
-  - chmod 600 ~/.ssh/id_rsa
-  - eval $(ssh-agent)
-#  - ssh-add ~/.ssh/id_rsa
-  - hugo -t NexT  
-  - git clone -b main git@github.com:elkan1788/elkan1788.github.io.git blog
-  - cp -r public/* ../blog
-  - cd ../blog
-  - git add *
-  - git commit -m 'Rebuilding site by travis-ci auto.'
-  - git push
   - echo 'Deploy blog site success.'
