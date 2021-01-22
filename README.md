@@ -9,7 +9,7 @@ I'm a Geek, so like try the new things which is better. But maybe it's my last w
 
 # Demo：
 
-![my-hexo-blog1](http://myblog.lisenhui.cn/my-hexo-blog1.png-alias)
+![my-hugo-blog](http://myblog.lisenhui.cn/my-hugo-blog.png-alias)
 
 
 # Use qiniu Cloud storage
