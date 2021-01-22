@@ -16,7 +16,6 @@ addons:
 
 env:
   - HUGO_VERSION=0.80.0
-  - COMMIT_ID=$TRAVIS_BUILD_ID
 
 before_install:
   - export TZ='Asia/Shanghai'
@@ -60,5 +59,4 @@ after_deploy:
   - pwd
   - ls -al 
   - ls -al ./public
-  - echo $(travis_build_id)
-  - echo $COMMIT_ID
+  - echo "Deploy blog article success."
