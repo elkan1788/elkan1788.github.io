@@ -29,8 +29,10 @@ install:
   - hugo version  
   - echo 'Hugo engine env is ready.'
 
-before_deploy:
+script:
   - hugo -t NexT
+  
+before_deploy:
   - pwd
   - ls -al 
   - cat ./README.md
