@@ -1,0 +1,9 @@
+User-Agent: *
+Allow: /
+Disallow: /css
+Disallow: /fancybox
+Disallow: /font-awesome
+Disallow: /img
+Disallow: /js
+Sitemap: https://www.xn--7qv19ae78e.cn/sitemap.xml
+Sitemap: https://www.xn--7qv19ae78e.cn/baidusitemap.xml

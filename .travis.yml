@@ -1,0 +1,40 @@
+# Define language environment
+language: node_js
+
+# use root accout or not
+sudo: false
+
+# node js version
+node_js: stable
+
+# setting timezone
+before_install:
+  - export TZ='Asia/Shanghai'
+
+# cache installed modules
+cache:
+  apt: true
+  directories:
+    - node_modules
+
+# add pages server domain
+addons:
+  ssh_known_hosts:
+    - git.coding.net
+    - git.oschina.net
+
+# auto deploy blog to pages server
+deploy:
+  provider: script
+  script: sh .travis/deploy.sh
+  skip_cleanup: true
+  on:
+    branch: master
+
+# offical request
+dist: xenial
+
+# which branch trigger  
+branches:
+  only:
+    - master
