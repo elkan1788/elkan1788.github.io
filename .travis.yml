@@ -15,27 +15,46 @@ addons:
 
 before_install:
   - export TZ='Asia/Shanghai'
-  - git config --global user.email "elkan1788@gmail.com"
-  - git config --global user.name "凡梦星尘"
-  - export LANG="zh_CN.UTF-8"
+#  - git config --global user.email "elkan1788@gmail.com"
+#  - git config --global user.name "凡梦星尘"
+#  - export LANG="zh_CN.UTF-8"
 
-
-install:  
-  - wget https://github.com/gohugoio/hugo/releases/download/v0.80.0/hugo_0.80.0_Linux-64bit.tar.gz
-  - tar -xzvf hugo_0.80.0_Linux-64bit.tar.gz
-  - chmod +x hugo
-  - export PATH=$PATH:$PWD
-  - hugo version  
-  - echo 'Hugo engine env is ready!'
-  - ls -al
-  - pwd
- 
- deploy:
-  provider: script
-  script: sh .travis/deploy.sh 
-  on:
-    branch: hugo
-
+install:
+  # 安装最新的hugo
+  - wget https://github.com/gohugoio/hugo/releases/download/v0.51/hugo_0.51_Linux-64bit.deb
+  - sudo dpkg -i hugo*.deb
+  # 安装主题
+  # - git clone [你使用的主题的 Git 地址]
 
 script:
-  - echo 'Deploy blog site success.'
+  # 运行hugo命令
+  - hugo -t NexT
+
+after_script:
+  # 部署
+  - cd ./public
+  - git init
+  - git config user.name "凡梦星尘"
+  - git config user.email "elkan1788@gmail.com"
+  - git add .
+  - git commit -m "Update Blog By TravisCI With Build $TRAVIS_BUILD_NUMBER"
+  # Github Pages
+  - git push --force --quiet "https://$GITHUB_TOKEN@${GH_REF}" main:main
+  # Github Pages
+  - git push --quiet "https://$GITHUB_TOKEN@${GH_REF}" master:master --tags
+
+env:
+ global:
+   # Github Pages
+   - GH_REF: https://github.com/elkan1788/elkan1788.github.io.git
+
+deploy:
+  provider: pages # 重要，指定这是一份github pages的部署配置
+  skip-cleanup: true # 重要，不能省略
+  local-dir: public # 静态站点文件所在目录
+  target-branch: main # 要将静态站点文件发布到哪个分支
+  github-token: $GIT_TOKENS # 重要，$GITHUB_TOKEN是变量，需要在GitHub上申请、再到配置到Travis
+  # fqdn:  # 如果是自定义域名，此处要填
+  keep-history: true # 是否保持target-branch分支的提交记录
+  on:
+    branch: hugo # 博客源码的分支
