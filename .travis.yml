@@ -27,7 +27,6 @@ install:
 
 script:
   - hugo -t NexT
-  - wget -P ./public https://github.com/elkan1788/elkan1788.github.io/blob/hugo/README.md
   - cp LICENSE ./public
   - cp .gitignore ./public
 
@@ -45,5 +44,6 @@ deploy:
 
 after_script:    
   - pwd
-  - ls -al
-  - echo 'Deploy[$TRAVIS_BUILD_NUMBER] blog site success.'
+  - ls -al 
+  - ls -al ./public
+  - echo $TRAVIS_BUILD_NUMBER
