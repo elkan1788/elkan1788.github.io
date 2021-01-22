@@ -13,6 +13,8 @@ before_install:
   - export TZ='Asia/Shanghai'
 
 install:
+  - locale -a |grep "zh_CN"
+  - export LANG="zh_CN.UTF-8"
   - wget https://github.com/gohugoio/hugo/releases/download/v0.80.0/hugo_0.80.0_Linux-64bit.tar.gz
   - tar -xzvf hugo_0.80.0_Linux-64bit.tar.gz
   - chmod +x hugo
