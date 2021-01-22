@@ -27,6 +27,9 @@ install:
 
 script:
   - hugo -t NexT
+  - cp README.md ./public
+  - cp LICENSE ./public
+  - cp .gitignore ./public
 
 deploy:
   provider: pages
