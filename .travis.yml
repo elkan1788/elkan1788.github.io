@@ -35,11 +35,11 @@ install:
   - ls -al
 
 script:
-  - cd hugo-res
+  - cd github
   - openssl aes-256-cbc -K $encrypted_f217180e22ee_key -iv $encrypted_f217180e22ee_iv -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
   - chmod 600 ~/.ssh/id_rsa
   - eval $(ssh-agent)
-  - ssh-add ~/.ssh/id_rsa
+#  - ssh-add ~/.ssh/id_rsa
   - hugo -t NexT  
   - git clone -b main git@github.com:elkan1788/elkan1788.github.io.git blog
   - cp -r public/* ../blog
