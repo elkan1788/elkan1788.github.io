@@ -31,11 +31,12 @@ install:
 
 script:
   - hugo -t NexT
-  
+
 before_deploy:
   - pwd
   - ls -al 
   - cat ./README.md
+  - cat ./themes/NexT/README.md
 
 #  - cp -r LICENSE ./public
 #  - cp -r .gitignore ./public
@@ -57,4 +58,4 @@ after_deploy:
   - pwd
   - ls -al 
   - ls -al ./public
-  - echo $TRAVIS_BUILD_ID
+  - echo $(travis_build_id)
