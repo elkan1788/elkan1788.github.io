@@ -13,15 +13,9 @@ addons:
   ssh_known_hosts:
     - github.com
 
-env:
- global:
-   - GH_REF: https://github.com/elkan1788/elkan1788.github.io.git
-
 before_install:
   - export TZ='Asia/Shanghai'
   - export LANG="zh_CN.UTF-8"
-  - git config --global user.email "elkan1788@gmail.com"
-  - git config --global user.name "凡梦星尘"
 
 install:
   # 安装最新的hugo
@@ -30,12 +24,9 @@ install:
   - chmod +x hugo
   - export PATH=$PATH:$PWD
   - hugo version  
-  - echo 'Hugo engine env is ready!'
-  # 安装主题
-  # - git clone [你使用的主题的 Git 地址]
+  - echo 'Hugo engine env is ready.'
 
 script:
-  # 运行hugo命令
   - hugo -t NexT
 
 deploy:
@@ -43,18 +34,11 @@ deploy:
   skip-cleanup: true
   local-dir: public
   target-branch: main
-  github-token: $GIT_TOKENS
+  github-token: $GITHUB_PAGES
   fqdn: lisenhui.cn
   keep-history: true
   on:
     branch: hugo
 
 after_script:
-  - cd ./public
-  - git init
-  - git add .
-  - git commit -m "Update Blog By TravisCI With Build $TRAVIS_BUILD_NUMBER"
-  - git push --force --quiet "https://$GITHUB_TOKEN@${GH_REF}" main:main
-  - pwd
-  - ls -al
   - echo 'Deploy blog site success.'
