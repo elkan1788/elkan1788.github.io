@@ -30,8 +30,7 @@ install:
   - git config user.name
   - git config user.email
   - echo 'Start clone github repo.'
-  - git clone -b hugo git@github.com:elkan1788/elkan1788.github.io.git github
-  - git clone -b main git@github.com:elkan1788/elkan1788.github.io.git blog
+  - git clone -b hugo https://github.com/elkan1788/elkan1788.github.io.git github
   - pwd
   - ls -al
 
@@ -41,7 +40,8 @@ script:
   - chmod 600 ~/.ssh/id_rsa
   - eval $(ssh-agent)
   - ssh-add ~/.ssh/id_rsa
-  - hugo -t NexT
+  - hugo -t NexT  
+  - git clone -b main git@github.com:elkan1788/elkan1788.github.io.git blog
   - cp -r public/* ../blog
   - cd ../blog
   - git add *
