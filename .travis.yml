@@ -24,13 +24,13 @@ install:
   - git config user.name
   - git config user.email
   - echo 'Start clone github repo.'
-  - git clone -b hugo https://github.com/elkan1788/elkan1788.github.io.git hugo
+  - git clone -b hugo https://github.com/elkan1788/elkan1788.github.io.git hugo-res
   - git clone -b main https://github.com/elkan1788/elkan1788.github.io.git blog
   - pwd
   - ls -al
 
 script:
-  - cd hugo
+  - cd hugo-res
   - hugo -t NexT
   - cp -r public/* ../blog
   - cd ../blog
