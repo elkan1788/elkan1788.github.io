@@ -1,0 +1,888 @@
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=content-security-policy content="upgrade-insecure-requests"><title>JSP版本的KindEidtor在线编辑器第二季：Servlet+Struts2集成版 - Loving life and dreams.</title><meta name=keywords content="凡梦星尘,独立,博客,程序员,架构师,个人,思考,读书,笔记,技术,分享,Kylin"><meta property="og:title" content="JSP版本的KindEidtor在线编辑器第二季：Servlet+Struts2集成版"><meta property="og:site_name" content="Loving life and dreams."><meta property="og:image" content="/img/author.jpg"><meta name=title content="JSP版本的KindEidtor在线编辑器第二季：Servlet+Struts2集成版 - Loving life and dreams."><meta name=description content="凡梦星尘 | 博客 | 软件 | 架构 | Java | Kylin"><link rel="shortcut icon" href=/img/favicon.ico><link rel=apple-touch-icon href=/img/apple-touch-icon.png><link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png><link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css><link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet><link href=/css/main.css rel=stylesheet type=text/css><link href=/css/syntax.css rel=stylesheet type=text/css><script type=text/javascript>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?9b021cbfb58b35e79012f9690de1c6ab";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();</script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-61491374-4"></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-61491374-4 ');</script></head><body itemscope itemtype=http://schema.org/WebPage lang=zh-hans><div class="container one-collumn sidebar-position-left page-home"><div class=headband></div><header id=header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-meta><div class=custom-logo-site-title><a href=https://lisenhui.cn/ class=brand rel=start><span class=logo-line-before><i></i></span><span class=site-title>Loving life and dreams.</span>
+<span class=logo-line-after><i></i></span></a></div><p class=site-subtitle>Don't stop running forward!</p></div><div class=site-nav-toggle><button>
+<span class=btn-bar></span><span class=btn-bar></span><span class=btn-bar></span></button></div><nav class=site-nav><ul id=menu class=menu><li class=menu-item><a href=/ rel=section><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class=menu-item><a href=/post/ rel=section><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class=menu-item><a href=/about/ rel=section><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于</a></li><li class=menu-item><a href=/404.html rel=section target=_blank><i class="menu-item-icon fa fa-fw fa-heartbeat"></i><br>公益404</a></li><li class="menu-item menu-item-search"><a href=javascript:; class=popup-trigger><i class="menu-item-icon fa fa-search fa-fw"></i><br>搜索</a></li></ul><div class=site-search><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class=search-icon><i class="fa fa-search"></i></span><span class=popup-btn-close><i class="fa fa-times-circle"></i></span><div class=local-search-input-wrapper><input autocomplete=off placeholder=搜索... spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off></div></div><div id=local-search-result></div></div></div></nav></div></header><main id=main class=main><div class=main-inner><div class=content-wrap><div id=content class=content><section id=posts class=posts-expand><article class="post post-type-normal" itemscope itemtype=http://schema.org/Article><header class=post-header><h1 class=post-title itemprop="name headline"><a class=post-title-link href=https://lisenhui.cn/2011/10/17/kineditor-jsp-struts2-servlet/ itemprop=url>JSP版本的KindEidtor在线编辑器第二季：Servlet+Struts2集成版</a></h1><div class=post-meta><span class=post-time><i class="fa fa-calendar-o fa-fw"></i><span class=post-meta-item-text>时间：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2011-10-17">2011-10-17</time></span>
+<span class=post-category>&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i><span class=post-meta-item-text>分类：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing><a href=/categories/kindeditor itemprop=url rel=index style=text-decoration:underline><span itemprop=name>KindEditor</span></a>
+&nbsp;</span></span>
+<span>|
+<i class="fa fa-file-word-o fa-fw"></i><span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>4534 字</span></span>
+<span>|
+<i class="fa fa-eye fa-fw"></i><span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>10分钟</span></span>
+<span id=/2011/10/17/kineditor-jsp-struts2-servlet/ class=leancloud_visitors data-flag-title=JSP版本的KindEidtor在线编辑器第二季：Servlet+Struts2集成版>|
+<i class="fa fa-binoculars fa-fw"></i><span class=post-meta-item-text>阅读次数：</span>
+<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>前段时间我在论坛上发布了一篇名为<a href=http://elkan1788.github.io/OnlineEditor/2011-03-24/kindeditor-jsp-complete.html>《JSP版的完善KindEditor在线编辑器(带附件上传与图片按日期分类管理功能)》</a>得到了大家的积极响应，不过令我觉得有点遗憾的是，有很多人都不是真的讨论技术问题，而是向我索取源码，说实在的自已的劳动成果就这样白白奉献出来，觉得有点对不起自己了，要知道我们国内的技术员都是没有金钱后盾啊。唉，最近都太忙了就没有怎么太在意这件事，今晚刚好有空过来看看。看了那么多人留下的印记后，觉得自己也应该要无私一下才是吧，咱老毛说的对：要像雷锋同志学习，呵呵…… 其实在上面我已经说过了，这个JAR里面的功能我只是把官网的JSP代码改编而已，废话就先不多说了，下面直接上码吧，可要接稳了哦。</p><ul><li>图片上传功能代码</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>
+<span style=color:#f92672>package</span> com.elkan.kindeditor.upload<span style=color:#f92672>;</span>
+
+<span style=color:#f92672>import</span> java.io.File<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.io.IOException<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.io.PrintWriter<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.text.SimpleDateFormat<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.util.Arrays<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.util.Date<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.util.Iterator<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.util.List<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.util.Random<span style=color:#f92672>;</span>
+
+<span style=color:#f92672>import</span> javax.servlet.ServletException<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> javax.servlet.http.HttpServlet<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> javax.servlet.http.HttpServletRequest<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> javax.servlet.http.HttpServletResponse<span style=color:#f92672>;</span>
+
+<span style=color:#f92672>import</span> org.apache.commons.fileupload.FileItem<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> org.apache.commons.fileupload.FileItemFactory<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> org.apache.commons.fileupload.FileUploadException<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> org.apache.commons.fileupload.disk.DiskFileItemFactory<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> org.apache.commons.fileupload.servlet.ServletFileUpload<span style=color:#f92672>;</span>
+
+<span style=color:#f92672>import</span> com.elkan.utils.ImageUtil<span style=color:#f92672>;</span>
+
+<span style=color:#75715e>/**
+</span><span style=color:#75715e>* 实现KindEditor图片上传的Servlet
+</span><span style=color:#75715e>* 
+</span><span style=color:#75715e>* @author SENHUI
+</span><span style=color:#75715e>* 
+</span><span style=color:#75715e>* @since 2011/03/21 20:20:23
+</span><span style=color:#75715e>*/</span>
+<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>UploadImage</span> <span style=color:#66d9ef>extends</span> HttpServlet <span style=color:#f92672>{</span>
+
+   <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> <span style=color:#66d9ef>long</span> serialVersionUID <span style=color:#f92672>=</span> 5121794650920770832L<span style=color:#f92672>;</span>
+   <span style=color:#75715e>// 上传图片的最大宽度
+</span><span style=color:#75715e></span>   <span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>int</span> MAX_WIDTH <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>1<span style=color:#f92672>;</span>
+   <span style=color:#75715e>// 上传图片的最大高度
+</span><span style=color:#75715e></span>   <span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>int</span> MAX_HEIGHT <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>1<span style=color:#f92672>;</span>
+   <span style=color:#75715e>// 上传图片的大小
+</span><span style=color:#75715e></span>   <span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>long</span> MAX_SIZE <span style=color:#f92672>=</span> 1000000<span style=color:#f92672>;</span>
+   <span style=color:#75715e>// 定义允许上传的图片的扩展名
+</span><span style=color:#75715e></span>   <span style=color:#66d9ef>protected</span> String<span style=color:#f92672>[]</span> IMAGETYPES <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> String<span style=color:#f92672>[]</span> <span style=color:#f92672>{</span> <span style=color:#e6db74>&#34;gif&#34;</span><span style=color:#f92672>,</span> <span style=color:#e6db74>&#34;jpg&#34;</span><span style=color:#f92672>,</span> <span style=color:#e6db74>&#34;jpeg&#34;</span><span style=color:#f92672>,</span> <span style=color:#e6db74>&#34;png&#34;</span><span style=color:#f92672>,</span> <span style=color:#e6db74>&#34;bmp&#34;</span> <span style=color:#f92672>};</span>
+   <span style=color:#75715e>// 定义上传图片保存目录路径
+</span><span style=color:#75715e></span>   <span style=color:#66d9ef>protected</span> String UPLOAD_PATH <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>;</span>	
+   <span style=color:#75715e>// 上传图片设置信息   
+</span><span style=color:#75715e></span>   <span style=color:#66d9ef>protected</span> String id <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>;</span>  
+   <span style=color:#75715e>// 上传图片的TITLE属性值
+</span><span style=color:#75715e></span>   <span style=color:#66d9ef>protected</span> String imgTitle <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>;</span> 
+   
+   <span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>int</span> imgWidth <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>1<span style=color:#f92672>;</span>   
+   
+   <span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>int</span> imgHeight <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>1<span style=color:#f92672>;</span>   
+   
+   <span style=color:#66d9ef>protected</span> String imgBorder <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>;</span>   
+   
+   <span style=color:#66d9ef>protected</span> String resizeImg <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>;</span>
+   
+   <span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>boolean</span> isFlag <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span><span style=color:#f92672>;</span>
+   
+   <span style=color:#66d9ef>protected</span> String tempTitle <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>;</span>
+
+   <span style=color:#a6e22e>@SuppressWarnings</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;deprecation&#34;</span><span style=color:#f92672>)</span>
+   <span style=color:#a6e22e>@Override</span>
+   <span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>doGet</span><span style=color:#f92672>(</span>HttpServletRequest request<span style=color:#f92672>,</span>
+           HttpServletResponse response<span style=color:#f92672>)</span> <span style=color:#66d9ef>throws</span> ServletException<span style=color:#f92672>,</span> IOException <span style=color:#f92672>{</span>
+       response<span style=color:#f92672>.</span><span style=color:#a6e22e>setContentType</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;text/html; charset=UTF-8&#34;</span><span style=color:#f92672>);</span>
+       PrintWriter out <span style=color:#f92672>=</span> response<span style=color:#f92672>.</span><span style=color:#a6e22e>getWriter</span><span style=color:#f92672>();</span>
+       String savePath <span style=color:#f92672>=</span> <span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>getInitParameter</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;UPLOAD_PATH&#34;</span><span style=color:#f92672>);</span>
+       <span style=color:#66d9ef>if</span> <span style=color:#f92672>(</span>savePath <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>||</span> savePath<span style=color:#f92672>.</span><span style=color:#a6e22e>isEmpty</span><span style=color:#f92672>())</span> <span style=color:#f92672>{</span>
+           out<span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span>alertMsg<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;你还没设置上传图片保存的目录路径!&#34;</span><span style=color:#f92672>));</span>
+           <span style=color:#66d9ef>return</span><span style=color:#f92672>;</span>
+       <span style=color:#f92672>}</span>
+       <span style=color:#75715e>//判断是否设置了上传图片的大小
+</span><span style=color:#75715e></span>       <span style=color:#66d9ef>if</span><span style=color:#f92672>(</span><span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>getInitParameter</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;MAX_SIZE&#34;</span><span style=color:#f92672>)</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>){</span>
+           MAX_SIZE <span style=color:#f92672>=</span> Integer<span style=color:#f92672>.</span><span style=color:#a6e22e>parseInt</span><span style=color:#f92672>(</span><span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>getInitParameter</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;MAX_SIZE&#34;</span><span style=color:#f92672>));</span>
+       <span style=color:#f92672>}</span>
+       <span style=color:#75715e>//判断是否设置了上传图片的类型
+</span><span style=color:#75715e></span>       <span style=color:#66d9ef>if</span><span style=color:#f92672>(</span><span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>getInitParameter</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;IMAGETYPES&#34;</span><span style=color:#f92672>)</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>){</span>
+           IMAGETYPES <span style=color:#f92672>=</span> toArray<span style=color:#f92672>(</span><span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>getInitParameter</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;IMAGETYPES&#34;</span><span style=color:#f92672>));</span>
+       <span style=color:#f92672>}</span>
+       <span style=color:#75715e>// 图片保存目录路径
+</span><span style=color:#75715e></span>       String uploadPath <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> StringBuffer<span style=color:#f92672>(</span>request<span style=color:#f92672>.</span><span style=color:#a6e22e>getSession</span><span style=color:#f92672>().</span><span style=color:#a6e22e>getServletContext</span><span style=color:#f92672>().</span><span style=color:#a6e22e>getRealPath</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;/&#34;</span><span style=color:#f92672>)).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>savePath<span style=color:#f92672>).</span><span style=color:#a6e22e>toString</span><span style=color:#f92672>();</span>
+       
+       <span style=color:#75715e>// 图片保存目录URL
+</span><span style=color:#75715e></span>       String saveUrl <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> StringBuffer<span style=color:#f92672>(</span>request<span style=color:#f92672>.</span><span style=color:#a6e22e>getContextPath</span><span style=color:#f92672>()).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;/&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>savePath<span style=color:#f92672>).</span><span style=color:#a6e22e>toString</span><span style=color:#f92672>();</span>
+       
+       <span style=color:#75715e>// 检查上传图片是否存在
+</span><span style=color:#75715e></span>       <span style=color:#66d9ef>if</span> <span style=color:#f92672>(!</span>ServletFileUpload<span style=color:#f92672>.</span><span style=color:#a6e22e>isMultipartContent</span><span style=color:#f92672>(</span>request<span style=color:#f92672>))</span> <span style=color:#f92672>{</span>
+           out<span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span>alertMsg<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;请选择你要上传的图片!&#34;</span><span style=color:#f92672>));</span>
+           <span style=color:#66d9ef>return</span><span style=color:#f92672>;</span>
+       <span style=color:#f92672>}</span>
+       
+       <span style=color:#75715e>// 检查目录
+</span><span style=color:#75715e></span>       File uploadDir <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> File<span style=color:#f92672>(</span>uploadPath<span style=color:#f92672>);</span>
+       <span style=color:#66d9ef>if</span> <span style=color:#f92672>(!</span>uploadDir<span style=color:#f92672>.</span><span style=color:#a6e22e>isDirectory</span><span style=color:#f92672>())</span> <span style=color:#f92672>{</span>
+           out<span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span>alertMsg<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;上传图片保存的目录不存在。&#34;</span><span style=color:#f92672>));</span>
+           <span style=color:#66d9ef>return</span><span style=color:#f92672>;</span>
+       <span style=color:#f92672>}</span>
+       
+       <span style=color:#75715e>// 检查目录写权限
+</span><span style=color:#75715e></span>       <span style=color:#66d9ef>if</span> <span style=color:#f92672>(!</span>uploadDir<span style=color:#f92672>.</span><span style=color:#a6e22e>canWrite</span><span style=color:#f92672>())</span> <span style=color:#f92672>{</span>
+           out<span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span>alertMsg<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;上传图片保存的目录没有写权限。&#34;</span><span style=color:#f92672>));</span>
+           <span style=color:#66d9ef>return</span><span style=color:#f92672>;</span>
+       <span style=color:#f92672>}</span>
+       
+       <span style=color:#75715e>// 准备上传图片
+</span><span style=color:#75715e></span>       FileItemFactory factory <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> DiskFileItemFactory<span style=color:#f92672>();</span>
+       ServletFileUpload upload <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> ServletFileUpload<span style=color:#f92672>(</span>factory<span style=color:#f92672>);</span>
+       upload<span style=color:#f92672>.</span><span style=color:#a6e22e>setHeaderEncoding</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;UTF-8&#34;</span><span style=color:#f92672>);</span>
+       List<span style=color:#f92672>&lt;?&gt;</span> items <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>;</span>
+       String temp <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>;</span>
+       <span style=color:#66d9ef>try</span> <span style=color:#f92672>{</span>
+           items <span style=color:#f92672>=</span> upload<span style=color:#f92672>.</span><span style=color:#a6e22e>parseRequest</span><span style=color:#f92672>(</span>request<span style=color:#f92672>);</span>			
+           Iterator<span style=color:#f92672>&lt;?&gt;</span> itr <span style=color:#f92672>=</span> items<span style=color:#f92672>.</span><span style=color:#a6e22e>iterator</span><span style=color:#f92672>();</span>
+           <span style=color:#66d9ef>while</span> <span style=color:#f92672>(</span>itr<span style=color:#f92672>.</span><span style=color:#a6e22e>hasNext</span><span style=color:#f92672>())</span> <span style=color:#f92672>{</span>
+               
+               FileItem item <span style=color:#f92672>=</span> <span style=color:#f92672>(</span>FileItem<span style=color:#f92672>)</span> itr<span style=color:#f92672>.</span><span style=color:#a6e22e>next</span><span style=color:#f92672>();</span>
+                <span style=color:#75715e>// 上传图片的原文件名   
+</span><span style=color:#75715e></span>               String fileName <span style=color:#f92672>=</span> item<span style=color:#f92672>.</span><span style=color:#a6e22e>getName</span><span style=color:#f92672>();</span> 
+               temp <span style=color:#f92672>=</span> <span style=color:#f92672>(</span>String<span style=color:#f92672>)</span> item<span style=color:#f92672>.</span><span style=color:#a6e22e>getName</span><span style=color:#f92672>();</span>
+               <span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>temp <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#f92672>!</span>isFlag<span style=color:#f92672>){</span>
+                   temp <span style=color:#f92672>=</span> temp<span style=color:#f92672>.</span><span style=color:#a6e22e>substring</span><span style=color:#f92672>(</span>temp<span style=color:#f92672>.</span><span style=color:#a6e22e>lastIndexOf</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\\&#34;</span><span style=color:#f92672>)+</span>1<span style=color:#f92672>);</span>
+                   tempTitle <span style=color:#f92672>=</span> temp<span style=color:#f92672>;</span>
+                   isFlag <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span><span style=color:#f92672>;</span>
+               <span style=color:#f92672>}</span>
+                <span style=color:#75715e>// KindEditor编辑器的ID  
+</span><span style=color:#75715e></span>               <span style=color:#66d9ef>if</span><span style=color:#f92672>(((</span>String<span style=color:#f92672>)</span>item<span style=color:#f92672>.</span><span style=color:#a6e22e>getFieldName</span><span style=color:#f92672>()).</span><span style=color:#a6e22e>equals</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;id&#34;</span><span style=color:#f92672>)){</span>   
+                   id <span style=color:#f92672>=</span> item<span style=color:#f92672>.</span><span style=color:#a6e22e>getString</span><span style=color:#f92672>();</span> 
+               <span style=color:#f92672>}</span>  
+              
+               <span style=color:#75715e>// 上传图片的重新提示
+</span><span style=color:#75715e></span>               <span style=color:#66d9ef>if</span><span style=color:#f92672>(((</span>String<span style=color:#f92672>)</span>item<span style=color:#f92672>.</span><span style=color:#a6e22e>getFieldName</span><span style=color:#f92672>()).</span><span style=color:#a6e22e>equals</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;imgTitle&#34;</span><span style=color:#f92672>)){</span>   
+                   imgTitle <span style=color:#f92672>=</span> item<span style=color:#f92672>.</span><span style=color:#a6e22e>getString</span><span style=color:#f92672>();</span> 
+                   <span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>imgTitle <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>){</span>
+                       imgTitle <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> String<span style=color:#f92672>(</span>imgTitle<span style=color:#f92672>.</span><span style=color:#a6e22e>getBytes</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;ISO8859-1&#34;</span><span style=color:#f92672>),</span><span style=color:#e6db74>&#34;UTF-8&#34;</span><span style=color:#f92672>);</span>
+                   <span style=color:#f92672>}</span>
+               <span style=color:#f92672>}</span> 
+               <span style=color:#75715e>// 设置图片的宽度
+</span><span style=color:#75715e></span>               <span style=color:#66d9ef>if</span><span style=color:#f92672>(((</span>String<span style=color:#f92672>)</span>item<span style=color:#f92672>.</span><span style=color:#a6e22e>getFieldName</span><span style=color:#f92672>()).</span><span style=color:#a6e22e>equals</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;imgWidth&#34;</span><span style=color:#f92672>)){</span>   
+                  String imgWidth <span style=color:#f92672>=</span> item<span style=color:#f92672>.</span><span style=color:#a6e22e>getString</span><span style=color:#f92672>();</span>   
+                  <span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>imgWidth <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#f92672>!</span>imgWidth<span style=color:#f92672>.</span><span style=color:#a6e22e>isEmpty</span><span style=color:#f92672>()){</span>
+                      <span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>imgWidth</span> <span style=color:#f92672>=</span> Integer<span style=color:#f92672>.</span><span style=color:#a6e22e>parseInt</span><span style=color:#f92672>(</span>imgWidth<span style=color:#f92672>);</span>
+                  <span style=color:#f92672>}</span>
+               <span style=color:#f92672>}</span>  
+               <span style=color:#75715e>// 设置图片的高度
+</span><span style=color:#75715e></span>               <span style=color:#66d9ef>if</span><span style=color:#f92672>(((</span>String<span style=color:#f92672>)</span>item<span style=color:#f92672>.</span><span style=color:#a6e22e>getFieldName</span><span style=color:#f92672>()).</span><span style=color:#a6e22e>equals</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;imgHeight&#34;</span><span style=color:#f92672>)){</span>   
+                  String imgHeight <span style=color:#f92672>=</span> item<span style=color:#f92672>.</span><span style=color:#a6e22e>getString</span><span style=color:#f92672>();</span>   
+                  <span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>imgHeight <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#f92672>!</span>imgHeight<span style=color:#f92672>.</span><span style=color:#a6e22e>isEmpty</span><span style=color:#f92672>()){</span>
+                      <span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>imgHeight</span> <span style=color:#f92672>=</span> Integer<span style=color:#f92672>.</span><span style=color:#a6e22e>parseInt</span><span style=color:#f92672>(</span>imgHeight<span style=color:#f92672>);</span>
+                  <span style=color:#f92672>}</span>
+               <span style=color:#f92672>}</span>
+               <span style=color:#75715e>// 设置图片的边框
+</span><span style=color:#75715e></span>               <span style=color:#66d9ef>if</span><span style=color:#f92672>(((</span>String<span style=color:#f92672>)</span>item<span style=color:#f92672>.</span><span style=color:#a6e22e>getFieldName</span><span style=color:#f92672>()).</span><span style=color:#a6e22e>equals</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;imgBorder&#34;</span><span style=color:#f92672>)){</span>   
+                   imgBorder <span style=color:#f92672>=</span> item<span style=color:#f92672>.</span><span style=color:#a6e22e>getString</span><span style=color:#f92672>();</span>  
+               <span style=color:#f92672>}</span> 
+               
+               <span style=color:#66d9ef>long</span> fileSize <span style=color:#f92672>=</span> item<span style=color:#f92672>.</span><span style=color:#a6e22e>getSize</span><span style=color:#f92672>();</span>
+               <span style=color:#66d9ef>if</span> <span style=color:#f92672>(!</span>item<span style=color:#f92672>.</span><span style=color:#a6e22e>isFormField</span><span style=color:#f92672>())</span> <span style=color:#f92672>{</span>						
+                   <span style=color:#75715e>// 检查文件大小
+</span><span style=color:#75715e></span>                   <span style=color:#66d9ef>if</span> <span style=color:#f92672>(</span>fileSize <span style=color:#f92672>&gt;</span> MAX_SIZE<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+                       out<span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span>alertMsg<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;上传文件大小超过限制。&#34;</span><span style=color:#f92672>));</span>
+                       <span style=color:#66d9ef>return</span><span style=color:#f92672>;</span>
+                   <span style=color:#f92672>}</span>
+                   
+                   <span style=color:#75715e>// 检查扩展名
+</span><span style=color:#75715e></span>                   String fileExt <span style=color:#f92672>=</span> fileName<span style=color:#f92672>.</span><span style=color:#a6e22e>substring</span><span style=color:#f92672>(</span>fileName<span style=color:#f92672>.</span><span style=color:#a6e22e>lastIndexOf</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;.&#34;</span><span style=color:#f92672>)</span> <span style=color:#f92672>+</span> 1<span style=color:#f92672>).</span><span style=color:#a6e22e>toLowerCase</span><span style=color:#f92672>();</span>
+                   <span style=color:#66d9ef>if</span> <span style=color:#f92672>(!</span>Arrays<span style=color:#f92672>.&lt;</span>String<span style=color:#f92672>&gt;</span> <span style=color:#a6e22e>asList</span><span style=color:#f92672>(</span>IMAGETYPES<span style=color:#f92672>).</span><span style=color:#a6e22e>contains</span><span style=color:#f92672>(</span>fileExt<span style=color:#f92672>))</span> <span style=color:#f92672>{</span>
+                       out<span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span>alertMsg<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;上传图片扩展名是不允许的扩展名。&#34;</span><span style=color:#f92672>));</span>
+                       <span style=color:#66d9ef>return</span><span style=color:#f92672>;</span>
+                   <span style=color:#f92672>}</span>
+                   <span style=color:#75715e>// 根据时间创建文件夹
+</span><span style=color:#75715e></span>                   SimpleDateFormat folderNameFormat <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> SimpleDateFormat<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;yyyyMMdd&#34;</span><span style=color:#f92672>);</span>
+                   String realPath <span style=color:#f92672>=</span> uploadPath <span style=color:#f92672>+</span> folderNameFormat<span style=color:#f92672>.</span><span style=color:#a6e22e>format</span><span style=color:#f92672>(</span><span style=color:#66d9ef>new</span> Date<span style=color:#f92672>());</span>
+                   File folder <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> File<span style=color:#f92672>(</span>realPath<span style=color:#f92672>);</span>
+                   <span style=color:#66d9ef>boolean</span> flag <span style=color:#f92672>=</span> folder<span style=color:#f92672>.</span><span style=color:#a6e22e>exists</span><span style=color:#f92672>();</span>
+                   <span style=color:#75715e>// 确认文件夹是否已经存在
+</span><span style=color:#75715e></span>                   <span style=color:#66d9ef>if</span><span style=color:#f92672>(!</span>flag<span style=color:#f92672>){</span>
+                       flag <span style=color:#f92672>=</span> folder<span style=color:#f92672>.</span><span style=color:#a6e22e>mkdir</span><span style=color:#f92672>();</span>
+                   <span style=color:#f92672>}</span>
+                   <span style=color:#75715e>// 创建文件夹并上传图片
+</span><span style=color:#75715e></span>                   <span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>flag<span style=color:#f92672>){</span>
+                       SimpleDateFormat fileNameFormat <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> SimpleDateFormat<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;yyyyMMddHHmmss&#34;</span><span style=color:#f92672>);</span>					
+                       String newFileName <span style=color:#f92672>=</span> fileNameFormat<span style=color:#f92672>.</span><span style=color:#a6e22e>format</span><span style=color:#f92672>(</span><span style=color:#66d9ef>new</span> Date<span style=color:#f92672>())</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;_&#34;</span><span style=color:#f92672>+</span> <span style=color:#66d9ef>new</span> Random<span style=color:#f92672>().</span><span style=color:#a6e22e>nextInt</span><span style=color:#f92672>(</span>1000<span style=color:#f92672>)</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;.&#34;</span> <span style=color:#f92672>+</span> fileExt<span style=color:#f92672>;</span>						
+                       File uploadedFile <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> File<span style=color:#f92672>(</span>realPath<span style=color:#f92672>,</span> newFileName<span style=color:#f92672>);</span>						
+                       item<span style=color:#f92672>.</span><span style=color:#a6e22e>write</span><span style=color:#f92672>(</span>uploadedFile<span style=color:#f92672>);</span>
+                       resizeImg <span style=color:#f92672>=</span> uploadedFile<span style=color:#f92672>.</span><span style=color:#a6e22e>getPath</span><span style=color:#f92672>();</span>
+                       resizeImg <span style=color:#f92672>=</span> resizeImg<span style=color:#f92672>.</span><span style=color:#a6e22e>replaceAll</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\\\\&#34;</span><span style=color:#f92672>,</span> <span style=color:#e6db74>&#34;/&#34;</span><span style=color:#f92672>);</span>
+                       saveUrl <span style=color:#f92672>+=</span> folderNameFormat<span style=color:#f92672>.</span><span style=color:#a6e22e>format</span><span style=color:#f92672>(</span><span style=color:#66d9ef>new</span> Date<span style=color:#f92672>())</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;/&#34;</span> <span style=color:#f92672>+</span> newFileName<span style=color:#f92672>;</span>						
+                   <span style=color:#f92672>}</span><span style=color:#66d9ef>else</span><span style=color:#f92672>{</span>
+                       System<span style=color:#f92672>.</span><span style=color:#a6e22e>out</span><span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34; 文件夹创建失败，请确认磁盘没有写保护并且空件足够&#34;</span><span style=color:#f92672>);</span>
+                   <span style=color:#f92672>}</span>	
+               <span style=color:#f92672>}</span>
+           <span style=color:#f92672>}</span>
+           
+           <span style=color:#75715e>// 判断是否设置图片的最大宽度与高度
+</span><span style=color:#75715e></span>           String max_width <span style=color:#f92672>=</span> <span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>getInitParameter</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;MAX_WIDTH&#34;</span><span style=color:#f92672>);</span>
+           String max_height <span style=color:#f92672>=</span> <span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>getInitParameter</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;MAX_HEIGHT&#34;</span><span style=color:#f92672>);</span>
+           <span style=color:#66d9ef>if</span><span style=color:#f92672>((</span>max_width <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#f92672>!</span>max_width<span style=color:#f92672>.</span><span style=color:#a6e22e>isEmpty</span><span style=color:#f92672>())){</span>
+               MAX_WIDTH <span style=color:#f92672>=</span> Integer<span style=color:#f92672>.</span><span style=color:#a6e22e>parseInt</span><span style=color:#f92672>(</span>max_width<span style=color:#f92672>);</span>
+           <span style=color:#f92672>}</span>
+           <span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>max_height <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#f92672>!</span>max_height<span style=color:#f92672>.</span><span style=color:#a6e22e>isEmpty</span><span style=color:#f92672>()){</span>
+               MAX_HEIGHT <span style=color:#f92672>=</span> Integer<span style=color:#f92672>.</span><span style=color:#a6e22e>parseInt</span><span style=color:#f92672>(</span>max_height<span style=color:#f92672>);</span>
+           <span style=color:#f92672>}</span>
+           
+           <span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>imgTitle <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>||</span> imgTitle<span style=color:#f92672>.</span><span style=color:#a6e22e>isEmpty</span><span style=color:#f92672>()){</span>
+               imgTitle <span style=color:#f92672>=</span> tempTitle<span style=color:#f92672>;</span>
+           <span style=color:#f92672>}</span>
+           
+           <span style=color:#75715e>// 判断是否要压缩图片
+</span><span style=color:#75715e></span>           <span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>MAX_WIDTH <span style=color:#f92672>!=</span> <span style=color:#f92672>-</span>1 <span style=color:#f92672>||</span> MAX_HEIGHT <span style=color:#f92672>!=</span> <span style=color:#f92672>-</span>1<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+               <span style=color:#75715e>// 压缩图片
+</span><span style=color:#75715e></span>               ImageUtil<span style=color:#f92672>.</span><span style=color:#a6e22e>resizeImg</span><span style=color:#f92672>(</span>resizeImg<span style=color:#f92672>,</span> resizeImg<span style=color:#f92672>,</span> MAX_WIDTH<span style=color:#f92672>,</span> MAX_HEIGHT<span style=color:#f92672>);</span>
+               
+               <span style=color:#66d9ef>if</span><span style=color:#f92672>(</span><span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>imgWidth</span> <span style=color:#f92672>&gt;</span> ImageUtil<span style=color:#f92672>.</span><span style=color:#a6e22e>ImgWidth</span><span style=color:#f92672>){</span>
+                   <span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>imgWidth</span> <span style=color:#f92672>=</span> ImageUtil<span style=color:#f92672>.</span><span style=color:#a6e22e>ImgWidth</span><span style=color:#f92672>;</span>
+               <span style=color:#f92672>}</span>
+               
+               <span style=color:#66d9ef>if</span><span style=color:#f92672>(</span><span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>imgHeight</span> <span style=color:#f92672>&gt;</span> ImageUtil<span style=color:#f92672>.</span><span style=color:#a6e22e>ImgHeight</span><span style=color:#f92672>){</span>
+                   <span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>imgHeight</span> <span style=color:#f92672>=</span> ImageUtil<span style=color:#f92672>.</span><span style=color:#a6e22e>ImgHeight</span><span style=color:#f92672>;</span>
+               <span style=color:#f92672>}</span>
+               
+               <span style=color:#75715e>// 返回编辑器
+</span><span style=color:#75715e></span>               out<span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span>insertEditor<span style=color:#f92672>(</span>id<span style=color:#f92672>,</span> saveUrl<span style=color:#f92672>,</span> imgTitle<span style=color:#f92672>,</span> imgWidth<span style=color:#f92672>,</span> imgHeight<span style=color:#f92672>,</span> imgBorder<span style=color:#f92672>));</span>
+           <span style=color:#f92672>}</span><span style=color:#66d9ef>else</span><span style=color:#f92672>{</span>
+               <span style=color:#75715e>// 返回编辑器
+</span><span style=color:#75715e></span>               out<span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span>insertEditor<span style=color:#f92672>(</span>id<span style=color:#f92672>,</span> saveUrl<span style=color:#f92672>,</span> imgTitle<span style=color:#f92672>,</span> imgWidth<span style=color:#f92672>,</span> imgHeight<span style=color:#f92672>,</span> imgBorder<span style=color:#f92672>));</span>
+           <span style=color:#f92672>}</span>				
+           
+       <span style=color:#f92672>}</span> <span style=color:#66d9ef>catch</span> <span style=color:#f92672>(</span>FileUploadException e<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+           e<span style=color:#f92672>.</span><span style=color:#a6e22e>printStackTrace</span><span style=color:#f92672>();</span>
+       <span style=color:#f92672>}</span> <span style=color:#66d9ef>catch</span> <span style=color:#f92672>(</span>Exception e<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+           e<span style=color:#f92672>.</span><span style=color:#a6e22e>printStackTrace</span><span style=color:#f92672>();</span>
+       <span style=color:#f92672>}</span><span style=color:#66d9ef>finally</span><span style=color:#f92672>{</span>
+           out<span style=color:#f92672>.</span><span style=color:#a6e22e>flush</span><span style=color:#f92672>();</span>
+           out<span style=color:#f92672>.</span><span style=color:#a6e22e>close</span><span style=color:#f92672>();</span>
+           isFlag <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span><span style=color:#f92672>;</span>
+       <span style=color:#f92672>}</span>
+
+   <span style=color:#f92672>}</span>
+
+   <span style=color:#a6e22e>@Override</span>
+   <span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>doPost</span><span style=color:#f92672>(</span>HttpServletRequest request<span style=color:#f92672>,</span>
+           HttpServletResponse response<span style=color:#f92672>)</span> <span style=color:#66d9ef>throws</span> ServletException<span style=color:#f92672>,</span> IOException <span style=color:#f92672>{</span>
+       doGet<span style=color:#f92672>(</span>request<span style=color:#f92672>,</span> response<span style=color:#f92672>);</span>
+   <span style=color:#f92672>}</span>
+
+   <span style=color:#75715e>/**
+</span><span style=color:#75715e>    * 输出打印上传失败的JSON语句
+</span><span style=color:#75715e>    * 
+</span><span style=color:#75715e>    * @param message    失败信息
+</span><span style=color:#75715e>    * 
+</span><span style=color:#75715e>    * @return 页面上传失败的JSON语句
+</span><span style=color:#75715e>    */</span>
+   <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>alertMsg</span><span style=color:#f92672>(</span>String message<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+       StringBuffer sb <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> StringBuffer<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;{\&#34;error\&#34;:\&#34;1\&#34;,\&#34;message\&#34;:\&#34;&#34;</span><span style=color:#f92672>);</span>
+       sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>message<span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;}&#34;</span><span style=color:#f92672>);</span>
+       <span style=color:#66d9ef>return</span> sb<span style=color:#f92672>.</span><span style=color:#a6e22e>toString</span><span style=color:#f92672>();</span>
+   <span style=color:#f92672>}</span>
+   
+   <span style=color:#75715e>/**
+</span><span style=color:#75715e>    * 输出插入图片至编辑器语句的脚本
+</span><span style=color:#75715e>    * 
+</span><span style=color:#75715e>    * @param id        编辑器ID
+</span><span style=color:#75715e>    * 
+</span><span style=color:#75715e>    * @param saveUrl   上传图片的浏览地址
+</span><span style=color:#75715e>    * 
+</span><span style=color:#75715e>    * @param imgTitle   图片的提示信息
+</span><span style=color:#75715e>    * 
+</span><span style=color:#75715e>    * @param imgWidth   设置图片的宽度
+</span><span style=color:#75715e>    * 
+</span><span style=color:#75715e>    * @param imgHeight  设置图片的宽度
+</span><span style=color:#75715e>    * 
+</span><span style=color:#75715e>    * @param imgBorder  设置图片的边框
+</span><span style=color:#75715e>    * 
+</span><span style=color:#75715e>    * @return 插入图片至编辑器的脚本语句
+</span><span style=color:#75715e>    */</span>
+   <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>insertEditor</span><span style=color:#f92672>(</span>String id<span style=color:#f92672>,</span> String saveUrl<span style=color:#f92672>,</span> String imgTitle<span style=color:#f92672>,</span> 
+           <span style=color:#66d9ef>int</span> imgWidth<span style=color:#f92672>,</span> <span style=color:#66d9ef>int</span> imgHeight<span style=color:#f92672>,</span> String imgBorder<span style=color:#f92672>){</span>
+       StringBuffer sb <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> StringBuffer<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;&lt;script type\&#34;text/javascript\&#34;&gt;&#34;</span><span style=color:#f92672>);</span>
+       sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;parent.KE.plugin[\&#34;image\&#34;].insert(\&#34;&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>id<span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;,\&#34;&#34;</span><span style=color:#f92672>);</span>
+       sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>saveUrl<span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;,\&#34;&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>imgTitle<span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;,\&#34;&#34;</span><span style=color:#f92672>);</span>
+       sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>imgWidth<span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;,\&#34;&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>imgHeight<span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;,\&#34;&#34;</span><span style=color:#f92672>);</span>
+       sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>imgBorder<span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;);&#34;</span><span style=color:#f92672>);</span>
+       sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;&lt;/script&gt;&#34;</span><span style=color:#f92672>);</span>
+       <span style=color:#66d9ef>return</span> sb<span style=color:#f92672>.</span><span style=color:#a6e22e>toString</span><span style=color:#f92672>();</span>
+   <span style=color:#f92672>}</span>
+   
+   <span style=color:#75715e>/**
+</span><span style=color:#75715e>    * 输出允许上传图片类型的数组
+</span><span style=color:#75715e>    * 
+</span><span style=color:#75715e>    * @param filesType 允许上传的图片类型
+</span><span style=color:#75715e>    * 
+</span><span style=color:#75715e>    * @return 允许上传图片类型
+</span><span style=color:#75715e>    */</span>
+   <span style=color:#66d9ef>public</span> String<span style=color:#f92672>[]</span> <span style=color:#a6e22e>toArray</span><span style=color:#f92672>(</span>String filesType<span style=color:#f92672>){</span>
+       
+       <span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>filesType <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>){</span>
+           <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>;</span>
+       <span style=color:#f92672>}</span>
+           
+       String<span style=color:#f92672>[]</span> types <span style=color:#f92672>=</span> filesType<span style=color:#f92672>.</span><span style=color:#a6e22e>split</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;,&#34;</span><span style=color:#f92672>);</span>
+       String<span style=color:#f92672>[]</span> allowTypes <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> String<span style=color:#f92672>[</span>types<span style=color:#f92672>.</span><span style=color:#a6e22e>length</span><span style=color:#f92672>];</span>
+       <span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> 0<span style=color:#f92672>;</span>
+       <span style=color:#66d9ef>for</span><span style=color:#f92672>(</span>String type <span style=color:#f92672>:</span> types<span style=color:#f92672>){</span>
+           allowTypes<span style=color:#f92672>[</span>i<span style=color:#f92672>]</span> <span style=color:#f92672>=</span> type<span style=color:#f92672>;</span>
+           i<span style=color:#f92672>++;</span>
+       <span style=color:#f92672>}</span>
+       
+       <span style=color:#66d9ef>return</span> allowTypes<span style=color:#f92672>;</span>
+   <span style=color:#f92672>}</span>
+<span style=color:#f92672>}</span>
+
+</code></pre></div><ul><li>上传图片管理代码</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>
+<span style=color:#f92672>package</span> com.elkan.kindeditor.upload<span style=color:#f92672>;</span>
+
+<span style=color:#f92672>import</span> java.io.File<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.io.IOException<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.io.PrintWriter<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.text.SimpleDateFormat<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.util.ArrayList<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.util.Arrays<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.util.Collections<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.util.Comparator<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.util.Hashtable<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.util.List<span style=color:#f92672>;</span>
+
+<span style=color:#f92672>import</span> javax.servlet.ServletException<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> javax.servlet.http.HttpServlet<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> javax.servlet.http.HttpServletRequest<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> javax.servlet.http.HttpServletResponse<span style=color:#f92672>;</span>
+
+<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>UploadImageManager</span> <span style=color:#66d9ef>extends</span> HttpServlet <span style=color:#f92672>{</span>
+
+   <span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> <span style=color:#66d9ef>long</span> serialVersionUID <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>8359652838938248988L<span style=color:#f92672>;</span>
+   <span style=color:#75715e>// 定义允许上传的图片的扩展名
+</span><span style=color:#75715e></span>   <span style=color:#66d9ef>protected</span> String<span style=color:#f92672>[]</span> FILETYPES <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> String<span style=color:#f92672>[]</span> <span style=color:#f92672>{</span> <span style=color:#e6db74>&#34;gif&#34;</span><span style=color:#f92672>,</span> <span style=color:#e6db74>&#34;jpg&#34;</span><span style=color:#f92672>,</span> <span style=color:#e6db74>&#34;jpeg&#34;</span><span style=color:#f92672>,</span> <span style=color:#e6db74>&#34;png&#34;</span><span style=color:#f92672>,</span> <span style=color:#e6db74>&#34;bmp&#34;</span> <span style=color:#f92672>};</span>
+   <span style=color:#75715e>// 定义上传图片保存目录路径
+</span><span style=color:#75715e></span>   <span style=color:#66d9ef>protected</span> String UPLOAD_PATH <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>;</span>
+
+   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>doGet</span><span style=color:#f92672>(</span>HttpServletRequest request<span style=color:#f92672>,</span> HttpServletResponse response<span style=color:#f92672>)</span>
+           <span style=color:#66d9ef>throws</span> ServletException<span style=color:#f92672>,</span> IOException <span style=color:#f92672>{</span>
+       response<span style=color:#f92672>.</span><span style=color:#a6e22e>setContentType</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;text/html; charset=UTF-8&#34;</span><span style=color:#f92672>);</span>
+       PrintWriter out <span style=color:#f92672>=</span> response<span style=color:#f92672>.</span><span style=color:#a6e22e>getWriter</span><span style=color:#f92672>();</span>
+       String savePath <span style=color:#f92672>=</span> <span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>getInitParameter</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;UPLOAD_PATH&#34;</span><span style=color:#f92672>);</span>
+       <span style=color:#66d9ef>if</span> <span style=color:#f92672>(</span>savePath <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>||</span> savePath<span style=color:#f92672>.</span><span style=color:#a6e22e>isEmpty</span><span style=color:#f92672>())</span> <span style=color:#f92672>{</span>
+           out<span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span>alertMsg<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;你还没设置读取上传图片保存的目录路径!&#34;</span><span style=color:#f92672>));</span>
+           <span style=color:#66d9ef>return</span><span style=color:#f92672>;</span>
+       <span style=color:#f92672>}</span>
+       <span style=color:#75715e>// 图片保存目录路径
+</span><span style=color:#75715e></span>       String rootPath <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> StringBuffer<span style=color:#f92672>(</span>request<span style=color:#f92672>.</span><span style=color:#a6e22e>getSession</span><span style=color:#f92672>().</span><span style=color:#a6e22e>getServletContext</span><span style=color:#f92672>().</span><span style=color:#a6e22e>getRealPath</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;/&#34;</span><span style=color:#f92672>)).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>savePath<span style=color:#f92672>).</span><span style=color:#a6e22e>toString</span><span style=color:#f92672>();</span>		
+       <span style=color:#75715e>// 图片保存目录URL
+</span><span style=color:#75715e></span>       String rootUrl <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> StringBuffer<span style=color:#f92672>(</span>request<span style=color:#f92672>.</span><span style=color:#a6e22e>getContextPath</span><span style=color:#f92672>()).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;/&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>savePath<span style=color:#f92672>).</span><span style=color:#a6e22e>toString</span><span style=color:#f92672>();</span>
+       <span style=color:#75715e>//根据path参数，设置各路径和URL
+</span><span style=color:#75715e></span>       String path <span style=color:#f92672>=</span> request<span style=color:#f92672>.</span><span style=color:#a6e22e>getParameter</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;path&#34;</span><span style=color:#f92672>)</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>?</span> request<span style=color:#f92672>.</span><span style=color:#a6e22e>getParameter</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;path&#34;</span><span style=color:#f92672>)</span> <span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>;</span>
+       String currentPath <span style=color:#f92672>=</span> rootPath <span style=color:#f92672>+</span> path<span style=color:#f92672>;</span>
+       String currentUrl <span style=color:#f92672>=</span> rootUrl <span style=color:#f92672>+</span> path<span style=color:#f92672>;</span>
+       String currentDirPath <span style=color:#f92672>=</span> path<span style=color:#f92672>;</span>
+       String moveupDirPath <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>;</span>
+       
+       <span style=color:#66d9ef>if</span> <span style=color:#f92672>(!</span><span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>.</span><span style=color:#a6e22e>equals</span><span style=color:#f92672>(</span>path<span style=color:#f92672>))</span> <span style=color:#f92672>{</span>
+           String str <span style=color:#f92672>=</span> currentDirPath<span style=color:#f92672>.</span><span style=color:#a6e22e>substring</span><span style=color:#f92672>(</span>0<span style=color:#f92672>,</span> currentDirPath<span style=color:#f92672>.</span><span style=color:#a6e22e>length</span><span style=color:#f92672>()</span> <span style=color:#f92672>-</span> 1<span style=color:#f92672>);</span>
+           moveupDirPath <span style=color:#f92672>=</span> str<span style=color:#f92672>.</span><span style=color:#a6e22e>lastIndexOf</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;/&#34;</span><span style=color:#f92672>)</span> <span style=color:#f92672>&gt;=</span> 0 <span style=color:#f92672>?</span> str<span style=color:#f92672>.</span><span style=color:#a6e22e>substring</span><span style=color:#f92672>(</span>0<span style=color:#f92672>,</span> str<span style=color:#f92672>.</span><span style=color:#a6e22e>lastIndexOf</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;/&#34;</span><span style=color:#f92672>)</span> <span style=color:#f92672>+</span> 1<span style=color:#f92672>)</span> <span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>;</span>
+       <span style=color:#f92672>}</span>
+
+       <span style=color:#75715e>//排序形式，name or size or type
+</span><span style=color:#75715e></span>       String order <span style=color:#f92672>=</span> request<span style=color:#f92672>.</span><span style=color:#a6e22e>getParameter</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;order&#34;</span><span style=color:#f92672>)</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>?</span> request<span style=color:#f92672>.</span><span style=color:#a6e22e>getParameter</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;order&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>toLowerCase</span><span style=color:#f92672>()</span> <span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;name&#34;</span><span style=color:#f92672>;</span>
+
+       <span style=color:#75715e>//不允许使用..移动到上一级目录
+</span><span style=color:#75715e></span>       <span style=color:#66d9ef>if</span> <span style=color:#f92672>(</span>path<span style=color:#f92672>.</span><span style=color:#a6e22e>indexOf</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;..&#34;</span><span style=color:#f92672>)</span> <span style=color:#f92672>&gt;=</span> 0<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+           out<span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span>alertMsg<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;不允许使用移动到上一级目录&#34;</span><span style=color:#f92672>));</span>
+           <span style=color:#66d9ef>return</span><span style=color:#f92672>;</span>
+       <span style=color:#f92672>}</span>
+       
+       <span style=color:#75715e>//最后一个字符不是/
+</span><span style=color:#75715e></span>       <span style=color:#66d9ef>if</span> <span style=color:#f92672>(!</span><span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>.</span><span style=color:#a6e22e>equals</span><span style=color:#f92672>(</span>path<span style=color:#f92672>)</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#f92672>!</span>path<span style=color:#f92672>.</span><span style=color:#a6e22e>endsWith</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;/&#34;</span><span style=color:#f92672>))</span> <span style=color:#f92672>{</span>
+           out<span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Parameter is not valid.&#34;</span><span style=color:#f92672>);</span>
+           <span style=color:#66d9ef>return</span><span style=color:#f92672>;</span>
+       <span style=color:#f92672>}</span>
+       <span style=color:#75715e>//目录不存在或不是目录
+</span><span style=color:#75715e></span>       File currentPathFile <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> File<span style=color:#f92672>(</span>currentPath<span style=color:#f92672>);</span>
+       <span style=color:#66d9ef>if</span><span style=color:#f92672>(!</span>currentPathFile<span style=color:#f92672>.</span><span style=color:#a6e22e>isDirectory</span><span style=color:#f92672>()){</span>
+           out<span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Directory does not exist.&#34;</span><span style=color:#f92672>);</span>
+           <span style=color:#66d9ef>return</span><span style=color:#f92672>;</span>
+       <span style=color:#f92672>}</span>
+
+       <span style=color:#75715e>//遍历目录取的文件信息
+</span><span style=color:#75715e></span>       List<span style=color:#f92672>&lt;</span>Hashtable<span style=color:#f92672>&lt;?,?&gt;&gt;</span> fileList <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> ArrayList<span style=color:#f92672>&lt;</span>Hashtable<span style=color:#f92672>&lt;?,?&gt;&gt;();</span>
+       <span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>currentPathFile<span style=color:#f92672>.</span><span style=color:#a6e22e>listFiles</span><span style=color:#f92672>()</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+           <span style=color:#66d9ef>for</span> <span style=color:#f92672>(</span>File file <span style=color:#f92672>:</span> currentPathFile<span style=color:#f92672>.</span><span style=color:#a6e22e>listFiles</span><span style=color:#f92672>())</span> <span style=color:#f92672>{</span>
+               Hashtable<span style=color:#f92672>&lt;</span>String<span style=color:#f92672>,</span> Object<span style=color:#f92672>&gt;</span> hash <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Hashtable<span style=color:#f92672>&lt;</span>String<span style=color:#f92672>,</span> Object<span style=color:#f92672>&gt;();</span>
+               String fileName <span style=color:#f92672>=</span> file<span style=color:#f92672>.</span><span style=color:#a6e22e>getName</span><span style=color:#f92672>();</span>
+               <span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>file<span style=color:#f92672>.</span><span style=color:#a6e22e>isDirectory</span><span style=color:#f92672>())</span> <span style=color:#f92672>{</span>
+                   hash<span style=color:#f92672>.</span><span style=color:#a6e22e>put</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;is_dir&#34;</span><span style=color:#f92672>,</span> <span style=color:#66d9ef>true</span><span style=color:#f92672>);</span>
+                   hash<span style=color:#f92672>.</span><span style=color:#a6e22e>put</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;has_file&#34;</span><span style=color:#f92672>,</span> <span style=color:#f92672>(</span>file<span style=color:#f92672>.</span><span style=color:#a6e22e>listFiles</span><span style=color:#f92672>()</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>));</span>
+                   hash<span style=color:#f92672>.</span><span style=color:#a6e22e>put</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;filesize&#34;</span><span style=color:#f92672>,</span> 0L<span style=color:#f92672>);</span>
+                   hash<span style=color:#f92672>.</span><span style=color:#a6e22e>put</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;is_photo&#34;</span><span style=color:#f92672>,</span> <span style=color:#66d9ef>false</span><span style=color:#f92672>);</span>
+                   hash<span style=color:#f92672>.</span><span style=color:#a6e22e>put</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;filetype&#34;</span><span style=color:#f92672>,</span> <span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>);</span>
+               <span style=color:#f92672>}</span> <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>file<span style=color:#f92672>.</span><span style=color:#a6e22e>isFile</span><span style=color:#f92672>()){</span>
+                   String fileExt <span style=color:#f92672>=</span> fileName<span style=color:#f92672>.</span><span style=color:#a6e22e>substring</span><span style=color:#f92672>(</span>fileName<span style=color:#f92672>.</span><span style=color:#a6e22e>lastIndexOf</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;.&#34;</span><span style=color:#f92672>)</span> <span style=color:#f92672>+</span> 1<span style=color:#f92672>).</span><span style=color:#a6e22e>toLowerCase</span><span style=color:#f92672>();</span>
+                   hash<span style=color:#f92672>.</span><span style=color:#a6e22e>put</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;is_dir&#34;</span><span style=color:#f92672>,</span> <span style=color:#66d9ef>false</span><span style=color:#f92672>);</span>
+                   hash<span style=color:#f92672>.</span><span style=color:#a6e22e>put</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;has_file&#34;</span><span style=color:#f92672>,</span> <span style=color:#66d9ef>false</span><span style=color:#f92672>);</span>
+                   hash<span style=color:#f92672>.</span><span style=color:#a6e22e>put</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;filesize&#34;</span><span style=color:#f92672>,</span> file<span style=color:#f92672>.</span><span style=color:#a6e22e>length</span><span style=color:#f92672>());</span>
+                   hash<span style=color:#f92672>.</span><span style=color:#a6e22e>put</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;is_photo&#34;</span><span style=color:#f92672>,</span> Arrays<span style=color:#f92672>.&lt;</span>String<span style=color:#f92672>&gt;</span>asList<span style=color:#f92672>(</span>FILETYPES<span style=color:#f92672>).</span><span style=color:#a6e22e>contains</span><span style=color:#f92672>(</span>fileExt<span style=color:#f92672>));</span>
+                   hash<span style=color:#f92672>.</span><span style=color:#a6e22e>put</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;filetype&#34;</span><span style=color:#f92672>,</span> fileExt<span style=color:#f92672>);</span>
+               <span style=color:#f92672>}</span>
+               hash<span style=color:#f92672>.</span><span style=color:#a6e22e>put</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;filename&#34;</span><span style=color:#f92672>,</span> fileName<span style=color:#f92672>);</span>
+               hash<span style=color:#f92672>.</span><span style=color:#a6e22e>put</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;datetime&#34;</span><span style=color:#f92672>,</span> <span style=color:#66d9ef>new</span> SimpleDateFormat<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;yyyy-MM-dd HH:mm:ss&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>format</span><span style=color:#f92672>(</span>file<span style=color:#f92672>.</span><span style=color:#a6e22e>lastModified</span><span style=color:#f92672>()));</span>
+               fileList<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span>hash<span style=color:#f92672>);</span>
+           <span style=color:#f92672>}</span>
+       <span style=color:#f92672>}</span>
+
+       <span style=color:#66d9ef>if</span> <span style=color:#f92672>(</span><span style=color:#e6db74>&#34;size&#34;</span><span style=color:#f92672>.</span><span style=color:#a6e22e>equals</span><span style=color:#f92672>(</span>order<span style=color:#f92672>))</span> <span style=color:#f92672>{</span>
+           Collections<span style=color:#f92672>.</span><span style=color:#a6e22e>sort</span><span style=color:#f92672>(</span>fileList<span style=color:#f92672>,</span> <span style=color:#66d9ef>new</span> SizeComparator<span style=color:#f92672>());</span>
+       <span style=color:#f92672>}</span> <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> <span style=color:#f92672>(</span><span style=color:#e6db74>&#34;type&#34;</span><span style=color:#f92672>.</span><span style=color:#a6e22e>equals</span><span style=color:#f92672>(</span>order<span style=color:#f92672>))</span> <span style=color:#f92672>{</span>
+           Collections<span style=color:#f92672>.</span><span style=color:#a6e22e>sort</span><span style=color:#f92672>(</span>fileList<span style=color:#f92672>,</span> <span style=color:#66d9ef>new</span> TypeComparator<span style=color:#f92672>());</span>
+       <span style=color:#f92672>}</span> <span style=color:#66d9ef>else</span> <span style=color:#f92672>{</span>
+           Collections<span style=color:#f92672>.</span><span style=color:#a6e22e>sort</span><span style=color:#f92672>(</span>fileList<span style=color:#f92672>,</span> <span style=color:#66d9ef>new</span> NameComparator<span style=color:#f92672>());</span>
+       <span style=color:#f92672>}</span>
+       
+       out<span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span>toJSONString<span style=color:#f92672>(</span>currentUrl<span style=color:#f92672>,</span> currentDirPath<span style=color:#f92672>,</span> moveupDirPath<span style=color:#f92672>,</span> fileList<span style=color:#f92672>));</span>
+       
+       out<span style=color:#f92672>.</span><span style=color:#a6e22e>flush</span><span style=color:#f92672>();</span>
+       out<span style=color:#f92672>.</span><span style=color:#a6e22e>close</span><span style=color:#f92672>();</span>
+   <span style=color:#f92672>}</span>
+
+   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>doPost</span><span style=color:#f92672>(</span>HttpServletRequest request<span style=color:#f92672>,</span> HttpServletResponse response<span style=color:#f92672>)</span>
+           <span style=color:#66d9ef>throws</span> ServletException<span style=color:#f92672>,</span> IOException <span style=color:#f92672>{</span>
+       doGet<span style=color:#f92672>(</span>request<span style=color:#f92672>,</span> response<span style=color:#f92672>);</span>
+   <span style=color:#f92672>}</span>
+   
+   <span style=color:#75715e>/**
+</span><span style=color:#75715e>    * 输出打印上传失败语句的脚本
+</span><span style=color:#75715e>    * 
+</span><span style=color:#75715e>    * @param message    失败信息
+</span><span style=color:#75715e>    * 
+</span><span style=color:#75715e>    * @return 页面打印的脚本语句
+</span><span style=color:#75715e>    */</span>
+   <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>alertMsg</span><span style=color:#f92672>(</span>String message<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+       StringBuffer sb <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> StringBuffer<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;&lt;script type\&#34;text/javascript\&#34;&gt;&#34;</span><span style=color:#f92672>);</span>
+       sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;alert(\&#34;&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>message<span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;);&#34;</span><span style=color:#f92672>);</span>
+       sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;&lt;/script&gt;&#34;</span><span style=color:#f92672>);</span>
+       <span style=color:#66d9ef>return</span> sb<span style=color:#f92672>.</span><span style=color:#a6e22e>toString</span><span style=color:#f92672>();</span>
+   <span style=color:#f92672>}</span>
+   
+   <span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>toJSONString</span><span style=color:#f92672>(</span>String currentUrl<span style=color:#f92672>,</span> String currentDirPath<span style=color:#f92672>,</span> String moveupDirPath<span style=color:#f92672>,</span> List<span style=color:#f92672>&lt;</span>Hashtable<span style=color:#f92672>&lt;?,</span> <span style=color:#f92672>?&gt;&gt;</span> fileList<span style=color:#f92672>){</span>
+       StringBuilder sb <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> StringBuilder<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;{\&#34;current_url\&#34;:\&#34;&#34;</span><span style=color:#f92672>);</span>
+       sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>currentUrl<span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;,&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;current_dir_path\&#34;:\&#34;&#34;</span><span style=color:#f92672>);</span>
+       sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>currentDirPath<span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;,\&#34;moveup_dir_path\&#34;:\&#34;&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>moveupDirPath<span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;,&#34;</span><span style=color:#f92672>);</span>
+       sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;file_list\&#34;:[&#34;</span><span style=color:#f92672>);</span>
+       <span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> 0<span style=color:#f92672>;</span>
+       sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;{&#34;</span><span style=color:#f92672>);</span>
+       <span style=color:#66d9ef>for</span><span style=color:#f92672>(</span>Hashtable<span style=color:#f92672>&lt;?,?&gt;</span> he <span style=color:#f92672>:</span> fileList<span style=color:#f92672>){</span>	
+           <span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>i <span style=color:#f92672>!=</span> <span style=color:#f92672>(</span>fileList<span style=color:#f92672>.</span><span style=color:#a6e22e>size</span><span style=color:#f92672>()</span> <span style=color:#f92672>-</span> 1<span style=color:#f92672>)){</span>
+               sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;filename\&#34;:\&#34;&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>he<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;filename&#34;</span><span style=color:#f92672>)).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;,&#34;</span><span style=color:#f92672>);</span>
+               sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;filesize\&#34;:&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>he<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;filesize&#34;</span><span style=color:#f92672>)).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;,&#34;</span><span style=color:#f92672>);</span>
+               sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;filetype\&#34;:\&#34;&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>he<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;filetype&#34;</span><span style=color:#f92672>)).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;,&#34;</span><span style=color:#f92672>);</span>
+               sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;has_file\&#34;:&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>he<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;has_file&#34;</span><span style=color:#f92672>)).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;,&#34;</span><span style=color:#f92672>);</span>
+               sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;is_dir\&#34;:&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>he<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;is_dir&#34;</span><span style=color:#f92672>)).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;,&#34;</span><span style=color:#f92672>);</span>
+               sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;is_photo\&#34;:&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>he<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;is_photo&#34;</span><span style=color:#f92672>)).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;,&#34;</span><span style=color:#f92672>);</span>
+               sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;datetime\&#34;:\&#34;&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>he<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;datetime&#34;</span><span style=color:#f92672>)).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;&#34;</span><span style=color:#f92672>);</span>
+               sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;},{&#34;</span><span style=color:#f92672>);</span>
+           <span style=color:#f92672>}</span><span style=color:#66d9ef>else</span><span style=color:#f92672>{</span>
+               sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;filename\&#34;:\&#34;&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>he<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;filename&#34;</span><span style=color:#f92672>)).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;,&#34;</span><span style=color:#f92672>);</span>
+               sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;filesize\&#34;:&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>he<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;filesize&#34;</span><span style=color:#f92672>)).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;,&#34;</span><span style=color:#f92672>);</span>
+               sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;filetype\&#34;:\&#34;&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>he<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;filetype&#34;</span><span style=color:#f92672>)).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;,&#34;</span><span style=color:#f92672>);</span>
+               sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;has_file\&#34;:&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>he<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;has_file&#34;</span><span style=color:#f92672>)).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;,&#34;</span><span style=color:#f92672>);</span>
+               sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;is_dir\&#34;:&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>he<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;is_dir&#34;</span><span style=color:#f92672>)).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;,&#34;</span><span style=color:#f92672>);</span>
+               sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;is_photo\&#34;:&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>he<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;is_photo&#34;</span><span style=color:#f92672>)).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;,&#34;</span><span style=color:#f92672>);</span>
+               sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;datetime\&#34;:\&#34;&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>he<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;datetime&#34;</span><span style=color:#f92672>)).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;&#34;</span><span style=color:#f92672>);</span>
+               sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;}&#34;</span><span style=color:#f92672>);</span>
+           <span style=color:#f92672>}</span>
+           i<span style=color:#f92672>++;</span>
+       <span style=color:#f92672>}</span>
+       i <span style=color:#f92672>=</span> 0<span style=color:#f92672>;</span>
+       sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;],\&#34;total_count\&#34;:&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>fileList<span style=color:#f92672>.</span><span style=color:#a6e22e>size</span><span style=color:#f92672>()).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;}&#34;</span><span style=color:#f92672>);</span>
+       <span style=color:#66d9ef>return</span> sb<span style=color:#f92672>.</span><span style=color:#a6e22e>toString</span><span style=color:#f92672>();</span>
+   <span style=color:#f92672>}</span>
+
+   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>NameComparator</span> <span style=color:#66d9ef>implements</span> Comparator<span style=color:#f92672>&lt;</span>Object<span style=color:#f92672>&gt;</span> <span style=color:#f92672>{</span>
+       <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>int</span> <span style=color:#a6e22e>compare</span><span style=color:#f92672>(</span>Object a<span style=color:#f92672>,</span> Object b<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+           Hashtable<span style=color:#f92672>&lt;?,</span> <span style=color:#f92672>?&gt;</span> hashA <span style=color:#f92672>=</span> <span style=color:#f92672>(</span>Hashtable<span style=color:#f92672>&lt;?,</span> <span style=color:#f92672>?&gt;)</span> a<span style=color:#f92672>;</span>
+           Hashtable<span style=color:#f92672>&lt;?,</span> <span style=color:#f92672>?&gt;</span> hashB <span style=color:#f92672>=</span> <span style=color:#f92672>(</span>Hashtable<span style=color:#f92672>&lt;?,</span> <span style=color:#f92672>?&gt;)</span> b<span style=color:#f92672>;</span>
+           <span style=color:#66d9ef>if</span> <span style=color:#f92672>(((</span>Boolean<span style=color:#f92672>)</span> hashA<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;is_dir&#34;</span><span style=color:#f92672>))</span>
+                   <span style=color:#f92672>&amp;&amp;</span> <span style=color:#f92672>!((</span>Boolean<span style=color:#f92672>)</span> hashB<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;is_dir&#34;</span><span style=color:#f92672>)))</span> <span style=color:#f92672>{</span>
+               <span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span>1<span style=color:#f92672>;</span>
+           <span style=color:#f92672>}</span> <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> <span style=color:#f92672>(!((</span>Boolean<span style=color:#f92672>)</span> hashA<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;is_dir&#34;</span><span style=color:#f92672>))</span>
+                   <span style=color:#f92672>&amp;&amp;</span> <span style=color:#f92672>((</span>Boolean<span style=color:#f92672>)</span> hashB<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;is_dir&#34;</span><span style=color:#f92672>)))</span> <span style=color:#f92672>{</span>
+               <span style=color:#66d9ef>return</span> 1<span style=color:#f92672>;</span>
+           <span style=color:#f92672>}</span> <span style=color:#66d9ef>else</span> <span style=color:#f92672>{</span>
+               <span style=color:#66d9ef>return</span> <span style=color:#f92672>((</span>String<span style=color:#f92672>)</span> hashA<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;filename&#34;</span><span style=color:#f92672>)).</span><span style=color:#a6e22e>compareTo</span><span style=color:#f92672>((</span>String<span style=color:#f92672>)</span> hashB<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;filename&#34;</span><span style=color:#f92672>));</span>
+           <span style=color:#f92672>}</span>
+       <span style=color:#f92672>}</span>
+   <span style=color:#f92672>}</span>
+
+   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>SizeComparator</span> <span style=color:#66d9ef>implements</span> Comparator<span style=color:#f92672>&lt;</span>Object<span style=color:#f92672>&gt;</span> <span style=color:#f92672>{</span>
+       <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>int</span> <span style=color:#a6e22e>compare</span><span style=color:#f92672>(</span>Object a<span style=color:#f92672>,</span> Object b<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+           Hashtable<span style=color:#f92672>&lt;?,</span> <span style=color:#f92672>?&gt;</span> hashA <span style=color:#f92672>=</span> <span style=color:#f92672>(</span>Hashtable<span style=color:#f92672>&lt;?,</span> <span style=color:#f92672>?&gt;)</span> a<span style=color:#f92672>;</span>
+           Hashtable<span style=color:#f92672>&lt;?,</span> <span style=color:#f92672>?&gt;</span> hashB <span style=color:#f92672>=</span> <span style=color:#f92672>(</span>Hashtable<span style=color:#f92672>&lt;?,</span> <span style=color:#f92672>?&gt;)</span> b<span style=color:#f92672>;</span>
+           <span style=color:#66d9ef>if</span> <span style=color:#f92672>(((</span>Boolean<span style=color:#f92672>)</span> hashA<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;is_dir&#34;</span><span style=color:#f92672>))</span>
+                   <span style=color:#f92672>&amp;&amp;</span> <span style=color:#f92672>!((</span>Boolean<span style=color:#f92672>)</span> hashB<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;is_dir&#34;</span><span style=color:#f92672>)))</span> <span style=color:#f92672>{</span>
+               <span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span>1<span style=color:#f92672>;</span>
+           <span style=color:#f92672>}</span> <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> <span style=color:#f92672>(!((</span>Boolean<span style=color:#f92672>)</span> hashA<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;is_dir&#34;</span><span style=color:#f92672>))</span>
+                   <span style=color:#f92672>&amp;&amp;</span> <span style=color:#f92672>((</span>Boolean<span style=color:#f92672>)</span> hashB<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;is_dir&#34;</span><span style=color:#f92672>)))</span> <span style=color:#f92672>{</span>
+               <span style=color:#66d9ef>return</span> 1<span style=color:#f92672>;</span>
+           <span style=color:#f92672>}</span> <span style=color:#66d9ef>else</span> <span style=color:#f92672>{</span>
+               <span style=color:#66d9ef>if</span> <span style=color:#f92672>(((</span>Long<span style=color:#f92672>)</span> hashA<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;filesize&#34;</span><span style=color:#f92672>))</span> <span style=color:#f92672>&gt;</span> <span style=color:#f92672>((</span>Long<span style=color:#f92672>)</span> hashB<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;filesize&#34;</span><span style=color:#f92672>)))</span> <span style=color:#f92672>{</span>
+                   <span style=color:#66d9ef>return</span> 1<span style=color:#f92672>;</span>
+               <span style=color:#f92672>}</span> <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> <span style=color:#f92672>(((</span>Long<span style=color:#f92672>)</span> hashA<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;filesize&#34;</span><span style=color:#f92672>))</span> <span style=color:#f92672>&lt;</span> <span style=color:#f92672>((</span>Long<span style=color:#f92672>)</span> hashB<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;filesize&#34;</span><span style=color:#f92672>)))</span> <span style=color:#f92672>{</span>
+                   <span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span>1<span style=color:#f92672>;</span>
+               <span style=color:#f92672>}</span> <span style=color:#66d9ef>else</span> <span style=color:#f92672>{</span>
+                   <span style=color:#66d9ef>return</span> 0<span style=color:#f92672>;</span>
+               <span style=color:#f92672>}</span>
+           <span style=color:#f92672>}</span>
+       <span style=color:#f92672>}</span>
+   <span style=color:#f92672>}</span>
+
+   <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>TypeComparator</span> <span style=color:#66d9ef>implements</span> Comparator<span style=color:#f92672>&lt;</span>Object<span style=color:#f92672>&gt;</span> <span style=color:#f92672>{</span>
+       <span style=color:#66d9ef>public</span> <span style=color:#66d9ef>int</span> <span style=color:#a6e22e>compare</span><span style=color:#f92672>(</span>Object a<span style=color:#f92672>,</span> Object b<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+           Hashtable<span style=color:#f92672>&lt;?,</span> <span style=color:#f92672>?&gt;</span> hashA <span style=color:#f92672>=</span> <span style=color:#f92672>(</span>Hashtable<span style=color:#f92672>&lt;?,</span> <span style=color:#f92672>?&gt;)</span> a<span style=color:#f92672>;</span>
+           Hashtable<span style=color:#f92672>&lt;?,</span> <span style=color:#f92672>?&gt;</span> hashB <span style=color:#f92672>=</span> <span style=color:#f92672>(</span>Hashtable<span style=color:#f92672>&lt;?,</span> <span style=color:#f92672>?&gt;)</span> b<span style=color:#f92672>;</span>
+           <span style=color:#66d9ef>if</span> <span style=color:#f92672>(((</span>Boolean<span style=color:#f92672>)</span> hashA<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;is_dir&#34;</span><span style=color:#f92672>))</span>
+                   <span style=color:#f92672>&amp;&amp;</span> <span style=color:#f92672>!((</span>Boolean<span style=color:#f92672>)</span> hashB<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;is_dir&#34;</span><span style=color:#f92672>)))</span> <span style=color:#f92672>{</span>
+               <span style=color:#66d9ef>return</span> <span style=color:#f92672>-</span>1<span style=color:#f92672>;</span>
+           <span style=color:#f92672>}</span> <span style=color:#66d9ef>else</span> <span style=color:#66d9ef>if</span> <span style=color:#f92672>(!((</span>Boolean<span style=color:#f92672>)</span> hashA<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;is_dir&#34;</span><span style=color:#f92672>))</span>
+                   <span style=color:#f92672>&amp;&amp;</span> <span style=color:#f92672>((</span>Boolean<span style=color:#f92672>)</span> hashB<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;is_dir&#34;</span><span style=color:#f92672>)))</span> <span style=color:#f92672>{</span>
+               <span style=color:#66d9ef>return</span> 1<span style=color:#f92672>;</span>
+           <span style=color:#f92672>}</span> <span style=color:#66d9ef>else</span> <span style=color:#f92672>{</span>
+               <span style=color:#66d9ef>return</span> <span style=color:#f92672>((</span>String<span style=color:#f92672>)</span> hashA<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;filetype&#34;</span><span style=color:#f92672>)).</span><span style=color:#a6e22e>compareTo</span><span style=color:#f92672>((</span>String<span style=color:#f92672>)</span> hashB<span style=color:#f92672>.</span><span style=color:#a6e22e>get</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;filetype&#34;</span><span style=color:#f92672>));</span>
+           <span style=color:#f92672>}</span>
+       <span style=color:#f92672>}</span>
+   <span style=color:#f92672>}</span>
+
+<span style=color:#f92672>}</span>
+
+</code></pre></div><ul><li>附件上传代码</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>
+<span style=color:#f92672>package</span> com.elkan.kindeditor.upload<span style=color:#f92672>;</span>
+
+<span style=color:#f92672>import</span> java.io.File<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.io.IOException<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.io.PrintWriter<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.text.SimpleDateFormat<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.util.Arrays<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.util.Date<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.util.Iterator<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.util.List<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.util.Random<span style=color:#f92672>;</span>
+
+<span style=color:#f92672>import</span> javax.servlet.ServletException<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> javax.servlet.http.HttpServlet<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> javax.servlet.http.HttpServletRequest<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> javax.servlet.http.HttpServletResponse<span style=color:#f92672>;</span>
+
+<span style=color:#f92672>import</span> org.apache.commons.fileupload.FileItem<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> org.apache.commons.fileupload.FileItemFactory<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> org.apache.commons.fileupload.disk.DiskFileItemFactory<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> org.apache.commons.fileupload.servlet.ServletFileUpload<span style=color:#f92672>;</span>
+
+<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>UploadAccessory</span> <span style=color:#66d9ef>extends</span> HttpServlet <span style=color:#f92672>{</span>
+
+	<span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> <span style=color:#66d9ef>long</span> serialVersionUID <span style=color:#f92672>=</span> 1L<span style=color:#f92672>;</span>
+
+	<span style=color:#75715e>// 上传文件的大小
+</span><span style=color:#75715e></span>	<span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>long</span> MAX_SIZE <span style=color:#f92672>=</span> 1000000<span style=color:#f92672>;</span>
+	<span style=color:#75715e>// 定义允许上传的文件的扩展名
+</span><span style=color:#75715e></span>	<span style=color:#66d9ef>protected</span> String<span style=color:#f92672>[]</span> FILETYPES <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> String<span style=color:#f92672>[]{</span><span style=color:#e6db74>&#34;doc&#34;</span><span style=color:#f92672>,</span> <span style=color:#e6db74>&#34;xls&#34;</span><span style=color:#f92672>,</span> <span style=color:#e6db74>&#34;ppt&#34;</span><span style=color:#f92672>,</span> <span style=color:#e6db74>&#34;pdf&#34;</span><span style=color:#f92672>,</span> <span style=color:#e6db74>&#34;txt&#34;</span><span style=color:#f92672>,</span> <span style=color:#e6db74>&#34;rar&#34;</span> <span style=color:#f92672>,</span> <span style=color:#e6db74>&#34;zip&#34;</span><span style=color:#f92672>};</span>
+	<span style=color:#75715e>// 定义上传文件保存目录路径
+</span><span style=color:#75715e></span>	<span style=color:#66d9ef>protected</span> String UPLOAD_PATH <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>;</span>
+	
+	<span style=color:#66d9ef>protected</span> String id <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>;</span>  
+
+	<span style=color:#66d9ef>protected</span> String attachTitle <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>;</span> 
+
+	<span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>boolean</span> isFlag <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span><span style=color:#f92672>;</span>
+
+	<span style=color:#66d9ef>protected</span> String tempTitle <span style=color:#f92672>=</span> <span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>;</span>
+
+
+	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>doGet</span><span style=color:#f92672>(</span>HttpServletRequest request<span style=color:#f92672>,</span> HttpServletResponse response<span style=color:#f92672>)</span>
+	<span style=color:#66d9ef>throws</span> ServletException<span style=color:#f92672>,</span> IOException <span style=color:#f92672>{</span>
+		doPost<span style=color:#f92672>(</span>request<span style=color:#f92672>,</span> response<span style=color:#f92672>);</span>
+	<span style=color:#f92672>}</span>
+
+	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>doPost</span><span style=color:#f92672>(</span>HttpServletRequest request<span style=color:#f92672>,</span> HttpServletResponse response<span style=color:#f92672>)</span>
+	<span style=color:#66d9ef>throws</span> ServletException<span style=color:#f92672>,</span> IOException <span style=color:#f92672>{</span>
+		
+		response<span style=color:#f92672>.</span><span style=color:#a6e22e>setContentType</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;text/html; charset=UTF-8&#34;</span><span style=color:#f92672>);</span>
+		PrintWriter out <span style=color:#f92672>=</span> response<span style=color:#f92672>.</span><span style=color:#a6e22e>getWriter</span><span style=color:#f92672>();</span>
+		String savePath <span style=color:#f92672>=</span> <span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>getInitParameter</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;UPLOAD_PATH&#34;</span><span style=color:#f92672>);</span>
+		<span style=color:#66d9ef>if</span> <span style=color:#f92672>(</span>savePath <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>||</span> savePath<span style=color:#f92672>.</span><span style=color:#a6e22e>isEmpty</span><span style=color:#f92672>())</span> <span style=color:#f92672>{</span>
+			out<span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span>alertMsg<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;你还没设置上传文件保存的目录路径!&#34;</span><span style=color:#f92672>));</span>
+			<span style=color:#66d9ef>return</span><span style=color:#f92672>;</span>
+		<span style=color:#f92672>}</span>
+		<span style=color:#75715e>//判断是否设置了上传文件的大小
+</span><span style=color:#75715e></span>		<span style=color:#66d9ef>if</span><span style=color:#f92672>(</span><span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>getInitParameter</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;MAX_SIZE&#34;</span><span style=color:#f92672>)</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>){</span>
+			MAX_SIZE <span style=color:#f92672>=</span> Integer<span style=color:#f92672>.</span><span style=color:#a6e22e>parseInt</span><span style=color:#f92672>(</span><span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>getInitParameter</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;MAX_SIZE&#34;</span><span style=color:#f92672>));</span>
+		<span style=color:#f92672>}</span>
+		<span style=color:#75715e>//判断是否设置了上传文件的类型
+</span><span style=color:#75715e></span>		<span style=color:#66d9ef>if</span><span style=color:#f92672>(</span><span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>getInitParameter</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;FILETYPES&#34;</span><span style=color:#f92672>)</span> <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>){</span>
+			FILETYPES <span style=color:#f92672>=</span> toArray<span style=color:#f92672>(</span><span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>getInitParameter</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;FILETYPES&#34;</span><span style=color:#f92672>));</span>
+		<span style=color:#f92672>}</span>
+		<span style=color:#75715e>// 文件保存目录路径
+</span><span style=color:#75715e></span>		String uploadPath <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> StringBuffer<span style=color:#f92672>(</span>request<span style=color:#f92672>.</span><span style=color:#a6e22e>getSession</span><span style=color:#f92672>().</span><span style=color:#a6e22e>getServletContext</span><span style=color:#f92672>().</span><span style=color:#a6e22e>getRealPath</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;/&#34;</span><span style=color:#f92672>)).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>savePath<span style=color:#f92672>).</span><span style=color:#a6e22e>toString</span><span style=color:#f92672>();</span>
+
+		<span style=color:#75715e>// 文件保存目录URL
+</span><span style=color:#75715e></span>		String saveUrl <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> StringBuffer<span style=color:#f92672>(</span>request<span style=color:#f92672>.</span><span style=color:#a6e22e>getContextPath</span><span style=color:#f92672>()).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;/&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>savePath<span style=color:#f92672>).</span><span style=color:#a6e22e>toString</span><span style=color:#f92672>();</span>
+
+		<span style=color:#66d9ef>if</span><span style=color:#f92672>(!</span>ServletFileUpload<span style=color:#f92672>.</span><span style=color:#a6e22e>isMultipartContent</span><span style=color:#f92672>(</span>request<span style=color:#f92672>)){</span>	
+			out<span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span>alertMsg<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;请选择要上传的文件。&#34;</span><span style=color:#f92672>));</span>
+			<span style=color:#66d9ef>return</span><span style=color:#f92672>;</span>
+		<span style=color:#f92672>}</span>
+		<span style=color:#75715e>//检查目录
+</span><span style=color:#75715e></span>		File uploadDir <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> File<span style=color:#f92672>(</span>uploadPath<span style=color:#f92672>);</span>
+		<span style=color:#66d9ef>if</span><span style=color:#f92672>(!</span>uploadDir<span style=color:#f92672>.</span><span style=color:#a6e22e>isDirectory</span><span style=color:#f92672>()){</span>
+			out<span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span>alertMsg<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;上传目录不存在。&#34;</span><span style=color:#f92672>));</span>
+			<span style=color:#66d9ef>return</span><span style=color:#f92672>;</span>
+		<span style=color:#f92672>}</span>
+		<span style=color:#75715e>//检查目录写权限
+</span><span style=color:#75715e></span>		<span style=color:#66d9ef>if</span><span style=color:#f92672>(!</span>uploadDir<span style=color:#f92672>.</span><span style=color:#a6e22e>canWrite</span><span style=color:#f92672>()){</span>
+			out<span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span>alertMsg<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;当前角色对上传目录没有写权限。&#34;</span><span style=color:#f92672>));</span>
+			<span style=color:#66d9ef>return</span><span style=color:#f92672>;</span>
+		<span style=color:#f92672>}</span>
+
+		FileItemFactory factory <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> DiskFileItemFactory<span style=color:#f92672>();</span>
+		ServletFileUpload upload <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> ServletFileUpload<span style=color:#f92672>(</span>factory<span style=color:#f92672>);</span>
+		upload<span style=color:#f92672>.</span><span style=color:#a6e22e>setHeaderEncoding</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;UTF-8&#34;</span><span style=color:#f92672>);</span>
+		String temp <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>;</span>
+		String ext <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>;</span>
+		<span style=color:#66d9ef>try</span><span style=color:#f92672>{</span>
+			List<span style=color:#f92672>&lt;?&gt;</span> items <span style=color:#f92672>=</span> upload<span style=color:#f92672>.</span><span style=color:#a6e22e>parseRequest</span><span style=color:#f92672>(</span>request<span style=color:#f92672>);</span>
+			Iterator<span style=color:#f92672>&lt;?&gt;</span> itr <span style=color:#f92672>=</span> items<span style=color:#f92672>.</span><span style=color:#a6e22e>iterator</span><span style=color:#f92672>();</span>
+			<span style=color:#66d9ef>while</span> <span style=color:#f92672>(</span>itr<span style=color:#f92672>.</span><span style=color:#a6e22e>hasNext</span><span style=color:#f92672>())</span> <span style=color:#f92672>{</span>
+				FileItem item <span style=color:#f92672>=</span> <span style=color:#f92672>(</span>FileItem<span style=color:#f92672>)</span> itr<span style=color:#f92672>.</span><span style=color:#a6e22e>next</span><span style=color:#f92672>();</span>
+				String fileName <span style=color:#f92672>=</span> item<span style=color:#f92672>.</span><span style=color:#a6e22e>getName</span><span style=color:#f92672>();</span>
+				temp <span style=color:#f92672>=</span> <span style=color:#f92672>(</span>String<span style=color:#f92672>)</span> item<span style=color:#f92672>.</span><span style=color:#a6e22e>getName</span><span style=color:#f92672>();</span>
+				<span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>temp <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>&amp;&amp;</span> <span style=color:#f92672>!</span>isFlag<span style=color:#f92672>){</span>
+					temp <span style=color:#f92672>=</span> temp<span style=color:#f92672>.</span><span style=color:#a6e22e>substring</span><span style=color:#f92672>(</span>temp<span style=color:#f92672>.</span><span style=color:#a6e22e>lastIndexOf</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\\&#34;</span><span style=color:#f92672>)+</span>1<span style=color:#f92672>);</span>
+					tempTitle <span style=color:#f92672>=</span> temp<span style=color:#f92672>;</span>
+					isFlag <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span><span style=color:#f92672>;</span>
+				<span style=color:#f92672>}</span>
+				<span style=color:#75715e>// KindEditor编辑器的ID  
+</span><span style=color:#75715e></span>				<span style=color:#66d9ef>if</span><span style=color:#f92672>(((</span>String<span style=color:#f92672>)</span>item<span style=color:#f92672>.</span><span style=color:#a6e22e>getFieldName</span><span style=color:#f92672>()).</span><span style=color:#a6e22e>equals</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;id&#34;</span><span style=color:#f92672>)){</span>   
+					id <span style=color:#f92672>=</span> item<span style=color:#f92672>.</span><span style=color:#a6e22e>getString</span><span style=color:#f92672>();</span> 
+				<span style=color:#f92672>}</span>  
+				<span style=color:#75715e>// 上传图片的重新提示
+</span><span style=color:#75715e></span>				<span style=color:#66d9ef>if</span><span style=color:#f92672>(((</span>String<span style=color:#f92672>)</span>item<span style=color:#f92672>.</span><span style=color:#a6e22e>getFieldName</span><span style=color:#f92672>()).</span><span style=color:#a6e22e>equals</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;attachTitle&#34;</span><span style=color:#f92672>)){</span>   
+					attachTitle <span style=color:#f92672>=</span> item<span style=color:#f92672>.</span><span style=color:#a6e22e>getString</span><span style=color:#f92672>();</span> 
+					<span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>attachTitle <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>){</span>
+						attachTitle <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> String<span style=color:#f92672>(</span>attachTitle<span style=color:#f92672>.</span><span style=color:#a6e22e>getBytes</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;ISO8859-1&#34;</span><span style=color:#f92672>),</span><span style=color:#e6db74>&#34;UTF-8&#34;</span><span style=color:#f92672>);</span>
+					<span style=color:#f92672>}</span>
+				<span style=color:#f92672>}</span> 
+				<span style=color:#66d9ef>if</span> <span style=color:#f92672>(!</span>item<span style=color:#f92672>.</span><span style=color:#a6e22e>isFormField</span><span style=color:#f92672>())</span> <span style=color:#f92672>{</span>
+					<span style=color:#75715e>//检查文件大小
+</span><span style=color:#75715e></span>					<span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>item<span style=color:#f92672>.</span><span style=color:#a6e22e>getSize</span><span style=color:#f92672>()</span> <span style=color:#f92672>&gt;</span> MAX_SIZE<span style=color:#f92672>){</span>						
+						out<span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span>alertMsg<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;上传文件大小超过限制。&#34;</span><span style=color:#f92672>));</span>
+						<span style=color:#66d9ef>return</span><span style=color:#f92672>;</span>
+					<span style=color:#f92672>}</span>
+					<span style=color:#75715e>//检查扩展名
+</span><span style=color:#75715e></span>					String fileExt <span style=color:#f92672>=</span> fileName<span style=color:#f92672>.</span><span style=color:#a6e22e>substring</span><span style=color:#f92672>(</span>fileName<span style=color:#f92672>.</span><span style=color:#a6e22e>lastIndexOf</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;.&#34;</span><span style=color:#f92672>)</span> <span style=color:#f92672>+</span> 1<span style=color:#f92672>).</span><span style=color:#a6e22e>toLowerCase</span><span style=color:#f92672>();</span>
+					<span style=color:#66d9ef>if</span><span style=color:#f92672>(!</span>Arrays<span style=color:#f92672>.&lt;</span>String<span style=color:#f92672>&gt;</span>asList<span style=color:#f92672>(</span>FILETYPES<span style=color:#f92672>).</span><span style=color:#a6e22e>contains</span><span style=color:#f92672>(</span>fileExt<span style=color:#f92672>)){</span>
+						out<span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span>alertMsg<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;上传文件扩展名是不允许的扩展名。&#34;</span><span style=color:#f92672>));</span>
+						<span style=color:#66d9ef>return</span><span style=color:#f92672>;</span>
+					<span style=color:#f92672>}</span>
+					<span style=color:#75715e>// 根据时间创建文件夹
+</span><span style=color:#75715e></span>					SimpleDateFormat folderNameFormat <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> SimpleDateFormat<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;yyyyMMdd&#34;</span><span style=color:#f92672>);</span>
+					String realPath <span style=color:#f92672>=</span> uploadPath <span style=color:#f92672>+</span> folderNameFormat<span style=color:#f92672>.</span><span style=color:#a6e22e>format</span><span style=color:#f92672>(</span><span style=color:#66d9ef>new</span> Date<span style=color:#f92672>());</span>
+					File folder <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> File<span style=color:#f92672>(</span>realPath<span style=color:#f92672>);</span>
+					<span style=color:#66d9ef>boolean</span> flag <span style=color:#f92672>=</span> folder<span style=color:#f92672>.</span><span style=color:#a6e22e>exists</span><span style=color:#f92672>();</span>
+					<span style=color:#75715e>// 确认文件夹是否已经存在
+</span><span style=color:#75715e></span>					<span style=color:#66d9ef>if</span><span style=color:#f92672>(!</span>flag<span style=color:#f92672>){</span>
+						flag <span style=color:#f92672>=</span> folder<span style=color:#f92672>.</span><span style=color:#a6e22e>mkdir</span><span style=color:#f92672>();</span>
+					<span style=color:#f92672>}</span>
+					<span style=color:#75715e>// 创建文件夹并上传图片
+</span><span style=color:#75715e></span>					<span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>flag<span style=color:#f92672>){</span>
+						SimpleDateFormat fileNameFormat <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> SimpleDateFormat<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;yyyyMMddHHmmss&#34;</span><span style=color:#f92672>);</span>					
+						String newFileName <span style=color:#f92672>=</span> fileNameFormat<span style=color:#f92672>.</span><span style=color:#a6e22e>format</span><span style=color:#f92672>(</span><span style=color:#66d9ef>new</span> Date<span style=color:#f92672>())</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;_&#34;</span><span style=color:#f92672>+</span> <span style=color:#66d9ef>new</span> Random<span style=color:#f92672>().</span><span style=color:#a6e22e>nextInt</span><span style=color:#f92672>(</span>1000<span style=color:#f92672>)</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;.&#34;</span> <span style=color:#f92672>+</span> fileExt<span style=color:#f92672>;</span>						
+						File uploadedFile <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> File<span style=color:#f92672>(</span>realPath<span style=color:#f92672>,</span> newFileName<span style=color:#f92672>);</span>						
+						item<span style=color:#f92672>.</span><span style=color:#a6e22e>write</span><span style=color:#f92672>(</span>uploadedFile<span style=color:#f92672>);</span>
+						saveUrl <span style=color:#f92672>+=</span> folderNameFormat<span style=color:#f92672>.</span><span style=color:#a6e22e>format</span><span style=color:#f92672>(</span><span style=color:#66d9ef>new</span> Date<span style=color:#f92672>())</span> <span style=color:#f92672>+</span> <span style=color:#e6db74>&#34;/&#34;</span> <span style=color:#f92672>+</span> newFileName<span style=color:#f92672>;</span>	
+						ext <span style=color:#f92672>=</span> fileExt<span style=color:#f92672>;</span>
+					<span style=color:#f92672>}</span><span style=color:#66d9ef>else</span><span style=color:#f92672>{</span>
+						System<span style=color:#f92672>.</span><span style=color:#a6e22e>out</span><span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34; 文件夹创建失败，请确认磁盘没有写保护并且空件足够&#34;</span><span style=color:#f92672>);</span>
+					<span style=color:#f92672>}</span>				
+				<span style=color:#f92672>}</span>
+			<span style=color:#f92672>}</span>
+			
+
+			<span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>attachTitle <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span> <span style=color:#f92672>||</span> attachTitle<span style=color:#f92672>.</span><span style=color:#a6e22e>isEmpty</span><span style=color:#f92672>()){</span>
+				attachTitle <span style=color:#f92672>=</span> tempTitle<span style=color:#f92672>;</span>
+			<span style=color:#f92672>}</span>
+			
+			out<span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span>insertAttach<span style=color:#f92672>(</span>id<span style=color:#f92672>,</span> saveUrl<span style=color:#f92672>,</span> attachTitle<span style=color:#f92672>,</span> ext<span style=color:#f92672>));</span>
+			
+		<span style=color:#f92672>}</span><span style=color:#66d9ef>catch</span><span style=color:#f92672>(</span>Exception e<span style=color:#f92672>){</span>
+			e<span style=color:#f92672>.</span><span style=color:#a6e22e>printStackTrace</span><span style=color:#f92672>();</span>
+		<span style=color:#f92672>}</span><span style=color:#66d9ef>finally</span><span style=color:#f92672>{</span>
+			out<span style=color:#f92672>.</span><span style=color:#a6e22e>flush</span><span style=color:#f92672>();</span>
+			out<span style=color:#f92672>.</span><span style=color:#a6e22e>close</span><span style=color:#f92672>();</span>
+			isFlag <span style=color:#f92672>=</span> <span style=color:#66d9ef>false</span><span style=color:#f92672>;</span>
+		<span style=color:#f92672>}</span>
+	<span style=color:#f92672>}</span>
+
+	
+	<span style=color:#75715e>/**
+</span><span style=color:#75715e>	 * 输出打印上传失败语句的脚本
+</span><span style=color:#75715e>	 * 
+</span><span style=color:#75715e>	 * @param message    失败信息
+</span><span style=color:#75715e>	 * 
+</span><span style=color:#75715e>	 * @return 页面打印的脚本语句
+</span><span style=color:#75715e>	 */</span>
+	<span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>alertMsg</span><span style=color:#f92672>(</span>String message<span style=color:#f92672>){</span>
+		
+		StringBuilder sb <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> StringBuilder<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;&lt;html&gt;&#34;</span><span style=color:#f92672>);</span>
+		sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;&lt;head&gt;&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;&lt;title&gt;error&lt;/title&gt;&#34;</span><span style=color:#f92672>);</span>
+		sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;&lt;meta http-equiv=\&#34;content-type\&#34; content=\&#34;text/html; charset=utf-8\&#34;&gt;&#34;</span><span style=color:#f92672>);</span>
+		sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;&lt;/head&gt;&#34;</span><span style=color:#f92672>);</span>
+		sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;&lt;body&gt;&#34;</span><span style=color:#f92672>);</span>
+		sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;&lt;script type=\&#34;text/javascript\&#34;&gt;&#34;</span><span style=color:#f92672>);</span>
+		sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;alert(\&#34;&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>message<span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;);history.back();&lt;/script&gt;&#34;</span><span style=color:#f92672>);</span>
+		sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;&lt;/body&gt;&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;&lt;/html&gt;&#34;</span><span style=color:#f92672>);</span>
+
+		<span style=color:#66d9ef>return</span> sb<span style=color:#f92672>.</span><span style=color:#a6e22e>toString</span><span style=color:#f92672>();</span>
+	<span style=color:#f92672>}</span>
+	
+	<span style=color:#75715e>/**
+</span><span style=color:#75715e>	 * 输出插入附件至编辑器语句的脚本
+</span><span style=color:#75715e>	 * 
+</span><span style=color:#75715e>	 * @param id     编辑器ID
+</span><span style=color:#75715e>	 * 
+</span><span style=color:#75715e>	 * @param url    上传附件的地址
+</span><span style=color:#75715e>	 * 
+</span><span style=color:#75715e>	 * @param title  上传时设置的title属性
+</span><span style=color:#75715e>	 * 
+</span><span style=color:#75715e>	 * @param ext    上传文件的后缀名
+</span><span style=color:#75715e>	 * 
+</span><span style=color:#75715e>	 * @return  插入附件至编辑器的脚本语句
+</span><span style=color:#75715e>	 */</span>
+	<span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>insertAttach</span><span style=color:#f92672>(</span>String id<span style=color:#f92672>,</span> String url<span style=color:#f92672>,</span> String title<span style=color:#f92672>,</span> String ext<span style=color:#f92672>){</span>
+		StringBuilder sb <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> StringBuilder<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;&lt;html&gt;&#34;</span><span style=color:#f92672>);</span>
+		sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;&lt;head&gt;&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;&lt;title&gt;Insert Accessory&lt;/title&gt;&#34;</span><span style=color:#f92672>);</span>
+		sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;&lt;meta http-equiv=\&#34;content-type\&#34; content=\&#34;text/html; charset=utf-8\&#34;&gt;&#34;</span><span style=color:#f92672>);</span>
+		sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;&lt;/head&gt;&#34;</span><span style=color:#f92672>);</span>
+		sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;&lt;body&gt;&#34;</span><span style=color:#f92672>);</span>
+		sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;&lt;script type=\&#34;text/javascript\&#34;&gt;&#34;</span><span style=color:#f92672>);</span>
+		sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;parent.KE.plugin[\&#34;accessory\&#34;].insert(\&#34;&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>id<span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;,\&#34;&#34;</span><span style=color:#f92672>);</span>
+		sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>url<span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;,\&#34;&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>title<span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;,\&#34;&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>ext<span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;\&#34;);&lt;/script&gt;&#34;</span><span style=color:#f92672>);</span>
+		sb<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;&lt;/body&gt;&#34;</span><span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;&lt;/html&gt;&#34;</span><span style=color:#f92672>);</span>
+		<span style=color:#66d9ef>return</span> sb<span style=color:#f92672>.</span><span style=color:#a6e22e>toString</span><span style=color:#f92672>();</span>
+	<span style=color:#f92672>}</span>
+
+	<span style=color:#75715e>/**
+</span><span style=color:#75715e>	 * 输出允许上传图片类型的数组
+</span><span style=color:#75715e>	 * 
+</span><span style=color:#75715e>	 * @param filesType 允许上传的图片类型
+</span><span style=color:#75715e>	 * 
+</span><span style=color:#75715e>	 * @return 允许上传图片类型
+</span><span style=color:#75715e>	 */</span>
+	<span style=color:#66d9ef>public</span> String<span style=color:#f92672>[]</span> <span style=color:#a6e22e>toArray</span><span style=color:#f92672>(</span>String filesType<span style=color:#f92672>){</span>
+
+		<span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>filesType <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>){</span>
+			<span style=color:#66d9ef>return</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>;</span>
+		<span style=color:#f92672>}</span>
+
+		String<span style=color:#f92672>[]</span> types <span style=color:#f92672>=</span> filesType<span style=color:#f92672>.</span><span style=color:#a6e22e>split</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;,&#34;</span><span style=color:#f92672>);</span>
+		String<span style=color:#f92672>[]</span> allowTypes <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> String<span style=color:#f92672>[</span>types<span style=color:#f92672>.</span><span style=color:#a6e22e>length</span><span style=color:#f92672>];</span>
+		<span style=color:#66d9ef>int</span> i <span style=color:#f92672>=</span> 0<span style=color:#f92672>;</span>
+		<span style=color:#66d9ef>for</span><span style=color:#f92672>(</span>String type <span style=color:#f92672>:</span> types<span style=color:#f92672>){</span>
+			allowTypes<span style=color:#f92672>[</span>i<span style=color:#f92672>]</span> <span style=color:#f92672>=</span> type<span style=color:#f92672>;</span>
+			i<span style=color:#f92672>++;</span>
+		<span style=color:#f92672>}</span>
+
+		<span style=color:#66d9ef>return</span> allowTypes<span style=color:#f92672>;</span>
+	<span style=color:#f92672>}</span>
+<span style=color:#f92672>}</span>
+
+</code></pre></div><ul><li>图像压缩代码</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>
+<span style=color:#f92672>package</span> com.elkan.utils<span style=color:#f92672>;</span>
+
+<span style=color:#f92672>import</span> java.awt.Image<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.awt.image.BufferedImage<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.io.File<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.io.FileOutputStream<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> java.io.IOException<span style=color:#f92672>;</span>
+
+<span style=color:#f92672>import</span> javax.imageio.ImageIO<span style=color:#f92672>;</span>
+
+<span style=color:#f92672>import</span> com.sun.image.codec.jpeg.JPEGCodec<span style=color:#f92672>;</span>
+<span style=color:#f92672>import</span> com.sun.image.codec.jpeg.JPEGImageEncoder<span style=color:#f92672>;</span>
+
+<span style=color:#75715e>/**
+</span><span style=color:#75715e> * 对图片进行处理的方法
+</span><span style=color:#75715e> * 
+</span><span style=color:#75715e> * @author SENHUI
+</span><span style=color:#75715e> */</span>
+<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>ImageUtil</span> <span style=color:#f92672>{</span>
+	
+	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>int</span> ImgWidth <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>1<span style=color:#f92672>;</span>
+	
+	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>int</span> ImgHeight <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>1<span style=color:#f92672>;</span>
+
+
+	
+	<span style=color:#75715e>/**
+</span><span style=color:#75715e>	 * 压缩图片
+</span><span style=color:#75715e>	 * 
+</span><span style=color:#75715e>	 * @param imgsrc
+</span><span style=color:#75715e>	 *            源文件
+</span><span style=color:#75715e>	 * @param imgdist
+</span><span style=color:#75715e>	 *            目标文件
+</span><span style=color:#75715e>	 * @param widthdist
+</span><span style=color:#75715e>	 *            宽
+</span><span style=color:#75715e>	 * @param heightdist
+</span><span style=color:#75715e>	 *            高
+</span><span style=color:#75715e>	 */</span>
+	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>resizeImg</span><span style=color:#f92672>(</span>String imgsrc<span style=color:#f92672>,</span> String imgdist<span style=color:#f92672>,</span>
+			<span style=color:#66d9ef>int</span> widthdist<span style=color:#f92672>,</span> <span style=color:#66d9ef>int</span> heightdist<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+		<span style=color:#66d9ef>try</span> <span style=color:#f92672>{</span>
+			File srcfile <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> File<span style=color:#f92672>(</span>imgsrc<span style=color:#f92672>);</span>
+			<span style=color:#66d9ef>if</span> <span style=color:#f92672>(!</span>srcfile<span style=color:#f92672>.</span><span style=color:#a6e22e>exists</span><span style=color:#f92672>())</span> <span style=color:#f92672>{</span>
+				<span style=color:#66d9ef>return</span><span style=color:#f92672>;</span>
+			<span style=color:#f92672>}</span>
+			Image src <span style=color:#f92672>=</span> ImageIO<span style=color:#f92672>.</span><span style=color:#a6e22e>read</span><span style=color:#f92672>(</span>srcfile<span style=color:#f92672>);</span>		
+			ImgWidth <span style=color:#f92672>=</span> src<span style=color:#f92672>.</span><span style=color:#a6e22e>getWidth</span><span style=color:#f92672>(</span><span style=color:#66d9ef>null</span><span style=color:#f92672>);</span>
+			ImgHeight <span style=color:#f92672>=</span> src<span style=color:#f92672>.</span><span style=color:#a6e22e>getHeight</span><span style=color:#f92672>(</span><span style=color:#66d9ef>null</span><span style=color:#f92672>);</span>
+			<span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>ImgWidth <span style=color:#f92672>&lt;</span> widthdist<span style=color:#f92672>){</span>
+				widthdist <span style=color:#f92672>=</span> ImgWidth<span style=color:#f92672>;</span>
+			<span style=color:#f92672>}</span><span style=color:#66d9ef>else</span><span style=color:#f92672>{</span>
+				ImgWidth <span style=color:#f92672>=</span> widthdist<span style=color:#f92672>;</span>
+			<span style=color:#f92672>}</span>
+			<span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>ImgHeight <span style=color:#f92672>&lt;</span> heightdist<span style=color:#f92672>){</span>
+				heightdist <span style=color:#f92672>=</span> ImgHeight<span style=color:#f92672>;</span>
+			<span style=color:#f92672>}</span><span style=color:#66d9ef>else</span><span style=color:#f92672>{</span>
+				ImgHeight <span style=color:#f92672>=</span> heightdist<span style=color:#f92672>;</span>
+			<span style=color:#f92672>}</span>
+			BufferedImage tag <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> BufferedImage<span style=color:#f92672>(</span>widthdist<span style=color:#f92672>,</span> heightdist<span style=color:#f92672>,</span>BufferedImage<span style=color:#f92672>.</span><span style=color:#a6e22e>TYPE_INT_RGB</span><span style=color:#f92672>);</span>	
+			
+			tag<span style=color:#f92672>.</span><span style=color:#a6e22e>getGraphics</span><span style=color:#f92672>().</span><span style=color:#a6e22e>drawImage</span><span style=color:#f92672>(</span>src<span style=color:#f92672>.</span><span style=color:#a6e22e>getScaledInstance</span><span style=color:#f92672>(</span>widthdist<span style=color:#f92672>,</span> heightdist<span style=color:#f92672>,</span>Image<span style=color:#f92672>.</span><span style=color:#a6e22e>SCALE_SMOOTH</span><span style=color:#f92672>),</span> 0<span style=color:#f92672>,</span> 0<span style=color:#f92672>,</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>);</span>
+			FileOutputStream out <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> FileOutputStream<span style=color:#f92672>(</span>imgdist<span style=color:#f92672>);</span>
+			JPEGImageEncoder encoder <span style=color:#f92672>=</span> JPEGCodec<span style=color:#f92672>.</span><span style=color:#a6e22e>createJPEGEncoder</span><span style=color:#f92672>(</span>out<span style=color:#f92672>);</span>
+			encoder<span style=color:#f92672>.</span><span style=color:#a6e22e>encode</span><span style=color:#f92672>(</span>tag<span style=color:#f92672>);</span>
+			out<span style=color:#f92672>.</span><span style=color:#a6e22e>close</span><span style=color:#f92672>();</span>
+		<span style=color:#f92672>}</span> <span style=color:#66d9ef>catch</span> <span style=color:#f92672>(</span>IOException ex<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+			ex<span style=color:#f92672>.</span><span style=color:#a6e22e>printStackTrace</span><span style=color:#f92672>();</span>
+		<span style=color:#f92672>}</span>
+	<span style=color:#f92672>}</span>
+<span style=color:#f92672>}</span>
+
+</code></pre></div><p>呵，源码发布就到此了，上面有都有比较详细的注释文档了，相信各位可以看个明白吧。现在大家有什么自定义的功能要开发的就拿去用吧，别忘记把你开发出来的东东分享下哦，我在此恭候你的大驾光临啊，嘻嘻…… 不管你对此文章满意与否都留下个印记吧，下次用得上时好来取呀，呵。对了最后再给大家留道作业吧，怎么样把上传的附件进行分类管理呢？比如：word放到word文件夹目录………(此功能已经实现，不过公布的代码里没有，大家思考下吧，看看谁的方法最优化，呵)</p><p>PS: 对一些提问的回答</p><ul><li>为何在Struts2里面不能使用？</li></ul><p>答：在项目开发中一般配置Struts2的过滤映射是全部站资源，修改成只要过滤你的Struts2访问资源便可。
+(现在源码公布了，你们可以把那些上传方法写到Action里面)</p><ul><li>到处都是定义上传类型, 是不是很累赘啊？</li></ul><p>答：在web.xml配置上传类型是当初发布时考虑到重用性的问题，再说默认的上传文件类型应该够用了吧，只要限定大小与保存路径便可了；在JSP页面初始化编辑器定义上传文件类型是为了上传前的JS脚验证，如果说这都很麻烦，那我也没办法了。</p><ul><li>能否添加代码高亮功能？</li></ul><p>答：当初改版这个编辑器时的出发点是为适合我们的项目，所以这个功能没有考虑，不过网上有没有代码高亮插件，可自行参考设计下。</p><ul><li>能否粘贴word文档里面的图片？</li></ul><p>答：这个功能还真是没有哦，我对WEB前端不是很熟悉，不过我倒是开发出表格合并的功能，目前还在测试阶段。如能开发这个图片粘贴的话就好了，不过好像要插件支持才行吧，唉，windows的东西不太好玩呀。</p></div><div class="bshare-custom icon-medium-plus" style=margin-top:50px><a href=# id=bshare-shareto>分享到:</a>
+<a title=分享到微信 class=bshare-weixin></a><a title=分享到QQ空间 class=bshare-qzone></a><a title=分享到新浪微博 class=bshare-sinaminiblog></a><a title=分享到有道笔记 class=bshare-youdaonote></a><a title=分享到QQ好友 class=bshare-qqim></a><a title=分享到豆瓣 class=bshare-douban></a><a title=分享到复制网址 class=bshare-clipboard></a><a title=更多平台 class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div><script type=text/javascript>(function(){var cnzz_s_tag=document.createElement('script');cnzz_s_tag.type='text/javascript';cnzz_s_tag.async=true;cnzz_s_tag.charset='utf-8';cnzz_s_tag.src='https://static.bshare.cn/b/buttonLite.js#style=-1&uuid=7c8159a4-9a15-466c-b223-6ab7a8d48699&pophcol=1&lang=zh';var root_s=document.getElementsByTagName('script')[0];root_s.parentNode.insertBefore(cnzz_s_tag,root_s);})();(function(){var cnzz_s_tag=document.createElement('script');cnzz_s_tag.type='text/javascript';cnzz_s_tag.async=true;cnzz_s_tag.charset='utf-8';cnzz_s_tag.src='https://static.bshare.cn/b/bshareC0.js';var root_s=document.getElementsByTagName('script')[0];root_s.parentNode.insertBefore(cnzz_s_tag,root_s);})();</script><div class=post-nav><div class=article-copyright><div class=article-copyright-img><img src=/img/qq_qrcode.png width=129px height=129px><div style=text-align:center>QQ扫一扫交流</div></div><div class=article-copyright-info><p><span>标题：</span>JSP版本的KindEidtor在线编辑器第二季：Servlet+Struts2集成版</p><p><span>链接：</span>https://lisenhui.cn/2011/10/17/kineditor-jsp-struts2-servlet/</p><p><span>作者：</span><a target=_blank href=/>凡梦星尘</a></p><p><span>声明：</span>本博客文章除特别声明外，均采用 <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a>许可协议，转载请注明出处！</p></div></div><div class=clear></div></div><div class=reward-qr-info><div>创作实属不易，如有帮助，那就打赏博主些许茶钱吧 ^_^</div><button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');if(qr.style.display==='none'){qr.style.display='block';}else{qr.style.display='none'}">
+<span>赏</span></button><div id=QR style=display:none><div id=wechat style=display:inline-block><img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay"><p>微信打赏</p></div><div id=alipay style=display:inline-block><img id=alipay_qr src=/img/ali-pay.png alt=Alipay><p>支付宝打赏</p></div></div></div><footer class=post-footer><div class=post-tags><a href=/tags/kindeditor rel=tag title=KindEditor>#KindEditor#</a>
+<a href=/tags/struts2 rel=tag title=Struts2>#Struts2#</a>
+<a href=/tags/servlet rel=tag title=Servlet>#Servlet#</a></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=https://lisenhui.cn/2011/11/18/whosip-tool/ rel=next title=IP地址查询Web接口调用><i class="fa fa-chevron-left"></i>IP地址查询Web接口调用</a></div><div class="post-nav-prev post-nav-item"><a href=https://lisenhui.cn/2011/05/16/myeclipse-chinese-tool/ rel=prev title="MyEclipse6.5+ IDE汉化软件">MyEclipse6.5+ IDE汉化软件 <i class="fa fa-chevron-right"></i></a></div></div><div id=vcomments></div></footer></article></section></div></div><div class=sidebar-toggle><div class=sidebar-toggle-line-wrap><span class="sidebar-toggle-line sidebar-toggle-line-first"></span><span class="sidebar-toggle-line sidebar-toggle-line-middle"></span><span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id=sidebar class=sidebar><div class=sidebar-inner><section class="site-overview sidebar-panel sidebar-panel-active"><div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image src=/img/avatar.png alt=凡梦星尘><p class=site-author-name itemprop=name>凡梦星尘</p><p class="site-description motion-element" itemprop=description>再平凡的人也有属于他的梦想！</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href=/post/><span class=site-state-item-count>47</span>
+<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>29</span>
+<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>55</span>
+<span class=site-state-item-name>标签</span></a></div></nav><div class="links-of-author motion-element"><span class=links-of-author-item><a href=https://github.com/elkan1788/ target=_blank title=GitHub><i class="fa fa-fw fa-github"></i>GitHub</a></span>
+<span class=links-of-author-item><a href=https://www.zhihu.com/people/fan-meng-xing-chen-1 target=_blank title=知乎><i class="fa fa-fw fa-globe"></i>知乎</a></span></div><div class="links-of-blogroll motion-element links-of-blogroll-inline"><div class=links-of-blogroll-title><i class="fa fa-fw fa-globe"></i>友情链接</div><ul class=links-of-blogroll-list><li class=links-of-blogroll-item><a href=https://nutzam.com/ title=Nutz target=_blank>Nutz</a></li><li class=links-of-blogroll-item><a href=https://jfinal.com/ title=JFinal target=_blank>JFinal</a></li><li class=links-of-blogroll-item><a href=http://wendal.net/ title=Wendal target=_blank>Wendal</a></li><li class=links-of-blogroll-item><a href=https://www.liaoxuefeng.com/ title=廖雪峰 target=_blank>廖雪峰</a></li></ul></div><div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline"><div class=tagcloud-of-blogroll-title><i class="fa fa-fw fa-tags"></i>标签云</div><ul class=tagcloud-of-blogroll-list><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/ambari/>Ambari</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/api/>API</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/axure/>Axure</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/cdh/>CDH</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/ci/>CI</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/coding/>Coding</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/git/>Git</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/github/>GitHub</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/hdp/>HDP</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/hexo/>Hexo</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/hive/>Hive</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/hue/>hue</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/hugo/>Hugo</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/ide/>IDE</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/java/>Java</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/juqery/>Juqery</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/kindeditor/>KindEditor</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/kylin/>Kylin</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/linux/>Linux</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/mac/>Mac</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/mapdb/>MapDB</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/maven/>Maven</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/mirror/>Mirror</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/mpsdk4j/>MPSDK4J</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/myeclipse/>MyEclipse</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/next/>NexT</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/nifi/>Nifi</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/nutz/>Nutz</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/oschina/>OSChina</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/python/>Python</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/redis/>Redis</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/rsr232/>RSR232</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/servlet/>Servlet</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/sqoop/>Sqoop</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/ssh/>SSH</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/struts/>Struts</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/struts2/>Struts2</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/supervisor/>Supervisor</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/travis/>Travis</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/windows/>Windows</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/zeppelin/>Zeppelin</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/zookeeper/>Zookeeper</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/%E4%BA%A7%E5%93%81/>产品</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/%E5%86%85%E5%AD%98%E6%95%B0%E6%8D%AE%E5%BA%93/>内存数据库</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/%E5%89%8D%E7%AB%AF/>前端</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/%E5%8D%9A%E5%AE%A2/>博客</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/>大数据</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/%E5%AD%A6%E4%B9%A0/>学习</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/%E5%AE%9A%E6%97%B6%E8%B0%83%E5%BA%A6/>定时调度</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/%E5%B7%A5%E5%85%B7/>工具</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/%E5%BE%AE%E4%BF%A1/>微信</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/%E6%8A%80%E5%B7%A7/>技巧</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/%E6%8E%A5%E5%8F%A3/>接口</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/%E6%B5%8B%E8%AF%95/>测试</a></li><li class=tagcloud-of-blogroll-item><a href=https://lisenhui.cn/tags/%E7%BC%93%E5%AD%98/>缓存</a></li></ul></div><div class="links-of-blogroll motion-element inline"><script type=text/javascript src="//rf.revolvermaps.com/0/0/6.js?i=5s83wolvn69&m=7&c=e63100&cr1=ffffff&f=arial&l=0&bv=90&lx=-420&ly=420&hi=20&he=7&hc=a8ddff&rs=80" async></script></div></section></div></aside></div></main><footer id=footer class=footer><div class=footer-inner><div class=copyright><span itemprop=copyrightYear>&copy; 2010 - 2020</span>
+<span class=with-love><i class="fa fa-heart"></i></span><span class=author itemprop=copyrightHolder>Loving life and dreams.</span></div><div class=powered-by>Powered by - <a class=theme-link href=//gohugo.io target=_blank title=hugo>Hugo v0.74.2</a></div><div class=theme-info>Theme by - <a class=theme-link href=//github.com/elkan1788/hugo-theme-next target=_blank>NexT</a></div><div class=vistor-info><span style=position:absolute id=cnzz_stat_icon_1279205305><a href="//www.cnzz.com/stat/website.php?web_id=1279205305" target=_blank title=站长统计><img border=0 hspace=0 vspace=0 src=//icon.cnzz.com/img/pic1.gif></a></span>
+<script type=text/javascript>(function(){var cnzz_s_tag=document.createElement('script');cnzz_s_tag.type='text/javascript';cnzz_s_tag.async=true;cnzz_s_tag.charset='utf-8';cnzz_s_tag.src='https://s4.cnzz.com/z_stat.php?id=1279205305&show=pic1';var root_s=document.getElementsByTagName('script')[0];root_s.parentNode.insertBefore(cnzz_s_tag,root_s);})();</script><div class=busuanzi-count><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><span class=site-uv><i class="fa fa-user"></i><span class=busuanzi-value id=busuanzi_value_site_uv></span></span><span class=site-pv><i class="fa fa-eye"></i><span class=busuanzi-value id=busuanzi_value_site_pv></span></span></div></div><div style=margin-left:28%>Storage by
+<a href=https://www.qiniu.com style=font-weight:700 target=_blank>七牛云存储</a> |
+<a href=http://beian.miit.gov.cn target=_blank>粤ICP备18047355号</a></div></div></footer><div class=back-to-top><i class="fa fa-arrow-up"></i><span id=scrollpercent><span>0</span>%</span></div></div><script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script><script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script><script type=text/javascript src=/js/search.js></script><script type=text/javascript src=/js/affix.js></script><script type=text/javascript src=/js/scrollspy.js></script><script type=text/javascript>function getCntViewHeight(){var docHeight=$('#content').height(),winHeight=$(window).height(),cntViewHeight=(docHeight>winHeight)?(docHeight-winHeight):($(document).height()-winHeight);return cntViewHeight;}
+function getScrollbarWidth(){var $div=$('<div />').addClass('scrollbar-measure').prependTo('body');var div=$div[0];var scrollbarWidth=div.offsetWidth-div.clientWidth;$div.remove();return scrollbarWidth;}
+function registerBackTop(){var THRESHOLD=50;var $top=$('.back-to-top');$(window).on('scroll',function(){$top.toggleClass('back-to-top-on',window.pageYOffset>THRESHOLD);var scrollTop=$(window).scrollTop();var cntViewHeight=getCntViewHeight();var scrollPercent=(scrollTop)/(cntViewHeight);var scrollPercentRounded=Math.round(scrollPercent*100);var scrollPercentMaxed=(scrollPercentRounded>100)?100:scrollPercentRounded;$('#scrollpercent>span').html(scrollPercentMaxed);});$top.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0,},800);});}
+function initScrollSpy(){var tocSelector='.post-toc';var $tocElement=$(tocSelector);var activeCurrentSelector='.active-current';$tocElement.on('activate.bs.scrollspy',function(){var $currentActiveElement=$(tocSelector+' .active').last();removeCurrentActiveClass();$currentActiveElement.addClass('active-current');}).on('clear.bs.scrollspy',removeCurrentActiveClass);$('body').scrollspy({target:tocSelector});function removeCurrentActiveClass(){$(tocSelector+' '+activeCurrentSelector).removeClass(activeCurrentSelector.substring(1));}}
+function initAffix(){var headerHeight=$('.header-inner').height();var footerOffset=parseInt($('.main').css('padding-bottom'),10);var sidebarTop=headerHeight+10;$('.sidebar-inner').affix({offset:{top:sidebarTop,bottom:footerOffset}});$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100);});}
+function initTOCDimension(){var updateTOCHeightTimer;$(window).on('resize',function(){updateTOCHeightTimer&&clearTimeout(updateTOCHeightTimer);updateTOCHeightTimer=setTimeout(function(){var tocWrapperHeight=document.body.clientHeight-100;updateTOCHeight(tocWrapperHeight);},0);});updateTOCHeight(document.body.clientHeight-100);var scrollbarWidth=getScrollbarWidth();$('.post-toc').css('width','calc(100% + '+scrollbarWidth+'px)');}
+function updateTOCHeight(height){height=height||'auto';$('.post-toc').css('max-height',height);}
+$(function(){var sidebarTop=$('.header-inner').height()+10;$('#sidebar').css({'margin-top':sidebarTop}).show();registerBackTop();initScrollSpy();initAffix();initTOCDimension();$('.post-body').viewer();$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active');$(this).next().removeClass('sidebar-nav-active');$('.'+$(this).next().attr('data-target')).toggle(500);$('.'+$(this).attr('data-target')).toggle(500);});$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active');$(this).prev().removeClass('sidebar-nav-active');$('.'+$(this).prev().attr('data-target')).toggle(500);$('.'+$(this).attr('data-target')).toggle(500);});daovoice('init',{app_id:"f89653b8"});daovoice('update');});</script><script src=//unpkg.com/valine/dist/Valine.min.js></script><script type=text/javascript>new Valine({el:'#vcomments',appId:'1cO558rHLWLwnMRkRjOf7Y3z-gzGzoHsz',appKey:'8mTM8LX1gsmkGzugate3bpnj',visitor:true,placeholder:'欢迎点评 ^_^',requiredFields:['nick','mail']});</script><script>(function(){var bp=document.createElement('script');var curProtocol=window.location.protocol.split(':')[0];if(curProtocol==='https'){bp.src='https://zz.bdstatic.com/linksubmit/push.js';}
+else{bp.src='http://push.zhanzhang.baidu.com/push.js';}
+var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(bp,s);})();</script><script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:'==document.location.protocol?'https:':'http:')+"//widget.daovoice.io/widget/f89653b8.js","daovoice")</script></body></html>
