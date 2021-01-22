@@ -15,14 +15,13 @@ addons:
 
 env:
  global:
-   # Github Pages
    - GH_REF: https://github.com/elkan1788/elkan1788.github.io.git
 
 before_install:
   - export TZ='Asia/Shanghai'
-#  - git config --global user.email "elkan1788@gmail.com"
-#  - git config --global user.name "凡梦星尘"
-#  - export LANG="zh_CN.UTF-8"
+  - export LANG="zh_CN.UTF-8"
+  - git config --global user.email "elkan1788@gmail.com"
+  - git config --global user.name "凡梦星尘"
 
 install:
   # 安装最新的hugo
@@ -40,22 +39,19 @@ script:
   - hugo -t NexT
 
 deploy:
-  provider: pages # 重要，指定这是一份github pages的部署配置
-  skip-cleanup: true # 重要，不能省略
-  local-dir: public # 静态站点文件所在目录
-  target-branch: main # 要将静态站点文件发布到哪个分支
-  github-token: $GIT_TOKENS # 重要，$GITHUB_TOKEN是变量，需要在GitHub上申请、再到配置到Travis
-  # fqdn:  # 如果是自定义域名，此处要填
-  keep-history: true # 是否保持target-branch分支的提交记录
+  provider: pages
+  skip-cleanup: true
+  local-dir: public
+  target-branch: main
+  github-token: $GIT_TOKENS
+  fqdn: lisenhui.cn
+  keep-history: true
   on:
-    branch: hugo # 博客源码的分支
+    branch: hugo
 
 after_script:
-  # 部署
   - cd ./public
   - git init
-  - git config user.name "凡梦星尘"
-  - git config user.email "elkan1788@gmail.com"
   - git add .
   - git commit -m "Update Blog By TravisCI With Build $TRAVIS_BUILD_NUMBER"
   - git push --force --quiet "https://$GITHUB_TOKEN@${GH_REF}" main:main
