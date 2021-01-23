@@ -142,7 +142,7 @@ $(function() {
   });
 {{ if and (isset .Site.Params "daovoiceid") }}
   daovoice('init', {
-    app_id: "f89653b8"
+    app_id: "{{ .Site.Params.DaoVoiceId }}"
   });
   daovoice('update');
 {{ end }}

@@ -133,7 +133,24 @@ sitemap文件生成有利于站点收录平台，Hugo生成sitemap文件时要�
 
 引入腾讯的404公益页面，虽然本站点没有什么流量，但也希望通过这种方式让更多的失散儿童能够早日回家。
 
-## 8. 其它优化
+## 8. 在线聊天
+
+评论功能可以实现与读者的交流，只不过实时不是很强，那么在线交流正好是不错的方式。 [DaoVoice](http://blog.daovoice.io/)是款不错的在线聊天产品，同时也供了免费使用版本机会，集成也是相当的简单, 只要在Script引用地方加入如下的代码即可：
+
+```javascript
+
+daovoice('init', {
+  app_id: "xxxxx"
+});
+daovoice('update');
+
+```
+
+最后实现的效果如下：
+
+![DaoVoice](http://myblog.lisenhui.cn/daovoice.png-alias)
+
+## 9. 其它优化
 
 考虑到HTTPS流量计费原因，所以把所有页面中无关的因素全都进行剔除，把各种JavaScript类库和CSS样式用CDN链接进行替换，同时开启压缩模式让网页体积更小。
 
