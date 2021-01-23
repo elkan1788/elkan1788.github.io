@@ -153,7 +153,13 @@ daovoice('update');
 
 ![DaoVoice](http://myblog.lisenhui.cn/daovoice.png-alias)
 
-## 9. 其它优化
+## 9. 图片浏览功能
+
+通过在文章里面直接引用的图片都会是被压缩，或是缩小，无法查看原图的清晰明了。之前NextT自带的图片浏览插件并不好用，所以替换成了ImageViewer来实现对文章内的图片浏览，会有类似幻灯片的效果，如下：
+
+![ImageViewer](http://myblog.lisenhui.cn/imageviewer.png-alias)
+
+## 10. 其它优化
 
 考虑到HTTPS流量计费原因，所以把所有页面中无关的因素全都进行剔除，把各种JavaScript类库和CSS样式用CDN链接进行替换，同时开启压缩模式让网页体积更小。
 
