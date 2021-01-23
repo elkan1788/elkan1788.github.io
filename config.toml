@@ -25,6 +25,7 @@ enableRobotsTXT = true
   MonthFormat = "01-02"
 # 开启标签云
   TagCloud = true
+  TagsLimit = 14
 # 开启评论功能[Valine, LiveRe]
   Comment = "Valine"
   LiveReId = "MTAyMC81MTM4MC8yNzg2MQ=="
