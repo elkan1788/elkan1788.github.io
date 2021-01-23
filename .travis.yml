@@ -6,9 +6,9 @@ branches:
   only:
     - hugo
 
-cache:
-  directories:
-    - themes
+# cache:
+#   directories:
+#     - themes
 
 addons:
   ssh_known_hosts:
