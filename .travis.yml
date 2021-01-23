@@ -30,7 +30,8 @@ install:
   - echo 'Hugo engine env is ready.'
 
 script:
-  - hugo -t NexT
+  - rm -rf public
+  - hugo -d public
 
 before_deploy:
   - wget -O ./public/README.md https://raw.githubusercontent.com/elkan1788/elkan1788.github.io/hugo/README.md
