@@ -1610,8 +1610,7 @@ pre .javascript .function {
 }
 .tagcloud-of-blogroll-item {
   padding: 2px 10px;
-  width: 30%;
-  display: initial;
+  display: inline-flex;
 }
 .tagcloud-of-blogroll-item a {
   border-bottom: 1px solid #999;
