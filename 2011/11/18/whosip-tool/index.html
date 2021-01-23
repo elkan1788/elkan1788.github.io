@@ -15,27 +15,27 @@ gtag('js',new Date());gtag('config','UA-61491374-4 ');</script></head><body item
 <span class=leancloud-view-count>1分钟</span></span>
 <span id=/2011/11/18/whosip-tool/ class=leancloud_visitors data-flag-title=IP地址查询Web接口调用>|
 <i class="fa fa-binoculars fa-fw"></i><span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>今天刚好有个站点上要用到一个IP地址显示的功能，随即便想想应该有免费的接口可用吧，百度一下找到了太平洋网站提供的API，那么接下来便是Code Time。</p><p>看完了它的参数说明和调用方式后，选择了其中的jsFunction方式，现在把经验分享出来给大家参考，具体的代码和效果如下：：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>
-<span style=color:#75715e>&lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD HTML 4.01 Transitional//EN&#34; &#34;http://www.w3.org/TR/html4/loose.dtd&#34;&gt;</span>
-&lt;<span style=color:#f92672>html</span>&gt;
-  &lt;<span style=color:#f92672>head</span>&gt;    
-    &lt;<span style=color:#f92672>title</span>&gt;ip查询&lt;/<span style=color:#f92672>title</span>&gt;
-	&lt;<span style=color:#f92672>script</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;text/javascript&#34;</span> <span style=color:#a6e22e>src</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js&#34;</span>&gt;&lt;/<span style=color:#f92672>script</span>&gt;
-	&lt;<span style=color:#f92672>script</span> <span style=color:#a6e22e>type</span><span style=color:#f92672>=</span><span style=color:#e6db74>&#34;text/javascript&#34;</span>&gt;
-		<span style=color:#a6e22e>$</span>(<span style=color:#66d9ef>function</span>(){
-			<span style=color:#a6e22e>$</span>(<span style=color:#e6db74>&#34;&lt;span id=&#39;ipShow&#39;&gt;&lt;/span&gt;&#34;</span>).<span style=color:#a6e22e>appendTo</span>(<span style=color:#e6db74>&#34;body&#34;</span>);			
-			<span style=color:#a6e22e>$</span>.<span style=color:#a6e22e>getScript</span>(<span style=color:#e6db74>&#34;http://whois.pconline.com.cn/jsFunction.jsp?callback=jsShow&amp;ip=61.235.82.163&#34;</span>);
+<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>今天刚好有个站点上要用到一个IP地址显示的功能，随即便想想应该有免费的接口可用吧，百度一下找到了太平洋网站提供的API，那么接下来便是Code Time。</p><p>看完了它的参数说明和调用方式后，选择了其中的jsFunction方式，现在把经验分享出来给大家参考，具体的代码和效果如下：：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>
+<span style=color:#080>&lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD HTML 4.01 Transitional//EN&#34; &#34;http://www.w3.org/TR/html4/loose.dtd&#34;&gt;</span>
+&lt;<span style=color:green;font-weight:700>html</span>&gt;
+  &lt;<span style=color:green;font-weight:700>head</span>&gt;    
+    &lt;<span style=color:green;font-weight:700>title</span>&gt;ip查询&lt;/<span style=color:green;font-weight:700>title</span>&gt;
+	&lt;<span style=color:green;font-weight:700>script</span> <span style=color:#b44>type</span><span style=color:#666>=</span><span style=color:#b44>&#34;text/javascript&#34;</span> <span style=color:#b44>src</span><span style=color:#666>=</span><span style=color:#b44>&#34;https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js&#34;</span>&gt;&lt;/<span style=color:green;font-weight:700>script</span>&gt;
+	&lt;<span style=color:green;font-weight:700>script</span> <span style=color:#b44>type</span><span style=color:#666>=</span><span style=color:#b44>&#34;text/javascript&#34;</span>&gt;
+		$(<span style=color:#a2f;font-weight:700>function</span>(){
+			$(<span style=color:#b44>&#34;&lt;span id=&#39;ipShow&#39;&gt;&lt;/span&gt;&#34;</span>).appendTo(<span style=color:#b44>&#34;body&#34;</span>);			
+			$.getScript(<span style=color:#b44>&#34;http://whois.pconline.com.cn/jsFunction.jsp?callback=jsShow&amp;ip=61.235.82.163&#34;</span>);
 		});
 		
-		<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>jsShow</span>(<span style=color:#a6e22e>location</span>){
-			<span style=color:#a6e22e>$</span>(<span style=color:#e6db74>&#34;#ipShow&#34;</span>).<span style=color:#a6e22e>html</span>(<span style=color:#a6e22e>location</span>);
+		<span style=color:#a2f;font-weight:700>function</span> jsShow(location){
+			$(<span style=color:#b44>&#34;#ipShow&#34;</span>).html(location);
 		}
-	&lt;/<span style=color:#f92672>script</span>&gt;	
-  &lt;/<span style=color:#f92672>head</span>&gt;
+	&lt;/<span style=color:green;font-weight:700>script</span>&gt;	
+  &lt;/<span style=color:green;font-weight:700>head</span>&gt;
   	
-  &lt;<span style=color:#f92672>body</span>&gt;
-  &lt;/<span style=color:#f92672>body</span>&gt;
-&lt;/<span style=color:#f92672>html</span>&gt;
+  &lt;<span style=color:green;font-weight:700>body</span>&gt;
+  &lt;/<span style=color:green;font-weight:700>body</span>&gt;
+&lt;/<span style=color:green;font-weight:700>html</span>&gt;
 
 </code></pre></div><p>效果如下：</p><p><img src=http://myblog.lisenhui.cn/whoisip-api-1.png-alias alt=whoisip-api-1></p><p>具体参数如下：</p><p><img src=http://myblog.lisenhui.cn/whoisip-api-2.png-alias alt=whoisip-api-2></p><p>有不明白的地方，可以留言讨论。</p></div><div class="bshare-custom icon-medium-plus" style=margin-top:50px><a href=# id=bshare-shareto>分享到:</a>
 <a title=分享到微信 class=bshare-weixin></a><a title=分享到QQ空间 class=bshare-qzone></a><a title=分享到新浪微博 class=bshare-sinaminiblog></a><a title=分享到有道笔记 class=bshare-youdaonote></a><a title=分享到QQ好友 class=bshare-qqim></a><a title=分享到豆瓣 class=bshare-douban></a><a title=分享到复制网址 class=bshare-clipboard></a><a title=更多平台 class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div><script type=text/javascript>(function(){var cnzz_s_tag=document.createElement('script');cnzz_s_tag.type='text/javascript';cnzz_s_tag.async=true;cnzz_s_tag.charset='utf-8';cnzz_s_tag.src='https://static.bshare.cn/b/buttonLite.js#style=-1&uuid=7c8159a4-9a15-466c-b223-6ab7a8d48699&pophcol=1&lang=zh';var root_s=document.getElementsByTagName('script')[0];root_s.parentNode.insertBefore(cnzz_s_tag,root_s);})();(function(){var cnzz_s_tag=document.createElement('script');cnzz_s_tag.type='text/javascript';cnzz_s_tag.async=true;cnzz_s_tag.charset='utf-8';cnzz_s_tag.src='https://static.bshare.cn/b/bshareC0.js';var root_s=document.getElementsByTagName('script')[0];root_s.parentNode.insertBefore(cnzz_s_tag,root_s);})();</script><div class=post-nav><div class=article-copyright><div class=article-copyright-img><img src=/img/qq_qrcode.png width=129px height=129px><div style=text-align:center>QQ扫一扫交流</div></div><div class=article-copyright-info><p><span>标题：</span>IP地址查询Web接口调用</p><p><span>链接：</span>https://lisenhui.cn/2011/11/18/whosip-tool/</p><p><span>作者：</span><a target=_blank href=/>凡梦星尘</a></p><p><span>声明：</span>本博客文章除特别声明外，均采用 <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a>许可协议，转载请注明出处！</p></div></div><div class=clear></div></div><div class=reward-qr-info><div>创作实属不易，如有帮助，那就打赏博主些许茶钱吧 ^_^</div><button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');if(qr.style.display==='none'){qr.style.display='block';}else{qr.style.display='none'}">

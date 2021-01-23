@@ -15,58 +15,58 @@ gtag('js',new Date());gtag('config','UA-61491374-4 ');</script></head><body item
 <span class=leancloud-view-count>2分钟</span></span>
 <span id=/2010/11/03/jquery-ajax-struts2/ class=leancloud_visitors data-flag-title=关于Struts2与Jquery实现无刷新分页的不解问题>|
 <i class="fa fa-binoculars fa-fw"></i><span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>我最近正在做一个无刷新的网站管理后台，并把它作为我的毕业设计主题，不过在代码实现上遇到了点小问题，想向大家请教一二。我的设计思路大概是这样的：将后台所生成的数据用JSON的格式输出，在前台借助JQUERY的AJAX功能将传过来的数据写出。这样的方式在实现数据的增、改、删功能上并不会很难，不过在数据的查询方面便麻烦了，如何实现数据的无刷新分页呢？我查阅网上一些网友的做法，不过普遍发现他们的代码有点繁琐也不符合我设计初衷。通过查看JQUERY的API我自己想出了一种可行的方案(目前已经实现部分功能)：在查询的页面中先创建一个无数据的表格样式，通过JQUERY的CLONE功 能在查询数据时复制这个表格的样式同时将后台传过的数据填充其中和移除那行无数据的样式表格。</p><p>前台的JS相关代码如下：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript>
-<span style=color:#75715e>// 显示所查询的数据
-</span><span style=color:#75715e></span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>dataSource</span>(){
-	<span style=color:#a6e22e>$</span>.<span style=color:#a6e22e>ajax</span>({
-		<span style=color:#a6e22e>url</span><span style=color:#f92672>:</span><span style=color:#e6db74>&#34;${pageContext.request.contextPath}/jsonservlet&#34;</span>,
-		<span style=color:#a6e22e>type</span><span style=color:#f92672>:</span><span style=color:#e6db74>&#34;post&#34;</span>,
-		<span style=color:#a6e22e>data</span><span style=color:#f92672>:</span>{},
-		<span style=color:#a6e22e>dataType</span><span style=color:#f92672>:</span><span style=color:#e6db74>&#34;json&#34;</span>,
-		<span style=color:#a6e22e>error</span><span style=color:#f92672>:</span><span style=color:#66d9ef>function</span>(){<span style=color:#a6e22e>alert</span>(<span style=color:#e6db74>&#34;服务器通讯失败，请稍后再刷新页面。 ^_^&#34;</span>);},
-		<span style=color:#a6e22e>success</span><span style=color:#f92672>:</span><span style=color:#66d9ef>function</span>(<span style=color:#a6e22e>data</span>){
-			<span style=color:#a6e22e>insertTr</span>(<span style=color:#a6e22e>data</span>);
+<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>我最近正在做一个无刷新的网站管理后台，并把它作为我的毕业设计主题，不过在代码实现上遇到了点小问题，想向大家请教一二。我的设计思路大概是这样的：将后台所生成的数据用JSON的格式输出，在前台借助JQUERY的AJAX功能将传过来的数据写出。这样的方式在实现数据的增、改、删功能上并不会很难，不过在数据的查询方面便麻烦了，如何实现数据的无刷新分页呢？我查阅网上一些网友的做法，不过普遍发现他们的代码有点繁琐也不符合我设计初衷。通过查看JQUERY的API我自己想出了一种可行的方案(目前已经实现部分功能)：在查询的页面中先创建一个无数据的表格样式，通过JQUERY的CLONE功 能在查询数据时复制这个表格的样式同时将后台传过的数据填充其中和移除那行无数据的样式表格。</p><p>前台的JS相关代码如下：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript>
+<span style=color:#080;font-style:italic>// 显示所查询的数据
+</span><span style=color:#080;font-style:italic></span><span style=color:#a2f;font-weight:700>function</span> dataSource(){
+	$.ajax({
+		url<span style=color:#666>:</span><span style=color:#b44>&#34;${pageContext.request.contextPath}/jsonservlet&#34;</span>,
+		type<span style=color:#666>:</span><span style=color:#b44>&#34;post&#34;</span>,
+		data<span style=color:#666>:</span>{},
+		dataType<span style=color:#666>:</span><span style=color:#b44>&#34;json&#34;</span>,
+		error<span style=color:#666>:</span><span style=color:#a2f;font-weight:700>function</span>(){alert(<span style=color:#b44>&#34;服务器通讯失败，请稍后再刷新页面。 ^_^&#34;</span>);},
+		success<span style=color:#666>:</span><span style=color:#a2f;font-weight:700>function</span>(data){
+			insertTr(data);
 		}
 	});
 }
-<span style=color:#75715e>// 查询数据的分页跳转
-</span><span style=color:#75715e></span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>goPage</span>(<span style=color:#a6e22e>thePage</span>){
-	<span style=color:#a6e22e>$</span>.<span style=color:#a6e22e>ajax</span>({
-		<span style=color:#a6e22e>url</span><span style=color:#f92672>:</span><span style=color:#e6db74>&#34;${pageContext.request.contextPath}/jsonservlet&#34;</span>,
-		<span style=color:#a6e22e>type</span><span style=color:#f92672>:</span><span style=color:#e6db74>&#34;post&#34;</span>,
-		<span style=color:#a6e22e>data</span><span style=color:#f92672>:</span>{<span style=color:#a6e22e>page</span><span style=color:#f92672>:</span><span style=color:#a6e22e>thePage</span>},
-		<span style=color:#a6e22e>dataType</span><span style=color:#f92672>:</span><span style=color:#e6db74>&#34;json&#34;</span>,
-		<span style=color:#a6e22e>error</span><span style=color:#f92672>:</span><span style=color:#66d9ef>function</span>(){<span style=color:#a6e22e>alert</span>(<span style=color:#e6db74>&#34;服务器通讯失败，请稍后再刷新页面。 ^_^&#34;</span>);},
-		<span style=color:#a6e22e>success</span><span style=color:#f92672>:</span><span style=color:#66d9ef>function</span>(<span style=color:#a6e22e>data</span>){
-			<span style=color:#a6e22e>insertTr</span>(<span style=color:#a6e22e>data</span>);
+<span style=color:#080;font-style:italic>// 查询数据的分页跳转
+</span><span style=color:#080;font-style:italic></span><span style=color:#a2f;font-weight:700>function</span> goPage(thePage){
+	$.ajax({
+		url<span style=color:#666>:</span><span style=color:#b44>&#34;${pageContext.request.contextPath}/jsonservlet&#34;</span>,
+		type<span style=color:#666>:</span><span style=color:#b44>&#34;post&#34;</span>,
+		data<span style=color:#666>:</span>{page<span style=color:#666>:</span>thePage},
+		dataType<span style=color:#666>:</span><span style=color:#b44>&#34;json&#34;</span>,
+		error<span style=color:#666>:</span><span style=color:#a2f;font-weight:700>function</span>(){alert(<span style=color:#b44>&#34;服务器通讯失败，请稍后再刷新页面。 ^_^&#34;</span>);},
+		success<span style=color:#666>:</span><span style=color:#a2f;font-weight:700>function</span>(data){
+			insertTr(data);
 		}
 	});
 }
-<span style=color:#75715e>// 填充表格中的每行数据
-</span><span style=color:#75715e></span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>insertTr</span>(<span style=color:#a6e22e>data</span>) {
-	<span style=color:#75715e>//读取tr里数量
-</span><span style=color:#75715e></span>	<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>r</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>$</span>(<span style=color:#e6db74>&#34;#datasource tr&#34;</span>).<span style=color:#a6e22e>size</span>();
-	<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>list</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>data</span>.<span style=color:#a6e22e>dataSource</span>;
-	<span style=color:#a6e22e>$</span>.<span style=color:#a6e22e>each</span>(<span style=color:#a6e22e>list</span>, <span style=color:#66d9ef>function</span>(<span style=color:#a6e22e>i</span>, <span style=color:#a6e22e>r</span>) {
-		<span style=color:#75715e>//克隆已有的表格样式及属性
-</span><span style=color:#75715e></span>		<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>row</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>$</span>(<span style=color:#e6db74>&#34;#source&#34;</span>).<span style=color:#a6e22e>clone</span>();
-		<span style=color:#75715e>//将数值填充至表格中
-</span><span style=color:#75715e></span>		<span style=color:#a6e22e>row</span>.<span style=color:#a6e22e>find</span>(<span style=color:#e6db74>&#34;#id&#34;</span>).<span style=color:#a6e22e>text</span>(<span style=color:#a6e22e>r</span>.<span style=color:#a6e22e>id</span>)
-		<span style=color:#a6e22e>row</span>.<span style=color:#a6e22e>find</span>(<span style=color:#e6db74>&#34;#name&#34;</span>).<span style=color:#a6e22e>text</span>(<span style=color:#a6e22e>r</span>.<span style=color:#a6e22e>name</span>);
-		<span style=color:#a6e22e>row</span>.<span style=color:#a6e22e>find</span>(<span style=color:#e6db74>&#34;#time&#34;</span>).<span style=color:#a6e22e>text</span>(<span style=color:#a6e22e>r</span>.<span style=color:#a6e22e>time</span>);
-		<span style=color:#75715e>//将此行添加到表格中
-</span><span style=color:#75715e></span>		<span style=color:#a6e22e>row</span>.<span style=color:#a6e22e>appendTo</span>(<span style=color:#e6db74>&#34;#datasource&#34;</span>);
+<span style=color:#080;font-style:italic>// 填充表格中的每行数据
+</span><span style=color:#080;font-style:italic></span><span style=color:#a2f;font-weight:700>function</span> insertTr(data) {
+	<span style=color:#080;font-style:italic>//读取tr里数量
+</span><span style=color:#080;font-style:italic></span>	<span style=color:#a2f;font-weight:700>var</span> r <span style=color:#666>=</span> $(<span style=color:#b44>&#34;#datasource tr&#34;</span>).size();
+	<span style=color:#a2f;font-weight:700>var</span> list <span style=color:#666>=</span> data.dataSource;
+	$.each(list, <span style=color:#a2f;font-weight:700>function</span>(i, r) {
+		<span style=color:#080;font-style:italic>//克隆已有的表格样式及属性
+</span><span style=color:#080;font-style:italic></span>		<span style=color:#a2f;font-weight:700>var</span> row <span style=color:#666>=</span> $(<span style=color:#b44>&#34;#source&#34;</span>).clone();
+		<span style=color:#080;font-style:italic>//将数值填充至表格中
+</span><span style=color:#080;font-style:italic></span>		row.find(<span style=color:#b44>&#34;#id&#34;</span>).text(r.id)
+		row.find(<span style=color:#b44>&#34;#name&#34;</span>).text(r.name);
+		row.find(<span style=color:#b44>&#34;#time&#34;</span>).text(r.time);
+		<span style=color:#080;font-style:italic>//将此行添加到表格中
+</span><span style=color:#080;font-style:italic></span>		row.appendTo(<span style=color:#b44>&#34;#datasource&#34;</span>);
 	});
-	<span style=color:#75715e>// 移除第一行，因为它只有样式没有数据
-</span><span style=color:#75715e></span>	<span style=color:#a6e22e>$</span>(<span style=color:#e6db74>&#34;#datasource&#34;</span>).<span style=color:#a6e22e>children</span>(<span style=color:#e6db74>&#34;tr:first&#34;</span>).<span style=color:#a6e22e>remove</span>();
+	<span style=color:#080;font-style:italic>// 移除第一行，因为它只有样式没有数据
+</span><span style=color:#080;font-style:italic></span>	$(<span style=color:#b44>&#34;#datasource&#34;</span>).children(<span style=color:#b44>&#34;tr:first&#34;</span>).remove();
 }
 
-</code></pre></div><p>通过实践发现这个方案是可行的，不过出现了一个问题：在数据翻页时如何将当前的数据移除并将新数据填充到页面中呢？（即：在转到第2页时把当前第1页的数据移除并填充第2页的数据）我尝试了很多方法可仍是未能实现我想要的无刷新的分页效果，希望大家能帮我看看是哪里出问题了。谢谢。</p><p>PS: (最后自行解决了，解决方案如下)</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript>
-<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>r</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>$</span>(<span style=color:#e6db74>&#34;#datasource tr&#34;</span>).<span style=color:#a6e22e>size</span>();
+</code></pre></div><p>通过实践发现这个方案是可行的，不过出现了一个问题：在数据翻页时如何将当前的数据移除并将新数据填充到页面中呢？（即：在转到第2页时把当前第1页的数据移除并填充第2页的数据）我尝试了很多方法可仍是未能实现我想要的无刷新的分页效果，希望大家能帮我看看是哪里出问题了。谢谢。</p><p>PS: (最后自行解决了，解决方案如下)</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript>
+<span style=color:#a2f;font-weight:700>var</span> r <span style=color:#666>=</span> $(<span style=color:#b44>&#34;#datasource tr&#34;</span>).size();
 
-</code></pre></div><p>只要在上面的代码后面增加如下的代码:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript>
-<span style=color:#66d9ef>if</span>(<span style=color:#a6e22e>r</span> <span style=color:#f92672>&gt;</span> <span style=color:#ae81ff>1</span>){
-     <span style=color:#a6e22e>$</span>(<span style=color:#e6db74>&#34;#datasource&#34;</span>).<span style=color:#a6e22e>find</span>(<span style=color:#e6db74>&#34;tr:not(:first)&#34;</span>).<span style=color:#a6e22e>remove</span>();
+</code></pre></div><p>只要在上面的代码后面增加如下的代码:</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript>
+<span style=color:#a2f;font-weight:700>if</span>(r <span style=color:#666>&gt;</span> <span style=color:#666>1</span>){
+     $(<span style=color:#b44>&#34;#datasource&#34;</span>).find(<span style=color:#b44>&#34;tr:not(:first)&#34;</span>).remove();
 }
 
 </code></pre></div><p><a href=http://dl.iteye.com/topics/download/a03a4791-ee15-3920-b00b-adc104ed5907 title=代码下载>&ldquo;代码下载&rdquo;</a></p></div><div class="bshare-custom icon-medium-plus" style=margin-top:50px><a href=# id=bshare-shareto>分享到:</a>

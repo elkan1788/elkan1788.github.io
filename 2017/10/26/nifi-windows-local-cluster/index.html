@@ -16,24 +16,24 @@ gtag('js',new Date());gtag('config','UA-61491374-4 ');</script></head><body item
 <span id=/2017/10/26/nifi-windows-local-cluster/ class=leancloud_visitors data-flag-title="Apache Nifi在Windows环境下搭建伪群集及证书登录">|
 <i class="fa fa-binoculars fa-fw"></i><span class=post-meta-item-text>阅读次数：</span>
 <span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>前些时间做了关于<code>Apache Nifi</code>分布式集群的搭建分享，但很多时候要搭建分布式集群机器资源是个问题，而现在的单机的配置还是相当不错的，故现在就做个关于Windows上搭建个伪分布式集群的分享，同时通过另外一种方式实现<strong>Apache Nifi</strong>的授权认证。</p><h1 id=系统环境及软件版本>系统环境及软件版本</h1><ul><li><p>Windows8.1</p></li><li><p>JDK1.8.0_131</p></li><li><p>Nifi-1.4.0</p></li></ul><table><thead><tr><th style=text-align:center>Nifi安装目录</th><th style=text-align:center>WEB端口</th></tr></thead><tbody><tr><td style=text-align:center>xxx\nifi-ncm</td><td style=text-align:center>9443</td></tr><tr><td style=text-align:center>xxx\nifi-cluster01</td><td style=text-align:center>9444</td></tr><tr><td style=text-align:center>xxx\nifi-cluster02</td><td style=text-align:center>9445</td></tr></tbody></table><blockquote><p>(其它版本可参考此篇文章)
-另在测试中发个问题，使用<code>Apache Nifi</code>内嵌的<code>Zookeeper</code>搭建伪集群里启动总是提示端口占用的问题，故放弃只采用了单结点启动。</p></blockquote><h1 id=nifi的服务证书><strong>Nifi</strong>的服务证书</h1><h2 id=生成本地nifi服务证书>生成本地<strong>Nifi</strong>服务证书</h2><p>解压<code>nifi-toolkit-1.4.0-bin.tar.gz</code>文件后，通过<strong>CMD</strong>进入<code>bin</code>目录，执行以下的命令：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>D:<span style=color:#ae81ff>\D</span>evelopTools<span style=color:#ae81ff>\n</span>ifi-toolkit-1.4.0<span style=color:#ae81ff>\b</span>in&gt;tls-toolkit.bat standalone -n <span style=color:#e6db74>&#34;localhost(
-</span><span style=color:#e6db74>3)&#34;</span> -C <span style=color:#e6db74>&#34;CN=Admin, OU=ApacheNIFI&#34;</span> -o <span style=color:#e6db74>&#34;..\target&#34;</span>
-2017/10/26 18:21:32 INFO <span style=color:#f92672>[</span>main<span style=color:#f92672>]</span> org.apache.nifi.toolkit.tls.standalone.TlsToolki
+另在测试中发个问题，使用<code>Apache Nifi</code>内嵌的<code>Zookeeper</code>搭建伪集群里启动总是提示端口占用的问题，故放弃只采用了单结点启动。</p></blockquote><h1 id=nifi的服务证书><strong>Nifi</strong>的服务证书</h1><h2 id=生成本地nifi服务证书>生成本地<strong>Nifi</strong>服务证书</h2><p>解压<code>nifi-toolkit-1.4.0-bin.tar.gz</code>文件后，通过<strong>CMD</strong>进入<code>bin</code>目录，执行以下的命令：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>D:<span style=color:#b62;font-weight:700>\D</span>evelopTools<span style=color:#b62;font-weight:700>\n</span>ifi-toolkit-1.4.0<span style=color:#b62;font-weight:700>\b</span>in&gt;tls-toolkit.bat standalone -n <span style=color:#b44>&#34;localhost(
+</span><span style=color:#b44>3)&#34;</span> -C <span style=color:#b44>&#34;CN=Admin, OU=ApacheNIFI&#34;</span> -o <span style=color:#b44>&#34;..\target&#34;</span>
+2017/10/26 18:21:32 INFO <span style=color:#666>[</span>main<span style=color:#666>]</span> org.apache.nifi.toolkit.tls.standalone.TlsToolki
 tStandaloneCommandLine: No nifiPropertiesFile specified, using embedded one.
-2017/10/26 18:21:32 INFO <span style=color:#f92672>[</span>main<span style=color:#f92672>]</span> org.apache.nifi.toolkit.tls.standalone.TlsToolki
-tStandalone: Running standalone certificate generation with output directory ..<span style=color:#ae81ff>\
-</span><span style=color:#ae81ff></span>target
+2017/10/26 18:21:32 INFO <span style=color:#666>[</span>main<span style=color:#666>]</span> org.apache.nifi.toolkit.tls.standalone.TlsToolki
+tStandalone: Running standalone certificate generation with output directory ..<span style=color:#b62;font-weight:700>\
+</span><span style=color:#b62;font-weight:700></span>target
 ******************************************************************************
-2017/10/26 18:21:34 INFO <span style=color:#f92672>[</span>main<span style=color:#f92672>]</span> org.apache.nifi.toolkit.tls.standalone.TlsToolki
-tStandalone: Successfully generated client certificate ..<span style=color:#ae81ff>\t</span>arget<span style=color:#ae81ff>\C</span>N<span style=color:#f92672>=</span>Admin_OU<span style=color:#f92672>=</span>Apa
+2017/10/26 18:21:34 INFO <span style=color:#666>[</span>main<span style=color:#666>]</span> org.apache.nifi.toolkit.tls.standalone.TlsToolki
+tStandalone: Successfully generated client certificate ..<span style=color:#b62;font-weight:700>\t</span>arget<span style=color:#b62;font-weight:700>\C</span>N<span style=color:#666>=</span><span style=color:#b8860b>Admin_OU</span><span style=color:#666>=</span>Apa
 cheNIFI.p12
-2017/10/26 18:21:34 INFO <span style=color:#f92672>[</span>main<span style=color:#f92672>]</span> org.apache.nifi.toolkit.tls.standalone.TlsToolki
+2017/10/26 18:21:34 INFO <span style=color:#666>[</span>main<span style=color:#666>]</span> org.apache.nifi.toolkit.tls.standalone.TlsToolki
 tStandalone: tls-toolkit standalone completed successfully
-</code></pre></div><p>生成后的目录结构如下：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-Shell data-lang=Shell>Folder PATH listing <span style=color:#66d9ef>for</span> volume senhui.li
+</code></pre></div><p>生成后的目录结构如下：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-Shell data-lang=Shell>Folder PATH listing <span style=color:#a2f;font-weight:700>for</span> volume senhui.li
 Volume serial number is 000000F0 FA46:A0EB
 D:.
-│  CN<span style=color:#f92672>=</span>Admin_OU<span style=color:#f92672>=</span>ApacheNIFI.p12
-│  CN<span style=color:#f92672>=</span>Admin_OU<span style=color:#f92672>=</span>ApacheNIFI.password
+│  <span style=color:#b8860b>CN</span><span style=color:#666>=</span><span style=color:#b8860b>Admin_OU</span><span style=color:#666>=</span>ApacheNIFI.p12
+│  <span style=color:#b8860b>CN</span><span style=color:#666>=</span><span style=color:#b8860b>Admin_OU</span><span style=color:#666>=</span>ApacheNIFI.password
 │  nifi-cert.pem
 │  nifi-key.key
 │
@@ -51,9 +51,9 @@ D:.
         keystore.jks
         nifi.properties
         truststore.jks
-</code></pre></div><blockquote><p><strong>特意注意：</strong> <em>-C &ldquo;CN=Admin, OU=ApacheNIFI&rdquo;</em> 中间的空格必须保留</p></blockquote><h2 id=拷贝nifi服务证书>拷贝<strong>Nifi</strong>服务证书</h2><ul><li>将<code>localhost</code>目录下的文件拷贝到<code>nifi-ncm</code>目录下替换所有的文件</li><li>将<code>localhost_2</code>目录下的文件拷贝到<code>nifi-cluster01</code>目录下替换所有的文件</li><li>将<code>localhost_3</code>目录下的文件拷贝到<code>nifi-cluster02</code>目录下替换所有的文件</li><li>将<code>CN=Admin_OU=ApacheNIFI.p12</code>和<code>CN=Admin_OU=ApacheNIFI.password</code>拷贝到桌面备用，后续登录需要使用</li></ul><h1 id=配置单点zookeeper相关>配置单点Zookeeper相关</h1><h2 id=创建目录及id>创建目录及id</h2><p>进入<code>nifi-ncm</code>的目录，创建woker目录，并把server id写到文件中，命令如下：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>D:<span style=color:#ae81ff>\D</span>evelopTools<span style=color:#ae81ff>\n</span>ifi-ncm&gt;mkdir -p state<span style=color:#ae81ff>\z</span>ookeeper
-D:<span style=color:#ae81ff>\D</span>evelopTools<span style=color:#ae81ff>\n</span>ifi-ncm&gt;echo -n <span style=color:#e6db74>&#39;1&#39;</span> &gt; state/zookeeper/myid
-</code></pre></div><h2 id=更新zk配置>更新<strong>ZK</strong>配置</h2><p>进入<code>nifi-ncm</code>的conf目录，打开<code>zookeeper.properties</code>文件，内容更新参考如下：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>clientPort=2181
+</code></pre></div><blockquote><p><strong>特意注意：</strong> <em>-C &ldquo;CN=Admin, OU=ApacheNIFI&rdquo;</em> 中间的空格必须保留</p></blockquote><h2 id=拷贝nifi服务证书>拷贝<strong>Nifi</strong>服务证书</h2><ul><li>将<code>localhost</code>目录下的文件拷贝到<code>nifi-ncm</code>目录下替换所有的文件</li><li>将<code>localhost_2</code>目录下的文件拷贝到<code>nifi-cluster01</code>目录下替换所有的文件</li><li>将<code>localhost_3</code>目录下的文件拷贝到<code>nifi-cluster02</code>目录下替换所有的文件</li><li>将<code>CN=Admin_OU=ApacheNIFI.p12</code>和<code>CN=Admin_OU=ApacheNIFI.password</code>拷贝到桌面备用，后续登录需要使用</li></ul><h1 id=配置单点zookeeper相关>配置单点Zookeeper相关</h1><h2 id=创建目录及id>创建目录及id</h2><p>进入<code>nifi-ncm</code>的目录，创建woker目录，并把server id写到文件中，命令如下：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>D:<span style=color:#b62;font-weight:700>\D</span>evelopTools<span style=color:#b62;font-weight:700>\n</span>ifi-ncm&gt;mkdir -p state<span style=color:#b62;font-weight:700>\z</span>ookeeper
+D:<span style=color:#b62;font-weight:700>\D</span>evelopTools<span style=color:#b62;font-weight:700>\n</span>ifi-ncm&gt;echo -n <span style=color:#b44>&#39;1&#39;</span> &gt; state/zookeeper/myid
+</code></pre></div><h2 id=更新zk配置>更新<strong>ZK</strong>配置</h2><p>进入<code>nifi-ncm</code>的conf目录，打开<code>zookeeper.properties</code>文件，内容更新参考如下：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>clientPort=2181
 initLimit=10
 autopurge.purgeInterval=24
 syncLimit=5
@@ -63,33 +63,33 @@ autopurge.snapRetainCount=30
 
 # 只需要配置端口服务
 server.1=localhost:2181
-</code></pre></div><h2 id=更新nifi配置>更新Nifi配置</h2><p>进入<code>nifi-ncm</code>的conf目录，打开<code>nifi.properties</code>文件，更新如下的配置属性：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>nifi.state.management.embedded.zookeeper.start=true
+</code></pre></div><h2 id=更新nifi配置>更新Nifi配置</h2><p>进入<code>nifi-ncm</code>的conf目录，打开<code>nifi.properties</code>文件，更新如下的配置属性：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>nifi.state.management.embedded.zookeeper.start=true
 
 # zookeeper properties, used for cluster management #
 # 另外两个节点，只要编辑此字段即可
 nifi.zookeeper.connect.string=localhost:2181
-</code></pre></div><h2 id=更新state配置>更新State配置</h2><p>进入<code>nifi-ncm</code>的conf目录，打开<code>state-management.xml</code>文件，更新<strong>zookeeper</strong>配置，如下：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml>
-<span style=color:#f92672>&lt;cluster-provider&gt;</span>
-    <span style=color:#f92672>&lt;id&gt;</span>zk-provider<span style=color:#f92672>&lt;/id&gt;</span>
-    <span style=color:#f92672>&lt;class&gt;</span>org.apache.nifi.controller.state.providers.zookeeper.ZooKeeperStateProvider<span style=color:#f92672>&lt;/class&gt;</span>
-    <span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;Connect String&#34;</span><span style=color:#f92672>&gt;</span>localhost:2181<span style=color:#f92672>&lt;/property&gt;</span>
-    <span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;Root Node&#34;</span><span style=color:#f92672>&gt;</span>/nifi<span style=color:#f92672>&lt;/property&gt;</span>
-    <span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;Session Timeout&#34;</span><span style=color:#f92672>&gt;</span>10 seconds<span style=color:#f92672>&lt;/property&gt;</span>
-    <span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;Access Control&#34;</span><span style=color:#f92672>&gt;</span>Open<span style=color:#f92672>&lt;/property&gt;</span>
-<span style=color:#f92672>&lt;/cluster-provider&gt;</span>
+</code></pre></div><h2 id=更新state配置>更新State配置</h2><p>进入<code>nifi-ncm</code>的conf目录，打开<code>state-management.xml</code>文件，更新<strong>zookeeper</strong>配置，如下：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml>
+<span style=color:green;font-weight:700>&lt;cluster-provider&gt;</span>
+    <span style=color:green;font-weight:700>&lt;id&gt;</span>zk-provider<span style=color:green;font-weight:700>&lt;/id&gt;</span>
+    <span style=color:green;font-weight:700>&lt;class&gt;</span>org.apache.nifi.controller.state.providers.zookeeper.ZooKeeperStateProvider<span style=color:green;font-weight:700>&lt;/class&gt;</span>
+    <span style=color:green;font-weight:700>&lt;property</span> <span style=color:#b44>name=</span><span style=color:#b44>&#34;Connect String&#34;</span><span style=color:green;font-weight:700>&gt;</span>localhost:2181<span style=color:green;font-weight:700>&lt;/property&gt;</span>
+    <span style=color:green;font-weight:700>&lt;property</span> <span style=color:#b44>name=</span><span style=color:#b44>&#34;Root Node&#34;</span><span style=color:green;font-weight:700>&gt;</span>/nifi<span style=color:green;font-weight:700>&lt;/property&gt;</span>
+    <span style=color:green;font-weight:700>&lt;property</span> <span style=color:#b44>name=</span><span style=color:#b44>&#34;Session Timeout&#34;</span><span style=color:green;font-weight:700>&gt;</span>10 seconds<span style=color:green;font-weight:700>&lt;/property&gt;</span>
+    <span style=color:green;font-weight:700>&lt;property</span> <span style=color:#b44>name=</span><span style=color:#b44>&#34;Access Control&#34;</span><span style=color:green;font-weight:700>&gt;</span>Open<span style=color:green;font-weight:700>&lt;/property&gt;</span>
+<span style=color:green;font-weight:700>&lt;/cluster-provider&gt;</span>
 
-</code></pre></div><blockquote><p>然后把此文件拷贝到<code>nifi-cluster01</code>和<code>nifi-cluster02</code>相同的目录下</p></blockquote><h1 id=配置nifi-admin>配置Nifi Admin</h1><h2 id=添加admin用户>添加Admin用户</h2><p>进入<code>nifi-ncm</code>的conf目录，打开<code>authorizers.xml</code>文件，找到<strong>file-provider</strong>添加如下配置：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=color:#f92672>&lt;authorizer&gt;</span>
-    <span style=color:#f92672>&lt;identifier&gt;</span>file-provider<span style=color:#f92672>&lt;/identifier&gt;</span>
-    <span style=color:#f92672>&lt;class&gt;</span>org.apache.nifi.authorization.FileAuthorizer<span style=color:#f92672>&lt;/class&gt;</span>
-    <span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;Authorizations File&#34;</span><span style=color:#f92672>&gt;</span>./conf/authorizations.xml<span style=color:#f92672>&lt;/property&gt;</span>
-    <span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;Users File&#34;</span><span style=color:#f92672>&gt;</span>./conf/users.xml<span style=color:#f92672>&lt;/property&gt;</span>
-    <span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;Initial Admin Identity&#34;</span><span style=color:#f92672>&gt;</span>CN=Admin, OU=ApacheNifi<span style=color:#f92672>&lt;/property&gt;</span>
-    <span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;Legacy Authorized Users File&#34;</span><span style=color:#f92672>&gt;&lt;/property&gt;</span>
+</code></pre></div><blockquote><p>然后把此文件拷贝到<code>nifi-cluster01</code>和<code>nifi-cluster02</code>相同的目录下</p></blockquote><h1 id=配置nifi-admin>配置Nifi Admin</h1><h2 id=添加admin用户>添加Admin用户</h2><p>进入<code>nifi-ncm</code>的conf目录，打开<code>authorizers.xml</code>文件，找到<strong>file-provider</strong>添加如下配置：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=color:green;font-weight:700>&lt;authorizer&gt;</span>
+    <span style=color:green;font-weight:700>&lt;identifier&gt;</span>file-provider<span style=color:green;font-weight:700>&lt;/identifier&gt;</span>
+    <span style=color:green;font-weight:700>&lt;class&gt;</span>org.apache.nifi.authorization.FileAuthorizer<span style=color:green;font-weight:700>&lt;/class&gt;</span>
+    <span style=color:green;font-weight:700>&lt;property</span> <span style=color:#b44>name=</span><span style=color:#b44>&#34;Authorizations File&#34;</span><span style=color:green;font-weight:700>&gt;</span>./conf/authorizations.xml<span style=color:green;font-weight:700>&lt;/property&gt;</span>
+    <span style=color:green;font-weight:700>&lt;property</span> <span style=color:#b44>name=</span><span style=color:#b44>&#34;Users File&#34;</span><span style=color:green;font-weight:700>&gt;</span>./conf/users.xml<span style=color:green;font-weight:700>&lt;/property&gt;</span>
+    <span style=color:green;font-weight:700>&lt;property</span> <span style=color:#b44>name=</span><span style=color:#b44>&#34;Initial Admin Identity&#34;</span><span style=color:green;font-weight:700>&gt;</span>CN=Admin, OU=ApacheNifi<span style=color:green;font-weight:700>&lt;/property&gt;</span>
+    <span style=color:green;font-weight:700>&lt;property</span> <span style=color:#b44>name=</span><span style=color:#b44>&#34;Legacy Authorized Users File&#34;</span><span style=color:green;font-weight:700>&gt;&lt;/property&gt;</span>
 
-    <span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;Node Identity 1&#34;</span><span style=color:#f92672>&gt;</span>CN=localhost, OU=NIFI<span style=color:#f92672>&lt;/property&gt;</span>
-    <span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;Node Identity 2&#34;</span><span style=color:#f92672>&gt;</span>CN=localhost_2, OU=NIFI<span style=color:#f92672>&lt;/property&gt;</span>
-    <span style=color:#f92672>&lt;property</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;Node Identity 3&#34;</span><span style=color:#f92672>&gt;</span>CN=localhost_3, OU=NIFI<span style=color:#f92672>&lt;/property&gt;</span>
-<span style=color:#f92672>&lt;/authorizer&gt;</span>
+    <span style=color:green;font-weight:700>&lt;property</span> <span style=color:#b44>name=</span><span style=color:#b44>&#34;Node Identity 1&#34;</span><span style=color:green;font-weight:700>&gt;</span>CN=localhost, OU=NIFI<span style=color:green;font-weight:700>&lt;/property&gt;</span>
+    <span style=color:green;font-weight:700>&lt;property</span> <span style=color:#b44>name=</span><span style=color:#b44>&#34;Node Identity 2&#34;</span><span style=color:green;font-weight:700>&gt;</span>CN=localhost_2, OU=NIFI<span style=color:green;font-weight:700>&lt;/property&gt;</span>
+    <span style=color:green;font-weight:700>&lt;property</span> <span style=color:#b44>name=</span><span style=color:#b44>&#34;Node Identity 3&#34;</span><span style=color:green;font-weight:700>&gt;</span>CN=localhost_3, OU=NIFI<span style=color:green;font-weight:700>&lt;/property&gt;</span>
+<span style=color:green;font-weight:700>&lt;/authorizer&gt;</span>
 </code></pre></div><p>然后把此文件同时拷贝到别外两个节点目录。</p><blockquote><p><strong>注：</strong> 在<code>Node Identity x</code>中的OU要写成<em><strong>NIFI</strong></em>，尝试过用别的名称好像不成功，具体的原因未知，感兴趣的可以自行探究一二。</p></blockquote><h2 id=安装证书>安装证书</h2><p>打开谷歌浏览器，在设置中找到安全选项中找到<strong>管理证书</strong>，点击Import开始导入上面生成的证书：<code>CN=Admin_OU=ApacheNIFI.p12</code>，密码在后缀名为<code>.password</code>的文件中，如下图所示：
 <img src=http://myblog.lisenhui.cn/WIN-NIFI-CLUSTER-00.png-alias alt=WIN-NIFI-CLUSTER-00>
 <img src=http://myblog.lisenhui.cn/WIN-NIFI-CLUSTER-01.png-alias alt=WIN-NIFI-CLUSTER-01></p><h1 id=启动nifi服务>启动Nifi服务</h1><p>进入到Nifi安装目录，然后在bin目录中找到run-nifi.bat文件并双击运行，注意启动的顺序： nifi-ncm&ndash;>nifi-cluster01/2，等待片刻后（可能会有点久，需要一个选举的过程）打开浏览器输入"https://localhost:9443/nifi"，选择刚刚导入的证书，如看到下面的画面表示启动成功：

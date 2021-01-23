@@ -15,160 +15,160 @@ gtag('js',new Date());gtag('config','UA-61491374-4 ');</script></head><body item
 <span class=leancloud-view-count>3分钟</span></span>
 <span id=/2011/05/05/kindeditor-jsp-source/ class=leancloud_visitors data-flag-title=开放JSP版KindEditor的附件JAR包源码>|
 <i class="fa fa-binoculars fa-fw"></i><span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>3月份的时候写了个JSP版本的kindeditor编辑器的帖子，没有想到大家的响应会这么强烈。不过随着日月的增长，此版本的插件也就暴露出一些BUG，如：Struts2如何集成，web.xml文件中配置上传属性不便修改且繁琐，上传图片(附件)不能保存于其它盘…………。现在平时开发的项目中都是使用KE作为在线编辑器，为了能更好、更方便的使用此编辑器，在休息的时间对原先的代码进行重构再封装，除对上个版本出现的BUG进行外，还统一整体的命名规范，新增了一些功能。</p><p>当前新版本插件的版本号为：kindeditor-plugin0.4RELEASE，JAR包中类的列表如下：</p><p><img src=http://myblog.lisenhui.cn/kindeditor-jsp-ss-1.png-alias alt=kindeditor-jsp-ss-1></p><p>此次重构所完成的功能主要有以下几点：</p><ul><li>重构上传附件页面的选择按，仿图片上传的选择按钮；</li><li>增加Struts2环境集成；</li><li>增加上传属性配置功能，方便站点布署修改(暂未开放)；</li><li>增加其它盘存储功能，可自由选择存放位置方便备份(暂未开放)；</li><li>增加上传图片的文字水印功能(暂未开放)；</li><li>更Kindeditor编辑版本为3.5.6；</li><li>上传附件分类管理</li></ul><p>如果你要把这个KE插件应用到你的项目中，很简单，如是Servlet环境只须一个步骤即可，Struts2环境则需要两个步骤，具体如下：</p><ol><li>Servlet环境：只需要在web.xml中配置如下的参数</li></ol><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml>
-<span style=color:#75715e>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-<span style=color:#f92672>&lt;web-app</span> <span style=color:#a6e22e>version=</span><span style=color:#e6db74>&#34;2.5&#34;</span> <span style=color:#a6e22e>xmlns=</span><span style=color:#e6db74>&#34;http://java.sun.com/xml/ns/javaee&#34;</span>
-   <span style=color:#a6e22e>xmlns:xsi=</span><span style=color:#e6db74>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
-   <span style=color:#a6e22e>xsi:schemaLocation=</span><span style=color:#e6db74>&#34;http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&#34;</span><span style=color:#f92672>&gt;</span>	
-   <span style=color:#f92672>&lt;servlet&gt;</span>
-       <span style=color:#f92672>&lt;servlet-name&gt;</span>KEUploadImgServlet<span style=color:#f92672>&lt;/servlet-name&gt;</span>
-       <span style=color:#f92672>&lt;servlet-class&gt;</span>com.elkan.kindeditor.servlet.plugin.KEUploadImgServlet<span style=color:#f92672>&lt;/servlet-class&gt;</span>
-       <span style=color:#f92672>&lt;init-param&gt;</span>
-           <span style=color:#f92672>&lt;param-name&gt;</span>IMGSAVEPATH<span style=color:#f92672>&lt;/param-name&gt;</span>
-           <span style=color:#f92672>&lt;param-value&gt;</span>/upload/image/<span style=color:#f92672>&lt;/param-value&gt;</span>
-       <span style=color:#f92672>&lt;/init-param&gt;</span>
-       <span style=color:#75715e>&lt;!-- 
-</span><span style=color:#75715e>       缺省上传图片大小
-</span><span style=color:#75715e>       &lt;init-param&gt;
-</span><span style=color:#75715e>           &lt;param-name&gt;MAXSIZE&lt;/param-name&gt;
-</span><span style=color:#75715e>           &lt;param-value&gt;1048576&lt;/param-value&gt;
-</span><span style=color:#75715e>       &lt;/init-param&gt;
-</span><span style=color:#75715e>       缺省上传图片类型
-</span><span style=color:#75715e>       &lt;init-param&gt;
-</span><span style=color:#75715e>           &lt;param-name&gt;IMGTYPES&lt;/param-name&gt;
-</span><span style=color:#75715e>           &lt;param-value&gt;jpg,jpeg,png,gif,bmp&lt;/param-value&gt;
-</span><span style=color:#75715e>       &lt;/init-param&gt;
-</span><span style=color:#75715e>       缺省不压缩图片
-</span><span style=color:#75715e>       &lt;init-param&gt;
-</span><span style=color:#75715e>           &lt;param-name&gt;MAXWIDTH&lt;/param-name&gt;
-</span><span style=color:#75715e>           &lt;param-value&gt;&lt;/param-value&gt;
-</span><span style=color:#75715e>       &lt;/init-param&gt;
-</span><span style=color:#75715e>       &lt;init-param&gt;
-</span><span style=color:#75715e>           &lt;param-name&gt;MAXHEIGHT&lt;/param-name&gt;
-</span><span style=color:#75715e>           &lt;param-value&gt;&lt;/param-value&gt;
-</span><span style=color:#75715e>       &lt;/init-param&gt;
-</span><span style=color:#75715e>        --&gt;</span>
-   <span style=color:#f92672>&lt;/servlet&gt;</span>
-   <span style=color:#f92672>&lt;servlet&gt;</span>
-       <span style=color:#f92672>&lt;servlet-name&gt;</span>KEManageImgServlet<span style=color:#f92672>&lt;/servlet-name&gt;</span>
-       <span style=color:#f92672>&lt;servlet-class&gt;</span>com.elkan.kindeditor.servlet.plugin.KEManageImgServlet<span style=color:#f92672>&lt;/servlet-class&gt;</span>
-       <span style=color:#f92672>&lt;init-param&gt;</span>
-           <span style=color:#f92672>&lt;param-name&gt;</span>IMGSAVEPATH<span style=color:#f92672>&lt;/param-name&gt;</span>
-           <span style=color:#f92672>&lt;param-value&gt;</span>/upload/image/<span style=color:#f92672>&lt;/param-value&gt;</span>
-       <span style=color:#f92672>&lt;/init-param&gt;</span>
-   <span style=color:#f92672>&lt;/servlet&gt;</span>
-   <span style=color:#f92672>&lt;servlet&gt;</span>
-       <span style=color:#f92672>&lt;servlet-name&gt;</span>KEUploadAttachServlet<span style=color:#f92672>&lt;/servlet-name&gt;</span>
-       <span style=color:#f92672>&lt;servlet-class&gt;</span>com.elkan.kindeditor.servlet.plugin.KEUploadAttachServlet<span style=color:#f92672>&lt;/servlet-class&gt;</span>
-       <span style=color:#f92672>&lt;init-param&gt;</span>
-           <span style=color:#f92672>&lt;param-name&gt;</span>ATTACHSAVEPATH<span style=color:#f92672>&lt;/param-name&gt;</span>
-           <span style=color:#f92672>&lt;param-value&gt;</span>/upload/attach/<span style=color:#f92672>&lt;/param-value&gt;</span>
-       <span style=color:#f92672>&lt;/init-param&gt;</span>
-       <span style=color:#75715e>&lt;!-- 
-</span><span style=color:#75715e>       缺省上传附件大小
-</span><span style=color:#75715e>       &lt;init-param&gt;
-</span><span style=color:#75715e>           &lt;param-name&gt;MAXSIZE&lt;/param-name&gt;
-</span><span style=color:#75715e>           &lt;param-value&gt;10485760&lt;/param-value&gt;
-</span><span style=color:#75715e>       &lt;/init-param&gt;
-</span><span style=color:#75715e>       缺省上传附件类型
-</span><span style=color:#75715e>       &lt;init-param&gt;
-</span><span style=color:#75715e>           &lt;param-name&gt;ATTACHTYPES&lt;/param-name&gt;
-</span><span style=color:#75715e>           &lt;param-value&gt;**&lt;/param-value&gt;
-</span><span style=color:#75715e>       &lt;/init-param&gt;
-</span><span style=color:#75715e>        --&gt;</span>
-   <span style=color:#f92672>&lt;/servlet&gt;</span>
-   <span style=color:#f92672>&lt;servlet-mapping&gt;</span>
-       <span style=color:#f92672>&lt;servlet-name&gt;</span>KEUploadImgServlet<span style=color:#f92672>&lt;/servlet-name&gt;</span>
-       <span style=color:#f92672>&lt;url-pattern&gt;</span>/keplugin/KEUploadImg.servlet<span style=color:#f92672>&lt;/url-pattern&gt;</span>
-   <span style=color:#f92672>&lt;/servlet-mapping&gt;</span>
-   <span style=color:#f92672>&lt;servlet-mapping&gt;</span>
-       <span style=color:#f92672>&lt;servlet-name&gt;</span>KEManageImgServlet<span style=color:#f92672>&lt;/servlet-name&gt;</span>
-       <span style=color:#f92672>&lt;url-pattern&gt;</span>/keplugin/KEManageImages.servlet<span style=color:#f92672>&lt;/url-pattern&gt;</span>
-   <span style=color:#f92672>&lt;/servlet-mapping&gt;</span>
-   <span style=color:#f92672>&lt;servlet-mapping&gt;</span>
-       <span style=color:#f92672>&lt;servlet-name&gt;</span>KEUploadAttachServlet<span style=color:#f92672>&lt;/servlet-name&gt;</span>
-       <span style=color:#f92672>&lt;url-pattern&gt;</span>/keplugin/KEUploadAttach.servlet<span style=color:#f92672>&lt;/url-pattern&gt;</span>
-   <span style=color:#f92672>&lt;/servlet-mapping&gt;</span>
-   <span style=color:#f92672>&lt;welcome-file-list&gt;</span>
-       <span style=color:#f92672>&lt;welcome-file&gt;</span>index.jsp<span style=color:#f92672>&lt;/welcome-file&gt;</span>
-   <span style=color:#f92672>&lt;/welcome-file-list&gt;</span>
-   <span style=color:#f92672>&lt;login-config&gt;</span>
-       <span style=color:#f92672>&lt;auth-method&gt;</span>BASIC<span style=color:#f92672>&lt;/auth-method&gt;</span>
-   <span style=color:#f92672>&lt;/login-config&gt;</span>
-<span style=color:#f92672>&lt;/web-app&gt;</span>
+<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>3月份的时候写了个JSP版本的kindeditor编辑器的帖子，没有想到大家的响应会这么强烈。不过随着日月的增长，此版本的插件也就暴露出一些BUG，如：Struts2如何集成，web.xml文件中配置上传属性不便修改且繁琐，上传图片(附件)不能保存于其它盘…………。现在平时开发的项目中都是使用KE作为在线编辑器，为了能更好、更方便的使用此编辑器，在休息的时间对原先的代码进行重构再封装，除对上个版本出现的BUG进行外，还统一整体的命名规范，新增了一些功能。</p><p>当前新版本插件的版本号为：kindeditor-plugin0.4RELEASE，JAR包中类的列表如下：</p><p><img src=http://myblog.lisenhui.cn/kindeditor-jsp-ss-1.png-alias alt=kindeditor-jsp-ss-1></p><p>此次重构所完成的功能主要有以下几点：</p><ul><li>重构上传附件页面的选择按，仿图片上传的选择按钮；</li><li>增加Struts2环境集成；</li><li>增加上传属性配置功能，方便站点布署修改(暂未开放)；</li><li>增加其它盘存储功能，可自由选择存放位置方便备份(暂未开放)；</li><li>增加上传图片的文字水印功能(暂未开放)；</li><li>更Kindeditor编辑版本为3.5.6；</li><li>上传附件分类管理</li></ul><p>如果你要把这个KE插件应用到你的项目中，很简单，如是Servlet环境只须一个步骤即可，Struts2环境则需要两个步骤，具体如下：</p><ol><li>Servlet环境：只需要在web.xml中配置如下的参数</li></ol><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml>
+<span style=color:#080>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style=color:green;font-weight:700>&lt;web-app</span> <span style=color:#b44>version=</span><span style=color:#b44>&#34;2.5&#34;</span> <span style=color:#b44>xmlns=</span><span style=color:#b44>&#34;http://java.sun.com/xml/ns/javaee&#34;</span>
+   <span style=color:#b44>xmlns:xsi=</span><span style=color:#b44>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
+   <span style=color:#b44>xsi:schemaLocation=</span><span style=color:#b44>&#34;http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&#34;</span><span style=color:green;font-weight:700>&gt;</span>	
+   <span style=color:green;font-weight:700>&lt;servlet&gt;</span>
+       <span style=color:green;font-weight:700>&lt;servlet-name&gt;</span>KEUploadImgServlet<span style=color:green;font-weight:700>&lt;/servlet-name&gt;</span>
+       <span style=color:green;font-weight:700>&lt;servlet-class&gt;</span>com.elkan.kindeditor.servlet.plugin.KEUploadImgServlet<span style=color:green;font-weight:700>&lt;/servlet-class&gt;</span>
+       <span style=color:green;font-weight:700>&lt;init-param&gt;</span>
+           <span style=color:green;font-weight:700>&lt;param-name&gt;</span>IMGSAVEPATH<span style=color:green;font-weight:700>&lt;/param-name&gt;</span>
+           <span style=color:green;font-weight:700>&lt;param-value&gt;</span>/upload/image/<span style=color:green;font-weight:700>&lt;/param-value&gt;</span>
+       <span style=color:green;font-weight:700>&lt;/init-param&gt;</span>
+       <span style=color:#080;font-style:italic>&lt;!-- 
+</span><span style=color:#080;font-style:italic>       缺省上传图片大小
+</span><span style=color:#080;font-style:italic>       &lt;init-param&gt;
+</span><span style=color:#080;font-style:italic>           &lt;param-name&gt;MAXSIZE&lt;/param-name&gt;
+</span><span style=color:#080;font-style:italic>           &lt;param-value&gt;1048576&lt;/param-value&gt;
+</span><span style=color:#080;font-style:italic>       &lt;/init-param&gt;
+</span><span style=color:#080;font-style:italic>       缺省上传图片类型
+</span><span style=color:#080;font-style:italic>       &lt;init-param&gt;
+</span><span style=color:#080;font-style:italic>           &lt;param-name&gt;IMGTYPES&lt;/param-name&gt;
+</span><span style=color:#080;font-style:italic>           &lt;param-value&gt;jpg,jpeg,png,gif,bmp&lt;/param-value&gt;
+</span><span style=color:#080;font-style:italic>       &lt;/init-param&gt;
+</span><span style=color:#080;font-style:italic>       缺省不压缩图片
+</span><span style=color:#080;font-style:italic>       &lt;init-param&gt;
+</span><span style=color:#080;font-style:italic>           &lt;param-name&gt;MAXWIDTH&lt;/param-name&gt;
+</span><span style=color:#080;font-style:italic>           &lt;param-value&gt;&lt;/param-value&gt;
+</span><span style=color:#080;font-style:italic>       &lt;/init-param&gt;
+</span><span style=color:#080;font-style:italic>       &lt;init-param&gt;
+</span><span style=color:#080;font-style:italic>           &lt;param-name&gt;MAXHEIGHT&lt;/param-name&gt;
+</span><span style=color:#080;font-style:italic>           &lt;param-value&gt;&lt;/param-value&gt;
+</span><span style=color:#080;font-style:italic>       &lt;/init-param&gt;
+</span><span style=color:#080;font-style:italic>        --&gt;</span>
+   <span style=color:green;font-weight:700>&lt;/servlet&gt;</span>
+   <span style=color:green;font-weight:700>&lt;servlet&gt;</span>
+       <span style=color:green;font-weight:700>&lt;servlet-name&gt;</span>KEManageImgServlet<span style=color:green;font-weight:700>&lt;/servlet-name&gt;</span>
+       <span style=color:green;font-weight:700>&lt;servlet-class&gt;</span>com.elkan.kindeditor.servlet.plugin.KEManageImgServlet<span style=color:green;font-weight:700>&lt;/servlet-class&gt;</span>
+       <span style=color:green;font-weight:700>&lt;init-param&gt;</span>
+           <span style=color:green;font-weight:700>&lt;param-name&gt;</span>IMGSAVEPATH<span style=color:green;font-weight:700>&lt;/param-name&gt;</span>
+           <span style=color:green;font-weight:700>&lt;param-value&gt;</span>/upload/image/<span style=color:green;font-weight:700>&lt;/param-value&gt;</span>
+       <span style=color:green;font-weight:700>&lt;/init-param&gt;</span>
+   <span style=color:green;font-weight:700>&lt;/servlet&gt;</span>
+   <span style=color:green;font-weight:700>&lt;servlet&gt;</span>
+       <span style=color:green;font-weight:700>&lt;servlet-name&gt;</span>KEUploadAttachServlet<span style=color:green;font-weight:700>&lt;/servlet-name&gt;</span>
+       <span style=color:green;font-weight:700>&lt;servlet-class&gt;</span>com.elkan.kindeditor.servlet.plugin.KEUploadAttachServlet<span style=color:green;font-weight:700>&lt;/servlet-class&gt;</span>
+       <span style=color:green;font-weight:700>&lt;init-param&gt;</span>
+           <span style=color:green;font-weight:700>&lt;param-name&gt;</span>ATTACHSAVEPATH<span style=color:green;font-weight:700>&lt;/param-name&gt;</span>
+           <span style=color:green;font-weight:700>&lt;param-value&gt;</span>/upload/attach/<span style=color:green;font-weight:700>&lt;/param-value&gt;</span>
+       <span style=color:green;font-weight:700>&lt;/init-param&gt;</span>
+       <span style=color:#080;font-style:italic>&lt;!-- 
+</span><span style=color:#080;font-style:italic>       缺省上传附件大小
+</span><span style=color:#080;font-style:italic>       &lt;init-param&gt;
+</span><span style=color:#080;font-style:italic>           &lt;param-name&gt;MAXSIZE&lt;/param-name&gt;
+</span><span style=color:#080;font-style:italic>           &lt;param-value&gt;10485760&lt;/param-value&gt;
+</span><span style=color:#080;font-style:italic>       &lt;/init-param&gt;
+</span><span style=color:#080;font-style:italic>       缺省上传附件类型
+</span><span style=color:#080;font-style:italic>       &lt;init-param&gt;
+</span><span style=color:#080;font-style:italic>           &lt;param-name&gt;ATTACHTYPES&lt;/param-name&gt;
+</span><span style=color:#080;font-style:italic>           &lt;param-value&gt;**&lt;/param-value&gt;
+</span><span style=color:#080;font-style:italic>       &lt;/init-param&gt;
+</span><span style=color:#080;font-style:italic>        --&gt;</span>
+   <span style=color:green;font-weight:700>&lt;/servlet&gt;</span>
+   <span style=color:green;font-weight:700>&lt;servlet-mapping&gt;</span>
+       <span style=color:green;font-weight:700>&lt;servlet-name&gt;</span>KEUploadImgServlet<span style=color:green;font-weight:700>&lt;/servlet-name&gt;</span>
+       <span style=color:green;font-weight:700>&lt;url-pattern&gt;</span>/keplugin/KEUploadImg.servlet<span style=color:green;font-weight:700>&lt;/url-pattern&gt;</span>
+   <span style=color:green;font-weight:700>&lt;/servlet-mapping&gt;</span>
+   <span style=color:green;font-weight:700>&lt;servlet-mapping&gt;</span>
+       <span style=color:green;font-weight:700>&lt;servlet-name&gt;</span>KEManageImgServlet<span style=color:green;font-weight:700>&lt;/servlet-name&gt;</span>
+       <span style=color:green;font-weight:700>&lt;url-pattern&gt;</span>/keplugin/KEManageImages.servlet<span style=color:green;font-weight:700>&lt;/url-pattern&gt;</span>
+   <span style=color:green;font-weight:700>&lt;/servlet-mapping&gt;</span>
+   <span style=color:green;font-weight:700>&lt;servlet-mapping&gt;</span>
+       <span style=color:green;font-weight:700>&lt;servlet-name&gt;</span>KEUploadAttachServlet<span style=color:green;font-weight:700>&lt;/servlet-name&gt;</span>
+       <span style=color:green;font-weight:700>&lt;url-pattern&gt;</span>/keplugin/KEUploadAttach.servlet<span style=color:green;font-weight:700>&lt;/url-pattern&gt;</span>
+   <span style=color:green;font-weight:700>&lt;/servlet-mapping&gt;</span>
+   <span style=color:green;font-weight:700>&lt;welcome-file-list&gt;</span>
+       <span style=color:green;font-weight:700>&lt;welcome-file&gt;</span>index.jsp<span style=color:green;font-weight:700>&lt;/welcome-file&gt;</span>
+   <span style=color:green;font-weight:700>&lt;/welcome-file-list&gt;</span>
+   <span style=color:green;font-weight:700>&lt;login-config&gt;</span>
+       <span style=color:green;font-weight:700>&lt;auth-method&gt;</span>BASIC<span style=color:green;font-weight:700>&lt;/auth-method&gt;</span>
+   <span style=color:green;font-weight:700>&lt;/login-config&gt;</span>
+<span style=color:green;font-weight:700>&lt;/web-app&gt;</span>
 
-</code></pre></div><p>Jsp页面上KindEditor JS脚本配置[Servlet版本]：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript>
-<span style=color:#a6e22e>KE</span>.<span style=color:#a6e22e>show</span>({
-   <span style=color:#a6e22e>id</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;editorServlet&#34;</span>,
-   <span style=color:#a6e22e>resizeMode</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>0</span>,
-   <span style=color:#a6e22e>allowFileManager</span> <span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>,
-   <span style=color:#a6e22e>imageUploadJson</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;/KEPlugin/keplugin/KEUploadImg.servlet&#34;</span>,
-       <span style=color:#a6e22e>fileManagerJson</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;/KEPlugin/keplugin/KEManageImages.servlet&#34;</span>,
-   <span style=color:#75715e>//缺省为 *.*表示所有类型文件
-</span><span style=color:#75715e></span>   <span style=color:#75715e>//accessoryTypes: &#34;doc|docx&#34;,
-</span><span style=color:#75715e></span>   <span style=color:#a6e22e>accessoryUploadJson</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;/KEPlugin/keplugin/KEUploadAttach.servlet&#34;</span>    		
+</code></pre></div><p>Jsp页面上KindEditor JS脚本配置[Servlet版本]：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript>
+KE.show({
+   id<span style=color:#666>:</span> <span style=color:#b44>&#34;editorServlet&#34;</span>,
+   resizeMode<span style=color:#666>:</span> <span style=color:#666>0</span>,
+   allowFileManager <span style=color:#666>:</span> <span style=color:#a2f;font-weight:700>true</span>,
+   imageUploadJson<span style=color:#666>:</span> <span style=color:#b44>&#34;/KEPlugin/keplugin/KEUploadImg.servlet&#34;</span>,
+       fileManagerJson<span style=color:#666>:</span> <span style=color:#b44>&#34;/KEPlugin/keplugin/KEManageImages.servlet&#34;</span>,
+   <span style=color:#080;font-style:italic>//缺省为 *.*表示所有类型文件
+</span><span style=color:#080;font-style:italic></span>   <span style=color:#080;font-style:italic>//accessoryTypes: &#34;doc|docx&#34;,
+</span><span style=color:#080;font-style:italic></span>   accessoryUploadJson<span style=color:#666>:</span> <span style=color:#b44>&#34;/KEPlugin/keplugin/KEUploadAttach.servlet&#34;</span>    		
 });
 
-</code></pre></div><ol start=2><li>Struts2环境：先在web.xml中配置Struts2，如下：</li></ol><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml>
-<span style=color:#75715e>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
-<span style=color:#f92672>&lt;web-app</span> <span style=color:#a6e22e>version=</span><span style=color:#e6db74>&#34;2.5&#34;</span> <span style=color:#a6e22e>xmlns=</span><span style=color:#e6db74>&#34;http://java.sun.com/xml/ns/javaee&#34;</span> <span style=color:#a6e22e>xmlns:xsi=</span><span style=color:#e6db74>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span style=color:#a6e22e>xsi:schemalocation=</span><span style=color:#e6db74>&#34;http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&#34;</span><span style=color:#f92672>&gt;</span>
-	<span style=color:#f92672>&lt;filter&gt;</span>
-		<span style=color:#f92672>&lt;filter-name&gt;</span>struts2<span style=color:#f92672>&lt;/filter-name&gt;</span>
-		<span style=color:#f92672>&lt;filter-class&gt;</span>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter<span style=color:#f92672>&lt;/filter-class&gt;</span>	
-	<span style=color:#f92672>&lt;/filter&gt;</span>
-	<span style=color:#f92672>&lt;filter-mapping&gt;</span>
-		<span style=color:#f92672>&lt;filter-name&gt;</span>struts2<span style=color:#f92672>&lt;/filter-name&gt;</span>
-		<span style=color:#f92672>&lt;url-pattern&gt;</span>*.action<span style=color:#f92672>&lt;/url-pattern&gt;</span>
-	<span style=color:#f92672>&lt;/filter-mapping&gt;</span>
-	<span style=color:#f92672>&lt;welcome-file-list&gt;</span>
-		<span style=color:#f92672>&lt;welcome-file&gt;</span>index.jsp<span style=color:#f92672>&lt;/welcome-file&gt;</span>
-	<span style=color:#f92672>&lt;/welcome-file-list&gt;</span>
-<span style=color:#f92672>&lt;/web-app&gt;</span>
+</code></pre></div><ol start=2><li>Struts2环境：先在web.xml中配置Struts2，如下：</li></ol><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml>
+<span style=color:#080>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
+<span style=color:green;font-weight:700>&lt;web-app</span> <span style=color:#b44>version=</span><span style=color:#b44>&#34;2.5&#34;</span> <span style=color:#b44>xmlns=</span><span style=color:#b44>&#34;http://java.sun.com/xml/ns/javaee&#34;</span> <span style=color:#b44>xmlns:xsi=</span><span style=color:#b44>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span style=color:#b44>xsi:schemalocation=</span><span style=color:#b44>&#34;http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&#34;</span><span style=color:green;font-weight:700>&gt;</span>
+	<span style=color:green;font-weight:700>&lt;filter&gt;</span>
+		<span style=color:green;font-weight:700>&lt;filter-name&gt;</span>struts2<span style=color:green;font-weight:700>&lt;/filter-name&gt;</span>
+		<span style=color:green;font-weight:700>&lt;filter-class&gt;</span>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter<span style=color:green;font-weight:700>&lt;/filter-class&gt;</span>	
+	<span style=color:green;font-weight:700>&lt;/filter&gt;</span>
+	<span style=color:green;font-weight:700>&lt;filter-mapping&gt;</span>
+		<span style=color:green;font-weight:700>&lt;filter-name&gt;</span>struts2<span style=color:green;font-weight:700>&lt;/filter-name&gt;</span>
+		<span style=color:green;font-weight:700>&lt;url-pattern&gt;</span>*.action<span style=color:green;font-weight:700>&lt;/url-pattern&gt;</span>
+	<span style=color:green;font-weight:700>&lt;/filter-mapping&gt;</span>
+	<span style=color:green;font-weight:700>&lt;welcome-file-list&gt;</span>
+		<span style=color:green;font-weight:700>&lt;welcome-file&gt;</span>index.jsp<span style=color:green;font-weight:700>&lt;/welcome-file&gt;</span>
+	<span style=color:green;font-weight:700>&lt;/welcome-file-list&gt;</span>
+<span style=color:green;font-weight:700>&lt;/web-app&gt;</span>
 
-</code></pre></div><p>struts.xml文件配置，如下：（如设置了拦截器，请设置拦截器允许通过类型为KEStruts2Plugin的ACTION）</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml>
-<span style=color:#75715e>&lt;!--?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; ?--&gt;</span>
+</code></pre></div><p>struts.xml文件配置，如下：（如设置了拦截器，请设置拦截器允许通过类型为KEStruts2Plugin的ACTION）</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml>
+<span style=color:#080;font-style:italic>&lt;!--?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34; ?--&gt;</span>
 
-<span style=color:#f92672>&lt;struts&gt;</span>
-	<span style=color:#f92672>&lt;constant</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;struts.i18n.encoding&#34;</span> <span style=color:#a6e22e>value=</span><span style=color:#e6db74>&#34;UTF-8&#34;</span><span style=color:#f92672>&gt;&lt;/constant&gt;</span>
-	<span style=color:#f92672>&lt;constant</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;struts.action.extension&#34;</span> <span style=color:#a6e22e>value=</span><span style=color:#e6db74>&#34;action&#34;</span><span style=color:#f92672>&gt;&lt;/constant&gt;</span>
-	<span style=color:#f92672>&lt;constant</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;struts.configuration.xml.reload&#34;</span> <span style=color:#a6e22e>value=</span><span style=color:#e6db74>&#34;true&#34;</span><span style=color:#f92672>&gt;&lt;/constant&gt;</span>
-	<span style=color:#f92672>&lt;constant</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;struts.multipart.saveDir&#34;</span> <span style=color:#a6e22e>value=</span><span style=color:#e6db74>&#34;\temp&#34;</span><span style=color:#f92672>&gt;&lt;/constant&gt;</span>
-	<span style=color:#f92672>&lt;constant</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;struts.multipart.maxSize&#34;</span> <span style=color:#a6e22e>value=</span><span style=color:#e6db74>&#34;104857600&#34;</span><span style=color:#f92672>&gt;&lt;/constant&gt;</span>
+<span style=color:green;font-weight:700>&lt;struts&gt;</span>
+	<span style=color:green;font-weight:700>&lt;constant</span> <span style=color:#b44>name=</span><span style=color:#b44>&#34;struts.i18n.encoding&#34;</span> <span style=color:#b44>value=</span><span style=color:#b44>&#34;UTF-8&#34;</span><span style=color:green;font-weight:700>&gt;&lt;/constant&gt;</span>
+	<span style=color:green;font-weight:700>&lt;constant</span> <span style=color:#b44>name=</span><span style=color:#b44>&#34;struts.action.extension&#34;</span> <span style=color:#b44>value=</span><span style=color:#b44>&#34;action&#34;</span><span style=color:green;font-weight:700>&gt;&lt;/constant&gt;</span>
+	<span style=color:green;font-weight:700>&lt;constant</span> <span style=color:#b44>name=</span><span style=color:#b44>&#34;struts.configuration.xml.reload&#34;</span> <span style=color:#b44>value=</span><span style=color:#b44>&#34;true&#34;</span><span style=color:green;font-weight:700>&gt;&lt;/constant&gt;</span>
+	<span style=color:green;font-weight:700>&lt;constant</span> <span style=color:#b44>name=</span><span style=color:#b44>&#34;struts.multipart.saveDir&#34;</span> <span style=color:#b44>value=</span><span style=color:#b44>&#34;\temp&#34;</span><span style=color:green;font-weight:700>&gt;&lt;/constant&gt;</span>
+	<span style=color:green;font-weight:700>&lt;constant</span> <span style=color:#b44>name=</span><span style=color:#b44>&#34;struts.multipart.maxSize&#34;</span> <span style=color:#b44>value=</span><span style=color:#b44>&#34;104857600&#34;</span><span style=color:green;font-weight:700>&gt;&lt;/constant&gt;</span>
 
-	<span style=color:#f92672>&lt;package</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;KEPlugin&#34;</span> <span style=color:#a6e22e>extends=</span><span style=color:#e6db74>&#34;struts-default&#34;</span> <span style=color:#a6e22e>namespace=</span><span style=color:#e6db74>&#34;/keplugin&#34;</span><span style=color:#f92672>&gt;</span>
-		<span style=color:#f92672>&lt;action</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;keUploadImg&#34;</span> <span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;com.elkan.kindeditor.struts2.plugin.KEUploadImgAction&#34;</span><span style=color:#f92672>&gt;</span>
-			<span style=color:#75715e>&lt;!-- 缺省不压缩图片 --&gt;</span>
-			<span style=color:#75715e>&lt;!--&lt;param name=&#34;maxWidth&#34;&gt;&lt;/param&gt;--&gt;</span>
-			<span style=color:#75715e>&lt;!--&lt;param name=&#34;maxHeight&#34;&gt;&lt;/param&gt;--&gt;</span>
-			<span style=color:#75715e>&lt;!-- 缺省上传图片大小 --&gt;</span>
-			<span style=color:#75715e>&lt;!--&lt;param name=&#34;maxSize&#34;&gt;102400&lt;/param&gt;--&gt;</span>
-			<span style=color:#75715e>&lt;!-- 缺省为jpg,jpeg,png,gif,bmp类型图片 --&gt;</span>
-			<span style=color:#75715e>&lt;!--&lt;param name=&#34;imgTypes&#34;&gt;jpg,jpeg,png,gif,bmp&lt;/param&gt;--&gt;</span>
-			<span style=color:#f92672>&lt;param</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;imgSavePath&#34;</span><span style=color:#f92672>&gt;</span>/upload/image/<span style=color:#f92672>&lt;/param&gt;</span>
-		<span style=color:#f92672>&lt;/action&gt;</span>
-		<span style=color:#f92672>&lt;action</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;keUploadAttach&#34;</span> <span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;com.elkan.kindeditor.struts2.plugin.KEUploadAttachAction&#34;</span><span style=color:#f92672>&gt;</span>
-			<span style=color:#f92672>&lt;param</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;attachSavePath&#34;</span><span style=color:#f92672>&gt;</span>/upload/attach/<span style=color:#f92672>&lt;/param&gt;</span>
-			<span style=color:#75715e>&lt;!-- 缺省上传附件大小 --&gt;</span>
-			<span style=color:#75715e>&lt;!--&lt;param name=&#34;maxSize&#34;&gt;10485760&lt;/param&gt;--&gt;</span>
-			<span style=color:#75715e>&lt;!-- 缺省上传附件类型 --&gt;</span>
-			<span style=color:#75715e>&lt;!--&lt;param name=&#34;attachTypes&#34;&gt;*.*&lt;/param&gt;--&gt;</span>
-		<span style=color:#f92672>&lt;/action&gt;</span>
-		<span style=color:#f92672>&lt;action</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;keManagerImages&#34;</span> <span style=color:#a6e22e>class=</span><span style=color:#e6db74>&#34;com.elkan.kindeditor.struts2.plugin.KEManageImgAction&#34;</span><span style=color:#f92672>&gt;</span>
-			<span style=color:#f92672>&lt;param</span> <span style=color:#a6e22e>name=</span><span style=color:#e6db74>&#34;imgSavePath&#34;</span><span style=color:#f92672>&gt;</span>/upload/image/<span style=color:#f92672>&lt;/param&gt;</span>
-		<span style=color:#f92672>&lt;/action&gt;</span>
-	<span style=color:#f92672>&lt;/package&gt;</span>
-<span style=color:#f92672>&lt;/struts&gt;</span>
+	<span style=color:green;font-weight:700>&lt;package</span> <span style=color:#b44>name=</span><span style=color:#b44>&#34;KEPlugin&#34;</span> <span style=color:#b44>extends=</span><span style=color:#b44>&#34;struts-default&#34;</span> <span style=color:#b44>namespace=</span><span style=color:#b44>&#34;/keplugin&#34;</span><span style=color:green;font-weight:700>&gt;</span>
+		<span style=color:green;font-weight:700>&lt;action</span> <span style=color:#b44>name=</span><span style=color:#b44>&#34;keUploadImg&#34;</span> <span style=color:#b44>class=</span><span style=color:#b44>&#34;com.elkan.kindeditor.struts2.plugin.KEUploadImgAction&#34;</span><span style=color:green;font-weight:700>&gt;</span>
+			<span style=color:#080;font-style:italic>&lt;!-- 缺省不压缩图片 --&gt;</span>
+			<span style=color:#080;font-style:italic>&lt;!--&lt;param name=&#34;maxWidth&#34;&gt;&lt;/param&gt;--&gt;</span>
+			<span style=color:#080;font-style:italic>&lt;!--&lt;param name=&#34;maxHeight&#34;&gt;&lt;/param&gt;--&gt;</span>
+			<span style=color:#080;font-style:italic>&lt;!-- 缺省上传图片大小 --&gt;</span>
+			<span style=color:#080;font-style:italic>&lt;!--&lt;param name=&#34;maxSize&#34;&gt;102400&lt;/param&gt;--&gt;</span>
+			<span style=color:#080;font-style:italic>&lt;!-- 缺省为jpg,jpeg,png,gif,bmp类型图片 --&gt;</span>
+			<span style=color:#080;font-style:italic>&lt;!--&lt;param name=&#34;imgTypes&#34;&gt;jpg,jpeg,png,gif,bmp&lt;/param&gt;--&gt;</span>
+			<span style=color:green;font-weight:700>&lt;param</span> <span style=color:#b44>name=</span><span style=color:#b44>&#34;imgSavePath&#34;</span><span style=color:green;font-weight:700>&gt;</span>/upload/image/<span style=color:green;font-weight:700>&lt;/param&gt;</span>
+		<span style=color:green;font-weight:700>&lt;/action&gt;</span>
+		<span style=color:green;font-weight:700>&lt;action</span> <span style=color:#b44>name=</span><span style=color:#b44>&#34;keUploadAttach&#34;</span> <span style=color:#b44>class=</span><span style=color:#b44>&#34;com.elkan.kindeditor.struts2.plugin.KEUploadAttachAction&#34;</span><span style=color:green;font-weight:700>&gt;</span>
+			<span style=color:green;font-weight:700>&lt;param</span> <span style=color:#b44>name=</span><span style=color:#b44>&#34;attachSavePath&#34;</span><span style=color:green;font-weight:700>&gt;</span>/upload/attach/<span style=color:green;font-weight:700>&lt;/param&gt;</span>
+			<span style=color:#080;font-style:italic>&lt;!-- 缺省上传附件大小 --&gt;</span>
+			<span style=color:#080;font-style:italic>&lt;!--&lt;param name=&#34;maxSize&#34;&gt;10485760&lt;/param&gt;--&gt;</span>
+			<span style=color:#080;font-style:italic>&lt;!-- 缺省上传附件类型 --&gt;</span>
+			<span style=color:#080;font-style:italic>&lt;!--&lt;param name=&#34;attachTypes&#34;&gt;*.*&lt;/param&gt;--&gt;</span>
+		<span style=color:green;font-weight:700>&lt;/action&gt;</span>
+		<span style=color:green;font-weight:700>&lt;action</span> <span style=color:#b44>name=</span><span style=color:#b44>&#34;keManagerImages&#34;</span> <span style=color:#b44>class=</span><span style=color:#b44>&#34;com.elkan.kindeditor.struts2.plugin.KEManageImgAction&#34;</span><span style=color:green;font-weight:700>&gt;</span>
+			<span style=color:green;font-weight:700>&lt;param</span> <span style=color:#b44>name=</span><span style=color:#b44>&#34;imgSavePath&#34;</span><span style=color:green;font-weight:700>&gt;</span>/upload/image/<span style=color:green;font-weight:700>&lt;/param&gt;</span>
+		<span style=color:green;font-weight:700>&lt;/action&gt;</span>
+	<span style=color:green;font-weight:700>&lt;/package&gt;</span>
+<span style=color:green;font-weight:700>&lt;/struts&gt;</span>
 
-</code></pre></div><p>Jsp页面上KindEditor JS脚本配置[Struts2版本]：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript>
-<span style=color:#a6e22e>KE</span>.<span style=color:#a6e22e>show</span>({
-	<span style=color:#a6e22e>id</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;editorStruts2&#34;</span>,
-	<span style=color:#a6e22e>resizeMode</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>0</span>,
-	<span style=color:#a6e22e>allowFileManager</span> <span style=color:#f92672>:</span> <span style=color:#66d9ef>true</span>,
-	<span style=color:#a6e22e>imageUploadJson</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;/KEPlugin/keplugin/keUploadImg.action&#34;</span>,
-    	<span style=color:#a6e22e>fileManagerJson</span> <span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;/KEPlugin/keplugin/keManagerImages.action&#34;</span>,
-    	<span style=color:#75715e>//缺省为 *.*表示所有类型文件
-</span><span style=color:#75715e></span>	<span style=color:#75715e>//accessoryTypes: &#34;doc|docx&#34;,
-</span><span style=color:#75715e></span>        <span style=color:#a6e22e>accessoryUploadJson</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;/KEPlugin/keplugin/keUploadAttach.action&#34;</span>    		
+</code></pre></div><p>Jsp页面上KindEditor JS脚本配置[Struts2版本]：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript>
+KE.show({
+	id<span style=color:#666>:</span> <span style=color:#b44>&#34;editorStruts2&#34;</span>,
+	resizeMode<span style=color:#666>:</span> <span style=color:#666>0</span>,
+	allowFileManager <span style=color:#666>:</span> <span style=color:#a2f;font-weight:700>true</span>,
+	imageUploadJson<span style=color:#666>:</span> <span style=color:#b44>&#34;/KEPlugin/keplugin/keUploadImg.action&#34;</span>,
+    	fileManagerJson <span style=color:#666>:</span> <span style=color:#b44>&#34;/KEPlugin/keplugin/keManagerImages.action&#34;</span>,
+    	<span style=color:#080;font-style:italic>//缺省为 *.*表示所有类型文件
+</span><span style=color:#080;font-style:italic></span>	<span style=color:#080;font-style:italic>//accessoryTypes: &#34;doc|docx&#34;,
+</span><span style=color:#080;font-style:italic></span>        accessoryUploadJson<span style=color:#666>:</span> <span style=color:#b44>&#34;/KEPlugin/keplugin/keUploadAttach.action&#34;</span>    		
 });
 
 </code></pre></div><p>此次还借助JQuery EasyUI和SyntaxHighlighter语法高亮插件写了应用示例，下面我们就先来预览下Kindeditor在EasyUI模式下的清爽身影吧，闪亮登场……</p><ul><li>应用示例首页</li></ul><p><img src=http://myblog.lisenhui.cn/kindeditor-jsp-ss-2.png-alias alt=kindeditor-jsp-ss-2></p><ul><li>Servlet版本的KE</li></ul><p><img src=http://myblog.lisenhui.cn/kindeditor-jsp-ss-3.png-alias alt=kindeditor-jsp-ss-3></p><ul><li>Struts2版本的KE</li></ul><p><img src=http://myblog.lisenhui.cn/kindeditor-jsp-ss-4.png-alias alt=kindeditor-jsp-ss-4></p><ul><li>附件上传页面</li></ul><p><img src=http://myblog.lisenhui.cn/kindeditor-jsp-ss-5.png-alias alt=kindeditor-jsp-ss-5></p><ul><li>上传图片管理</li></ul><p><img src=http://myblog.lisenhui.cn/kindeditor-jsp-ss-6.png-alias alt=kindeditor-jsp-ss-6></p><ul><li>KE编辑器预览效果</li></ul><p><img src=http://myblog.lisenhui.cn/kindeditor-jsp-ss-7.png-alias alt=kindeditor-jsp-ss-7></p><p>其它更多详细的应用功能，详细请见附件下载。最后要记得要支持国产技术发展呀，有意见请你拍砖吐槽。</p><p>PS：<a href=http://download.csdn.net/download/lisenhui_19/3689869>下载KindEditor应用示例下载</a></p><p>把下载的压缩包上解压到Tomcat服务器的webapps目录下，启动Tomcat服务器，打开浏览器在地址栏输入：http://localhost:端口号/KEPlugin/index.jsp 就可以看到上面截图的应用示例了，Congratulation!</p></div><div class="bshare-custom icon-medium-plus" style=margin-top:50px><a href=# id=bshare-shareto>分享到:</a>

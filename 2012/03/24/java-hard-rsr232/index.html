@@ -15,461 +15,461 @@ gtag('js',new Date());gtag('config','UA-61491374-4 ');</script></head><body item
 <span class=leancloud-view-count>6分钟</span></span>
 <span id=/2012/03/24/java-hard-rsr232/ class=leancloud_visitors data-flag-title=Java程序与RSR232串口通讯小练手>|
 <i class="fa fa-binoculars fa-fw"></i><span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>一直以来都是在学习J2EE方面的应用系统开发，从未想过用JAVA来编写硬件交互程序，不过自己就是喜欢尝试一些未曾接触的新东西。在网上搜索了些资源，了解到JAVA写串口通讯的还是蛮多的，那么便着手准备开发调试环境。软件程序开发环境搭建不成问题，可这硬件环境就有点犯难啦。更何况自己用的是笔记本哪来的串口呀，再说要是真拿这串口硬件来自己也不会弄，随即想到了虚拟机，觉得这东西应该也有虚拟的吧，果真跟自己的猜测一样还真有这东西，顺便也下载了个串口小助手做为调试之用。</p><p>下面就先看看软件环境的搭建：</p><ul><li>下载<code>comm.jar</code>、<code>win32com.dll</code>和<code>javax.comm.properties</code>。 (附件提供下载)</li><li>介绍：<code>comm.jar</code>提供了通讯用的java API，<code>win32com.dll</code>提供了供<code>comm.jar</code>调用的本地驱动接口，<code>javax.comm.properties</code>是这个驱动的类配置文件</li><li>拷贝<code>javacomm.jar</code>到<code>X:\jre\lib\ext</code>目录下面;</li><li>拷贝<code>javax.comm.properties</code>到<code>X:\jre\lib</code>目录下面;</li><li>拷贝<code>win32com.dll</code>到<code>X:\jre\bin</code>目录下面;</li><li>更新下IDE里面的JDK环境，如下图：</li></ul><p><img src=http://myblog.lisenhui.cn/java-hard-rsr232-1.png-alias alt=java-hard-rsr232-1></p><p>接着是硬件虚拟环境安装虚拟串口，这里我用的是VSPD6.0(附件提供下载)，安装好后启动VSPD添加我们所需要的端口，注意这里是按组的方式添加的，例如COM1和COM2是一组同时添加，以此类推。</p><p>所有环境都准备好后，先来简单认识下comm.jar的内容。单从comm API的javadoc来看，SUM提供给我们的只有区区以下13个类或接口，具体如下：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>
-javax<span style=color:#f92672>.</span><span style=color:#a6e22e>comm</span><span style=color:#f92672>.</span><span style=color:#a6e22e>CommDriver</span>
-javax<span style=color:#f92672>.</span><span style=color:#a6e22e>comm</span><span style=color:#f92672>.</span><span style=color:#a6e22e>CommPort</span> javax<span style=color:#f92672>.</span><span style=color:#a6e22e>comm</span><span style=color:#f92672>.</span><span style=color:#a6e22e>ParallelPort</span>
-javax<span style=color:#f92672>.</span><span style=color:#a6e22e>comm</span><span style=color:#f92672>.</span><span style=color:#a6e22e>SerialPort</span> javax<span style=color:#f92672>.</span><span style=color:#a6e22e>comm</span><span style=color:#f92672>.</span><span style=color:#a6e22e>CommPortIdentifier</span>
-javax<span style=color:#f92672>.</span><span style=color:#a6e22e>comm</span><span style=color:#f92672>.</span><span style=color:#a6e22e>CommPortOwnershipListener</span>
-javax<span style=color:#f92672>.</span><span style=color:#a6e22e>comm</span><span style=color:#f92672>.</span><span style=color:#a6e22e>ParallelPortEvent</span> javax<span style=color:#f92672>.</span><span style=color:#a6e22e>comm</span><span style=color:#f92672>.</span><span style=color:#a6e22e>SerialPortEvent</span>
-javax<span style=color:#f92672>.</span><span style=color:#a6e22e>comm</span><span style=color:#f92672>.</span><span style=color:#a6e22e>ParallelPortEventListener</span> <span style=color:#f92672>(</span><span style=color:#66d9ef>extends</span> java<span style=color:#f92672>.</span><span style=color:#a6e22e>util</span><span style=color:#f92672>.</span><span style=color:#a6e22e>EventListener</span><span style=color:#f92672>)</span>
-javax<span style=color:#f92672>.</span><span style=color:#a6e22e>comm</span><span style=color:#f92672>.</span><span style=color:#a6e22e>SerialPortEventListener</span> <span style=color:#f92672>(</span><span style=color:#66d9ef>extends</span> java<span style=color:#f92672>.</span><span style=color:#a6e22e>util</span><span style=color:#f92672>.</span><span style=color:#a6e22e>EventListener</span><span style=color:#f92672>)</span>
-javax<span style=color:#f92672>.</span><span style=color:#a6e22e>comm</span><span style=color:#f92672>.</span><span style=color:#a6e22e>NoSuchPortException</span> javax<span style=color:#f92672>.</span><span style=color:#a6e22e>comm</span><span style=color:#f92672>.</span><span style=color:#a6e22e>PortInUseException</span>
-javax<span style=color:#f92672>.</span><span style=color:#a6e22e>comm</span><span style=color:#f92672>.</span><span style=color:#a6e22e>UnsupportedCommOperationException</span>
+<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>一直以来都是在学习J2EE方面的应用系统开发，从未想过用JAVA来编写硬件交互程序，不过自己就是喜欢尝试一些未曾接触的新东西。在网上搜索了些资源，了解到JAVA写串口通讯的还是蛮多的，那么便着手准备开发调试环境。软件程序开发环境搭建不成问题，可这硬件环境就有点犯难啦。更何况自己用的是笔记本哪来的串口呀，再说要是真拿这串口硬件来自己也不会弄，随即想到了虚拟机，觉得这东西应该也有虚拟的吧，果真跟自己的猜测一样还真有这东西，顺便也下载了个串口小助手做为调试之用。</p><p>下面就先看看软件环境的搭建：</p><ul><li>下载<code>comm.jar</code>、<code>win32com.dll</code>和<code>javax.comm.properties</code>。 (附件提供下载)</li><li>介绍：<code>comm.jar</code>提供了通讯用的java API，<code>win32com.dll</code>提供了供<code>comm.jar</code>调用的本地驱动接口，<code>javax.comm.properties</code>是这个驱动的类配置文件</li><li>拷贝<code>javacomm.jar</code>到<code>X:\jre\lib\ext</code>目录下面;</li><li>拷贝<code>javax.comm.properties</code>到<code>X:\jre\lib</code>目录下面;</li><li>拷贝<code>win32com.dll</code>到<code>X:\jre\bin</code>目录下面;</li><li>更新下IDE里面的JDK环境，如下图：</li></ul><p><img src=http://myblog.lisenhui.cn/java-hard-rsr232-1.png-alias alt=java-hard-rsr232-1></p><p>接着是硬件虚拟环境安装虚拟串口，这里我用的是VSPD6.0(附件提供下载)，安装好后启动VSPD添加我们所需要的端口，注意这里是按组的方式添加的，例如COM1和COM2是一组同时添加，以此类推。</p><p>所有环境都准备好后，先来简单认识下comm.jar的内容。单从comm API的javadoc来看，SUM提供给我们的只有区区以下13个类或接口，具体如下：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>
+javax<span style=color:#666>.</span><span style=color:#b44>comm</span><span style=color:#666>.</span><span style=color:#b44>CommDriver</span>
+javax<span style=color:#666>.</span><span style=color:#b44>comm</span><span style=color:#666>.</span><span style=color:#b44>CommPort</span> javax<span style=color:#666>.</span><span style=color:#b44>comm</span><span style=color:#666>.</span><span style=color:#b44>ParallelPort</span>
+javax<span style=color:#666>.</span><span style=color:#b44>comm</span><span style=color:#666>.</span><span style=color:#b44>SerialPort</span> javax<span style=color:#666>.</span><span style=color:#b44>comm</span><span style=color:#666>.</span><span style=color:#b44>CommPortIdentifier</span>
+javax<span style=color:#666>.</span><span style=color:#b44>comm</span><span style=color:#666>.</span><span style=color:#b44>CommPortOwnershipListener</span>
+javax<span style=color:#666>.</span><span style=color:#b44>comm</span><span style=color:#666>.</span><span style=color:#b44>ParallelPortEvent</span> javax<span style=color:#666>.</span><span style=color:#b44>comm</span><span style=color:#666>.</span><span style=color:#b44>SerialPortEvent</span>
+javax<span style=color:#666>.</span><span style=color:#b44>comm</span><span style=color:#666>.</span><span style=color:#b44>ParallelPortEventListener</span> <span style=color:#666>(</span><span style=color:#a2f;font-weight:700>extends</span> java<span style=color:#666>.</span><span style=color:#b44>util</span><span style=color:#666>.</span><span style=color:#b44>EventListener</span><span style=color:#666>)</span>
+javax<span style=color:#666>.</span><span style=color:#b44>comm</span><span style=color:#666>.</span><span style=color:#b44>SerialPortEventListener</span> <span style=color:#666>(</span><span style=color:#a2f;font-weight:700>extends</span> java<span style=color:#666>.</span><span style=color:#b44>util</span><span style=color:#666>.</span><span style=color:#b44>EventListener</span><span style=color:#666>)</span>
+javax<span style=color:#666>.</span><span style=color:#b44>comm</span><span style=color:#666>.</span><span style=color:#b44>NoSuchPortException</span> javax<span style=color:#666>.</span><span style=color:#b44>comm</span><span style=color:#666>.</span><span style=color:#b44>PortInUseException</span>
+javax<span style=color:#666>.</span><span style=color:#b44>comm</span><span style=color:#666>.</span><span style=color:#b44>UnsupportedCommOperationException</span>
 	
-</code></pre></div><p>这些类和接口命名一看便知其意，就不做一一介绍啦，可以到官网或网上找到更详细的信息。下面先测试下所搭建的环境是否可用，主要代码如下：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>
-Enumeration<span style=color:#f92672>&lt;?&gt;</span> en <span style=color:#f92672>=</span> CommPortIdentifier<span style=color:#f92672>.</span><span style=color:#a6e22e>getPortIdentifiers</span><span style=color:#f92672>();</span>
-CommPortIdentifier portId<span style=color:#f92672>;</span>
-<span style=color:#66d9ef>while</span> <span style=color:#f92672>(</span>en<span style=color:#f92672>.</span><span style=color:#a6e22e>hasMoreElements</span><span style=color:#f92672>())</span> <span style=color:#f92672>{</span>
-	portId <span style=color:#f92672>=</span> <span style=color:#f92672>(</span>CommPortIdentifier<span style=color:#f92672>)</span> en<span style=color:#f92672>.</span><span style=color:#a6e22e>nextElement</span><span style=color:#f92672>();</span>
-	<span style=color:#75715e>// 如果端口类型是串口，则打印出其端口信息
-</span><span style=color:#75715e></span>	<span style=color:#66d9ef>if</span> <span style=color:#f92672>(</span>portId<span style=color:#f92672>.</span><span style=color:#a6e22e>getPortType</span><span style=color:#f92672>()</span> <span style=color:#f92672>==</span> CommPortIdentifier<span style=color:#f92672>.</span><span style=color:#a6e22e>PORT_SERIAL</span><span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
-		System<span style=color:#f92672>.</span><span style=color:#a6e22e>out</span><span style=color:#f92672>.</span><span style=color:#a6e22e>println</span><span style=color:#f92672>(</span>portId<span style=color:#f92672>.</span><span style=color:#a6e22e>getName</span><span style=color:#f92672>());</span>
-	<span style=color:#f92672>}</span>
-<span style=color:#f92672>}</span>
+</code></pre></div><p>这些类和接口命名一看便知其意，就不做一一介绍啦，可以到官网或网上找到更详细的信息。下面先测试下所搭建的环境是否可用，主要代码如下：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>
+Enumeration<span style=color:#666>&lt;?&gt;</span> en <span style=color:#666>=</span> CommPortIdentifier<span style=color:#666>.</span><span style=color:#b44>getPortIdentifiers</span><span style=color:#666>();</span>
+CommPortIdentifier portId<span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>while</span> <span style=color:#666>(</span>en<span style=color:#666>.</span><span style=color:#b44>hasMoreElements</span><span style=color:#666>())</span> <span style=color:#666>{</span>
+	portId <span style=color:#666>=</span> <span style=color:#666>(</span>CommPortIdentifier<span style=color:#666>)</span> en<span style=color:#666>.</span><span style=color:#b44>nextElement</span><span style=color:#666>();</span>
+	<span style=color:#080;font-style:italic>// 如果端口类型是串口，则打印出其端口信息
+</span><span style=color:#080;font-style:italic></span>	<span style=color:#a2f;font-weight:700>if</span> <span style=color:#666>(</span>portId<span style=color:#666>.</span><span style=color:#b44>getPortType</span><span style=color:#666>()</span> <span style=color:#666>==</span> CommPortIdentifier<span style=color:#666>.</span><span style=color:#b44>PORT_SERIAL</span><span style=color:#666>)</span> <span style=color:#666>{</span>
+		System<span style=color:#666>.</span><span style=color:#b44>out</span><span style=color:#666>.</span><span style=color:#b44>println</span><span style=color:#666>(</span>portId<span style=color:#666>.</span><span style=color:#b44>getName</span><span style=color:#666>());</span>
+	<span style=color:#666>}</span>
+<span style=color:#666>}</span>
 
-</code></pre></div><p>运行代码后，控制台有输出正确的端口(如下图)，说明所有环境正常可进行下步工作，否则请检查。</p><p><img src=http://myblog.lisenhui.cn/java-hard-rsr232-2.png-alias alt=java-hard-rsr232-2></p><p>最后要解决的就是与串口数据交互的问题。在这个问题上，最主要的难点就是数据读取，因为我们不知道端口什么时候会有数据到来，也不知数据长度如何。通常，串口通信应用程序有两种模式，一种是实现SerialPortEventListener接口，监听各种串口事件并作相应处理；另一种就是建立一个独立的接收线程专门负责数据的接收。参考众多老前辈的代码后，下面就采用第一种方式写了个简单的助手程序，具体的实现请看详细代码，如下：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>
-<span style=color:#f92672>package</span> com.elkan1788.view<span style=color:#f92672>;</span>
+</code></pre></div><p>运行代码后，控制台有输出正确的端口(如下图)，说明所有环境正常可进行下步工作，否则请检查。</p><p><img src=http://myblog.lisenhui.cn/java-hard-rsr232-2.png-alias alt=java-hard-rsr232-2></p><p>最后要解决的就是与串口数据交互的问题。在这个问题上，最主要的难点就是数据读取，因为我们不知道端口什么时候会有数据到来，也不知数据长度如何。通常，串口通信应用程序有两种模式，一种是实现SerialPortEventListener接口，监听各种串口事件并作相应处理；另一种就是建立一个独立的接收线程专门负责数据的接收。参考众多老前辈的代码后，下面就采用第一种方式写了个简单的助手程序，具体的实现请看详细代码，如下：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>
+<span style=color:#a2f;font-weight:700>package</span> <span style=color:#00f;font-weight:700>com.elkan1788.view</span><span style=color:#666>;</span>
 
-<span style=color:#f92672>import</span> java.awt.BorderLayout<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> java.awt.Button<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> java.awt.Color<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> java.awt.Font<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> java.awt.GridLayout<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> java.awt.Image<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> java.awt.TextArea<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> java.awt.TextField<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> java.awt.event.ActionEvent<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> java.awt.event.ActionListener<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> java.io.IOException<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> java.io.InputStream<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> java.io.OutputStream<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> java.util.ArrayList<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> java.util.Enumeration<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> java.util.List<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> java.util.TooManyListenersException<span style=color:#f92672>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.awt.BorderLayout</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.awt.Button</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.awt.Color</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.awt.Font</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.awt.GridLayout</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.awt.Image</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.awt.TextArea</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.awt.TextField</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.awt.event.ActionEvent</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.awt.event.ActionListener</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.io.IOException</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.io.InputStream</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.io.OutputStream</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.util.ArrayList</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.util.Enumeration</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.util.List</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.util.TooManyListenersException</span><span style=color:#666>;</span>
 
-<span style=color:#f92672>import</span> javax.comm.CommPortIdentifier<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> javax.comm.NoSuchPortException<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> javax.comm.PortInUseException<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> javax.comm.SerialPort<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> javax.comm.SerialPortEvent<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> javax.comm.SerialPortEventListener<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> javax.comm.UnsupportedCommOperationException<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> javax.imageio.ImageIO<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> javax.swing.JComboBox<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> javax.swing.JFrame<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> javax.swing.JLabel<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> javax.swing.JOptionPane<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> javax.swing.JPanel<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> javax.swing.SwingConstants<span style=color:#f92672>;</span>
-<span style=color:#f92672>import</span> javax.swing.border.EmptyBorder<span style=color:#f92672>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.comm.CommPortIdentifier</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.comm.NoSuchPortException</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.comm.PortInUseException</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.comm.SerialPort</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.comm.SerialPortEvent</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.comm.SerialPortEventListener</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.comm.UnsupportedCommOperationException</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.imageio.ImageIO</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.swing.JComboBox</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.swing.JFrame</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.swing.JLabel</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.swing.JOptionPane</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.swing.JPanel</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.swing.SwingConstants</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.swing.border.EmptyBorder</span><span style=color:#666>;</span>
 
-<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>JavaRs232</span> <span style=color:#66d9ef>extends</span> JFrame <span style=color:#66d9ef>implements</span> ActionListener<span style=color:#f92672>,</span> SerialPortEventListener <span style=color:#f92672>{</span>
+<span style=color:#a2f;font-weight:700>public</span> <span style=color:#a2f;font-weight:700>class</span> <span style=color:#00f>JavaRs232</span> <span style=color:#a2f;font-weight:700>extends</span> JFrame <span style=color:#a2f;font-weight:700>implements</span> ActionListener<span style=color:#666>,</span> SerialPortEventListener <span style=color:#666>{</span>
 
-	<span style=color:#75715e>/**
-</span><span style=color:#75715e>	 * JDK Serial Version UID
-</span><span style=color:#75715e>	 */</span>
-	<span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> <span style=color:#66d9ef>long</span> serialVersionUID <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>7270865686330790103L<span style=color:#f92672>;</span>
+	<span style=color:#080;font-style:italic>/**
+</span><span style=color:#080;font-style:italic>	 * JDK Serial Version UID
+</span><span style=color:#080;font-style:italic>	 */</span>
+	<span style=color:#a2f;font-weight:700>private</span> <span style=color:#a2f;font-weight:700>static</span> <span style=color:#a2f;font-weight:700>final</span> <span style=color:#0b0;font-weight:700>long</span> serialVersionUID <span style=color:#666>=</span> <span style=color:#666>-</span>7270865686330790103L<span style=color:#666>;</span>
 
-	<span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>int</span> WIN_WIDTH <span style=color:#f92672>=</span> 380<span style=color:#f92672>;</span>
+	<span style=color:#a2f;font-weight:700>protected</span> <span style=color:#0b0;font-weight:700>int</span> WIN_WIDTH <span style=color:#666>=</span> 380<span style=color:#666>;</span>
 	
-	<span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>int</span> WIN_HEIGHT <span style=color:#f92672>=</span> 300<span style=color:#f92672>;</span>
+	<span style=color:#a2f;font-weight:700>protected</span> <span style=color:#0b0;font-weight:700>int</span> WIN_HEIGHT <span style=color:#666>=</span> 300<span style=color:#666>;</span>
 	
-	<span style=color:#66d9ef>private</span> JComboBox<span style=color:#f92672>&lt;?&gt;</span> portCombox<span style=color:#f92672>,</span> rateCombox<span style=color:#f92672>,</span> dataCombox<span style=color:#f92672>,</span> stopCombox<span style=color:#f92672>,</span> parityCombox<span style=color:#f92672>;</span> 
+	<span style=color:#a2f;font-weight:700>private</span> JComboBox<span style=color:#666>&lt;?&gt;</span> portCombox<span style=color:#666>,</span> rateCombox<span style=color:#666>,</span> dataCombox<span style=color:#666>,</span> stopCombox<span style=color:#666>,</span> parityCombox<span style=color:#666>;</span> 
 	
-	<span style=color:#66d9ef>private</span> Button openPortBtn<span style=color:#f92672>,</span> closePortBtn<span style=color:#f92672>,</span> sendMsgBtn<span style=color:#f92672>;</span>
+	<span style=color:#a2f;font-weight:700>private</span> Button openPortBtn<span style=color:#666>,</span> closePortBtn<span style=color:#666>,</span> sendMsgBtn<span style=color:#666>;</span>
 	
-	<span style=color:#66d9ef>private</span> TextField sendTf<span style=color:#f92672>;</span>
+	<span style=color:#a2f;font-weight:700>private</span> TextField sendTf<span style=color:#666>;</span>
 	
-	<span style=color:#66d9ef>private</span> TextArea readTa<span style=color:#f92672>;</span>
+	<span style=color:#a2f;font-weight:700>private</span> TextArea readTa<span style=color:#666>;</span>
 	
-	<span style=color:#66d9ef>private</span> JLabel statusLb<span style=color:#f92672>;</span>
+	<span style=color:#a2f;font-weight:700>private</span> JLabel statusLb<span style=color:#666>;</span>
 	
-	<span style=color:#66d9ef>private</span> String portname<span style=color:#f92672>,</span> rate<span style=color:#f92672>,</span> data<span style=color:#f92672>,</span> stop<span style=color:#f92672>,</span> parity<span style=color:#f92672>;</span>
+	<span style=color:#a2f;font-weight:700>private</span> String portname<span style=color:#666>,</span> rate<span style=color:#666>,</span> data<span style=color:#666>,</span> stop<span style=color:#666>,</span> parity<span style=color:#666>;</span>
 	
-	<span style=color:#66d9ef>protected</span> CommPortIdentifier portId<span style=color:#f92672>;</span>
+	<span style=color:#a2f;font-weight:700>protected</span> CommPortIdentifier portId<span style=color:#666>;</span>
 	
-	<span style=color:#66d9ef>protected</span> Enumeration<span style=color:#f92672>&lt;?&gt;</span> ports<span style=color:#f92672>;</span>
+	<span style=color:#a2f;font-weight:700>protected</span> Enumeration<span style=color:#666>&lt;?&gt;</span> ports<span style=color:#666>;</span>
 	
-	<span style=color:#66d9ef>protected</span> List<span style=color:#f92672>&lt;</span>String<span style=color:#f92672>&gt;</span> portList<span style=color:#f92672>;</span>
+	<span style=color:#a2f;font-weight:700>protected</span> List<span style=color:#666>&lt;</span>String<span style=color:#666>&gt;</span> portList<span style=color:#666>;</span>
 
-	<span style=color:#66d9ef>protected</span> SerialPort serialPort<span style=color:#f92672>;</span>
+	<span style=color:#a2f;font-weight:700>protected</span> SerialPort serialPort<span style=color:#666>;</span>
 
-	<span style=color:#66d9ef>protected</span> OutputStream outputStream <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>;</span> 
+	<span style=color:#a2f;font-weight:700>protected</span> OutputStream outputStream <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>null</span><span style=color:#666>;</span> 
 
-	<span style=color:#66d9ef>protected</span> InputStream inputStream <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>;</span> 
+	<span style=color:#a2f;font-weight:700>protected</span> InputStream inputStream <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>null</span><span style=color:#666>;</span> 
     
-	<span style=color:#66d9ef>protected</span> String mesg<span style=color:#f92672>;</span>
+	<span style=color:#a2f;font-weight:700>protected</span> String mesg<span style=color:#666>;</span>
     
-	<span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>int</span> sendCount<span style=color:#f92672>,</span> reciveCount<span style=color:#f92672>;</span>
+	<span style=color:#a2f;font-weight:700>protected</span> <span style=color:#0b0;font-weight:700>int</span> sendCount<span style=color:#666>,</span> reciveCount<span style=color:#666>;</span>
 	
-    <span style=color:#75715e>/**
-</span><span style=color:#75715e>     * 默认构造函数
-</span><span style=color:#75715e>     */</span>
-	<span style=color:#66d9ef>public</span> <span style=color:#a6e22e>JavaRs232</span><span style=color:#f92672>()</span> <span style=color:#f92672>{</span>		
-		<span style=color:#66d9ef>super</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;Java RS-232串口通信测试程序   凡梦星尘&#34;</span><span style=color:#f92672>);</span>
-		setSize<span style=color:#f92672>(</span>WIN_WIDTH<span style=color:#f92672>,</span> WIN_HEIGHT<span style=color:#f92672>);</span>
-		setLocationRelativeTo<span style=color:#f92672>(</span><span style=color:#66d9ef>null</span><span style=color:#f92672>);</span>
-		Image icon <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>;</span>
-		<span style=color:#66d9ef>try</span> <span style=color:#f92672>{</span>
-			icon <span style=color:#f92672>=</span> ImageIO<span style=color:#f92672>.</span><span style=color:#a6e22e>read</span><span style=color:#f92672>(</span>JavaRs232<span style=color:#f92672>.</span><span style=color:#a6e22e>class</span><span style=color:#f92672>.</span><span style=color:#a6e22e>getResourceAsStream</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;/res/rs232.png&#34;</span><span style=color:#f92672>));</span>
-		<span style=color:#f92672>}</span> <span style=color:#66d9ef>catch</span> <span style=color:#f92672>(</span>IOException e<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
-			showErrMesgbox<span style=color:#f92672>(</span>e<span style=color:#f92672>.</span><span style=color:#a6e22e>getMessage</span><span style=color:#f92672>());</span>
-		<span style=color:#f92672>}</span>
-		setIconImage<span style=color:#f92672>(</span>icon<span style=color:#f92672>);</span>
-		setResizable<span style=color:#f92672>(</span><span style=color:#66d9ef>false</span><span style=color:#f92672>);</span>
-		scanPorts<span style=color:#f92672>();</span>
-		initComponents<span style=color:#f92672>();</span>
-		setDefaultCloseOperation<span style=color:#f92672>(</span>JFrame<span style=color:#f92672>.</span><span style=color:#a6e22e>EXIT_ON_CLOSE</span><span style=color:#f92672>);</span>
-		setVisible<span style=color:#f92672>(</span><span style=color:#66d9ef>true</span><span style=color:#f92672>);</span>
-	<span style=color:#f92672>}</span>
+    <span style=color:#080;font-style:italic>/**
+</span><span style=color:#080;font-style:italic>     * 默认构造函数
+</span><span style=color:#080;font-style:italic>     */</span>
+	<span style=color:#a2f;font-weight:700>public</span> <span style=color:#00a000>JavaRs232</span><span style=color:#666>()</span> <span style=color:#666>{</span>		
+		<span style=color:#a2f;font-weight:700>super</span><span style=color:#666>(</span><span style=color:#b44>&#34;Java RS-232串口通信测试程序   凡梦星尘&#34;</span><span style=color:#666>);</span>
+		setSize<span style=color:#666>(</span>WIN_WIDTH<span style=color:#666>,</span> WIN_HEIGHT<span style=color:#666>);</span>
+		setLocationRelativeTo<span style=color:#666>(</span><span style=color:#a2f;font-weight:700>null</span><span style=color:#666>);</span>
+		Image icon <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>null</span><span style=color:#666>;</span>
+		<span style=color:#a2f;font-weight:700>try</span> <span style=color:#666>{</span>
+			icon <span style=color:#666>=</span> ImageIO<span style=color:#666>.</span><span style=color:#b44>read</span><span style=color:#666>(</span>JavaRs232<span style=color:#666>.</span><span style=color:#b44>class</span><span style=color:#666>.</span><span style=color:#b44>getResourceAsStream</span><span style=color:#666>(</span><span style=color:#b44>&#34;/res/rs232.png&#34;</span><span style=color:#666>));</span>
+		<span style=color:#666>}</span> <span style=color:#a2f;font-weight:700>catch</span> <span style=color:#666>(</span>IOException e<span style=color:#666>)</span> <span style=color:#666>{</span>
+			showErrMesgbox<span style=color:#666>(</span>e<span style=color:#666>.</span><span style=color:#b44>getMessage</span><span style=color:#666>());</span>
+		<span style=color:#666>}</span>
+		setIconImage<span style=color:#666>(</span>icon<span style=color:#666>);</span>
+		setResizable<span style=color:#666>(</span><span style=color:#a2f;font-weight:700>false</span><span style=color:#666>);</span>
+		scanPorts<span style=color:#666>();</span>
+		initComponents<span style=color:#666>();</span>
+		setDefaultCloseOperation<span style=color:#666>(</span>JFrame<span style=color:#666>.</span><span style=color:#b44>EXIT_ON_CLOSE</span><span style=color:#666>);</span>
+		setVisible<span style=color:#666>(</span><span style=color:#a2f;font-weight:700>true</span><span style=color:#666>);</span>
+	<span style=color:#666>}</span>
 	
-	<span style=color:#75715e>/**
-</span><span style=color:#75715e>	 * 初始化各UI组件
-</span><span style=color:#75715e>	 * @since 2012-3-22 下午11:56:39
-</span><span style=color:#75715e>	 */</span>
-	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>initComponents</span><span style=color:#f92672>()</span> <span style=color:#f92672>{</span>		
-		<span style=color:#75715e>// 共用常量
-</span><span style=color:#75715e></span>		Font lbFont <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Font<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;微软雅黑&#34;</span><span style=color:#f92672>,</span> Font<span style=color:#f92672>.</span><span style=color:#a6e22e>TRUETYPE_FONT</span><span style=color:#f92672>,</span> 14<span style=color:#f92672>);</span>
+	<span style=color:#080;font-style:italic>/**
+</span><span style=color:#080;font-style:italic>	 * 初始化各UI组件
+</span><span style=color:#080;font-style:italic>	 * @since 2012-3-22 下午11:56:39
+</span><span style=color:#080;font-style:italic>	 */</span>
+	<span style=color:#a2f;font-weight:700>public</span> <span style=color:#0b0;font-weight:700>void</span> <span style=color:#00a000>initComponents</span><span style=color:#666>()</span> <span style=color:#666>{</span>		
+		<span style=color:#080;font-style:italic>// 共用常量
+</span><span style=color:#080;font-style:italic></span>		Font lbFont <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> Font<span style=color:#666>(</span><span style=color:#b44>&#34;微软雅黑&#34;</span><span style=color:#666>,</span> Font<span style=color:#666>.</span><span style=color:#b44>TRUETYPE_FONT</span><span style=color:#666>,</span> 14<span style=color:#666>);</span>
 
-		<span style=color:#75715e>// 创建左边面板
-</span><span style=color:#75715e></span>		JPanel northPane <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JPanel<span style=color:#f92672>();</span>
-		northPane<span style=color:#f92672>.</span><span style=color:#a6e22e>setLayout</span><span style=color:#f92672>(</span><span style=color:#66d9ef>new</span> GridLayout<span style=color:#f92672>(</span>1<span style=color:#f92672>,</span> 1<span style=color:#f92672>));</span>
-		<span style=color:#75715e>// 设置左边面板各组件
-</span><span style=color:#75715e></span>		JPanel leftPane <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JPanel<span style=color:#f92672>();</span>		
-		leftPane<span style=color:#f92672>.</span><span style=color:#a6e22e>setOpaque</span><span style=color:#f92672>(</span><span style=color:#66d9ef>false</span><span style=color:#f92672>);</span>
-		leftPane<span style=color:#f92672>.</span><span style=color:#a6e22e>setLayout</span><span style=color:#f92672>(</span><span style=color:#66d9ef>new</span> GridLayout<span style=color:#f92672>(</span>3<span style=color:#f92672>,</span>2<span style=color:#f92672>));</span>
-		JLabel portnameLb <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JLabel<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;串口号：&#34;</span><span style=color:#f92672>);</span>
-		portnameLb<span style=color:#f92672>.</span><span style=color:#a6e22e>setFont</span><span style=color:#f92672>(</span>lbFont<span style=color:#f92672>);</span>
-		portnameLb<span style=color:#f92672>.</span><span style=color:#a6e22e>setHorizontalAlignment</span><span style=color:#f92672>(</span>SwingConstants<span style=color:#f92672>.</span><span style=color:#a6e22e>RIGHT</span><span style=color:#f92672>);</span>
-		portCombox <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JComboBox<span style=color:#f92672>&lt;</span>String<span style=color:#f92672>&gt;((</span>String <span style=color:#f92672>[])</span>portList<span style=color:#f92672>.</span><span style=color:#a6e22e>toArray</span><span style=color:#f92672>(</span><span style=color:#66d9ef>new</span> String<span style=color:#f92672>[</span>0<span style=color:#f92672>]));</span>
-		portCombox<span style=color:#f92672>.</span><span style=color:#a6e22e>addActionListener</span><span style=color:#f92672>(</span><span style=color:#66d9ef>this</span><span style=color:#f92672>);</span>
-		JLabel databitsLb <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JLabel<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;数据位：&#34;</span><span style=color:#f92672>);</span>
-		databitsLb<span style=color:#f92672>.</span><span style=color:#a6e22e>setFont</span><span style=color:#f92672>(</span>lbFont<span style=color:#f92672>);</span>
-		databitsLb<span style=color:#f92672>.</span><span style=color:#a6e22e>setHorizontalAlignment</span><span style=color:#f92672>(</span>SwingConstants<span style=color:#f92672>.</span><span style=color:#a6e22e>RIGHT</span><span style=color:#f92672>);</span>
-		dataCombox <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JComboBox<span style=color:#f92672>&lt;</span>Integer<span style=color:#f92672>&gt;(</span><span style=color:#66d9ef>new</span> Integer<span style=color:#f92672>[]{</span>5<span style=color:#f92672>,</span> 6<span style=color:#f92672>,</span> 7<span style=color:#f92672>,</span> 8<span style=color:#f92672>});</span>
-		dataCombox<span style=color:#f92672>.</span><span style=color:#a6e22e>setSelectedIndex</span><span style=color:#f92672>(</span>3<span style=color:#f92672>);</span>
-		dataCombox<span style=color:#f92672>.</span><span style=color:#a6e22e>addActionListener</span><span style=color:#f92672>(</span><span style=color:#66d9ef>this</span><span style=color:#f92672>);</span>
-		JLabel parityLb <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JLabel<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;校验位：&#34;</span><span style=color:#f92672>);</span>
-		parityLb<span style=color:#f92672>.</span><span style=color:#a6e22e>setFont</span><span style=color:#f92672>(</span>lbFont<span style=color:#f92672>);</span>
-		parityLb<span style=color:#f92672>.</span><span style=color:#a6e22e>setHorizontalAlignment</span><span style=color:#f92672>(</span>SwingConstants<span style=color:#f92672>.</span><span style=color:#a6e22e>RIGHT</span><span style=color:#f92672>);</span>
-		parityCombox <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JComboBox<span style=color:#f92672>&lt;</span>String<span style=color:#f92672>&gt;(</span><span style=color:#66d9ef>new</span> String<span style=color:#f92672>[]{</span><span style=color:#e6db74>&#34;NONE&#34;</span><span style=color:#f92672>,</span><span style=color:#e6db74>&#34;ODD&#34;</span><span style=color:#f92672>,</span><span style=color:#e6db74>&#34;EVEN&#34;</span><span style=color:#f92672>,</span><span style=color:#e6db74>&#34;MARK&#34;</span><span style=color:#f92672>,</span><span style=color:#e6db74>&#34;SPACE&#34;</span><span style=color:#f92672>});</span>
-		parityCombox<span style=color:#f92672>.</span><span style=color:#a6e22e>addActionListener</span><span style=color:#f92672>(</span><span style=color:#66d9ef>this</span><span style=color:#f92672>);</span>
-		<span style=color:#75715e>// 添加组件至面板
-</span><span style=color:#75715e></span>		leftPane<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span>portnameLb<span style=color:#f92672>);</span>
-		leftPane<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span>portCombox<span style=color:#f92672>);</span>
-		leftPane<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span>databitsLb<span style=color:#f92672>);</span>
-		leftPane<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span>dataCombox<span style=color:#f92672>);</span>
-		leftPane<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span>parityLb<span style=color:#f92672>);</span>
-		leftPane<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span>parityCombox<span style=color:#f92672>);</span>
+		<span style=color:#080;font-style:italic>// 创建左边面板
+</span><span style=color:#080;font-style:italic></span>		JPanel northPane <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> JPanel<span style=color:#666>();</span>
+		northPane<span style=color:#666>.</span><span style=color:#b44>setLayout</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>new</span> GridLayout<span style=color:#666>(</span>1<span style=color:#666>,</span> 1<span style=color:#666>));</span>
+		<span style=color:#080;font-style:italic>// 设置左边面板各组件
+</span><span style=color:#080;font-style:italic></span>		JPanel leftPane <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> JPanel<span style=color:#666>();</span>		
+		leftPane<span style=color:#666>.</span><span style=color:#b44>setOpaque</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>false</span><span style=color:#666>);</span>
+		leftPane<span style=color:#666>.</span><span style=color:#b44>setLayout</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>new</span> GridLayout<span style=color:#666>(</span>3<span style=color:#666>,</span>2<span style=color:#666>));</span>
+		JLabel portnameLb <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> JLabel<span style=color:#666>(</span><span style=color:#b44>&#34;串口号：&#34;</span><span style=color:#666>);</span>
+		portnameLb<span style=color:#666>.</span><span style=color:#b44>setFont</span><span style=color:#666>(</span>lbFont<span style=color:#666>);</span>
+		portnameLb<span style=color:#666>.</span><span style=color:#b44>setHorizontalAlignment</span><span style=color:#666>(</span>SwingConstants<span style=color:#666>.</span><span style=color:#b44>RIGHT</span><span style=color:#666>);</span>
+		portCombox <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> JComboBox<span style=color:#666>&lt;</span>String<span style=color:#666>&gt;((</span>String <span style=color:#666>[])</span>portList<span style=color:#666>.</span><span style=color:#b44>toArray</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>new</span> String<span style=color:#666>[</span>0<span style=color:#666>]));</span>
+		portCombox<span style=color:#666>.</span><span style=color:#b44>addActionListener</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>this</span><span style=color:#666>);</span>
+		JLabel databitsLb <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> JLabel<span style=color:#666>(</span><span style=color:#b44>&#34;数据位：&#34;</span><span style=color:#666>);</span>
+		databitsLb<span style=color:#666>.</span><span style=color:#b44>setFont</span><span style=color:#666>(</span>lbFont<span style=color:#666>);</span>
+		databitsLb<span style=color:#666>.</span><span style=color:#b44>setHorizontalAlignment</span><span style=color:#666>(</span>SwingConstants<span style=color:#666>.</span><span style=color:#b44>RIGHT</span><span style=color:#666>);</span>
+		dataCombox <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> JComboBox<span style=color:#666>&lt;</span>Integer<span style=color:#666>&gt;(</span><span style=color:#a2f;font-weight:700>new</span> Integer<span style=color:#666>[]{</span>5<span style=color:#666>,</span> 6<span style=color:#666>,</span> 7<span style=color:#666>,</span> 8<span style=color:#666>});</span>
+		dataCombox<span style=color:#666>.</span><span style=color:#b44>setSelectedIndex</span><span style=color:#666>(</span>3<span style=color:#666>);</span>
+		dataCombox<span style=color:#666>.</span><span style=color:#b44>addActionListener</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>this</span><span style=color:#666>);</span>
+		JLabel parityLb <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> JLabel<span style=color:#666>(</span><span style=color:#b44>&#34;校验位：&#34;</span><span style=color:#666>);</span>
+		parityLb<span style=color:#666>.</span><span style=color:#b44>setFont</span><span style=color:#666>(</span>lbFont<span style=color:#666>);</span>
+		parityLb<span style=color:#666>.</span><span style=color:#b44>setHorizontalAlignment</span><span style=color:#666>(</span>SwingConstants<span style=color:#666>.</span><span style=color:#b44>RIGHT</span><span style=color:#666>);</span>
+		parityCombox <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> JComboBox<span style=color:#666>&lt;</span>String<span style=color:#666>&gt;(</span><span style=color:#a2f;font-weight:700>new</span> String<span style=color:#666>[]{</span><span style=color:#b44>&#34;NONE&#34;</span><span style=color:#666>,</span><span style=color:#b44>&#34;ODD&#34;</span><span style=color:#666>,</span><span style=color:#b44>&#34;EVEN&#34;</span><span style=color:#666>,</span><span style=color:#b44>&#34;MARK&#34;</span><span style=color:#666>,</span><span style=color:#b44>&#34;SPACE&#34;</span><span style=color:#666>});</span>
+		parityCombox<span style=color:#666>.</span><span style=color:#b44>addActionListener</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>this</span><span style=color:#666>);</span>
+		<span style=color:#080;font-style:italic>// 添加组件至面板
+</span><span style=color:#080;font-style:italic></span>		leftPane<span style=color:#666>.</span><span style=color:#b44>add</span><span style=color:#666>(</span>portnameLb<span style=color:#666>);</span>
+		leftPane<span style=color:#666>.</span><span style=color:#b44>add</span><span style=color:#666>(</span>portCombox<span style=color:#666>);</span>
+		leftPane<span style=color:#666>.</span><span style=color:#b44>add</span><span style=color:#666>(</span>databitsLb<span style=color:#666>);</span>
+		leftPane<span style=color:#666>.</span><span style=color:#b44>add</span><span style=color:#666>(</span>dataCombox<span style=color:#666>);</span>
+		leftPane<span style=color:#666>.</span><span style=color:#b44>add</span><span style=color:#666>(</span>parityLb<span style=color:#666>);</span>
+		leftPane<span style=color:#666>.</span><span style=color:#b44>add</span><span style=color:#666>(</span>parityCombox<span style=color:#666>);</span>
 
-		<span style=color:#75715e>//创建右边面板
-</span><span style=color:#75715e></span>		JPanel rightPane <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JPanel<span style=color:#f92672>();</span>
-		rightPane<span style=color:#f92672>.</span><span style=color:#a6e22e>setLayout</span><span style=color:#f92672>(</span><span style=color:#66d9ef>new</span> GridLayout<span style=color:#f92672>(</span>3<span style=color:#f92672>,</span>2<span style=color:#f92672>));</span>
-		<span style=color:#75715e>// 设置右边面板各组件
-</span><span style=color:#75715e></span>		JLabel baudrateLb <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JLabel<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;波特率：&#34;</span><span style=color:#f92672>);</span>
-		baudrateLb<span style=color:#f92672>.</span><span style=color:#a6e22e>setFont</span><span style=color:#f92672>(</span>lbFont<span style=color:#f92672>);</span>
-		baudrateLb<span style=color:#f92672>.</span><span style=color:#a6e22e>setHorizontalAlignment</span><span style=color:#f92672>(</span>SwingConstants<span style=color:#f92672>.</span><span style=color:#a6e22e>RIGHT</span><span style=color:#f92672>);</span>
-		rateCombox <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JComboBox<span style=color:#f92672>&lt;</span>Integer<span style=color:#f92672>&gt;(</span><span style=color:#66d9ef>new</span> Integer<span style=color:#f92672>[]{</span>2400<span style=color:#f92672>,</span>4800<span style=color:#f92672>,</span>9600<span style=color:#f92672>,</span>14400<span style=color:#f92672>,</span>19200<span style=color:#f92672>,</span>38400<span style=color:#f92672>,</span>56000<span style=color:#f92672>});</span>
-		rateCombox<span style=color:#f92672>.</span><span style=color:#a6e22e>setSelectedIndex</span><span style=color:#f92672>(</span>2<span style=color:#f92672>);</span>
-		rateCombox<span style=color:#f92672>.</span><span style=color:#a6e22e>addActionListener</span><span style=color:#f92672>(</span><span style=color:#66d9ef>this</span><span style=color:#f92672>);</span>
-		JLabel stopbitsLb <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JLabel<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;停止位：&#34;</span><span style=color:#f92672>);</span>
-		stopbitsLb<span style=color:#f92672>.</span><span style=color:#a6e22e>setFont</span><span style=color:#f92672>(</span>lbFont<span style=color:#f92672>);</span>
-		stopbitsLb<span style=color:#f92672>.</span><span style=color:#a6e22e>setHorizontalAlignment</span><span style=color:#f92672>(</span>SwingConstants<span style=color:#f92672>.</span><span style=color:#a6e22e>RIGHT</span><span style=color:#f92672>);</span>
-		stopCombox <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JComboBox<span style=color:#f92672>&lt;</span>String<span style=color:#f92672>&gt;(</span><span style=color:#66d9ef>new</span> String<span style=color:#f92672>[]{</span><span style=color:#e6db74>&#34;1&#34;</span><span style=color:#f92672>,</span><span style=color:#e6db74>&#34;2&#34;</span><span style=color:#f92672>,</span><span style=color:#e6db74>&#34;1.5&#34;</span><span style=color:#f92672>});</span>
-		stopCombox<span style=color:#f92672>.</span><span style=color:#a6e22e>addActionListener</span><span style=color:#f92672>(</span><span style=color:#66d9ef>this</span><span style=color:#f92672>);</span>
-		openPortBtn <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Button<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;打开端口&#34;</span><span style=color:#f92672>);</span>
-		openPortBtn<span style=color:#f92672>.</span><span style=color:#a6e22e>addActionListener</span><span style=color:#f92672>(</span><span style=color:#66d9ef>this</span><span style=color:#f92672>);</span>
-		closePortBtn <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Button<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;关闭端口&#34;</span><span style=color:#f92672>);</span>	
-		closePortBtn<span style=color:#f92672>.</span><span style=color:#a6e22e>addActionListener</span><span style=color:#f92672>(</span><span style=color:#66d9ef>this</span><span style=color:#f92672>);</span>
-		<span style=color:#75715e>// 添加组件至面板
-</span><span style=color:#75715e></span>		rightPane<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span>baudrateLb<span style=color:#f92672>);</span>
-		rightPane<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span>rateCombox<span style=color:#f92672>);</span>
-		rightPane<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span>stopbitsLb<span style=color:#f92672>);</span>
-		rightPane<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span>stopCombox<span style=color:#f92672>);</span>
-		rightPane<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span>openPortBtn<span style=color:#f92672>);</span>
-		rightPane<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span>closePortBtn<span style=color:#f92672>);</span>
-		<span style=color:#75715e>// 将左右面板组合添加到北边的面板
-</span><span style=color:#75715e></span>		northPane<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span>leftPane<span style=color:#f92672>);</span>
-		northPane<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span>rightPane<span style=color:#f92672>);</span>
+		<span style=color:#080;font-style:italic>//创建右边面板
+</span><span style=color:#080;font-style:italic></span>		JPanel rightPane <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> JPanel<span style=color:#666>();</span>
+		rightPane<span style=color:#666>.</span><span style=color:#b44>setLayout</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>new</span> GridLayout<span style=color:#666>(</span>3<span style=color:#666>,</span>2<span style=color:#666>));</span>
+		<span style=color:#080;font-style:italic>// 设置右边面板各组件
+</span><span style=color:#080;font-style:italic></span>		JLabel baudrateLb <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> JLabel<span style=color:#666>(</span><span style=color:#b44>&#34;波特率：&#34;</span><span style=color:#666>);</span>
+		baudrateLb<span style=color:#666>.</span><span style=color:#b44>setFont</span><span style=color:#666>(</span>lbFont<span style=color:#666>);</span>
+		baudrateLb<span style=color:#666>.</span><span style=color:#b44>setHorizontalAlignment</span><span style=color:#666>(</span>SwingConstants<span style=color:#666>.</span><span style=color:#b44>RIGHT</span><span style=color:#666>);</span>
+		rateCombox <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> JComboBox<span style=color:#666>&lt;</span>Integer<span style=color:#666>&gt;(</span><span style=color:#a2f;font-weight:700>new</span> Integer<span style=color:#666>[]{</span>2400<span style=color:#666>,</span>4800<span style=color:#666>,</span>9600<span style=color:#666>,</span>14400<span style=color:#666>,</span>19200<span style=color:#666>,</span>38400<span style=color:#666>,</span>56000<span style=color:#666>});</span>
+		rateCombox<span style=color:#666>.</span><span style=color:#b44>setSelectedIndex</span><span style=color:#666>(</span>2<span style=color:#666>);</span>
+		rateCombox<span style=color:#666>.</span><span style=color:#b44>addActionListener</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>this</span><span style=color:#666>);</span>
+		JLabel stopbitsLb <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> JLabel<span style=color:#666>(</span><span style=color:#b44>&#34;停止位：&#34;</span><span style=color:#666>);</span>
+		stopbitsLb<span style=color:#666>.</span><span style=color:#b44>setFont</span><span style=color:#666>(</span>lbFont<span style=color:#666>);</span>
+		stopbitsLb<span style=color:#666>.</span><span style=color:#b44>setHorizontalAlignment</span><span style=color:#666>(</span>SwingConstants<span style=color:#666>.</span><span style=color:#b44>RIGHT</span><span style=color:#666>);</span>
+		stopCombox <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> JComboBox<span style=color:#666>&lt;</span>String<span style=color:#666>&gt;(</span><span style=color:#a2f;font-weight:700>new</span> String<span style=color:#666>[]{</span><span style=color:#b44>&#34;1&#34;</span><span style=color:#666>,</span><span style=color:#b44>&#34;2&#34;</span><span style=color:#666>,</span><span style=color:#b44>&#34;1.5&#34;</span><span style=color:#666>});</span>
+		stopCombox<span style=color:#666>.</span><span style=color:#b44>addActionListener</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>this</span><span style=color:#666>);</span>
+		openPortBtn <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> Button<span style=color:#666>(</span><span style=color:#b44>&#34;打开端口&#34;</span><span style=color:#666>);</span>
+		openPortBtn<span style=color:#666>.</span><span style=color:#b44>addActionListener</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>this</span><span style=color:#666>);</span>
+		closePortBtn <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> Button<span style=color:#666>(</span><span style=color:#b44>&#34;关闭端口&#34;</span><span style=color:#666>);</span>	
+		closePortBtn<span style=color:#666>.</span><span style=color:#b44>addActionListener</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>this</span><span style=color:#666>);</span>
+		<span style=color:#080;font-style:italic>// 添加组件至面板
+</span><span style=color:#080;font-style:italic></span>		rightPane<span style=color:#666>.</span><span style=color:#b44>add</span><span style=color:#666>(</span>baudrateLb<span style=color:#666>);</span>
+		rightPane<span style=color:#666>.</span><span style=color:#b44>add</span><span style=color:#666>(</span>rateCombox<span style=color:#666>);</span>
+		rightPane<span style=color:#666>.</span><span style=color:#b44>add</span><span style=color:#666>(</span>stopbitsLb<span style=color:#666>);</span>
+		rightPane<span style=color:#666>.</span><span style=color:#b44>add</span><span style=color:#666>(</span>stopCombox<span style=color:#666>);</span>
+		rightPane<span style=color:#666>.</span><span style=color:#b44>add</span><span style=color:#666>(</span>openPortBtn<span style=color:#666>);</span>
+		rightPane<span style=color:#666>.</span><span style=color:#b44>add</span><span style=color:#666>(</span>closePortBtn<span style=color:#666>);</span>
+		<span style=color:#080;font-style:italic>// 将左右面板组合添加到北边的面板
+</span><span style=color:#080;font-style:italic></span>		northPane<span style=color:#666>.</span><span style=color:#b44>add</span><span style=color:#666>(</span>leftPane<span style=color:#666>);</span>
+		northPane<span style=color:#666>.</span><span style=color:#b44>add</span><span style=color:#666>(</span>rightPane<span style=color:#666>);</span>
 
-		<span style=color:#75715e>// 创建中间面板
-</span><span style=color:#75715e></span>		JPanel centerPane <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JPanel<span style=color:#f92672>();</span>
-		<span style=color:#75715e>// 设置中间面板各组件
-</span><span style=color:#75715e></span>		sendTf <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> TextField<span style=color:#f92672>(</span>42<span style=color:#f92672>);</span>
-		readTa <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> TextArea<span style=color:#f92672>(</span>8<span style=color:#f92672>,</span>50<span style=color:#f92672>);</span>
-		readTa<span style=color:#f92672>.</span><span style=color:#a6e22e>setEditable</span><span style=color:#f92672>(</span><span style=color:#66d9ef>false</span><span style=color:#f92672>);</span>
-		readTa<span style=color:#f92672>.</span><span style=color:#a6e22e>setBackground</span><span style=color:#f92672>(</span><span style=color:#66d9ef>new</span> Color<span style=color:#f92672>(</span>225<span style=color:#f92672>,</span>242<span style=color:#f92672>,</span>250<span style=color:#f92672>));</span>
-		centerPane<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span>sendTf<span style=color:#f92672>);</span>
-		sendMsgBtn <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Button<span style=color:#f92672>(</span><span style=color:#e6db74>&#34; 发送 &#34;</span><span style=color:#f92672>);</span>
-		sendMsgBtn<span style=color:#f92672>.</span><span style=color:#a6e22e>addActionListener</span><span style=color:#f92672>(</span><span style=color:#66d9ef>this</span><span style=color:#f92672>);</span>
-		<span style=color:#75715e>// 添加组件至面板
-</span><span style=color:#75715e></span>		centerPane<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span>sendTf<span style=color:#f92672>);</span>
-		centerPane<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span>sendMsgBtn<span style=color:#f92672>);</span>
-		centerPane<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span>readTa<span style=color:#f92672>);</span>
+		<span style=color:#080;font-style:italic>// 创建中间面板
+</span><span style=color:#080;font-style:italic></span>		JPanel centerPane <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> JPanel<span style=color:#666>();</span>
+		<span style=color:#080;font-style:italic>// 设置中间面板各组件
+</span><span style=color:#080;font-style:italic></span>		sendTf <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> TextField<span style=color:#666>(</span>42<span style=color:#666>);</span>
+		readTa <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> TextArea<span style=color:#666>(</span>8<span style=color:#666>,</span>50<span style=color:#666>);</span>
+		readTa<span style=color:#666>.</span><span style=color:#b44>setEditable</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>false</span><span style=color:#666>);</span>
+		readTa<span style=color:#666>.</span><span style=color:#b44>setBackground</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>new</span> Color<span style=color:#666>(</span>225<span style=color:#666>,</span>242<span style=color:#666>,</span>250<span style=color:#666>));</span>
+		centerPane<span style=color:#666>.</span><span style=color:#b44>add</span><span style=color:#666>(</span>sendTf<span style=color:#666>);</span>
+		sendMsgBtn <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> Button<span style=color:#666>(</span><span style=color:#b44>&#34; 发送 &#34;</span><span style=color:#666>);</span>
+		sendMsgBtn<span style=color:#666>.</span><span style=color:#b44>addActionListener</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>this</span><span style=color:#666>);</span>
+		<span style=color:#080;font-style:italic>// 添加组件至面板
+</span><span style=color:#080;font-style:italic></span>		centerPane<span style=color:#666>.</span><span style=color:#b44>add</span><span style=color:#666>(</span>sendTf<span style=color:#666>);</span>
+		centerPane<span style=color:#666>.</span><span style=color:#b44>add</span><span style=color:#666>(</span>sendMsgBtn<span style=color:#666>);</span>
+		centerPane<span style=color:#666>.</span><span style=color:#b44>add</span><span style=color:#666>(</span>readTa<span style=color:#666>);</span>
 		
-		<span style=color:#75715e>// 设置南边组件
-</span><span style=color:#75715e></span>		statusLb <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JLabel<span style=color:#f92672>();</span>
-		statusLb<span style=color:#f92672>.</span><span style=color:#a6e22e>setText</span><span style=color:#f92672>(</span>initStatus<span style=color:#f92672>());</span>
-		statusLb<span style=color:#f92672>.</span><span style=color:#a6e22e>setOpaque</span><span style=color:#f92672>(</span><span style=color:#66d9ef>true</span><span style=color:#f92672>);</span>
+		<span style=color:#080;font-style:italic>// 设置南边组件
+</span><span style=color:#080;font-style:italic></span>		statusLb <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> JLabel<span style=color:#666>();</span>
+		statusLb<span style=color:#666>.</span><span style=color:#b44>setText</span><span style=color:#666>(</span>initStatus<span style=color:#666>());</span>
+		statusLb<span style=color:#666>.</span><span style=color:#b44>setOpaque</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>true</span><span style=color:#666>);</span>
 		
-		<span style=color:#75715e>// 获取主窗体的容器,并将以上三面板以北、中、南的布局整合
-</span><span style=color:#75715e></span>		JPanel contentPane <span style=color:#f92672>=</span> <span style=color:#f92672>(</span>JPanel<span style=color:#f92672>)</span>getContentPane<span style=color:#f92672>();</span>
-		contentPane<span style=color:#f92672>.</span><span style=color:#a6e22e>setLayout</span><span style=color:#f92672>(</span><span style=color:#66d9ef>new</span> BorderLayout<span style=color:#f92672>());</span>
-		contentPane<span style=color:#f92672>.</span><span style=color:#a6e22e>setBorder</span><span style=color:#f92672>(</span><span style=color:#66d9ef>new</span> EmptyBorder<span style=color:#f92672>(</span>0<span style=color:#f92672>,</span> 0<span style=color:#f92672>,</span> 0<span style=color:#f92672>,</span> 0<span style=color:#f92672>));</span>
-		contentPane<span style=color:#f92672>.</span><span style=color:#a6e22e>setOpaque</span><span style=color:#f92672>(</span><span style=color:#66d9ef>false</span><span style=color:#f92672>);</span>
-		contentPane<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span>northPane<span style=color:#f92672>,</span> BorderLayout<span style=color:#f92672>.</span><span style=color:#a6e22e>NORTH</span><span style=color:#f92672>);</span>
-		contentPane<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span>centerPane<span style=color:#f92672>,</span> BorderLayout<span style=color:#f92672>.</span><span style=color:#a6e22e>CENTER</span><span style=color:#f92672>);</span>
-		contentPane<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span>statusLb<span style=color:#f92672>,</span> BorderLayout<span style=color:#f92672>.</span><span style=color:#a6e22e>SOUTH</span><span style=color:#f92672>);</span>
-	<span style=color:#f92672>}</span>
+		<span style=color:#080;font-style:italic>// 获取主窗体的容器,并将以上三面板以北、中、南的布局整合
+</span><span style=color:#080;font-style:italic></span>		JPanel contentPane <span style=color:#666>=</span> <span style=color:#666>(</span>JPanel<span style=color:#666>)</span>getContentPane<span style=color:#666>();</span>
+		contentPane<span style=color:#666>.</span><span style=color:#b44>setLayout</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>new</span> BorderLayout<span style=color:#666>());</span>
+		contentPane<span style=color:#666>.</span><span style=color:#b44>setBorder</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>new</span> EmptyBorder<span style=color:#666>(</span>0<span style=color:#666>,</span> 0<span style=color:#666>,</span> 0<span style=color:#666>,</span> 0<span style=color:#666>));</span>
+		contentPane<span style=color:#666>.</span><span style=color:#b44>setOpaque</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>false</span><span style=color:#666>);</span>
+		contentPane<span style=color:#666>.</span><span style=color:#b44>add</span><span style=color:#666>(</span>northPane<span style=color:#666>,</span> BorderLayout<span style=color:#666>.</span><span style=color:#b44>NORTH</span><span style=color:#666>);</span>
+		contentPane<span style=color:#666>.</span><span style=color:#b44>add</span><span style=color:#666>(</span>centerPane<span style=color:#666>,</span> BorderLayout<span style=color:#666>.</span><span style=color:#b44>CENTER</span><span style=color:#666>);</span>
+		contentPane<span style=color:#666>.</span><span style=color:#b44>add</span><span style=color:#666>(</span>statusLb<span style=color:#666>,</span> BorderLayout<span style=color:#666>.</span><span style=color:#b44>SOUTH</span><span style=color:#666>);</span>
+	<span style=color:#666>}</span>
 	
-	<span style=color:#75715e>/**
-</span><span style=color:#75715e>	 * 初始化状态标签显示文本
-</span><span style=color:#75715e>	 * @return String
-</span><span style=color:#75715e>	 * @since 2012-3-23 上午12:01:53
-</span><span style=color:#75715e>	 */</span>
-	<span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>initStatus</span><span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
-		portname <span style=color:#f92672>=</span> portCombox<span style=color:#f92672>.</span><span style=color:#a6e22e>getSelectedItem</span><span style=color:#f92672>().</span><span style=color:#a6e22e>toString</span><span style=color:#f92672>();</span>
-		rate <span style=color:#f92672>=</span> rateCombox<span style=color:#f92672>.</span><span style=color:#a6e22e>getSelectedItem</span><span style=color:#f92672>().</span><span style=color:#a6e22e>toString</span><span style=color:#f92672>();</span>
-		data <span style=color:#f92672>=</span> dataCombox<span style=color:#f92672>.</span><span style=color:#a6e22e>getSelectedItem</span><span style=color:#f92672>().</span><span style=color:#a6e22e>toString</span><span style=color:#f92672>();</span>
-		stop <span style=color:#f92672>=</span> stopCombox<span style=color:#f92672>.</span><span style=color:#a6e22e>getSelectedItem</span><span style=color:#f92672>().</span><span style=color:#a6e22e>toString</span><span style=color:#f92672>();</span>
-		parity <span style=color:#f92672>=</span> parityCombox<span style=color:#f92672>.</span><span style=color:#a6e22e>getSelectedItem</span><span style=color:#f92672>().</span><span style=color:#a6e22e>toString</span><span style=color:#f92672>();</span>
+	<span style=color:#080;font-style:italic>/**
+</span><span style=color:#080;font-style:italic>	 * 初始化状态标签显示文本
+</span><span style=color:#080;font-style:italic>	 * @return String
+</span><span style=color:#080;font-style:italic>	 * @since 2012-3-23 上午12:01:53
+</span><span style=color:#080;font-style:italic>	 */</span>
+	<span style=color:#a2f;font-weight:700>public</span> String <span style=color:#00a000>initStatus</span><span style=color:#666>()</span> <span style=color:#666>{</span>
+		portname <span style=color:#666>=</span> portCombox<span style=color:#666>.</span><span style=color:#b44>getSelectedItem</span><span style=color:#666>().</span><span style=color:#b44>toString</span><span style=color:#666>();</span>
+		rate <span style=color:#666>=</span> rateCombox<span style=color:#666>.</span><span style=color:#b44>getSelectedItem</span><span style=color:#666>().</span><span style=color:#b44>toString</span><span style=color:#666>();</span>
+		data <span style=color:#666>=</span> dataCombox<span style=color:#666>.</span><span style=color:#b44>getSelectedItem</span><span style=color:#666>().</span><span style=color:#b44>toString</span><span style=color:#666>();</span>
+		stop <span style=color:#666>=</span> stopCombox<span style=color:#666>.</span><span style=color:#b44>getSelectedItem</span><span style=color:#666>().</span><span style=color:#b44>toString</span><span style=color:#666>();</span>
+		parity <span style=color:#666>=</span> parityCombox<span style=color:#666>.</span><span style=color:#b44>getSelectedItem</span><span style=color:#666>().</span><span style=color:#b44>toString</span><span style=color:#666>();</span>
 		
-		StringBuffer str <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> StringBuffer<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;当前串口号:&#34;</span><span style=color:#f92672>);</span>
-		str<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>portname<span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34; 波特率:&#34;</span><span style=color:#f92672>);</span>
-		str<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>rate<span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34; 数据位:&#34;</span><span style=color:#f92672>);</span>
-		str<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>data<span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34; 停止位:&#34;</span><span style=color:#f92672>);</span>
-		str<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>stop<span style=color:#f92672>).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34; 校验位:&#34;</span><span style=color:#f92672>);</span>
-		str<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>parity<span style=color:#f92672>);</span>
-		<span style=color:#66d9ef>return</span> str<span style=color:#f92672>.</span><span style=color:#a6e22e>toString</span><span style=color:#f92672>();</span>
-	<span style=color:#f92672>}</span>
+		StringBuffer str <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> StringBuffer<span style=color:#666>(</span><span style=color:#b44>&#34;当前串口号:&#34;</span><span style=color:#666>);</span>
+		str<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span>portname<span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34; 波特率:&#34;</span><span style=color:#666>);</span>
+		str<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span>rate<span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34; 数据位:&#34;</span><span style=color:#666>);</span>
+		str<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span>data<span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34; 停止位:&#34;</span><span style=color:#666>);</span>
+		str<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span>stop<span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34; 校验位:&#34;</span><span style=color:#666>);</span>
+		str<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span>parity<span style=color:#666>);</span>
+		<span style=color:#a2f;font-weight:700>return</span> str<span style=color:#666>.</span><span style=color:#b44>toString</span><span style=color:#666>();</span>
+	<span style=color:#666>}</span>
 	
-	<span style=color:#75715e>/**
-</span><span style=color:#75715e>	 * 扫描本机的所有COM端口
-</span><span style=color:#75715e>	 * @since 2012-3-23 上午12:02:42
-</span><span style=color:#75715e>	 */</span>
-	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>scanPorts</span><span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
-		portList <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> ArrayList<span style=color:#f92672>&lt;</span>String<span style=color:#f92672>&gt;();</span>
-		Enumeration<span style=color:#f92672>&lt;?&gt;</span> en <span style=color:#f92672>=</span> CommPortIdentifier<span style=color:#f92672>.</span><span style=color:#a6e22e>getPortIdentifiers</span><span style=color:#f92672>();</span>
-		CommPortIdentifier portId<span style=color:#f92672>;</span>
-		<span style=color:#66d9ef>while</span><span style=color:#f92672>(</span>en<span style=color:#f92672>.</span><span style=color:#a6e22e>hasMoreElements</span><span style=color:#f92672>()){</span>
-			portId <span style=color:#f92672>=</span> <span style=color:#f92672>(</span>CommPortIdentifier<span style=color:#f92672>)</span> en<span style=color:#f92672>.</span><span style=color:#a6e22e>nextElement</span><span style=color:#f92672>();</span>
-			<span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>portId<span style=color:#f92672>.</span><span style=color:#a6e22e>getPortType</span><span style=color:#f92672>()</span> <span style=color:#f92672>==</span> CommPortIdentifier<span style=color:#f92672>.</span><span style=color:#a6e22e>PORT_SERIAL</span><span style=color:#f92672>){</span>
-				String name <span style=color:#f92672>=</span> portId<span style=color:#f92672>.</span><span style=color:#a6e22e>getName</span><span style=color:#f92672>();</span>
-				<span style=color:#66d9ef>if</span><span style=color:#f92672>(!</span>portList<span style=color:#f92672>.</span><span style=color:#a6e22e>contains</span><span style=color:#f92672>(</span>name<span style=color:#f92672>))</span> <span style=color:#f92672>{</span>
-					portList<span style=color:#f92672>.</span><span style=color:#a6e22e>add</span><span style=color:#f92672>(</span>name<span style=color:#f92672>);</span>
-				<span style=color:#f92672>}</span>
-			<span style=color:#f92672>}</span>
-		<span style=color:#f92672>}</span>
-		<span style=color:#66d9ef>if</span><span style=color:#f92672>(</span><span style=color:#66d9ef>null</span> <span style=color:#f92672>==</span> portList 
-				<span style=color:#f92672>||</span> portList<span style=color:#f92672>.</span><span style=color:#a6e22e>isEmpty</span><span style=color:#f92672>())</span> <span style=color:#f92672>{</span>
-			showErrMesgbox<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;未找到可用的串行端口号,程序无法启动!&#34;</span><span style=color:#f92672>);</span>
-			System<span style=color:#f92672>.</span><span style=color:#a6e22e>exit</span><span style=color:#f92672>(</span>0<span style=color:#f92672>);</span>
-		<span style=color:#f92672>}</span>
-	<span style=color:#f92672>}</span>
+	<span style=color:#080;font-style:italic>/**
+</span><span style=color:#080;font-style:italic>	 * 扫描本机的所有COM端口
+</span><span style=color:#080;font-style:italic>	 * @since 2012-3-23 上午12:02:42
+</span><span style=color:#080;font-style:italic>	 */</span>
+	<span style=color:#a2f;font-weight:700>public</span> <span style=color:#0b0;font-weight:700>void</span> <span style=color:#00a000>scanPorts</span><span style=color:#666>()</span> <span style=color:#666>{</span>
+		portList <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> ArrayList<span style=color:#666>&lt;</span>String<span style=color:#666>&gt;();</span>
+		Enumeration<span style=color:#666>&lt;?&gt;</span> en <span style=color:#666>=</span> CommPortIdentifier<span style=color:#666>.</span><span style=color:#b44>getPortIdentifiers</span><span style=color:#666>();</span>
+		CommPortIdentifier portId<span style=color:#666>;</span>
+		<span style=color:#a2f;font-weight:700>while</span><span style=color:#666>(</span>en<span style=color:#666>.</span><span style=color:#b44>hasMoreElements</span><span style=color:#666>()){</span>
+			portId <span style=color:#666>=</span> <span style=color:#666>(</span>CommPortIdentifier<span style=color:#666>)</span> en<span style=color:#666>.</span><span style=color:#b44>nextElement</span><span style=color:#666>();</span>
+			<span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(</span>portId<span style=color:#666>.</span><span style=color:#b44>getPortType</span><span style=color:#666>()</span> <span style=color:#666>==</span> CommPortIdentifier<span style=color:#666>.</span><span style=color:#b44>PORT_SERIAL</span><span style=color:#666>){</span>
+				String name <span style=color:#666>=</span> portId<span style=color:#666>.</span><span style=color:#b44>getName</span><span style=color:#666>();</span>
+				<span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(!</span>portList<span style=color:#666>.</span><span style=color:#b44>contains</span><span style=color:#666>(</span>name<span style=color:#666>))</span> <span style=color:#666>{</span>
+					portList<span style=color:#666>.</span><span style=color:#b44>add</span><span style=color:#666>(</span>name<span style=color:#666>);</span>
+				<span style=color:#666>}</span>
+			<span style=color:#666>}</span>
+		<span style=color:#666>}</span>
+		<span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>null</span> <span style=color:#666>==</span> portList 
+				<span style=color:#666>||</span> portList<span style=color:#666>.</span><span style=color:#b44>isEmpty</span><span style=color:#666>())</span> <span style=color:#666>{</span>
+			showErrMesgbox<span style=color:#666>(</span><span style=color:#b44>&#34;未找到可用的串行端口号,程序无法启动!&#34;</span><span style=color:#666>);</span>
+			System<span style=color:#666>.</span><span style=color:#b44>exit</span><span style=color:#666>(</span>0<span style=color:#666>);</span>
+		<span style=color:#666>}</span>
+	<span style=color:#666>}</span>
 	
-	<span style=color:#75715e>/**
-</span><span style=color:#75715e>	 * 打开串行端口
-</span><span style=color:#75715e>	 * @since 2012-3-23 上午12:03:07
-</span><span style=color:#75715e>	 */</span>
-	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>openSerialPort</span><span style=color:#f92672>()</span> <span style=color:#f92672>{</span> 
-		<span style=color:#75715e>// 获取要打开的端口
-</span><span style=color:#75715e></span>		<span style=color:#66d9ef>try</span> <span style=color:#f92672>{</span>
-			portId <span style=color:#f92672>=</span> CommPortIdentifier<span style=color:#f92672>.</span><span style=color:#a6e22e>getPortIdentifier</span><span style=color:#f92672>(</span>portname<span style=color:#f92672>);</span>
-		<span style=color:#f92672>}</span> <span style=color:#66d9ef>catch</span> <span style=color:#f92672>(</span>NoSuchPortException e<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
-			showErrMesgbox<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;抱歉,没有找到&#34;</span><span style=color:#f92672>+</span>portname<span style=color:#f92672>+</span><span style=color:#e6db74>&#34;串行端口号!&#34;</span><span style=color:#f92672>);</span>
-			setComponentsEnabled<span style=color:#f92672>(</span><span style=color:#66d9ef>true</span><span style=color:#f92672>);</span>
-			<span style=color:#66d9ef>return</span> <span style=color:#f92672>;</span>
-		<span style=color:#f92672>}</span>
-		<span style=color:#75715e>// 打开端口
-</span><span style=color:#75715e></span>		<span style=color:#66d9ef>try</span> <span style=color:#f92672>{</span>
-			serialPort <span style=color:#f92672>=</span> <span style=color:#f92672>(</span>SerialPort<span style=color:#f92672>)</span> portId<span style=color:#f92672>.</span><span style=color:#a6e22e>open</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;JavaRs232&#34;</span><span style=color:#f92672>,</span> 2000<span style=color:#f92672>);</span>
-			statusLb<span style=color:#f92672>.</span><span style=color:#a6e22e>setText</span><span style=color:#f92672>(</span>portname<span style=color:#f92672>+</span><span style=color:#e6db74>&#34;串口已经打开!&#34;</span><span style=color:#f92672>);</span>
-		<span style=color:#f92672>}</span> <span style=color:#66d9ef>catch</span> <span style=color:#f92672>(</span>PortInUseException e<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
-			showErrMesgbox<span style=color:#f92672>(</span>portname<span style=color:#f92672>+</span><span style=color:#e6db74>&#34;端口已被占用,请检查!&#34;</span><span style=color:#f92672>);</span>
-			setComponentsEnabled<span style=color:#f92672>(</span><span style=color:#66d9ef>true</span><span style=color:#f92672>);</span>
-			<span style=color:#66d9ef>return</span> <span style=color:#f92672>;</span>
-		<span style=color:#f92672>}</span>
+	<span style=color:#080;font-style:italic>/**
+</span><span style=color:#080;font-style:italic>	 * 打开串行端口
+</span><span style=color:#080;font-style:italic>	 * @since 2012-3-23 上午12:03:07
+</span><span style=color:#080;font-style:italic>	 */</span>
+	<span style=color:#a2f;font-weight:700>public</span> <span style=color:#0b0;font-weight:700>void</span> <span style=color:#00a000>openSerialPort</span><span style=color:#666>()</span> <span style=color:#666>{</span> 
+		<span style=color:#080;font-style:italic>// 获取要打开的端口
+</span><span style=color:#080;font-style:italic></span>		<span style=color:#a2f;font-weight:700>try</span> <span style=color:#666>{</span>
+			portId <span style=color:#666>=</span> CommPortIdentifier<span style=color:#666>.</span><span style=color:#b44>getPortIdentifier</span><span style=color:#666>(</span>portname<span style=color:#666>);</span>
+		<span style=color:#666>}</span> <span style=color:#a2f;font-weight:700>catch</span> <span style=color:#666>(</span>NoSuchPortException e<span style=color:#666>)</span> <span style=color:#666>{</span>
+			showErrMesgbox<span style=color:#666>(</span><span style=color:#b44>&#34;抱歉,没有找到&#34;</span><span style=color:#666>+</span>portname<span style=color:#666>+</span><span style=color:#b44>&#34;串行端口号!&#34;</span><span style=color:#666>);</span>
+			setComponentsEnabled<span style=color:#666>(</span><span style=color:#a2f;font-weight:700>true</span><span style=color:#666>);</span>
+			<span style=color:#a2f;font-weight:700>return</span> <span style=color:#666>;</span>
+		<span style=color:#666>}</span>
+		<span style=color:#080;font-style:italic>// 打开端口
+</span><span style=color:#080;font-style:italic></span>		<span style=color:#a2f;font-weight:700>try</span> <span style=color:#666>{</span>
+			serialPort <span style=color:#666>=</span> <span style=color:#666>(</span>SerialPort<span style=color:#666>)</span> portId<span style=color:#666>.</span><span style=color:#b44>open</span><span style=color:#666>(</span><span style=color:#b44>&#34;JavaRs232&#34;</span><span style=color:#666>,</span> 2000<span style=color:#666>);</span>
+			statusLb<span style=color:#666>.</span><span style=color:#b44>setText</span><span style=color:#666>(</span>portname<span style=color:#666>+</span><span style=color:#b44>&#34;串口已经打开!&#34;</span><span style=color:#666>);</span>
+		<span style=color:#666>}</span> <span style=color:#a2f;font-weight:700>catch</span> <span style=color:#666>(</span>PortInUseException e<span style=color:#666>)</span> <span style=color:#666>{</span>
+			showErrMesgbox<span style=color:#666>(</span>portname<span style=color:#666>+</span><span style=color:#b44>&#34;端口已被占用,请检查!&#34;</span><span style=color:#666>);</span>
+			setComponentsEnabled<span style=color:#666>(</span><span style=color:#a2f;font-weight:700>true</span><span style=color:#666>);</span>
+			<span style=color:#a2f;font-weight:700>return</span> <span style=color:#666>;</span>
+		<span style=color:#666>}</span>
 		
-		<span style=color:#75715e>// 设置端口参数
-</span><span style=color:#75715e></span>		<span style=color:#66d9ef>try</span> <span style=color:#f92672>{</span>
-			<span style=color:#66d9ef>int</span> rate <span style=color:#f92672>=</span> Integer<span style=color:#f92672>.</span><span style=color:#a6e22e>parseInt</span><span style=color:#f92672>(</span><span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>rate</span><span style=color:#f92672>);</span>
-			<span style=color:#66d9ef>int</span> data <span style=color:#f92672>=</span> Integer<span style=color:#f92672>.</span><span style=color:#a6e22e>parseInt</span><span style=color:#f92672>(</span><span style=color:#66d9ef>this</span><span style=color:#f92672>.</span><span style=color:#a6e22e>data</span><span style=color:#f92672>);</span>
-			<span style=color:#66d9ef>int</span> stop <span style=color:#f92672>=</span> stopCombox<span style=color:#f92672>.</span><span style=color:#a6e22e>getSelectedIndex</span><span style=color:#f92672>()+</span>1<span style=color:#f92672>;</span>
-			<span style=color:#66d9ef>int</span> parity <span style=color:#f92672>=</span> parityCombox<span style=color:#f92672>.</span><span style=color:#a6e22e>getSelectedIndex</span><span style=color:#f92672>();</span>
-			serialPort<span style=color:#f92672>.</span><span style=color:#a6e22e>setSerialPortParams</span><span style=color:#f92672>(</span>rate<span style=color:#f92672>,</span>data<span style=color:#f92672>,</span>stop<span style=color:#f92672>,</span>parity<span style=color:#f92672>);</span>
-		<span style=color:#f92672>}</span> <span style=color:#66d9ef>catch</span> <span style=color:#f92672>(</span>UnsupportedCommOperationException e<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
-			showErrMesgbox<span style=color:#f92672>(</span>e<span style=color:#f92672>.</span><span style=color:#a6e22e>getMessage</span><span style=color:#f92672>());</span>
-		<span style=color:#f92672>}</span>
+		<span style=color:#080;font-style:italic>// 设置端口参数
+</span><span style=color:#080;font-style:italic></span>		<span style=color:#a2f;font-weight:700>try</span> <span style=color:#666>{</span>
+			<span style=color:#0b0;font-weight:700>int</span> rate <span style=color:#666>=</span> Integer<span style=color:#666>.</span><span style=color:#b44>parseInt</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>this</span><span style=color:#666>.</span><span style=color:#b44>rate</span><span style=color:#666>);</span>
+			<span style=color:#0b0;font-weight:700>int</span> data <span style=color:#666>=</span> Integer<span style=color:#666>.</span><span style=color:#b44>parseInt</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>this</span><span style=color:#666>.</span><span style=color:#b44>data</span><span style=color:#666>);</span>
+			<span style=color:#0b0;font-weight:700>int</span> stop <span style=color:#666>=</span> stopCombox<span style=color:#666>.</span><span style=color:#b44>getSelectedIndex</span><span style=color:#666>()+</span>1<span style=color:#666>;</span>
+			<span style=color:#0b0;font-weight:700>int</span> parity <span style=color:#666>=</span> parityCombox<span style=color:#666>.</span><span style=color:#b44>getSelectedIndex</span><span style=color:#666>();</span>
+			serialPort<span style=color:#666>.</span><span style=color:#b44>setSerialPortParams</span><span style=color:#666>(</span>rate<span style=color:#666>,</span>data<span style=color:#666>,</span>stop<span style=color:#666>,</span>parity<span style=color:#666>);</span>
+		<span style=color:#666>}</span> <span style=color:#a2f;font-weight:700>catch</span> <span style=color:#666>(</span>UnsupportedCommOperationException e<span style=color:#666>)</span> <span style=color:#666>{</span>
+			showErrMesgbox<span style=color:#666>(</span>e<span style=color:#666>.</span><span style=color:#b44>getMessage</span><span style=color:#666>());</span>
+		<span style=color:#666>}</span>
 
-		<span style=color:#75715e>// 打开端口的IO流管道 
-</span><span style=color:#75715e></span>		<span style=color:#66d9ef>try</span> <span style=color:#f92672>{</span> 
-			outputStream <span style=color:#f92672>=</span> serialPort<span style=color:#f92672>.</span><span style=color:#a6e22e>getOutputStream</span><span style=color:#f92672>();</span> 
-			inputStream <span style=color:#f92672>=</span> serialPort<span style=color:#f92672>.</span><span style=color:#a6e22e>getInputStream</span><span style=color:#f92672>();</span> 
-		<span style=color:#f92672>}</span> <span style=color:#66d9ef>catch</span> <span style=color:#f92672>(</span>IOException e<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
-			showErrMesgbox<span style=color:#f92672>(</span>e<span style=color:#f92672>.</span><span style=color:#a6e22e>getMessage</span><span style=color:#f92672>());</span>
-		<span style=color:#f92672>}</span> 
+		<span style=color:#080;font-style:italic>// 打开端口的IO流管道 
+</span><span style=color:#080;font-style:italic></span>		<span style=color:#a2f;font-weight:700>try</span> <span style=color:#666>{</span> 
+			outputStream <span style=color:#666>=</span> serialPort<span style=color:#666>.</span><span style=color:#b44>getOutputStream</span><span style=color:#666>();</span> 
+			inputStream <span style=color:#666>=</span> serialPort<span style=color:#666>.</span><span style=color:#b44>getInputStream</span><span style=color:#666>();</span> 
+		<span style=color:#666>}</span> <span style=color:#a2f;font-weight:700>catch</span> <span style=color:#666>(</span>IOException e<span style=color:#666>)</span> <span style=color:#666>{</span>
+			showErrMesgbox<span style=color:#666>(</span>e<span style=color:#666>.</span><span style=color:#b44>getMessage</span><span style=color:#666>());</span>
+		<span style=color:#666>}</span> 
 
-		<span style=color:#75715e>// 给端口添加监听器
-</span><span style=color:#75715e></span>		<span style=color:#66d9ef>try</span> <span style=color:#f92672>{</span> 
-			serialPort<span style=color:#f92672>.</span><span style=color:#a6e22e>addEventListener</span><span style=color:#f92672>(</span><span style=color:#66d9ef>this</span><span style=color:#f92672>);</span> 
-		<span style=color:#f92672>}</span> <span style=color:#66d9ef>catch</span> <span style=color:#f92672>(</span>TooManyListenersException e<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
-			showErrMesgbox<span style=color:#f92672>(</span>e<span style=color:#f92672>.</span><span style=color:#a6e22e>getMessage</span><span style=color:#f92672>());</span>
-		<span style=color:#f92672>}</span> 
+		<span style=color:#080;font-style:italic>// 给端口添加监听器
+</span><span style=color:#080;font-style:italic></span>		<span style=color:#a2f;font-weight:700>try</span> <span style=color:#666>{</span> 
+			serialPort<span style=color:#666>.</span><span style=color:#b44>addEventListener</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>this</span><span style=color:#666>);</span> 
+		<span style=color:#666>}</span> <span style=color:#a2f;font-weight:700>catch</span> <span style=color:#666>(</span>TooManyListenersException e<span style=color:#666>)</span> <span style=color:#666>{</span>
+			showErrMesgbox<span style=color:#666>(</span>e<span style=color:#666>.</span><span style=color:#b44>getMessage</span><span style=color:#666>());</span>
+		<span style=color:#666>}</span> 
 
-		serialPort<span style=color:#f92672>.</span><span style=color:#a6e22e>notifyOnDataAvailable</span><span style=color:#f92672>(</span><span style=color:#66d9ef>true</span><span style=color:#f92672>);</span> 
-	<span style=color:#f92672>}</span> 
+		serialPort<span style=color:#666>.</span><span style=color:#b44>notifyOnDataAvailable</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>true</span><span style=color:#666>);</span> 
+	<span style=color:#666>}</span> 
 	
-	<span style=color:#75715e>/**
-</span><span style=color:#75715e>	 * 给串行端口发送数据
-</span><span style=color:#75715e>	 * @since 2012-3-23 上午12:05:00
-</span><span style=color:#75715e>	 */</span>
-	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>sendDataToSeriaPort</span><span style=color:#f92672>()</span> <span style=color:#f92672>{</span> 
-		<span style=color:#66d9ef>try</span> <span style=color:#f92672>{</span> 
-			sendCount<span style=color:#f92672>++;</span>
-			outputStream<span style=color:#f92672>.</span><span style=color:#a6e22e>write</span><span style=color:#f92672>(</span>mesg<span style=color:#f92672>.</span><span style=color:#a6e22e>getBytes</span><span style=color:#f92672>());</span> 
-			outputStream<span style=color:#f92672>.</span><span style=color:#a6e22e>flush</span><span style=color:#f92672>();</span> 
+	<span style=color:#080;font-style:italic>/**
+</span><span style=color:#080;font-style:italic>	 * 给串行端口发送数据
+</span><span style=color:#080;font-style:italic>	 * @since 2012-3-23 上午12:05:00
+</span><span style=color:#080;font-style:italic>	 */</span>
+	<span style=color:#a2f;font-weight:700>public</span> <span style=color:#0b0;font-weight:700>void</span> <span style=color:#00a000>sendDataToSeriaPort</span><span style=color:#666>()</span> <span style=color:#666>{</span> 
+		<span style=color:#a2f;font-weight:700>try</span> <span style=color:#666>{</span> 
+			sendCount<span style=color:#666>++;</span>
+			outputStream<span style=color:#666>.</span><span style=color:#b44>write</span><span style=color:#666>(</span>mesg<span style=color:#666>.</span><span style=color:#b44>getBytes</span><span style=color:#666>());</span> 
+			outputStream<span style=color:#666>.</span><span style=color:#b44>flush</span><span style=color:#666>();</span> 
 
-		<span style=color:#f92672>}</span> <span style=color:#66d9ef>catch</span> <span style=color:#f92672>(</span>IOException e<span style=color:#f92672>)</span> <span style=color:#f92672>{</span> 
-			showErrMesgbox<span style=color:#f92672>(</span>e<span style=color:#f92672>.</span><span style=color:#a6e22e>getMessage</span><span style=color:#f92672>());</span>
-		<span style=color:#f92672>}</span> 
+		<span style=color:#666>}</span> <span style=color:#a2f;font-weight:700>catch</span> <span style=color:#666>(</span>IOException e<span style=color:#666>)</span> <span style=color:#666>{</span> 
+			showErrMesgbox<span style=color:#666>(</span>e<span style=color:#666>.</span><span style=color:#b44>getMessage</span><span style=color:#666>());</span>
+		<span style=color:#666>}</span> 
 		
-		statusLb<span style=color:#f92672>.</span><span style=color:#a6e22e>setText</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;  发送: &#34;</span><span style=color:#f92672>+</span>sendCount<span style=color:#f92672>+</span><span style=color:#e6db74>&#34;                                      接收: &#34;</span><span style=color:#f92672>+</span>reciveCount<span style=color:#f92672>);</span>
-	<span style=color:#f92672>}</span> 
+		statusLb<span style=color:#666>.</span><span style=color:#b44>setText</span><span style=color:#666>(</span><span style=color:#b44>&#34;  发送: &#34;</span><span style=color:#666>+</span>sendCount<span style=color:#666>+</span><span style=color:#b44>&#34;                                      接收: &#34;</span><span style=color:#666>+</span>reciveCount<span style=color:#666>);</span>
+	<span style=color:#666>}</span> 
 	
-	<span style=color:#75715e>/**
-</span><span style=color:#75715e>	 * 关闭串行端口
-</span><span style=color:#75715e>	 * @since 2012-3-23 上午12:05:28
-</span><span style=color:#75715e>	 */</span>
-	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>closeSerialPort</span><span style=color:#f92672>()</span> <span style=color:#f92672>{</span> 
-		<span style=color:#66d9ef>try</span> <span style=color:#f92672>{</span> 
-			<span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>outputStream <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>)</span>
-				outputStream<span style=color:#f92672>.</span><span style=color:#a6e22e>close</span><span style=color:#f92672>();</span>
-			<span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>serialPort <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>)</span>
-				serialPort<span style=color:#f92672>.</span><span style=color:#a6e22e>close</span><span style=color:#f92672>();</span> 
-			serialPort <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>;</span>
-			statusLb<span style=color:#f92672>.</span><span style=color:#a6e22e>setText</span><span style=color:#f92672>(</span>portname<span style=color:#f92672>+</span><span style=color:#e6db74>&#34;串口已经关闭!&#34;</span><span style=color:#f92672>);</span>
-			sendCount <span style=color:#f92672>=</span> 0<span style=color:#f92672>;</span>
-			reciveCount <span style=color:#f92672>=</span> 0<span style=color:#f92672>;</span>
-			sendTf<span style=color:#f92672>.</span><span style=color:#a6e22e>setText</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>);</span>
-			readTa<span style=color:#f92672>.</span><span style=color:#a6e22e>setText</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;&#34;</span><span style=color:#f92672>);</span>
-		<span style=color:#f92672>}</span> <span style=color:#66d9ef>catch</span> <span style=color:#f92672>(</span>Exception e<span style=color:#f92672>)</span> <span style=color:#f92672>{</span> 
-			showErrMesgbox<span style=color:#f92672>(</span>e<span style=color:#f92672>.</span><span style=color:#a6e22e>getMessage</span><span style=color:#f92672>());</span>
-		<span style=color:#f92672>}</span> 
-	<span style=color:#f92672>}</span> 	
+	<span style=color:#080;font-style:italic>/**
+</span><span style=color:#080;font-style:italic>	 * 关闭串行端口
+</span><span style=color:#080;font-style:italic>	 * @since 2012-3-23 上午12:05:28
+</span><span style=color:#080;font-style:italic>	 */</span>
+	<span style=color:#a2f;font-weight:700>public</span> <span style=color:#0b0;font-weight:700>void</span> <span style=color:#00a000>closeSerialPort</span><span style=color:#666>()</span> <span style=color:#666>{</span> 
+		<span style=color:#a2f;font-weight:700>try</span> <span style=color:#666>{</span> 
+			<span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(</span>outputStream <span style=color:#666>!=</span> <span style=color:#a2f;font-weight:700>null</span><span style=color:#666>)</span>
+				outputStream<span style=color:#666>.</span><span style=color:#b44>close</span><span style=color:#666>();</span>
+			<span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(</span>serialPort <span style=color:#666>!=</span> <span style=color:#a2f;font-weight:700>null</span><span style=color:#666>)</span>
+				serialPort<span style=color:#666>.</span><span style=color:#b44>close</span><span style=color:#666>();</span> 
+			serialPort <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>null</span><span style=color:#666>;</span>
+			statusLb<span style=color:#666>.</span><span style=color:#b44>setText</span><span style=color:#666>(</span>portname<span style=color:#666>+</span><span style=color:#b44>&#34;串口已经关闭!&#34;</span><span style=color:#666>);</span>
+			sendCount <span style=color:#666>=</span> 0<span style=color:#666>;</span>
+			reciveCount <span style=color:#666>=</span> 0<span style=color:#666>;</span>
+			sendTf<span style=color:#666>.</span><span style=color:#b44>setText</span><span style=color:#666>(</span><span style=color:#b44>&#34;&#34;</span><span style=color:#666>);</span>
+			readTa<span style=color:#666>.</span><span style=color:#b44>setText</span><span style=color:#666>(</span><span style=color:#b44>&#34;&#34;</span><span style=color:#666>);</span>
+		<span style=color:#666>}</span> <span style=color:#a2f;font-weight:700>catch</span> <span style=color:#666>(</span>Exception e<span style=color:#666>)</span> <span style=color:#666>{</span> 
+			showErrMesgbox<span style=color:#666>(</span>e<span style=color:#666>.</span><span style=color:#b44>getMessage</span><span style=color:#666>());</span>
+		<span style=color:#666>}</span> 
+	<span style=color:#666>}</span> 	
 	
-	<span style=color:#75715e>/**
-</span><span style=color:#75715e>	 * 显示错误或警告信息
-</span><span style=color:#75715e>	 * @param msg 信息
-</span><span style=color:#75715e>	 * @since 2012-3-23 上午12:05:47
-</span><span style=color:#75715e>	 */</span>
-	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>showErrMesgbox</span><span style=color:#f92672>(</span>String msg<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
-		JOptionPane<span style=color:#f92672>.</span><span style=color:#a6e22e>showMessageDialog</span><span style=color:#f92672>(</span><span style=color:#66d9ef>this</span><span style=color:#f92672>,</span> msg<span style=color:#f92672>);</span>
-	<span style=color:#f92672>}</span>
+	<span style=color:#080;font-style:italic>/**
+</span><span style=color:#080;font-style:italic>	 * 显示错误或警告信息
+</span><span style=color:#080;font-style:italic>	 * @param msg 信息
+</span><span style=color:#080;font-style:italic>	 * @since 2012-3-23 上午12:05:47
+</span><span style=color:#080;font-style:italic>	 */</span>
+	<span style=color:#a2f;font-weight:700>public</span> <span style=color:#0b0;font-weight:700>void</span> <span style=color:#00a000>showErrMesgbox</span><span style=color:#666>(</span>String msg<span style=color:#666>)</span> <span style=color:#666>{</span>
+		JOptionPane<span style=color:#666>.</span><span style=color:#b44>showMessageDialog</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>this</span><span style=color:#666>,</span> msg<span style=color:#666>);</span>
+	<span style=color:#666>}</span>
 
-	<span style=color:#75715e>/**
-</span><span style=color:#75715e>	 * 各组件行为事件监听
-</span><span style=color:#75715e>	 */</span>
-	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>actionPerformed</span><span style=color:#f92672>(</span>ActionEvent e<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
-		<span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>e<span style=color:#f92672>.</span><span style=color:#a6e22e>getSource</span><span style=color:#f92672>()</span> <span style=color:#f92672>==</span> portCombox
-				<span style=color:#f92672>||</span> e<span style=color:#f92672>.</span><span style=color:#a6e22e>getSource</span><span style=color:#f92672>()</span> <span style=color:#f92672>==</span> rateCombox
-				<span style=color:#f92672>||</span> e<span style=color:#f92672>.</span><span style=color:#a6e22e>getSource</span><span style=color:#f92672>()</span> <span style=color:#f92672>==</span> dataCombox
-				<span style=color:#f92672>||</span> e<span style=color:#f92672>.</span><span style=color:#a6e22e>getSource</span><span style=color:#f92672>()</span> <span style=color:#f92672>==</span> stopCombox
-				<span style=color:#f92672>||</span> e<span style=color:#f92672>.</span><span style=color:#a6e22e>getSource</span><span style=color:#f92672>()</span> <span style=color:#f92672>==</span> parityCombox<span style=color:#f92672>){</span>
-			statusLb<span style=color:#f92672>.</span><span style=color:#a6e22e>setText</span><span style=color:#f92672>(</span>initStatus<span style=color:#f92672>());</span>
-		<span style=color:#f92672>}</span>
-		<span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>e<span style=color:#f92672>.</span><span style=color:#a6e22e>getSource</span><span style=color:#f92672>()</span> <span style=color:#f92672>==</span> openPortBtn<span style=color:#f92672>){</span>
-			setComponentsEnabled<span style=color:#f92672>(</span><span style=color:#66d9ef>false</span><span style=color:#f92672>);</span>			
-			openSerialPort<span style=color:#f92672>();</span>
-		<span style=color:#f92672>}</span>
-		<span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>e<span style=color:#f92672>.</span><span style=color:#a6e22e>getSource</span><span style=color:#f92672>()</span> <span style=color:#f92672>==</span> closePortBtn<span style=color:#f92672>){</span>
-			<span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>serialPort <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>){</span>
-				closeSerialPort<span style=color:#f92672>();</span>
-			<span style=color:#f92672>}</span>
-			setComponentsEnabled<span style=color:#f92672>(</span><span style=color:#66d9ef>true</span><span style=color:#f92672>);</span>
-		<span style=color:#f92672>}</span>
+	<span style=color:#080;font-style:italic>/**
+</span><span style=color:#080;font-style:italic>	 * 各组件行为事件监听
+</span><span style=color:#080;font-style:italic>	 */</span>
+	<span style=color:#a2f;font-weight:700>public</span> <span style=color:#0b0;font-weight:700>void</span> <span style=color:#00a000>actionPerformed</span><span style=color:#666>(</span>ActionEvent e<span style=color:#666>)</span> <span style=color:#666>{</span>
+		<span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(</span>e<span style=color:#666>.</span><span style=color:#b44>getSource</span><span style=color:#666>()</span> <span style=color:#666>==</span> portCombox
+				<span style=color:#666>||</span> e<span style=color:#666>.</span><span style=color:#b44>getSource</span><span style=color:#666>()</span> <span style=color:#666>==</span> rateCombox
+				<span style=color:#666>||</span> e<span style=color:#666>.</span><span style=color:#b44>getSource</span><span style=color:#666>()</span> <span style=color:#666>==</span> dataCombox
+				<span style=color:#666>||</span> e<span style=color:#666>.</span><span style=color:#b44>getSource</span><span style=color:#666>()</span> <span style=color:#666>==</span> stopCombox
+				<span style=color:#666>||</span> e<span style=color:#666>.</span><span style=color:#b44>getSource</span><span style=color:#666>()</span> <span style=color:#666>==</span> parityCombox<span style=color:#666>){</span>
+			statusLb<span style=color:#666>.</span><span style=color:#b44>setText</span><span style=color:#666>(</span>initStatus<span style=color:#666>());</span>
+		<span style=color:#666>}</span>
+		<span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(</span>e<span style=color:#666>.</span><span style=color:#b44>getSource</span><span style=color:#666>()</span> <span style=color:#666>==</span> openPortBtn<span style=color:#666>){</span>
+			setComponentsEnabled<span style=color:#666>(</span><span style=color:#a2f;font-weight:700>false</span><span style=color:#666>);</span>			
+			openSerialPort<span style=color:#666>();</span>
+		<span style=color:#666>}</span>
+		<span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(</span>e<span style=color:#666>.</span><span style=color:#b44>getSource</span><span style=color:#666>()</span> <span style=color:#666>==</span> closePortBtn<span style=color:#666>){</span>
+			<span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(</span>serialPort <span style=color:#666>!=</span> <span style=color:#a2f;font-weight:700>null</span><span style=color:#666>){</span>
+				closeSerialPort<span style=color:#666>();</span>
+			<span style=color:#666>}</span>
+			setComponentsEnabled<span style=color:#666>(</span><span style=color:#a2f;font-weight:700>true</span><span style=color:#666>);</span>
+		<span style=color:#666>}</span>
 		
-		<span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>e<span style=color:#f92672>.</span><span style=color:#a6e22e>getSource</span><span style=color:#f92672>()</span> <span style=color:#f92672>==</span> sendMsgBtn<span style=color:#f92672>){</span>
-			<span style=color:#66d9ef>if</span><span style=color:#f92672>(</span>serialPort <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span><span style=color:#f92672>){</span>
-				showErrMesgbox<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;请先打开串行端口!&#34;</span><span style=color:#f92672>);</span>
-				<span style=color:#66d9ef>return</span> <span style=color:#f92672>;</span>
-			<span style=color:#f92672>}</span>
-			mesg <span style=color:#f92672>=</span> sendTf<span style=color:#f92672>.</span><span style=color:#a6e22e>getText</span><span style=color:#f92672>();</span>
-			<span style=color:#66d9ef>if</span><span style=color:#f92672>(</span><span style=color:#66d9ef>null</span> <span style=color:#f92672>==</span> mesg <span style=color:#f92672>||</span> mesg<span style=color:#f92672>.</span><span style=color:#a6e22e>isEmpty</span><span style=color:#f92672>()){</span>
-				showErrMesgbox<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;请输入你要发送的内容!&#34;</span><span style=color:#f92672>);</span>
-				<span style=color:#66d9ef>return</span> <span style=color:#f92672>;</span>
-			<span style=color:#f92672>}</span>
-			sendDataToSeriaPort<span style=color:#f92672>();</span>
-		<span style=color:#f92672>}</span>
-	<span style=color:#f92672>}</span>
+		<span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(</span>e<span style=color:#666>.</span><span style=color:#b44>getSource</span><span style=color:#666>()</span> <span style=color:#666>==</span> sendMsgBtn<span style=color:#666>){</span>
+			<span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(</span>serialPort <span style=color:#666>==</span> <span style=color:#a2f;font-weight:700>null</span><span style=color:#666>){</span>
+				showErrMesgbox<span style=color:#666>(</span><span style=color:#b44>&#34;请先打开串行端口!&#34;</span><span style=color:#666>);</span>
+				<span style=color:#a2f;font-weight:700>return</span> <span style=color:#666>;</span>
+			<span style=color:#666>}</span>
+			mesg <span style=color:#666>=</span> sendTf<span style=color:#666>.</span><span style=color:#b44>getText</span><span style=color:#666>();</span>
+			<span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>null</span> <span style=color:#666>==</span> mesg <span style=color:#666>||</span> mesg<span style=color:#666>.</span><span style=color:#b44>isEmpty</span><span style=color:#666>()){</span>
+				showErrMesgbox<span style=color:#666>(</span><span style=color:#b44>&#34;请输入你要发送的内容!&#34;</span><span style=color:#666>);</span>
+				<span style=color:#a2f;font-weight:700>return</span> <span style=color:#666>;</span>
+			<span style=color:#666>}</span>
+			sendDataToSeriaPort<span style=color:#666>();</span>
+		<span style=color:#666>}</span>
+	<span style=color:#666>}</span>
 
-	<span style=color:#75715e>/**
-</span><span style=color:#75715e>	 * 端口事件监听
-</span><span style=color:#75715e>	 */</span>
-	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>serialEvent</span><span style=color:#f92672>(</span>SerialPortEvent event<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
-		<span style=color:#66d9ef>switch</span> <span style=color:#f92672>(</span>event<span style=color:#f92672>.</span><span style=color:#a6e22e>getEventType</span><span style=color:#f92672>())</span> <span style=color:#f92672>{</span>
-			<span style=color:#66d9ef>case</span> SerialPortEvent<span style=color:#f92672>.</span><span style=color:#a6e22e>BI</span><span style=color:#f92672>:</span>
-			<span style=color:#66d9ef>case</span> SerialPortEvent<span style=color:#f92672>.</span><span style=color:#a6e22e>OE</span><span style=color:#f92672>:</span>
-			<span style=color:#66d9ef>case</span> SerialPortEvent<span style=color:#f92672>.</span><span style=color:#a6e22e>FE</span><span style=color:#f92672>:</span>
-			<span style=color:#66d9ef>case</span> SerialPortEvent<span style=color:#f92672>.</span><span style=color:#a6e22e>PE</span><span style=color:#f92672>:</span>
-			<span style=color:#66d9ef>case</span> SerialPortEvent<span style=color:#f92672>.</span><span style=color:#a6e22e>CD</span><span style=color:#f92672>:</span>
-			<span style=color:#66d9ef>case</span> SerialPortEvent<span style=color:#f92672>.</span><span style=color:#a6e22e>CTS</span><span style=color:#f92672>:</span>
-			<span style=color:#66d9ef>case</span> SerialPortEvent<span style=color:#f92672>.</span><span style=color:#a6e22e>DSR</span><span style=color:#f92672>:</span>
-			<span style=color:#66d9ef>case</span> SerialPortEvent<span style=color:#f92672>.</span><span style=color:#a6e22e>RI</span><span style=color:#f92672>:</span>
-			<span style=color:#66d9ef>case</span> SerialPortEvent<span style=color:#f92672>.</span><span style=color:#a6e22e>OUTPUT_BUFFER_EMPTY</span><span style=color:#f92672>:</span>
-				<span style=color:#66d9ef>break</span><span style=color:#f92672>;</span>
-			<span style=color:#66d9ef>case</span> SerialPortEvent<span style=color:#f92672>.</span><span style=color:#a6e22e>DATA_AVAILABLE</span><span style=color:#f92672>:</span>
-				<span style=color:#66d9ef>byte</span><span style=color:#f92672>[]</span> readBuffer <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>byte</span><span style=color:#f92672>[</span>50<span style=color:#f92672>];</span>
+	<span style=color:#080;font-style:italic>/**
+</span><span style=color:#080;font-style:italic>	 * 端口事件监听
+</span><span style=color:#080;font-style:italic>	 */</span>
+	<span style=color:#a2f;font-weight:700>public</span> <span style=color:#0b0;font-weight:700>void</span> <span style=color:#00a000>serialEvent</span><span style=color:#666>(</span>SerialPortEvent event<span style=color:#666>)</span> <span style=color:#666>{</span>
+		<span style=color:#a2f;font-weight:700>switch</span> <span style=color:#666>(</span>event<span style=color:#666>.</span><span style=color:#b44>getEventType</span><span style=color:#666>())</span> <span style=color:#666>{</span>
+			<span style=color:#a2f;font-weight:700>case</span> SerialPortEvent<span style=color:#666>.</span><span style=color:#b44>BI</span><span style=color:#666>:</span>
+			<span style=color:#a2f;font-weight:700>case</span> SerialPortEvent<span style=color:#666>.</span><span style=color:#b44>OE</span><span style=color:#666>:</span>
+			<span style=color:#a2f;font-weight:700>case</span> SerialPortEvent<span style=color:#666>.</span><span style=color:#b44>FE</span><span style=color:#666>:</span>
+			<span style=color:#a2f;font-weight:700>case</span> SerialPortEvent<span style=color:#666>.</span><span style=color:#b44>PE</span><span style=color:#666>:</span>
+			<span style=color:#a2f;font-weight:700>case</span> SerialPortEvent<span style=color:#666>.</span><span style=color:#b44>CD</span><span style=color:#666>:</span>
+			<span style=color:#a2f;font-weight:700>case</span> SerialPortEvent<span style=color:#666>.</span><span style=color:#b44>CTS</span><span style=color:#666>:</span>
+			<span style=color:#a2f;font-weight:700>case</span> SerialPortEvent<span style=color:#666>.</span><span style=color:#b44>DSR</span><span style=color:#666>:</span>
+			<span style=color:#a2f;font-weight:700>case</span> SerialPortEvent<span style=color:#666>.</span><span style=color:#b44>RI</span><span style=color:#666>:</span>
+			<span style=color:#a2f;font-weight:700>case</span> SerialPortEvent<span style=color:#666>.</span><span style=color:#b44>OUTPUT_BUFFER_EMPTY</span><span style=color:#666>:</span>
+				<span style=color:#a2f;font-weight:700>break</span><span style=color:#666>;</span>
+			<span style=color:#a2f;font-weight:700>case</span> SerialPortEvent<span style=color:#666>.</span><span style=color:#b44>DATA_AVAILABLE</span><span style=color:#666>:</span>
+				<span style=color:#0b0;font-weight:700>byte</span><span style=color:#666>[]</span> readBuffer <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> <span style=color:#0b0;font-weight:700>byte</span><span style=color:#666>[</span>50<span style=color:#666>];</span>
 
-			<span style=color:#66d9ef>try</span> <span style=color:#f92672>{</span>
-				<span style=color:#66d9ef>while</span> <span style=color:#f92672>(</span>inputStream<span style=color:#f92672>.</span><span style=color:#a6e22e>available</span><span style=color:#f92672>()</span> <span style=color:#f92672>&gt;</span> 0<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
-					inputStream<span style=color:#f92672>.</span><span style=color:#a6e22e>read</span><span style=color:#f92672>(</span>readBuffer<span style=color:#f92672>);</span>
-				<span style=color:#f92672>}</span>
-				StringBuilder receivedMsg <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> StringBuilder<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;/-- &#34;</span><span style=color:#f92672>);</span>
-				receivedMsg<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#66d9ef>new</span> String<span style=color:#f92672>(</span>readBuffer<span style=color:#f92672>).</span><span style=color:#a6e22e>trim</span><span style=color:#f92672>()).</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34; --/\n&#34;</span><span style=color:#f92672>);</span>
-				readTa<span style=color:#f92672>.</span><span style=color:#a6e22e>append</span><span style=color:#f92672>(</span>receivedMsg<span style=color:#f92672>.</span><span style=color:#a6e22e>toString</span><span style=color:#f92672>());</span>
-				reciveCount<span style=color:#f92672>++;</span>
-				statusLb<span style=color:#f92672>.</span><span style=color:#a6e22e>setText</span><span style=color:#f92672>(</span><span style=color:#e6db74>&#34;  发送: &#34;</span><span style=color:#f92672>+</span>sendCount<span style=color:#f92672>+</span><span style=color:#e6db74>&#34;  接收: &#34;</span><span style=color:#f92672>+</span>reciveCount<span style=color:#f92672>);</span>
-			<span style=color:#f92672>}</span> <span style=color:#66d9ef>catch</span> <span style=color:#f92672>(</span>IOException e<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
-				showErrMesgbox<span style=color:#f92672>(</span>e<span style=color:#f92672>.</span><span style=color:#a6e22e>getMessage</span><span style=color:#f92672>());</span>
-			<span style=color:#f92672>}</span>
-		<span style=color:#f92672>}</span>
-	<span style=color:#f92672>}</span>
+			<span style=color:#a2f;font-weight:700>try</span> <span style=color:#666>{</span>
+				<span style=color:#a2f;font-weight:700>while</span> <span style=color:#666>(</span>inputStream<span style=color:#666>.</span><span style=color:#b44>available</span><span style=color:#666>()</span> <span style=color:#666>&gt;</span> 0<span style=color:#666>)</span> <span style=color:#666>{</span>
+					inputStream<span style=color:#666>.</span><span style=color:#b44>read</span><span style=color:#666>(</span>readBuffer<span style=color:#666>);</span>
+				<span style=color:#666>}</span>
+				StringBuilder receivedMsg <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> StringBuilder<span style=color:#666>(</span><span style=color:#b44>&#34;/-- &#34;</span><span style=color:#666>);</span>
+				receivedMsg<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>new</span> String<span style=color:#666>(</span>readBuffer<span style=color:#666>).</span><span style=color:#b44>trim</span><span style=color:#666>()).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34; --/\n&#34;</span><span style=color:#666>);</span>
+				readTa<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span>receivedMsg<span style=color:#666>.</span><span style=color:#b44>toString</span><span style=color:#666>());</span>
+				reciveCount<span style=color:#666>++;</span>
+				statusLb<span style=color:#666>.</span><span style=color:#b44>setText</span><span style=color:#666>(</span><span style=color:#b44>&#34;  发送: &#34;</span><span style=color:#666>+</span>sendCount<span style=color:#666>+</span><span style=color:#b44>&#34;  接收: &#34;</span><span style=color:#666>+</span>reciveCount<span style=color:#666>);</span>
+			<span style=color:#666>}</span> <span style=color:#a2f;font-weight:700>catch</span> <span style=color:#666>(</span>IOException e<span style=color:#666>)</span> <span style=color:#666>{</span>
+				showErrMesgbox<span style=color:#666>(</span>e<span style=color:#666>.</span><span style=color:#b44>getMessage</span><span style=color:#666>());</span>
+			<span style=color:#666>}</span>
+		<span style=color:#666>}</span>
+	<span style=color:#666>}</span>
 	
-	<span style=color:#75715e>/**
-</span><span style=color:#75715e>	 * 设置各组件的开关状态
-</span><span style=color:#75715e>	 * @param enabled 状态
-</span><span style=color:#75715e>	 * @since 2012-3-23 上午12:06:24
-</span><span style=color:#75715e>	 */</span>
-	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setComponentsEnabled</span><span style=color:#f92672>(</span><span style=color:#66d9ef>boolean</span> enabled<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
-		openPortBtn<span style=color:#f92672>.</span><span style=color:#a6e22e>setEnabled</span><span style=color:#f92672>(</span>enabled<span style=color:#f92672>);</span>
-		openPortBtn<span style=color:#f92672>.</span><span style=color:#a6e22e>setEnabled</span><span style=color:#f92672>(</span>enabled<span style=color:#f92672>);</span>
-		portCombox<span style=color:#f92672>.</span><span style=color:#a6e22e>setEnabled</span><span style=color:#f92672>(</span>enabled<span style=color:#f92672>);</span>
-		rateCombox<span style=color:#f92672>.</span><span style=color:#a6e22e>setEnabled</span><span style=color:#f92672>(</span>enabled<span style=color:#f92672>);</span>
-		dataCombox<span style=color:#f92672>.</span><span style=color:#a6e22e>setEnabled</span><span style=color:#f92672>(</span>enabled<span style=color:#f92672>);</span>
-		stopCombox<span style=color:#f92672>.</span><span style=color:#a6e22e>setEnabled</span><span style=color:#f92672>(</span>enabled<span style=color:#f92672>);</span>
-		parityCombox<span style=color:#f92672>.</span><span style=color:#a6e22e>setEnabled</span><span style=color:#f92672>(</span>enabled<span style=color:#f92672>);</span>
-	<span style=color:#f92672>}</span>
+	<span style=color:#080;font-style:italic>/**
+</span><span style=color:#080;font-style:italic>	 * 设置各组件的开关状态
+</span><span style=color:#080;font-style:italic>	 * @param enabled 状态
+</span><span style=color:#080;font-style:italic>	 * @since 2012-3-23 上午12:06:24
+</span><span style=color:#080;font-style:italic>	 */</span>
+	<span style=color:#a2f;font-weight:700>public</span> <span style=color:#0b0;font-weight:700>void</span> <span style=color:#00a000>setComponentsEnabled</span><span style=color:#666>(</span><span style=color:#0b0;font-weight:700>boolean</span> enabled<span style=color:#666>)</span> <span style=color:#666>{</span>
+		openPortBtn<span style=color:#666>.</span><span style=color:#b44>setEnabled</span><span style=color:#666>(</span>enabled<span style=color:#666>);</span>
+		openPortBtn<span style=color:#666>.</span><span style=color:#b44>setEnabled</span><span style=color:#666>(</span>enabled<span style=color:#666>);</span>
+		portCombox<span style=color:#666>.</span><span style=color:#b44>setEnabled</span><span style=color:#666>(</span>enabled<span style=color:#666>);</span>
+		rateCombox<span style=color:#666>.</span><span style=color:#b44>setEnabled</span><span style=color:#666>(</span>enabled<span style=color:#666>);</span>
+		dataCombox<span style=color:#666>.</span><span style=color:#b44>setEnabled</span><span style=color:#666>(</span>enabled<span style=color:#666>);</span>
+		stopCombox<span style=color:#666>.</span><span style=color:#b44>setEnabled</span><span style=color:#666>(</span>enabled<span style=color:#666>);</span>
+		parityCombox<span style=color:#666>.</span><span style=color:#b44>setEnabled</span><span style=color:#666>(</span>enabled<span style=color:#666>);</span>
+	<span style=color:#666>}</span>
 	
-	<span style=color:#75715e>/**
-</span><span style=color:#75715e>	 * 运行主函数
-</span><span style=color:#75715e>	 * @param args
-</span><span style=color:#75715e>	 * @since 2012-3-23 上午12:06:45
-</span><span style=color:#75715e>	 */</span>
-	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span><span style=color:#f92672>(</span>String<span style=color:#f92672>[]</span> args<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
-		<span style=color:#66d9ef>new</span> JavaRs232<span style=color:#f92672>();</span>		
-	<span style=color:#f92672>}</span>
-<span style=color:#f92672>}</span>
+	<span style=color:#080;font-style:italic>/**
+</span><span style=color:#080;font-style:italic>	 * 运行主函数
+</span><span style=color:#080;font-style:italic>	 * @param args
+</span><span style=color:#080;font-style:italic>	 * @since 2012-3-23 上午12:06:45
+</span><span style=color:#080;font-style:italic>	 */</span>
+	<span style=color:#a2f;font-weight:700>public</span> <span style=color:#a2f;font-weight:700>static</span> <span style=color:#0b0;font-weight:700>void</span> <span style=color:#00a000>main</span><span style=color:#666>(</span>String<span style=color:#666>[]</span> args<span style=color:#666>)</span> <span style=color:#666>{</span>
+		<span style=color:#a2f;font-weight:700>new</span> JavaRs232<span style=color:#666>();</span>		
+	<span style=color:#666>}</span>
+<span style=color:#666>}</span>
 
 </code></pre></div><p>代码编写完成，按下F11键进入调试状态，一切运行正常良好，请看图：</p><ul><li>启动界面</li></ul><p><img src=http://myblog.lisenhui.cn/java-hard-rsr232-3.png-alias alt=java-hard-rsr232-3></p><ul><li>端口检测</li></ul><p><img src=http://myblog.lisenhui.cn/java-hard-rsr232-4.png-alias alt=java-hard-rsr232-4></p><ul><li>通讯测试</li></ul><p><img src=http://myblog.lisenhui.cn/java-hard-rsr232-5.png-alias alt=java-hard-rsr232-5></p><ul><li>最后再抽空来美化程序下，效果更漂亮</li></ul><p><img src=http://myblog.lisenhui.cn/java-hard-rsr232-6.png-alias alt=java-hard-rsr232-6></p><p><img src=http://myblog.lisenhui.cn/java-hard-rsr232-7.png-alias alt=java-hard-rsr232-7></p><p>PS: <a href=http://dl.iteye.com/topics/download/80f67e6e-45eb-31ff-8086-da09f8d5762e>示例源下载</a></p></div><div class="bshare-custom icon-medium-plus" style=margin-top:50px><a href=# id=bshare-shareto>分享到:</a>
 <a title=分享到微信 class=bshare-weixin></a><a title=分享到QQ空间 class=bshare-qzone></a><a title=分享到新浪微博 class=bshare-sinaminiblog></a><a title=分享到有道笔记 class=bshare-youdaonote></a><a title=分享到QQ好友 class=bshare-qqim></a><a title=分享到豆瓣 class=bshare-douban></a><a title=分享到复制网址 class=bshare-clipboard></a><a title=更多平台 class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div><script type=text/javascript>(function(){var cnzz_s_tag=document.createElement('script');cnzz_s_tag.type='text/javascript';cnzz_s_tag.async=true;cnzz_s_tag.charset='utf-8';cnzz_s_tag.src='https://static.bshare.cn/b/buttonLite.js#style=-1&uuid=7c8159a4-9a15-466c-b223-6ab7a8d48699&pophcol=1&lang=zh';var root_s=document.getElementsByTagName('script')[0];root_s.parentNode.insertBefore(cnzz_s_tag,root_s);})();(function(){var cnzz_s_tag=document.createElement('script');cnzz_s_tag.type='text/javascript';cnzz_s_tag.async=true;cnzz_s_tag.charset='utf-8';cnzz_s_tag.src='https://static.bshare.cn/b/bshareC0.js';var root_s=document.getElementsByTagName('script')[0];root_s.parentNode.insertBefore(cnzz_s_tag,root_s);})();</script><div class=post-nav><div class=article-copyright><div class=article-copyright-img><img src=/img/qq_qrcode.png width=129px height=129px><div style=text-align:center>QQ扫一扫交流</div></div><div class=article-copyright-info><p><span>标题：</span>Java程序与RSR232串口通讯小练手</p><p><span>链接：</span>https://lisenhui.cn/2012/03/24/java-hard-rsr232/</p><p><span>作者：</span><a target=_blank href=/>凡梦星尘</a></p><p><span>声明：</span>本博客文章除特别声明外，均采用 <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a>许可协议，转载请注明出处！</p></div></div><div class=clear></div></div><div class=reward-qr-info><div>创作实属不易，如有帮助，那就打赏博主些许茶钱吧 ^_^</div><button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');if(qr.style.display==='none'){qr.style.display='block';}else{qr.style.display='none'}">

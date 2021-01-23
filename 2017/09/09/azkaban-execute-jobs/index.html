@@ -15,40 +15,40 @@ gtag('js',new Date());gtag('config','UA-61491374-4 ');</script></head><body item
 <span class=leancloud-view-count>3分钟</span></span>
 <span id=/2017/09/09/azkaban-execute-jobs/ class=leancloud_visitors data-flag-title=Azkaban所支持的Job类型及示例>|
 <i class="fa fa-binoculars fa-fw"></i><span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>在官方文档的介绍中，了解到<code>Azkaban</code>所支持的工作类型还是很丰富的，如：<code>Command</code>，<code>HadoopShell</code>，<code>Python</code>，<code>Java</code>，<code>Hive</code>，<code>Pig</code>等等。不过在此我们主要具体只来讲解下<code>Python</code>与<code>Java</code>的工作类型任务，其它工作类型的话，比如<code>Commnad</code>，<code>Hive</code>，<code>HadoopShell</code>相对比较简单就不做详解，有需要的话可以自行实践一下。</p><p>不管提交哪一种任务，<code>Azkaban</code>默认都是通过上传压缩包来管理，那么在此建议大家养成一个习惯，不要所执行的文件(代码)打包到<code>Azkaban</code>的工程包里面。这样带来的好处是显而易见的，比如：</p><ul><li><p>工程创建的速度快，不需要上传执行部分文件</p></li><li><p>避免了修改<code>MySQL</code>中的<code>max_allow_packet</code>参数以解决工程文件上传失败的问题</p></li><li><p>在分布式布署环境中，当执行Task免去了在不同节点中拷贝工程包的麻烦</p></li></ul><h1 id=java工作任务>Java工作任务</h1><p>由于工作业务场景中，大部分的代码都是<code>Java</code>来编写的，这也正是选择<code>Azkaban</code>的重要原因。与常见的<code>Java</code>程序并无太大的差异，唯一的不同便是程序入口的方法不一样。需要在入口的类中增加个**<code>run</code>**方法，即这方法是启动整体个Task的关键。示例代码如下：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#f92672>package</span> <span style=color:#a6e22e>io</span>.<span style=color:#a6e22e>github</span>.<span style=color:#a6e22e>elkan1788</span>.<span style=color:#a6e22e>azkabantasks</span>;
+<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>在官方文档的介绍中，了解到<code>Azkaban</code>所支持的工作类型还是很丰富的，如：<code>Command</code>，<code>HadoopShell</code>，<code>Python</code>，<code>Java</code>，<code>Hive</code>，<code>Pig</code>等等。不过在此我们主要具体只来讲解下<code>Python</code>与<code>Java</code>的工作类型任务，其它工作类型的话，比如<code>Commnad</code>，<code>Hive</code>，<code>HadoopShell</code>相对比较简单就不做详解，有需要的话可以自行实践一下。</p><p>不管提交哪一种任务，<code>Azkaban</code>默认都是通过上传压缩包来管理，那么在此建议大家养成一个习惯，不要所执行的文件(代码)打包到<code>Azkaban</code>的工程包里面。这样带来的好处是显而易见的，比如：</p><ul><li><p>工程创建的速度快，不需要上传执行部分文件</p></li><li><p>避免了修改<code>MySQL</code>中的<code>max_allow_packet</code>参数以解决工程文件上传失败的问题</p></li><li><p>在分布式布署环境中，当执行Task免去了在不同节点中拷贝工程包的麻烦</p></li></ul><h1 id=java工作任务>Java工作任务</h1><p>由于工作业务场景中，大部分的代码都是<code>Java</code>来编写的，这也正是选择<code>Azkaban</code>的重要原因。与常见的<code>Java</code>程序并无太大的差异，唯一的不同便是程序入口的方法不一样。需要在入口的类中增加个**<code>run</code>**方法，即这方法是启动整体个Task的关键。示例代码如下：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-go data-lang=go><span style=color:#a2f;font-weight:700>package</span> io.github.elkan1788.azkabantasks;
 
-<span style=color:#f92672>import</span> <span style=color:#a6e22e>azkaban</span>.<span style=color:#a6e22e>utils</span>.<span style=color:#a6e22e>Props</span>;
-<span style=color:#f92672>import</span> <span style=color:#a6e22e>org</span>.<span style=color:#a6e22e>slf4j</span>.<span style=color:#a6e22e>Logger</span>;
-<span style=color:#f92672>import</span> <span style=color:#a6e22e>org</span>.<span style=color:#a6e22e>slf4j</span>.<span style=color:#a6e22e>LoggerFactory</span>;
+<span style=color:#a2f;font-weight:700>import</span> azkaban.utils.Props;
+<span style=color:#a2f;font-weight:700>import</span> org.slf4j.Logger;
+<span style=color:#a2f;font-weight:700>import</span> org.slf4j.LoggerFactory;
 
-<span style=color:#75715e>/**
-</span><span style=color:#75715e> * Azkaban java job example
-</span><span style=color:#75715e> * @author elkan1788@gmail.com
-</span><span style=color:#75715e> */</span>
-<span style=color:#a6e22e>public</span> <span style=color:#a6e22e>class</span> <span style=color:#a6e22e>JobMain</span> {
+<span style=color:#080;font-style:italic>/**
+</span><span style=color:#080;font-style:italic> * Azkaban java job example
+</span><span style=color:#080;font-style:italic> * @author elkan1788@gmail.com
+</span><span style=color:#080;font-style:italic> */</span>
+public class JobMain {
 
-    <span style=color:#a6e22e>private</span> <span style=color:#a6e22e>static</span> <span style=color:#a6e22e>final</span> <span style=color:#a6e22e>Logger</span> <span style=color:#a6e22e>logger</span> = <span style=color:#a6e22e>LoggerFactory</span>.<span style=color:#a6e22e>getLogger</span>(<span style=color:#a6e22e>JobMain</span>.<span style=color:#a6e22e>class</span>);
+    private static final Logger logger = LoggerFactory.<span style=color:#00a000>getLogger</span>(JobMain.class);
 
-    <span style=color:#a6e22e>private</span> <span style=color:#66d9ef>int</span> <span style=color:#a6e22e>fileRows</span>;
-    <span style=color:#a6e22e>private</span> <span style=color:#66d9ef>int</span> <span style=color:#a6e22e>fileLine</span>;
+    private <span style=color:#0b0;font-weight:700>int</span> fileRows;
+    private <span style=color:#0b0;font-weight:700>int</span> fileLine;
 
 
-    <span style=color:#75715e>/**
-</span><span style=color:#75715e>     * Dynamic parameters set
-</span><span style=color:#75715e>     */</span>
-    <span style=color:#a6e22e>public</span> <span style=color:#a6e22e>JobMain</span>(<span style=color:#a6e22e>String</span> <span style=color:#a6e22e>name</span>, <span style=color:#a6e22e>Props</span> <span style=color:#a6e22e>props</span>) {
-        <span style=color:#a6e22e>this</span>.<span style=color:#a6e22e>fileRows</span> = <span style=color:#a6e22e>props</span>.<span style=color:#a6e22e>getInt</span>(<span style=color:#e6db74>&#34;file.rows&#34;</span>);
-        <span style=color:#a6e22e>this</span>.<span style=color:#a6e22e>fileLine</span> = <span style=color:#a6e22e>props</span>.<span style=color:#a6e22e>getInt</span>(<span style=color:#e6db74>&#34;file.line&#34;</span>);
+    <span style=color:#080;font-style:italic>/**
+</span><span style=color:#080;font-style:italic>     * Dynamic parameters set
+</span><span style=color:#080;font-style:italic>     */</span>
+    public <span style=color:#00a000>JobMain</span>(String name, Props props) {
+        this.fileRows = props.<span style=color:#00a000>getInt</span>(<span style=color:#b44>&#34;file.rows&#34;</span>);
+        this.fileLine = props.<span style=color:#00a000>getInt</span>(<span style=color:#b44>&#34;file.line&#34;</span>);
     }
 
-    <span style=color:#a6e22e>public</span> <span style=color:#a6e22e>void</span> <span style=color:#a6e22e>run</span>() <span style=color:#a6e22e>throws</span> <span style=color:#a6e22e>Exception</span> {
-        <span style=color:#a6e22e>logger</span>.<span style=color:#a6e22e>info</span>(<span style=color:#e6db74>&#34; ### this is JavaMain method ###&#34;</span>);
-        <span style=color:#a6e22e>logger</span>.<span style=color:#a6e22e>info</span>(<span style=color:#e6db74>&#34;fileRows value is ==&gt; &#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>fileRows</span>);
-        <span style=color:#a6e22e>logger</span>.<span style=color:#a6e22e>info</span>(<span style=color:#e6db74>&#34;fileLine value is ==&gt; &#34;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>fileLine</span>);
+    public void <span style=color:#00a000>run</span>() throws Exception {
+        logger.<span style=color:#00a000>info</span>(<span style=color:#b44>&#34; ### this is JavaMain method ###&#34;</span>);
+        logger.<span style=color:#00a000>info</span>(<span style=color:#b44>&#34;fileRows value is ==&gt; &#34;</span> <span style=color:#666>+</span> fileRows);
+        logger.<span style=color:#00a000>info</span>(<span style=color:#b44>&#34;fileLine value is ==&gt; &#34;</span> <span style=color:#666>+</span> fileLine);
     }
 
 }
-</code></pre></div><p>在上面的示例代码中，增加了动态参数设置，最后在打包的时候并不需要指定<code>MainClass</code>的所在，只要项目中的所有相关的代码及依赖打包到一个独立的文件即可。</p><p>另外我们还需要构建一个<code>Azkaban</code>工程脚本来告诉它如何执行我们的任务，脚本示例如下：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>type=java
+</code></pre></div><p>在上面的示例代码中，增加了动态参数设置，最后在打包的时候并不需要指定<code>MainClass</code>的所在，只要项目中的所有相关的代码及依赖打包到一个独立的文件即可。</p><p>另外我们还需要构建一个<code>Azkaban</code>工程脚本来告诉它如何执行我们的任务，脚本示例如下：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>type=java
 job.class=io.github.elkan1788.azkabantasks.JobMain
 #指定执行jar包的路径
 classpath=/home/azkaban/javademo/*
@@ -56,12 +56,12 @@ classpath=/home/azkaban/javademo/*
 file.rows=10
 #用户参数2
 file.line=50
-</code></pre></div><p>为了不让任务太单调，顺便个简单的命令输出，组成个FLOW形式输出，参考脚本如下：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>type=command
+</code></pre></div><p>为了不让任务太单调，顺便个简单的命令输出，组成个FLOW形式输出，参考脚本如下：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>type=command
 dependencies=java
 command=whoami
-</code></pre></div><p>效果如下：</p><p><img src=http://myblog.lisenhui.cn/azkaban-jobs-02.png-alias alt=Azkaban-Jobs02></p><h1 id=pthon工作任务>Pthon工作任务</h1><p>Python的工作任务相对就简单了，不过目前没找到动态入参的方法。执行Python工作任务的方法有两种, 参考代码如下：</p><ul><li><code>command</code>类型</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>type=command
+</code></pre></div><p>效果如下：</p><p><img src=http://myblog.lisenhui.cn/azkaban-jobs-02.png-alias alt=Azkaban-Jobs02></p><h1 id=pthon工作任务>Pthon工作任务</h1><p>Python的工作任务相对就简单了，不过目前没找到动态入参的方法。执行Python工作任务的方法有两种, 参考代码如下：</p><ul><li><code>command</code>类型</li></ul><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>type=command
 command=python -u /home/azkaban/pythondemo/helloworld.py
-</code></pre></div><ul><li><code>python</code>类型</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>type=python
+</code></pre></div><ul><li><code>python</code>类型</li></ul><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>type=python
 python=python
 script=/home/azkaban/pythondemo/helloworld.py
 </code></pre></div><p>效果如下：</p><p><img src=http://myblog.lisenhui.cn/azkaban-jobs-01.png-alias alt=Azkaban-Jobs01></p><h1 id=总结>总结</h1><p>总的来说，<code>Azkaban</code>编写任务的脚本还是简单且灵活的，不过也有比较坑人的地方。比如前面举粟的<code>Java</code>工作任务，在实际的运行过程中是需要添加<code>hadoop</code>的依赖包及相关配置，能过查阅官方文档得知是因为<code>Java</code>任务类型是在<code>HadoopJava</code>衍生出来的，所以也就难怪了。还好这也是只是配置环境时的问题，后续的应用开发还是挺方便的。</p></div><div class="bshare-custom icon-medium-plus" style=margin-top:50px><a href=# id=bshare-shareto>分享到:</a>

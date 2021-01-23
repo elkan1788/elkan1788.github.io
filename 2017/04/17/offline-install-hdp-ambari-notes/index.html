@@ -15,16 +15,16 @@ gtag('js',new Date());gtag('config','UA-61491374-4 ');</script></head><body item
 <span class=leancloud-view-count>4分钟</span></span>
 <span id=/2017/04/17/offline-install-hdp-ambari-notes/ class=leancloud_visitors data-flag-title="离线安装HDP2.6(1)-Ambari Server">|
 <i class="fa fa-binoculars fa-fw"></i><span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><h2 id=1参考文档>1.参考文档</h2><p>FYI: <a href=https://docs.hortonworks.com/HDPDocuments/Ambari-2.5.0.3/bk_ambari-installation/content/ch_Getting_Ready.html>HDP Install Documents</a></p><p><a href=https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.0/bk_command-line-installation/content/prepare-environment.html#ref-2822d0e9-bd88-4714-910a-750c5b95a996>HDP Install Manual</a></p><h2 id=2-硬件环境>2. 硬件环境</h2><p>首先是要准备3台机器,安装最新的CentOS7.2，机器的配置参考要求如下：</p><table><thead><tr><th>CPU</th><th>Memory</th><th>Disk</th><th>Remark</th></tr></thead><tbody><tr><td>4核</td><td>26G</td><td>200G</td><td>主节点/1台</td></tr><tr><td>4核</td><td>16G</td><td>200G</td><td>从节点/2台</td></tr></tbody></table><h2 id=3-hdp安装文件>3. HDP安装文件</h2><p>下载离线安装的文件：</p><table><thead><tr><th>File Name</th><th>Download Link</th></tr></thead><tbody><tr><td>ambari-2.5.0.3</td><td><a href=http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3/ambari-2.5.0.3-centos7.tar.gz>http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3/ambari-2.5.0.3-centos7.tar.gz</a></td></tr><tr><td>HDP-2.6.0.3</td><td><a href=http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.0.3/HDP-2.6.0.3-centos7-rpm.tar.gz>http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.0.3/HDP-2.6.0.3-centos7-rpm.tar.gz</a></td></tr><tr><td>HDP-UTILS-1.1.0.21</td><td><a href=http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.21/repos/centos7/HDP-UTILS-1.1.0.21-centos7.tar.gz>http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.21/repos/centos7/HDP-UTILS-1.1.0.21-centos7.tar.gz</a></td></tr></tbody></table><h2 id=4-ssh免密登录>4. SSH免密登录</h2><p>配置免密码登录，注意这里主要是指master机器登录到其它cluster机器。所以最好先给机器指定好特定的hostname标识分开，参考如下：</p><table><thead><tr><th>IP</th><th>Host Name</th></tr></thead><tbody><tr><td>192.168.1.1</td><td>test-hdp-master01</td></tr><tr><td>192.168.1.2</td><td>test-hdp-cluster01</td></tr><tr><td>192.168.1.3</td><td>test-hdp-cluster02</td></tr></tbody></table><blockquote><p>需要注意一点是，在CentOS7中过修改 <strong><code>/etc/hosts</code></strong> 文件已经无法实现机器名称的修改，需要使用新的命令： <strong><code>hostnamectl set-hostname test-hdp-master01</code></strong></p></blockquote><p>然后在master机器上使用<code>ssh-keygen -t RSA</code> 密令生成SSH密钥，再使用命令 <strong><code>ssh-copy-id -i ~/.ssh/id_rsa.pub root@test-hdp-cluster01</code></strong> 拷贝到其它两台cluster机器，最后使用SSH登录命令检查是否安装成功，同时把hostname，IP地址写入到每台机器的<code>/etc/hosts</code>文件里面。</p><h2 id=5-时间同步>5. 时间同步</h2><p>安装NTP服务 （<a href=http://blog.csdn.net/andy_yf/article/details/8027635>参考</a>)</p><p>在Master机器上执行以下的命令安装并启动ntpd服务：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>yum install ntp -y
+<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><h2 id=1参考文档>1.参考文档</h2><p>FYI: <a href=https://docs.hortonworks.com/HDPDocuments/Ambari-2.5.0.3/bk_ambari-installation/content/ch_Getting_Ready.html>HDP Install Documents</a></p><p><a href=https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.0/bk_command-line-installation/content/prepare-environment.html#ref-2822d0e9-bd88-4714-910a-750c5b95a996>HDP Install Manual</a></p><h2 id=2-硬件环境>2. 硬件环境</h2><p>首先是要准备3台机器,安装最新的CentOS7.2，机器的配置参考要求如下：</p><table><thead><tr><th>CPU</th><th>Memory</th><th>Disk</th><th>Remark</th></tr></thead><tbody><tr><td>4核</td><td>26G</td><td>200G</td><td>主节点/1台</td></tr><tr><td>4核</td><td>16G</td><td>200G</td><td>从节点/2台</td></tr></tbody></table><h2 id=3-hdp安装文件>3. HDP安装文件</h2><p>下载离线安装的文件：</p><table><thead><tr><th>File Name</th><th>Download Link</th></tr></thead><tbody><tr><td>ambari-2.5.0.3</td><td><a href=http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3/ambari-2.5.0.3-centos7.tar.gz>http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3/ambari-2.5.0.3-centos7.tar.gz</a></td></tr><tr><td>HDP-2.6.0.3</td><td><a href=http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.0.3/HDP-2.6.0.3-centos7-rpm.tar.gz>http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.0.3/HDP-2.6.0.3-centos7-rpm.tar.gz</a></td></tr><tr><td>HDP-UTILS-1.1.0.21</td><td><a href=http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.21/repos/centos7/HDP-UTILS-1.1.0.21-centos7.tar.gz>http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.21/repos/centos7/HDP-UTILS-1.1.0.21-centos7.tar.gz</a></td></tr></tbody></table><h2 id=4-ssh免密登录>4. SSH免密登录</h2><p>配置免密码登录，注意这里主要是指master机器登录到其它cluster机器。所以最好先给机器指定好特定的hostname标识分开，参考如下：</p><table><thead><tr><th>IP</th><th>Host Name</th></tr></thead><tbody><tr><td>192.168.1.1</td><td>test-hdp-master01</td></tr><tr><td>192.168.1.2</td><td>test-hdp-cluster01</td></tr><tr><td>192.168.1.3</td><td>test-hdp-cluster02</td></tr></tbody></table><blockquote><p>需要注意一点是，在CentOS7中过修改 <strong><code>/etc/hosts</code></strong> 文件已经无法实现机器名称的修改，需要使用新的命令： <strong><code>hostnamectl set-hostname test-hdp-master01</code></strong></p></blockquote><p>然后在master机器上使用<code>ssh-keygen -t RSA</code> 密令生成SSH密钥，再使用命令 <strong><code>ssh-copy-id -i ~/.ssh/id_rsa.pub root@test-hdp-cluster01</code></strong> 拷贝到其它两台cluster机器，最后使用SSH登录命令检查是否安装成功，同时把hostname，IP地址写入到每台机器的<code>/etc/hosts</code>文件里面。</p><h2 id=5-时间同步>5. 时间同步</h2><p>安装NTP服务 （<a href=http://blog.csdn.net/andy_yf/article/details/8027635>参考</a>)</p><p>在Master机器上执行以下的命令安装并启动ntpd服务：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>yum install ntp -y
 
 systemctl start ntpd
-</code></pre></div><p>修改配置文件，允许同网段下面的机器同步时间。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>vi /etc/ntp.conf
+</code></pre></div><p>修改配置文件，允许同网段下面的机器同步时间。</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>vi /etc/ntp.conf
 
 # Hosts on local network are less restricted.
 #restrict 192.168.1.0 mask 255.255.255.0 nomodify notrap
 # 找到这段配置，改写成如下的配置
 restrict 192.168.51.0 mask 255.255.255.0 nomodify
-</code></pre></div><p>在其它两台Cluster机器安装NTP客户端，执行命令如下：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>yum install ntpdate -y
+</code></pre></div><p>在其它两台Cluster机器安装NTP客户端，执行命令如下：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>yum install ntpdate -y
 
 crontab -e
 
@@ -32,7 +32,7 @@ crontab -e
 */1 *  *  *  *  ntpdate -u 192.168.51.21 &amp;&amp; hwclock -w
 
 systemctl start crond.service
-</code></pre></div><h2 id=6-配置yum镜像>6. 配置YUM镜像</h2><h3 id=61-解压文件>6.1 解压文件</h3><p>将第2步中下载的三个文件解压</p><blockquote><p>注意 <code>HDP-UTIL</code>是没根目录的，所以最好创建一个目录，解压好的目录结构如下：</p></blockquote><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[root@test-hdp-master01 hdp-download]# ll
+</code></pre></div><h2 id=6-配置yum镜像>6. 配置YUM镜像</h2><h3 id=61-解压文件>6.1 解压文件</h3><p>将第2步中下载的三个文件解压</p><blockquote><p>注意 <code>HDP-UTIL</code>是没根目录的，所以最好创建一个目录，解压好的目录结构如下：</p></blockquote><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[root@test-hdp-master01 hdp-download]# ll
 total 8676352
 drwxr-xr-x  3 root root          20 Apr 25 16:03 ambari
 -rw-r--r--  1 root root  1657013486 Apr  6 11:14 ambari-2.5.0.3-centos7.tar.gz
@@ -40,8 +40,8 @@ drwxr-xr-x  3 1001 users         20 Apr  3 08:58 HDP
 -rw-r--r--  1 root root  6356134913 Apr  3 09:25 HDP-2.6.0.3-centos7-rpm.tar.gz
 drwxr-xr-x 21 root root        4096 Apr 25 16:16 HDP-UTILS
 -rw-r--r--  1 root root   871424874 Mar 31 03:11 HDP-UTILS-1.1.0.21-centos7.tar.gz
-</code></pre></div><h3 id=62-启动http服务>6.2 启动HTTP服务</h3><p>启动HTTPServer服务，这里不用安装Apache直接用下面的Python命令启动即可：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>python -m SimpleHTTPServer 88
-</code></pre></div><h3 id=63-修改repo文件>6.3 修改Repo文件</h3><p>找到6.1解压目录下面的<code>ambari.repo</code>与<code>hdp.repo</code>文件，将里面的<strong>baseurl</strong>,<strong>gpgkey</strong>更新为本地HTTP服务地址即可，如下：</p><p>ambari.repo</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>#VERSION_NUMBER=2.5.0.3-7
+</code></pre></div><h3 id=62-启动http服务>6.2 启动HTTP服务</h3><p>启动HTTPServer服务，这里不用安装Apache直接用下面的Python命令启动即可：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>python -m SimpleHTTPServer 88
+</code></pre></div><h3 id=63-修改repo文件>6.3 修改Repo文件</h3><p>找到6.1解压目录下面的<code>ambari.repo</code>与<code>hdp.repo</code>文件，将里面的<strong>baseurl</strong>,<strong>gpgkey</strong>更新为本地HTTP服务地址即可，如下：</p><p>ambari.repo</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>#VERSION_NUMBER=2.5.0.3-7
 [ambari-2.5.0.3]
 name=ambari Version - ambari-2.5.0.3
 # baseurl=http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3
@@ -51,7 +51,7 @@ gpgcheck=1
 gpgkey=http://192.168.51.21:88/ambari/centos7/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
 enabled=1
 priority=1
-</code></pre></div><p>hdp.repo</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>#VERSION_NUMBER=2.6.0.3-8
+</code></pre></div><p>hdp.repo</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>#VERSION_NUMBER=2.6.0.3-8
 [HDP-2.6.0.3]
 name=HDP Version - HDP-2.6.0.3
 # baseurl=http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.0.3
@@ -72,11 +72,11 @@ gpgcheck=1
 gpgkey=http://192.168.1.1:88/HDP-UTILS/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
 enabled=1
 priority=1
-</code></pre></div><h3 id=63-安装ambari-server>6.3 安装ambari-server</h3><p>在Master机器上安装ambari-server服务</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>yum install ambari-server
-</code></pre></div><h2 id=7-配置jdk环境>7. 配置JDK环境</h2><p>将下载好的JDK压缩包解压到<code>/user/share/jdk</code>目录下，然后再编辑<code>/etc/profile</code>文件在末尾加入下面的代码：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>export JAVA_HOME=/usr/share/jdk/jdk1.8.0_131
+</code></pre></div><h3 id=63-安装ambari-server>6.3 安装ambari-server</h3><p>在Master机器上安装ambari-server服务</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>yum install ambari-server
+</code></pre></div><h2 id=7-配置jdk环境>7. 配置JDK环境</h2><p>将下载好的JDK压缩包解压到<code>/user/share/jdk</code>目录下，然后再编辑<code>/etc/profile</code>文件在末尾加入下面的代码：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>export JAVA_HOME=/usr/share/jdk/jdk1.8.0_131
 export CLASSPATH=.:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar
 export PATH=$JAVA_HOME/bin:$PATH
-</code></pre></div><p>最后命令<code>source /etc/profile</code>编绎一下文件即可，在其它两台Cluster上面重复此操作，记得用<code>java -version</code>验证是否安装成功。</p><h2 id=8-安装mysql数据库>8. 安装MySQL数据库</h2><p><a href=http://www.linuxidc.com/Linux/2016-09/135288.htm>参考</a></p><p>下载mysql源安装包并安装</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>wget http://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm
+</code></pre></div><p>最后命令<code>source /etc/profile</code>编绎一下文件即可，在其它两台Cluster上面重复此操作，记得用<code>java -version</code>验证是否安装成功。</p><h2 id=8-安装mysql数据库>8. 安装MySQL数据库</h2><p><a href=http://www.linuxidc.com/Linux/2016-09/135288.htm>参考</a></p><p>下载mysql源安装包并安装</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>wget http://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm
 
 yum localinstall mysql57-community-release-el7-8.noarch.rpm
 
@@ -88,7 +88,7 @@ mysql-tools-community/x86_64      MySQL Tools Community                      47
 mysql57-community/x86_64          MySQL 5.7 Community Server                187
 
 yum install mysql-community-server -y
-</code></pre></div><p>在安装日志找到默认密码并修改</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>grep &#39;temporary password&#39; /var/log/mysqld.log 
+</code></pre></div><p>在安装日志找到默认密码并修改</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>grep &#39;temporary password&#39; /var/log/mysqld.log 
 2017-04-25T23:51:03.380340Z 1 [Note] A temporary password is generated for root@localhost: dCAdHOM+H4z%
 
 ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;dCAdHOM+H4zz%&#39;;
@@ -99,22 +99,22 @@ CREATE USER &#39;ambari&#39;@&#39;192.168.51.%&#39; IDENTIFIED BY &#39;1wVhZ7nd@
 GRANT ALL PRIVILEGES ON hive.* TO &#39;hive&#39;@&#39;192.168.51.%&#39; IDENTIFIED BY &#39;1wVhZ7nd@T&#39;
 
 FLUSH PRIVILEGES;
-</code></pre></div><p>修改默认字符集</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>vi /etc/my.cnf
+</code></pre></div><p>修改默认字符集</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>vi /etc/my.cnf
 
 # 在mysqld选项下面增加
 character_set_server=utf8
 init_connect=&#39;SET NAMES utf8&#39;
 
-</code></pre></div><p>设置开机启动</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>systemctl enable mysqld
+</code></pre></div><p>设置开机启动</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>systemctl enable mysqld
 systemctl daemon-reload
 
 #启动mysql
 systemctl start mysqld
-</code></pre></div><h2 id=9-安装mysql-connector-jar文件>9. 安装mysql connector jar文件</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>yum install yum-utils
+</code></pre></div><h2 id=9-安装mysql-connector-jar文件>9. 安装mysql connector jar文件</h2><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>yum install yum-utils
 yumdownloader mysql-connector-java
 rpm -ivh mysql-connector-java-5.1.25-3.el7.noarch.rpm --force --nodeps
 ambari-server setup --jdbc-db=mysql --jdbc-driver=/usr/share/java/mysql-connector-java.jar
-</code></pre></div><h2 id=10-设置ambari-server-setup>10. 设置Ambari Server Setup</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[root@test-hdp-master01 hdp-download]# ambari-server setup -j /usr/share/jdk/jdk1.8.0_131
+</code></pre></div><h2 id=10-设置ambari-server-setup>10. 设置Ambari Server Setup</h2><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[root@test-hdp-master01 hdp-download]# ambari-server setup -j /usr/share/jdk/jdk1.8.0_131
 Using python  /usr/bin/python
 Setup ambari-server
 Checking SELinux...
@@ -155,7 +155,7 @@ Extracting system views...
 ............
 Adjusting ambari-server permissions and ownership...
 Ambari Server &#39;setup&#39; completed successfully.
-</code></pre></div><blockquote><p>注意在选择数据库会要输入数据库名，用户名，密码等信息，请保存好这些信息，后面在创建数据库时有用的</p></blockquote><h2 id=11-创建元数据库>11. 创建元数据库</h2><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>CREATE DATABASE `ambari` CHARACTER SET utf8 COLLATE utf8_general_ci;
+</code></pre></div><blockquote><p>注意在选择数据库会要输入数据库名，用户名，密码等信息，请保存好这些信息，后面在创建数据库时有用的</p></blockquote><h2 id=11-创建元数据库>11. 创建元数据库</h2><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>CREATE DATABASE `ambari` CHARACTER SET utf8 COLLATE utf8_general_ci;
 CREATE USER &#39;ambari&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;sDgu-5H1sW&#39;
 GRANT USAGE ON `ambari`.* TO &#39;ambari&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;sDgu-5H1sW&#39;
 FLUSH PRIVILEGES;
@@ -163,17 +163,17 @@ FLUSH PRIVILEGES;
 USE &#39;ambari&#39; GO;
 
 source /var/lib/ambari-server/resources/Ambari-DDL-MySQL-CREATE.sql
-</code></pre></div><h2 id=12-启动ambari-server>12. 启动Ambari Server</h2><p>使用命令<code>ambari-server start</code>启动，然后打开浏览器输入<code>http://192.168.1.1:8080/</code>，便可以看到Ambari的登录界面，输入默认用户密码登录，接着就可以安装Hadoop组件服务啦。</p><h2 id=13-安装过程中的问题记录>13. 安装过程中的问题记录</h2><h3 id=131-hostname指定问题>13.1 HostName指定问题</h3><p>在这个过程中，如果会出现ambari-server的hostname无法指定，目前通过直接改写代码实现。</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>vi /usr/lib/python2.6/site-packages/ambari_server/setupAgent.py
+</code></pre></div><h2 id=12-启动ambari-server>12. 启动Ambari Server</h2><p>使用命令<code>ambari-server start</code>启动，然后打开浏览器输入<code>http://192.168.1.1:8080/</code>，便可以看到Ambari的登录界面，输入默认用户密码登录，接着就可以安装Hadoop组件服务啦。</p><h2 id=13-安装过程中的问题记录>13. 安装过程中的问题记录</h2><h3 id=131-hostname指定问题>13.1 HostName指定问题</h3><p>在这个过程中，如果会出现ambari-server的hostname无法指定，目前通过直接改写代码实现。</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>vi /usr/lib/python2.6/site-packages/ambari_server/setupAgent.py
 # 把315行代码更新如下
 #  hostname = args[2]
 hostname = &#34;test-hdp-master01&#34;
 
-</code></pre></div><h3 id=132-mysql连接失败>13.2 MySQL连接失败</h3><p>在安装时测试MySQL连接失败，与上次面的问题差不多，也只能是修改下代码：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback># 注意这里指你安装Hive, oozie服务的机器
+</code></pre></div><h3 id=132-mysql连接失败>13.2 MySQL连接失败</h3><p>在安装时测试MySQL连接失败，与上次面的问题差不多，也只能是修改下代码：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback># 注意这里指你安装Hive, oozie服务的机器
 vi /var/lib/ambari-agent/cache/custom_actions/scripts/check_host.py
 # 把279行代码更新如下
 #    jdk_location = config[&#39;commandParams&#39;][&#39;jdk_location&#39;]
 jdk_location = &#39;http://&#39; + ambari_server_hostname + &#39;:8080/resources/&#39;
-</code></pre></div><p>在安装各个服务时如果提示无法下载文件，那么也要修改代码，这边主要是发现Hive的安装会出现：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback># 注意这里指你安装Hive服务的机器
+</code></pre></div><p>在安装各个服务时如果提示无法下载文件，那么也要修改代码，这边主要是发现Hive的安装会出现：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback># 注意这里指你安装Hive服务的机器
 vi /usr/lib/python2.6/site-packages/resource_management/core/source.py
 # 把169行的代码更新如下：
 # self.url = self.name

@@ -15,11 +15,11 @@ gtag('js',new Date());gtag('config','UA-61491374-4 ');</script></head><body item
 <span class=leancloud-view-count>3分钟</span></span>
 <span id=/2017/05/18/linux-daemon-supervisor/ class=leancloud_visitors data-flag-title=Supervisor介绍与使用>|
 <i class="fa fa-binoculars fa-fw"></i><span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>很多时候我们自己开发的或别的服务都没有后台的守护进程，那么进程很容易就会被不小心的杀死，此时就需要有个程序去监控和维护这些程序服务。网上搜罗了一番后发现<code>Supervisor</code>组件正好能实现我们想要的，同时还支持对这些程序的统一管理，Nice!</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>Supervisor is a client/server system that allows its users to monitor and control a number of processes on UNIX-like operating systems.
-</code></pre></div><p>看完<a href=http://www.supervisord.org/>官方网站</a>对Supervisor的定义描述，便立马觉得要实验一下。好在Linux系统中天生就是支持Python的，那么只要安装好PIP就可以得到你想要的一切。</p><p>1.安装 pip：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>easy_install pip
-</code></pre></div><p>2.安装 Supervisor:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>pip install supervisor
-</code></pre></div><p>3.配置文件</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>echo_supervisord_conf&gt;/etc/supervisord.conf
-</code></pre></div><p>3.1 配置文件详解</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[unix_http_server]
+<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>很多时候我们自己开发的或别的服务都没有后台的守护进程，那么进程很容易就会被不小心的杀死，此时就需要有个程序去监控和维护这些程序服务。网上搜罗了一番后发现<code>Supervisor</code>组件正好能实现我们想要的，同时还支持对这些程序的统一管理，Nice!</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>Supervisor is a client/server system that allows its users to monitor and control a number of processes on UNIX-like operating systems.
+</code></pre></div><p>看完<a href=http://www.supervisord.org/>官方网站</a>对Supervisor的定义描述，便立马觉得要实验一下。好在Linux系统中天生就是支持Python的，那么只要安装好PIP就可以得到你想要的一切。</p><p>1.安装 pip：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>easy_install pip
+</code></pre></div><p>2.安装 Supervisor:</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>pip install supervisor
+</code></pre></div><p>3.配置文件</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>echo_supervisord_conf&gt;/etc/supervisord.conf
+</code></pre></div><p>3.1 配置文件详解</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[unix_http_server]
 file=/tmp/supervisor.sock ; UNIX socket 文件，supervisorctl 会使用
 ;chmod=0700 ; socket 文件的 mode，默认是 0700
 ;chown=nobody:nogroup ; socket 文件的 owner，格式： uid:gid
@@ -52,7 +52,7 @@ serverurl=unix:///tmp/supervisor.sock ; 通过 UNIX socket 连接 supervisord，
 ; 包含其他的配置文件
 [include]
 files = /etc/supervisor/*.conf ; 可以是 *.conf 或 *.ini
-</code></pre></div><p>4.守护进程配置说明</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[program:kafka]
+</code></pre></div><p>4.守护进程配置说明</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[program:kafka]
 directory = /root/kafka_2.10-0.10.1.1/bin/ ; 程序的启动目录
 command = kafka-server-start.sh /root/kafka_2.10-0.10.1.1/config/server.properties ; 启动命令，可以看出与手动在命令行启动的命令是一样的
 autostart = true ; 在 supervisord 启动的时候也自动启动
@@ -68,14 +68,14 @@ stdout_logfile = /var/log/kafka-server.log
 
 ; 可以通过 environment 来添加需要的环境变量，一种常见的用法是修改 PYTHONPATH
 ; environment=PYTHONPATH=$PYTHONPATH:/path/to/somewhere
-</code></pre></div><p>5.启动服务</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>supervisord -c /etc/supervisord.conf
-</code></pre></div><p>6.用<code>supervisorctl</code>管理守护的进程</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback># all 可换成具体的进程名称
+</code></pre></div><p>5.启动服务</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>supervisord -c /etc/supervisord.conf
+</code></pre></div><p>6.用<code>supervisorctl</code>管理守护的进程</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback># all 可换成具体的进程名称
 supervisorctl status all
 supervisorctl start all
 
 # 重新加载配置
 supervisorctl reload
-</code></pre></div><p>7.启用WEB界面</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>;[inet_http_server] ; HTTP 服务器，提供 web 管理界面
+</code></pre></div><p>7.启用WEB界面</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>;[inet_http_server] ; HTTP 服务器，提供 web 管理界面
 ;port=127.0.0.1:9001 ; Web 管理后台运行的 IP 和端口，如果开放到公网，需要注意安全性
 ;username=user ; 登录管理后台的用户名
 ;password=123 ; 登录管理后台的密码

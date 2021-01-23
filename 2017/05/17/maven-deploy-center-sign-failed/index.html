@@ -15,10 +15,10 @@ gtag('js',new Date());gtag('config','UA-61491374-4 ');</script></head><body item
 <span class=leancloud-view-count>1分钟</span></span>
 <span id=/2017/05/17/maven-deploy-center-sign-failed/ class=leancloud_visitors data-flag-title=发布jar到Maven时遭遇gpg签名失败>|
 <i class="fa fa-binoculars fa-fw"></i><span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>有许久没维护自己开源的项目了，此次在修复BUG发布时遭遇失败，检查后发现原因是因为gpg签名失败，没办法换了MAC电脑有些操作不熟悉是有点郁闷的。</p><p>关于如何将自己的JAR共享到Maven中央仓库，网上有很多的资源，大家可以自行尝试一下，其实也不难的，完全没必要担心英语的问题。</p><blockquote><p>分享一个别人整理的GitBook: <a href=https://skyao.gitbooks.io/leaning-maven/content/publish/central/>发布到中央仓库</a></p></blockquote><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[INFO] --- maven-gpg-plugin:1.6:sign (sign-artifacts) @ mpsdk4j ---
+<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>有许久没维护自己开源的项目了，此次在修复BUG发布时遭遇失败，检查后发现原因是因为gpg签名失败，没办法换了MAC电脑有些操作不熟悉是有点郁闷的。</p><p>关于如何将自己的JAR共享到Maven中央仓库，网上有很多的资源，大家可以自行尝试一下，其实也不难的，完全没必要担心英语的问题。</p><blockquote><p>分享一个别人整理的GitBook: <a href=https://skyao.gitbooks.io/leaning-maven/content/publish/central/>发布到中央仓库</a></p></blockquote><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[INFO] --- maven-gpg-plugin:1.6:sign (sign-artifacts) @ mpsdk4j ---
 gpg: 签名时失败： Inappropriate ioctl for device
 gpg: signing failed: Inappropriate ioctl for device
-</code></pre></div><p>上面就是GPG在签名时遇到的问题，单纯从字面上来看是说对于此设备有个不适合的ioctl，不明白是何东西。最后一步步探究下来发现是因为管理GPG的服务器不能用的缘故，在网上找了个新的服务器重新上传如下：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>gpg --keyserver hkp://pgp.mit.edu --send-keys DAB131AA5564DCF176
+</code></pre></div><p>上面就是GPG在签名时遇到的问题，单纯从字面上来看是说对于此设备有个不适合的ioctl，不明白是何东西。最后一步步探究下来发现是因为管理GPG的服务器不能用的缘故，在网上找了个新的服务器重新上传如下：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>gpg --keyserver hkp://pgp.mit.edu --send-keys DAB131AA5564DCF176
 
 #如果不放心的话，可以使用下面的命令检查一下
 gpg --keyserver hkp://pgp.mit.edu --recv-keys DAB131AA5564DCF176

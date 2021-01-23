@@ -15,42 +15,42 @@ gtag('js',new Date());gtag('config','UA-61491374-4 ');</script></head><body item
 <span class=leancloud-view-count>2分钟</span></span>
 <span id=/2010/09/05/jquery-ajax-struts1/ class=leancloud_visitors data-flag-title=JQuery+Strusts1.x实现Ajax无刷新登录>|
 <i class="fa fa-binoculars fa-fw"></i><span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>在当今技术发展日益成熟，人们除了追求技术创新与发展外，更多也关注到了与用户交互的便利性方面上。当程序员还在为前后数据交互刷新问题困惑时，AJAX 问世了，它以方便快捷的优越性博得了广大程序员的追捧。经过几年的发展，它也渐渐成为我们开发中必不可少的一件利器，下面我就来讲个Struts1 <code>+</code> Ajax的登录示例。</p><p>所用的JS插件： JQuery1.3.2汉化版、JQuery.form2.43</p><p>下面我们先来看看页面中核心的JS代码：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript>
-<span style=color:#66d9ef>function</span> <span style=color:#a6e22e>submitForm</span>()
+<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>在当今技术发展日益成熟，人们除了追求技术创新与发展外，更多也关注到了与用户交互的便利性方面上。当程序员还在为前后数据交互刷新问题困惑时，AJAX 问世了，它以方便快捷的优越性博得了广大程序员的追捧。经过几年的发展，它也渐渐成为我们开发中必不可少的一件利器，下面我就来讲个Struts1 <code>+</code> Ajax的登录示例。</p><p>所用的JS插件： JQuery1.3.2汉化版、JQuery.form2.43</p><p>下面我们先来看看页面中核心的JS代码：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript>
+<span style=color:#a2f;font-weight:700>function</span> submitForm()
  {
-    <span style=color:#75715e>// 用jquery.form插件实现对表单数据系列化   
-</span><span style=color:#75715e></span>    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>form</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>$</span>(<span style=color:#e6db74>&#34;form[name=AdminLoginForm]&#34;</span>);
-    <span style=color:#75715e>// 配置jquery.form中ajaxForm的参数   
-</span><span style=color:#75715e></span>    <span style=color:#75715e>// success 操作成功时的回调函数   
-</span><span style=color:#75715e></span>    <span style=color:#75715e>// resetForm 是否刷新表单   
-</span><span style=color:#75715e></span>    <span style=color:#75715e>// dataType 接收服务器返回数据的类型, 有script, xml, json等   
-</span><span style=color:#75715e></span>    <span style=color:#66d9ef>var</span> <span style=color:#a6e22e>options</span> <span style=color:#f92672>=</span> {
-        <span style=color:#a6e22e>success</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>showResponse</span>,
-        <span style=color:#a6e22e>resetForm</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>false</span>,
-        <span style=color:#a6e22e>dataType</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;script&#34;</span>
+    <span style=color:#080;font-style:italic>// 用jquery.form插件实现对表单数据系列化   
+</span><span style=color:#080;font-style:italic></span>    <span style=color:#a2f;font-weight:700>var</span> form <span style=color:#666>=</span> $(<span style=color:#b44>&#34;form[name=AdminLoginForm]&#34;</span>);
+    <span style=color:#080;font-style:italic>// 配置jquery.form中ajaxForm的参数   
+</span><span style=color:#080;font-style:italic></span>    <span style=color:#080;font-style:italic>// success 操作成功时的回调函数   
+</span><span style=color:#080;font-style:italic></span>    <span style=color:#080;font-style:italic>// resetForm 是否刷新表单   
+</span><span style=color:#080;font-style:italic></span>    <span style=color:#080;font-style:italic>// dataType 接收服务器返回数据的类型, 有script, xml, json等   
+</span><span style=color:#080;font-style:italic></span>    <span style=color:#a2f;font-weight:700>var</span> options <span style=color:#666>=</span> {
+        success<span style=color:#666>:</span> showResponse,
+        resetForm<span style=color:#666>:</span> <span style=color:#a2f;font-weight:700>false</span>,
+        dataType<span style=color:#666>:</span> <span style=color:#b44>&#34;script&#34;</span>
     };
-    <span style=color:#75715e>// ajax发送表单数据到服务器   
-</span><span style=color:#75715e></span>    <span style=color:#a6e22e>form</span>.<span style=color:#a6e22e>ajaxForm</span>(<span style=color:#a6e22e>options</span>);
-    <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>false</span>;
+    <span style=color:#080;font-style:italic>// ajax发送表单数据到服务器   
+</span><span style=color:#080;font-style:italic></span>    form.ajaxForm(options);
+    <span style=color:#a2f;font-weight:700>return</span> <span style=color:#a2f;font-weight:700>false</span>;
 
 }
 
-<span style=color:#75715e>//回调函数   
-</span><span style=color:#75715e></span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>showResponse</span>(<span style=color:#a6e22e>responseText</span>, <span style=color:#a6e22e>statusText</span>) {
-    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>statusText</span> <span style=color:#f92672>==</span> <span style=color:#e6db74>&#34;success&#34;</span>)
+<span style=color:#080;font-style:italic>//回调函数   
+</span><span style=color:#080;font-style:italic></span><span style=color:#a2f;font-weight:700>function</span> showResponse(responseText, statusText) {
+    <span style=color:#a2f;font-weight:700>if</span> (statusText <span style=color:#666>==</span> <span style=color:#b44>&#34;success&#34;</span>)
     {
-        <span style=color:#a6e22e>alert</span>(<span style=color:#a6e22e>responseText</span>);
+        alert(responseText);
 
     }
-    <span style=color:#66d9ef>else</span>
+    <span style=color:#a2f;font-weight:700>else</span>
     {
-        <span style=color:#a6e22e>alert</span>(<span style=color:#e6db74>&#34;由于通讯问题，请稍后再登录！&#34;</span>);
+        alert(<span style=color:#b44>&#34;由于通讯问题，请稍后再登录！&#34;</span>);
 
     }
 
 }
 
-</code></pre></div><p>在上面的代码中我们可以发现通过JQuery和JQuery.form两款插件，我们只要短短的三行代码就可以实现与后台的数据交互。JQuery是一款功能很强大的JS插件，我个人也很喜欢，调用很方便，代码风格也不错。有空可以研究一下哦，呵呵……</p><p>下面继续来看看struts的action的代码：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>
+</code></pre></div><p>在上面的代码中我们可以发现通过JQuery和JQuery.form两款插件，我们只要短短的三行代码就可以实现与后台的数据交互。JQuery是一款功能很强大的JS插件，我个人也很喜欢，调用很方便，代码风格也不错。有空可以研究一下哦，呵呵……</p><p>下面继续来看看struts的action的代码：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>
 public ActionForward execute(ActionMapping mapping, ActionForm form,           
             HttpServletRequest request, HttpServletResponse response)           
             throws Exception {           
@@ -90,7 +90,7 @@ public ActionForward execute(ActionMapping mapping, ActionForm form,
       return null;           
  }
 
-</code></pre></div><p>最后还有下面的struts-config.xml的配置文件：</p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>
+</code></pre></div><p>最后还有下面的struts-config.xml的配置文件：</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>
 &lt;action-mappings&gt;    
    
    &lt;action         
