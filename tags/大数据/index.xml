@@ -80,7 +80,7 @@ at org&lt;span style="color:#666">.&lt;/span>&lt;span style="color:#b44">apache&
 &lt;/ul></description></item><item><title>定时调度任务器Azkaban安装</title><link>https://lisenhui.cn/2017/09/08/azkaban-install-use-share/</link><pubDate>Fri, 08 Sep 2017 14:29:42 +0000</pubDate><guid>https://lisenhui.cn/2017/09/08/azkaban-install-use-share/</guid><description>&lt;h1 id="背景与介绍">背景与介绍&lt;/h1>
 &lt;p>在大数据繁杂的ETL或其它数据处理过程当中，有些任务是需要定时执行的，虽然Linux自带了&lt;code>cron&lt;/code>命令功能，但是仍不能满足最大的一点就是它不能提供集中式的管理和可视化的编辑。其实在大数据的生态当中已集成有个定时调度框架&lt;code>Oozie&lt;/code>，只是实践下来发现其学习成本不低，布署的过程也较复杂。在尝试过其它分布工调度框架后（如阿里的宙斯&lt;code>Zeus&lt;/code>），还是选择了社区较多人使用的&lt;code>Azkaban&lt;/code>。&lt;/p>
 &lt;p>&lt;code>Azkaban3&lt;/code>相对于上个版本所做的更改还是比较大的，感兴趣的话可以到其官方网站&lt;a href="https://azkaban.github.io/azkaban/docs/latest/">Azkaban&lt;/a>了解下。接下来主要还是分享下&lt;code>Azkaban3&lt;/code>的安装布署，下面是&lt;code>Azkaban3&lt;/code>的系统架构设计图：&lt;/p>
-&lt;p>&lt;img src="https://azkaban.github.io/azkaban/docs/latest/images/azkaban2overviewdesign.png" alt="Azkaban3 Arc">&lt;/p>
+&lt;p>&lt;img src="http://myblog.lisenhui.cn/2017/09-08-Azkaban-Install00.png-alias" alt="Azkaban-Install00">&lt;/p>
 &lt;p>图中的3个组件便是&lt;code>Azkaban3&lt;/code>的重要组成部分：&lt;/p>
 &lt;ul>
 &lt;li>MySQL关系数据存储数据&lt;/li>
