@@ -15,7 +15,7 @@ categories:
 
 `Azkaban3`相对于上个版本所做的更改还是比较大的，感兴趣的话可以到其官方网站[Azkaban](https://azkaban.github.io/azkaban/docs/latest/)了解下。接下来主要还是分享下`Azkaban3`的安装布署，下面是`Azkaban3`的系统架构设计图：
 
-![Azkaban3 Arc](https://azkaban.github.io/azkaban/docs/latest/images/azkaban2overviewdesign.png)
+![Azkaban-Install00](http://myblog.lisenhui.cn/2017/09-08-Azkaban-Install00.png-alias)
 
 图中的3个组件便是`Azkaban3`的重要组成部分：
 
