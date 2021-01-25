@@ -237,6 +237,7 @@ OK，至此已经实现我们想要解决的问题，遇过问题可以多点点
    选择中继器，在属性(Properties)中找到Repeater，创建与表格列数相同的列并起名（建议保持与上一步的名称相同），最后填充示例数据   注：可以直接在Excel中编辑数据，然后直接拷贝到中继器里面
   选择中继器，添加个Case用于绑定数据与矩形框的关系   设置隔行换色效果，选择中继器，在Style中找到Item Background勾选Alternating然后配对奇偶行的前景色   注：如果在中继器里面使用矩形框，一定要把其背景色设置为无，不然隔行换色就不起效果，这个教训惨痛的。
  这些便是关于在Axure中实现表格数据实现，如遇到一些复杂的要求，可以以此为参考，自由的发挥想象。
+整体的效果如下：
 PS:
 示例源文件下载：数据表格.rp
 </content>
@@ -671,7 +672,7 @@ git clone https://git.oschina.net/lisenhui/my-hexo-blog.git 欢迎各位拍砖�
   </entry>
   
   <entry>
-    <title>Hello World</title>
+    <title>Hexo blog Hello World</title>
     <url>https://lisenhui.cn/2017/07/31/hexo-hello-world/</url>
     <categories>
       <category>Hexo</category>
