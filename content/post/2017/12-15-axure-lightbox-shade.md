@@ -16,7 +16,7 @@ categories:
 
 做前端开发的同学都知道，在HTML实现一个遮罩层，只需要添加个浮动的DIV即可轻松实现。那么在Axure中如何去实现它呢？
 
-![axure-lightbox-shade01.png](http://myblog.lisenhui.cn/axure-lightbox-shade01.png-alias)
+![axure-lightbox-shade01.png](http://myblog.lisenhui.cn/2017/12-15-axure-lightbox-shade01.png-alias)
 
 如上图所示，可以将这个遮罩层的实现分为如下2部分：
 
@@ -35,19 +35,19 @@ categories:
 
 - 打开遮罩层
 
-![axure-lightbox-shade02.png](http://myblog.lisenhui.cn/axure-lightbox-shade02.png-alias)
+![axure-lightbox-shade02.png](http://myblog.lisenhui.cn/2017/12-15-axure-lightbox-shade02.png-alias)
 
 - 关闭遮罩层
 
-![axure-lightbox-shade03.png](http://myblog.lisenhui.cn/axure-lightbox-shade03.png-alias)
+![axure-lightbox-shade03.png](http://myblog.lisenhui.cn/2017/12-15-axure-lightbox-shade03.png-alias)
 
 -  自动演示
 
-![axure-lightbox-shade04.png](http://myblog.lisenhui.cn/axure-lightbox-shade04.png-alias)
+![axure-lightbox-shade04.png](http://myblog.lisenhui.cn/2017/12-15-axure-lightbox-shade04.png-alias)
 
 那么现在来看看最终的实现效果如下，请看下面的大屏幕[在线查看](https://7m9t2k.axshare.com/)：
 
-![axure-lightbox-shade05.gif](http://myblog.lisenhui.cn/axure-lightbox-shade05.gif-alias)
+![axure-lightbox-shade05.gif](http://myblog.lisenhui.cn/2017/12-15-axure-lightbox-shade05.gif-alias)
 
 
 如果想要做全屏的遮罩层就更加的简单啦，只在要显示组件上增加个灯箱的效果即可。

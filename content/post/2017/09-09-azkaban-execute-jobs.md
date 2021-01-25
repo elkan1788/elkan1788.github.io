@@ -88,7 +88,7 @@ command=whoami
 
 效果如下：
 
-![Azkaban-Jobs02](http://myblog.lisenhui.cn/azkaban-jobs-02.png-alias)
+![Azkaban-Jobs02](http://myblog.lisenhui.cn/2017/09-09-azkaban-jobs-02.png-alias)
 
 # Pthon工作任务
 
@@ -111,7 +111,7 @@ script=/home/azkaban/pythondemo/helloworld.py
 
 效果如下：
 
-![Azkaban-Jobs01](http://myblog.lisenhui.cn/azkaban-jobs-01.png-alias)
+![Azkaban-Jobs01](http://myblog.lisenhui.cn/2017/09-09-azkaban-jobs-01.png-alias)
 
 # 总结
 

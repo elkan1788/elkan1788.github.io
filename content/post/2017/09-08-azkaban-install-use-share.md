@@ -292,9 +292,9 @@ bin/azkaban-executor-shutdown.sh > /dev/null 2>&1 &
 
 启动成功后，在浏览器中输入`http://localhost:8081`便可看到`Web Server`的界面，如下图所示：
 
-![Azkaban-Install01](http://myblog.lisenhui.cn/Azkaban-Install01.png-alias)
+![Azkaban-Install01](http://myblog.lisenhui.cn/2017/09-08-Azkaban-Install01.png-alias)
 
-![Azkaban-Install02](http://myblog.lisenhui.cn/Azkaban-Install02.png-alias)
+![Azkaban-Install02](http://myblog.lisenhui.cn/2017/09-08-Azkaban-Install02.png-alias)
 
 ## Demo
 
@@ -302,18 +302,18 @@ bin/azkaban-executor-shutdown.sh > /dev/null 2>&1 &
 
 [Base Flow Demo 密码: 4f4f](https://pan.baidu.com/s/19iEqfyShVTnVrfzfdST__A)
 
-![Azkaban-Install03](http://myblog.lisenhui.cn/Azkaban-Install03.png-alias)
+![Azkaban-Install03](http://myblog.lisenhui.cn/2017/09-08-Azkaban-Install03.png-alias)
 
-![Azkaban-Install04](http://myblog.lisenhui.cn/Azkaban-Install04.png-alias)
+![Azkaban-Install04](http://myblog.lisenhui.cn/2017/09-08-Azkaban-Install04.png-alias)
 
-![Azkaban-Install05](http://myblog.lisenhui.cn/Azkaban-Install05.png-alias)
+![Azkaban-Install05](http://myblog.lisenhui.cn/2017/09-08-Azkaban-Install05.png-alias)
 
-![Azkaban-Install06](http://myblog.lisenhui.cn/Azkaban-Install06.png-alias)
+![Azkaban-Install06](http://myblog.lisenhui.cn/2017/09-08-Azkaban-Install06.png-alias)
 
 `Azkaban3`是通过`Web Server`把任务(Job)提交到`Executor Server`执行的，因此在界面上是不能直观的看到程序执行过程，但可以通过执行列表中找到正在运行的任务，查看其日志的方式来了解运行过程，如下图组所示：
 
-![Azkaban-Install07](http://myblog.lisenhui.cn/Azkaban-Install07.png-alias)
+![Azkaban-Install07](http://myblog.lisenhui.cn/2017/09-08-Azkaban-Install07.png-alias)
 
-![Azkaban-Install08](http://myblog.lisenhui.cn/Azkaban-Install08.png-alias)
+![Azkaban-Install08](http://myblog.lisenhui.cn/2017/09-08-Azkaban-Install08.png-alias)
 
 好啦，至此`Azkaban3`的服务布署及简单示例便完成收工，是不是相对而言比较简单呢。初步阶段来看`Azkaban3`的使用还是可以贴合业务的场景使用，只是后面提升过程发现它自身也并不完善，比如在上面启动过程中需要手动去更新数据库才能激活`Executor Server`（只是首次启动时），另外官方并未提供`Executor Server`运行的管理，分布式运行时需要手动指定`Executor Server`的*ID* 等等。但是基本上还是可以满足日常的使用，特别是它的`Job Flow`设计。最后要是关于`Azkaban3`有问题可评论中一起讨论，后续也会更新相关的使用教程，敬请关注。

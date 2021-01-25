@@ -15,7 +15,7 @@ categories:
  
 当前新版本插件的版本号为：kindeditor-plugin0.4RELEASE，JAR包中类的列表如下：
  
- ![kindeditor-jsp-ss-1](http://myblog.lisenhui.cn/kindeditor-jsp-ss-1.png-alias)
+![kindeditor-jsp-ss-1](http://myblog.lisenhui.cn/2011/05-05-kindeditor-jsp-ss-1.png-alias)
  
  此次重构所完成的功能主要有以下几点：
 * 重构上传附件页面的选择按，仿图片上传的选择按钮；
@@ -212,19 +212,19 @@ KE.show({
 
 * 应用示例首页
 
-![kindeditor-jsp-ss-2](http://myblog.lisenhui.cn/kindeditor-jsp-ss-2.png-alias)
+![kindeditor-jsp-ss-2](http://myblog.lisenhui.cn/2011/05-05-kindeditor-jsp-ss-2.png-alias)
 
 * Servlet版本的KE
 
-![kindeditor-jsp-ss-3](http://myblog.lisenhui.cn/kindeditor-jsp-ss-3.png-alias)
+![kindeditor-jsp-ss-3](http://myblog.lisenhui.cn/2011/05-05-kindeditor-jsp-ss-3.png-alias)
 
 * Struts2版本的KE
 
-![kindeditor-jsp-ss-4](http://myblog.lisenhui.cn/kindeditor-jsp-ss-4.png-alias)
+![kindeditor-jsp-ss-4](http://myblog.lisenhui.cn/2011/05-05-kindeditor-jsp-ss-4.png-alias)
 
 * 附件上传页面
 
-![kindeditor-jsp-ss-5](http://myblog.lisenhui.cn/kindeditor-jsp-ss-5.png-alias)
+![kindeditor-jsp-ss-5](http://myblog.lisenhui.cn/2011/05-05-kindeditor-jsp-ss-5.png-alias)
 
 * 上传图片管理
 
@@ -232,7 +232,7 @@ KE.show({
 
 * KE编辑器预览效果
 
-![kindeditor-jsp-ss-7](http://myblog.lisenhui.cn/kindeditor-jsp-ss-7.png-alias)
+![kindeditor-jsp-ss-7](http://myblog.lisenhui.cn/2011/05-05-kindeditor-jsp-ss-7.png-alias)
 
 其它更多详细的应用功能，详细请见附件下载。最后要记得要支持国产技术发展呀，有意见请你拍砖吐槽。
 

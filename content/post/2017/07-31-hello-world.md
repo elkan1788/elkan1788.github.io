@@ -1,5 +1,5 @@
 ---
-title: Hello World
+title: Hexo blog Hello World
 slug: hexo-hello-world
 date: "2017-07-31 18:32:53"
 tags: 

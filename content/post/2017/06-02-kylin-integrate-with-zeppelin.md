@@ -29,20 +29,20 @@ bin/zeppelin-daemon.sh start
 
 至此就可以打开浏览器然后访问zeppelin的WEB UI， 如下图所示：
 
-![zeppelin-01.png](http://myblog.lisenhui.cn/zeppelin-01.png-alias)
+![zeppelin-01.png](http://myblog.lisenhui.cn/2017/06-02-zeppelin-01.png-alias)
 
 
 OK, 接下来就是创建与Kylin的连接，在Zeppelin中叫做`Interpreter`, 点击页面右上角的`anonymous`选择它如下图所示：
 
-![zeppelin-02.png](http://myblog.lisenhui.cn/zeppelin-02.png-alias)
+![zeppelin-02.png](http://myblog.lisenhui.cn/2017/06-02-zeppelin-02.png-alias)
 
 同样的点击右上角的`Create`按钮，参考下图填写的数据填写你的真实数据：
 
-![zeppelin-03.png](http://myblog.lisenhui.cn/zeppelin-03.png-alias)
+![zeppelin-03.png](http://myblog.lisenhui.cn/2017/06-02-zeppelin-03.png-alias)
 
 保存好后，点击左上角的`Notebook`--> `+ Create new note`如下图所示：
 
-![zeppelin-04.png](http://myblog.lisenhui.cn/zeppelin-04.png-alias)
+![zeppelin-04.png](http://myblog.lisenhui.cn/2017/06-02-zeppelin-04.png-alias)
 
 把下面的SQL语句写入到notebook中：
 
@@ -57,7 +57,7 @@ order by fact.part_dt desc
 
 点击右边的开始按钮即可完成查询，出来一个表格数据 ，然后选取你所需要的图形报表形式，数据便会自动的渲染，点击`settings`可以有更多的调整。
 
-![zeppelin-05.png](http://myblog.lisenhui.cn/zeppelin-05.png-alias)
+![zeppelin-05.png](http://myblog.lisenhui.cn/2017/06-02-zeppelin-05.png-alias)
 
 关于`Zeppelin`其它应用还需要慢慢了解，后续再跟进。
 
