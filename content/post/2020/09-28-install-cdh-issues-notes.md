@@ -19,7 +19,7 @@ categories:
 
 在过往安装CDH环境的经验中，一般都是会把CM和MySQL数据库安装在同一台机器上（非生产环境）。但这次恰好是在云上环境搭建，所以MySQL直接使用的是云上服务，结果在安装好CM，执行好`scm_prepare_database.sh`脚本后，启动CM并没有出现预期的成功消息。查看启动日志发现如下错误：
 
-![scm_version_table_not_exist](http://myblog.lisenhui.cn/2020/09-28-install-cm-scm_version_table_not_exist.png)
+![scm_version_table_not_exist](http://myblog.lisenhui.cn/2020/09-28-install-cm-scm_version_table_not_exist.png-alias)
 
 提示`scm.cm_version`表不存在，难道是之前执行`scm_prepare_database.sh`脚本有问题？于是乎又重新执行一次该脚本，确定输出结果是成功的，但CM启动仍然是失败的。当时就真是纳闷了，这个CM的元数据库是在哪一步初始化的呢？
 
