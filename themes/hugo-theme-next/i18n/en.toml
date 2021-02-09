@@ -1,0 +1,42 @@
+[StatsCats]
+  other = "Total {{ len .Data.Terms }} categories"
+[StatsTags]
+  other = "Total {{ len .Data.Terms }} tags"
+[StatsBlogs]
+  other = "Well! Total {{ .Count }} blogs, let's press on."
+[Blog]
+  other = "Blogs"
+[Category]
+  other = "Categories"
+[Archive]
+  other = "Archive"
+[Tag]
+  other = "Tags"
+[ToC]
+  other = "Table of Content"
+[RSS]
+  other = "RSS"
+[SiteInfo]
+  other = "Site Information"
+[Link]
+  other = "Links"
+[TagCloud]
+  other = "TagCloud"
+[Time]
+  other = "Published at"
+[View]
+  other = "Reading"
+[ReadMore]
+  other = "Read More"
+[Word]
+  other = "Words"
+[WordCount]
+  other = "{{ .WordCount }} words"
+[ReadingTime]
+  other = "{{ .ReadingTime }} minutes"
+[Colon]
+  other = ":"
+[Visit]
+  other = "Visited"
+[Search]
+  other = "Search"

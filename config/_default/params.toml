@@ -1,0 +1,23 @@
+# 开启标签云
+TagCloud = true
+TagsLimit = 14
+# 开启评论功能[Valine, LiveRe]
+Comment = "Valine"
+LiveReId = "MTAyMC81MTM4MC8yNzg2MQ=="
+# 开启BShare分享功能
+Share = "bshare"
+ShareId = "7c8159a4-9a15-466c-b223-6ab7a8d48699"
+# 开启3D访问地球
+RevolverMapId = "5s83wolvn69"
+# Learn Cloud
+LCAppId  = "1cO558rHLWLwnMRkRjOf7Y3z-gzGzoHsz"
+LCAppKey = "8mTM8LX1gsmkGzugate3bpnj"
+LCServer = "https://lcapi.lisenhui.cn/"
+# 开启站点访问统计代码
+# CNZZ统计
+CNNZSiteId = "1279205305"
+BusuanziCounter = true
+BaiduSiteId = "9b021cbfb58b35e79012f9690de1c6ab"
+GoogleSiteId = "UA-61491374-4"
+# 开启在线交流
+DaoVoiceId = "f89653b8"

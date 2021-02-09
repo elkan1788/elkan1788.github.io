@@ -22,7 +22,7 @@
     <ul id="menu" class="menu">
       {{ $currentPage := . }}
       {{ range .Site.Menus.main }}
-        <li class="menu-item {{ if $currentPage.IsMenuCurrent "main" . }}menu-item-active{{ end }} {{ if and (eq $currentPage.RelPermalink "/about/") (eq .URL "/about/") }}menu-item-active{{ end }}">
+        <li class="menu-item {{ if $currentPage.IsMenuCurrent "main" . }}menu-item-active{{ end }} {{ if or (and (eq $currentPage.RelPermalink "/about/") (eq .URL "/about/")) (and (eq $currentPage.RelPermalink "/en/about/") (eq .URL "/en/about/")) }}menu-item-active{{ end }}">
           <a href="{{ .URL }}" rel="section" {{ if eq .URL "/404.html" }}target="_blank"{{ end }}>
               <i class="menu-item-icon fa fa-fw fa-{{ .Pre }}"></i> <br />{{ .Name }}
           </a>

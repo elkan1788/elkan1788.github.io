@@ -1,6 +1,6 @@
 {{ printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\" ?>" | safeHTML }}
 <search>
-  {{range where .Site.RegularPages "Section" "post"}}
+  {{range where .Site.RegularPages "Kind" "page"}}
   <entry>
     <title>{{ .Title }}</title>
     <url>{{ .Permalink }}</url>

@@ -1,0 +1,42 @@
+[StatsCats]
+  other = "目前共计 {{ len .Data.Terms }} 个分类"
+[StatsTags]
+  other = "目前共计 {{ len .Data.Terms }} 个标签"
+[StatsBlogs]
+  other = "目前共计 {{ .Count }} 篇文章， 请继续努力，加油!"
+[Blog]
+  other = "日志"
+[Category]
+  other = "分类"
+[Archive]
+  other = "归档"
+[Tag]
+  other = "标签"
+[ToC]
+  other = "文章目录"
+[RSS]
+  other = "RSS 订阅"
+[SiteInfo]
+  other = "站点概览"
+[Link]
+  other = "友情链接"
+[TagCloud]
+  other = "标签云"
+[Time]
+  other = "时间"
+[View]
+  other = "阅读"
+[ReadMore]
+  other = "阅读全文"
+[Word]
+  other = "字数"
+[WordCount]
+  other = "{{ .WordCount }} 字"
+[ReadingTime]
+  other = "{{ .ReadingTime }}分钟"
+[Colon]
+  other = "："
+[Visit]
+  other = "阅读次数"
+[Search]
+  other = "搜索"
