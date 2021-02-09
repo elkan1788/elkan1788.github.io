@@ -1,17 +1,17 @@
 [[Main]]
   Name = "Home"
   Pre = "home"
-  URL = "/en/"
+  URL = "/"
   Weight = 1
 [[Main]]
   Name = "Archive"
   Pre = "archive"
-  URL = "/en/post/"
+  URL = "post"
   Weight = 2
 [[Main]]
   Name = "About"
   Pre = "user"
-  URL = "/en/about/"
+  URL = "about"
   Weight = 3
 [[Main]]
   Name = "Page404"

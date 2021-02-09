@@ -1,5 +1,5 @@
 ---
-title: "About Me"
+title: "About"
 date: "2019-02-05"
 description: "Personal Information"
 url: "/en/about/"
