@@ -40,3 +40,9 @@
   other = "阅读次数"
 [Search]
   other = "搜索"
+[404PageTitle]
+  other = "404错误，页面不存在！"
+[BackHomeTip]
+  other = "返回我的主页"  
+[SearchPhr]
+  other = "搜索关键字..."

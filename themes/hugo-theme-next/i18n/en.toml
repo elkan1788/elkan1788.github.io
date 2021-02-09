@@ -40,3 +40,9 @@
   other = "Visited"
 [Search]
   other = "Search"
+[404PageTitle]
+  other = "Err404, Page not found!"
+[BackHomeTip]
+  other = "Back blog site's Home"
+[SearchPhr]
+  other = "Enter key words..."
