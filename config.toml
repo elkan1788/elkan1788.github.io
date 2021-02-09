@@ -26,6 +26,15 @@ enableRobotsTXT = true
 [Permalinks]
   post = "/:year/:month/:day/:slug"
 
+[outputFormats]
+  [outputFormats.SearchIndex]
+    mediaType = "application/xml"
+    baseName = "searchindex"
+    isPlainText = true
+    notAlternative = true
+
+[outputs]
+  home = ["HTML", "RSS", "SearchIndex"]
 
 [minify]
   disableCSS = false

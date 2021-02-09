@@ -2,7 +2,7 @@ $(document).ready(function () {
     // Popup Window;
     var isfetched = false;
     // Search DB path;
-    var search_path = "robots.txt";
+    var search_path = "searchindex.xml";
     var path = "/" + search_path;
     // monitor main search box;
     function proceedsearch() {
