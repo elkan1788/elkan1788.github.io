@@ -105,6 +105,10 @@ enableRobotsTXT = true
   Name = "廖雪峰"
   Permalink = "https://www.liaoxuefeng.com/"
 
+[[Params.Links]]
+  Name = "Qybit's Blog"
+  Permalink = "https://qybit.gitee.io/"
+
 [minify]
   disableCSS = false
   disableHTML = false
