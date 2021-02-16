@@ -11,7 +11,7 @@
 [[Main]]
   Name = "关于我"
   Pre = "user"
-  URL = "about"
+  URL = "about.html"
   Weight = 3
 [[Main]]
   Name = "公益404"

@@ -2,7 +2,8 @@
 title: "关于我"
 date: "2019-02-05"
 description: "不能再简单的介绍"
-url: "/about/"
+type: "about"
+url: /about.html
 ---
 
 
