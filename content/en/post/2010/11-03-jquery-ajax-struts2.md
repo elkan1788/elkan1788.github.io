@@ -1,6 +1,6 @@
 ---
 title: Struts2 and jQuery implementation of non - refresh paging problem
-slug: jquery-ajax-struts2
+url: 2010/11/03/jquery-ajax-struts2.html
 date: "2010-11-03"
 tags: 
   - Juqery
@@ -27,7 +27,7 @@ function dataSource(){
 		type:"post",
 		data:{},
 		dataType:"json",
-		error:function(){alert("服务器通讯失败，请稍后再刷新页面。 ^_^");},
+		error:function(){alert("Server communication failure, please refresh the page later. ^_^");},
 		success:function(data){
 			insertTr(data);
 		}
@@ -40,7 +40,7 @@ function goPage(thePage){
 		type:"post",
 		data:{page:thePage},
 		dataType:"json",
-		error:function(){alert("服务器通讯失败，请稍后再刷新页面。 ^_^");},
+		error:function(){alert("Server communication failure, please refresh the page later. ^_^");},
 		success:function(data){
 			insertTr(data);
 		}
