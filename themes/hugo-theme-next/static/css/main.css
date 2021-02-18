@@ -2088,7 +2088,12 @@ a.search-result {
   color: #ccc;
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
+.cnzz_icon {
+  position: absolute;
+  padding-left: 14%;
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
   .busuanzi-count {
     width: auto;
   }
@@ -2099,7 +2104,20 @@ a.search-result {
   .footer {
     margin-left: 0px;
   }
+
+  .cnzz_icon {
+    position: absolute;
+    padding-left: 30%;
+  }
 }
+
+@media (min-width: 400px) and (max-width: 767px) {
+.cnzz_icon {
+    position: absolute;
+    padding-left: 14%;
+  }
+}
+
 @media (max-width: 767px) {
   .busuanzi-count {
     width: auto;
@@ -2112,6 +2130,10 @@ a.search-result {
     margin: -100px 0 0 0;
   }
 
+  .cnzz_icon {
+    position: absolute;
+    padding-left: 20%;
+  }
 }
 
 .algolia-popup {
