@@ -1,13 +1,13 @@
 ---
 title: 关于Ambari中服务运行正常UI却显示服务停止的问题
-slug: ambari-monitor-status-issues
+url: 2017/10/18/ambari-monitor-status-issues.html
 date: 2017-10-18 16:13:36
 tags:
   - Ambari
   - HDP
   - 大数据
 categories:
-  - Ambari
+  - 大数据
 ---
 
 很多时候环境的维护的确是件头痛的事件，这不本来在Ambari的Dashboard页面显示正常服务的监控，实然间出现了个奇怪的现象： 在机器查询服务的运行进程是正常的，可偏偏Ambari的UI界面却显示状为停止，但端口检查又显示正常的。如下图：

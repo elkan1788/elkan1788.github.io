@@ -1,12 +1,13 @@
 ---
 title: Sqoop工具导入数据到Hive小记
-slug: sqoop-import-data-to-hive
+url: 2017/05/24/sqoop-import-data-to-hive.html
 date: "2017-05-24 20:18:53"
 tags: 
   - Sqoop
   - Hive
+  - 大数据
 categories:
-  - Sqoop
+  - 大数据
 ---
 
 最近正在捣鼓构建数据仓库的事宜，正好有部分维度表的数据需要来自于RDBMS的数据，在HADOOP环境最流行的莫过于Apache的Sqoop工具，按官方的文档操作下来也很顺畅的，不过当要应用到业务场景上时问题便出现了。

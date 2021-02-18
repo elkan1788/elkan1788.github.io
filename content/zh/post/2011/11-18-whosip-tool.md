@@ -1,6 +1,6 @@
 ---
 title: IP地址查询Web接口调用
-slug: whosip-tool
+url: 2011/11/18/whosip-tool.html
 date: "2011-11-18 10:21:20"
 tags: 
   - 接口

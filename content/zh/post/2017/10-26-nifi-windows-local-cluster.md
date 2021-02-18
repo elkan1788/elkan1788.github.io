@@ -1,12 +1,12 @@
 ---
 title: Apache Nifi在Windows环境下搭建伪群集及证书登录
-slug: nifi-windows-local-cluster
+url: 2017/10/26/nifi-windows-local-cluster.html
 date: 2017-10-26 17:50:52
 tags:
   - 大数据
   - Nifi
 categories:
-  - Nifi
+  - 大数据
 ---
 
 前些时间做了关于`Apache Nifi`分布式集群的搭建分享，但很多时候要搭建分布式集群机器资源是个问题，而现在的单机的配置还是相当不错的，故现在就做个关于Windows上搭建个伪分布式集群的分享，同时通过另外一种方式实现**Apache Nifi**的授权认证。

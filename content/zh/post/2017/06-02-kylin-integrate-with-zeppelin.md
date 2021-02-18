@@ -1,6 +1,6 @@
 ---
 title: Kylin集成Zeppelin展示数据
-slug: kylin-integrate-with-zeppelin
+url: 2017/06/02/kylin-integrate-with-zeppelin.html
 date: "2017-06-02 18:03:23"
 tags: 
   - 大数据

@@ -1,6 +1,6 @@
 ---
 title: 在Mac/Linux系统下安装pymssql模块
-slug: mac-install-pymssql-module
+url: 2017/08/16/mac-install-pymssql-module.html
 date: 2017-08-16 13:50:55
 tags:
   - Mac

@@ -1,6 +1,6 @@
 ---
 title: 停止使用原中文域名公告
-slug: stop-use-chinese-domain-notice
+url: 2020/09/17/stop-use-chinese-domain-notice.html
 date: 2020-09-17 22:42:12
 tags:
   - 博客

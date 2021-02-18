@@ -1,6 +1,6 @@
 ---
 title: Redis 安装与配置
-slug: redis-install-settings
+url: 2015/06/29/redis-install-settings.html
 date: "2015-06-29 12:34:21"
 tags: 
   - 缓存

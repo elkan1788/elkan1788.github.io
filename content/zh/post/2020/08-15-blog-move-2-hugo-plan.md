@@ -1,6 +1,6 @@
 ---
 title: 博客引擎迁移至Hugo计划
-slug: blog-move-2-hugo-plan
+url: 2020/08/15/blog-move-2-hugo-plan.html
 date: 2020-08-15 10:22:09
 tags:
   - 博客

@@ -1,12 +1,13 @@
 ---
 title: Azkaban所支持的Job类型及示例
-slug: azkaban-execute-jobs
+url: 2017/09/09/azkaban-execute-jobs.html
 date: 2017-09-09 18:45:42
 tags:
   - 定时调度
   - 大数据
-categories:
   - Azkaban
+categories:
+  - 大数据
 ---
 
 

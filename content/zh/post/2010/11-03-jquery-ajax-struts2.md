@@ -1,6 +1,6 @@
 ---
 title: 关于Struts2与Jquery实现无刷新分页的不解问题
-slug: jquery-ajax-struts2
+url: 2010/11/03/jquery-ajax-struts2.html
 date: "2010-11-03"
 tags: 
   - Juqery

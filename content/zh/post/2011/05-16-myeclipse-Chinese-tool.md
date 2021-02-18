@@ -1,6 +1,6 @@
 ---
 title: MyEclipse6.5+ IDE汉化软件
-slug: myeclipse-Chinese-tool
+url: 2011/05/16/myeclipse-Chinese-tool.html
 date: "2011-05-16 13:28:20"
 tags: 
   - MyEclipse

@@ -1,6 +1,6 @@
 ---
 title: Axure教程：实现表格数据展示
-slug: axure-datalist-table
+url: 2017/12/29/axure-datalist-table.html
 date: 2017-12-29 18:45:03
 tags:
   - 产品

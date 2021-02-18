@@ -1,6 +1,6 @@
 ---
 title: 国内技术强强联手之Nutz+KindEditor+LHGDialog+My97DatePicker
-slug: nutz-ke-lhg-my97
+url: 2012/01/13/nutz-ke-lhg-my97.html
 date: "2012-01-13 10:21:20"
 tags: 
   - Nutz

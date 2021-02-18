@@ -1,6 +1,6 @@
 ---
 title: Linux使用SSH免密码登录
-slug: ssh-login-without-password
+url: 2016/05/29/ssh-login-without-password.html
 date: "2016-05-29 12:34:21"
 tags: 
   - Linux

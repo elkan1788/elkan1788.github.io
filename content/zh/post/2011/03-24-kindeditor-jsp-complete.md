@@ -1,6 +1,6 @@
 ---
 title: JSP版的完善KindEditor在线编辑器(带附件上传与图片按日期分类管理功能)
-slug: kindeditor-jsp-complete
+url: 2011/03/24/kindeditor-jsp-complete.html
 date: "2011-03-24 21:17:53"
 tags: 
   - KindEditor

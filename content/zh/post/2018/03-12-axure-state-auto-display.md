@@ -1,7 +1,6 @@
-
 ---
 title: Axure教程：动态面板内容超出界线显示 
-slug: axure-lightbox-shade
+url: 2018/03/12/axure-lightbox-shade.html
 date: "2018-03-12 10:11:53"
 tags: 
   - Axure

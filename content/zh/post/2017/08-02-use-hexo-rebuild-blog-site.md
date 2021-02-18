@@ -1,6 +1,6 @@
 ---
 title: 使用Hexo重新构建个人博客站点
-slug: use-hexo-rebuild-blog-site
+url: 2017/08/02/use-hexo-rebuild-blog-site.html
 date: 2017-08-02 16:04:35
 tags:
   - Hexo

@@ -1,13 +1,13 @@
 ---
 title: HiveServer2因JDBC版本引起的问题
-slug: hive2-jdbc-connector-issues
+url: 2017/10/17/hive2-jdbc-connector-issues.html
 date: 2017-10-17 17:33:04
 tags:
   - 大数据
   - Hive
   - Ambari
 categories:
-  - Hive
+  - 大数据
 ---
 
 

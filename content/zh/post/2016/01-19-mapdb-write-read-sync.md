@@ -1,6 +1,6 @@
 ---
 title: MapDB 同步读写示例
-slug: mapdb-write-read-sync
+url: 2016/01/19/mapdb-write-read-sync.html
 date: "2016-01-19 21:11:20"
 tags: 
   - Java

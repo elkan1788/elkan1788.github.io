@@ -1,6 +1,6 @@
 ---
 title: Git 操作命令收集
-slug: git-commands-collect
+url: 2016/01/29/git-commands-collect.html
 date: "2016-01-29 12:34:21"
 tags: 
   - Linux

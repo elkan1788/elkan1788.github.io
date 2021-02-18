@@ -1,6 +1,6 @@
 ---
 title: APIDoc自动生成接口文档
-slug: nodejs-apidoc-generator
+url: 2017/07/18/nodejs-apidoc-generator.html
 date: "2017-07-18 15:23:43"
 tags: 
   - API

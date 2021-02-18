@@ -1,11 +1,12 @@
 ---
 title: 不能在HDFS Data节点上创建临时文件
-slug: unable-create-tmp-file-in-hdfs-nodes
+url: 2019/03/21/unable-create-tmp-file-in-hdfs-nodes.html
 date: 2019-03-21 19:04:51
 tags:
+  - Hive
   - 大数据
 categories:
-  - Hive
+  - 大数据
 ---
 
 在新创建的`Hadoop`边缘节点上，尝试通过`Hive CLI`模式进行数据插入操作，结果没有出现意想中的成功信息，反倒是捕获到如下的异常：

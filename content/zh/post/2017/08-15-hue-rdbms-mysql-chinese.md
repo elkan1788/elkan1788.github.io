@@ -1,12 +1,12 @@
 ---
 title: Hue中集成MySQL数据显示乱码
-slug: hue-rdbms-mysql-chinese
+url: 2017/08/15/hue-rdbms-mysql-chinese.html
 date: 2017-08-15 15:13:39
 tags:
   - hue
   - 大数据
 categories:
-  - Hue
+  - 大数据
 ---
 
 Hue is a Web applications that enables you to easily interact with an Hadoop cluster. Hue applications let you browse HDFS, Jobs, run Hive, Pig and Cloudera Impala queries, manage the Hive Metastore, HBase, Sqoop, ZooKeeper, MapReduce jobs, and create and schedule worklows with Oozie. 

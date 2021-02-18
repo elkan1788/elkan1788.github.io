@@ -1,6 +1,6 @@
 ---
 title: Python pip中国镜像服务器地址
-slug: python-pip-install-chinese-mirror
+url: 2017/08/11/python-pip-install-chinese-mirror.html
 date: 2017-08-11 14:17:01
 tags:
   - Mirror

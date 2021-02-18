@@ -1,12 +1,13 @@
 ---
 title: 定时调度任务器Azkaban安装
-slug: azkaban-install-use-share
+url: 2017/09/08/azkaban-install-use-share.html
 date: 2017-09-08 14:29:42
 tags:
   - 定时调度
   - 大数据
-categories:
   - Azkaban
+categories:
+  - 大数据
 ---
 
 # 背景与介绍

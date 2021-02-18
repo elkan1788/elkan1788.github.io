@@ -1,6 +1,6 @@
 ---
 title: 开放JSP版KindEditor的附件JAR包源码
-slug: kindeditor-jsp-source
+url: 2011/05/05/kindeditor-jsp-source.html
 date: "2011-05-05 09:32:12"
 tags: 
   - Java

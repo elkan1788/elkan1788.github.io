@@ -1,6 +1,6 @@
 ---
 title: Zookeeper崩溃后无法加载事务日志
-slug: zookeeper-unload-data-exception
+url: 2017/05/15/zookeeper-unload-data-exception.html
 date: "2017-05-15 12:34:21"
 tags: 
   - Zookeeper

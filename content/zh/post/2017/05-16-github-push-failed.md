@@ -1,6 +1,6 @@
 ---
 title: Github push失败：Could not resolve hostname
-slug: github-push-failed
+url: 2017/05/16/github-push-failed.html
 date: "2017-05-16 10:21:43"
 tags: 
   - Git

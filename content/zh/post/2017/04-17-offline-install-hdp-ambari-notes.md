@@ -1,6 +1,6 @@
 ---
 title: 离线安装HDP2.6(1)-Ambari Server
-slug: offline-install-hdp-ambari-notes
+url: 2017/04/17/offline-install-hdp-ambari-notes.html
 date: 2017-04-17 19:52:31
 tags:
   - 大数据

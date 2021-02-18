@@ -1,6 +1,6 @@
 ---
 title: Supervisor介绍与使用
-slug: linux-daemon-supervisor
+url: 2017/05/18/linux-daemon-supervisor.html
 date: "2017-05-18 07:10:23"
 tags: 
   - Supervisor

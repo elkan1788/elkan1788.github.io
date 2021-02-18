@@ -1,6 +1,6 @@
 ---
 title: 在Linux上安装中文字体
-slug: install-linux-chinese-fonts
+url: 2019/10/21/install-linux-chinese-fonts.html
 date: 2019-10-21 19:04:51
 tags:
   - Linux

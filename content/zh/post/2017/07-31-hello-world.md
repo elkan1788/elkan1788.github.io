@@ -1,6 +1,6 @@
 ---
 title: Hexo blog Hello World
-slug: hexo-hello-world
+url: 2017/07/31/hexo-hello-world.html
 date: "2017-07-31 18:32:53"
 tags: 
   - 测试

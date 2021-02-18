@@ -1,6 +1,6 @@
 ---
 title: Java程序与RSR232串口通讯小练手
-slug: java-hard-rsr232
+url: 2012/03/24/java-hard-rsr232.html
 date: "2012-03-24 22:21:20"
 tags: 
   - Java

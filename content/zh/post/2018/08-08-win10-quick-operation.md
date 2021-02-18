@@ -1,7 +1,6 @@
-
 ---
 title: Win10常用的快捷操作方式
-slug: win10-quick-operations
+url: 2018/08/08/win10-quick-operations.html
 date: "2018-08-08 12:54:53"
 tags: 
   - Windows

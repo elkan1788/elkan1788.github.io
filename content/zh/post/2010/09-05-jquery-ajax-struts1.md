@@ -1,6 +1,6 @@
 ---
 title: JQuery+Strusts1.x实现Ajax无刷新登录
-slug: jquery-ajax-struts1
+url: 2010/09/05/jquery-ajax-struts1.html
 date: "2010-09-05 10:11:53"
 tags: 
   - Juqery

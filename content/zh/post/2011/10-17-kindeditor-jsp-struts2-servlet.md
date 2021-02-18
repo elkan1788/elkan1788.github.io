@@ -1,6 +1,6 @@
 ---
 title: JSP版本的KindEidtor在线编辑器第二季：Servlet+Struts2集成版
-slug: kineditor-jsp-struts2-servlet
+url: 2011/10/17/kineditor-jsp-struts2-servlet.html
 date: "2011-10-17 22:10:20"
 tags: 
   - KindEditor

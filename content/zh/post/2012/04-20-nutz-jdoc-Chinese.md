@@ -1,6 +1,6 @@
 ---
 title: Nutz源码Jdoc在IDE中补全提示时出现乱码解决办法
-slug: nutz-jdoc-Chinese
+url: 2012/04/20/nutz-jdoc-Chinese.html
 date: "2012-04-20 19:11:20"
 tags: 
   - Java

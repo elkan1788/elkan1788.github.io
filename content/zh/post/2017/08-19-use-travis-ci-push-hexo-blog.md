@@ -1,6 +1,6 @@
 ---
 title: 使用Github，Travis CI自动布署Hexo博客到Coding，OSChina服务器
-slug: use-travis-ci-push-hexo-blog
+url: 2017/08/19/use-travis-ci-push-hexo-blog.html
 date: 2017-08-19 15:40:26
 tags:
   - Hexo

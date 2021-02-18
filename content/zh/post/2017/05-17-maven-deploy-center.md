@@ -1,6 +1,6 @@
 ---
 title: 发布jar到Maven时遭遇gpg签名失败
-slug: maven-deploy-center-sign-failed
+url: 2017/05/17/maven-deploy-center-sign-failed.html
 date: "2017-05-17 17:02:23"
 tags: 
   - Maven

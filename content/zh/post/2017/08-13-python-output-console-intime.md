@@ -1,6 +1,6 @@
 ---
 title: Python在命令行即时输出
-slug: python-output-conosle-intime
+url: 2017/08/13/python-output-conosle-intime.html
 date: 2017-08-13 14:19:14
 tags:
   - Python

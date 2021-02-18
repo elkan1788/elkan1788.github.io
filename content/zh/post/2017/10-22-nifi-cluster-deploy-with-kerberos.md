@@ -1,12 +1,12 @@
 ---
 title: Apache Nifi集群搭建及用kerberos实现用户认证
-slug: ninfi-cluster-deploy-with-kerberos
+url: 2017/10/22/ninfi-cluster-deploy-with-kerberos.html
 date: 2017-10-22 11:42:29
 tags:
   - 大数据
   - Nifi
 categories:
-  - Nifi
+  - 大数据
 ---
 
 最近这段时间在接触数据流式处理方面的事宜，用到了**Apache NIFI**现把安装配置中学习的一些经验分享下。此篇文章主要是针对集群及用户权限方面，关于[Apache NIFI](https://nifi.apache.org/)的介绍就不做过多的说明，直接引用官方的首页的说明如下图所示：

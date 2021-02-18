@@ -1,6 +1,6 @@
 ---
 title: Axure教程：实现动态的遮罩层
-slug: axure-lightbox-shade
+url: 2017/12/15/axure-lightbox-shade.html
 date: 2017-12-15 20:22:43
 tags:
   - 产品

@@ -1,6 +1,6 @@
 ---
 title: pymssql连接azure云的MSSQL数据库
-slug: pymssql-azure-mssql-datasource-connect
+url: 2017/08/17/pymssql-azure-mssql-datasource-connect.html
 date: 2017-08-17 18:20:18
 tags:
   - Python

@@ -1,6 +1,6 @@
 ---
 title: 安装CDH6过程中几个入坑记录
-slug: install-cdh-issues-notes
+url: 2020/09/28/install-cdh-issues-notes.html
 date: 2020-09-28 17:02:33
 tags:
   - 大数据
