@@ -5,7 +5,7 @@ Theme =  "hugo-theme-next"
 MetaDataFormat =  "toml"
 
 PaginatePath =  "p"
-Paginate = 10
+Paginate = 5
 
 DisablePathToLower =  false
 PreserveTaxonomyNames = false

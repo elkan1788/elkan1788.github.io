@@ -1,6 +1,6 @@
 # 开启标签云
 TagCloud = true
-TagsLimit = 14
+TagsLimit = 10
 # 开启评论功能[Valine, LiveRe]
 Comment = "Valine"
 LiveReId = "MTAyMC81MTM4MC8yNzg2MQ=="

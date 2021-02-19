@@ -1,9 +1,9 @@
 [StatsCats]
-  other = "目前共计 {{ len .Data.Terms }} 个分类"
+  other = "目前共计 <span class='span-stats-tip'>{{ len .Data.Terms }}</span> 个分类"
 [StatsTags]
-  other = "目前共计 {{ len .Data.Terms }} 个标签"
+  other = "目前共计 <span class='span-stats-tip'>{{ len .Data.Terms }}</span> 个标签"
 [StatsBlogs]
-  other = "目前共计 {{ .Count }} 篇文章， 请继续努力，加油!"
+  other = "目前共计 <span class='span-stats-tip'>{{ .Count }} </span>篇文章， 请继续努力，加油!"
 [Blog]
   other = "日志"
 [Category]

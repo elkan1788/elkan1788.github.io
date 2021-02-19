@@ -1,9 +1,9 @@
 [StatsCats]
-  other = "Total {{ len .Data.Terms }} categories"
+  other = "Total <span class='span-stats-tip'>{{ len .Data.Terms }} </span> categories"
 [StatsTags]
-  other = "Total {{ len .Data.Terms }} tags"
+  other = "Total <span class='span-stats-tip'>{{ len .Data.Terms }} </spa> tags"
 [StatsBlogs]
-  other = "Well! Total {{ .Count }} blogs, let's press on."
+  other = "Well! Total <span class='span-stats-tip'>{{ .Count }} </span> blogs, let's press on."
 [Blog]
   other = "Blogs"
 [Category]
