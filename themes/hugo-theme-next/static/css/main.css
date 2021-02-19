@@ -2260,16 +2260,14 @@ a.search-result {
 .category-all-page .category-all-title {
   text-align: center;
 }
-.category-all-page .category-all {
-  margin-top: 20px;
-}
+
 .category-all-page .category-list {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 .category-all-page .category-list-item {
-  margin: 5px 10px;
+  margin: 20px 10px;
 }
 .category-all-page .category-list-count {
   color: #bbb;
@@ -2890,4 +2888,14 @@ body {
     animation: roll 0.2s infinite linear;
     -webkit-animation: roll 0.2s infinite linear;
     -moz-animation: roll 0.15s infinite linear;
+}
+
+.tag-cloud-tags {
+  margin: 40px 20px;
+}
+
+.span-stats-tip {
+  font-size:20px;
+  font-weight:bold;
+  margin:0 5px;
 }
