@@ -2899,3 +2899,7 @@ body {
   font-weight:bold;
   margin:0 5px;
 }
+
+#bshare-shareto {
+  padding-left: 0px;
+}
