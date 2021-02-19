@@ -1,6 +1,6 @@
 ---
 title: 优化Hugo Next主题的过程
-url: 2020/10/02/make-NexT-theme-pithy.html
+url: 2020/10/02/make-next-theme-pithy.html
 date: 2020-10-02 10:32:51
 tags:
   - NexT
