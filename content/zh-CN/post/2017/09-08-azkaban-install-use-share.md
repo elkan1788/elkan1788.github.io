@@ -161,7 +161,7 @@ log4j.appender.file=org.apache.log4j.DailyRollingFileAppender
 log4j.appender.file.File=/opt/azkaban3/web-server/logs/web-server.log
 log4j.appender.file.DatePattern='.'yyyy-MM-dd
 log4j.appender.file.layout=org.apache.log4j.PatternLayout
-log4j.appender.file.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %5p [%t] (%F:%L) - %m%n
+log4j.appender.file.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss} %5p [%t](%F:%L) - %m%n
 ```
 ## 启停脚本
 
