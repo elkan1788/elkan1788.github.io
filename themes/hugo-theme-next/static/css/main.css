@@ -2902,3 +2902,23 @@ body {
 #bshare-shareto {
   padding-left: 0px;
 }
+
+.multi-lang-switch {
+  font-size:14px;
+  margin: 0;
+}
+
+.lang-line {
+  width: 10px;
+  padding: 0 5px;
+}
+
+.lang-link {
+  color: #fff;
+}
+
+.lang-link:hover {
+  font-weight: bold;
+  color: #fff;
+  text-decoration: underline;
+}
