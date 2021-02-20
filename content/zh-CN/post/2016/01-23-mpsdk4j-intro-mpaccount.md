@@ -1,6 +1,6 @@
 ---
 title: mpsdk4j的点滴记录--MPAccount
-url: 2017/01/23/mpsdk4j-intro-mapaccount.html
+url: 2016/01/23/mpsdk4j-intro-mapaccount.html
 date: "2016-01-23 16:08:32"
 tags: 
   - MPSDK4J

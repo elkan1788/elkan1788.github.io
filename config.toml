@@ -1,5 +1,8 @@
 Title =  "Loving life and dreams."
+
+DefaultContentLanguage = "zh-cn"
 LanguageCode = "zh-CN"
+
 Theme =  "hugo-theme-next"
 
 MetaDataFormat =  "toml"
@@ -13,8 +16,6 @@ PreserveTaxonomyNames = false
 PygmentsStyle = "emacs"
 pygmentsCodefences = true
 pygmentsCodefencesGuessSyntax = true
-
-DefaultContentLanguage = "zh-CN"
 
 enableRobotsTXT = true
 
