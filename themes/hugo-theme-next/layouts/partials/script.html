@@ -170,7 +170,7 @@ $(function() {
       appId: '{{ .Site.Params.LCAppId }}',
       appKey: '{{ .Site.Params.LCAppKey }}',
       visitor: true,
-     // placeholder: '欢迎点评 ^_^',
+      placeholder: ' {{ i18n "ValineComment" }} ',
       requiredFields: ['nick', 'mail'],
       lang: "{{ .Page.Lang }}"
   });
