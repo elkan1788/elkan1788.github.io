@@ -3,7 +3,7 @@
   <div class="multi-lang-switch"> 
     <i class="fa fa-fw fa-language" style="margin-right: 5px;"></i>
     {{ $siteLanguages := .Site.Languages }}
-    {{ $pageLang := .Page.Lang}}
+    {{ $pageLang := .Page.Lang }}
     {{ $langLen := len .Page.AllTranslations }}
     {{ range .Page.AllTranslations }}
         {{ $translation := .}}

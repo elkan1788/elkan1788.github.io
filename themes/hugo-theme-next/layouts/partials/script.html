@@ -170,8 +170,9 @@ $(function() {
       appId: '{{ .Site.Params.LCAppId }}',
       appKey: '{{ .Site.Params.LCAppKey }}',
       visitor: true,
-      placeholder: '欢迎点评 ^_^',
-      requiredFields: ['nick', 'mail']
+     // placeholder: '欢迎点评 ^_^',
+      requiredFields: ['nick', 'mail'],
+      lang: "{{ .Page.Lang }}"
   });
 </script>
 {{end }}

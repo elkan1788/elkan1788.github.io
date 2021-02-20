@@ -1,8 +1,8 @@
-[zh]
+[zh-CN]
   title = "热爱生活与梦想"
   languageName = "中文"
   weight = 1
-  contentdir = "content/zh"
+  contentdir = "content/zh-CN"
 
 [en]
   title = "Loving life and dreams."

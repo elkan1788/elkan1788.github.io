@@ -1720,10 +1720,7 @@ pre .javascript .function {
   padding: 0 5px;
 }
 
-.copyright {
-  display: block;
-}
-.powered-info, .license-info, .vistor-info {
+.powered-info, .license-info, .vistor-info, .copyright {
   display: flex;
 } 
 .powered-by, .storage-info, .site-uv, .copyright-year {

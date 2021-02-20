@@ -14,7 +14,7 @@ PygmentsStyle = "emacs"
 pygmentsCodefences = true
 pygmentsCodefencesGuessSyntax = true
 
-DefaultContentLanguage = "zh"
+DefaultContentLanguage = "zh-CN"
 
 enableRobotsTXT = true
 

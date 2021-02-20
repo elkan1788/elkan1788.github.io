@@ -43,6 +43,26 @@
 [404PageTitle]
   other = "404错误，页面不存在！"
 [BackHomeTip]
-  other = "返回我的主页"  
+  other = "返回我的主页"
 [SearchPhr]
   other = "搜索关键字..."
+[ScanQQCode]
+  other = "QQ扫一扫交流"
+[ArticleTitle]
+  other = "标题"
+[ArticleAuthor]
+  other = "作者"
+[ArticleLink]
+  other = "链接"
+[ArticleDeclaration]
+  other = "声明"
+[ArticleDecContent]
+  other = "本博客文章除特别声明外，均采用 <a href='https://creativecommons.org/licenses/by-nc-sa/3.0/' target='_blank' style='text-decoration: underline;'>CC BY-NC-SA 3.0</a>许可协议，转载请注明出处！"
+[RewardTips]
+  other = "创作实属不易，如有帮助，那就打赏博主些许茶钱吧 ^_^"
+[RewardBtnText]
+  other = "赏"
+[RewardWxPay]
+  other = "微信打赏"
+[RewardAliPay]
+  other = "支付宝打赏"
