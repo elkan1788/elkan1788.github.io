@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nifi on Loving life and dreams.</title><link>/en/tags/nifi/</link><description>Recent content in Nifi on Loving life and dreams.</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Thu, 26 Oct 2017 17:50:52 +0000</lastBuildDate><atom:link href="/en/tags/nifi/index.xml" rel="self" type="application/rss+xml"/><item><title>Apache Nifi builds pseudo-clusters and certificate logins in a Windows environment</title><link>/en/2017/10/26/nifi-windows-local-cluster.html</link><pubDate>Thu, 26 Oct 2017 17:50:52 +0000</pubDate><guid>/en/2017/10/26/nifi-windows-local-cluster.html</guid><description>&lt;p>Some time ago did about the &amp;lsquo;Apache Nifi&amp;rsquo;distributed clusterset-up sharing, but a lot of times to build distributed cluster machine resources is a problem, and now the stand-alone configuration is quite good, so now do a share about building a pseudo-distributed cluster on Windows, and through another way to achieve the authorization of the &amp;ldquo;Apache Nifi.&lt;/p>
+&lt;p>The system environment and software version&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>Windows8.1&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>JDK1.8.0_131&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Nifi-1.4.0&lt;/p>
+&lt;/li>
+&lt;/ul>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:center">Nifi installation directory&lt;/th>
+&lt;th style="text-align:center">The WEB port&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:center">xxx\nifi-ncm&lt;/td>
+&lt;td style="text-align:center">9443&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">xxx\nifi-cluster01&lt;/td>
+&lt;td style="text-align:center">9444&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:center">xxx\nifi-cluster02&lt;/td>
+&lt;td style="text-align:center">9445&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;p>(Other versions can refer to this article)
+Another problem in testing, using&amp;rsquo;Zookeyer&amp;rsquo; embedded in &amp;lsquo;Apache Nifi&amp;rsquo;to build pseudo-clusters, always prompts for port occupancy issues, so give up using only single-node startup.&lt;/p></description></item><item><title>Apache Nifi clustering and user authentication with kerberos</title><link>/en/2017/10/22/ninfi-cluster-deploy-with-kerberos.html</link><pubDate>Sun, 22 Oct 2017 11:42:29 +0000</pubDate><guid>/en/2017/10/22/ninfi-cluster-deploy-with-kerberos.html</guid><description>&lt;p>Recently, some of the lessons learned from the installation configuration are being shared with the help of the .Apache NIFI for contact with data streaming processing. This article is primarily about clusters and user rights, and the description of the &amp;ldquo;Apache NIFI&amp;rdquo; (&lt;a href="https://nifi.apache.org/">https://nifi.apache.org/&lt;/a>) is not much of a description, with a direct reference to the official home page as follows:&lt;/p>
+&lt;p>&lt;img src="http://myblog.lisenhui.cn/2017/10-22-Apache-NiFi-01.png-alias" alt="NiFi-01.png">&lt;/p></description></item></channel></rss>

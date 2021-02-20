@@ -1,0 +1,896 @@
+<!doctype html><html lang=en dir=content/en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=content-security-policy content="upgrade-insecure-requests"><title>JSP version of KindEidtor Online Editor Season 2 - Servlet and Struts2 Integrated Edition - Loving life and dreams.</title><meta name=keywords content="Blog | Software | Architecture | Java | Kylin"><meta name=author content="Elkan.Li"><meta property="og:title" content="JSP version of KindEidtor Online Editor Season 2 - Servlet and Struts2 Integrated Edition"><meta property="og:site_name" content="Loving life and dreams."><meta property="og:image" content="/img/author.jpg"><meta name=title content="JSP version of KindEidtor Online Editor Season 2 - Servlet and Struts2 Integrated Edition - Loving life and dreams."><meta name=description content="Blog | Software | Architecture | Java | Kylin"><link rel="shortcut icon" href=/img/favicon.ico><link rel=apple-touch-icon href=/img/apple-touch-icon.png><link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png><link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css><link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet><link href=/css/main.css rel=stylesheet type=text/css><link href=/css/syntax.css rel=stylesheet type=text/css><script type=text/javascript>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?9b021cbfb58b35e79012f9690de1c6ab";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();</script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-61491374-4"></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());gtag('config','UA-61491374-4 ');</script></head><body itemscope itemtype=http://schema.org/WebPage lang=zh-hans><div class="container one-collumn sidebar-position-left page-home"><div class=headband></div><header id=header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-meta><div class=multi-lang-switch><i class="fa fa-fw fa-language" style=margin-right:5px></i><a class=lang-link id=zh-cn href=/2011/10/17/kindeditor-jsp-struts2-servlet.html>中文</a>
+<span class=lang-line>/</span>
+<a class=lang-link id=en href=#>English</a></div><div class=custom-logo-site-title><a href=/en/ class=brand rel=start><span class=logo-line-before><i></i></span><span class=site-title>Loving life and dreams.</span>
+<span class=logo-line-after><i></i></span></a></div><p class=site-subtitle>Don't stop running forward!</p></div><div class=site-nav-toggle><button>
+<span class=btn-bar></span><span class=btn-bar></span><span class=btn-bar></span></button></div><nav class=site-nav><ul id=menu class=menu><li class=menu-item><a href=/en/ rel=section><i class="menu-item-icon fa fa-fw fa-home"></i><br>Home</a></li><li class=menu-item><a href=/en/post rel=section><i class="menu-item-icon fa fa-fw fa-archive"></i><br>Archive</a></li><li class=menu-item><a href=/en/about.html rel=section><i class="menu-item-icon fa fa-fw fa-user"></i><br>About</a></li><li class=menu-item><a href=/en/404.html rel=section target=_blank><i class="menu-item-icon fa fa-fw fa-heartbeat"></i><br>Page404</a></li><li class="menu-item menu-item-search"><a href=javascript:; class=popup-trigger><i class="menu-item-icon fa fa-search fa-fw"></i><br>Search</a></li></ul><div class=site-search><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class=search-icon><i class="fa fa-search"></i></span><span class=popup-btn-close><i class="fa fa-times-circle"></i></span><div class=local-search-input-wrapper><input autocomplete=off placeholder="Enter key words..." spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off></div></div><div id=local-search-result></div></div></div></nav></div></header><main id=main class=main><div class=main-inner><div class=content-wrap><div id=content class=content><section id=posts class=posts-expand><article class="post post-type-normal" itemscope itemtype=http://schema.org/Article><header class=post-header><h1 class=post-title itemprop="name headline"><a class=post-title-link href=/en/2011/10/17/kindeditor-jsp-struts2-servlet.html itemprop=url>JSP version of KindEidtor Online Editor Season 2 - Servlet and Struts2 Integrated Edition</a></h1><div class=post-meta><span class=post-time><i class="fa fa-calendar-o fa-fw"></i><span class=post-meta-item-text>Published at:</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2011-10-17">2011-10-17</time></span>
+<span class=post-category>&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i><span class=post-meta-item-text>Categories:</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing><a href=/en/categories/kindeditor itemprop=url rel=index style=text-decoration:underline><span itemprop=name>KindEditor</span></a>
+&nbsp;</span></span>
+<span>|
+<i class="fa fa-file-word-o fa-fw"></i><span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>3198 words</span></span>
+<span>|
+<i class="fa fa-eye fa-fw"></i><span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>16 minutes</span></span>
+<span id=/en/2011/10/17/kindeditor-jsp-struts2-servlet.html class=leancloud_visitors data-flag-title="JSP version of KindEidtor Online Editor Season 2 - Servlet and Struts2 Integrated Edition">|
+<i class="fa fa-binoculars fa-fw"></i><span class=post-meta-item-text>Visited:</span>
+<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><p>Some time ago, I posted a post on the forum entitled &ldquo;JSP Edition&rsquo;s Complete KindEditor Online Editor (with attachment upload and image classification management features)&rdquo; (<a href=http://elkan1788.github.io/OnlineEditor/2011-03-24/>http://elkan1788.github.io/OnlineEditor/2011-03-24/</a>) Kindeditor-jsp-complete .html) got a positive response from everyone, but I feel a little regret, there are a lot of people are not really talking about technical issues, but to me to ask for source code, to say that the real results of their own labor so in vain dedication, feel a little sorry for themselves, to know that our domestic technicians are not backed by money ah. Alas, I&rsquo;ve been too busy lately and I don&rsquo;t care too much about it. After seeing so many people left a mark, feel that they should also be selfless is it, we old Mao said right: to learn like Comrade Lei Feng, ha ha &mldr; In fact, above I have already said, this JAR inside the function I just put the official website JSP code adaptation only, nonsense first do not say much, the following directly on the code bar, can be secured Oh.</p><p>:: Image upload function code</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>
+<span style=color:#a2f;font-weight:700>package</span> <span style=color:#00f;font-weight:700>com.elkan.kindeditor.upload</span><span style=color:#666>;</span>
+
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.io.File</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.io.IOException</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.io.PrintWriter</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.text.SimpleDateFormat</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.util.Arrays</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.util.Date</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.util.Iterator</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.util.List</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.util.Random</span><span style=color:#666>;</span>
+
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.servlet.ServletException</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.servlet.http.HttpServlet</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.servlet.http.HttpServletRequest</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.servlet.http.HttpServletResponse</span><span style=color:#666>;</span>
+
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>org.apache.commons.fileupload.FileItem</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>org.apache.commons.fileupload.FileItemFactory</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>org.apache.commons.fileupload.FileUploadException</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>org.apache.commons.fileupload.disk.DiskFileItemFactory</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>org.apache.commons.fileupload.servlet.ServletFileUpload</span><span style=color:#666>;</span>
+
+amount com<span style=color:#666>.</span><span style=color:#b44>elkan</span><span style=color:#666>.</span><span style=color:#b44>utils</span><span style=color:#666>.</span><span style=color:#b44>ImageUtil</span><span style=color:#666>;</span>
+
+<span style=color:#080;font-style:italic>/**
+</span><span style=color:#080;font-style:italic>:: Implement a servlet for KindEditor image uploads
+</span><span style=color:#080;font-style:italic>* 
+</span><span style=color:#080;font-style:italic>* @author SENHUI
+</span><span style=color:#080;font-style:italic>* 
+</span><span style=color:#080;font-style:italic>* @since 2011/03/21 20:20:23
+</span><span style=color:#080;font-style:italic>*/</span>
+<span style=color:#a2f;font-weight:700>public</span> <span style=color:#a2f;font-weight:700>class</span> <span style=color:#00f>UploadImage</span> <span style=color:#a2f;font-weight:700>extends</span> HttpServlet <span style=color:#666>{</span>
+
+ <span style=color:#a2f;font-weight:700>private</span> <span style=color:#a2f;font-weight:700>static</span> <span style=color:#a2f;font-weight:700>final</span> <span style=color:#0b0;font-weight:700>long</span> serialVersionUID <span style=color:#666>=</span> 5121794650920770832L<span style=color:#666>;</span>
+ The maximum width of the uploaded image
+ <span style=color:#a2f;font-weight:700>protected</span> <span style=color:#0b0;font-weight:700>int</span> MAX_WIDTH <span style=color:#666>=</span> <span style=color:#666>-</span>1<span style=color:#666>;</span>
+ The maximum height at which the image is uploaded
+ <span style=color:#a2f;font-weight:700>protected</span> <span style=color:#0b0;font-weight:700>int</span> MAX_HEIGHT <span style=color:#666>=</span> <span style=color:#666>-</span>1<span style=color:#666>;</span>
+ The size of the uploaded image
+ <span style=color:#a2f;font-weight:700>protected</span> <span style=color:#0b0;font-weight:700>long</span> MAX_SIZE <span style=color:#666>=</span> 1000000<span style=color:#666>;</span>
+ Define the extension of the image that is allowed to be uploaded
+ <span style=color:#a2f;font-weight:700>protected</span> String<span style=color:#666>[]</span> IMAGETYPES <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> String<span style=color:#666>[]</span> <span style=color:#666>{</span> <span style=color:#b44>&#34;gif&#34;</span><span style=color:#666>,</span> <span style=color:#b44>&#34;jpg&#34;</span><span style=color:#666>,</span> <span style=color:#b44>&#34;jpeg&#34;</span><span style=color:#666>,</span> <span style=color:#b44>&#34;png&#34;</span><span style=color:#666>,</span> <span style=color:#b44>&#34;bmp&#34;</span> <span style=color:#666>};</span>
+ Define the upload image save directory path
+ <span style=color:#a2f;font-weight:700>protected</span> String UPLOAD_PATH <span style=color:#666>=</span> <span style=color:#b44>&#34;&#34;</span><span style=color:#666>;</span>  
+ Upload image settings information   
+ <span style=color:#a2f;font-weight:700>protected</span> String id <span style=color:#666>=</span> <span style=color:#b44>&#34;&#34;</span><span style=color:#666>;</span>  
+ The TITLE property value of the uploaded image
+ <span style=color:#a2f;font-weight:700>protected</span> String imgTitle <span style=color:#666>=</span> <span style=color:#b44>&#34;&#34;</span><span style=color:#666>;</span> 
+ 
+ <span style=color:#a2f;font-weight:700>protected</span> <span style=color:#0b0;font-weight:700>int</span> imgWidth <span style=color:#666>=</span> <span style=color:#666>-</span>1<span style=color:#666>;</span>   
+ 
+ <span style=color:#a2f;font-weight:700>protected</span> <span style=color:#0b0;font-weight:700>int</span> imgHeight <span style=color:#666>=</span> <span style=color:#666>-</span>1<span style=color:#666>;</span>   
+ 
+ <span style=color:#a2f;font-weight:700>protected</span> String imgBorder <span style=color:#666>=</span> <span style=color:#b44>&#34;&#34;</span><span style=color:#666>;</span>   
+ 
+ <span style=color:#a2f;font-weight:700>protected</span> String resizeImg <span style=color:#666>=</span> <span style=color:#b44>&#34;&#34;</span><span style=color:#666>;</span>
+ 
+ <span style=color:#a2f;font-weight:700>protected</span> <span style=color:#0b0;font-weight:700>boolean</span> isFlag <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>false</span><span style=color:#666>;</span>
+ 
+ <span style=color:#a2f;font-weight:700>protected</span> String tempTitle <span style=color:#666>=</span> <span style=color:#b44>&#34;&#34;</span><span style=color:#666>;</span>
+
+ <span style=color:#a2f>@SuppressWarnings</span><span style=color:#666>(</span><span style=color:#b44>&#34;deprecation&#34;</span><span style=color:#666>)</span>
+ <span style=color:#a2f>@Override</span>
+ <span style=color:#a2f;font-weight:700>protected</span> <span style=color:#0b0;font-weight:700>void</span> <span style=color:#00a000>doGet</span><span style=color:#666>(</span>HttpServletRequest request<span style=color:#666>,</span>
+     HttpServletResponse response<span style=color:#666>)</span> <span style=color:#a2f;font-weight:700>throws</span> ServletException<span style=color:#666>,</span> IOException <span style=color:#666>{</span>
+   response<span style=color:#666>.</span><span style=color:#b44>setContentType</span><span style=color:#666>(</span><span style=color:#b44>&#34;text/html; charset=UTF-8&#34;</span><span style=color:#666>);</span>
+   PrintWriter out <span style=color:#666>=</span> response<span style=color:#666>.</span><span style=color:#b44>getWriter</span><span style=color:#666>();</span>
+   String savePath <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>this</span><span style=color:#666>.</span><span style=color:#b44>getInitParameter</span><span style=color:#666>(</span><span style=color:#b44>&#34;UPLOAD_PATH&#34;</span><span style=color:#666>);</span>
+   <span style=color:#a2f;font-weight:700>if</span> <span style=color:#666>(</span>savePath <span style=color:#666>==</span> <span style=color:#a2f;font-weight:700>null</span> <span style=color:#666>||</span> savePath<span style=color:#666>.</span><span style=color:#b44>isEmpty</span><span style=color:#666>())</span> <span style=color:#666>{</span>
+     out<span style=color:#666>.</span><span style=color:#b44>println</span> <span style=color:#666>(</span>alert <span style=color:#00a000>Msg</span> <span style=color:#666>(</span><span style=color:#b44>&#34;You haven&#39;t set the directory path for uploading images to save!&#34;</span><span style=color:#666>);</span>
+     <span style=color:#a2f;font-weight:700>return</span><span style=color:#666>;</span>
+   <span style=color:#666>}</span>
+   Determines whether the size of the uploaded image is set
+   <span style=color:#00a000>if</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>this</span><span style=color:#666>.</span><span style=color:#b44>getInitParameter</span><span style=color:#666>(</span><span style=color:#b44>&#34;MAX_SIZE&#34;</span><span style=color:#666>)</span> <span style=color:#666>!=</span> <span style=color:#a2f;font-weight:700>null</span><span style=color:#666>){</span>
+     MAX_SIZE <span style=color:#666>=</span> Integer<span style=color:#666>.</span><span style=color:#b44>parseInt</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>this</span><span style=color:#666>.</span><span style=color:#b44>getInitParameter</span><span style=color:#666>(</span><span style=color:#b44>&#34;MAX_SIZE&#34;</span><span style=color:#666>));</span>
+   <span style=color:#666>}</span>
+   Determines whether the type of uploaded image is set
+   <span style=color:#00a000>if</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>this</span><span style=color:#666>.</span><span style=color:#b44>getInitParameter</span><span style=color:#666>(</span><span style=color:#b44>&#34;IMAGETYPES&#34;</span><span style=color:#666>)</span> <span style=color:#666>!=</span> <span style=color:#a2f;font-weight:700>null</span><span style=color:#666>){</span>
+     IMAGETYPES <span style=color:#666>=</span> toArray<span style=color:#666>(</span><span style=color:#a2f;font-weight:700>this</span><span style=color:#666>.</span><span style=color:#b44>getInitParameter</span><span style=color:#666>(</span><span style=color:#b44>&#34;IMAGETYPES&#34;</span><span style=color:#666>));</span>
+   <span style=color:#666>}</span>
+   The picture saves the catalog path
+   String uploadPath <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> StringBuffer<span style=color:#666>(</span>request<span style=color:#666>.</span><span style=color:#b44>getSession</span><span style=color:#666>().</span><span style=color:#b44>getServletContext</span><span style=color:#666>().</span><span style=color:#b44>getRealPath</span><span style=color:#666>(</span><span style=color:#b44>&#34;/&#34;</span><span style=color:#666>)).</span><span style=color:#b44>append</span><span style=color:#666>(</span>savePath<span style=color:#666>).</span><span style=color:#b44>toString</span><span style=color:#666>();</span>
+   
+   Picture Save Catalog URL
+   String saveUrl <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> StringBuffer<span style=color:#666>(</span>request<span style=color:#666>.</span><span style=color:#b44>getContextPath</span><span style=color:#666>()).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;/&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>savePath<span style=color:#666>).</span><span style=color:#b44>toString</span><span style=color:#666>();</span>
+   
+   Check to see <span style=color:#a2f;font-weight:700>if</span> the uploaded image exists
+   <span style=color:#00a000>if</span> <span style=color:#666>(!</span> ServletFileUpload<span style=color:#666>.</span><span style=color:#b44>isMultipartContent</span><span style=color:#666>(</span>request<span style=color:#666>))</span> <span style=color:#666>{</span>
+     out<span style=color:#666>.</span><span style=color:#b44>println</span> <span style=color:#666>(</span>alert <span style=color:#00a000>Msg</span> <span style=color:#666>(</span><span style=color:#b44>&#34;Please select the picture you want to upload!&#34;</span><span style=color:#666>);</span>
+     <span style=color:#a2f;font-weight:700>return</span><span style=color:#666>;</span>
+   <span style=color:#666>}</span>
+   
+   Check the directory
+   File uploadDir <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> File<span style=color:#666>(</span>uploadPath<span style=color:#666>);</span>
+   <span style=color:#a2f;font-weight:700>if</span> <span style=color:#666>(!</span>uploadDir<span style=color:#666>.</span><span style=color:#b44>isDirectory</span><span style=color:#666>())</span> <span style=color:#666>{</span>
+     out<span style=color:#666>.</span><span style=color:#b44>println</span> <span style=color:#666>(</span>alert <span style=color:#00a000>Msg</span> <span style=color:#666>(</span><span style=color:#b44>&#34;The directory saved by uploading the picture does not exist.&#34;</span> <span style=color:#666>));</span>
+     <span style=color:#a2f;font-weight:700>return</span><span style=color:#666>;</span>
+   <span style=color:#666>}</span>
+   
+   Check directory write permissions
+   <span style=color:#00a000>if</span> <span style=color:#666>(!</span>uploadDir<span style=color:#666>.</span><span style=color:#b44>canWrite</span><span style=color:#666>())</span> <span style=color:#666>{</span>
+     out<span style=color:#666>.</span><span style=color:#b44>println</span> <span style=color:#666>(</span>alert <span style=color:#00a000>Msg</span> <span style=color:#666>(</span><span style=color:#b44>&#34;The directory saved by uploading the image does not have write permission.&#34;</span> <span style=color:#666>));</span>
+     <span style=color:#a2f;font-weight:700>return</span><span style=color:#666>;</span>
+   <span style=color:#666>}</span>
+   
+   Prepare to upload the image
+   FileItemFactory factory <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> DiskFileItemFactory<span style=color:#666>();</span>
+   ServletFileUpload upload <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> ServletFileUpload<span style=color:#666>(</span>factory<span style=color:#666>);</span>
+   upload<span style=color:#666>.</span><span style=color:#b44>setHeaderEncoding</span><span style=color:#666>(</span><span style=color:#b44>&#34;UTF-8&#34;</span><span style=color:#666>);</span>
+   List<span style=color:#666>&lt;?&gt;</span> items <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>null</span><span style=color:#666>;</span>
+   String temp <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>null</span><span style=color:#666>;</span>
+   <span style=color:#a2f;font-weight:700>try</span> <span style=color:#666>{</span>
+     items <span style=color:#666>=</span> upload<span style=color:#666>.</span><span style=color:#b44>parseRequest</span><span style=color:#666>(</span>request<span style=color:#666>);</span>     
+     Iterator<span style=color:#666>&lt;?&gt;</span> itr <span style=color:#666>=</span> items<span style=color:#666>.</span><span style=color:#b44>iterator</span><span style=color:#666>();</span>
+     <span style=color:#a2f;font-weight:700>while</span> <span style=color:#666>(</span>itr<span style=color:#666>.</span><span style=color:#b44>hasNext</span><span style=color:#666>())</span> <span style=color:#666>{</span>
+       
+       FileItem item <span style=color:#666>=</span> <span style=color:#666>(</span>FileItem<span style=color:#666>)</span> itr<span style=color:#666>.</span><span style=color:#b44>next</span><span style=color:#666>();</span>
+        The original file name of the uploaded image   
+           String fileName <span style=color:#666>=</span> item<span style=color:#666>.</span><span style=color:#b44>getName</span><span style=color:#666>();</span> 
+           temp <span style=color:#666>=</span> <span style=color:#666>(</span>String<span style=color:#666>)</span> item<span style=color:#666>.</span><span style=color:#b44>getName</span><span style=color:#666>();</span>
+           <span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(</span>temp <span style=color:#666>!=</span> <span style=color:#a2f;font-weight:700>null</span> <span style=color:#666>&amp;&amp;</span> <span style=color:#666>!</span>isFlag<span style=color:#666>){</span>
+             temp <span style=color:#666>=</span> temp<span style=color:#666>.</span><span style=color:#b44>substring</span><span style=color:#666>(</span>temp<span style=color:#666>.</span><span style=color:#b44>lastIndexOf</span><span style=color:#666>(</span><span style=color:#b44>&#34;\\&#34;</span><span style=color:#666>)+</span>1<span style=color:#666>);</span>
+             tempTitle <span style=color:#666>=</span> temp<span style=color:#666>;</span>
+             isFlag <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>true</span><span style=color:#666>;</span>
+           <span style=color:#666>}</span>
+            The ID of the KindEditor editor  
+           <span style=color:#00a000>if</span><span style=color:#666>(((</span>String<span style=color:#666>)</span>item<span style=color:#666>.</span><span style=color:#b44>getFieldName</span><span style=color:#666>()).</span><span style=color:#b44>equals</span><span style=color:#666>(</span><span style=color:#b44>&#34;id&#34;</span><span style=color:#666>)){</span>   
+               id <span style=color:#666>=</span> item<span style=color:#666>.</span><span style=color:#b44>getString</span><span style=color:#666>();</span> 
+           <span style=color:#666>}</span>  
+          
+           Ret tips <span style=color:#a2f;font-weight:700>for</span> uploading images
+           <span style=color:#00a000>if</span><span style=color:#666>(((</span>String<span style=color:#666>)</span>item<span style=color:#666>.</span><span style=color:#b44>getFieldName</span><span style=color:#666>()).</span><span style=color:#b44>equals</span><span style=color:#666>(</span><span style=color:#b44>&#34;imgTitle&#34;</span><span style=color:#666>)){</span>   
+               imgTitle <span style=color:#666>=</span> item<span style=color:#666>.</span><span style=color:#b44>getString</span><span style=color:#666>();</span> 
+               <span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(</span>imgTitle <span style=color:#666>!=</span> <span style=color:#a2f;font-weight:700>null</span><span style=color:#666>){</span>
+                 imgTitle <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> String<span style=color:#666>(</span>imgTitle<span style=color:#666>.</span><span style=color:#b44>getBytes</span><span style=color:#666>(</span><span style=color:#b44>&#34;ISO8859-1&#34;</span><span style=color:#666>),</span><span style=color:#b44>&#34;UTF-8&#34;</span><span style=color:#666>);</span>
+               <span style=color:#666>}</span>
+           <span style=color:#666>}</span> 
+           Set the width of the picture
+           <span style=color:#00a000>if</span><span style=color:#666>(((</span>String<span style=color:#666>)</span>item<span style=color:#666>.</span><span style=color:#b44>getFieldName</span><span style=color:#666>()).</span><span style=color:#b44>equals</span><span style=color:#666>(</span><span style=color:#b44>&#34;imgWidth&#34;</span><span style=color:#666>)){</span>   
+              String imgWidth <span style=color:#666>=</span> item<span style=color:#666>.</span><span style=color:#b44>getString</span><span style=color:#666>();</span>   
+              <span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(</span>imgWidth <span style=color:#666>!=</span> <span style=color:#a2f;font-weight:700>null</span> <span style=color:#666>&amp;&amp;</span> <span style=color:#666>!</span>imgWidth<span style=color:#666>.</span><span style=color:#b44>isEmpty</span><span style=color:#666>()){</span>
+                <span style=color:#a2f;font-weight:700>this</span><span style=color:#666>.</span><span style=color:#b44>imgWidth</span> <span style=color:#666>=</span> Integer<span style=color:#666>.</span><span style=color:#b44>parseInt</span><span style=color:#666>(</span>imgWidth<span style=color:#666>);</span>
+              <span style=color:#666>}</span>
+           <span style=color:#666>}</span>  
+           Set the height of the picture
+           <span style=color:#00a000>if</span><span style=color:#666>(((</span>String<span style=color:#666>)</span>item<span style=color:#666>.</span><span style=color:#b44>getFieldName</span><span style=color:#666>()).</span><span style=color:#b44>equals</span><span style=color:#666>(</span><span style=color:#b44>&#34;imgHeight&#34;</span><span style=color:#666>)){</span>   
+              String imgHeight <span style=color:#666>=</span> item<span style=color:#666>.</span><span style=color:#b44>getString</span><span style=color:#666>();</span>   
+              <span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(</span>imgHeight <span style=color:#666>!=</span> <span style=color:#a2f;font-weight:700>null</span> <span style=color:#666>&amp;&amp;</span> <span style=color:#666>!</span>imgHeight<span style=color:#666>.</span><span style=color:#b44>isEmpty</span><span style=color:#666>()){</span>
+                <span style=color:#a2f;font-weight:700>this</span><span style=color:#666>.</span><span style=color:#b44>imgHeight</span> <span style=color:#666>=</span> Integer<span style=color:#666>.</span><span style=color:#b44>parseInt</span><span style=color:#666>(</span>imgHeight<span style=color:#666>);</span>
+              <span style=color:#666>}</span>
+           <span style=color:#666>}</span>
+           Set the border of the picture
+           <span style=color:#00a000>if</span><span style=color:#666>(((</span>String<span style=color:#666>)</span>item<span style=color:#666>.</span><span style=color:#b44>getFieldName</span><span style=color:#666>()).</span><span style=color:#b44>equals</span><span style=color:#666>(</span><span style=color:#b44>&#34;imgBorder&#34;</span><span style=color:#666>)){</span>   
+               imgBorder <span style=color:#666>=</span> item<span style=color:#666>.</span><span style=color:#b44>getString</span><span style=color:#666>();</span>  
+           <span style=color:#666>}</span> 
+           
+       <span style=color:#0b0;font-weight:700>long</span> fileSize <span style=color:#666>=</span> item<span style=color:#666>.</span><span style=color:#b44>getSize</span><span style=color:#666>();</span>
+       <span style=color:#a2f;font-weight:700>if</span> <span style=color:#666>(!</span>item<span style=color:#666>.</span><span style=color:#b44>isFormField</span><span style=color:#666>())</span> <span style=color:#666>{</span>            
+         Check the file size
+         <span style=color:#00a000>if</span> <span style=color:#666>(</span>fileSize <span style=color:#666>&gt;</span> MAX_SIZE<span style=color:#666>)</span> <span style=color:#666>{</span>
+           out<span style=color:#666>.</span><span style=color:#b44>println</span> <span style=color:#666>(</span>alert <span style=color:#00a000>Msg</span> <span style=color:#666>(</span><span style=color:#b44>&#34;Upload file size exceeds limit.&#34;</span> <span style=color:#666>));</span>
+           <span style=color:#a2f;font-weight:700>return</span><span style=color:#666>;</span>
+         <span style=color:#666>}</span>
+         
+         Check the extension
+         String fileExt <span style=color:#666>=</span> fileName<span style=color:#666>.</span><span style=color:#b44>substring</span><span style=color:#666>(</span>fileName<span style=color:#666>.</span><span style=color:#b44>lastIndexOf</span><span style=color:#666>(</span><span style=color:#b44>&#34;.&#34;</span><span style=color:#666>)</span> <span style=color:#666>+</span> 1<span style=color:#666>).</span><span style=color:#b44>toLowerCase</span><span style=color:#666>();</span>
+         <span style=color:#a2f;font-weight:700>if</span> <span style=color:#666>(!</span> Arrays<span style=color:#666>.&lt;</span>String<span style=color:#666>&gt;</span> <span style=color:#00a000>asList</span><span style=color:#666>(</span>IMAGETYPES<span style=color:#666>).</span><span style=color:#b44>contains</span><span style=color:#666>(</span>fileExt<span style=color:#666>))</span> <span style=color:#666>{</span>
+           out<span style=color:#666>.</span><span style=color:#b44>println</span> <span style=color:#666>(</span><span style=color:#b44>&#34;Uploading an image extension is an extension that is not allowed). ));
+</span><span style=color:#b44>           return;
+</span><span style=color:#b44>         }
+</span><span style=color:#b44>         Create a folder based on time
+</span><span style=color:#b44>         SimpleDateFormat folderNameFormat = new SimpleDateFormat(&#34;</span>yyyyMMdd<span style=color:#b44>&#34;);
+</span><span style=color:#b44>         String realPath = uploadPath + folderNameFormat.format(new Date());
+</span><span style=color:#b44>         File folder = new File(realPath);
+</span><span style=color:#b44>         boolean flag = folder.exists();
+</span><span style=color:#b44>         Confirm that the folder already exists
+</span><span style=color:#b44>         if(!flag){
+</span><span style=color:#b44>           flag = folder.mkdir();
+</span><span style=color:#b44>         }
+</span><span style=color:#b44>         Create a folder and upload a picture
+</span><span style=color:#b44>         if(flag){
+</span><span style=color:#b44>           SimpleDateFormat fileNameFormat = new SimpleDateFormat(&#34;</span>yyyyMMddHHmmss<span style=color:#b44>&#34;);         
+</span><span style=color:#b44>           String newFileName = fileNameFormat.format(new Date()) + &#34;</span>_<span style=color:#b44>&#34;+ new Random().nextInt(1000) + &#34;</span><span style=color:#666>.</span><span style=color:#b44>&#34; + fileExt;           
+</span><span style=color:#b44>           File uploadedFile = new File(realPath, newFileName);            
+</span><span style=color:#b44>           item.write(uploadedFile);
+</span><span style=color:#b44>           resizeImg = uploadedFile.getPath();
+</span><span style=color:#b44>           resizeImg = resizeImg.replaceAll(&#34;</span><span>\\\\</span><span style=color:#b44>&#34;, &#34;</span><span style=color:#666>/</span><span style=color:#b44>&#34;);
+</span><span style=color:#b44>           saveUrl += folderNameFormat.format(new Date()) + &#34;</span><span style=color:#666>/</span><span style=color:#b44>&#34; + newFileName;           
+</span><span style=color:#b44>         }else{
+</span><span style=color:#b44>           System.out.println (&#34;</span>Folder creation failed<span style=color:#666>,</span> make sure the disk is not written <span style=color:#a2f;font-weight:700>protected</span> and there are enough blanks<span style=color:#b44>&#34;);
+</span><span style=color:#b44>         } 
+</span><span style=color:#b44>       }
+</span><span style=color:#b44>     }
+</span><span style=color:#b44>     
+</span><span style=color:#b44>     Determines whether to set the maximum width and height of the picture
+</span><span style=color:#b44>     String max_width = this.getInitParameter(&#34;</span>MAX_WIDTH<span style=color:#b44>&#34;);
+</span><span style=color:#b44>     String max_height = this.getInitParameter(&#34;</span>MAX_HEIGHT<span style=color:#b44>&#34;);
+</span><span style=color:#b44>     if((max_width != null &amp;&amp; !max_width.isEmpty())){
+</span><span style=color:#b44>       MAX_WIDTH = Integer.parseInt(max_width);
+</span><span style=color:#b44>     }
+</span><span style=color:#b44>     if(max_height != null &amp;&amp; !max_height.isEmpty()){
+</span><span style=color:#b44>       MAX_HEIGHT = Integer.parseInt(max_height);
+</span><span style=color:#b44>     }
+</span><span style=color:#b44>     
+</span><span style=color:#b44>     if(imgTitle == null || imgTitle.isEmpty()){
+</span><span style=color:#b44>       imgTitle = tempTitle;
+</span><span style=color:#b44>     }
+</span><span style=color:#b44>     
+</span><span style=color:#b44>     Determines whether you want to compress the picture
+</span><span style=color:#b44>     if(MAX_WIDTH != -1 || MAX_HEIGHT != -1) {
+</span><span style=color:#b44>       Compress the picture
+</span><span style=color:#b44>       ImageUtil.resizeImg(resizeImg, resizeImg, MAX_WIDTH, MAX_HEIGHT);
+</span><span style=color:#b44>       
+</span><span style=color:#b44>       if(this.imgWidth &gt; ImageUtil.ImgWidth){
+</span><span style=color:#b44>         this.imgWidth = ImageUtil.ImgWidth;
+</span><span style=color:#b44>       }
+</span><span style=color:#b44>       
+</span><span style=color:#b44>       if(this.imgHeight &gt; ImageUtil.ImgHeight){
+</span><span style=color:#b44>         this.imgHeight = ImageUtil.ImgHeight;
+</span><span style=color:#b44>       }
+</span><span style=color:#b44>       
+</span><span style=color:#b44>       Return to the editor
+</span><span style=color:#b44>       out.println(insertEditor(id, saveUrl, imgTitle, imgWidth, imgHeight, imgBorder));
+</span><span style=color:#b44>     }else{
+</span><span style=color:#b44>       Return to the editor
+</span><span style=color:#b44>       out.println(insertEditor(id, saveUrl, imgTitle, imgWidth, imgHeight, imgBorder));
+</span><span style=color:#b44>     }       
+</span><span style=color:#b44>     
+</span><span style=color:#b44>   } catch (FileUploadException e) {
+</span><span style=color:#b44>     e.printStackTrace();
+</span><span style=color:#b44>   } catch (Exception e) {
+</span><span style=color:#b44>     e.printStackTrace();
+</span><span style=color:#b44>   }finally{
+</span><span style=color:#b44>     out.flush();
+</span><span style=color:#b44>     out.close();
+</span><span style=color:#b44>     isFlag = false;
+</span><span style=color:#b44>   }
+</span><span style=color:#b44>
+</span><span style=color:#b44> }
+</span><span style=color:#b44>
+</span><span style=color:#b44> @Override
+</span><span style=color:#b44> protected void doPost(HttpServletRequest request,
+</span><span style=color:#b44>     HttpServletResponse response) throws ServletException, IOException {
+</span><span style=color:#b44>   doGet(request, response);
+</span><span style=color:#b44> }
+</span><span style=color:#b44>
+</span><span style=color:#b44> /**
+</span><span style=color:#b44>  Output print upload failed JSON statement
+</span><span style=color:#b44>  * 
+</span><span style=color:#b44>  :: @param message failure message
+</span><span style=color:#b44>  * 
+</span><span style=color:#b44>  :: @return the failed JSON statement on the page
+</span><span style=color:#b44>  */
+</span><span style=color:#b44> public String alertMsg(String message) {
+</span><span style=color:#b44>   StringBuffer sb = new StringBuffer(&#34;</span><span style=color:#666>{</span><span>\</span><span style=color:#b44>&#34;error\&#34;:\&#34;1\&#34;,\&#34;message\&#34;:\&#34;&#34;</span><span style=color:#666>);</span>
+   sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span>message<span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;}&#34;</span><span style=color:#666>);</span>
+   <span style=color:#a2f;font-weight:700>return</span> sb<span style=color:#666>.</span><span style=color:#b44>toString</span><span style=color:#666>();</span>
+ <span style=color:#666>}</span>
+ 
+ <span style=color:#080;font-style:italic>/**
+</span><span style=color:#080;font-style:italic>  The output inserts a picture into the script of the editor statement
+</span><span style=color:#080;font-style:italic>  * 
+</span><span style=color:#080;font-style:italic>  :: @param id editor ID
+</span><span style=color:#080;font-style:italic>  * 
+</span><span style=color:#080;font-style:italic>  :: @param the browsing address of the image uploaded by saveUrl
+</span><span style=color:#080;font-style:italic>  * 
+</span><span style=color:#080;font-style:italic>  :: @param information for imgTitle pictures
+</span><span style=color:#080;font-style:italic>  * 
+</span><span style=color:#080;font-style:italic>  :: @param imgWidth to set the width of the picture
+</span><span style=color:#080;font-style:italic>  * 
+</span><span style=color:#080;font-style:italic>  :: @param the width of the picture with imgHeight
+</span><span style=color:#080;font-style:italic>  * 
+</span><span style=color:#080;font-style:italic>  :@param imgBorder to set the frame of the picture
+</span><span style=color:#080;font-style:italic>  * 
+</span><span style=color:#080;font-style:italic>  :: @return script statement that inserts a picture into the editor
+</span><span style=color:#080;font-style:italic>  */</span>
+ <span style=color:#a2f;font-weight:700>public</span> String <span style=color:#00a000>insertEditor</span><span style=color:#666>(</span>String id<span style=color:#666>,</span> String saveUrl<span style=color:#666>,</span> String imgTitle<span style=color:#666>,</span> 
+     <span style=color:#0b0;font-weight:700>int</span> imgWidth<span style=color:#666>,</span> <span style=color:#0b0;font-weight:700>int</span> imgHeight<span style=color:#666>,</span> String imgBorder<span style=color:#666>){</span>
+   StringBuffer sb <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> StringBuffer<span style=color:#666>(</span><span style=color:#b44>&#34;&lt;script type\&#34;text/javascript\&#34;&gt;&#34;</span><span style=color:#666>);</span>
+   sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;parent. KE.plugin[\&#34;image\&#34;].insert(\&#34;&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>id<span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;,\&#34;&#34;</span><span style=color:#666>);</span>
+   sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span>saveUrl<span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;,\&#34;&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>imgTitle<span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;,\&#34;&#34;</span><span style=color:#666>);</span>
+   sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span>imgWidth<span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;,\&#34;&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>imgHeight<span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;,\&#34;&#34;</span><span style=color:#666>);</span>
+   sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span>imgBorder<span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;);&#34;</span><span style=color:#666>);</span>
+   sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;&lt;/script&gt;&#34;</span><span style=color:#666>);</span>
+   <span style=color:#a2f;font-weight:700>return</span> sb<span style=color:#666>.</span><span style=color:#b44>toString</span><span style=color:#666>();</span>
+ <span style=color:#666>}</span>
+ 
+ <span style=color:#080;font-style:italic>/**
+</span><span style=color:#080;font-style:italic>  The output allows an array of image types to be uploaded
+</span><span style=color:#080;font-style:italic>  * 
+</span><span style=color:#080;font-style:italic>  :: @param types of images allowed to be uploaded by fileType
+</span><span style=color:#080;font-style:italic>  * 
+</span><span style=color:#080;font-style:italic>  :: @return allows you to upload image types
+</span><span style=color:#080;font-style:italic>  */</span>
+ <span style=color:#a2f;font-weight:700>public</span> String<span style=color:#666>[]</span> <span style=color:#00a000>toArray</span><span style=color:#666>(</span>String filesType<span style=color:#666>){</span>
+   
+   <span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(</span>filesType <span style=color:#666>==</span> <span style=color:#a2f;font-weight:700>null</span><span style=color:#666>){</span>
+     <span style=color:#a2f;font-weight:700>return</span> <span style=color:#a2f;font-weight:700>null</span><span style=color:#666>;</span>
+   <span style=color:#666>}</span>
+     
+   String<span style=color:#666>[]</span> types <span style=color:#666>=</span> filesType<span style=color:#666>.</span><span style=color:#b44>split</span><span style=color:#666>(</span><span style=color:#b44>&#34;,&#34;</span><span style=color:#666>);</span>
+   String<span style=color:#666>[]</span> allowTypes <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> String<span style=color:#666>[</span>types<span style=color:#666>.</span><span style=color:#b44>length</span><span style=color:#666>];</span>
+   <span style=color:#0b0;font-weight:700>int</span> i <span style=color:#666>=</span> 0<span style=color:#666>;</span>
+   <span style=color:#a2f;font-weight:700>for</span><span style=color:#666>(</span>String type <span style=color:#666>:</span> types<span style=color:#666>){</span>
+     allowTypes<span style=color:#666>[</span>i<span style=color:#666>]</span> <span style=color:#666>=</span> type<span style=color:#666>;</span>
+     i<span style=color:#666>++;</span>
+   <span style=color:#666>}</span>
+   
+   <span style=color:#a2f;font-weight:700>return</span> allowTypes<span style=color:#666>;</span>
+ <span style=color:#666>}</span>
+<span style=color:#666>}</span>
+
+</code></pre></div><p>:: Upload an image management code</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>
+<span style=color:#a2f;font-weight:700>package</span> <span style=color:#00f;font-weight:700>com.elkan.kindeditor.upload</span><span style=color:#666>;</span>
+
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.io.File</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.io.IOException</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.io.PrintWriter</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.text.SimpleDateFormat</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.util.ArrayList</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.util.Arrays</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.util.Collections</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.util.Comparator</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.util.Hashtable</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.util.List</span><span style=color:#666>;</span>
+
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.servlet.ServletException</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.servlet.http.HttpServlet</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.servlet.http.HttpServletRequest</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.servlet.http.HttpServletResponse</span><span style=color:#666>;</span>
+
+<span style=color:#a2f;font-weight:700>public</span> <span style=color:#a2f;font-weight:700>class</span> <span style=color:#00f>UploadImageManager</span> <span style=color:#a2f;font-weight:700>extends</span> HttpServlet <span style=color:#666>{</span>
+
+ <span style=color:#a2f;font-weight:700>private</span> <span style=color:#a2f;font-weight:700>static</span> <span style=color:#a2f;font-weight:700>final</span> <span style=color:#0b0;font-weight:700>long</span> serialVersionUID <span style=color:#666>=</span> <span style=color:#666>-</span>8359652838938248988L<span style=color:#666>;</span>
+ Define the extension of the image that is allowed to be uploaded
+ <span style=color:#a2f;font-weight:700>protected</span> String<span style=color:#666>[]</span> FILETYPES <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> String<span style=color:#666>[]</span> <span style=color:#666>{</span> <span style=color:#b44>&#34;gif&#34;</span><span style=color:#666>,</span> <span style=color:#b44>&#34;jpg&#34;</span><span style=color:#666>,</span> <span style=color:#b44>&#34;jpeg&#34;</span><span style=color:#666>,</span> <span style=color:#b44>&#34;png&#34;</span><span style=color:#666>,</span> <span style=color:#b44>&#34;bmp&#34;</span> <span style=color:#666>};</span>
+ Define the upload image save directory path
+ <span style=color:#a2f;font-weight:700>protected</span> String UPLOAD_PATH <span style=color:#666>=</span> <span style=color:#b44>&#34;&#34;</span><span style=color:#666>;</span>
+
+ <span style=color:#a2f;font-weight:700>public</span> <span style=color:#0b0;font-weight:700>void</span> <span style=color:#00a000>doGet</span><span style=color:#666>(</span>HttpServletRequest request<span style=color:#666>,</span> HttpServletResponse response<span style=color:#666>)</span>
+     <span style=color:#a2f;font-weight:700>throws</span> ServletException<span style=color:#666>,</span> IOException <span style=color:#666>{</span>
+   response<span style=color:#666>.</span><span style=color:#b44>setContentType</span><span style=color:#666>(</span><span style=color:#b44>&#34;text/html; charset=UTF-8&#34;</span><span style=color:#666>);</span>
+   PrintWriter out <span style=color:#666>=</span> response<span style=color:#666>.</span><span style=color:#b44>getWriter</span><span style=color:#666>();</span>
+   String savePath <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>this</span><span style=color:#666>.</span><span style=color:#b44>getInitParameter</span><span style=color:#666>(</span><span style=color:#b44>&#34;UPLOAD_PATH&#34;</span><span style=color:#666>);</span>
+   <span style=color:#a2f;font-weight:700>if</span> <span style=color:#666>(</span>savePath <span style=color:#666>==</span> <span style=color:#a2f;font-weight:700>null</span> <span style=color:#666>||</span> savePath<span style=color:#666>.</span><span style=color:#b44>isEmpty</span><span style=color:#666>())</span> <span style=color:#666>{</span>
+     out<span style=color:#666>.</span><span style=color:#b44>println</span> <span style=color:#666>(</span>alert <span style=color:#00a000>Msg</span> <span style=color:#666>(</span><span style=color:#b44>&#34;You haven&#39;t set a directory path to read uploaded images yet!&#34;</span><span style=color:#666>);</span>
+     <span style=color:#a2f;font-weight:700>return</span><span style=color:#666>;</span>
+   <span style=color:#666>}</span>
+   The picture saves the catalog path
+   String rootPath <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> StringBuffer<span style=color:#666>(</span>request<span style=color:#666>.</span><span style=color:#b44>getSession</span><span style=color:#666>().</span><span style=color:#b44>getServletContext</span><span style=color:#666>().</span><span style=color:#b44>getRealPath</span><span style=color:#666>(</span><span style=color:#b44>&#34;/&#34;</span><span style=color:#666>)).</span><span style=color:#b44>append</span><span style=color:#666>(</span>savePath<span style=color:#666>).</span><span style=color:#b44>toString</span><span style=color:#666>();</span>    
+   Picture Save Catalog URL
+   String rootUrl <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> StringBuffer<span style=color:#666>(</span>request<span style=color:#666>.</span><span style=color:#b44>getContextPath</span><span style=color:#666>()).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;/&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>savePath<span style=color:#666>).</span><span style=color:#b44>toString</span><span style=color:#666>();</span>
+   Depending on the path parameters<span style=color:#666>,</span> set the paths and URLs
+   String path <span style=color:#666>=</span> request<span style=color:#666>.</span><span style=color:#b44>getParameter</span><span style=color:#666>(</span><span style=color:#b44>&#34;path&#34;</span><span style=color:#666>)</span> <span style=color:#666>!=</span> <span style=color:#a2f;font-weight:700>null</span> <span style=color:#666>?</span> request<span style=color:#666>.</span><span style=color:#b44>getParameter</span><span style=color:#666>(</span><span style=color:#b44>&#34;path&#34;</span><span style=color:#666>)</span> <span style=color:#666>:</span> <span style=color:#b44>&#34;&#34;</span><span style=color:#666>;</span>
+   String currentPath <span style=color:#666>=</span> rootPath <span style=color:#666>+</span> path<span style=color:#666>;</span>
+   String currentUrl <span style=color:#666>=</span> rootUrl <span style=color:#666>+</span> path<span style=color:#666>;</span>
+   String currentDirPath <span style=color:#666>=</span> path<span style=color:#666>;</span>
+   String moveupDirPath <span style=color:#666>=</span> <span style=color:#b44>&#34;&#34;</span><span style=color:#666>;</span>
+   
+   <span style=color:#a2f;font-weight:700>if</span> <span style=color:#666>(!</span><span style=color:#b44>&#34;&#34;</span><span style=color:#666>.</span> equals<span style=color:#666>(</span>path<span style=color:#666>))</span> <span style=color:#666>{</span>
+     String str <span style=color:#666>=</span> currentDirPath<span style=color:#666>.</span><span style=color:#b44>substring</span><span style=color:#666>(</span>0<span style=color:#666>,</span> currentDirPath<span style=color:#666>.</span><span style=color:#b44>length</span><span style=color:#666>()</span> <span style=color:#666>-</span> 1<span style=color:#666>);</span>
+     moveupDirPath <span style=color:#666>=</span> str<span style=color:#666>.</span><span style=color:#b44>lastIndexOf</span><span style=color:#666>(</span><span style=color:#b44>&#34;/&#34;</span><span style=color:#666>)</span> <span style=color:#666>&gt;=</span> 0<span style=color:#666>?</span> str<span style=color:#666>.</span><span style=color:#b44>substring</span><span style=color:#666>(</span>0<span style=color:#666>,</span> str<span style=color:#666>.</span><span style=color:#b44>lastIndexOf</span><span style=color:#666>(</span><span style=color:#b44>&#34;/&#34;</span><span style=color:#666>)</span> <span style=color:#666>+</span> 1<span style=color:#666>):</span> <span style=color:#b44>&#34;&#34;</span><span style=color:#666>;</span>
+   <span style=color:#666>}</span>
+
+   Sort form<span style=color:#666>,</span> name or size or type
+   String order <span style=color:#666>=</span> request<span style=color:#666>.</span><span style=color:#b44>getParameter</span><span style=color:#666>(</span><span style=color:#b44>&#34;order&#34;</span><span style=color:#666>)</span> <span style=color:#666>!=</span> <span style=color:#a2f;font-weight:700>null</span> <span style=color:#666>?</span> request<span style=color:#666>.</span><span style=color:#b44>getParameter</span><span style=color:#666>(</span><span style=color:#b44>&#34;order&#34;</span><span style=color:#666>).</span><span style=color:#b44>toLowerCase</span><span style=color:#666>()</span> <span style=color:#666>:</span> <span style=color:#b44>&#34;name&#34;</span><span style=color:#666>;</span>
+
+   Not allowed to use<span style=color:#666>:</span> Move to the next level of the directory
+   <span style=color:#00a000>if</span> <span style=color:#666>(</span>path<span style=color:#666>.</span><span style=color:#b44>indexOf</span><span style=color:#666>(</span><span style=color:#b44>&#34;..&#34;</span><span style=color:#666>)</span> <span style=color:#666>&gt;=</span> 0<span style=color:#666>)</span> <span style=color:#666>{</span>
+     out<span style=color:#666>.</span><span style=color:#b44>println</span> <span style=color:#666>(</span>alert <span style=color:#00a000>Msg</span> <span style=color:#666>(</span><span style=color:#b44>&#34;No move to the next level directory&#34;</span><span style=color:#666>);</span>
+     <span style=color:#a2f;font-weight:700>return</span><span style=color:#666>;</span>
+   <span style=color:#666>}</span>
+   
+   The last character is not <span style=color:#666>/</span>
+   <span style=color:#a2f;font-weight:700>if</span> <span style=color:#666>(!</span><span style=color:#b44>&#34;&#34;</span><span style=color:#666>.</span> equals<span style=color:#666>(</span>path<span style=color:#666>)</span> <span style=color:#666>&amp;&amp;</span> <span style=color:#666>!</span>path<span style=color:#666>.</span><span style=color:#b44>endsWith</span><span style=color:#666>(</span><span style=color:#b44>&#34;/&#34;</span><span style=color:#666>))</span> <span style=color:#666>{</span>
+     out<span style=color:#666>.</span><span style=color:#b44>println</span><span style=color:#666>(</span><span style=color:#b44>&#34;Parameter is not valid.&#34;</span><span style=color:#666>);</span>
+     <span style=color:#a2f;font-weight:700>return</span><span style=color:#666>;</span>
+   <span style=color:#666>}</span>
+   The directory does not exist or is not
+   File currentPathFile <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> File<span style=color:#666>(</span>currentPath<span style=color:#666>);</span>
+   <span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(!</span>currentPathFile<span style=color:#666>.</span><span style=color:#b44>isDirectory</span><span style=color:#666>()){</span>
+     out<span style=color:#666>.</span><span style=color:#b44>println</span><span style=color:#666>(</span><span style=color:#b44>&#34;Directory does not exist.&#34;</span><span style=color:#666>);</span>
+     <span style=color:#a2f;font-weight:700>return</span><span style=color:#666>;</span>
+   <span style=color:#666>}</span>
+
+   Traversing the file information taken from the directory
+   List<span style=color:#666>&lt;</span>Hashtable<span style=color:#666>&lt;?,?&gt;&gt;</span> fileList <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> ArrayList<span style=color:#666>&lt;</span>Hashtable<span style=color:#666>&lt;?,?&gt;&gt;();</span>
+   <span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(</span>currentPathFile<span style=color:#666>.</span><span style=color:#b44>listFiles</span><span style=color:#666>()</span> <span style=color:#666>!=</span> <span style=color:#a2f;font-weight:700>null</span><span style=color:#666>)</span> <span style=color:#666>{</span>
+     <span style=color:#a2f;font-weight:700>for</span> <span style=color:#666>(</span>File file <span style=color:#666>:</span> currentPathFile<span style=color:#666>.</span><span style=color:#b44>listFiles</span><span style=color:#666>())</span> <span style=color:#666>{</span>
+       Hashtable<span style=color:#666>&lt;</span>String<span style=color:#666>,</span> Object<span style=color:#666>&gt;</span> hash <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> Hashtable<span style=color:#666>&lt;</span>String<span style=color:#666>,</span> Object<span style=color:#666>&gt;();</span>
+       String fileName <span style=color:#666>=</span> file<span style=color:#666>.</span><span style=color:#b44>getName</span><span style=color:#666>();</span>
+       <span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(</span>file<span style=color:#666>.</span><span style=color:#b44>isDirectory</span><span style=color:#666>())</span> <span style=color:#666>{</span>
+         hash<span style=color:#666>.</span><span style=color:#b44>put</span><span style=color:#666>(</span><span style=color:#b44>&#34;is_dir&#34;</span><span style=color:#666>,</span> <span style=color:#a2f;font-weight:700>true</span><span style=color:#666>);</span>
+         hash<span style=color:#666>.</span><span style=color:#b44>put</span><span style=color:#666>(</span><span style=color:#b44>&#34;has_file&#34;</span><span style=color:#666>,</span> <span style=color:#666>(</span>file<span style=color:#666>.</span><span style=color:#b44>listFiles</span><span style=color:#666>()</span> <span style=color:#666>!=</span> <span style=color:#a2f;font-weight:700>null</span><span style=color:#666>));</span>
+         hash<span style=color:#666>.</span><span style=color:#b44>put</span><span style=color:#666>(</span><span style=color:#b44>&#34;filesize&#34;</span><span style=color:#666>,</span> 0L<span style=color:#666>);</span>
+         hash<span style=color:#666>.</span><span style=color:#b44>put</span><span style=color:#666>(</span><span style=color:#b44>&#34;is_photo&#34;</span><span style=color:#666>,</span> <span style=color:#a2f;font-weight:700>false</span><span style=color:#666>);</span>
+         hash<span style=color:#666>.</span><span style=color:#b44>put</span><span style=color:#666>(</span><span style=color:#b44>&#34;filetype&#34;</span><span style=color:#666>,</span> <span style=color:#b44>&#34;&#34;</span><span style=color:#666>);</span>
+       <span style=color:#666>}</span> <span style=color:#a2f;font-weight:700>else</span> <span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(</span>file<span style=color:#666>.</span><span style=color:#b44>isFile</span><span style=color:#666>()){</span>
+         String fileExt <span style=color:#666>=</span> fileName<span style=color:#666>.</span><span style=color:#b44>substring</span><span style=color:#666>(</span>fileName<span style=color:#666>.</span><span style=color:#b44>lastIndexOf</span><span style=color:#666>(</span><span style=color:#b44>&#34;.&#34;</span><span style=color:#666>)</span> <span style=color:#666>+</span> 1<span style=color:#666>).</span><span style=color:#b44>toLowerCase</span><span style=color:#666>();</span>
+         hash<span style=color:#666>.</span><span style=color:#b44>put</span><span style=color:#666>(</span><span style=color:#b44>&#34;is_dir&#34;</span><span style=color:#666>,</span> <span style=color:#a2f;font-weight:700>false</span><span style=color:#666>);</span>
+         hash<span style=color:#666>.</span><span style=color:#b44>put</span><span style=color:#666>(</span><span style=color:#b44>&#34;has_file&#34;</span><span style=color:#666>,</span> <span style=color:#a2f;font-weight:700>false</span><span style=color:#666>);</span>
+         hash<span style=color:#666>.</span><span style=color:#b44>put</span><span style=color:#666>(</span><span style=color:#b44>&#34;filesize&#34;</span><span style=color:#666>,</span> file<span style=color:#666>.</span><span style=color:#b44>length</span><span style=color:#666>());</span>
+         hash<span style=color:#666>.</span><span style=color:#b44>put</span><span style=color:#666>(</span><span style=color:#b44>&#34;is_photo&#34;</span><span style=color:#666>,</span> Arrays<span style=color:#666>.&lt;</span>String<span style=color:#666>&gt;</span>asList<span style=color:#666>(</span>FILETYPES<span style=color:#666>).</span><span style=color:#b44>contains</span><span style=color:#666>(</span>fileExt<span style=color:#666>));</span>
+         hash<span style=color:#666>.</span><span style=color:#b44>put</span><span style=color:#666>(</span><span style=color:#b44>&#34;filetype&#34;</span><span style=color:#666>,</span> fileExt<span style=color:#666>);</span>
+       <span style=color:#666>}</span>
+       hash<span style=color:#666>.</span><span style=color:#b44>put</span><span style=color:#666>(</span><span style=color:#b44>&#34;filename&#34;</span><span style=color:#666>,</span> fileName<span style=color:#666>);</span>
+       hash<span style=color:#666>.</span><span style=color:#b44>put</span><span style=color:#666>(</span><span style=color:#b44>&#34;datetime&#34;</span><span style=color:#666>,</span> <span style=color:#a2f;font-weight:700>new</span> SimpleDateFormat<span style=color:#666>(</span><span style=color:#b44>&#34;yyyy-MM-dd HH:mm:ss&#34;</span><span style=color:#666>).</span><span style=color:#b44>format</span><span style=color:#666>(</span>file<span style=color:#666>.</span><span style=color:#b44>lastModified</span><span style=color:#666>()));</span>
+       fileList<span style=color:#666>.</span><span style=color:#b44>add</span><span style=color:#666>(</span>hash<span style=color:#666>);</span>
+     <span style=color:#666>}</span>
+   <span style=color:#666>}</span>
+
+   <span style=color:#a2f;font-weight:700>if</span> <span style=color:#666>(</span><span style=color:#b44>&#34;size&#34;</span><span style=color:#666>.</span><span style=color:#b44>equals</span><span style=color:#666>(</span>order<span style=color:#666>))</span> <span style=color:#666>{</span>
+     Collections<span style=color:#666>.</span><span style=color:#b44>sort</span><span style=color:#666>(</span>fileList<span style=color:#666>,</span> <span style=color:#a2f;font-weight:700>new</span> SizeComparator<span style=color:#666>());</span>
+   <span style=color:#666>}</span> <span style=color:#a2f;font-weight:700>else</span> <span style=color:#a2f;font-weight:700>if</span> <span style=color:#666>(</span><span style=color:#b44>&#34;type&#34;</span><span style=color:#666>.</span><span style=color:#b44>equals</span><span style=color:#666>(</span>order<span style=color:#666>))</span> <span style=color:#666>{</span>
+     Collections<span style=color:#666>.</span><span style=color:#b44>sort</span><span style=color:#666>(</span>fileList<span style=color:#666>,</span> <span style=color:#a2f;font-weight:700>new</span> TypeComparator<span style=color:#666>());</span>
+   <span style=color:#666>}</span> <span style=color:#a2f;font-weight:700>else</span> <span style=color:#666>{</span>
+     Collections<span style=color:#666>.</span><span style=color:#b44>sort</span><span style=color:#666>(</span>fileList<span style=color:#666>,</span> <span style=color:#a2f;font-weight:700>new</span> NameComparator<span style=color:#666>());</span>
+   <span style=color:#666>}</span>
+   
+   out<span style=color:#666>.</span><span style=color:#b44>println</span><span style=color:#666>(</span>toJSONString<span style=color:#666>(</span>currentUrl<span style=color:#666>,</span> currentDirPath<span style=color:#666>,</span> moveupDirPath<span style=color:#666>,</span> fileList<span style=color:#666>));</span>
+   
+   out<span style=color:#666>.</span><span style=color:#b44>flush</span><span style=color:#666>();</span>
+   out<span style=color:#666>.</span><span style=color:#b44>close</span><span style=color:#666>();</span>
+ <span style=color:#666>}</span>
+
+ <span style=color:#a2f;font-weight:700>public</span> <span style=color:#0b0;font-weight:700>void</span> <span style=color:#00a000>doPost</span><span style=color:#666>(</span>HttpServletRequest request<span style=color:#666>,</span> HttpServletResponse response<span style=color:#666>)</span>
+     <span style=color:#a2f;font-weight:700>throws</span> ServletException<span style=color:#666>,</span> IOException <span style=color:#666>{</span>
+   doGet<span style=color:#666>(</span>request<span style=color:#666>,</span> response<span style=color:#666>);</span>
+ <span style=color:#666>}</span>
+ 
+ <span style=color:#080;font-style:italic>/**
+</span><span style=color:#080;font-style:italic>  Output the script that prints the failed statement uploaded
+</span><span style=color:#080;font-style:italic>  * 
+</span><span style=color:#080;font-style:italic>  :: @param message failure message
+</span><span style=color:#080;font-style:italic>  * 
+</span><span style=color:#080;font-style:italic>  :: @return statement printed on the page
+</span><span style=color:#080;font-style:italic>  */</span>
+ <span style=color:#a2f;font-weight:700>public</span> String <span style=color:#00a000>alertMsg</span><span style=color:#666>(</span>String message<span style=color:#666>)</span> <span style=color:#666>{</span>
+   StringBuffer sb <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> StringBuffer<span style=color:#666>(</span><span style=color:#b44>&#34;&lt;script type\&#34;text/javascript\&#34;&gt;&#34;</span><span style=color:#666>);</span>
+   sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;alert(\&#34;&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>message<span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;);&#34;</span><span style=color:#666>);</span>
+   sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;&lt;/script&gt;&#34;</span><span style=color:#666>);</span>
+   <span style=color:#a2f;font-weight:700>return</span> sb<span style=color:#666>.</span><span style=color:#b44>toString</span><span style=color:#666>();</span>
+ <span style=color:#666>}</span>
+ 
+ <span style=color:#a2f;font-weight:700>public</span> String <span style=color:#00a000>toJSONString</span><span style=color:#666>(</span>String currentUrl<span style=color:#666>,</span> String currentDirPath<span style=color:#666>,</span> String moveupDirPath<span style=color:#666>,</span> List<span style=color:#666>&lt;</span>Hashtable<span style=color:#666>&lt;?,</span> <span style=color:#666>?&gt;&gt;</span> fileList<span style=color:#666>){</span>
+   StringBuilder sb <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> StringBuilder<span style=color:#666>(</span><span style=color:#b44>&#34;{\&#34;current_url\&#34;:\&#34;&#34;</span><span style=color:#666>);</span>
+   sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span>currentUrl<span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;,&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;current_dir_path\&#34;:\&#34;&#34;</span><span style=color:#666>);</span>
+   sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span>currentDirPath<span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;,\&#34;moveup_dir_path\&#34;:\&#34;&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>moveupDirPath<span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;,&#34;</span><span style=color:#666>);</span>
+   sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;file_list\&#34;:[&#34;</span><span style=color:#666>);</span>
+   <span style=color:#0b0;font-weight:700>int</span> i <span style=color:#666>=</span> 0<span style=color:#666>;</span>
+   sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;{&#34;</span><span style=color:#666>);</span>
+   <span style=color:#a2f;font-weight:700>for</span><span style=color:#666>(</span>Hashtable<span style=color:#666>&lt;?,?&gt;</span> he <span style=color:#666>:</span> fileList<span style=color:#666>){</span>  
+     <span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(</span>i <span style=color:#666>!=</span> <span style=color:#666>(</span>fileList<span style=color:#666>.</span><span style=color:#b44>size</span><span style=color:#666>()</span> <span style=color:#666>-</span> 1<span style=color:#666>)){</span>
+       sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;filename\&#34;:\&#34;&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>he<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;filename&#34;</span><span style=color:#666>)).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;,&#34;</span><span style=color:#666>);</span>
+       sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;filesize\&#34;:&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>he<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;filesize&#34;</span><span style=color:#666>)).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;,&#34;</span><span style=color:#666>);</span>
+       sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;filetype\&#34;:\&#34;&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>he<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;filetype&#34;</span><span style=color:#666>)).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;,&#34;</span><span style=color:#666>);</span>
+       sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;has_file\&#34;:&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>he<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;has_file&#34;</span><span style=color:#666>)).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;,&#34;</span><span style=color:#666>);</span>
+       sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;is_dir\&#34;:&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>he<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;is_dir&#34;</span><span style=color:#666>)).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;,&#34;</span><span style=color:#666>);</span>
+       sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;is_photo\&#34;:&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>he<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;is_photo&#34;</span><span style=color:#666>)).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;,&#34;</span><span style=color:#666>);</span>
+       sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;datetime\&#34;:\&#34;&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>he<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;datetime&#34;</span><span style=color:#666>)).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;&#34;</span><span style=color:#666>);</span>
+       sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;},{&#34;</span><span style=color:#666>);</span>
+     <span style=color:#666>}</span><span style=color:#a2f;font-weight:700>else</span><span style=color:#666>{</span>
+       sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;filename\&#34;:\&#34;&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>he<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;filename&#34;</span><span style=color:#666>)).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;,&#34;</span><span style=color:#666>);</span>
+       sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;filesize\&#34;:&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>he<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;filesize&#34;</span><span style=color:#666>)).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;,&#34;</span><span style=color:#666>);</span>
+       sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;filetype\&#34;:\&#34;&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>he<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;filetype&#34;</span><span style=color:#666>)).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;,&#34;</span><span style=color:#666>);</span>
+       sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;has_file\&#34;:&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>he<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;has_file&#34;</span><span style=color:#666>)).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;,&#34;</span><span style=color:#666>);</span>
+       sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;is_dir\&#34;:&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>he<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;is_dir&#34;</span><span style=color:#666>)).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;,&#34;</span><span style=color:#666>);</span>
+       sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;is_photo\&#34;:&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>he<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;is_photo&#34;</span><span style=color:#666>)).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;,&#34;</span><span style=color:#666>);</span>
+       sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;datetime\&#34;:\&#34;&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>he<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;datetime&#34;</span><span style=color:#666>)).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;&#34;</span><span style=color:#666>);</span>
+       sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;}&#34;</span><span style=color:#666>);</span>
+     <span style=color:#666>}</span>
+     i<span style=color:#666>++;</span>
+   <span style=color:#666>}</span>
+   i <span style=color:#666>=</span> 0<span style=color:#666>;</span>
+   sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;],\&#34;total_count\&#34;:&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>fileList<span style=color:#666>.</span><span style=color:#b44>size</span><span style=color:#666>()).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;}&#34;</span><span style=color:#666>);</span>
+   <span style=color:#a2f;font-weight:700>return</span> sb<span style=color:#666>.</span><span style=color:#b44>toString</span><span style=color:#666>();</span>
+ <span style=color:#666>}</span>
+
+ <span style=color:#a2f;font-weight:700>public</span> <span style=color:#a2f;font-weight:700>class</span> <span style=color:#00f>NameComparator</span> <span style=color:#a2f;font-weight:700>implements</span> Comparator<span style=color:#666>&lt;</span>Object<span style=color:#666>&gt;</span> <span style=color:#666>{</span>
+   <span style=color:#a2f;font-weight:700>public</span> <span style=color:#0b0;font-weight:700>int</span> <span style=color:#00a000>compare</span><span style=color:#666>(</span>Object a<span style=color:#666>,</span> Object b<span style=color:#666>)</span> <span style=color:#666>{</span>
+     Hashtable<span style=color:#666>&lt;?,</span> <span style=color:#666>?&gt;</span> hashA <span style=color:#666>=</span> <span style=color:#666>(</span>Hashtable<span style=color:#666>&lt;?,</span> <span style=color:#666>?&gt;)</span> a<span style=color:#666>;</span>
+     Hashtable<span style=color:#666>&lt;?,</span> <span style=color:#666>?&gt;</span> hashB <span style=color:#666>=</span> <span style=color:#666>(</span>Hashtable<span style=color:#666>&lt;?,</span> <span style=color:#666>?&gt;)</span> b<span style=color:#666>;</span>
+     <span style=color:#a2f;font-weight:700>if</span> <span style=color:#666>(((</span>Boolean<span style=color:#666>)</span> hashA<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;is_dir&#34;</span><span style=color:#666>))</span>
+         <span style=color:#666>&amp;&amp;</span> <span style=color:#666>!</span> <span style=color:#666>((</span>Boolean<span style=color:#666>)</span> hashB<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;is_dir&#34;</span><span style=color:#666>)))</span> <span style=color:#666>{</span>
+       <span style=color:#a2f;font-weight:700>return</span> <span style=color:#666>-</span>1<span style=color:#666>;</span>
+     <span style=color:#666>}</span> <span style=color:#a2f;font-weight:700>else</span> <span style=color:#a2f;font-weight:700>if</span> <span style=color:#666>(!(</span> <span style=color:#666>(</span>Boolean<span style=color:#666>)</span> hashA<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;is_dir&#34;</span><span style=color:#666>))</span>
+         <span style=color:#666>&amp;&amp;</span> <span style=color:#666>((</span>Boolean<span style=color:#666>)</span> hashB<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;is_dir&#34;</span><span style=color:#666>)))</span> <span style=color:#666>{</span>
+       <span style=color:#a2f;font-weight:700>return</span> 1<span style=color:#666>;</span>
+     <span style=color:#666>}</span> <span style=color:#a2f;font-weight:700>else</span> <span style=color:#666>{</span>
+       <span style=color:#a2f;font-weight:700>return</span> <span style=color:#666>((</span>String<span style=color:#666>)</span> hashA<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;filename&#34;</span><span style=color:#666>)).</span><span style=color:#b44>compareTo</span><span style=color:#666>((</span>String<span style=color:#666>)</span> hashB<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;filename&#34;</span><span style=color:#666>));</span>
+     <span style=color:#666>}</span>
+   <span style=color:#666>}</span>
+ <span style=color:#666>}</span>
+
+ <span style=color:#a2f;font-weight:700>public</span> <span style=color:#a2f;font-weight:700>class</span> <span style=color:#00f>SizeComparator</span> <span style=color:#a2f;font-weight:700>implements</span> Comparator<span style=color:#666>&lt;</span>Object<span style=color:#666>&gt;</span> <span style=color:#666>{</span>
+   <span style=color:#a2f;font-weight:700>public</span> <span style=color:#0b0;font-weight:700>int</span> <span style=color:#00a000>compare</span><span style=color:#666>(</span>Object a<span style=color:#666>,</span> Object b<span style=color:#666>)</span> <span style=color:#666>{</span>
+     Hashtable<span style=color:#666>&lt;?,</span> <span style=color:#666>?&gt;</span> hashA <span style=color:#666>=</span> <span style=color:#666>(</span>Hashtable<span style=color:#666>&lt;?,</span> <span style=color:#666>?&gt;)</span> a<span style=color:#666>;</span>
+     Hashtable<span style=color:#666>&lt;?,</span> <span style=color:#666>?&gt;</span> hashB <span style=color:#666>=</span> <span style=color:#666>(</span>Hashtable<span style=color:#666>&lt;?,</span> <span style=color:#666>?&gt;)</span> b<span style=color:#666>;</span>
+     <span style=color:#a2f;font-weight:700>if</span> <span style=color:#666>(((</span>Boolean<span style=color:#666>)</span> hashA<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;is_dir&#34;</span><span style=color:#666>))</span>
+         <span style=color:#666>&amp;&amp;</span> <span style=color:#666>!</span> <span style=color:#666>((</span>Boolean<span style=color:#666>)</span> hashB<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;is_dir&#34;</span><span style=color:#666>)))</span> <span style=color:#666>{</span>
+       <span style=color:#a2f;font-weight:700>return</span> <span style=color:#666>-</span>1<span style=color:#666>;</span>
+     <span style=color:#666>}</span> <span style=color:#a2f;font-weight:700>else</span> <span style=color:#a2f;font-weight:700>if</span> <span style=color:#666>(!(</span> <span style=color:#666>(</span>Boolean<span style=color:#666>)</span> hashA<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;is_dir&#34;</span><span style=color:#666>))</span>
+         <span style=color:#666>&amp;&amp;</span> <span style=color:#666>((</span>Boolean<span style=color:#666>)</span> hashB<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;is_dir&#34;</span><span style=color:#666>)))</span> <span style=color:#666>{</span>
+       <span style=color:#a2f;font-weight:700>return</span> 1<span style=color:#666>;</span>
+     <span style=color:#666>}</span> <span style=color:#a2f;font-weight:700>else</span> <span style=color:#666>{</span>
+       <span style=color:#a2f;font-weight:700>if</span> <span style=color:#666>(((</span>Long<span style=color:#666>)</span> hashA<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;filesize&#34;</span><span style=color:#666>))</span> <span style=color:#666>&gt;</span> <span style=color:#666>((</span>Long<span style=color:#666>)</span> hashB<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;filesize&#34;</span><span style=color:#666>)))</span> <span style=color:#666>{</span>
+         <span style=color:#a2f;font-weight:700>return</span> 1<span style=color:#666>;</span>
+       <span style=color:#666>}</span> <span style=color:#a2f;font-weight:700>else</span> <span style=color:#a2f;font-weight:700>if</span> <span style=color:#666>(((</span>Long<span style=color:#666>)</span> hashA<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;filesize&#34;</span><span style=color:#666>))</span> <span style=color:#666>&lt;</span> <span style=color:#666>((</span>Long<span style=color:#666>)</span> hashB<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;filesize&#34;</span><span style=color:#666>)))</span> <span style=color:#666>{</span>
+         <span style=color:#a2f;font-weight:700>return</span> <span style=color:#666>-</span>1<span style=color:#666>;</span>
+       <span style=color:#666>}</span> <span style=color:#a2f;font-weight:700>else</span> <span style=color:#666>{</span>
+         <span style=color:#a2f;font-weight:700>return</span> 0<span style=color:#666>;</span>
+       <span style=color:#666>}</span>
+     <span style=color:#666>}</span>
+   <span style=color:#666>}</span>
+ <span style=color:#666>}</span>
+
+ <span style=color:#a2f;font-weight:700>public</span> <span style=color:#a2f;font-weight:700>class</span> <span style=color:#00f>TypeComparator</span> <span style=color:#a2f;font-weight:700>implements</span> Comparator<span style=color:#666>&lt;</span>Object<span style=color:#666>&gt;</span> <span style=color:#666>{</span>
+   <span style=color:#a2f;font-weight:700>public</span> <span style=color:#0b0;font-weight:700>int</span> <span style=color:#00a000>compare</span><span style=color:#666>(</span>Object a<span style=color:#666>,</span> Object b<span style=color:#666>)</span> <span style=color:#666>{</span>
+     Hashtable<span style=color:#666>&lt;?,</span> <span style=color:#666>?&gt;</span> hashA <span style=color:#666>=</span> <span style=color:#666>(</span>Hashtable<span style=color:#666>&lt;?,</span> <span style=color:#666>?&gt;)</span> a<span style=color:#666>;</span>
+     Hashtable<span style=color:#666>&lt;?,</span> <span style=color:#666>?&gt;</span> hashB <span style=color:#666>=</span> <span style=color:#666>(</span>Hashtable<span style=color:#666>&lt;?,</span> <span style=color:#666>?&gt;)</span> b<span style=color:#666>;</span>
+     <span style=color:#a2f;font-weight:700>if</span> <span style=color:#666>(((</span>Boolean<span style=color:#666>)</span> hashA<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;is_dir&#34;</span><span style=color:#666>))</span>
+         <span style=color:#666>&amp;&amp;</span> <span style=color:#666>!</span> <span style=color:#666>((</span>Boolean<span style=color:#666>)</span> hashB<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;is_dir&#34;</span><span style=color:#666>)))</span> <span style=color:#666>{</span>
+       <span style=color:#a2f;font-weight:700>return</span> <span style=color:#666>-</span>1<span style=color:#666>;</span>
+     <span style=color:#666>}</span> <span style=color:#a2f;font-weight:700>else</span> <span style=color:#a2f;font-weight:700>if</span> <span style=color:#666>(!(</span> <span style=color:#666>(</span>Boolean<span style=color:#666>)</span> hashA<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;is_dir&#34;</span><span style=color:#666>))</span>
+         <span style=color:#666>&amp;&amp;</span> <span style=color:#666>((</span>Boolean<span style=color:#666>)</span> hashB<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;is_dir&#34;</span><span style=color:#666>)))</span> <span style=color:#666>{</span>
+       <span style=color:#a2f;font-weight:700>return</span> 1<span style=color:#666>;</span>
+     <span style=color:#666>}</span> <span style=color:#a2f;font-weight:700>else</span> <span style=color:#666>{</span>
+       <span style=color:#a2f;font-weight:700>return</span> <span style=color:#666>((</span>String<span style=color:#666>)</span> hashA<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;filetype&#34;</span><span style=color:#666>)).</span><span style=color:#b44>compareTo</span><span style=color:#666>((</span>String<span style=color:#666>)</span> hashB<span style=color:#666>.</span><span style=color:#b44>get</span><span style=color:#666>(</span><span style=color:#b44>&#34;filetype&#34;</span><span style=color:#666>));</span>
+     <span style=color:#666>}</span>
+   <span style=color:#666>}</span>
+ <span style=color:#666>}</span>
+
+<span style=color:#666>}</span>
+
+</code></pre></div><p>:: Attachment upload code</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>
+<span style=color:#a2f;font-weight:700>package</span> <span style=color:#00f;font-weight:700>com.elkan.kindeditor.upload</span><span style=color:#666>;</span>
+
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.io.File</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.io.IOException</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.io.PrintWriter</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.text.SimpleDateFormat</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.util.Arrays</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.util.Date</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.util.Iterator</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.util.List</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.util.Random</span><span style=color:#666>;</span>
+
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.servlet.ServletException</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.servlet.http.HttpServlet</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.servlet.http.HttpServletRequest</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.servlet.http.HttpServletResponse</span><span style=color:#666>;</span>
+
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>org.apache.commons.fileupload.FileItem</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>org.apache.commons.fileupload.FileItemFactory</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>org.apache.commons.fileupload.disk.DiskFileItemFactory</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>org.apache.commons.fileupload.servlet.ServletFileUpload</span><span style=color:#666>;</span>
+
+<span style=color:#a2f;font-weight:700>public</span> <span style=color:#a2f;font-weight:700>class</span> <span style=color:#00f>UploadAccessory</span> <span style=color:#a2f;font-weight:700>extends</span> HttpServlet <span style=color:#666>{</span>
+
+  <span style=color:#a2f;font-weight:700>private</span> <span style=color:#a2f;font-weight:700>static</span> <span style=color:#a2f;font-weight:700>final</span> <span style=color:#0b0;font-weight:700>long</span> serialVersionUID <span style=color:#666>=</span> 1L<span style=color:#666>;</span>
+
+  The size of the uploaded file
+  <span style=color:#a2f;font-weight:700>protected</span> <span style=color:#0b0;font-weight:700>long</span> MAX_SIZE <span style=color:#666>=</span> 1000000<span style=color:#666>;</span>
+  Define the extension of the file that is allowed to be uploaded
+  <span style=color:#a2f;font-weight:700>protected</span> String<span style=color:#666>[]</span> FILETYPES <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> String<span style=color:#666>[]{</span><span style=color:#b44>&#34;doc&#34;</span><span style=color:#666>,</span> <span style=color:#b44>&#34;xls&#34;</span><span style=color:#666>,</span> <span style=color:#b44>&#34;ppt&#34;</span><span style=color:#666>,</span> <span style=color:#b44>&#34;pdf&#34;</span><span style=color:#666>,</span> <span style=color:#b44>&#34;txt&#34;</span><span style=color:#666>,</span> <span style=color:#b44>&#34;rar&#34;</span> <span style=color:#666>,</span> <span style=color:#b44>&#34;zip&#34;</span><span style=color:#666>};</span>
+  Define the upload file save directory path
+  <span style=color:#a2f;font-weight:700>protected</span> String UPLOAD_PATH <span style=color:#666>=</span> <span style=color:#b44>&#34;&#34;</span><span style=color:#666>;</span>
+  
+  <span style=color:#a2f;font-weight:700>protected</span> String id <span style=color:#666>=</span> <span style=color:#b44>&#34;&#34;</span><span style=color:#666>;</span>  
+
+  <span style=color:#a2f;font-weight:700>protected</span> String attachTitle <span style=color:#666>=</span> <span style=color:#b44>&#34;&#34;</span><span style=color:#666>;</span> 
+
+  <span style=color:#a2f;font-weight:700>protected</span> <span style=color:#0b0;font-weight:700>boolean</span> isFlag <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>false</span><span style=color:#666>;</span>
+
+  <span style=color:#a2f;font-weight:700>protected</span> String tempTitle <span style=color:#666>=</span> <span style=color:#b44>&#34;&#34;</span><span style=color:#666>;</span>
+
+
+  <span style=color:#a2f;font-weight:700>public</span> <span style=color:#0b0;font-weight:700>void</span> <span style=color:#00a000>doGet</span><span style=color:#666>(</span>HttpServletRequest request<span style=color:#666>,</span> HttpServletResponse response<span style=color:#666>)</span>
+  <span style=color:#a2f;font-weight:700>throws</span> ServletException<span style=color:#666>,</span> IOException <span style=color:#666>{</span>
+    doPost<span style=color:#666>(</span>request<span style=color:#666>,</span> response<span style=color:#666>);</span>
+  <span style=color:#666>}</span>
+
+  <span style=color:#a2f;font-weight:700>public</span> <span style=color:#0b0;font-weight:700>void</span> <span style=color:#00a000>doPost</span><span style=color:#666>(</span>HttpServletRequest request<span style=color:#666>,</span> HttpServletResponse response<span style=color:#666>)</span>
+  <span style=color:#a2f;font-weight:700>throws</span> ServletException<span style=color:#666>,</span> IOException <span style=color:#666>{</span>
+    
+    response<span style=color:#666>.</span><span style=color:#b44>setContentType</span><span style=color:#666>(</span><span style=color:#b44>&#34;text/html; charset=UTF-8&#34;</span><span style=color:#666>);</span>
+    PrintWriter out <span style=color:#666>=</span> response<span style=color:#666>.</span><span style=color:#b44>getWriter</span><span style=color:#666>();</span>
+    String savePath <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>this</span><span style=color:#666>.</span><span style=color:#b44>getInitParameter</span><span style=color:#666>(</span><span style=color:#b44>&#34;UPLOAD_PATH&#34;</span><span style=color:#666>);</span>
+    <span style=color:#a2f;font-weight:700>if</span> <span style=color:#666>(</span>savePath <span style=color:#666>==</span> <span style=color:#a2f;font-weight:700>null</span> <span style=color:#666>||</span> savePath<span style=color:#666>.</span><span style=color:#b44>isEmpty</span><span style=color:#666>())</span> <span style=color:#666>{</span>
+      out<span style=color:#666>.</span><span style=color:#b44>println</span> <span style=color:#666>(</span>alert <span style=color:#00a000>Msg</span> <span style=color:#666>(</span><span style=color:#b44>&#34;You haven&#39;t set the directory path for uploading files to save!&#34;</span><span style=color:#666>);</span>
+      <span style=color:#a2f;font-weight:700>return</span><span style=color:#666>;</span>
+    <span style=color:#666>}</span>
+    Determines whether the size of the uploaded file is set
+    <span style=color:#00a000>if</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>this</span><span style=color:#666>.</span><span style=color:#b44>getInitParameter</span><span style=color:#666>(</span><span style=color:#b44>&#34;MAX_SIZE&#34;</span><span style=color:#666>)</span> <span style=color:#666>!=</span> <span style=color:#a2f;font-weight:700>null</span><span style=color:#666>){</span>
+      MAX_SIZE <span style=color:#666>=</span> Integer<span style=color:#666>.</span><span style=color:#b44>parseInt</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>this</span><span style=color:#666>.</span><span style=color:#b44>getInitParameter</span><span style=color:#666>(</span><span style=color:#b44>&#34;MAX_SIZE&#34;</span><span style=color:#666>));</span>
+    <span style=color:#666>}</span>
+    Determines whether the type of upload file is set
+    <span style=color:#00a000>if</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>this</span><span style=color:#666>.</span><span style=color:#b44>getInitParameter</span><span style=color:#666>(</span><span style=color:#b44>&#34;FILETYPES&#34;</span><span style=color:#666>)</span> <span style=color:#666>!=</span> <span style=color:#a2f;font-weight:700>null</span><span style=color:#666>){</span>
+      FILETYPES <span style=color:#666>=</span> toArray<span style=color:#666>(</span><span style=color:#a2f;font-weight:700>this</span><span style=color:#666>.</span><span style=color:#b44>getInitParameter</span><span style=color:#666>(</span><span style=color:#b44>&#34;FILETYPES&#34;</span><span style=color:#666>));</span>
+    <span style=color:#666>}</span>
+    The file saves the directory path
+    String uploadPath <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> StringBuffer<span style=color:#666>(</span>request<span style=color:#666>.</span><span style=color:#b44>getSession</span><span style=color:#666>().</span><span style=color:#b44>getServletContext</span><span style=color:#666>().</span><span style=color:#b44>getRealPath</span><span style=color:#666>(</span><span style=color:#b44>&#34;/&#34;</span><span style=color:#666>)).</span><span style=color:#b44>append</span><span style=color:#666>(</span>savePath<span style=color:#666>).</span><span style=color:#b44>toString</span><span style=color:#666>();</span>
+
+    The file saves the directory URL
+    String saveUrl <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> StringBuffer<span style=color:#666>(</span>request<span style=color:#666>.</span><span style=color:#b44>getContextPath</span><span style=color:#666>()).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;/&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>savePath<span style=color:#666>).</span><span style=color:#b44>toString</span><span style=color:#666>();</span>
+
+    <span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(!</span> ServletFileUpload<span style=color:#666>.</span><span style=color:#b44>isMultipartContent</span><span style=color:#666>(</span>request<span style=color:#666>)){</span>  
+      out<span style=color:#666>.</span><span style=color:#b44>println</span> <span style=color:#666>(</span><span style=color:#b44>&#34;Please select the file to upload.&#34;</span> <span style=color:#666>));</span>
+      <span style=color:#a2f;font-weight:700>return</span><span style=color:#666>;</span>
+    <span style=color:#666>}</span>
+    Check the directory
+    File uploadDir <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> File<span style=color:#666>(</span>uploadPath<span style=color:#666>);</span>
+    <span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(!</span>uploadDir<span style=color:#666>.</span><span style=color:#b44>isDirectory</span><span style=color:#666>()){</span>
+      out<span style=color:#666>.</span><span style=color:#b44>println</span> <span style=color:#666>(</span>alert <span style=color:#00a000>Msg</span> <span style=color:#666>(</span><span style=color:#b44>&#34;Upload directory does not exist.&#34;</span> <span style=color:#666>));</span>
+      <span style=color:#a2f;font-weight:700>return</span><span style=color:#666>;</span>
+    <span style=color:#666>}</span>
+    Check directory write permissions
+    <span style=color:#00a000>if</span><span style=color:#666>(!</span>uploadDir<span style=color:#666>.</span><span style=color:#b44>canWrite</span><span style=color:#666>()){</span>
+      out<span style=color:#666>.</span><span style=color:#b44>println</span> <span style=color:#666>(</span><span style=color:#b44>&#34;The current role does not have write permission to upload directories.&#34;</span> <span style=color:#666>));</span>
+      <span style=color:#a2f;font-weight:700>return</span><span style=color:#666>;</span>
+    <span style=color:#666>}</span>
+
+    FileItemFactory factory <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> DiskFileItemFactory<span style=color:#666>();</span>
+    ServletFileUpload upload <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> ServletFileUpload<span style=color:#666>(</span>factory<span style=color:#666>);</span>
+    upload<span style=color:#666>.</span><span style=color:#b44>setHeaderEncoding</span><span style=color:#666>(</span><span style=color:#b44>&#34;UTF-8&#34;</span><span style=color:#666>);</span>
+    String temp <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>null</span><span style=color:#666>;</span>
+    String ext <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>null</span><span style=color:#666>;</span>
+    <span style=color:#a2f;font-weight:700>try</span><span style=color:#666>{</span>
+      List<span style=color:#666>&lt;?&gt;</span> items <span style=color:#666>=</span> upload<span style=color:#666>.</span><span style=color:#b44>parseRequest</span><span style=color:#666>(</span>request<span style=color:#666>);</span>
+      Iterator<span style=color:#666>&lt;?&gt;</span> itr <span style=color:#666>=</span> items<span style=color:#666>.</span><span style=color:#b44>iterator</span><span style=color:#666>();</span>
+      <span style=color:#a2f;font-weight:700>while</span> <span style=color:#666>(</span>itr<span style=color:#666>.</span><span style=color:#b44>hasNext</span><span style=color:#666>())</span> <span style=color:#666>{</span>
+        FileItem item <span style=color:#666>=</span> <span style=color:#666>(</span>FileItem<span style=color:#666>)</span> itr<span style=color:#666>.</span><span style=color:#b44>next</span><span style=color:#666>();</span>
+        String fileName <span style=color:#666>=</span> item<span style=color:#666>.</span><span style=color:#b44>getName</span><span style=color:#666>();</span>
+        temp <span style=color:#666>=</span> <span style=color:#666>(</span>String<span style=color:#666>)</span> item<span style=color:#666>.</span><span style=color:#b44>getName</span><span style=color:#666>();</span>
+        <span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(</span>temp <span style=color:#666>!=</span> <span style=color:#a2f;font-weight:700>null</span> <span style=color:#666>&amp;&amp;</span> <span style=color:#666>!</span>isFlag<span style=color:#666>){</span>
+          temp <span style=color:#666>=</span> temp<span style=color:#666>.</span><span style=color:#b44>substring</span><span style=color:#666>(</span>temp<span style=color:#666>.</span><span style=color:#b44>lastIndexOf</span><span style=color:#666>(</span><span style=color:#b44>&#34;\\&#34;</span><span style=color:#666>)+</span>1<span style=color:#666>);</span>
+          tempTitle <span style=color:#666>=</span> temp<span style=color:#666>;</span>
+          isFlag <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>true</span><span style=color:#666>;</span>
+        <span style=color:#666>}</span>
+        The ID of the KindEditor editor  
+        <span style=color:#00a000>if</span><span style=color:#666>(((</span>String<span style=color:#666>)</span>item<span style=color:#666>.</span><span style=color:#b44>getFieldName</span><span style=color:#666>()).</span><span style=color:#b44>equals</span><span style=color:#666>(</span><span style=color:#b44>&#34;id&#34;</span><span style=color:#666>)){</span>   
+          id <span style=color:#666>=</span> item<span style=color:#666>.</span><span style=color:#b44>getString</span><span style=color:#666>();</span> 
+        <span style=color:#666>}</span>  
+        Ret tips <span style=color:#a2f;font-weight:700>for</span> uploading images
+        <span style=color:#00a000>if</span><span style=color:#666>(((</span>String<span style=color:#666>)</span>item<span style=color:#666>.</span><span style=color:#b44>getFieldName</span><span style=color:#666>()).</span><span style=color:#b44>equals</span><span style=color:#666>(</span><span style=color:#b44>&#34;attachTitle&#34;</span><span style=color:#666>)){</span>   
+          attachTitle <span style=color:#666>=</span> item<span style=color:#666>.</span><span style=color:#b44>getString</span><span style=color:#666>();</span> 
+          <span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(</span>attachTitle <span style=color:#666>!=</span> <span style=color:#a2f;font-weight:700>null</span><span style=color:#666>){</span>
+            attachTitle <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> String<span style=color:#666>(</span>attachTitle<span style=color:#666>.</span><span style=color:#b44>getBytes</span><span style=color:#666>(</span><span style=color:#b44>&#34;ISO8859-1&#34;</span><span style=color:#666>),</span><span style=color:#b44>&#34;UTF-8&#34;</span><span style=color:#666>);</span>
+          <span style=color:#666>}</span>
+        <span style=color:#666>}</span> 
+        <span style=color:#a2f;font-weight:700>if</span> <span style=color:#666>(!</span>item<span style=color:#666>.</span><span style=color:#b44>isFormField</span><span style=color:#666>())</span> <span style=color:#666>{</span>
+          Check the file size
+          <span style=color:#00a000>if</span><span style=color:#666>(</span>item<span style=color:#666>.</span><span style=color:#b44>getSize</span><span style=color:#666>()</span> <span style=color:#666>&gt;</span> MAX_SIZE<span style=color:#666>){</span>            
+            out<span style=color:#666>.</span><span style=color:#b44>println</span> <span style=color:#666>(</span>alert <span style=color:#00a000>Msg</span> <span style=color:#666>(</span><span style=color:#b44>&#34;Upload file size exceeds limit.&#34;</span> <span style=color:#666>));</span>
+            <span style=color:#a2f;font-weight:700>return</span><span style=color:#666>;</span>
+          <span style=color:#666>}</span>
+          Check the extension
+          String fileExt <span style=color:#666>=</span> fileName<span style=color:#666>.</span><span style=color:#b44>substring</span><span style=color:#666>(</span>fileName<span style=color:#666>.</span><span style=color:#b44>lastIndexOf</span><span style=color:#666>(</span><span style=color:#b44>&#34;.&#34;</span><span style=color:#666>)</span> <span style=color:#666>+</span> 1<span style=color:#666>).</span><span style=color:#b44>toLowerCase</span><span style=color:#666>();</span>
+          <span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(!</span> Arrays<span style=color:#666>.&lt;</span>String<span style=color:#666>&gt;</span>asList<span style=color:#666>(</span>FILETYPES<span style=color:#666>).</span><span style=color:#b44>contains</span><span style=color:#666>(</span>fileExt<span style=color:#666>)){</span>
+            out<span style=color:#666>.</span><span style=color:#b44>println</span> <span style=color:#666>(</span>alert <span style=color:#00a000>Msg</span> <span style=color:#666>(</span><span style=color:#b44>&#34;Uploading file extensions is not allowed extensions.&#34;</span> <span style=color:#666>));</span>
+            <span style=color:#a2f;font-weight:700>return</span><span style=color:#666>;</span>
+          <span style=color:#666>}</span>
+          Create a folder based on time
+          SimpleDateFormat folderNameFormat <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> SimpleDateFormat<span style=color:#666>(</span><span style=color:#b44>&#34;yyyyMMdd&#34;</span><span style=color:#666>);</span>
+          String realPath <span style=color:#666>=</span> uploadPath <span style=color:#666>+</span> folderNameFormat<span style=color:#666>.</span><span style=color:#b44>format</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>new</span> Date<span style=color:#666>());</span>
+          File folder <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> File<span style=color:#666>(</span>realPath<span style=color:#666>);</span>
+          <span style=color:#0b0;font-weight:700>boolean</span> flag <span style=color:#666>=</span> folder<span style=color:#666>.</span><span style=color:#b44>exists</span><span style=color:#666>();</span>
+          Confirm that the folder already exists
+          <span style=color:#00a000>if</span><span style=color:#666>(!</span>flag<span style=color:#666>){</span>
+            flag <span style=color:#666>=</span> folder<span style=color:#666>.</span><span style=color:#b44>mkdir</span><span style=color:#666>();</span>
+          <span style=color:#666>}</span>
+          Create a folder and upload a picture
+          <span style=color:#00a000>if</span><span style=color:#666>(</span>flag<span style=color:#666>){</span>
+            SimpleDateFormat fileNameFormat <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> SimpleDateFormat<span style=color:#666>(</span><span style=color:#b44>&#34;yyyyMMddHHmmss&#34;</span><span style=color:#666>);</span>         
+            String newFileName <span style=color:#666>=</span> fileNameFormat<span style=color:#666>.</span><span style=color:#b44>format</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>new</span> Date<span style=color:#666>())</span> <span style=color:#666>+</span> <span style=color:#b44>&#34;_&#34;</span><span style=color:#666>+</span> <span style=color:#a2f;font-weight:700>new</span> Random<span style=color:#666>().</span><span style=color:#b44>nextInt</span><span style=color:#666>(</span>1000<span style=color:#666>)</span> <span style=color:#666>+</span> <span style=color:#b44>&#34;.&#34;</span> <span style=color:#666>+</span> fileExt<span style=color:#666>;</span>           
+            File uploadedFile <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> File<span style=color:#666>(</span>realPath<span style=color:#666>,</span> newFileName<span style=color:#666>);</span>            
+            item<span style=color:#666>.</span><span style=color:#b44>write</span><span style=color:#666>(</span>uploadedFile<span style=color:#666>);</span>
+            saveUrl <span style=color:#666>+=</span> folderNameFormat<span style=color:#666>.</span><span style=color:#b44>format</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>new</span> Date<span style=color:#666>())</span> <span style=color:#666>+</span> <span style=color:#b44>&#34;/&#34;</span> <span style=color:#666>+</span> newFileName<span style=color:#666>;</span> 
+            ext <span style=color:#666>=</span> fileExt<span style=color:#666>;</span>
+          <span style=color:#666>}</span><span style=color:#a2f;font-weight:700>else</span><span style=color:#666>{</span>
+            System<span style=color:#666>.</span><span style=color:#b44>out</span><span style=color:#666>.</span><span style=color:#b44>println</span> <span style=color:#666>(</span><span style=color:#b44>&#34;Folder creation failed, make sure the disk is not written protected and there are enough blanks&#34;</span><span style=color:#666>);</span>
+          <span style=color:#666>}</span>       
+        <span style=color:#666>}</span>
+      <span style=color:#666>}</span>
+      
+
+      <span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(</span>attachTitle <span style=color:#666>==</span> <span style=color:#a2f;font-weight:700>null</span> <span style=color:#666>||</span> attachTitle<span style=color:#666>.</span><span style=color:#b44>isEmpty</span><span style=color:#666>()){</span>
+        attachTitle <span style=color:#666>=</span> tempTitle<span style=color:#666>;</span>
+      <span style=color:#666>}</span>
+      
+      out<span style=color:#666>.</span><span style=color:#b44>println</span><span style=color:#666>(</span>insertAttach<span style=color:#666>(</span>id<span style=color:#666>,</span> saveUrl<span style=color:#666>,</span> attachTitle<span style=color:#666>,</span> ext<span style=color:#666>));</span>
+      
+    <span style=color:#666>}</span><span style=color:#a2f;font-weight:700>catch</span><span style=color:#666>(</span>Exception e<span style=color:#666>){</span>
+      e<span style=color:#666>.</span><span style=color:#b44>printStackTrace</span><span style=color:#666>();</span>
+    <span style=color:#666>}</span><span style=color:#a2f;font-weight:700>finally</span><span style=color:#666>{</span>
+      out<span style=color:#666>.</span><span style=color:#b44>flush</span><span style=color:#666>();</span>
+      out<span style=color:#666>.</span><span style=color:#b44>close</span><span style=color:#666>();</span>
+      isFlag <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>false</span><span style=color:#666>;</span>
+    <span style=color:#666>}</span>
+  <span style=color:#666>}</span>
+
+  
+  <span style=color:#080;font-style:italic>/**
+</span><span style=color:#080;font-style:italic>   Output the script that prints the failed statement uploaded
+</span><span style=color:#080;font-style:italic>   * 
+</span><span style=color:#080;font-style:italic>   :: @param message failure message
+</span><span style=color:#080;font-style:italic>   * 
+</span><span style=color:#080;font-style:italic>   :: @return statement printed on the page
+</span><span style=color:#080;font-style:italic>   */</span>
+  <span style=color:#a2f;font-weight:700>public</span> String <span style=color:#00a000>alertMsg</span><span style=color:#666>(</span>String message<span style=color:#666>){</span>
+    
+    StringBuilder sb <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> StringBuilder<span style=color:#666>(</span><span style=color:#b44>&#34;&lt;html&gt;&#34;</span><span style=color:#666>);</span>
+    sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;&lt;head&gt;&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;&lt;title&gt;error&lt;/title&gt;&#34;</span><span style=color:#666>);</span>
+    sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;&lt;meta http-equiv=\&#34;content-type\&#34; content=\&#34;text/html; charset=utf-8\&#34;&gt;&#34;</span><span style=color:#666>);</span>
+    sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;&lt;/head&gt;&#34;</span><span style=color:#666>);</span>
+    sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;&lt;body&gt;&#34;</span><span style=color:#666>);</span>
+    sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;&lt;script type=\&#34;text/javascript\&#34;&gt;&#34;</span><span style=color:#666>);</span>
+    sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;alert(\&#34;&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>message<span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;);history.back();&lt;/script&gt;&#34;</span><span style=color:#666>);</span>
+    sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;&lt;/body&gt;&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;&lt;/html&gt;&#34;</span><span style=color:#666>);</span>
+
+    <span style=color:#a2f;font-weight:700>return</span> sb<span style=color:#666>.</span><span style=color:#b44>toString</span><span style=color:#666>();</span>
+  <span style=color:#666>}</span>
+  
+  <span style=color:#080;font-style:italic>/**
+</span><span style=color:#080;font-style:italic>   The output is a script that inserts attachments into editor statements
+</span><span style=color:#080;font-style:italic>   * 
+</span><span style=color:#080;font-style:italic>   :: @param id editor ID
+</span><span style=color:#080;font-style:italic>   * 
+</span><span style=color:#080;font-style:italic>   :: @param the address of the attachment to the url
+</span><span style=color:#080;font-style:italic>   * 
+</span><span style=color:#080;font-style:italic>   :: @param the title property that was set when it was uploaded
+</span><span style=color:#080;font-style:italic>   * 
+</span><span style=color:#080;font-style:italic>   :: @param the suffix name of the file uploaded by ext
+</span><span style=color:#080;font-style:italic>   * 
+</span><span style=color:#080;font-style:italic>   :: @return script statement that inserts attachments into the editor
+</span><span style=color:#080;font-style:italic>   */</span>
+  <span style=color:#a2f;font-weight:700>public</span> String <span style=color:#00a000>insertAttach</span><span style=color:#666>(</span>String id<span style=color:#666>,</span> String url<span style=color:#666>,</span> String title<span style=color:#666>,</span> String ext<span style=color:#666>){</span>
+    StringBuilder sb <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> StringBuilder<span style=color:#666>(</span><span style=color:#b44>&#34;&lt;html&gt;&#34;</span><span style=color:#666>);</span>
+    sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;&lt;head&gt;&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;&lt;title&gt;Insert Accessory&lt;/title&gt;&#34;</span><span style=color:#666>);</span>
+    sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;&lt;meta http-equiv=\&#34;content-type\&#34; content=\&#34;text/html; charset=utf-8\&#34;&gt;&#34;</span><span style=color:#666>);</span>
+    sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;&lt;/head&gt;&#34;</span><span style=color:#666>);</span>
+    sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;&lt;body&gt;&#34;</span><span style=color:#666>);</span>
+    sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;&lt;script type=\&#34;text/javascript\&#34;&gt;&#34;</span><span style=color:#666>);</span>
+    sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;parent. KE.plugin[\&#34;accessory\&#34;].insert(\&#34;&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>id<span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;,\&#34;&#34;</span><span style=color:#666>);</span>
+    sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span>url<span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;,\&#34;&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>title<span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;,\&#34;&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>ext<span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;\&#34;);&lt;/script&gt;&#34;</span><span style=color:#666>);</span>
+    sb<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;&lt;/body&gt;&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;&lt;/html&gt;&#34;</span><span style=color:#666>);</span>
+    <span style=color:#a2f;font-weight:700>return</span> sb<span style=color:#666>.</span><span style=color:#b44>toString</span><span style=color:#666>();</span>
+  <span style=color:#666>}</span>
+
+  <span style=color:#080;font-style:italic>/**
+</span><span style=color:#080;font-style:italic>   The output allows an array of image types to be uploaded
+</span><span style=color:#080;font-style:italic>   * 
+</span><span style=color:#080;font-style:italic>   :: @param types of images allowed to be uploaded by fileType
+</span><span style=color:#080;font-style:italic>   * 
+</span><span style=color:#080;font-style:italic>   :: @return allows you to upload image types
+</span><span style=color:#080;font-style:italic>   */</span>
+  <span style=color:#a2f;font-weight:700>public</span> String<span style=color:#666>[]</span> <span style=color:#00a000>toArray</span><span style=color:#666>(</span>String filesType<span style=color:#666>){</span>
+
+    <span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(</span>filesType <span style=color:#666>==</span> <span style=color:#a2f;font-weight:700>null</span><span style=color:#666>){</span>
+      <span style=color:#a2f;font-weight:700>return</span> <span style=color:#a2f;font-weight:700>null</span><span style=color:#666>;</span>
+    <span style=color:#666>}</span>
+
+    String<span style=color:#666>[]</span> types <span style=color:#666>=</span> filesType<span style=color:#666>.</span><span style=color:#b44>split</span><span style=color:#666>(</span><span style=color:#b44>&#34;,&#34;</span><span style=color:#666>);</span>
+    String<span style=color:#666>[]</span> allowTypes <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> String<span style=color:#666>[</span>types<span style=color:#666>.</span><span style=color:#b44>length</span><span style=color:#666>];</span>
+    <span style=color:#0b0;font-weight:700>int</span> i <span style=color:#666>=</span> 0<span style=color:#666>;</span>
+    <span style=color:#a2f;font-weight:700>for</span><span style=color:#666>(</span>String type <span style=color:#666>:</span> types<span style=color:#666>){</span>
+      allowTypes<span style=color:#666>[</span>i<span style=color:#666>]</span> <span style=color:#666>=</span> type<span style=color:#666>;</span>
+      i<span style=color:#666>++;</span>
+    <span style=color:#666>}</span>
+
+    <span style=color:#a2f;font-weight:700>return</span> allowTypes<span style=color:#666>;</span>
+  <span style=color:#666>}</span>
+<span style=color:#666>}</span>
+
+</code></pre></div><p>:: Image compression code</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>
+<span style=color:#a2f;font-weight:700>package</span> <span style=color:#00f;font-weight:700>com.elkan.utils</span><span style=color:#666>;</span>
+
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.awt.Image</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.awt.image.BufferedImage</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.io.File</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.io.FileOutputStream</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>java.io.IOException</span><span style=color:#666>;</span>
+
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>javax.imageio.ImageIO</span><span style=color:#666>;</span>
+
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>com.sun.image.codec.jpeg.JPEGCodec</span><span style=color:#666>;</span>
+<span style=color:#a2f;font-weight:700>import</span> <span style=color:#00f;font-weight:700>com.sun.image.codec.jpeg.JPEGImageEncoder</span><span style=color:#666>;</span>
+
+<span style=color:#080;font-style:italic>/**
+</span><span style=color:#080;font-style:italic> :: How to process the picture
+</span><span style=color:#080;font-style:italic> * 
+</span><span style=color:#080;font-style:italic> * @author SENHUI
+</span><span style=color:#080;font-style:italic> */</span>
+<span style=color:#a2f;font-weight:700>public</span> <span style=color:#a2f;font-weight:700>class</span> <span style=color:#00f>ImageUtil</span> <span style=color:#666>{</span>
+  
+  <span style=color:#a2f;font-weight:700>public</span> <span style=color:#a2f;font-weight:700>static</span> <span style=color:#0b0;font-weight:700>int</span> ImgWidth <span style=color:#666>=</span> <span style=color:#666>-</span>1<span style=color:#666>;</span>
+  
+  <span style=color:#a2f;font-weight:700>public</span> <span style=color:#a2f;font-weight:700>static</span> <span style=color:#0b0;font-weight:700>int</span> ImgHeight <span style=color:#666>=</span> <span style=color:#666>-</span>1<span style=color:#666>;</span>
+
+
+  
+  <span style=color:#080;font-style:italic>/**
+</span><span style=color:#080;font-style:italic>   :: Compress the picture
+</span><span style=color:#080;font-style:italic>   * 
+</span><span style=color:#080;font-style:italic>   * @param imgsrc
+</span><span style=color:#080;font-style:italic>   The source file
+</span><span style=color:#080;font-style:italic>   * @param imgdist
+</span><span style=color:#080;font-style:italic>   :: Target file
+</span><span style=color:#080;font-style:italic>   * @param widthdist
+</span><span style=color:#080;font-style:italic>   :: Wide
+</span><span style=color:#080;font-style:italic>   * @param heightdist
+</span><span style=color:#080;font-style:italic>   :: High
+</span><span style=color:#080;font-style:italic>   */</span>
+  <span style=color:#a2f;font-weight:700>public</span> <span style=color:#a2f;font-weight:700>static</span> <span style=color:#0b0;font-weight:700>void</span> <span style=color:#00a000>resizeImg</span><span style=color:#666>(</span>String imgsrc<span style=color:#666>,</span> String imgdist<span style=color:#666>,</span>
+      <span style=color:#0b0;font-weight:700>int</span> widthdist<span style=color:#666>,</span> <span style=color:#0b0;font-weight:700>int</span> heightdist<span style=color:#666>)</span> <span style=color:#666>{</span>
+    <span style=color:#a2f;font-weight:700>try</span> <span style=color:#666>{</span>
+      File srcfile <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> File<span style=color:#666>(</span>imgsrc<span style=color:#666>);</span>
+      <span style=color:#a2f;font-weight:700>if</span> <span style=color:#666>(!</span>srcfile<span style=color:#666>.</span><span style=color:#b44>exists</span><span style=color:#666>())</span> <span style=color:#666>{</span>
+        <span style=color:#a2f;font-weight:700>return</span><span style=color:#666>;</span>
+      <span style=color:#666>}</span>
+      Image src <span style=color:#666>=</span> ImageIO<span style=color:#666>.</span><span style=color:#b44>read</span><span style=color:#666>(</span>srcfile<span style=color:#666>);</span>    
+      ImgWidth <span style=color:#666>=</span> src<span style=color:#666>.</span><span style=color:#b44>getWidth</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>null</span><span style=color:#666>);</span>
+      ImgHeight <span style=color:#666>=</span> src<span style=color:#666>.</span><span style=color:#b44>getHeight</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>null</span><span style=color:#666>);</span>
+      <span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(</span>ImgWidth <span style=color:#666>&lt;</span> widthdist<span style=color:#666>){</span>
+        widthdist <span style=color:#666>=</span> ImgWidth<span style=color:#666>;</span>
+      <span style=color:#666>}</span><span style=color:#a2f;font-weight:700>else</span><span style=color:#666>{</span>
+        ImgWidth <span style=color:#666>=</span> widthdist<span style=color:#666>;</span>
+      <span style=color:#666>}</span>
+      <span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(</span>ImgHeight <span style=color:#666>&lt;</span> heightdist<span style=color:#666>){</span>
+        heightdist <span style=color:#666>=</span> ImgHeight<span style=color:#666>;</span>
+      <span style=color:#666>}</span><span style=color:#a2f;font-weight:700>else</span><span style=color:#666>{</span>
+        ImgHeight <span style=color:#666>=</span> heightdist<span style=color:#666>;</span>
+      <span style=color:#666>}</span>
+      BufferedImage tag <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> BufferedImage<span style=color:#666>(</span>widthdist<span style=color:#666>,</span> heightdist<span style=color:#666>,</span>BufferedImage<span style=color:#666>.</span><span style=color:#b44>TYPE_INT_RGB</span><span style=color:#666>);</span>  
+      
+      tag<span style=color:#666>.</span><span style=color:#b44>getGraphics</span><span style=color:#666>().</span><span style=color:#b44>drawImage</span><span style=color:#666>(</span>src<span style=color:#666>.</span><span style=color:#b44>getScaledInstance</span><span style=color:#666>(</span>widthdist<span style=color:#666>,</span> heightdist<span style=color:#666>,</span>Image<span style=color:#666>.</span><span style=color:#b44>SCALE_SMOOTH</span><span style=color:#666>),</span> 0<span style=color:#666>,</span> 0<span style=color:#666>,</span> <span style=color:#a2f;font-weight:700>null</span><span style=color:#666>);</span>
+      FileOutputStream out <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> FileOutputStream<span style=color:#666>(</span>imgdist<span style=color:#666>);</span>
+      JPEGImageEncoder encoder <span style=color:#666>=</span> JPEGCodec<span style=color:#666>.</span><span style=color:#b44>createJPEGEncoder</span><span style=color:#666>(</span>out<span style=color:#666>);</span>
+      encoder<span style=color:#666>.</span><span style=color:#b44>encode</span><span style=color:#666>(</span>tag<span style=color:#666>);</span>
+      out<span style=color:#666>.</span><span style=color:#b44>close</span><span style=color:#666>();</span>
+    <span style=color:#666>}</span> <span style=color:#a2f;font-weight:700>catch</span> <span style=color:#666>(</span>IOException ex<span style=color:#666>)</span> <span style=color:#666>{</span>
+      ex<span style=color:#666>.</span><span style=color:#b44>printStackTrace</span><span style=color:#666>();</span>
+    <span style=color:#666>}</span>
+  <span style=color:#666>}</span>
+<span style=color:#666>}</span>
+
+</code></pre></div><p>Oh, the source code published here, there are more detailed comments on the document, I believe you can see a clear. Now we have any custom functions to develop to use it, don&rsquo;t forget to share your developed Dongdong Oh, I&rsquo;m here waiting for your big drive ah, hip-hop &mldr; Whether you are satisfied with this article or not, leave a mark on it, the next time you use it, come and get it, huh? By the end to give everyone a stay job, how to upload the attachment classification management? For example: word put in the word folder directory&mldr; (This feature has been implemented, but not in the published code, let&rsquo;s think about it and see who&rsquo;s the best approach, huh).</p><p>PS: Answers to some questions</p><ul><li>Why can&rsquo;t I use Struts2?</li></ul><p>A: The filter map that is generally configured for Struts2 in project development is all station resources, modified to simply filter your Struts2 access resources.
+(Now that the source code is published, you can write those upload methods into Action)</p><ul><li>There are definition upload types everywhere, isn&rsquo;t it cumbersome?</li></ul><p>A: In the web.xml configuration upload type is the original release to take into account the reuse of the problem, in addition to the default upload file type should be enough, as long as the size and save path can be;</p><ul><li>Can I add code highlighting?</li></ul><p>A: The original revision of this editor when the starting point is suitable for our project, so this function is not considered, but there is no code highlight plug-in on the Internet, can refer to the design.</p><ul><li>Can I paste the picture inside the word document?</li></ul><p>A: This feature is really not Oh, I am not very familiar with the web front end, but I did develop the function of table merge, is still in the testing phase. If only I could develop this picture paste, but it seems to be plug-in support, alas, windows stuff is not very fun.</p></div><footer class=post-footer><div class=post-tags><a href=/en/tags/kindeditor rel=tag title=KindEditor>#KindEditor#</a>
+<a href=/en/tags/struts2 rel=tag title=Struts2>#Struts2#</a>
+<a href=/en/tags/servlet rel=tag title=Servlet>#Servlet#</a></div><div class="bshare-custom icon-medium-plus" style=margin-top:50px><a href=# id=bshare-shareto>Share:</a>
+<a title=Wechat class=bshare-weixin></a><a title="QQ Zone" class=bshare-qzone></a><a title="Sina Min Blog" class=bshare-sinaminiblog></a><a title="Youdao Note" class=bshare-youdaonote></a><a title="QQ IM" class=bshare-qqim></a><a title=Douban class=bshare-douban></a><a title=Clipboard class=bshare-clipboard></a><a title=More class="bshare-more bshare-more-icon more-style-addthis"></a><span class="BSHARE_COUNT bshare-share-count">0</span></div><script type=text/javascript>(function(){var cnzz_s_tag=document.createElement('script');cnzz_s_tag.type='text/javascript';cnzz_s_tag.async=true;cnzz_s_tag.charset='utf-8';cnzz_s_tag.src='https://static.bshare.cn/b/buttonLite.js#style=-1&uuid=7c8159a4-9a15-466c-b223-6ab7a8d48699&pophcol=1&lang=zh';var root_s=document.getElementsByTagName('script')[0];root_s.parentNode.insertBefore(cnzz_s_tag,root_s);})();(function(){var cnzz_s_tag=document.createElement('script');cnzz_s_tag.type='text/javascript';cnzz_s_tag.async=true;cnzz_s_tag.charset='utf-8';cnzz_s_tag.src='https://static.bshare.cn/b/bshareC0.js';var root_s=document.getElementsByTagName('script')[0];root_s.parentNode.insertBefore(cnzz_s_tag,root_s);})();</script><div class=post-nav><div class=article-copyright><div class=article-copyright-img><img src=/img/qq_qrcode.png width=129px height=129px><div style=text-align:center>QQ QrCode</div></div><div class=article-copyright-info><p><span>Declaration：</span>JSP version of KindEidtor Online Editor Season 2 - Servlet and Struts2 Integrated Edition</p><p><span>Link：</span>/en/2011/10/17/kindeditor-jsp-struts2-servlet.html</p><p><span>Author：</span>Elkan.Li</p><p><span>Declaration： </span>This blog post article is under the <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a> license,Please indicate the source!</p></div></div><div class=clear></div></div><div class=reward-qr-info><div>If it can help you, you can give tips for blogger that how much you can. ^_^</div><button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');if(qr.style.display==='none'){qr.style.display='block';}else{qr.style.display='none'}">
+<span>Reward</span></button><div id=QR style=display:none><div id=wechat style=display:inline-block><img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay"><p>Wechat Pay</p></div><div id=alipay style=display:inline-block><img id=alipay_qr src=/img/ali-pay.png alt=Alipay><p>Ali Pay</p></div></div></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/en/2011/11/18/whosip-tool.html rel=next title="IP address query web interface call"><i class="fa fa-chevron-left"></i>IP address query web interface call</a></div><div class="post-nav-prev post-nav-item"><a href=/en/2011/05/16/myeclipse-chinese-tool.html rel=prev title="MyEclipse6.5 plus IDE Hanhua software">MyEclipse6.5 plus IDE Hanhua software
+<i class="fa fa-chevron-right"></i></a></div></div><div id=vcomments></div></footer></article></section></div></div><div class=sidebar-toggle><div class=sidebar-toggle-line-wrap><span class="sidebar-toggle-line sidebar-toggle-line-first"></span><span class="sidebar-toggle-line sidebar-toggle-line-middle"></span><span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id=sidebar class=sidebar><div class=sidebar-inner><section class="site-overview sidebar-panel sidebar-panel-active"><div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image src=/img/avatar.png alt=Elkan.Li><p class=site-author-name itemprop=name>Elkan.Li</p><p class="site-description motion-element" itemprop=description>Never forget your dreams！</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href=/en/post/><span class=site-state-item-count>47</span>
+<span class=site-state-item-name>Blogs</span></a></div><div class="site-state-item site-state-categories"><a href=/en/categories/><span class=site-state-item-count>23</span>
+<span class=site-state-item-name>Categories</span></a></div><div class="site-state-item site-state-tags"><a href=/en/tags/><span class=site-state-item-count>57</span>
+<span class=site-state-item-name>Tags</span></a></div></nav><div class="links-of-author motion-element"><span class=links-of-author-item><a href=https://github.com/elkan1788/ target=_blank title=GitHub><i class="fa fa-fw fa-github"></i>GitHub</a></span>
+<span class=links-of-author-item><a href=https://www.zhihu.com/people/fan-meng-xing-chen-1 target=_blank title=ZhiHu><i class="fa fa-fw fa-globe"></i>ZhiHu</a></span></div><div class="links-of-blogroll motion-element links-of-blogroll-inline"><div class=links-of-blogroll-title><i class="fa fa-fw fa-globe"></i>Links</div><ul class=links-of-blogroll-list><li class=links-of-blogroll-item><a href=https://nutzam.com/ title=Nutz target=_blank>Nutz</a></li><li class=links-of-blogroll-item><a href=https://jfinal.com/ title=JFinal target=_blank>JFinal</a></li><li class=links-of-blogroll-item><a href=http://wendal.net/ title=Wendal target=_blank>Wendal</a></li><li class=links-of-blogroll-item><a href=https://www.liaoxuefeng.com/ title=LiaoXueFeng target=_blank>LiaoXueFeng</a></li><li class=links-of-blogroll-item><a href=https://qybit.gitee.io/ title="Qybit's Blog" target=_blank>Qybit's Blog</a></li></ul></div><div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline"><div class=tagcloud-of-blogroll-title><i class="fa fa-fw fa-tags"></i>TagCloud</div><ul class=tagcloud-of-blogroll-list><li class=tagcloud-of-blogroll-item><a href=/en/tags/big-data>Big data</a></li><li class=tagcloud-of-blogroll-item><a href=/en/tags/linux>Linux</a></li><li class=tagcloud-of-blogroll-item><a href=/en/tags/blog>Blog</a></li><li class=tagcloud-of-blogroll-item><a href=/en/tags/java>Java</a></li><li class=tagcloud-of-blogroll-item><a href=/en/tags/kindeditor>Kindeditor</a></li><li class=tagcloud-of-blogroll-item><a href=/en/tags/python>Python</a></li><li class=tagcloud-of-blogroll-item><a href=/en/tags/axure>Axure</a></li><li class=tagcloud-of-blogroll-item><a href=/en/tags/front>Front</a></li><li class=tagcloud-of-blogroll-item><a href=/en/tags/hive>Hive</a></li><li class=tagcloud-of-blogroll-item><a href=/en/tags/mac>Mac</a></li></ul></div><div class="links-of-blogroll motion-element inline"><script type=text/javascript src="//rf.revolvermaps.com/0/0/6.js?i=5s83wolvn69&m=7&c=e63100&cr1=ffffff&f=arial&l=0&bv=90&lx=-420&ly=420&hi=20&he=7&hc=a8ddff&rs=80" async></script></div></section></div></aside></div></main><footer id=footer class=footer><div class=footer-inner><div class=copyright><span class=copyright-year>&copy; 2010 - 2021</span>
+<span class=with-love><i class="fa fa-heart"></i></span><span class=copyright-author>Loving life and dreams.</span></div><div class=powered-info><span class=powered-by>Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.80.0</a></span>
+<span class=separator-line>/</span>
+<span class=theme-info>Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank>NexT</a></span></div><div class=vistor-info><span class=cnzz_icon id=cnzz_stat_icon_1279205305><a href="//www.cnzz.com/stat/website.php?web_id=1279205305" target=_blank title=站长统计><img border=0 hspace=0 vspace=0 src=//icon.cnzz.com/img/pic1.gif></a></span>
+<script type=text/javascript>(function(){var cnzz_s_tag=document.createElement('script');cnzz_s_tag.type='text/javascript';cnzz_s_tag.async=true;cnzz_s_tag.charset='utf-8';cnzz_s_tag.src='https://s4.cnzz.com/z_stat.php?id=1279205305&show=pic1';var root_s=document.getElementsByTagName('script')[0];root_s.parentNode.insertBefore(cnzz_s_tag,root_s);})();</script><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><span class=site-uv><i class="fa fa-user"></i><span class=busuanzi-value id=busuanzi_value_site_uv></span></span><span class=separator-line>/</span>
+<span class=site-pv><i class="fa fa-eye"></i><span class=busuanzi-value id=busuanzi_value_site_pv></span></span></div><div class=license-info><span class=storage-info>Storage by
+<a href=https://www.qiniu.com style=font-weight:700 target=_blank>Qiniu Cloud</a></span>
+<span class=separator-line>/</span>
+<span class=license-num><a href=http://beian.miit.gov.cn target=_blank>ICP.No 18047355</a></span></div></div></footer><div class=back-to-top><i class="fa fa-arrow-up"></i><span id=scrollpercent><span>0</span>%</span></div></div><script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script><script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script><script type=text/javascript src=/js/search.js></script><script type=text/javascript src=/js/affix.js></script><script type=text/javascript src=/js/scrollspy.js></script><script type=text/javascript>function getCntViewHeight(){var docHeight=$('#content').height(),winHeight=$(window).height(),cntViewHeight=(docHeight>winHeight)?(docHeight-winHeight):($(document).height()-winHeight);return cntViewHeight;}
+function getScrollbarWidth(){var $div=$('<div />').addClass('scrollbar-measure').prependTo('body');var div=$div[0];var scrollbarWidth=div.offsetWidth-div.clientWidth;$div.remove();return scrollbarWidth;}
+function registerBackTop(){var THRESHOLD=50;var $top=$('.back-to-top');$(window).on('scroll',function(){$top.toggleClass('back-to-top-on',window.pageYOffset>THRESHOLD);var scrollTop=$(window).scrollTop();var cntViewHeight=getCntViewHeight();var scrollPercent=(scrollTop)/(cntViewHeight);var scrollPercentRounded=Math.round(scrollPercent*100);var scrollPercentMaxed=(scrollPercentRounded>100)?100:scrollPercentRounded;$('#scrollpercent>span').html(scrollPercentMaxed);});$top.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0,},800);});}
+function initScrollSpy(){var tocSelector='.post-toc';var $tocElement=$(tocSelector);var activeCurrentSelector='.active-current';$tocElement.on('activate.bs.scrollspy',function(){var $currentActiveElement=$(tocSelector+' .active').last();removeCurrentActiveClass();$currentActiveElement.addClass('active-current');}).on('clear.bs.scrollspy',removeCurrentActiveClass);$('body').scrollspy({target:tocSelector});function removeCurrentActiveClass(){$(tocSelector+' '+activeCurrentSelector).removeClass(activeCurrentSelector.substring(1));}}
+function initAffix(){var headerHeight=$('.header-inner').height();var footerOffset=parseInt($('.main').css('padding-bottom'),10);var sidebarTop=headerHeight+10;$('.sidebar-inner').affix({offset:{top:sidebarTop,bottom:footerOffset}});$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100);});}
+function initTOCDimension(){var updateTOCHeightTimer;$(window).on('resize',function(){updateTOCHeightTimer&&clearTimeout(updateTOCHeightTimer);updateTOCHeightTimer=setTimeout(function(){var tocWrapperHeight=document.body.clientHeight-100;updateTOCHeight(tocWrapperHeight);},0);});updateTOCHeight(document.body.clientHeight-100);var scrollbarWidth=getScrollbarWidth();$('.post-toc').css('width','calc(100% + '+scrollbarWidth+'px)');}
+function updateTOCHeight(height){height=height||'auto';$('.post-toc').css('max-height',height);}
+$(function(){var sidebarTop=$('.header-inner').height()+10;$('#sidebar').css({'margin-top':sidebarTop}).show();var headerHeight=$('.header-inner').height();var sidebarHeight=$('.sidebar-inner').height();var leftHeight=headerHeight+sidebarHeight+50;var contentHeight=$('.content-wrap').height();if(contentHeight<leftHeight){$('.content-wrap').css('height',leftHeight+50);}
+registerBackTop();initScrollSpy();initAffix();initTOCDimension();$('.post-body').viewer();$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active');$(this).next().removeClass('sidebar-nav-active');$('.'+$(this).next().attr('data-target')).toggle(500);$('.'+$(this).attr('data-target')).toggle(500);});$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active');$(this).prev().removeClass('sidebar-nav-active');$('.'+$(this).prev().attr('data-target')).toggle(500);$('.'+$(this).attr('data-target')).toggle(500);});if(document.body.clientWidth>800){daovoice('init',{app_id:"f89653b8"});daovoice('update');}});</script><script src=//unpkg.com/valine/dist/Valine.min.js></script><script type=text/javascript>new Valine({el:'#vcomments',appId:'1cO558rHLWLwnMRkRjOf7Y3z-gzGzoHsz',appKey:'8mTM8LX1gsmkGzugate3bpnj',visitor:true,placeholder:' Just do what you want leave here. ^_^ ',requiredFields:['nick','mail'],lang:"en"});</script><script>(function(){var bp=document.createElement('script');var curProtocol=window.location.protocol.split(':')[0];if(curProtocol==='https'){bp.src='https://zz.bdstatic.com/linksubmit/push.js';}
+else{bp.src='http://push.zhanzhang.baidu.com/push.js';}
+var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(bp,s);})();</script><script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:'==document.location.protocol?'https:':'http:')+"//widget.daovoice.io/widget/f89653b8.js","daovoice")</script></body></html>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Scheduled scheduling on Loving life and dreams.</title><link>/en/tags/scheduled-scheduling/</link><description>Recent content in Scheduled scheduling on Loving life and dreams.</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sat, 09 Sep 2017 18:45:42 +0000</lastBuildDate><atom:link href="/en/tags/scheduled-scheduling/index.xml" rel="self" type="application/rss+xml"/><item><title>The job types and examples supported by Azkaban</title><link>/en/2017/09/09/azkaban-execute-jobs.html</link><pubDate>Sat, 09 Sep 2017 18:45:42 +0000</pubDate><guid>/en/2017/09/09/azkaban-execute-jobs.html</guid><description>&lt;p>In the introduction to the official documentation, it is understood that &amp;lsquo;Azkaban&amp;rsquo; supportsa wide range of types of work, such as: &amp;lsquo;Command&amp;rsquo;,&amp;lsquo;HadoopShell&amp;rsquo;,&amp;lsquo;Python&amp;rsquo;, &amp;lsquo;Java&amp;rsquo;, &amp;lsquo;Hive&amp;rsquo;, &amp;lsquo;Pig&amp;rsquo; and so on. However, here we mainly only to explain the &amp;lsquo;Python&amp;rsquo; and &amp;lsquo;Java&amp;rsquo;job type tasks, other types of work, such as&amp;rsquo;Commnad&amp;rsquo;,&amp;lsquo;Hive&amp;rsquo;,&amp;lsquo;HadoopShell&amp;rsquo;relatively simple without explanation, if necessary, you can practice ityourself.&lt;/p>
+&lt;p>Regardless of which task is submitted, &amp;lsquo;Azkaban&amp;rsquo; is managed by uploading a compressed package by default, so it is recommended that you get into the habit ofnot packing the executed files (code) into the &amp;lsquo;Azkaban&amp;rsquo; engineering package. The benefits are obvious, such as:&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>The project is created so fast that you don&amp;rsquo;t need to pass on some files to execute&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Avoid modifying the &amp;lsquo;I&amp;rsquo;m max_allow_packet&amp;rsquo;parameterin &amp;lsquo;MySQL&amp;rsquo;to resolve the issue of failed transmissions on engineering files&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>In a distributed environment, when performing Task eliminates the hassle of copying engineering packages in different nodes&lt;/p>
+&lt;/li>
+&lt;/ul></description></item><item><title>Timed scheduling tasker Azkaban installation</title><link>/en/2017/09/08/azkaban-install-use-share.html</link><pubDate>Fri, 08 Sep 2017 14:29:42 +0000</pubDate><guid>/en/2017/09/08/azkaban-install-use-share.html</guid><description>&lt;p>Background and introduction&lt;/p>
+&lt;p>In the big data complex ETL or other data processing processes, some tasks need to be performed on a timed basis, although Linux brings itsown&amp;rsquo;cron' commandfunction, but still can not meet the biggest point is that it does notprovide centralized management and visual editing. In fact, in the big data ecology has been integrated with a timed scheduling framework &amp;lsquo;Oozie&amp;rsquo;, but the practice found that its learning costs are not low, the process of distribution is more complex. After trying other distribution worker scheduling frameworks, such as Ali&amp;rsquo;s Zeus &amp;lsquo;Zeus&amp;rsquo;, or &amp;lsquo;Azkaban&amp;rsquo;, which is used by more people in the community.&lt;/p>
+&lt;p>&amp;lsquo;Azkaban3&amp;rsquo; is still relatively large compared to the changes made in the previous version, and interested parties can be found on its official website, &lt;a href="https://azkaban.github.io/azkaban/docs/latest/">Azkaban&lt;/a>. Next, mainly to share the installation of &amp;lsquo;Azkaban 3&amp;rsquo;, the following is &amp;lsquo;Azkaban 3&amp;rsquo; system architecture design:&lt;/p>
+&lt;p>&lt;img src="http://myblog.lisenhui.cn/2017/09-08-Azkaban-Install00.png-alias" alt="Azkaban-Install00">&lt;/p>
+&lt;p>The three components in the figure are an important part of &amp;lsquo;Azkaban3&amp;rsquo;:&lt;/p>
+&lt;ul>
+&lt;li>MySQL relationship data storage data&lt;/li>
+&lt;li>Web Server GUI management service provider&lt;/li>
+&lt;li>Executor Server Distributed Node Service&lt;/li>
+&lt;/ul></description></item></channel></rss>
