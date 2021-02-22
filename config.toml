@@ -25,9 +25,6 @@ enableRobotsTXT = true
   changefreq = "weekly"
   priority = 0.5
 
-[Permalinks]
-  post = "/:year/:month/:day/:slug"
-
 [outputFormats]
   [outputFormats.SearchIndex]
     mediaType = "application/xml"
@@ -37,10 +34,6 @@ enableRobotsTXT = true
 
 [outputs]
   home = ["HTML", "RSS", "SearchIndex"]
-
-[[Params.Links]]
-  Name = "Qybit's Blog"
-  Permalink = "https://qybit.gitee.io/"
 
 [minify]
   disableCSS = false
