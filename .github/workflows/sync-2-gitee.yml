@@ -1,6 +1,8 @@
 name: sync-2-gitee
 
-on: page_build
+on:
+  push:
+    branches: [hugo]
 
 jobs:
   build:
