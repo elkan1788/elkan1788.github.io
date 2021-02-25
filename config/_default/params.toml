@@ -3,21 +3,21 @@ TagCloud = true
 TagsLimit = 10
 # 开启评论功能[Valine, LiveRe]
 Comment = "Valine"
-LiveReId = "MTAyMC81MTM4MC8yNzg2MQ=="
+LiveReId = "Your LiveReId"
 # 开启BShare分享功能
 Share = "bshare"
-ShareId = "7c8159a4-9a15-466c-b223-6ab7a8d48699"
+ShareId = "Your ShareId"
 # 开启3D访问地球
-RevolverMapId = "5s83wolvn69"
+RevolverMapId = "Your RevolverMapId"
 # Learn Cloud
-LCAppId  = "1cO558rHLWLwnMRkRjOf7Y3z-gzGzoHsz"
-LCAppKey = "8mTM8LX1gsmkGzugate3bpnj"
-LCServer = "https://lcapi.lisenhui.cn/"
+LCAppId  = "Your LCAppId"
+LCAppKey = "Your LCAppKey"
+LCServer = "Your LCServer"
 # 开启站点访问统计代码
 # CNZZ统计
-CNNZSiteId = "1279205305"
+CNNZSiteId = "Your CNNZSiteId"
 BusuanziCounter = true
-BaiduSiteId = "9b021cbfb58b35e79012f9690de1c6ab"
-GoogleSiteId = "UA-61491374-4"
+BaiduSiteId = "Your BaiduSiteId"
+GoogleSiteId = "Your GoogleSiteId"
 # 开启在线交流
-DaoVoiceId = "f89653b8"
+DaoVoiceId = "Your DaoVoiceId"
