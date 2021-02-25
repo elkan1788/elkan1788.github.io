@@ -37,12 +37,12 @@ Email： elkan1788@gmail.com
 
 {{< note >}}
 
-A few words of long-winded
+A few words of long-winded.
 A sieged lion/code farmer running for survival in the metropolis, perfection is the basic requirement for code. (**Once**)
 
 Quiet appearance hides a heart of "revolutionary rebellion", not afraid of the secular view dare to break through the bondage, like to pursue the real freedom. 
 With a dream in my heart, hoping to make it come true one day. 
 
-Thanks!
+Thanks All!
 
 {{< /note >}}
