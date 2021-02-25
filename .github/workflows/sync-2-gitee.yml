@@ -1,0 +1,23 @@
+name: sync-2-gitee
+
+on: page_build
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync to Gitee
+        uses: wearerequired/git-mirror-action@master
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
+        with:
+          source-repo: git@github.com:elkan1788/elkan1788.github.io.git
+          destination-repo: git@gitee.com:lisenhui/lisenhui.git
+
+      - name: Build Gitee Pages
+        uses: lisenhui/gitee-pages-action@main
+        with:
+          gitee-username: elkan1788@gmail.com
+          gitee-password: ${{ secrets.GITEE_PASSWORD }}
+          gitee-repo: lisenhui/lisenhui
+          branch: main
