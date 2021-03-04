@@ -31,7 +31,7 @@ Github and  Gitee are recommended to use the same key, and they are set up as fo
 
 1.Github: [Settings -> SSH and GPG keys](https://github.com/settings/keys)
 
-![add_ssh_key_github.png](https://github.com/yanglbme/gitee-pages-action/blob/main/images/add_ssh_key_github.png)
+![add_ssh_key_github.png](https://github.com/yanglbme/gitee-pages-action/raw/main/images/add_ssh_key_github.png)
 
 2.Gitee: "Security Settings - SSH Public Key" (https://gitee.com/profile/sshkeys).
 
@@ -97,7 +97,7 @@ The effect of the operation of the 2.4
 
 When you push the code to the Github  repository, you'll have automatically sync the code to the Gitee repository, and you'll re-create the static page service, saving the process of manual intervention. 
 
-![02-25-sync-2-gitee-flow-01.png](http://myblog.lisenhui.cn/2021/02-25-sync-2-gitee-flow-01.png)
+![02-25-sync-2-gitee-flow-01.png](http://myblog.lisenhui.cn/2021/02-25-sync-2-gitee-flow-01.png-alias)
 
 
 ## 3.Summary

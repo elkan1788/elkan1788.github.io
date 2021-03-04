@@ -31,7 +31,7 @@ toc: true
 
 1.Github: [Settings -> SSH and GPG keys](https://github.com/settings/keys)
 
-![add_ssh_key_github.png](https://github.com/yanglbme/gitee-pages-action/blob/main/images/add_ssh_key_github.png)
+![add_ssh_key_github.png](https://github.com/yanglbme/gitee-pages-action/raw/main/images/add_ssh_key_github.png)
 
 2.Gitee: [安全设置 -> SSH 公钥](https://gitee.com/profile/sshkeys)
 
@@ -97,8 +97,7 @@ jobs:
 
 那后续在给Github仓库推送代码时，便会有自动同步代码到Gitee仓库，同时也会重新reload静态页面服务，省去手动干预的流程。
 
-![02-25-sync-2-gitee-flow-01.png](http://myblog.lisenhui.cn/2021/02-25-sync-2-gitee-flow-01.png)
-
+![02-25-sync-2-gitee-flow-01.png](http://myblog.lisenhui.cn/2021/02-25-sync-2-gitee-flow-01.png-alias)
 
 ## 3.小结
 
