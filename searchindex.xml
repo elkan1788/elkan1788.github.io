@@ -5,7 +5,13 @@ FATAL ERROR: No supported authentication methods available (server sent: publick
 初步解决办法 根据报错窗口的提示，使用Putty工具把本地的SSH KEY生成Private模式，操作如下：
 然后把这个Private KEY加载到推送的流程中，再次点击推送按钮就会看到操作成功提示信息。
 问题定位 虽然解决完这个推送的问题，但还觉得事情有点奇怪和蹊跷。于是想到了Git Extensions的配置是否有变化，经过一番查找测试后，确认是由于官方当前默认在Windows使用Putty作为客户端，把它调整为OpenSSH方式，问题便不再出现。
-总结 在非必要的情况下，还是不太建议升级软件版本，稳定的环境比用不到的新功能更具价值。</content></entry><entry><title>优化Hugo Next主题的过程</title><url>https://lisenhui.cn/2020/10/02/make-next-theme-pithy.html</url><categories><category>博客</category></categories><tags><tag>NexT</tag><tag>博客</tag></tags><content type="html"> 1. 背景 经过一番考虑还是把个人博客从Hexo引擎迁移到Hugo引擎，博客主题依旧还是沿用NexT。其实本来还担心又要折腾弄个全新的博客主题，后来Github上看到兰陵子分享的NexT主题，就直接拿过来引用。但在部署后发现还是有些地方需要改善，在此记录下改造优化的过程。如果正好你也喜欢这个主题，那么欢迎拿去使用，也欢迎交流反馈。
+总结 在非必要的情况下，还是不太建议升级软件版本，稳定的环境比用不到的新功能更具价值。</content></entry><entry><title>Github个人信息卡片</title><url>https://lisenhui.cn/2021/01/24/github-personal-profile-card.html</url><categories><category>github</category></categories><tags><tag>github</tag></tags><content type="html"> Github上总是会有一些新奇的东西出现，这不无意间又发现了个有趣的玩法，可以用它来作为你的个人开发者名信片展现。具体展现效果如下：
+操作起来也不繁琐，类似以前的pages服务那样，只准备个特定的仓库就可以，具体操作如下：
+1. 申请公开仓库 在Github上面申请个与你用户名同名的公开仓库，然后你就会发现收到来自Github的“赞美”提示信息，如下：
+仓库创建好后，会默认准备好一个README.md文件，后续你在这上面写相关的信息即可。
+２. 个人介绍信息 接下来就是你在README.md上面添加个人信息，写法上支持标准的markdown语法编辑，同时也是支持各种表情图标，可以按你个人的意愿添加任意内容。顺便提下，可以使用Github API展现你自己仓库相关的代码提交，质量，打分等信息，效果见开篇的介绍。
+3. 示例 自己简单的编写下，仅供各位看观参考，哈。
+&lt;img align="right" src="https://github-readme-stats.vercel.app/api?username=elkan1788&amp;show_icons=true&amp;icon_color=CE1D2D&amp;text_color=718096&amp;bg_color=ffffff&amp;hide_title=true" /> ### Hello, World! :tada::tada::tada: - :building_construction: Working at @Kyligence - :house_with_garden: Living at Shanghai - :orange_book: [《Apache Kylin权威指南（第2版）》](https://item.m.jd.com/product/12566389.html) - :monocle_face: Try to find it out. 喜欢的话，那就赶紧行动起来吧。</content></entry><entry><title>优化Hugo Next主题的过程</title><url>https://lisenhui.cn/2020/10/02/make-next-theme-pithy.html</url><categories><category>博客</category></categories><tags><tag>NexT</tag><tag>博客</tag></tags><content type="html"> 1. 背景 经过一番考虑还是把个人博客从Hexo引擎迁移到Hugo引擎，博客主题依旧还是沿用NexT。其实本来还担心又要折腾弄个全新的博客主题，后来Github上看到兰陵子分享的NexT主题，就直接拿过来引用。但在部署后发现还是有些地方需要改善，在此记录下改造优化的过程。如果正好你也喜欢这个主题，那么欢迎拿去使用，也欢迎交流反馈。
 2. 评论功能 评论功能是博客空间一项较为重要的功能，作为博主与读者交流的重要桥梁，那自然是不可或缺。之前一直使用的是LiveRe，最近发现访问不太稳定，另外还不支持游客评论模式，于是乎考虑使用Valine来做评论支持，不过最后还是把两个都实现了。
 2.1 LiveRe LiveRe(来必力)是韩国最大第三方社交评论系统，自打多说评论下线后一直都是使用它做博客的评论框。个人开发者可以到官网网站注册个City免费版本即可，它的集成也是很简单，直接在博客的JavaScript页面中加载如下的代码：
 {{ if and (.IsPage) (isset .Site.Params "comment") (eq .Site.Params.Comment "LiveRe") }} &lt;script type="text/javascript"> (function(d, s) { var j, e = d.getElementsByTagName(s)[0]; if (typeof LivereTower === 'function') { return; } j = d.createElement(s); j.src = '//cdn-city.livere.com/js/embed.dist.js'; j.async = true; e.parentNode.insertBefore(j, e); })(document, 'script'); &lt;/script> {{ end }} 然后在想出现评论框的位置，定义个Div元素，参考如下：
