@@ -105,6 +105,10 @@ $(document).ready(function () {
     // handle and trigger popup window;
     $('.popup-trigger').click(function(e) {
       e.stopPropagation();
+
+      //TODO why here need timeout, couldn't understand it.
+      setTimeout(() => $('#local-search-input').focus(), 500);
+      
       if (isfetched == false) {
         searchFunc(path, 'local-search-input', 'local-search-result');
       } else {
