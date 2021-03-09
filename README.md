@@ -5,6 +5,7 @@
 ![GitHub deployments](https://img.shields.io/github/deployments/elkan1788/elkan1788.github.io/github-pages)
 ![GitHub](https://img.shields.io/github/license/elkan1788/elkan1788.github.io)
 
+[中文](README.zh.md) | [English](README.md)
 
 ![my-hugo-blog](http://myblog.lisenhui.cn/hugo-logo.png-noalias)
 
@@ -44,5 +45,7 @@ Upload successful logs：
 
 ![my-hexo-blog2](http://myblog.lisenhui.cn/my-hexo-blog2.png-alias)
 
+> Also you can use the latest GUI tools which name is [Kodo Browser](https://developer.qiniu.com/kodo/5972/kodo-browser), it can easy upload and manager your cotent.
+
 ## License
-The [MIT License](LICENSE).
+[MIT License](LICENSE).
