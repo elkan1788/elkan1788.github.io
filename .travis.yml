@@ -36,6 +36,7 @@ script:
 
 before_deploy:
   - wget -O ./public/README.md https://raw.githubusercontent.com/elkan1788/elkan1788.github.io/hugo/README.md
+  - wget -O ./public/README.zh.md https://raw.githubusercontent.com/elkan1788/elkan1788.github.io/hugo/README.zh.md
   - wget -O ./public/LICENSE https://raw.githubusercontent.com/elkan1788/elkan1788.github.io/hugo/LICENSE
 
 deploy:
