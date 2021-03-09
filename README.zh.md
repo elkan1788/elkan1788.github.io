@@ -9,43 +9,42 @@
 
 ![my-hugo-blog](http://myblog.lisenhui.cn/hugo-logo.png-noalias)
 
+# 使用Hugo引擎重建个人博客
 
-# Use Hugo framework rebuild my blog site.
+关于我也算是个极客吧，喜欢尝试一些比较新的好技术。但这应该也是最后一次切换个人博客的引擎啦，Hugo引擎的极速与简单，深深地吸引着我，相信当你遇见它后，也会和我一样喜欢上它的。
 
-I'm a Geek, so like try the new things which is better. But maybe it's my last way to change my blog site build engine, Hugo is faster and simpler, I like it and think you will too.
-
-
-# Demo：
+# 预览：
 
 ![my-hugo-blog](http://myblog.lisenhui.cn/my-hugo-blog.png-alias)
 
 
-# Use qiniu Cloud storage
+# 使用七牛云存储
 
-Download toolkit：[qshell](https://developer.qiniu.com/sdk#official-tool)
+下载工具包：[qshell](https://developer.qiniu.com/sdk#official-tool)
 
-Follow by below steps:
+关于`qshell`的使用步骤:
 ```
-# 1. set your account
+# 1. 设置你的账号
 qshell account ak sk
 
-# 2. create new folder to save upload images
+# 2. 创建目录存放上传的图片
 mkdir -p tools/qiniu
 
-# 3. change the template file name and set your bluck namespace
+# 3. 修改文件名，并修改相关的属性，如你的空间名称，本地路径等
 mv tools/_qoniu.json.sample tools/_qiniu.json
 vi tools/_qiniu.json 
 
-# 4. execute the script then upload files
+# 4. 执行上传脚本
 qupload.sh
 
 ```
 
-Upload successful logs：
+图片上传成功日志：
 
 ![my-hexo-blog2](http://myblog.lisenhui.cn/my-hexo-blog2.png-alias)
 
-> Also you can use the latest GUI tools which name is [Kodo Browser](https://developer.qiniu.com/kodo/5972/kodo-browser), it can easy upload and manager your cotent.
+> 建议可以使用官方最新推出的图形化工具 [Kodo Browser](https://developer.qiniu.com/kodo/5972/kodo-browser)，它操作非常的简单，可以很方便的管理你的资源。
 
-## License
+
+## 许可证
 [MIT License](LICENSE).
