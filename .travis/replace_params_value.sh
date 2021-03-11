@@ -13,5 +13,6 @@ sed -i 's/Your CNNZSiteId/'$CNNZSiteId'/g' config/_default/params.toml
 sed -i 's/Your BaiduSiteId/'$BaiduSiteId'/g' config/_default/params.toml
 sed -i 's/Your GoogleSiteId/'$GoogleSiteId'/g' config/_default/params.toml
 sed -i 's/Your DaoVoiceId/'$DaoVoiceId'/g' config/_default/params.toml
+sed -i 's/Your AddthisPubid/'$AddthisPubid'/g' config/_default/params.toml
 
 echo "Replace the plugin's paramter is success."

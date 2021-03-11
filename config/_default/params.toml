@@ -21,3 +21,7 @@ BaiduSiteId = "Your BaiduSiteId"
 GoogleSiteId = "Your GoogleSiteId"
 # 开启在线交流
 DaoVoiceId = "Your DaoVoiceId"
+
+[addthis]
+  enable = true
+  pubid = "Your AddthisPubid"
