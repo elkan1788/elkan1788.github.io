@@ -5,7 +5,7 @@ TagsLimit = 10
 Comment = "Valine"
 LiveReId = "Your LiveReId"
 # 开启BShare分享功能
-Share = "bshare"
+Share = ""
 ShareId = "Your ShareId"
 # 开启3D访问地球
 RevolverMapId = "Your RevolverMapId"
