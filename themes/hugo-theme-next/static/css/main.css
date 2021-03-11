@@ -2090,6 +2090,10 @@ a.search-result {
   padding-left: 14%;
 }
 
+.busuanzi-value {
+  margin: 0 0 0 8px;
+}
+
 @media (min-width: 767px) and (max-width: 991px) {
   .busuanzi-count {
     width: auto;
