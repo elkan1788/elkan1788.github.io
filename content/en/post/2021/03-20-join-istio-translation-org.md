@@ -10,11 +10,15 @@ tags:
 toc: true
 ---
 
-As a former program ape, he has also been "enjoying" those selfless sharing from the open source community. These open source projects on their own impact and inspiration is still very large, have thought before how to give back to the open source community, but also opened some of their own projects, participated in some open source projects, but are still only domestic projects. Not long ago, I  saw Jimmy Song in the WeChat Circle of Friends to release the dynamics of the [**Istio official website translation team established and volunteer recruitment**](https://mp.weixin.qq.com/s/fPvCU8Dj4c60QMmy_s9rmA), without  any hesitation, after work contact Jimmy applied to join the translation work, and in the following time to complete his first translation, also successfully merged into the main branch of Theo official warehouse. If you have the same idea as me, then you are welcome to join us and look forward to it. 
+As a former program ape, I has also been "enjoying" those selfless sharing from the open source community. These open source projects on their own impact and inspiration is still very large, have thought before how to give back to the open source community, but also opened some of their own projects, participated in some open source projects, but are still only domestic projects. Not long ago, I  saw Jimmy Song in the WeChat Circle of Friends to release the dynamics of the [**Istio official website translation team established and volunteer recruitment**](https://mp.weixin.qq.com/s/fPvCU8Dj4c60QMmy_s9rmA), without  any hesitation, after work contact Jimmy applied to join the translation work, and in the following time to complete his first translation, also successfully merged into the main branch of Theo official warehouse. If you have the same idea as me, then you are welcome to join us and look forward to it. 
 
 <!--more-->
 
 Next to share with you, join the istio  official translation organization of the journey, for the follow-up want to join (or other open source projects) of small partners to do a guide reference, if there is any do not understand, you can be in the comments section under the article, publish your suggestions or comments, thank you. 
+
+An overview of the whole process of translation is as follows:
+
+![03-21-join-istio-translation-org-11.png](http://myblog.lisenhui.cn/2021/03-21-join-istio-translation-org-11.png-alias)
 
 ## 1. Preparation
 
