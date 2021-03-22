@@ -69,7 +69,7 @@ If you are a program ape, I believe it will change your pattern of website devel
 
 Istio's site documents are all in MD format, so we need an MD document editing tool that we're familiar with. It is recommended to use the extensive and powerful `Sublime Text` text editor, plus the `Markdown Editing` plug-in to make your MD document editing very smooth.
 
-Translation tool
+### 1.6 Translation tool
 
 After all, English is not our mother tongue, in the translation process more or less still need to use the support of translation tools, personal use of NetEase has a dictionary desktop version.
 
