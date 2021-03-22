@@ -32,20 +32,20 @@ As a world-renowned Git code repositorymanagement and sharing platform, I believ
 
 Git installation is still relatively simple, go directly to the official website [Git Downloads](https://git-scm.com/downloads) to download your computer system corresponding platform version installation. You can also install a graphicalclient, the person has been using the [Git Extensions](https://gitextensions.github.io/) tool, it integrates Git command operations and related concepts can help you improve efficiency, of course, if you area "Geeker",it can stillpursue the speed of the command line, both ways of  choosing. 
 
-For more detailed use of 'Git' and 'Github',beginners can refer to this article in the [New Github helper](https://blog.csdn.net/Hanani_Jia/article/details/77950594). 
+For more detailed use of `Git` and `Github`,beginners can refer to this article in the [New Github helper](https://blog.csdn.net/Hanani_Jia/article/details/77950594). 
 
 ### 1.4 Hugo runs the environment
 
-[**`Hugo`**] (https://gohugo.io/) (based on the Go language) is one of the current mainstream static site generation engines on which Istio's official site is built, so you also need to be familiar with its use. Rest assured that it's very simple (for this Istio translation project, just know a running command) and believe you'll "love" it later.
+[**`Hugo`**](https://gohugo.io/) (based on the Go language) is one of the current mainstream static site generation engines on which Istio's official site is built, so you also need to be familiar with its use. Rest assured that it's very simple (for this Istio translation project, just know a running command) and believe you'll "love" it later.
 
-First, in the 'Hugo' official repository,  download the platform version corresponding to your computer system, [Hugo Download](https://github.com/gohugoio/hugo/releases/), unzips the download file and configures the system environment variables, and then you can use'Hugo version' onthe command line to detect the success of the 'Hugo' installation, normally outputing the following version information:
+First, in the `Hugo` official repository,  download the platform version corresponding to your computer system, [Hugo Download](https://github.com/gohugoio/hugo/releases/), unzips the download file and configures the system environment variables, and then you can use `hugo version` onthe command line to detect the success of the `Hugo` installation, normally outputing the following version information:
 
 ```bash
 > hugo version
 Hugo Static Site Generator v0.80.0-792EF0F4 windows/amd64 BuildDate: 2020-12-31T13:37:57Z
 ```
 
-At this point, your 'Hugo' environment is ready,and you can get a little bit of a look at the parameters associated with the'hugo server' command, which you might use at some point, as follows:
+At this point, your `Hugo` environment is ready,and you can get a little bit of a look at the parameters associated with the `hugo server` command, which you might use at some point, as follows:
 
 ```bash
 hugo server
@@ -67,7 +67,7 @@ If you are a program ape, I believe it will change your pattern of website devel
 
 ### 1.5 MD file editing tool
 
-Istio's site documents are all in MD format, so we need an MD document editing tool that we're familiar with. It is recommended to use the extensive and powerful 'Sublime Text' text editor, plus the 'Markdown Editing' plug-in to make your MD document editing very smooth.
+Istio's site documents are all in MD format, so we need an MD document editing tool that we're familiar with. It is recommended to use the extensive and powerful `Sublime Text` text editor, plus the `Markdown Editing` plug-in to make your MD document editing very smooth.
 
 Translation tool
 
@@ -80,11 +80,11 @@ The next step is to start "looking" for the organization and join it.
 
 ### 2.1 Join the communication group
 
-It is known that there is a WeChat communication group, we communicate with each other in the translation process of the problem. Previously this group was open to   join rootsongjc@gmail.com, but due to the invasion of the Advertising Party, the adjusted policy can only be pulled by the administrator, interested small partners can apply for membership to kebe.liu@daocloud the two administrators. 
+It is known that there is a WeChat communication group, we communicate with each other in the translation process of the problem. Previously this group was open to   join, but due to the invasion of the Advertising Party, the adjusted policy can only be pulled by the administrator, interested small partners can apply for membership to <rootsongjc@gmail.com> or <kebe.liu@daocloud> the two administrators. 
 
 ### 2.2 Register your personal information
 
-In order for everyone to get to know each other and cooperate in the translation process, you'll need to fill in some personal information, such as your Github account name, email address, name, etc., on your Google Docs (https://docs.google.com/spreadsheets/d/1ihJTww4q1FArD50TerRLyi210LD64gHTIEQM43dBwb0).  
+In order for everyone to get to know each other and cooperate in the translation process, you'll need to fill in some personal information, such as your Github account name, email address, name, etc., on your [Google Docs](https://docs.google.com/spreadsheets/d/1ihJTww4q1FArD50TerRLyi210LD64gHTIEQM43dBwb0).  
 
 
 ### 2.3 Clone isto warehouse
@@ -111,7 +111,7 @@ Next, share and use tips in translation:
 2. Open the left and right two window mode, you can use Windows brings its own split-screen function or the editor's window function, recommended to use the latter switch is more convenient;
 3. Use the'Crtl-P'shortcut to open the 'Sublime Text' search function, copy the article path in the pick-up task, and open the corresponding files in the en  and zh directories, respectively, as shown in the following image: ![03-21-join-istio-translation-org-05.png](http://myblog.lisenhui.cn/2021/03-21-join-istio-translation-org-05.png-alias)
 
-Translation is really boring, to understand and refine line by line, very test your patience, ha
+> Translation is really boring, to understand and refine line by line, very test your patience, ha
 
 After completing the translation, it is recommended that you enable local Hugo service preview validation to ensure that  typography, pictures, punctuation, and so on are all displayed. 
 
@@ -121,7 +121,7 @@ Once you're done translating and self-checking, you can submit your contribution
 
 Switch to the Home page of the Istio Warehouse under your Github and you'll see an obvious 'PR' prompt above the code, and click the green button to quickly create and submit it to the Istio official, quietly waiting for someone else's review. 
 
-![03-21-join-istio-translation-org-06.png](http://myblog.lisenhui.cn/2021/03-21-join-istio-translation-org-06.png-alias)
+![03-21-join-istio-translation-org-06.png](http://myblog.lisenhui.cn/2021/03-21-join-istio-translation-org-06.png-alias) 
 ![03-21-join-istio-translation-org-07.png](http://myblog.lisenhui.cn/2021/03-21-join-istio-translation-org-07.png-alias)
 
 ### 3.4 Update the task status
@@ -137,13 +137,13 @@ Remember to add records and update status to the registered taskbar after submit
 Translation work is generally relatively passive, coupled with the difference in the time of work, you can refer to the following steps before translation to synchronize the current official status of the latest documents:
 
 1. In your own repository, create a new PR request, as shown inthe following image: ![03-21-join-istio-translation-org-01.png](http://myblog.lisenhui.cn/2021/03-21-join-istio-translation-org-01.png-alias)
-2. Refer to the digital order of the pictures below, adjust the corresponding warehouse name and branch (on the left is your own warehouse, on the right is the official warehouse), click on the green button on the right, fill in the relevant review information (mainly you can understand the good, no standards)![03-21-join-istio-translation-org-02.png](http://myblog.lisenhui.cn/2021/03-21-join-istio-translation-org-02.png-alias) ![03-21-join-istio-translation-org-03.png] (http://myblog.lisenhui.cn/2021/03-21-join-istio-translation-org-03.png-alias)
-3. Then automatically jump to that PR and find the 'Merge pull request' button below to click and confirm it; 03-21-join-istio-translation-org-04.png](http://myblog.lisenhui.cn/2021/03-21-join-istio-translation-org-04.png-alias)
-4. Use the 'git pull' command or the 'Git Extensions' tool to pull the latest files locally;
+2. Refer to the digital order of the pictures below, adjust the corresponding warehouse name and branch (on the left is your own warehouse, on the right is the official warehouse), click on the green button on the right, fill in the relevant review information (mainly you can understand the good, no standards)![03-21-join-istio-translation-org-02.png](http://myblog.lisenhui.cn/2021/03-21-join-istio-translation-org-02.png-alias) ![03-21-join-istio-translation-org-03.png](http://myblog.lisenhui.cn/2021/03-21-join-istio-translation-org-03.png-alias)
+3. Then automatically jump to that PR and find the `Merge pull request` green  button below to click and confirm it; ![03-21-join-istio-translation-org-04.png](http://myblog.lisenhui.cn/2021/03-21-join-istio-translation-org-04.png-alias)
+4. Use the `git pull` command or the `Git Extensions` tool to pull the latest files locally;
 
 ### 4.2 The JS and CCS files are missing from the local runtime
 
-Istio's static resources are developed in the sass way, so the local runtime may not compile these files, resulting in you not being able to display them properly in the local preview (more cluttered), you can find other small partners in the group to share, and then put theresources in 'css','js','img'underthe local 'static' corresponding directory, after starting the Hugo service can be displayed normally. 
+Istio's static resources are developed in the sass way, so the local runtime may not compile these files, resulting in you not being able to display them properly in the local preview (more cluttered), you can find other small partners in the group to share, and then put theresources in `css`,`js`,`img`underthe local `static` corresponding directory, after starting the Hugo service can be displayed normally. 
 
 ![03-21-join-istio-translation-org-08.png](http://myblog.lisenhui.cn/2021/03-21-join-istio-translation-org-08.png-alias)
 
