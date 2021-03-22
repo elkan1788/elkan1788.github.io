@@ -1,6 +1,6 @@
 ---
 title: "加入Istio官方翻译组织的历程记录"
-url: "2021/03/03/join-istio-translation-org.html"
+url: "2021/03/20/join-istio-translation-org.html"
 date: "2021-03-20T11:48:53+08:00"
 categories:
  - "社区"
@@ -121,6 +121,9 @@ Istio 的站点文档均是采用MD格式的文件，所以我们需要一款自
 
 切换到您 Github 下的 Istio 仓库主页，就可以在代码上方看到一个明显的 `PR` 提示，点击绿色按钮就可以快速创建并提交给 Istio 官方，静静等待其他人的评审。
 
+![03-21-join-istio-translation-org-06.png](http://myblog.lisenhui.cn/2021/03-21-join-istio-translation-org-06.png-alias)
+![03-21-join-istio-translation-org-07.png](http://myblog.lisenhui.cn/2021/03-21-join-istio-translation-org-07.png-alias)
+
 ### 3.4 更新任务状态
 
 记得提交完 PR 后及时在登记的任务栏中添加记录，并更新状态，同时也要留意自己的邮箱，关注最新的变化。可能在其他评审后需要您进行修改（按评审建议调整对应内容，重新提交即可），如没有问题一般都是直接被合并的。
@@ -134,7 +137,7 @@ Istio 的站点文档均是采用MD格式的文件，所以我们需要一款自
 
 1. 在自己的仓库中，创建个新的PR请求，如下图所示：![03-21-join-istio-translation-org-01.png](http://myblog.lisenhui.cn/2021/03-21-join-istio-translation-org-01.png-alias)
 2. 参考下面的图片数字顺序，调整对应仓库名称与分支（左边是自己的仓库，右边是官方的仓库），点击右边的绿色按钮，填写相关的评审信息（主要是自己能理解的就好，没有标准）![03-21-join-istio-translation-org-02.png](http://myblog.lisenhui.cn/2021/03-21-join-istio-translation-org-02.png-alias) ![03-21-join-istio-translation-org-03.png](http://myblog.lisenhui.cn/2021/03-21-join-istio-translation-org-03.png-alias)
-3. 然后会自动跳转到那个PR，在下方找到 `Merge pull request` 按钮点击并确认即可
+3. 然后会自动跳转到那个PR，在下方找到 `Merge pull request` 按钮点击并确认即可； ![03-21-join-istio-translation-org-04.png](http://myblog.lisenhui.cn/2021/03-21-join-istio-translation-org-04.png-alias)
 4. 使用 `git pull` 命令或是 `Git Extensions` 工具拉取最新文件到本地；
 
 ### 4.2 本地运行时缺失JS和CCS文件
