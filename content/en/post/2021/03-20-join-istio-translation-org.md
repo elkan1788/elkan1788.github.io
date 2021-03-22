@@ -38,7 +38,7 @@ For more detailed use of 'Git' and 'Github',beginners can refer to this article 
 
 [**`Hugo`**] (https://gohugo.io/) (based on the Go language) is one of the current mainstream static site generation engines on which Istio's official site is built, so you also need to be familiar with its use. Rest assured that it's very simple (for this Istio translation project, just know a running command) and believe you'll "love" it later.
 
-First, in the 'Hugo' official repository,  download the platform version corresponding to your computer system, https://github.com/gohugoio/hugo/releases/, unzips the download file and configures the system environment variables, and then you can use'Hugo version' onthe command line to detect the success of the 'Hugo' installation, normally outputing the following version information:
+First, in the 'Hugo' official repository,  download the platform version corresponding to your computer system, [Hugo Download](https://github.com/gohugoio/hugo/releases/), unzips the download file and configures the system environment variables, and then you can use'Hugo version' onthe command line to detect the success of the 'Hugo' installation, normally outputing the following version information:
 
 ```bash
 > hugo version
@@ -89,7 +89,7 @@ In order for everyone to get to know each other and cooperate in the translation
 
 ### 2.3 Clone isto warehouse
 
-Since we are not yet the official Commiter of Istion,we can only submit our changes in the Form Request  (PR) way, which requires cloning Istio's official repository into our own repository first. Visit the address of the Istio repository: https://github.com/istio/istio.io(https://github.com/istio/istio.io), click the Fork button in the upper right corner, and you'll see the warehouse of the same name in your warehouse later, and then clone the warehouse to your local computer for subsequent editing. 
+Since we are not yet the official Commiter of Istion,we can only submit our changes in the Form Request  (PR) way, which requires cloning Istio's official repository into our own repository first. Visit the address of the Istio repository: [**https://github.com/istio/istio.io**](https://github.com/istio/istio.io), click the Fork button in the upper right corner, and you'll see the warehouse of the same name in your warehouse later, and then clone the warehouse to your local computer for subsequent editing. 
 
 ## 3. The translation process
 
@@ -109,7 +109,7 @@ Next, share and use tips in translation:
 
 1. Set the editor's line-over display to avoid dragging the scroll bar left and right when editing;
 2. Open the left and right two window mode, you can use Windows brings its own split-screen function or the editor's window function, recommended to use the latter switch is more convenient;
-3. Use the'Crtl-P'shortcut to open the 'Sublime Text' search function, copy the article path in the pick-up task, and open the corresponding files in the en  and zh directories, respectively, as shown in the following image: ! 03-21-join-istio-translation-org-05.png](http://myblog.lisenhui.cn/2021/03-21-join-istio-translation-org-05.png-alias)
+3. Use the'Crtl-P'shortcut to open the 'Sublime Text' search function, copy the article path in the pick-up task, and open the corresponding files in the en  and zh directories, respectively, as shown in the following image: ![03-21-join-istio-translation-org-05.png](http://myblog.lisenhui.cn/2021/03-21-join-istio-translation-org-05.png-alias)
 
 Translation is really boring, to understand and refine line by line, very test your patience, ha
 
@@ -128,6 +128,7 @@ Switch to the Home page of the Istio Warehouse under your Github and you'll see 
 
 Remember to add records and update status to the registered taskbar after submitting your PR, while  keeping an eye on your mailbox and keeping an eye on the latest changes. You may need to make changes after other reviews (adjust the content according to the review recommendations, resubmit it), and if there are no problems, they are generally merged directly. 
 
+![03-21-join-istio-translation-org-10.png](http://myblog.lisenhui.cn/2021/03-21-join-istio-translation-org-10.png-alias)
 
 ## 4. Problems
 
