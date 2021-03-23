@@ -188,6 +188,19 @@ $(function() {
   });
 </script>
 {{end }}
+{{ if and (.IsPage) (isset .Site.Params "comment") (eq .Site.Params.Comment "Waline") }}
+ <script src='//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js'></script>
+<script type="text/javascript">
+  new Waline({
+      el: '#waline',
+      visitor: true,
+      placeholder: ' {{ i18n "ValineComment" }} ',
+      requiredFields: ['nick', 'mail'],
+      serverURL: "{{ .Site.Params.Waline.serverURL }}",
+      lang: "{{ .Page.Lang }}"
+  });
+</script>
+{{end }}
 {{ if and (.IsPage) (isset .Site.Params "comment") (eq .Site.Params.Comment "LiveRe") }}
 <script src="//cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-min.js"></script>
 <script type="text/javascript">

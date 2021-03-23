@@ -2,7 +2,7 @@
 TagCloud = true
 TagsLimit = 10
 # 开启评论功能[Valine, LiveRe]
-Comment = "Valine"
+Comment = "Waline"
 LiveReId = "Your LiveReId"
 # 开启BShare分享功能
 Share = ""
@@ -25,3 +25,6 @@ DaoVoiceId = "Your DaoVoiceId"
 [addthis]
   enable = true
   pubid = "Your AddthisPubid"
+
+[Waline]
+  serverURL = "Your Waline serverURL"
