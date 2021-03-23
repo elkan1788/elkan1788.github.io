@@ -150,7 +150,7 @@ Istio 的站点文档均是采用MD格式的文件，所以我们需要一款自
 
 ### 4.2 本地运行时缺失JS和CCS文件
 
-Istio 的静态资源采用了sass方式进行开发，所以本地运行时可能无法编译这些文件，导致您在本地预览时无法正常显示（比较错乱），可以找群里的其他小伙伴分享一下，然后把 `css`, `js`, `img` 里的资源放到本地的 `static` 对应目录下面，启动 Hugo 服务后就可以正常的显示。
+Istio 的静态资源采用了sass方式进行开发，所以本地运行时可能无法编译这些文件，导致您在本地预览时无法正常显示（比较错乱），可以找群里的其他小伙伴分享一下（或是点击下载 [**istio.io-generated-files.tgz**](http://myress.lisenhui.cn/myblog%2F2021-03-21-istio.io-generated-files.tgz)），然后把 `css`, `js`, `img` 里的资源放到本地的 `static` 对应目录下面，重新启动 Hugo 服务后就可以正常的显示。
 
 ![03-21-join-istio-translation-org-08.png](http://myblog.lisenhui.cn/2021/03-21-join-istio-translation-org-08.png-alias)
 

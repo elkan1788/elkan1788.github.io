@@ -147,7 +147,7 @@ Translation work is generally relatively passive, coupled with the difference in
 
 ### 4.2 The JS and CCS files are missing from the local runtime
 
-Istio's static resources are developed in the sass way, so the local runtime may not compile these files, resulting in you not being able to display them properly in the local preview (more cluttered), you can find other small partners in the group to share, and then put theresources in `css`,`js`,`img`underthe local `static` corresponding directory, after starting the Hugo service can be displayed normally. 
+Istio's static resources are developed in the sass way, so the local runtime may not compile these files, resulting in you not being able to display them properly in the local preview (more cluttered), you can find other small partners in the group to share(or click here [**istio.io-generated-files.tgz**](http://myress.lisenhui.cn/myblog%2F2021-03-21-istio.io-generated-files.tgz)）), and then put theresources in `css`,`js`,`img`underthe local `static` corresponding directory, after restarting the Hugo service can be displayed normally. 
 
 ![03-21-join-istio-translation-org-08.png](http://myblog.lisenhui.cn/2021/03-21-join-istio-translation-org-08.png-alias)
 
