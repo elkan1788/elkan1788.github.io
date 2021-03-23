@@ -27,4 +27,4 @@ DaoVoiceId = "Your DaoVoiceId"
   pubid = "Your AddthisPubid"
 
 [Waline]
-  serverURL = "Your Waline serverURL"
+  serverURL = "Your WalineServerURL"
