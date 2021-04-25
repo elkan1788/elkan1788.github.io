@@ -29,34 +29,3 @@
 
 [Others]
   RevolverMapId = "Your RevolverMapId"
-
-# # 开启标签云
-# TagCloud = true
-# TagsLimit = 10
-# # 开启评论功能[Valine, LiveRe]
-# Comment = "Waline"
-# LiveReId = "Your LiveReId"
-# # 开启BShare分享功能
-# Share = ""
-# ShareId = "Your ShareId"
-# # 开启3D访问地球
-# RevolverMapId = "Your RevolverMapId"
-# # Learn Cloud
-# LCAppId  = "Your LCAppId"
-# LCAppKey = "Your LCAppKey"
-# LCServer = "Your LCServer"
-# # 开启站点访问统计代码
-# # CNZZ统计
-# CNNZSiteId = "Your CNNZSiteId"
-# BusuanziCounter = true
-# BaiduSiteId = "Your BaiduSiteId"
-# GoogleSiteId = "Your GoogleSiteId"
-# # 开启在线交流
-# DaoVoiceId = "Your DaoVoiceId"
-
-# [addthis]
-#   enable = true
-#   pubid = "Your AddthisPubid"
-
-# [Waline]
-#   serverURL = "Your WalineServerURL"
