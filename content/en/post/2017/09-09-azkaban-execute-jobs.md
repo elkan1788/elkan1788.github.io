@@ -89,7 +89,7 @@ command=whoami
 
 The effect is as follows:
 
-![Azkaban-Jobs02](http://siteimgs.lisenhui.cn/2017/09-09-azkaban-jobs-02.png)
+![Azkaban-Jobs02](http://siteimgs.cn-sh2.ufileos.com/2017/09-09-azkaban-jobs-02.png)
 
 Pthon work tasks
 
@@ -112,7 +112,7 @@ script=/home/azkaban/pythondemo/helloworld.py
 
 The effect is as follows:
 
-![Azkaban-Jobs01](http://siteimgs.lisenhui.cn/2017/09-09-azkaban-jobs-01.png)
+![Azkaban-Jobs01](http://siteimgs.cn-sh2.ufileos.com/2017/09-09-azkaban-jobs-01.png)
 
 A summary
 

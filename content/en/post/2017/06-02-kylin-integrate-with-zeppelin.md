@@ -29,20 +29,20 @@ Stop stop
 
 You can now open the browser and access Zeppelin's WEB UI, as shown in the following image:
 
-![zeppelin-01.png](http://siteimgs.lisenhui.cn/2017/06-02-zeppelin-01.png)
+![zeppelin-01.png](http://siteimgs.cn-sh2.ufileos.com/2017/06-02-zeppelin-01.png)
 
 
 OK, the next step is to create a connection to Kylin, called 'Interpreter' in Zeppelin, click 'anonymous' in the upper right corner of the page to select it as follows:
 
-![zeppelin-02.png](http://siteimgs.lisenhui.cn/2017/06-02-zeppelin-02.png)
+![zeppelin-02.png](http://siteimgs.cn-sh2.ufileos.com/2017/06-02-zeppelin-02.png)
 
 Also click on the 'Create' button in the upper right corner and fill in your real data with the data filled in in the figure below:
 
-![zeppelin-03.png](http://siteimgs.lisenhui.cn/2017/06-02-zeppelin-03.png)
+![zeppelin-03.png](http://siteimgs.cn-sh2.ufileos.com/2017/06-02-zeppelin-03.png)
 
 Once saved, click on the 'Notebook' in the upper left corner -- as shown in the figure below:
 
-![zeppelin-04.png](http://siteimgs.lisenhui.cn/2017/06-02-zeppelin-04.png)
+![zeppelin-04.png](http://siteimgs.cn-sh2.ufileos.com/2017/06-02-zeppelin-04.png)
 
 Write the following SQL statement to notebook:
 
@@ -57,7 +57,7 @@ order by fact.part_dt desc
 
 Click the start button on the right to complete the query, come out a table data, and then choose the graphical report form you need, the data will  automatically render, click 'sets' can have more adjustments. 
 
-![zeppelin-05.png](http://siteimgs.lisenhui.cn/2017/06-02-zeppelin-05.png)
+![zeppelin-05.png](http://siteimgs.cn-sh2.ufileos.com/2017/06-02-zeppelin-05.png)
 
 Other applications about 'Zeppelin' need to be understood slowly and followed up. 
 

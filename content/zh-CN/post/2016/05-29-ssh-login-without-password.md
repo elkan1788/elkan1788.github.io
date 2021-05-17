@@ -24,11 +24,11 @@ categories:
 
 下面首先在主节点上生成一个`SSH-KEY`, 在终端输入`ssh-keygen -t rsa`, 这里使用默认的存放的目录, 无密码, 连续按2次回车键即可, 如下图所示:
 
-![ssh-login-without-pswd-1](http://siteimgs.lisenhui.cn/ssh-login-without-pswd-01.png)
+![ssh-login-without-pswd-1](http://siteimgs.cn-sh2.ufileos.com/ssh-login-without-pswd-01.png)
 
 然后将生成的`PUB_KEY`文件, 使用`cat`管道命令输出名称为`authorized_keys`的文件, 再用`scp`命令拷贝一份到节点服务器上面(此时是要输入密码的), 如下图所示: 
 
-![ssh-login-without-pswd-2](http://siteimgs.lisenhui.cn/ssh-login-without-pswd-02.png)
+![ssh-login-without-pswd-2](http://siteimgs.cn-sh2.ufileos.com/ssh-login-without-pswd-02.png)
 
 如无法执行`scp`命令, 请执行安装命令: `yum install -y openssh-clients`
 

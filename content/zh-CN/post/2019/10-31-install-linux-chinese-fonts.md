@@ -12,8 +12,8 @@ categories:
 
 平时一般都很少在Linux服务机器上使用UI桌面，但也还是有机会遇到，这不今天便遇到Linux版本的火狐浏览器显示中文乱码。无论怎么调试浏览器的相关设置，都没有办法凑效，甚是有点郁闷。
 
-![firefox-browser-err01.png](http://siteimgs.lisenhui.cn/2019/10-31-firefox-browser-err01.png)
-![firefox-browser-err02.png](http://siteimgs.lisenhui.cn/2019/10-31-firefox-browser-err02.png)
+![firefox-browser-err01.png](http://siteimgs.cn-sh2.ufileos.com/2019/10-31-firefox-browser-err01.png)
+![firefox-browser-err02.png](http://siteimgs.cn-sh2.ufileos.com/2019/10-31-firefox-browser-err02.png)
 
 <!--more-->
 
@@ -43,7 +43,7 @@ Microsoft YaHei,微软雅黑:style=Bold,Negreta,tu?né,fed,Fett,?ντονα,Negr
 
 如能显示出来**微软雅黑**字样，那就表示显示成功，再到火狐浏览器的高级设置中把字体选项调整为微软雅黑即可，效果如下：
 
-![firefox-browser-err03.png](http://siteimgs.lisenhui.cn/2019/10-31-firefox-browser-err03.png)
+![firefox-browser-err03.png](http://siteimgs.cn-sh2.ufileos.com/2019/10-31-firefox-browser-err03.png)
 
 
 ## 总结

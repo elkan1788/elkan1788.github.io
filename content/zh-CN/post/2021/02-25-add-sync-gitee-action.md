@@ -97,7 +97,7 @@ jobs:
 
 那后续在给Github仓库推送代码时，便会有自动同步代码到Gitee仓库，同时也会重新reload静态页面服务，省去手动干预的流程。
 
-![02-25-sync-2-gitee-flow-01.png](http://siteimgs.lisenhui.cn/2021/02-25-sync-2-gitee-flow-01.png)
+![02-25-sync-2-gitee-flow-01.png](http://siteimgs.cn-sh2.ufileos.com/2021/02-25-sync-2-gitee-flow-01.png)
 
 ## 3.小结
 

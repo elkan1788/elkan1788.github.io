@@ -13,9 +13,9 @@ For a while did not pay attention to the development of domestic IT technology, 
 
 <!--more-->
 
-![use-ke-lgh-my97-1](http://siteimgs.lisenhui.cn/2012/01-13-nutz-ke-lgh-my97-1.png)
+![use-ke-lgh-my97-1](http://siteimgs.cn-sh2.ufileos.com/2012/01-13-nutz-ke-lgh-my97-1.png)
 
-![use-ke-lgh-my97-2](http://siteimgs.lisenhui.cn/2012/01-13-nutz-ke-lgh-my97-2.png)
+![use-ke-lgh-my97-2](http://siteimgs.cn-sh2.ufileos.com/2012/01-13-nutz-ke-lgh-my97-2.png)
 
 In this has to praise the 'Nutz' of the united states of high efficiency and simplicity, and the previous version of KE or the upload part of the 'JSP' page translated into the background 'JAVA' code, the only difference is that those same functions of the implementation code streamlined a lot ah, the official website example of the two 'JSP' files have been compressed into a less than 400 lines of 'JAVA' background code, the source code is as follows:
 
@@ -388,13 +388,13 @@ public class KindEditor4Module {
 
 Although the code is streamlined, but the function is a no ambiguity ah, and then enjoy the effect map.
 
-![use-ke-lgh-my97-3](http://siteimgs.lisenhui.cn/2012/01-13-nutz-ke-lgh-my97-3.png)
+![use-ke-lgh-my97-3](http://siteimgs.cn-sh2.ufileos.com/2012/01-13-nutz-ke-lgh-my97-3.png)
 
-![use-ke-lgh-my97-4]( http://siteimgs.lisenhui.cn/2012/01-13-nutz-ke-lgh-my97-4.png)
+![use-ke-lgh-my97-4]( http://siteimgs.cn-sh2.ufileos.com/2012/01-13-nutz-ke-lgh-my97-4.png)
 
-![use-ke-lgh-my97-5]( http://siteimgs.lisenhui.cn/2012/01-13-nutz-ke-lgh-my97-5.png)
+![use-ke-lgh-my97-5]( http://siteimgs.cn-sh2.ufileos.com/2012/01-13-nutz-ke-lgh-my97-5.png)
 
-![use-ke-lgh-my97-6]( http://siteimgs.lisenhui.cn/2012/01-13-nutz-ke-lgh-my97-6.png)
+![use-ke-lgh-my97-6]( http://siteimgs.cn-sh2.ufileos.com/2012/01-13-nutz-ke-lgh-my97-6.png)
 
 Nutz for JAVA programmers, is in addition to SSH another choice, a good start, if you have to use believe that you will learn to love it, hip-hop, other not much to say, the following directly to the source code to serve it, because the time is tight (will have to take a bus home, Gaga, finally holiday) just write down, write not good also look at everyone understand.
 

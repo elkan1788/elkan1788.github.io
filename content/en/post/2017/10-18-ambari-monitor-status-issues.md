@@ -12,7 +12,7 @@ categories:
 
 Many times the maintenance of the   environment is indeed a headache event, which does not originally show the monitoring of normal services on Ambari's Dashboard page, there is a strange phenomenon: in the machine query service running process is normal, but partial Ambari's UI interface is displayed as a stop, but the port check shows normal. Here's the picture:
 
-![alert_stopped.png](http://siteimgs.lisenhui.cn/2017/10-18-ambari-red.png)
+![alert_stopped.png](http://siteimgs.cn-sh2.ufileos.com/2017/10-18-ambari-red.png)
 
 <!--more-->
 
@@ -24,7 +24,7 @@ Really very depressed, at this time also had to use google, and then found a sim
 
 
 
-![ambari-green.png](http://siteimgs.lisenhui.cn/2017/10-18-ambari-green.png)
+![ambari-green.png](http://siteimgs.cn-sh2.ufileos.com/2017/10-18-ambari-green.png)
 
 
 

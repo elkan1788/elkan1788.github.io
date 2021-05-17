@@ -163,7 +163,7 @@ apidoc -and  apidoc/-o  apidoc/
 
 The document works as follows:
 
-![nodejs-apidoc-01.png](http://siteimgs.lisenhui.cn/2017/07-18-nodejs-apidoc-01.png)
+![nodejs-apidoc-01.png](http://siteimgs.cn-sh2.ufileos.com/2017/07-18-nodejs-apidoc-01.png)
 
 A frequently asked question
 
