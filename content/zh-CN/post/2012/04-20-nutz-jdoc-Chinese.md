@@ -26,33 +26,33 @@ IDE工具：Netbeans7.1
  
 用Netbeans创建一个简单的WEB工程，把从GOOGLE CODE下载来的Nutz相关文件里面抽取出开发所必须的创建了一个新的库引用，这些操作和显示都正常，但当用代码自动补全时，发现了个问题，代码补全出来的JDOC居然是乱码的，如下图所示：
 
-![nutz-Chinese-1](http://myblog.lisenhui.cn/2012/04-20-nutz-Chinese-1.png-alias)
+![nutz-Chinese-1](http://siteimgs.lisenhui.cn/2012/04-20-nutz-Chinese-1.png-alias)
 
 咦，这是怎么回事呢？？重新检查了自己的工程编码属性，确定是UTF-8没有错哪，如下图所示：
 
-![nutz-Chinese-2](http://myblog.lisenhui.cn/2012/04-20-nutz-Chinese-2.png-alias)
+![nutz-Chinese-2](http://siteimgs.lisenhui.cn/2012/04-20-nutz-Chinese-2.png-alias)
 
 试着打开源码查看，却是得到提示信息说“无法使用GBK编码格式安全地打开该文件，是否要继续打开它？”
 
-![nutz-Chinese-3](http://myblog.lisenhui.cn/2012/04-20-nutz-Chinese-3.png-alias)
+![nutz-Chinese-3](http://siteimgs.lisenhui.cn/2012/04-20-nutz-Chinese-3.png-alias)
 
 难道说Nutz生成JDOC时使用的是GBK编码来的，看来只好连接GitHub库下载个库看看。下载下来查看工程的编码格式也是UTF-8，这就奇怪了--乱码从何产生呢？？看来只好自己生成个JDOC看看了，在UTF-8环境中生成JDOC要注意编码格式的设置，如下图所示，
 
-![nutz-Chinese-4](http://myblog.lisenhui.cn/2012/04-20-nutz-Chinese-4.png-alias)
+![nutz-Chinese-4](http://siteimgs.lisenhui.cn/2012/04-20-nutz-Chinese-4.png-alias)
 
 生成好JDOC后，直接修改Netbeans库的源码和JDOC连接，打开创建的工程使用代码自动补全提示一切正常.
 
-![nutz-Chinese-5](http://myblog.lisenhui.cn/2012/04-20-nutz-Chinese-5.png-alias)
+![nutz-Chinese-5](http://siteimgs.lisenhui.cn/2012/04-20-nutz-Chinese-5.png-alias)
 
-![nutz-Chinese-6](http://myblog.lisenhui.cn/2012/04-20-nutz-Chinese-6.png-alias)
+![nutz-Chinese-6](http://siteimgs.lisenhui.cn/2012/04-20-nutz-Chinese-6.png-alias)
 
 问题算是解决了，不过引起这个问题的原因还真得思考下，编码格式的不同所造成的影响还真是郁闷哪。上面提到在没有修改前打开源码提示信息“无法使用GBK编码格式安全地打开该文件，是否要继续打开它？”  按照信息所描述是不是将Nutz的源码修改成GBK编码格式也可以呢？于是写了个编码格式轮换输出小程序测试了下，结果说明猜想是正确的，呵~
 
-![nutz-Chinese-7](http://myblog.lisenhui.cn/2012/04-20-nutz-Chinese-7.png-alias)
+![nutz-Chinese-7](http://siteimgs.lisenhui.cn/2012/04-20-nutz-Chinese-7.png-alias)
 
-![nutz-Chinese-8](http://myblog.lisenhui.cn/2012/04-20-nutz-Chinese-8.png-alias)
+![nutz-Chinese-8](http://siteimgs.lisenhui.cn/2012/04-20-nutz-Chinese-8.png-alias)
 
-![nutz-Chinese-9](http://myblog.lisenhui.cn/2012/04-20-nutz-Chinese-9.png-alias)
+![nutz-Chinese-9](http://siteimgs.lisenhui.cn/2012/04-20-nutz-Chinese-9.png-alias)
 
 其实这个小程序不单只是可以转换Nutz的源码，它还可以转换任何项目的编码格式(仅支持JAVA文件)，注意是由UTF-8转换成GBK编码格式哦，那么接下来就慢慢体验下Nutz给你所带来的“美妙体验”吧，呵~
 

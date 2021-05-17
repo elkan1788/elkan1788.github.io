@@ -15,7 +15,7 @@ I didn't expect the response to be so strong when I wrote a JSP version of kinde
  
 The version number of the current version of the plug-in is:Kindeditor-plugin0.4RELEASE, and the list of classes in the JAR package is as follows:
  
-![kindeditor-jsp-ss-1](http://myblog.lisenhui.cn/2011/05-05-kindeditor-jsp-ss-1.png-alias)
+![kindeditor-jsp-ss-1](http://siteimgs.lisenhui.cn/2011/05-05-kindeditor-jsp-ss-1.png-alias)
  
  The main functions accomplished by this refactoring are the following:
 :: Reconstruct the selection button of upload attachment page press, imitation image upload;
@@ -212,27 +212,27 @@ This time also written with the JQuery  EasyUI  and Syntax Highlighter    Gramma
 
 :: Apply the sample home page
 
-![kindeditor-jsp-ss-2](http://myblog.lisenhui.cn/2011/05-05-kindeditor-jsp-ss-2.png-alias)
+![kindeditor-jsp-ss-2](http://siteimgs.lisenhui.cn/2011/05-05-kindeditor-jsp-ss-2.png-alias)
 
 :: Servlet version of KE
 
-![kindeditor-jsp-ss-3](http://myblog.lisenhui.cn/2011/05-05-kindeditor-jsp-ss-3.png-alias)
+![kindeditor-jsp-ss-3](http://siteimgs.lisenhui.cn/2011/05-05-kindeditor-jsp-ss-3.png-alias)
 
 :: Struts2 version of KE
 
-![kindeditor-jsp-ss-4](http://myblog.lisenhui.cn/2011/05-05-kindeditor-jsp-ss-4.png-alias)
+![kindeditor-jsp-ss-4](http://siteimgs.lisenhui.cn/2011/05-05-kindeditor-jsp-ss-4.png-alias)
 
 :: Attachment upload page
 
-![kindeditor-jsp-ss-5](http://myblog.lisenhui.cn/2011/05-05-kindeditor-jsp-ss-5.png-alias)
+![kindeditor-jsp-ss-5](http://siteimgs.lisenhui.cn/2011/05-05-kindeditor-jsp-ss-5.png-alias)
 
 :: On The picture management
 
-![kindeditor-jsp-ss-6](http://myblog.lisenhui.cn/kindeditor-jsp-ss-6.png-alias)
+![kindeditor-jsp-ss-6](http://siteimgs.lisenhui.cn/kindeditor-jsp-ss-6.png-alias)
 
 :: KE editor preview effect
 
-![kindeditor-jsp-ss-7](http://myblog.lisenhui.cn/2011/05-05-kindeditor-jsp-ss-7.png-alias)
+![kindeditor-jsp-ss-7](http://siteimgs.lisenhui.cn/2011/05-05-kindeditor-jsp-ss-7.png-alias)
 
 For more detailed application features, please see the attachment for download. Finally remember to support the development of domestic technology ah, have an opinion please shoot brick spit slot.  
 

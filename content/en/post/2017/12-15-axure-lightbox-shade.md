@@ -16,7 +16,7 @@ Today, while doing product prototyping, I encountered a difficulty with dynamica
 
 Students who do front-end development know that implementing a mask layer in HTML requires only adding a floating DIV to make it easy. So how do you implement it in Axe? 
 
-![axure-lightbox-shade01.png](http://myblog.lisenhui.cn/2017/12-15-axure-lightbox-shade01.png-alias)
+![axure-lightbox-shade01.png](http://siteimgs.lisenhui.cn/2017/12-15-axure-lightbox-shade01.png-alias)
 
 As shown in the figure above, the implementation of this mask layer can be divided into two parts:
 
@@ -35,19 +35,19 @@ Then use three buttons to show the different effects:
 
 - Open the mask layer
 
-![axure-lightbox-shade02.png](http://myblog.lisenhui.cn/2017/12-15-axure-lightbox-shade02.png-alias)
+![axure-lightbox-shade02.png](http://siteimgs.lisenhui.cn/2017/12-15-axure-lightbox-shade02.png-alias)
 
 - Close the mask layer
 
-![axure-lightbox-shade03.png](http://myblog.lisenhui.cn/2017/12-15-axure-lightbox-shade03.png-alias)
+![axure-lightbox-shade03.png](http://siteimgs.lisenhui.cn/2017/12-15-axure-lightbox-shade03.png-alias)
 
 - Automatic presentation
 
-![axure-lightbox-shade04.png](http://myblog.lisenhui.cn/2017/12-15-axure-lightbox-shade04.png-alias)
+![axure-lightbox-shade04.png](http://siteimgs.lisenhui.cn/2017/12-15-axure-lightbox-shade04.png-alias)
 
 So now let's take a look at the final implementation as follows, see the big screen below (https://7m9t2k.axshare.com/).
 
-![axure-lightbox-shade05.gif](http://myblog.lisenhui.cn/2017/12-15-axure-lightbox-shade05.gif-alias)
+![axure-lightbox-shade05.gif](http://siteimgs.lisenhui.cn/2017/12-15-axure-lightbox-shade05.gif-alias)
 
 
 It's easier if you want to do a full-screen matte layer, just add the effect of a light box to the display component. 

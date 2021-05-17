@@ -88,7 +88,7 @@ options={ "init_command":"SET NAMES `utf8`"}
 
 Experimented for a little, garbled code problem OK, Chinese display normal. 
 
-![hue-mysql-chinese.png](http://myblog.lisenhui.cn/2017/08-15-hue-mysql-chinese.png-alias)
+![hue-mysql-chinese.png](http://siteimgs.lisenhui.cn/2017/08-15-hue-mysql-chinese.png-alias)
 
 In fact, if you do not have the production environment, you do not have to toss, the simplest way is to update the 'my.ini' configuration, you know.
 

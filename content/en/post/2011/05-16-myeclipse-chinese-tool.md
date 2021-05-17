@@ -17,7 +17,7 @@ The most commonly used IDEs in the JAVA world are 'Eclipse'and'MyEclisep',both o
 
 Or first back to our theme today's'MyEclisep' Hanhuaprogram, 'Eclipse' Hanhua need  not say more, they go directly to the official website to download a language pack to achieve the Chinese interface, but 'MyEclipse' is not so simple, previously found a cow man wrote Hanhua package on the Internet, the trial effect is good, but the steps are a bit troublesome, last night suddenly wonder if you can do a fool's Hanhua program? Think of want to think that the feasibility of about 70%, the final measure or decide CODE, and finally in about 3 hours after the success of this Chinese program, the interface effect is as follows:
 
-![myeclise-Chinese-1](http://myblog.lisenhui.cn/2011/05-16-myeclipse-Chinese-1.png-alias)
+![myeclise-Chinese-1](http://siteimgs.lisenhui.cn/2011/05-16-myeclipse-Chinese-1.png-alias)
 
 If you feel the need to download a go back to use it, here's how to use this software:
 
@@ -32,11 +32,11 @@ If you feel the need to download a go back to use it, here's how to use this sof
 :: After clicking the Start Hanhua button, if successful, the following success prompt will appear, now you restart the next 'MyEclipse' program to see, preferably with the '-clean' command;
 
 
-![myeclise-Chinese-2](http://myblog.lisenhui.cn/2011/05-16-myeclipse-Chinese-2.png-alias)
+![myeclise-Chinese-2](http://siteimgs.lisenhui.cn/2011/05-16-myeclipse-Chinese-2.png-alias)
 
 Take a look at the 'MyEclipse' interface after Hanhua:
 
-![myeclise-Chinese-3](http://myblog.lisenhui.cn/2011/05-16-myeclipse-Chinese-3.png-alias)
+![myeclise-Chinese-3](http://siteimgs.lisenhui.cn/2011/05-16-myeclipse-Chinese-3.png-alias)
 
 May be because the Hanhua package is a bit old original, so it is not completely Hanhua, if you have a better Hanhua bag, I hope you can share with you. Finally, if you feel that the effect of Hanhua is not ideal and want to restore the English interface, just restore the corresponding folder directory under the 'bundles_backup.info' and 'myeclipse_backup.ini' file restart under the 'MyEclipse' software on it. 
 

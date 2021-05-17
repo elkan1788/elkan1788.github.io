@@ -49,14 +49,14 @@ toc: true
 
 最后的效果如下：
 
-![LiveRe Comment](http://myblog.lisenhui.cn/2020/10-02-hugo-next-LiveRe-comment.png-alias)
+![LiveRe Comment](http://siteimgs.lisenhui.cn/2020/10-02-hugo-next-LiveRe-comment.png-alias)
 
 
 ### 2.2 Valine
 
 [Valine](https://valine.js.org/),是一款基于LeanCloud的快速、简洁且高效的无后端评论系统。官方的文档非常详细，这里就不再赘述，最后实现的效果如下：
 
-![Valine Comment](http://myblog.lisenhui.cn/2020/10-02-hugo-next-valine-comment.png-alias)
+![Valine Comment](http://siteimgs.lisenhui.cn/2020/10-02-hugo-next-valine-comment.png-alias)
 
 > 需要注意一下，由于Valine里面集成了LeanCloud的SDK引用，所以自己再使用LearnCloud功能就不需要再引用相关的SDK，不然后就会发生冲突。
 
@@ -68,7 +68,7 @@ toc: true
 
 像CNZZ，百度，谷歌(可能被墙)，GrowingIO等（你也可以集成自己熟悉的平台）都可以实现对博客空间访问的统计与相关数据收集，另外这些平台的埋点脚本也是支持一起集成使用。 此次主要是集成了CNZZ, 百度和谷歌，但是这些平台的数据只有站长才有权限查看，所以另外引入不蒜子计数器，把网站PU和UV数据公开展示，效果如下：
 
-![Busuanzi Counter](http://myblog.lisenhui.cn/2020/10-02-hugo-next-busuanzi-viewers.png-alias)
+![Busuanzi Counter](http://siteimgs.lisenhui.cn/2020/10-02-hugo-next-busuanzi-viewers.png-alias)
 
 ### 3.2 文章访问统计
 
@@ -113,7 +113,7 @@ sitemap文件生成有利于站点收录平台，Hugo生成sitemap文件时要�
 
 另外通过站点自带的分享功能，可以快速将文章分享给不同的读者或者是其他平台。此次采用的是BShare插件，可以快速生成不同平台的分享链接，读者只需要一键点击便可快速分享，效果如下：
 
-![Bshare Plugin](http://myblog.lisenhui.cn/2020/10-02-hugo-next-bshare.png-alias)
+![Bshare Plugin](http://siteimgs.lisenhui.cn/2020/10-02-hugo-next-bshare.png-alias)
 
 > 目前关于BShare的HTTPS引用问题已通过Meta标签解决，但其内部有好几个引用是无效的，会在控制台输出一些报错信息，但不会影响整个页面的渲染。此问题已经提交BShare反馈，期待后续有升级修复。
 
@@ -121,13 +121,13 @@ sitemap文件生成有利于站点收录平台，Hugo生成sitemap文件时要�
 
 原有的NexT主题里并没有带自我介绍的页面，参考原来Hexo主题里面的个人介绍页面，增加一些shortcode的代码，实现一个有别于文章的个人信息介绍页面，效果如下：
 
-![About ME](http://myblog.lisenhui.cn/2020/10-02-hugo-next-about-me.png-alias)
+![About ME](http://siteimgs.lisenhui.cn/2020/10-02-hugo-next-about-me.png-alias)
 
 ## 6. 本地搜索
 
 本地搜索可通过文章标题或内容关键字快速检索出相关的内容，原理也比较简单，就是把文章标题和内容先抽取到一个XML文本中记录，然后通过JavaScript脚本读取解析。原来主题中的实现是通过sitemap.xml来解析，但这样会与真正的sitemap.xml文件产品冲突，后来改用robots.txt文件进行存储，同时修正相正相关的弹出框等相关样式和图标，最终效果呈现如下：
 
-![Local Search](http://myblog.lisenhui.cn/2020/10-02-hugo-next-search-in-local.png-alias)
+![Local Search](http://siteimgs.lisenhui.cn/2020/10-02-hugo-next-search-in-local.png-alias)
 
 ## 7. 公益404
 
@@ -151,13 +151,13 @@ daovoice('update');
 
 最后实现的效果如下：
 
-![DaoVoice](http://myblog.lisenhui.cn/2020/10-02-hugo-next-daovoice.png-alias)
+![DaoVoice](http://siteimgs.lisenhui.cn/2020/10-02-hugo-next-daovoice.png-alias)
 
 ## 9. 图片浏览功能
 
 通过在文章里面直接引用的图片都会是被压缩，或是缩小，无法查看原图的清晰明了。之前NextT自带的图片浏览插件并不好用，所以替换成了ImageViewer来实现对文章内的图片浏览，会有类似幻灯片的效果，如下：
 
-![ImageViewer](http://myblog.lisenhui.cn/2020/10-02-hugo-next-imageviewer.png-alias)
+![ImageViewer](http://siteimgs.lisenhui.cn/2020/10-02-hugo-next-imageviewer.png-alias)
 
 ## 10. 其它优化
 
