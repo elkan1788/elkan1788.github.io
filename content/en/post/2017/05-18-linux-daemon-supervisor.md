@@ -124,7 +124,7 @@ supervisorctl reload
 
 Then enter in the browser: http://127.0.0.1:9001, enter login information, the interface shows as follows:
 
-![supervisor-web.png](http://siteimgs.lisenhui.cn/2017/05-18-supervisor-web.png-alias)
+![supervisor-web.png](http://siteimgs.lisenhui.cn/2017/05-18-supervisor-web.png)
 
 Now you can try killing the daemon and see if it restarts automatically again, but if the supervisord service is killed then it won't work. 
 

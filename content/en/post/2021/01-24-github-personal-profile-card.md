@@ -10,7 +10,7 @@ tags:
 
 There's always something new on    Github, and it's not unwittingly an interesting game to play with as a personal developer's lettercard. The effect is as follows:
 
-![01-24-elkan1788-profile-02.png](http://siteimgs.lisenhui.cn/2021/01-24-elkan1788-profile-02.png-alias)
+![01-24-elkan1788-profile-02.png](http://siteimgs.lisenhui.cn/2021/01-24-elkan1788-profile-02.png)
 
 It's not cumbersome to operate, as was the case with previous pages services, just prepare a specific repository, as follows:
 
@@ -20,7 +20,7 @@ It's not cumbersome to operate, as was the case with previous pages services, ju
 
 Apply for a public repository with the same name as your user name on Github, and you'll find a "praise" prompt from Github that reads:
 
-![01-24-elkan1788-profile-01.png](http://siteimgs.lisenhui.cn/2021/01-24-elkan1788-profile-01.png-alias)
+![01-24-elkan1788-profile-01.png](http://siteimgs.lisenhui.cn/2021/01-24-elkan1788-profile-01.png)
 
 
 Once the repository is created, a 'README.md' file is prepared by default, and you can then write the relevant information on it. 

@@ -18,7 +18,7 @@ toc: true
 
 翻译的全流程概览如下：
 
-![03-21-join-istio-translation-org-11.png](http://siteimgs.lisenhui.cn/2021/03-21-join-istio-translation-org-11.png-alias)
+![03-21-join-istio-translation-org-11.png](http://siteimgs.lisenhui.cn/2021/03-21-join-istio-translation-org-11.png)
 
 
 ## 1. 准备工作
@@ -114,7 +114,7 @@ Istio 的站点文档均是采用MD格式的文件，所以我们需要一款自
 
 1. 设置好编辑器的换行显示，避免编辑时要左右拖动滚动条；
 2. 开启左右两个窗口模式，可以使用Windows自带分屏功能或是编辑器的窗口功能，推荐使用后者切换时比较方便；
-3. 使用 `Crtl+P` 快捷键打开 `Sublime Text` 的搜索功能，拷贝领取任务中的文章路径，分别打开 `en` 和 `zh` 目录下对应的文件，如下图所示：![03-21-join-istio-translation-org-05.png](http://siteimgs.lisenhui.cn/2021/03-21-join-istio-translation-org-05.png-alias)
+3. 使用 `Crtl+P` 快捷键打开 `Sublime Text` 的搜索功能，拷贝领取任务中的文章路径，分别打开 `en` 和 `zh` 目录下对应的文件，如下图所示：![03-21-join-istio-translation-org-05.png](http://siteimgs.lisenhui.cn/2021/03-21-join-istio-translation-org-05.png)
 
 > 翻译工作确实会比较枯燥一些，要逐行逐句进行理解和提炼，非常考验您的耐心，哈
 
@@ -126,14 +126,14 @@ Istio 的站点文档均是采用MD格式的文件，所以我们需要一款自
 
 推送成功后切换到您 Github 下的 Istio 仓库主页，就可以在代码上方看到一个明显的 `PR` 提示，点击绿色按钮就可以快速创建并提交给 Istio 官方，静静等待其他人的评审。
 
-![03-21-join-istio-translation-org-06.png](http://siteimgs.lisenhui.cn/2021/03-21-join-istio-translation-org-06.png-alias)
-![03-21-join-istio-translation-org-07.png](http://siteimgs.lisenhui.cn/2021/03-21-join-istio-translation-org-07.png-alias)
+![03-21-join-istio-translation-org-06.png](http://siteimgs.lisenhui.cn/2021/03-21-join-istio-translation-org-06.png)
+![03-21-join-istio-translation-org-07.png](http://siteimgs.lisenhui.cn/2021/03-21-join-istio-translation-org-07.png)
 
 ### 3.4 更新任务状态
 
 记得提交完 PR 后及时在登记的任务栏中添加 PR 记录，并更新状态，同时也要留意自己的邮箱或是查看 Github 上的消息通知（如下图所示），关注最新的变化。可能在其他评审后需要您进行修改（按评审建议调整对应内容，重新提交即可），如没有问题一般都是直接被合并的。
 
-![03-21-join-istio-translation-org-10.png](http://siteimgs.lisenhui.cn/2021/03-21-join-istio-translation-org-10.png-alias)
+![03-21-join-istio-translation-org-10.png](http://siteimgs.lisenhui.cn/2021/03-21-join-istio-translation-org-10.png)
 
 至此，整个翻译的流程便已经完整走通，在等待 PR 的日子里
 
@@ -143,16 +143,16 @@ Istio 的站点文档均是采用MD格式的文件，所以我们需要一款自
 
 翻译工作一般都是比较被动的，加上大家工作的时间差异，可以在翻译前参考如下步骤同步当前官方最新文档状态：
 
-1. 在自己的仓库中，创建个新的PR请求，如下图所示：![03-21-join-istio-translation-org-01.png](http://siteimgs.lisenhui.cn/2021/03-21-join-istio-translation-org-01.png-alias)
-2. 参考下面的图片数字顺序，调整对应仓库名称与分支（左边是自己的仓库，右边是官方的仓库），点击右边的绿色按钮，填写相关的评审信息（主要是自己能理解的就好，没有标准）![03-21-join-istio-translation-org-02.png](http://siteimgs.lisenhui.cn/2021/03-21-join-istio-translation-org-02.png-alias) ![03-21-join-istio-translation-org-03.png](http://siteimgs.lisenhui.cn/2021/03-21-join-istio-translation-org-03.png-alias)
-3. 然后会自动跳转到那个PR，在下方找到 `Merge pull request` 按钮点击并确认即可； ![03-21-join-istio-translation-org-04.png](http://siteimgs.lisenhui.cn/2021/03-21-join-istio-translation-org-04.png-alias)
+1. 在自己的仓库中，创建个新的PR请求，如下图所示：![03-21-join-istio-translation-org-01.png](http://siteimgs.lisenhui.cn/2021/03-21-join-istio-translation-org-01.png)
+2. 参考下面的图片数字顺序，调整对应仓库名称与分支（左边是自己的仓库，右边是官方的仓库），点击右边的绿色按钮，填写相关的评审信息（主要是自己能理解的就好，没有标准）![03-21-join-istio-translation-org-02.png](http://siteimgs.lisenhui.cn/2021/03-21-join-istio-translation-org-02.png) ![03-21-join-istio-translation-org-03.png](http://siteimgs.lisenhui.cn/2021/03-21-join-istio-translation-org-03.png)
+3. 然后会自动跳转到那个PR，在下方找到 `Merge pull request` 按钮点击并确认即可； ![03-21-join-istio-translation-org-04.png](http://siteimgs.lisenhui.cn/2021/03-21-join-istio-translation-org-04.png)
 4. 使用 `git pull` 命令或是 `Git Extensions` 工具拉取最新文件到本地；
 
 ### 4.2 本地运行时缺失JS和CCS文件
 
 Istio 的静态资源采用了sass方式进行开发，所以本地运行时可能无法编译这些文件，导致您在本地预览时无法正常显示（比较错乱），可以找群里的其他小伙伴分享一下（或是点击下载 [**istio.io-generated-files.tgz**](http://myress.lisenhui.cn/myblog%2F2021-03-21-istio.io-generated-files.tgz)），然后把 `css`, `js`, `img` 里的资源放到本地的 `static` 对应目录下面，重新启动 Hugo 服务后就可以正常的显示。
 
-![03-21-join-istio-translation-org-08.png](http://siteimgs.lisenhui.cn/2021/03-21-join-istio-translation-org-08.png-alias)
+![03-21-join-istio-translation-org-08.png](http://siteimgs.lisenhui.cn/2021/03-21-join-istio-translation-org-08.png)
 
 
 > **注意：** 提交翻译文件时，不要把这些资源文件提并上去，需要把它们过滤下。 在 Windows 平台下有个操作小技巧，不要关闭 static 的文件窗口，然后提交前直接按 `Ctrl+Z` 组合键就可以快速撤销。
@@ -161,7 +161,7 @@ Istio 的静态资源采用了sass方式进行开发，所以本地运行时可�
 
 在 Istio 的自动化检查过程中，有个环节是需要谷歌的 CLA 支持的，首次提交 PR 时可能会遇到如下的问题，那么只要去 comment 里的那个链接地址注册一下就好，但要注意名称与要您的 Github 账号名称保证一致，不然无法通过检验。
 
-![03-21-join-istio-translation-org-09.png](http://siteimgs.lisenhui.cn/2021/03-21-join-istio-translation-org-09.png-alias)
+![03-21-join-istio-translation-org-09.png](http://siteimgs.lisenhui.cn/2021/03-21-join-istio-translation-org-09.png)
 
 ### 4.2 如何查找过时移除文档记录
 

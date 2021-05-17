@@ -24,7 +24,7 @@ Copy 'javacomm.jar' to 'X:\jre\lib\ext' directory below;
 Copy 'win32com.dll' to 'X:\jre'bin' directory below;
 :: Update the JDK environment inside the IDE, as shown below:
 
-![java-hard-rsr232-1](http://siteimgs.lisenhui.cn/2012/03-24-java-hard-rsr232-1.png-alias)
+![java-hard-rsr232-1](http://siteimgs.lisenhui.cn/2012/03-24-java-hard-rsr232-1.png)
 
 Then there is the hardware virtual environment installation virtual serial port, here I use VSPD6.0 (attachment provides download), after installation to start VSPD to add the ports we need, note that here is the way to add by group, such as COM1 and COM2 is a set of simultaneous additions, and so on. 
  
@@ -62,7 +62,7 @@ while (en.hasMoreElements()) {
 
 After running the code, the console has the correct port to output (see figure below), indicating that all environments are ok to go down, otherwise check. 
 
-![java-hard-rsr232-2](http://siteimgs.lisenhui.cn/2012/03-24-java-hard-rsr232-2.png-alias)
+![java-hard-rsr232-2](http://siteimgs.lisenhui.cn/2012/03-24-java-hard-rsr232-2.png)
 
 Finally, the problem of interaction with serial data is to be solved. The main difficulty with this is data reading, because we don't know when the port will have data coming or how long it will be. Typically, serial communication applications have two modes, one is to implement the SerialPortEventListener interface, to listen for and handle various serial events, and the other is to establish a separate receiving thread dedicated to receiving data. After referring to the code of many older generations, the following is the first way to write a simple assistant program, the specific implementation of the detailed code, as follows:
 
@@ -507,20 +507,20 @@ The code is written, press the F11 key to enter the debugging state, everything 
 
 :: Start the interface
 
-![java-hard-rsr232-3](http://siteimgs.lisenhui.cn/2012/03-24-java-hard-rsr232-3.png-alias)
+![java-hard-rsr232-3](http://siteimgs.lisenhui.cn/2012/03-24-java-hard-rsr232-3.png)
 
 Port detection
 
-![java-hard-rsr232-4](http://siteimgs.lisenhui.cn/2012/03-24-java-hard-rsr232-4.png-alias)
+![java-hard-rsr232-4](http://siteimgs.lisenhui.cn/2012/03-24-java-hard-rsr232-4.png)
 
 :: Communication testing
 
-![java-hard-rsr232-5](http://siteimgs.lisenhui.cn/2012/03-24-java-hard-rsr232-5.png-alias)
+![java-hard-rsr232-5](http://siteimgs.lisenhui.cn/2012/03-24-java-hard-rsr232-5.png)
 
 Finally take the time to beautify the program, the effect is more beautiful
 
-![java-hard-rsr232-6](http://siteimgs.lisenhui.cn/2012/03-24-java-hard-rsr232-6.png-alias)
+![java-hard-rsr232-6](http://siteimgs.lisenhui.cn/2012/03-24-java-hard-rsr232-6.png)
 
-![java-hard-rsr232-7](http://siteimgs.lisenhui.cn/2012/03-24-java-hard-rsr232-7.png-alias)
+![java-hard-rsr232-7](http://siteimgs.lisenhui.cn/2012/03-24-java-hard-rsr232-7.png)
 
 PS: (http://dl.iteye.com/topics/download/80f67e6e-45eb-31ff-8086-da09f8d5762e)

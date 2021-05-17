@@ -12,8 +12,8 @@ Background
 
 Usually rarely use the UI desktop on Linux  service machines, but there is still a chance to encounter, this does not today encounter the Linux version of firefox browser display Chinese garbled code. No matter how to debug the browser's related settings, there is no way to work together, even a little depressed. 
 
-![firefox-browser-err01.png](http://siteimgs.lisenhui.cn/2019/10-31-firefox-browser-err01.png-alias)
-![firefox-browser-err02.png](http://siteimgs.lisenhui.cn/2019/10-31-firefox-browser-err02.png-alias)
+![firefox-browser-err01.png](http://siteimgs.lisenhui.cn/2019/10-31-firefox-browser-err01.png)
+![firefox-browser-err02.png](http://siteimgs.lisenhui.cn/2019/10-31-firefox-browser-err02.png)
 
 <!--more-->
 
@@ -43,7 +43,7 @@ Microsoft YaHei,微软雅黑:Style Bold,Negreta,born,fed,Fett,,Negrita,Lihavoitu
 
 If you can display the words "Microsoft Ya Black", it means that the display is successful, and then to Firefox's advanced settings to adjust  the font options to Microsoft Ya Black is available, the effect is as follows:
 
-![firefox-browser-err03.png](http://siteimgs.lisenhui.cn/2019/10-31-firefox-browser-err03.png-alias)
+![firefox-browser-err03.png](http://siteimgs.lisenhui.cn/2019/10-31-firefox-browser-err03.png)
 
 
 Summary

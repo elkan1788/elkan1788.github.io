@@ -88,7 +88,7 @@ options={ "init_command":"SET NAMES `utf8`"}
 
 实验了一下，乱码问题OK，中文显示正常。
 
-![hue-mysql-chinese.png](http://siteimgs.lisenhui.cn/2017/08-15-hue-mysql-chinese.png-alias)
+![hue-mysql-chinese.png](http://siteimgs.lisenhui.cn/2017/08-15-hue-mysql-chinese.png)
 
 > 其实要不生产环境的话就不用如此的折腾，最简单的办法就是更新`my.ini`配置，你懂的。
 

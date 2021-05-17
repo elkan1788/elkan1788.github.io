@@ -29,30 +29,30 @@ and the repository exists.
 
 <!--more-->
 
-![git-extensions-failed-01.png](http://siteimgs.lisenhui.cn/2021/02-22-git-extensions-failed-01.png-alias)
+![git-extensions-failed-01.png](http://siteimgs.lisenhui.cn/2021/02-22-git-extensions-failed-01.png)
 
 
 看到这个错误真是一脸的发楞呀，没有修改过任何SSH KEY相关的配置，咋就没有相应的权限进行操作了呢？
 
 开始脑子里想到的是，难道是本地的SSH KEY被清理了？但检查了文件后发现一切正常，而且使用git push命令操作也是正常的。真是百思不得其解，暂时只能参考报错的提示出来尝试操作修复。
 
-![git-extensions-failed-02.png](http://siteimgs.lisenhui.cn/2021/02-22-git-extensions-failed-02.png-alias)
+![git-extensions-failed-02.png](http://siteimgs.lisenhui.cn/2021/02-22-git-extensions-failed-02.png)
 
 ## 初步解决办法
 
 根据报错窗口的提示，使用Putty工具把本地的SSH KEY生成Private模式，操作如下：
 
-![git-extensions-failed-03.png](http://siteimgs.lisenhui.cn/2021/02-22-git-extensions-failed-03.png-alias)
+![git-extensions-failed-03.png](http://siteimgs.lisenhui.cn/2021/02-22-git-extensions-failed-03.png)
 
 然后把这个Private KEY加载到推送的流程中，再次点击推送按钮就会看到操作成功提示信息。
 
-![git-extensions-failed-04.png](http://siteimgs.lisenhui.cn/2021/02-22-git-extensions-failed-04.png-alias)
+![git-extensions-failed-04.png](http://siteimgs.lisenhui.cn/2021/02-22-git-extensions-failed-04.png)
 
 ## 问题定位
 
 虽然解决完这个推送的问题，但还觉得事情有点奇怪和蹊跷。于是想到了Git Extensions的配置是否有变化，经过一番查找测试后，确认是由于官方当前默认在Windows使用Putty作为客户端，把它调整为OpenSSH方式，问题便不再出现。
 
-![git-extensions-failed-05.png](http://siteimgs.lisenhui.cn/2021/02-22-git-extensions-failed-05.png-alias)
+![git-extensions-failed-05.png](http://siteimgs.lisenhui.cn/2021/02-22-git-extensions-failed-05.png)
 
 ## 总结
 
