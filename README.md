@@ -7,7 +7,7 @@
 
 [中文](README.zh.md) | [English](README.md)
 
-![my-hugo-blog](http://myblog.lisenhui.cn/hugo-logo.png-noalias)
+![my-hugo-blog](http://siteimgs.cn-sh2.ufileos.com/hugo-logo.png)
 
 
 # Use Hugo framework rebuild my blog site.
@@ -17,7 +17,7 @@ I'm a Geek, so like try the new things which is better. But maybe it's my last w
 
 # Demo：
 
-![my-hugo-blog](http://myblog.lisenhui.cn/my-hugo-blog.png-alias)
+![my-hugo-blog](http://siteimgs.cn-sh2.ufileos.com/my-hugo-blog.png)
 
 
 # Use qiniu Cloud storage
@@ -43,7 +43,7 @@ qupload.sh
 
 Upload successful logs：
 
-![my-hexo-blog2](http://myblog.lisenhui.cn/my-hexo-blog2.png-alias)
+![my-hexo-blog2](http://siteimgs.cn-sh2.ufileos.com/my-hexo-blog2.png)
 
 > Also you can use the latest GUI tools which name is [Kodo Browser](https://developer.qiniu.com/kodo/5972/kodo-browser), it can easy upload and manager your cotent.
 

@@ -7,7 +7,7 @@
 
 [中文](README.zh.md) | [English](README.md)
 
-![my-hugo-blog](http://myblog.lisenhui.cn/hugo-logo.png-noalias)
+![my-hugo-blog](http://siteimgs.cn-sh2.ufileos.com/hugo-logo.png)
 
 # 使用Hugo引擎重建个人博客
 
@@ -15,7 +15,7 @@
 
 # 预览：
 
-![my-hugo-blog](http://myblog.lisenhui.cn/my-hugo-blog.png-alias)
+![my-hugo-blog](http://siteimgs.cn-sh2.ufileos.com/my-hugo-blog.png)
 
 
 # 使用七牛云存储
@@ -41,7 +41,7 @@ qupload.sh
 
 图片上传成功日志：
 
-![my-hexo-blog2](http://myblog.lisenhui.cn/my-hexo-blog2.png-alias)
+![my-hexo-blog2](http://siteimgs.cn-sh2.ufileos.com/my-hexo-blog2.png)
 
 > 建议可以使用官方最新推出的图形化工具 [Kodo Browser](https://developer.qiniu.com/kodo/5972/kodo-browser)，它操作非常的简单，可以很方便的管理你的资源。
 
