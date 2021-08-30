@@ -1,31 +1,251 @@
-<!doctype html><html lang=en dir=content/en><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=content-security-policy content="upgrade-insecure-requests"><title>Install HDP2.6 (1)-Ambari Server offline - Loving life and dreams.</title><meta name=keywords content="Blog,Software,Big Data,Product,Architecture,Java,Kylin"><meta name=author content="Elkan.Li"><meta property="og:title" content="Install HDP2.6 (1)-Ambari Server offline"><meta property="og:site_name" content="Loving life and dreams."><meta property="og:image" content="/img/author.jpg"><meta name=title content="Install HDP2.6 (1)-Ambari Server offline - Loving life and dreams."><meta name=description content="Weclome to Elkan's blog site that who is best on program develop, pre-sales and big data."><link rel="shortcut icon" href=/img/favicon.ico><link rel=apple-touch-icon href=/img/apple-touch-icon.png><link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png><link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css><link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet><link href=/css/main.css rel=stylesheet type=text/css><link href=/css/syntax.css rel=stylesheet type=text/css><script type=text/javascript>var _hmt=_hmt||[];(function(){var hm=document.createElement("script");hm.src="https://hm.baidu.com/hm.js?9b021cbfb58b35e79012f9690de1c6ab";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(hm,s);})();</script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-61491374-4"></script><script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}
-gtag('js',new Date());gtag('config','UA-61491374-4 ');</script></head><body itemscope itemtype=http://schema.org/WebPage lang=zh-hans><div class="container one-collumn sidebar-position-left page-home"><div class=headband></div><header id=header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle role=button style=opacity:1;top:0><span class=toggle-line></span><span class=toggle-line></span><span class=toggle-line></span></div></div><div class=site-meta><div class=multi-lang-switch><i class="fa fa-fw fa-language" style=margin-right:5px></i><a class=lang-link id=zh-cn href=https://lisenhui.cn/2017/04/17/offline-install-hdp-ambari-notes.html>中文</a>
-<span class=lang-line>/</span>
-<a class=lang-link id=en href=#>English</a></div><div class=custom-logo-site-title><a href=/en/ class=brand rel=start><span class=logo-line-before><i></i></span><span class=site-title>Loving life and dreams.</span>
-<span class=logo-line-after><i></i></span></a></div><p class=site-subtitle>Don't stop running forward!</p></div><div class=site-nav-right><div class="toggle popup-trigger" style=opacity:1;top:0><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul id=menu class=menu><li class=menu-item><a href=/en/ rel=section><i class="menu-item-icon fa fa-fw fa-home"></i><br>Home</a></li><li class=menu-item><a href=/en/post rel=section><i class="menu-item-icon fa fa-fw fa-archive"></i><br>Archive</a></li><li class=menu-item><a href=/en/about.html rel=section><i class="menu-item-icon fa fa-fw fa-user"></i><br>About</a></li><li class=menu-item><a href=/en/404.html rel=section target=_blank><i class="menu-item-icon fa fa-fw fa-heartbeat"></i><br>Page404</a></li><li class="menu-item menu-item-search"><a href=javascript:; class=popup-trigger><i class="menu-item-icon fa fa-search fa-fw"></i><br>Search</a></li></ul><div class=site-search><div class="popup search-popup local-search-popup"><div class="local-search-header clearfix"><span class=search-icon><i class="fa fa-search"></i></span><span class=popup-btn-close><i class="fa fa-times-circle"></i></span><div class=local-search-input-wrapper><input autocomplete=off placeholder="Enter key words..." spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off></div></div><div id=local-search-result></div></div></div></nav></div></header><main id=main class=main><div class=main-inner><div class=content-wrap><div id=content class=content><section id=posts class=posts-expand><article class="post post-type-normal" itemscope itemtype=http://schema.org/Article><header class=post-header><h1 class=post-title itemprop="name headline"><a class=post-title-link href=https://lisenhui.cn/en/2017/04/17/offline-install-hdp-ambari-notes.html itemprop=url>Install HDP2.6 (1)-Ambari Server offline</a></h1><div class=post-meta><span class=post-time><i class="fa fa-calendar-o fa-fw"></i><span class=post-meta-item-text>Published at:</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-04-17">2017-04-17</time></span>
-<span class=post-category>&nbsp; | &nbsp;
-<i class="fa fa-folder-o fa-fw"></i><span class=post-meta-item-text>Categories:</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing><a href=/en/categories/big-data itemprop=url rel=index style=text-decoration:underline><span itemprop=name>Big data</span></a>
-&nbsp;</span></span>
-<span>|
-<i class="fa fa-file-word-o fa-fw"></i><span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>1221 words</span></span>
-<span>|
-<i class="fa fa-eye fa-fw"></i><span class=post-meta-item-text>Reading:</span>
-<span class=leancloud-view-count>6 minutes</span></span>
-<span id=/en/2017/04/17/offline-install-hdp-ambari-notes.html class=leancloud_visitors data-flag-title="Install HDP2.6 (1)-Ambari Server offline">|
-<i class="fa fa-binoculars fa-fw"></i><span class=post-meta-item-text>Visited:</span>
-<span class=leancloud-visitors-count></span></span></div></header><div class=post-body itemprop=articleBody><ol><li>Reference documentation</li></ol><p>FYI: <a href=https://docs.hortonworks.com/HDPDocuments/Ambari-2.5.0.3/bk_ambari-installation/content/ch_Getting_Ready.html>HDP Install Documents</a></p><p><a href=https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.0/bk_command-line-installation/content/prepare-environment.html#ref-2822d0e9-bd88-4714-910a-750c5b95a996>HDP Install Manual</a></p><h2 id=2-the-hardware-environment>2. The hardware environment</h2><p>The first is to prepare 3 machines, install the latest CentOS 7.2, the configuration reference requirements of the machine are as follows:</p><table><thead><tr><th>CPU</th><th>Memory</th><th>Disk</th><th>Remark</th></tr></thead><tbody><tr><td>4 nuclear</td><td>26G</td><td>200G</td><td>Primary node/1</td></tr><tr><td>4 nuclear</td><td>16G</td><td>200G</td><td>From node/2</td></tr></tbody></table><h2 id=3-hdp-installation-files>3. HDP installation files</h2><p>Download files installed offline:</p><table><thead><tr><th>File Name</th><th>Download Link</th></tr></thead><tbody><tr><td>ambari-2.5.0.3</td><td><a href=http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3/ambari-2.5.0.3-centos7.tar.gz>http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3/ambari-2.5.0.3-centos7.tar.gz</a></td></tr><tr><td>HDP-2.6.0.3</td><td><a href=http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.0.3/HDP-2.6.0.3-centos7-rpm.tar.gz>http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.0.3/HDP-2.6.0.3-centos7-rpm.tar.gz</a></td></tr><tr><td>HDP-UTILS-1.1.0.21</td><td><a href=http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.21/repos/centos7/HDP-UTILS-1.1.0.21-centos7.tar.gz>http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.21/repos/centos7/HDP-UTILS-1.1.0.21-centos7.tar.gz</a></td></tr></tbody></table><h2 id=4-ssh-is-secret-free>4. SSH is secret-free</h2><p>Configure password-free login, note that this is mainly the master machine login to other cluster machines. So it&rsquo;s a good idea to give the machine a specific hostname logo to separate first, as follows:</p><table><thead><tr><th>IP</th><th>Host Name</th></tr></thead><tbody><tr><td>192.168.1.1</td><td>test-hdp-master01</td></tr><tr><td>192.168.1.2</td><td>test-hdp-cluster01</td></tr><tr><td>192.168.1.3</td><td>test-hdp-cluster02</td></tr></tbody></table><p>It is important to note that the modification of the &lsquo;'/etc/hosts&rsquo; file in CentOS7 is no longer possible to modify the machine name and requires the use of a new command: &lsquo;hostnamectl set-hostname test-hdp-master01&rsquo;</p><p>Then use the &lsquo;ssh-keygen -t RSA&rsquo; secret order on the master machine to generate the SSH key, and then use the command ssh-copy-id -i-.ssh/id_rsa.pub root@test the h-hdp-cluster01', copied to the other two cluster machines, and finally used the SSH login command to check if the installation was successful, while writing the hostname, IP address to each machine&rsquo;s &lsquo;/etc/hosts&rsquo; file.</p><h2 id=5-time-synchronization>5. Time synchronization</h2><p>Install the NTP service (<a href=http://blog.csdn.net/andy_yf/article/details/8027635)>http://blog.csdn.net/andy_yf/article/details/8027635)</a>.</p><p>Install and start the ntpd service on the Master machine with the following commands:</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>yum install ntp -y
+<!doctype html><html lang=en dir=content/en>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv=content-security-policy content="upgrade-insecure-requests">
+<title> Install HDP2.6 (1)-Ambari Server offline - Loving life and dreams. </title>
+<meta name=keywords content="Blog,Software,Big Data,Product,Architecture,Java,Kylin">
+<meta name=author content="Elkan.Li">
+<meta property="og:title" content="Install HDP2.6 (1)-Ambari Server offline">
+<meta property="og:site_name" content="Loving life and dreams.">
+<meta property="og:image" content="/img/author.jpg">
+<meta name=title content="Install HDP2.6 (1)-Ambari Server offline - Loving life and dreams.">
+<meta name=description content="Weclome to Elkan's blog site that who is best on program develop, pre-sales and big data.">
+<link rel="shortcut icon" href=/img/favicon.ico>
+<link rel=apple-touch-icon href=/img/apple-touch-icon.png>
+<link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png>
+<link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css>
+<link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet>
+<link href=/css/main.css rel=stylesheet type=text/css>
+<link href=/css/syntax.css rel=stylesheet type=text/css>
+<script type=text/javascript>var _hmt=_hmt||[];(function(){var a=document.createElement("script"),b;a.src="https://hm.baidu.com/hm.js?9b021cbfb58b35e79012f9690de1c6ab",b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-61491374-4"></script>
+<script type=text/javascript>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date),gtag('config','UA-61491374-4 ')</script>
+</head>
+<body itemscope itemtype=http://schema.org/WebPage lang=zh-hans>
+<div class="container one-collumn sidebar-position-left page-home">
+<div class=headband></div>
+<header id=header class=header itemscope itemtype=http://schema.org/WPHeader>
+<div class=header-inner> <div class=site-brand-container>
+<div class=site-nav-toggle>
+<div class=toggle role=button style=opacity:1;top:0>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+</div>
+</div>
+<div class=site-meta>
+<div class=multi-lang-switch>
+<i class="fa fa-fw fa-language" style=margin-right:5px></i>
+<a class=lang-link id=zh-cn href=https://lisenhui.cn/2017/04/17/offline-install-hdp-ambari-notes.html>中文</a>
+<span class=lang-line> / </span>
+<a class=lang-link id=en href=#>English</a>
+</div>
+<div class=custom-logo-site-title>
+<a href=/en/ class=brand rel=start>
+<span class=logo-line-before><i></i></span>
+<span class=site-title>Loving life and dreams.</span>
+<span class=logo-line-after><i></i></span>
+</a>
+</div>
+<p class=site-subtitle>Don't stop running forward!</p>
+</div>
+<div class=site-nav-right>
+<div class="toggle popup-trigger" style=opacity:1;top:0>
+<i class="fa fa-search fa-fw fa-lg"></i>
+</div>
+</div>
+</div>
+<nav class=site-nav>
+<ul id=menu class=menu>
+<li class=menu-item>
+<a href=/en/ rel=section>
+<i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/post rel=section>
+<i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archive
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/about.html rel=section>
+<i class="menu-item-icon fa fa-fw fa-user"></i> <br>About
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/404.html rel=section target=_blank>
+<i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>Page404
+</a>
+</li>
+<li class="menu-item menu-item-search">
+<a href=javascript:; class=popup-trigger> <i class="menu-item-icon fa fa-search fa-fw"></i> <br> Search</a>
+</li>
+</ul>
+<div class=site-search>
+<div class="popup search-popup local-search-popup">
+<div class="local-search-header clearfix">
+<span class=search-icon><i class="fa fa-search"></i> </span>
+<span class=popup-btn-close><i class="fa fa-times-circle"></i></span>
+<div class=local-search-input-wrapper>
+<input autocomplete=off placeholder="Enter key words..." spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off>
+</div>
+</div>
+<div id=local-search-result></div>
+</div>
+</div>
+</nav>
+</div>
+</header>
+<main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/en/2017/04/17/offline-install-hdp-ambari-notes.html itemprop=url>
+Install HDP2.6 (1)-Ambari Server offline
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>Published at:</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-04-17">
+2017-04-17
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>Categories:</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/en/categories/big-data itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>Big data</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>1191 words</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>6 minutes</span>
+</span>
+<span id=/en/2017/04/17/offline-install-hdp-ambari-notes.html class=leancloud_visitors data-flag-title="Install HDP2.6 (1)-Ambari Server offline">
+|
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>Visited:</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<ol>
+<li>Reference documentation</li>
+</ol>
+<p>FYI: <a href=https://docs.hortonworks.com/HDPDocuments/Ambari-2.5.0.3/bk_ambari-installation/content/ch_Getting_Ready.html>HDP Install Documents</a></p>
+<p><a href=https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.0/bk_command-line-installation/content/prepare-environment.html#ref-2822d0e9-bd88-4714-910a-750c5b95a996>HDP Install Manual</a></p>
+<h2 id=2-the-hardware-environment>2. The hardware environment</h2>
+<p>The first is to prepare 3 machines, install the latest CentOS 7.2, the configuration reference requirements of the machine are as follows:</p>
+<table>
+<thead>
+<tr>
+<th>CPU</th>
+<th>Memory</th>
+<th>Disk</th>
+<th>Remark</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>4 nuclear</td>
+<td>26G</td>
+<td>200G</td>
+<td>Primary node/1</td>
+</tr>
+<tr>
+<td>4 nuclear</td>
+<td>16G</td>
+<td>200G</td>
+<td>From node/2</td>
+</tr>
+</tbody>
+</table>
+<h2 id=3-hdp-installation-files>3. HDP installation files</h2>
+<p>Download files installed offline:</p>
+<table>
+<thead>
+<tr>
+<th>File Name</th>
+<th>Download Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ambari-2.5.0.3</td>
+<td><a href=http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3/ambari-2.5.0.3-centos7.tar.gz>http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3/ambari-2.5.0.3-centos7.tar.gz</a></td>
+</tr>
+<tr>
+<td>HDP-2.6.0.3</td>
+<td><a href=http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.0.3/HDP-2.6.0.3-centos7-rpm.tar.gz>http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.0.3/HDP-2.6.0.3-centos7-rpm.tar.gz</a></td>
+</tr>
+<tr>
+<td>HDP-UTILS-1.1.0.21</td>
+<td><a href=http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.21/repos/centos7/HDP-UTILS-1.1.0.21-centos7.tar.gz>http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.21/repos/centos7/HDP-UTILS-1.1.0.21-centos7.tar.gz</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id=4-ssh-is-secret-free>4. SSH is secret-free</h2>
+<p>Configure password-free login, note that this is mainly the master machine login to other cluster machines. So it&rsquo;s a good idea to give the machine a specific hostname logo to separate first, as follows:</p>
+<table>
+<thead>
+<tr>
+<th>IP</th>
+<th>Host Name</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>192.168.1.1</td>
+<td>test-hdp-master01</td>
+</tr>
+<tr>
+<td>192.168.1.2</td>
+<td>test-hdp-cluster01</td>
+</tr>
+<tr>
+<td>192.168.1.3</td>
+<td>test-hdp-cluster02</td>
+</tr>
+</tbody>
+</table>
+<p>It is important to note that the modification of the &lsquo;'/etc/hosts&rsquo; file in CentOS7 is no longer possible to modify the machine name and requires the use of a new command: &lsquo;hostnamectl set-hostname test-hdp-master01&rsquo;</p>
+<p>Then use the &lsquo;ssh-keygen -t RSA&rsquo; secret order on the master machine to generate the SSH key, and then use the command ssh-copy-id -i-.ssh/id_rsa.pub root@test the h-hdp-cluster01', copied to the other two cluster machines, and finally used the SSH login command to check if the installation was successful, while writing the hostname, IP address to each machine&rsquo;s &lsquo;/etc/hosts&rsquo; file.</p>
+<h2 id=5-time-synchronization>5. Time synchronization</h2>
+<p>Install the NTP service (<a href=http://blog.csdn.net/andy_yf/article/details/8027635)>http://blog.csdn.net/andy_yf/article/details/8027635)</a>.</p>
+<p>Install and start the ntpd service on the Master machine with the following commands:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>yum install ntp -y
 
 systemctl start ntpd
-</code></pre></div><p>Modify the profile to allow synchronization time with the machine below the segment.</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>vi /etc/ntp.conf
+</code></pre></div><p>Modify the profile to allow synchronization time with the machine below the segment.</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>vi /etc/ntp.conf
 
 # Hosts on local network are less restricted.
 #restrict 192.168.1.0 mask 255.255.255.0 nomodify notrap
 Find this configuration and rewrite it to the following configuration
 restrict 192.168.51.0 mask 255.255.255.0 nomodify
-</code></pre></div><p>Install the NTP client on the other two Cluster machines and execute the following commands:</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>yum install ntpdate -y
+</code></pre></div><p>Install the NTP client on the other two Cluster machines and execute the following commands:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>yum install ntpdate -y
 
 crontab -e
 
@@ -33,8 +253,11 @@ Sync every minute
 */1 * * * * ntpdate -u 192.168.51.21 &amp;&amp; hwclock -w
 
 systemctl start crond.service
-</code></pre></div><h2 id=6-configure-the-yum-image>6. Configure the YUM image</h2><p>Unzim the file</p><p>Unzim the three files downloaded in Step 2
-Note that &lsquo;HDP-UTIL&rsquo; has no root, so it&rsquo;s a good idea to create a directory with a decompressed directory structure as follows:</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[root@test-hdp-master01 hdp-download]# ll
+</code></pre></div><h2 id=6-configure-the-yum-image>6. Configure the YUM image</h2>
+<p>Unzim the file</p>
+<p>Unzim the three files downloaded in Step 2
+Note that &lsquo;HDP-UTIL&rsquo; has no root, so it&rsquo;s a good idea to create a directory with a decompressed directory structure as follows:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[root@test-hdp-master01 hdp-download]# ll
 total 8676352
 drwxr-xr-x  3 root root          20 Apr 25 16:03 ambari
 -rw-r--r--  1 root root  1657013486 Apr  6 11:14 ambari-2.5.0.3-centos7.tar.gz
@@ -42,8 +265,13 @@ drwxr-xr-x  3 1001 users         20 Apr  3 08:58 HDP
 -rw-r--r--  1 root root  6356134913 Apr  3 09:25 HDP-2.6.0.3-centos7-rpm.tar.gz
 drwxr-xr-x 21 root root        4096 Apr 25 16:16 HDP-UTILS
 -rw-r--r--  1 root root   871424874 Mar 31 03:11 HDP-UTILS-1.1.0.21-centos7.tar.gz
-</code></pre></div><p>Start the HTTP service</p><p>Start the HTTPServer service without installing Apache to start directly with the following Python command:</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>python -m SimpleHTTPServer 88
-</code></pre></div><p>Modify the Repo file</p><p>Find the &lsquo;ambari.repo&rsquo; and &lsquo;hdp.repo&rsquo; files under the 6.1 decompression directory and update the inside of the &lsquo;baseurl&rsquo; and &lsquo;gpgkey&rsquo; to the local HTTP service address, as follows:</p><p>ambari.repo</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>#VERSION_NUMBER=2.5.0.3-7
+</code></pre></div><p>Start the HTTP service</p>
+<p>Start the HTTPServer service without installing Apache to start directly with the following Python command:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>python -m SimpleHTTPServer 88
+</code></pre></div><p>Modify the Repo file</p>
+<p>Find the &lsquo;ambari.repo&rsquo; and &lsquo;hdp.repo&rsquo; files under the 6.1 decompression directory and update the inside of the &lsquo;baseurl&rsquo; and &lsquo;gpgkey&rsquo; to the local HTTP service address, as follows:</p>
+<p>ambari.repo</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>#VERSION_NUMBER=2.5.0.3-7
 [ambari-2.5.0.3]
 name=ambari Version - ambari-2.5.0.3
 # baseurl=http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3
@@ -53,7 +281,8 @@ gpgcheck=1
 gpgkey=http://192.168.51.21:88/ambari/centos7/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
 enabled=1
 priority=1
-</code></pre></div><p>hdp.repo property</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>#VERSION_NUMBER=2.6.0.3-8
+</code></pre></div><p>hdp.repo property</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>#VERSION_NUMBER=2.6.0.3-8
 [HDP-2.6.0.3]
 name=HDP Version - HDP-2.6.0.3
 # baseurl=http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.0.3
@@ -74,11 +303,19 @@ gpgcheck=1
 gpgkey=http://192.168.1.1:88/HDP-UTILS/RPM-GPG-KEY/RPM-GPG-KEY-Jenkins
 enabled=1
 priority=1
-</code></pre></div><p>Install ambari-server</p><p>Install the ambari-server service on the Master machine</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>yum install ambari-server
-</code></pre></div><h2 id=7-configure-the-jdk-environment>7. Configure the JDK environment</h2><p>Unzip the downloaded JDK package into the &lsquo;/user/share/jdk&rsquo; directory, and then edit the &lsquo;/etc/profile&rsquo; file to end with the following code:</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>export JAVA_HOME=/usr/share/jdk/jdk1.8.0_131
+</code></pre></div><p>Install ambari-server</p>
+<p>Install the ambari-server service on the Master machine</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>yum install ambari-server
+</code></pre></div><h2 id=7-configure-the-jdk-environment>7. Configure the JDK environment</h2>
+<p>Unzip the downloaded JDK package into the &lsquo;/user/share/jdk&rsquo; directory, and then edit the &lsquo;/etc/profile&rsquo; file to end with the following code:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>export JAVA_HOME=/usr/share/jdk/jdk1.8.0_131
 export CLASSPATH=.:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar
 export PATH=$JAVA_HOME/bin:$PATH
-</code></pre></div><p>Finally command &lsquo;source /etc/profile&rsquo; to edit the file, repeat this on the other two Clubs, and remember to verify that the installation was successful with &lsquo;java-version&rsquo;.</p><h2 id=8-install-the-mysql-database>8. Install the MySQL database</h2><p><a href=http://www.linuxidc.com/Linux/2016-09/135288.htm>Reference</a></p><p>Download the mysql source installation package and install</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>wget http://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm
+</code></pre></div><p>Finally command &lsquo;source /etc/profile&rsquo; to edit the file, repeat this on the other two Clubs, and remember to verify that the installation was successful with &lsquo;java-version&rsquo;.</p>
+<h2 id=8-install-the-mysql-database>8. Install the MySQL database</h2>
+<p><a href=http://www.linuxidc.com/Linux/2016-09/135288.htm>Reference</a></p>
+<p>Download the mysql source installation package and install</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>wget http://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm
 
 yum localinstall mysql57-community-release-el7-8.noarch.rpm
 
@@ -90,7 +327,8 @@ mysql-tools-community/x86_64      MySQL Tools Community                      47
 mysql57-community/x86_64          MySQL 5.7 Community Server                187
 
 yum install mysql-community-server -y
-</code></pre></div><p>Find the default password in the installation log and modify it</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>grep &#39;temporary password&#39; /var/log/mysqld.log 
+</code></pre></div><p>Find the default password in the installation log and modify it</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>grep &#39;temporary password&#39; /var/log/mysqld.log 
 2017-04-25T23:51:03.380340Z 1 [Note] A temporary password is generated for root@localhost: dCAdHOM+H4z%
 
 ALTER USER &#39;root&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;dCAdHOM+H4zz%&#39;;
@@ -101,22 +339,26 @@ CREATE USER &#39;ambari&#39;@&#39;192.168.51.%&#39; IDENTIFIED BY &#39;1wVhZ7nd@
 GRANT ALL PRIVILEGES ON hive.* TO &#39;hive&#39;@&#39;192.168.51.%&#39; IDENTIFIED BY &#39;1wVhZ7nd@T&#39;
 
 FLUSH PRIVILEGES;
-</code></pre></div><p>Modify the default character set</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>vi /etc/my.cnf
+</code></pre></div><p>Modify the default character set</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>vi /etc/my.cnf
 
 Add under the mysqld option
 character_set_server=utf8
 init_connect=&#39;SET NAMES utf8&#39;
 
-</code></pre></div><p>Set the boot to start</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>systemctl enable mysqld
+</code></pre></div><p>Set the boot to start</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>systemctl enable mysqld
 systemctl daemon-reload
 
 #启动mysql
 systemctl start mysqld
-</code></pre></div><h2 id=9-install-the-mysql-connector-jar-file>9. Install the mysql connector jar file</h2><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>yum install yum-utils
+</code></pre></div><h2 id=9-install-the-mysql-connector-jar-file>9. Install the mysql connector jar file</h2>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>yum install yum-utils
 yumdownloader mysql-connector-java
 rpm -ivh mysql-connector-java-5.1.25-3.el7.noarch.rpm --force --nodeps
 ambari-server setup --jdbc-db=mysql --jdbc-driver=/usr/share/java/mysql-connector-java.jar
-</code></pre></div><h2 id=10-set-up-ambari-server-setup>10. Set up Ambari Server Setup</h2><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[root@test-hdp-master01 hdp-download]# ambari-server setup -j /usr/share/jdk/jdk1.8.0_131
+</code></pre></div><h2 id=10-set-up-ambari-server-setup>10. Set up Ambari Server Setup</h2>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[root@test-hdp-master01 hdp-download]# ambari-server setup -j /usr/share/jdk/jdk1.8.0_131
 Using python  /usr/bin/python
 Setup ambari-server
 Checking SELinux...
@@ -157,53 +399,321 @@ Extracting system views...
 ............
 Adjusting ambari-server permissions and ownership...
 Ambari Server &#39;setup&#39; completed successfully.
-</code></pre></div><p>Note that in selecting a database you will enter the database name, user name, password, etc</p><h2 id=11-create-a-metadata-database>11. Create a metadata database</h2><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>CREATE DATABASE `ambari` CHARACTER SET utf8 COLLATE utf8_general_ci;
-CREATE USER &#39;ambari&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;sDgu-5H1sW&#39;
-GRANT USAGE ON `ambari`.* TO &#39;ambari&#39;@&#39;localhost&#39; IDENTIFIED BY &#39;sDgu-5H1sW&#39;
-FLUSH PRIVILEGES;
-
-USE &#39;ambari&#39; GO;
-
-source /var/lib/ambari-server/resources/Ambari-DDL-MySQL-CREATE.sql
-</code></pre></div><h2 id=12-start-ambari-server>12. Start Ambari Server</h2><p>Start with the command &lsquo;ambari-server start&rsquo; and open the browser input &lsquo;http://192.168.1.1:8080/&rsquo;, you can see Ambari&rsquo;s login interface, enter the default user password to log in, and then install the Hadoop component service.</p><h2 id=13-a-record-of-the-problem-during-installation>13. A record of the problem during installation</h2><p>HostName specifies a problem</p><p>In this process, if the hostname of ambari-server appears that cannot be specified, it is currently implemented by rewriting the code directly.</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>vi /usr/lib/python2.6/site-packages/ambari_server/setupAgent.py
+</code></pre></div><p>Note that in selecting a database you will enter the database name, user name, password, etc</p>
+<h2 id=11-create-a-metadata-database>11. Create a metadata database</h2>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-mysql data-lang=mysql><span style=color:#a2f;font-weight:700>CREATE</span><span style=color:#bbb> </span><span style=color:#a2f;font-weight:700>DATABASE</span><span style=color:#bbb> </span><span style=color:#666>`</span>ambari<span style=color:#666>`</span><span style=color:#bbb> </span><span style=color:#a2f;font-weight:700>CHARACTER</span><span style=color:#bbb> </span><span style=color:#0b0;font-weight:700>SET</span><span style=color:#bbb> </span>utf8<span style=color:#bbb> </span><span style=color:#a2f;font-weight:700>COLLATE</span><span style=color:#bbb> </span>utf8_general_ci;<span style=color:#bbb>
+</span><span style=color:#bbb></span><span style=color:#a2f;font-weight:700>CREATE</span><span style=color:#bbb> </span><span style=color:#a2f;font-weight:700>USER</span><span style=color:#bbb> </span><span style=color:#b44>&#39;ambari&#39;</span><span style=color:#666>@</span><span style=color:#b44>&#39;localhost&#39;</span><span style=color:#bbb> </span><span style=color:#a2f;font-weight:700>IDENTIFIED</span><span style=color:#bbb> </span><span style=color:#a2f;font-weight:700>BY</span><span style=color:#bbb> </span><span style=color:#b44>&#39;sDgu-5H1sW&#39;</span><span style=color:#bbb>
+</span><span style=color:#bbb></span><span style=color:#a2f;font-weight:700>GRANT</span><span style=color:#bbb> </span><span style=color:#a2f;font-weight:700>USAGE</span><span style=color:#bbb> </span><span style=color:#a2f;font-weight:700>ON</span><span style=color:#bbb> </span><span style=color:#666>`</span>ambari<span style=color:#666>`</span>.<span style=color:#666>*</span><span style=color:#bbb> </span><span style=color:#a2f;font-weight:700>TO</span><span style=color:#bbb> </span><span style=color:#b44>&#39;ambari&#39;</span><span style=color:#666>@</span><span style=color:#b44>&#39;localhost&#39;</span><span style=color:#bbb> </span><span style=color:#a2f;font-weight:700>IDENTIFIED</span><span style=color:#bbb> </span><span style=color:#a2f;font-weight:700>BY</span><span style=color:#bbb> </span><span style=color:#b44>&#39;sDgu-5H1sW&#39;</span><span style=color:#bbb>
+</span><span style=color:#bbb></span><span style=color:#a2f;font-weight:700>FLUSH</span><span style=color:#bbb> </span><span style=color:#a2f;font-weight:700>PRIVILEGES</span>;<span style=color:#bbb>
+</span><span style=color:#bbb>
+</span><span style=color:#bbb></span><span style=color:#a2f;font-weight:700>USE</span><span style=color:#bbb> </span><span style=color:#b44>&#39;ambari&#39;</span><span style=color:#bbb> </span>GO;<span style=color:#bbb>
+</span><span style=color:#bbb>
+</span><span style=color:#bbb></span>source<span style=color:#bbb> </span><span style=color:#666>/</span>var<span style=color:#666>/</span>lib<span style=color:#666>/</span>ambari<span style=color:#666>-</span>server<span style=color:#666>/</span>resources<span style=color:#666>/</span>Ambari<span style=color:#666>-</span>DDL<span style=color:#666>-</span>MySQL<span style=color:#666>-</span><span style=color:#a2f;font-weight:700>CREATE</span>.<span style=color:#a2f;font-weight:700>sql</span><span style=color:#bbb>
+</span></code></pre></div><h2 id=12-start-ambari-server>12. Start Ambari Server</h2>
+<p>Start with the command &lsquo;ambari-server start&rsquo; and open the browser input &lsquo;http://192.168.1.1:8080/&rsquo;, you can see Ambari&rsquo;s login interface, enter the default user password to log in, and then install the Hadoop component service.</p>
+<h2 id=13-a-record-of-the-problem-during-installation>13. A record of the problem during installation</h2>
+<p>HostName specifies a problem</p>
+<p>In this process, if the hostname of ambari-server appears that cannot be specified, it is currently implemented by rewriting the code directly.</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>vi /usr/lib/python2.6/site-packages/ambari_server/setupAgent.py
 Update the 315 lines of code as follows
 #  hostname = args[2]
 hostname = &#34;test-hdp-master01&#34;
 
-</code></pre></div><p>The MySQL connection failed</p><p>Testing the MySQL connection at installation failed, similar to the problem on the last face, and can only be modified under the code:</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>Note that here is the machine where you install the Hive, oozie service
+</code></pre></div><p>The MySQL connection failed</p>
+<p>Testing the MySQL connection at installation failed, similar to the problem on the last face, and can only be modified under the code:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>Note that here is the machine where you install the Hive, oozie service
 vi /var/lib/ambari-agent/cache/custom_actions/scripts/check_host.py
 Update the 279 lines of code as follows
 #    jdk_location = config[&#39;commandParams&#39;][&#39;jdk_location&#39;]
 jdk_location = &#39;http://&#39; + ambari_server_hostname + &#39;:8080/resources/&#39;
-</code></pre></div><p>If you are prompted not to download files when you install each service, you should also modify the code, mainly to find that the installation of Hive will appear:</p><div class=highlight><pre style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>Note that here is the machine where you install the Hive service
+</code></pre></div><p>If you are prompted not to download files when you install each service, you should also modify the code, mainly to find that the installation of Hive will appear:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>Note that here is the machine where you install the Hive service
 vi /usr/lib/python2.6/site-packages/resource_management/core/source.py
 Update the 169 lines of code as follows:
 # self.url = self.name
 self.url = self.name.replace(&#39;localhost&#39;,&#39;test-hdp-master01&#39;)
-</code></pre></div><h2 id=14-uninstall-the-hdp-service>14. Uninstall the HDP service</h2><p>Refer to the official documentation:
-<a href=http://www.yourtechchick.com/hadoop/how-to-completely-remove-and-uninstall-hdp-components-hadoop-uninstall-on-linux-system/>Uninstall</a></p></div><footer class=post-footer><div class=post-tags><a href=/en/tags/big-data rel=tag title="Big data">#Big data#</a>
-<a href=/en/tags/hdp rel=tag title=HDP>#HDP#</a></div><div class=addthis_inline_share_toolbox></div><div class=post-nav><div class=article-copyright><div class=article-copyright-img><img src=/img/qq_qrcode.png width=129px height=129px><div style=text-align:center>QQ QrCode</div></div><div class=article-copyright-info><p><span>Declaration：</span>Install HDP2.6 (1)-Ambari Server offline</p><p><span>Link：</span>https://lisenhui.cn/en/2017/04/17/offline-install-hdp-ambari-notes.html</p><p><span>Author：</span>Elkan.Li</p><p><span>Declaration： </span>This blog post article is under the <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a> license,Please indicate the source!</p></div></div><div class=clear></div></div><div class=reward-qr-info><div>If it can help you, you can give tips for blogger that how much you want. ^_^</div><button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');if(qr.style.display==='none'){qr.style.display='block';}else{qr.style.display='none'}">
-<span>Reward</span></button><div id=QR style=display:none><div id=wechat style=display:inline-block><img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay"><p>Wechat Pay</p></div><div id=alipay style=display:inline-block><img id=alipay_qr src=/img/ali-pay.png alt=Alipay><p>Ali Pay</p></div></div></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=https://lisenhui.cn/en/2017/05/15/zookeeper-unload-data-exception.html rel=next title="Zookeyer could not load transaction logs after crash"><i class="fa fa-chevron-left"></i>Zookeyer could not load transaction logs after crash</a></div><div class="post-nav-prev post-nav-item"><a href=https://lisenhui.cn/en/2016/05/29/ssh-login-without-password.html rel=prev title="Linux uses SSH password-free login">Linux uses SSH password-free login
-<i class="fa fa-chevron-right"></i></a></div></div><div id=wcomments></div></footer></article></section></div></div><div class=sidebar-toggle><div class=sidebar-toggle-line-wrap><span class="sidebar-toggle-line sidebar-toggle-line-first"></span><span class="sidebar-toggle-line sidebar-toggle-line-middle"></span><span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id=sidebar class=sidebar><div class=sidebar-inner><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target=post-toc-wrap>Table of Content</li><li class=sidebar-nav-overview data-target=site-overview>Site Information</li></ul><section class="site-overview sidebar-panel"><div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image src=/img/avatar.png alt=Elkan.Li><p class=site-author-name itemprop=name>Elkan.Li</p><p class="site-description motion-element" itemprop=description>Never forget your dreams！</p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href=/en/post/><span class=site-state-item-count>51</span>
-<span class=site-state-item-name>Blogs</span></a></div><div class="site-state-item site-state-categories"><a href=/en/categories/><span class=site-state-item-count>25</span>
-<span class=site-state-item-name>Categories</span></a></div><div class="site-state-item site-state-tags"><a href=/en/tags/><span class=site-state-item-count>59</span>
-<span class=site-state-item-name>Tags</span></a></div></nav><div class="links-of-author motion-element"><span class=links-of-author-item><a href=https://github.com/elkan1788/ target=_blank title=GitHub><i class="fa fa-fw fa-github"></i>GitHub</a></span>
-<span class=links-of-author-item><a href=https://www.zhihu.com/people/fan-meng-xing-chen-1 target=_blank title=ZhiHu><i class="fa fa-fw fa-globe"></i>ZhiHu</a></span></div><div class="links-of-blogroll motion-element links-of-blogroll-inline"><div class=links-of-blogroll-title><i class="fa fa-fw fa-globe"></i>Links</div><ul class=links-of-blogroll-list><li class=links-of-blogroll-item><a href=https://nutzam.com/ title=Nutz target=_blank>Nutz</a></li><li class=links-of-blogroll-item><a href=https://jfinal.com/ title=JFinal target=_blank>JFinal</a></li><li class=links-of-blogroll-item><a href=http://wendal.net/ title=Wendal target=_blank>Wendal</a></li><li class=links-of-blogroll-item><a href=https://www.liaoxuefeng.com/ title=LiaoXueFeng target=_blank>LiaoXueFeng</a></li><li class=links-of-blogroll-item><a href=https://qybit.gitee.io/ title="Qybit's Blog" target=_blank>Qybit's Blog</a></li></ul></div><div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline"><div class=tagcloud-of-blogroll-title><i class="fa fa-fw fa-tags"></i>TagCloud</div><ul class=tagcloud-of-blogroll-list><li class=tagcloud-of-blogroll-item><a href=/en/tags/big-data>Big data</a></li><li class=tagcloud-of-blogroll-item><a href=/en/tags/linux>Linux</a></li><li class=tagcloud-of-blogroll-item><a href=/en/tags/blog>Blog</a></li><li class=tagcloud-of-blogroll-item><a href=/en/tags/git>Git</a></li><li class=tagcloud-of-blogroll-item><a href=/en/tags/github>Github</a></li><li class=tagcloud-of-blogroll-item><a href=/en/tags/java>Java</a></li><li class=tagcloud-of-blogroll-item><a href=/en/tags/kindeditor>Kindeditor</a></li><li class=tagcloud-of-blogroll-item><a href=/en/tags/python>Python</a></li><li class=tagcloud-of-blogroll-item><a href=/en/tags/axure>Axure</a></li><li class=tagcloud-of-blogroll-item><a href=/en/tags/front>Front</a></li></ul></div><div class="links-of-blogroll motion-element inline"><script type=text/javascript src="//rf.revolvermaps.com/0/0/6.js?i=5s83wolvn69&m=7&c=e63100&cr1=ffffff&f=arial&l=0&bv=90&lx=-420&ly=420&hi=20&he=7&hc=a8ddff&rs=80" async></script></div></section><section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class=post-toc><div class=post-toc-content><nav id=TableOfContents><ul><li><a href=#2-the-hardware-environment>2. The hardware environment</a></li><li><a href=#3-hdp-installation-files>3. HDP installation files</a></li><li><a href=#4-ssh-is-secret-free>4. SSH is secret-free</a></li><li><a href=#5-time-synchronization>5. Time synchronization</a></li><li><a href=#6-configure-the-yum-image>6. Configure the YUM image</a></li><li><a href=#7-configure-the-jdk-environment>7. Configure the JDK environment</a></li><li><a href=#8-install-the-mysql-database>8. Install the MySQL database</a></li><li><a href=#9-install-the-mysql-connector-jar-file>9. Install the mysql connector jar file</a></li><li><a href=#10-set-up-ambari-server-setup>10. Set up Ambari Server Setup</a></li><li><a href=#11-create-a-metadata-database>11. Create a metadata database</a></li><li><a href=#12-start-ambari-server>12. Start Ambari Server</a></li><li><a href=#13-a-record-of-the-problem-during-installation>13. A record of the problem during installation</a></li><li><a href=#14-uninstall-the-hdp-service>14. Uninstall the HDP service</a></li></ul></nav></div></div></section></div></aside></div></main><footer id=footer class=footer><div class=footer-inner><div class=copyright><span class=copyright-year>&copy; 2010 - 2021</span>
-<span class=with-love><i class="fa fa-heart"></i></span><span class=copyright-author>Loving life and dreams.</span></div><div class=powered-info><span class=powered-by>Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.80.0</a></span>
+</code></pre></div><h2 id=14-uninstall-the-hdp-service>14. Uninstall the HDP service</h2>
+<p>Refer to the official documentation:
+<a href=http://www.yourtechchick.com/hadoop/how-to-completely-remove-and-uninstall-hdp-components-hadoop-uninstall-on-linux-system/>Uninstall</a></p>
+</div>
+<footer class=post-footer>
+<div class=post-tags>
+<a href=/en/tags/big-data rel=tag title="Big data">#Big data#</a>
+<a href=/en/tags/hdp rel=tag title=HDP>#HDP#</a>
+</div>
+<div class=addthis_inline_share_toolbox></div>
+<div class=post-nav>
+<div class=article-copyright>
+<div class=article-copyright-img>
+<img src=/img/qq_qrcode.png width=129px height=129px>
+<div style=text-align:center>QQ QrCode</div>
+</div>
+<div class=article-copyright-info>
+<p>
+<span>Declaration：</span>Install HDP2.6 (1)-Ambari Server offline
+</p>
+<p>
+<span>Link：</span>https://lisenhui.cn/en/2017/04/17/offline-install-hdp-ambari-notes.html
+</p>
+<p>
+<span>Author：</span>Elkan.Li
+</p>
+<p>
+<span>Declaration： </span>This blog post article is under the <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a> license,Please indicate the source!
+</p>
+</div>
+</div>
+<div class=clear></div>
+</div>
+<div class=reward-qr-info>
+<div>If it can help you, you can give tips for blogger that how much you want. ^_^</div>
+<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
+<span>Reward</span>
+</button>
+<div id=QR style=display:none>
+<div id=wechat style=display:inline-block>
+<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
+<p>Wechat Pay</p>
+</div>
+<div id=alipay style=display:inline-block>
+<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
+<p>Ali Pay</p>
+</div>
+</div>
+</div>
+<div class=post-nav>
+<div class="post-nav-next post-nav-item">
+<a href=https://lisenhui.cn/en/2017/05/15/zookeeper-unload-data-exception.html rel=next title="Zookeyer could not load transaction logs after crash">
+<i class="fa fa-chevron-left"></i> Zookeyer could not load transaction logs after crash
+</a>
+</div>
+<div class="post-nav-prev post-nav-item">
+<a href=https://lisenhui.cn/en/2016/05/29/ssh-login-without-password.html rel=prev title="Linux uses SSH password-free login">
+Linux uses SSH password-free login
+<i class="fa fa-chevron-right"></i>
+</a>
+</div>
+</div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
+<div class=sidebar-toggle>
+<div class=sidebar-toggle-line-wrap>
+<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+</div>
+</div>
+<aside id=sidebar class=sidebar>
+<div class=sidebar-inner>
+<ul class="sidebar-nav motion-element">
+<li class="sidebar-nav-toc sidebar-nav-active" data-target=post-toc-wrap>
+Table of Content
+</li>
+<li class=sidebar-nav-overview data-target=site-overview>
+Site Information
+</li>
+</ul>
+<section class="site-overview sidebar-panel">
+<div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person>
+<img class=site-author-image itemprop=image src=/img/avatar.png alt=Elkan.Li>
+<p class=site-author-name itemprop=name>Elkan.Li</p>
+<p class="site-description motion-element" itemprop=description>
+Never forget your dreams！
+</p>
+</div>
+<nav class="site-state motion-element">
+<div class="site-state-item site-state-posts">
+<a href=/en/post/>
+<span class=site-state-item-count>51</span>
+<span class=site-state-item-name>Blogs</span>
+</a>
+</div>
+<div class="site-state-item site-state-categories">
+<a href=/en/categories/>
+<span class=site-state-item-count>25</span>
+<span class=site-state-item-name>Categories</span>
+</a>
+</div>
+<div class="site-state-item site-state-tags">
+<a href=/en/tags/>
+<span class=site-state-item-count>59</span>
+<span class=site-state-item-name>Tags</span>
+</a>
+</div>
+</nav>
+<div class="links-of-author motion-element">
+<span class=links-of-author-item>
+<a href=https://github.com/elkan1788/ target=_blank title=GitHub>
+<i class="fa fa-fw fa-github"></i>
+GitHub
+</a>
+</span>
+<span class=links-of-author-item>
+<a href=https://www.zhihu.com/people/fan-meng-xing-chen-1 target=_blank title=ZhiHu>
+<i class="fa fa-fw fa-globe"></i>
+ZhiHu
+</a>
+</span>
+</div>
+<div class="links-of-blogroll motion-element links-of-blogroll-inline">
+<div class=links-of-blogroll-title>
+<i class="fa fa-fw fa-globe"></i>
+Links
+</div>
+<ul class=links-of-blogroll-list>
+<li class=links-of-blogroll-item>
+<a href=https://nutzam.com/ title=Nutz target=_blank>Nutz</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=https://jfinal.com/ title=JFinal target=_blank>JFinal</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=http://wendal.net/ title=Wendal target=_blank>Wendal</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=https://www.liaoxuefeng.com/ title=LiaoXueFeng target=_blank>LiaoXueFeng</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=https://qybit.gitee.io/ title="Qybit's Blog" target=_blank>Qybit's Blog</a>
+</li>
+</ul>
+</div>
+<div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline">
+<div class=tagcloud-of-blogroll-title>
+<i class="fa fa-fw fa-tags"></i>
+TagCloud
+</div>
+<ul class=tagcloud-of-blogroll-list>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/big-data>Big data</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/linux>Linux</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/blog>Blog</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/git>Git</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/github>Github</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/java>Java</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/kindeditor>Kindeditor</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/python>Python</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/axure>Axure</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/front>Front</a>
+</li>
+</ul>
+</div>
+<div class="links-of-blogroll motion-element inline">
+<script type=text/javascript src="//rf.revolvermaps.com/0/0/6.js?i=5s83wolvn69&m=7&c=e63100&cr1=ffffff&f=arial&l=0&bv=90&lx=-420&ly=420&hi=20&he=7&hc=a8ddff&rs=80" async></script>
+</div>
+</section>
+<section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+<div class=post-toc>
+<div class=post-toc-content><nav id=TableOfContents>
+<ul>
+<li><a href=#2-the-hardware-environment>2. The hardware environment</a></li>
+<li><a href=#3-hdp-installation-files>3. HDP installation files</a></li>
+<li><a href=#4-ssh-is-secret-free>4. SSH is secret-free</a></li>
+<li><a href=#5-time-synchronization>5. Time synchronization</a></li>
+<li><a href=#6-configure-the-yum-image>6. Configure the YUM image</a></li>
+<li><a href=#7-configure-the-jdk-environment>7. Configure the JDK environment</a></li>
+<li><a href=#8-install-the-mysql-database>8. Install the MySQL database</a></li>
+<li><a href=#9-install-the-mysql-connector-jar-file>9. Install the mysql connector jar file</a></li>
+<li><a href=#10-set-up-ambari-server-setup>10. Set up Ambari Server Setup</a></li>
+<li><a href=#11-create-a-metadata-database>11. Create a metadata database</a></li>
+<li><a href=#12-start-ambari-server>12. Start Ambari Server</a></li>
+<li><a href=#13-a-record-of-the-problem-during-installation>13. A record of the problem during installation</a></li>
+<li><a href=#14-uninstall-the-hdp-service>14. Uninstall the HDP service</a></li>
+</ul>
+</nav></div>
+</div>
+</section>
+</div>
+</aside>
+</div>
+</main>
+<footer id=footer class=footer>
+<div class=footer-inner>
+<div class=copyright>
+<span class=copyright-year>
+&copy; 2010 - 2021
+</span>
+<span class=with-love><i class="fa fa-heart"></i></span>
+<span class=copyright-author>Loving life and dreams.</span>
+</div>
+<div class=powered-info>
+<span class=powered-by>
+Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.87.0</a>
+</span>
 <span class=separator-line>/</span>
-<span class=theme-info>Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank>NexT</a></span></div><div class=vistor-info><span class=cnzz_icon id=cnzz_stat_icon_1279205305><a href="//www.cnzz.com/stat/website.php?web_id=1279205305" target=_blank title=站长统计><img border=0 hspace=0 vspace=0 src=//icon.cnzz.com/img/pic1.gif></a></span>
-<script type=text/javascript>(function(){var cnzz_s_tag=document.createElement('script');cnzz_s_tag.type='text/javascript';cnzz_s_tag.async=true;cnzz_s_tag.charset='utf-8';cnzz_s_tag.src='https://s4.cnzz.com/z_stat.php?id=1279205305&show=pic1';var root_s=document.getElementsByTagName('script')[0];root_s.parentNode.insertBefore(cnzz_s_tag,root_s);})();</script><script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script><span class=site-uv><i class="fa fa-user"></i><span class=busuanzi-value id=busuanzi_value_site_uv></span></span><span class=separator-line>/</span>
-<span class=site-pv><i class="fa fa-eye"></i><span class=busuanzi-value id=busuanzi_value_site_pv></span></span></div><div class=license-info><span class=storage-info>Storage by
-<a href=https://www.qiniu.com style=font-weight:700 target=_blank>Qiniu Cloud</a></span>
+<span class=theme-info>
+Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank> NexT
+</a>
+</span>
+</div>
+<div class=vistor-info>
+<span class=cnzz_icon id=cnzz_stat_icon_1279205305>
+<a href="//www.cnzz.com/stat/website.php?web_id=1279205305" target=_blank title=站长统计>
+<img border=0 hspace=0 vspace=0 src=//icon.cnzz.com/img/pic1.gif>
+</a>
+</span>
+<script type=text/javascript>(function(){var a=document.createElement('script'),b;a.type='text/javascript',a.async=!0,a.charset='utf-8',a.src='https://s4.cnzz.com/z_stat.php?id=1279205305&show=pic1',b=document.getElementsByTagName('script')[0],b.parentNode.insertBefore(a,b)})()</script>
+<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<span class=site-uv>
+<i class="fa fa-user"></i>
+<span class=busuanzi-value id=busuanzi_value_site_uv></span>
+</span>
 <span class=separator-line>/</span>
-<span class=license-num><a href=http://beian.miit.gov.cn target=_blank>ICP.No 18047355</a></span></div></div></footer><div class=back-to-top><i class="fa fa-arrow-up"></i><span id=scrollpercent><span>0</span>%</span></div></div><script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script><script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script><script type=text/javascript src=/js/search.js></script><script type=text/javascript src=/js/affix.js></script><script type=text/javascript src=/js/scrollspy.js></script><script type=text/javascript>function getCntViewHeight(){var docHeight=$('#content').height(),winHeight=$(window).height(),cntViewHeight=(docHeight>winHeight)?(docHeight-winHeight):($(document).height()-winHeight);return cntViewHeight;}
-function getScrollbarWidth(){var $div=$('<div />').addClass('scrollbar-measure').prependTo('body');var div=$div[0];var scrollbarWidth=div.offsetWidth-div.clientWidth;$div.remove();return scrollbarWidth;}
-function registerBackTop(){var THRESHOLD=50;var $top=$('.back-to-top');$(window).on('scroll',function(){$top.toggleClass('back-to-top-on',window.pageYOffset>THRESHOLD);var scrollTop=$(window).scrollTop();var cntViewHeight=getCntViewHeight();var scrollPercent=(scrollTop)/(cntViewHeight);var scrollPercentRounded=Math.round(scrollPercent*100);var scrollPercentMaxed=(scrollPercentRounded>100)?100:scrollPercentRounded;$('#scrollpercent>span').html(scrollPercentMaxed);});$top.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0,},800);});}
-function initScrollSpy(){var tocSelector='.post-toc';var $tocElement=$(tocSelector);var activeCurrentSelector='.active-current';$tocElement.on('activate.bs.scrollspy',function(){var $currentActiveElement=$(tocSelector+' .active').last();removeCurrentActiveClass();$currentActiveElement.addClass('active-current');}).on('clear.bs.scrollspy',removeCurrentActiveClass);$('body').scrollspy({target:tocSelector});function removeCurrentActiveClass(){$(tocSelector+' '+activeCurrentSelector).removeClass(activeCurrentSelector.substring(1));}}
-function initAffix(){var headerHeight=$('.header-inner').height();var footerOffset=parseInt($('.main').css('padding-bottom'),10);var sidebarTop=headerHeight+10;$('.sidebar-inner').affix({offset:{top:sidebarTop,bottom:footerOffset}});$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100);});}
-function initTOCDimension(){var updateTOCHeightTimer;$(window).on('resize',function(){updateTOCHeightTimer&&clearTimeout(updateTOCHeightTimer);updateTOCHeightTimer=setTimeout(function(){var tocWrapperHeight=document.body.clientHeight-100;updateTOCHeight(tocWrapperHeight);},0);});updateTOCHeight(document.body.clientHeight-100);var scrollbarWidth=getScrollbarWidth();$('.post-toc').css('width','calc(100% + '+scrollbarWidth+'px)');}
-function updateTOCHeight(height){height=height||'auto';$('.post-toc').css('max-height',height);}
-$(function(){var sidebarTop=$('.header-inner').height()+10;$('#sidebar').css({'margin-top':sidebarTop}).show();var headerHeight=$('.header-inner').height();var sidebarHeight=$('.sidebar-inner').height();var leftHeight=headerHeight+sidebarHeight+50;var contentHeight=$('.content-wrap').height();if(contentHeight<leftHeight){$('.content-wrap').css('height',leftHeight+50);}
-$('.site-nav-toggle').on('click',function(){var $siteNav=$('.site-nav');var $toggleLine=$('.toggle');var ON_CLASS_NAME='site-nav-on';var CLOSE_CLASS_NAME='toggle-close';var isSiteNavOn=$siteNav.hasClass(ON_CLASS_NAME);var animateAction=isSiteNavOn?'slideUp':'slideDown';var animateCallback=isSiteNavOn?'removeClass':'addClass';$siteNav.stop()[animateAction]('normal',function(){$siteNav[animateCallback](ON_CLASS_NAME);$toggleLine[animateCallback](CLOSE_CLASS_NAME);});});registerBackTop();initScrollSpy();initAffix();initTOCDimension();$('.post-body').viewer();$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active');$(this).next().removeClass('sidebar-nav-active');$('.'+$(this).next().attr('data-target')).toggle(500);$('.'+$(this).attr('data-target')).toggle(500);});$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active');$(this).prev().removeClass('sidebar-nav-active');$('.'+$(this).prev().attr('data-target')).toggle(500);$('.'+$(this).attr('data-target')).toggle(500);});});</script><script src=//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js></script><script type=text/javascript>new Waline({el:'#wcomments',visitor:true,placeholder:' Just do what you want leave here. ^_^ ',requiredFields:['nick','mail'],serverURL:"https:\/\/waline.lisenhui.cn",lang:"en"});</script><script>(function(){var bp=document.createElement('script');var curProtocol=window.location.protocol.split(':')[0];if(curProtocol==='https'){bp.src='https://zz.bdstatic.com/linksubmit/push.js';}
-else{bp.src='http://push.zhanzhang.baidu.com/push.js';}
-var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(bp,s);})();</script><script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6049e46e9ee22127"></script><script>(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:'==document.location.protocol?'https:':'http:')+"//widget.daovoice.io/widget/f89653b8.js","daovoice")</script><script type=text/javascript>$(function(){if(document.body.clientWidth>800){daovoice('init',{app_id:"f89653b8"});daovoice('update');}});</script></body></html>
+<span class=site-pv>
+<i class="fa fa-eye"></i>
+<span class=busuanzi-value id=busuanzi_value_site_pv></span>
+</span>
+</div>
+<div class=license-info>
+<span class=storage-info>
+Storage by
+<a href=https://www.qiniu.com style=font-weight:700 target=_blank>Qiniu Cloud</a>
+</span>
+<span class=separator-line>/</span>
+<span class=license-num>
+<a href=http://beian.miit.gov.cn target=_blank>ICP.No 18047355</a>
+</span>
+</div>
+</div>
+</footer>
+<div class=back-to-top>
+<i class="fa fa-arrow-up"></i>
+<span id=scrollpercent><span>0</span>%</span>
+</div>
+</div>
+<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
+<script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
+<script type=text/javascript src=/js/search.js></script>
+<script type=text/javascript src=/js/affix.js></script>
+<script type=text/javascript src=/js/scrollspy.js></script>
+<script type=text/javascript>function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=$('.header-inner').height(),d=$('.sidebar-inner').height(),a=c+d+50,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('height',a+50),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.post-body').viewer(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
+<script src=//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js></script>
+<script type=text/javascript>new Waline({el:'#wcomments',visitor:!0,placeholder:' Just do what you want leave here. ^_^ ',requiredFields:['nick','mail'],serverURL:"https://waline.lisenhui.cn",lang:"en"})</script>
+<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+<script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6049e46e9ee22127"></script>
+<script>(function(a,e,f,g,b,c,d){a.DaoVoiceObject=b,a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)},a[b].l=1*new Date,c=e.createElement(f),d=e.getElementsByTagName(f)[0],c.async=1,c.src=g,c.charset="utf-8",d.parentNode.insertBefore(c,d)})(window,document,"script",('https:'==document.location.protocol?'https:':'http:')+"//widget.daovoice.io/widget/f89653b8.js","daovoice")</script>
+<script type=text/javascript>$(function(){document.body.clientWidth>800&&(daovoice('init',{app_id:"f89653b8"}),daovoice('update'))})</script>
+</body>
+</html>
