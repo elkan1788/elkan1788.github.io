@@ -20,6 +20,8 @@ pygmentsCodefencesGuessSyntax = true
 
 enableRobotsTXT = true
 
+hasCJKLanguage = true
+
 [sitemap]
   filename = "sitemap.xml"
   changefreq = "weekly"
