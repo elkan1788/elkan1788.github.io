@@ -13,9 +13,9 @@ categories:
 
 <!--more-->
 
-![nutz-ke-lgh-my97-1](http://siteimgs.cn-sh2.ufileos.com/2012/01-13-nutz-ke-lgh-my97-1.png)
+![nutz-ke-lgh-my97-1](http://imgs.lisenhui.cn/2012/01-13-nutz-ke-lgh-my97-1.png)
 
-![nutz-ke-lgh-my97-2](http://siteimgs.cn-sh2.ufileos.com/2012/01-13-nutz-ke-lgh-my97-2.png)
+![nutz-ke-lgh-my97-2](http://imgs.lisenhui.cn/2012/01-13-nutz-ke-lgh-my97-2.png)
 
 在此不得不称赞下`Nutz`的高效简约之美，和以前的KE版本一样还是把上传部分的`JSP`页面翻译成后台`JAVA`代码，唯一不同的就是那些相同功能的实现代码精简了好多呀，官网示例中的两个`JSP`文件被有压缩成了一个只有不到400行的`JAVA`后台代码，源码如下：
 
@@ -388,13 +388,13 @@ public class KindEditor4Module {
 
 虽说代码精简了，但是功能却是一个没有含糊呀，接着欣赏效果图吧。
 
-![nutz-ke-lgh-my97-3](http://siteimgs.cn-sh2.ufileos.com/2012/01-13-nutz-ke-lgh-my97-3.png)
+![nutz-ke-lgh-my97-3](http://imgs.lisenhui.cn/2012/01-13-nutz-ke-lgh-my97-3.png)
 
-![nutz-ke-lgh-my97-4](http://siteimgs.cn-sh2.ufileos.com/2012/01-13-nutz-ke-lgh-my97-4.png)
+![nutz-ke-lgh-my97-4](http://imgs.lisenhui.cn/2012/01-13-nutz-ke-lgh-my97-4.png)
 
-![nutz-ke-lgh-my97-5](http://siteimgs.cn-sh2.ufileos.com/2012/01-13-nutz-ke-lgh-my97-5.png)
+![nutz-ke-lgh-my97-5](http://imgs.lisenhui.cn/2012/01-13-nutz-ke-lgh-my97-5.png)
 
-![nutz-ke-lgh-my97-6](http://siteimgs.cn-sh2.ufileos.com/2012/01-13-nutz-ke-lgh-my97-6.png)
+![nutz-ke-lgh-my97-6](http://imgs.lisenhui.cn/2012/01-13-nutz-ke-lgh-my97-6.png)
 
 Nutz对于JAVA程序员来说，是除SSH外的另一个选择，一个美好的开始，如果你有使用相信你定会深学的爱上它，嘻~，别的就不多说了，下面直接把源码给奉上吧，因为时间紧迫(待会就要坐车回家了，嘎~，终于放假了)就只是随笔写了下，写的不好还望大家见谅。
 

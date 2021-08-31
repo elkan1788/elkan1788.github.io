@@ -43,10 +43,10 @@ categories:
 
 效果如下：
 
-![whoisip-api-1](http://siteimgs.cn-sh2.ufileos.com/2011/11-18-whoisip-api-1.png)
+![whoisip-api-1](http://imgs.lisenhui.cn/2011/11-18-whoisip-api-1.png)
 
 具体参数如下：
 
-![whoisip-api-2](http://siteimgs.cn-sh2.ufileos.com/2011/11-18-whoisip-api-2.png)
+![whoisip-api-2](http://imgs.lisenhui.cn/2011/11-18-whoisip-api-2.png)
 
 有不明白的地方，可以留言讨论。

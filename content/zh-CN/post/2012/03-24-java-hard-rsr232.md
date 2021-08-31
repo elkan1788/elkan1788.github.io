@@ -24,7 +24,7 @@ categories:
 * 拷贝`win32com.dll`到`X:\jre\bin`目录下面;
 * 更新下IDE里面的JDK环境，如下图：
 
-![java-hard-rsr232-1](http://siteimgs.cn-sh2.ufileos.com/2012/03-24-java-hard-rsr232-1.png)
+![java-hard-rsr232-1](http://imgs.lisenhui.cn/2012/03-24-java-hard-rsr232-1.png)
 
 接着是硬件虚拟环境安装虚拟串口，这里我用的是VSPD6.0(附件提供下载)，安装好后启动VSPD添加我们所需要的端口，注意这里是按组的方式添加的，例如COM1和COM2是一组同时添加，以此类推。
  
@@ -62,7 +62,7 @@ while (en.hasMoreElements()) {
 
 运行代码后，控制台有输出正确的端口(如下图)，说明所有环境正常可进行下步工作，否则请检查。
 
-![java-hard-rsr232-2](http://siteimgs.cn-sh2.ufileos.com/2012/03-24-java-hard-rsr232-2.png)
+![java-hard-rsr232-2](http://imgs.lisenhui.cn/2012/03-24-java-hard-rsr232-2.png)
 
 最后要解决的就是与串口数据交互的问题。在这个问题上，最主要的难点就是数据读取，因为我们不知道端口什么时候会有数据到来，也不知数据长度如何。通常，串口通信应用程序有两种模式，一种是实现SerialPortEventListener接口，监听各种串口事件并作相应处理；另一种就是建立一个独立的接收线程专门负责数据的接收。参考众多老前辈的代码后，下面就采用第一种方式写了个简单的助手程序，具体的实现请看详细代码，如下：
 
@@ -507,20 +507,20 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
 
 * 启动界面
 
-![java-hard-rsr232-3](http://siteimgs.cn-sh2.ufileos.com/2012/03-24-java-hard-rsr232-3.png)
+![java-hard-rsr232-3](http://imgs.lisenhui.cn/2012/03-24-java-hard-rsr232-3.png)
 
 * 端口检测
 
-![java-hard-rsr232-4](http://siteimgs.cn-sh2.ufileos.com/2012/03-24-java-hard-rsr232-4.png)
+![java-hard-rsr232-4](http://imgs.lisenhui.cn/2012/03-24-java-hard-rsr232-4.png)
 
 * 通讯测试
 
-![java-hard-rsr232-5](http://siteimgs.cn-sh2.ufileos.com/2012/03-24-java-hard-rsr232-5.png)
+![java-hard-rsr232-5](http://imgs.lisenhui.cn/2012/03-24-java-hard-rsr232-5.png)
 
 * 最后再抽空来美化程序下，效果更漂亮
 
-![java-hard-rsr232-6](http://siteimgs.cn-sh2.ufileos.com/2012/03-24-java-hard-rsr232-6.png)
+![java-hard-rsr232-6](http://imgs.lisenhui.cn/2012/03-24-java-hard-rsr232-6.png)
 
-![java-hard-rsr232-7](http://siteimgs.cn-sh2.ufileos.com/2012/03-24-java-hard-rsr232-7.png)
+![java-hard-rsr232-7](http://imgs.lisenhui.cn/2012/03-24-java-hard-rsr232-7.png)
 
 PS: [示例源下载](http://dl.iteye.com/topics/download/80f67e6e-45eb-31ff-8086-da09f8d5762e)

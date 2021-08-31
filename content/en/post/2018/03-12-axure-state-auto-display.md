@@ -15,7 +15,7 @@ The problem
 
 As user needs are constantly updated and product prototype designs are being upgraded iteratively, it is important to make the overall design more complex, with more factors affecting each component. This is not now encountered when a hidden component is displayed on the dynamic panel, the resulting pull-down component is not fully displayed, really good is depressed, as shown in the following image:
 
-![axure-state-auto-display01.png](http://siteimgs.cn-sh2.ufileos.com/2018/03-12-axure-state-auto-display01.png)
+![axure-state-auto-display01.png](http://imgs.lisenhui.cn/2018/03-12-axure-state-auto-display01.png)
 
 <!--more-->
 
@@ -32,19 +32,19 @@ Top-level settings
 
 Navigate to the click event that shows the hidden symbol and place it at the top when displayed, as shown in the following image:
 
-![axure-state-auto-display02.png](http://siteimgs.cn-sh2.ufileos.com/axure-state-auto-display02.png)
+![axure-state-auto-display02.png](http://imgs.lisenhui.cn/axure-state-auto-display02.png)
 
 Panel adaptation
 
 Position to the panel where the hidden element is located, and on the properties of the panel, the content size is automatically adjusted to tick, as shown in the following image:
 
-![axure-state-auto-display03.png](http://siteimgs.cn-sh2.ufileos.com/2018/03-12-axure-state-auto-display03.png)
+![axure-state-auto-display03.png](http://imgs.lisenhui.cn/2018/03-12-axure-state-auto-display03.png)
 
 
 A preview of the effect
 
 After you've done the above 2 steps, you can see the following effect:
 
-![axure-state-auto-display04.png](http://siteimgs.cn-sh2.ufileos.com/2018/03-12-axure-state-auto-display04.png)
+![axure-state-auto-display04.png](http://imgs.lisenhui.cn/2018/03-12-axure-state-auto-display04.png)
 
 OK, so far we have achieved the problem we want to solve, encountered problems can be a little more Axure's various settings, there will be unexpected effects, ha.

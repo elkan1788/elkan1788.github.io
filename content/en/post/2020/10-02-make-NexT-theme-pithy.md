@@ -49,14 +49,14 @@ Then define a Div element where you want to appear in the comment box, as follow
 
 The final effect is as follows:
 
-![LiveRe Comment](http://siteimgs.cn-sh2.ufileos.com/2020/10-02-hugo-next-LiveRe-comment.png)
+![LiveRe Comment](http://imgs.lisenhui.cn/2020/10-02-hugo-next-LiveRe-comment.png)
 
 
 ### 2.2 Valine
 
 [Valine](https://valine.js.org/), a fast, concise, and efficient back-end review system based on LeanCloud. The official documentation is very detailed and will not be repeated here, with the following results:
 
-![Valine Comment](http://siteimgs.cn-sh2.ufileos.com/2020/10-02-hugo-next-valine-comment.png)
+![Valine Comment](http://imgs.lisenhui.cn/2020/10-02-hugo-next-valine-comment.png)
 
 Note that because LeanCloud's SDK references are integrated in TheValine, you no longer need to reference the relevant SDK to use learnCloud features yourself, and then conflict. 
 
@@ -68,7 +68,7 @@ Blog Space Access Statistics
 
 Statistics and related data collection for blog space access can be achieved by the likes of CNZZ, Baidu,Google (which may be walled),GrowingIO, etc. (you can also integrate your own familiar platforms), and the buried scripts of these platforms are also supported for integration. This time is mainly integrated CNZZ, Baidu and Google, but the data of these platforms only the station director has permission to view, so the introduction of non-garlic counter, the site PU and UV data public display, the effect is as follows:
 
-![Busuanzi Counter](http://siteimgs.cn-sh2.ufileos.com/2020/10-02-hugo-next-busuanzi-viewers.png)
+![Busuanzi Counter](http://imgs.lisenhui.cn/2020/10-02-hugo-next-busuanzi-viewers.png)
 
 Article access statistics
 
@@ -113,7 +113,7 @@ Finally, submit this file path to the corresponding ingest platform, such as the
 
 In addition, through the site's own sharing function, you can quickly share articles to different readers or other platforms. This time using the BShare plug-in, you can quickly generate sharing links from different platforms, readers only need a click to quickly share, the effect is as follows:
 
-![Bshare Plugin](http://siteimgs.cn-sh2.ufileos.com/2020/10-02-hugo-next-bshare.png)
+![Bshare Plugin](http://imgs.lisenhui.cn/2020/10-02-hugo-next-bshare.png)
 
 The HTTPS reference issue with BShare is currently resolved through the Meta tag, but several references inside are invalid and output some error messages in the console without affecting rendering of the entire page. This issue has been submitted for BShare feedback and looks forward to further upgrade fixes. 
 
@@ -121,13 +121,13 @@ The HTTPS reference issue with BShare is currently resolved through the Meta tag
 
 The original NexT theme does not have a self-introduction page, refer to the original Hexo  theme in the personal introduction page, add some shortcode code, to achieve a different personal information introduction page from the article, the effect is as follows:
 
-![About ME](http://siteimgs.cn-sh2.ufileos.com/2020/10-02-hugo-next-about-me.png)
+![About ME](http://imgs.lisenhui.cn/2020/10-02-hugo-next-about-me.png)
 
 ## 6. Local search
 
 Local search can quickly retrieve relevant content through article titles or content keywords, and the principle is simpler, which is to extract the article title and content into an XML text record, and then read the parsing through the JavaScript script. The implementation in the original theme is parsed through sitemap.xml, but this will conflict with the real sitemap.xml file product, and then use robots.txt files for storage, while correcting related styles and icons such as positively related pop-ups, the final effect is as follows:
 
-![Local Search](http://siteimgs.cn-sh2.ufileos.com/2020/10-02-hugo-next-search-in-local.png)
+![Local Search](http://imgs.lisenhui.cn/2020/10-02-hugo-next-search-in-local.png)
 
 ## 7. Public service 404
 
@@ -151,13 +151,13 @@ daovoice('update');
 
 The results are as follows:
 
-![DaoVoice](http://siteimgs.cn-sh2.ufileos.com/2020/10-02-hugo-next-daovoice.png)
+![DaoVoice](http://imgs.lisenhui.cn/2020/10-02-hugo-next-daovoice.png)
 
 ## 9. Picture browsing
 
 By directly referencing the picture in the article will be compressed, or zoomed out, can not see the original image clear. Previously NextT's own picture browsing plug-in wasn't very useful, so replacing it with ImageViewer for image browsing within the article would have a slide-like effect, as follows:
 
-![ImageViewer](http://siteimgs.cn-sh2.ufileos.com/2020/10-02-hugo-next-imageviewer.png)
+![ImageViewer](http://imgs.lisenhui.cn/2020/10-02-hugo-next-imageviewer.png)
 
 ## 10. Other optimizations
 

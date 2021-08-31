@@ -24,11 +24,11 @@ From node 'cluster01', IP address: 192.168.8.201
 
 The following first generates a 'SSH-KEY'on the main node, enters'ssh-keygen -t  rsa',here using the default stored directory, no password, press the enter keytwice in a row, as shown in the following image:
 
-![ssh-login-without-pswd-1](http://siteimgs.cn-sh2.ufileos.com/ssh-login-without-pswd-01.png)
+![ssh-login-without-pswd-1](http://imgs.lisenhui.cn/ssh-login-without-pswd-01.png)
 
 The resulting 'PUB_KEY'file is then used to output a file with thename 'authorized_keys'using the 'cat' pipeline command, and thencopied to thenode server with the'scp'command (where the passwordis to be entered), as shown in the following image:
 
-![ssh-login-without-pswd-2](http://siteimgs.cn-sh2.ufileos.com/ssh-login-without-pswd-02.png)
+![ssh-login-without-pswd-2](http://imgs.lisenhui.cn/ssh-login-without-pswd-02.png)
 
 If the 'scp' commandcannot be executed, execute the installationcommand: 'yum install -y  openssh-clients'
 

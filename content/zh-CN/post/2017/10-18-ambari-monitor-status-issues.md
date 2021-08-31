@@ -12,7 +12,7 @@ categories:
 
 很多时候环境的维护的确是件头痛的事件，这不本来在Ambari的Dashboard页面显示正常服务的监控，实然间出现了个奇怪的现象： 在机器查询服务的运行进程是正常的，可偏偏Ambari的UI界面却显示状为停止，但端口检查又显示正常的。如下图：
 
-![alert_stopped.png](http://siteimgs.cn-sh2.ufileos.com/2017/10-18-ambari-red.png)
+![alert_stopped.png](http://imgs.lisenhui.cn/2017/10-18-ambari-red.png)
 
 <!--more-->
 
@@ -24,7 +24,7 @@ categories:
 
 
 
-![ambari-green.png](http://siteimgs.cn-sh2.ufileos.com/2017/10-18-ambari-green.png)
+![ambari-green.png](http://imgs.lisenhui.cn/2017/10-18-ambari-green.png)
 
 
 

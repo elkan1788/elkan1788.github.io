@@ -97,7 +97,7 @@ The effect of the operation of the 2.4
 
 When you push the code to the Github  repository, you'll have automatically sync the code to the Gitee repository, and you'll re-create the static page service, saving the process of manual intervention. 
 
-![02-25-sync-2-gitee-flow-01.png](http://siteimgs.cn-sh2.ufileos.com/2021/02-25-sync-2-gitee-flow-01.png)
+![02-25-sync-2-gitee-flow-01.png](http://imgs.lisenhui.cn/2021/02-25-sync-2-gitee-flow-01.png)
 
 
 ## 3.Summary

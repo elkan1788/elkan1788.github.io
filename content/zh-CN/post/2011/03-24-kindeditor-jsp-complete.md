@@ -35,23 +35,23 @@ categories:
 
 * 完善后的KE目录
 
-![kindeditor-jsp-cmp-1](http://siteimgs.cn-sh2.ufileos.com/2011/03-24-kindeditor-jsp-cmp-1.png)
+![kindeditor-jsp-cmp-1](http://imgs.lisenhui.cn/2011/03-24-kindeditor-jsp-cmp-1.png)
 
 * 完整功能示
 
-![kindeditor-jsp-cmp-2](http://siteimgs.cn-sh2.ufileos.com/2011/03-24-kindeditor-jsp-cmp-2.png)
+![kindeditor-jsp-cmp-2](http://imgs.lisenhui.cn/2011/03-24-kindeditor-jsp-cmp-2.png)
 
 * 浏览服务目录
 
-![kindeditor-jsp-cmp-3](http://siteimgs.cn-sh2.ufileos.com/2011/03-24-kindeditor-jsp-cmp-3.png)
+![kindeditor-jsp-cmp-3](http://imgs.lisenhui.cn/2011/03-24-kindeditor-jsp-cmp-3.png)
 
 * 附件展示效果
 
-![kindeditor-jsp-cmp-4](http://siteimgs.cn-sh2.ufileos.com/2011/03-24-kindeditor-jsp-cmp-4.png)
+![kindeditor-jsp-cmp-4](http://imgs.lisenhui.cn/2011/03-24-kindeditor-jsp-cmp-4.png)
 
 * 与Extjs整合效果
 
-![kindeditor-jsp-cmp-6](http://siteimgs.cn-sh2.ufileos.com/2011/03-24-kindeditor-jsp-cmp-6.png)
+![kindeditor-jsp-cmp-6](http://imgs.lisenhui.cn/2011/03-24-kindeditor-jsp-cmp-6.png)
 
 最后要说的是这款编辑器真的很不错，相信你用过它后一定会喜欢上它的，呵呵，多多支持国内软件事业的发展吧。
 
