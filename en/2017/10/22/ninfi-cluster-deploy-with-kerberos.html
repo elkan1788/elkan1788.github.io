@@ -151,9 +151,9 @@ Apache Nifi clustering and user authentication with kerberos
 </header>
 <div class=post-body itemprop=articleBody>
 <p>Recently, some of the lessons learned from the installation configuration are being shared with the help of the .Apache NIFI for contact with data streaming processing. This article is primarily about clusters and user rights, and the description of the &ldquo;Apache NIFI&rdquo; (<a href=https://nifi.apache.org/>https://nifi.apache.org/</a>) is not much of a description, with a direct reference to the official home page as follows:</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/10-22-Apache-NiFi-01.png alt=NiFi-01.png></p>
+<p><img src=http://imgs.lisenhui.cn/2017/10-22-Apache-NiFi-01.png alt=NiFi-01.png></p>
 <p>Apahce NIFI&rsquo;s stand-alone operation is fairly simple, easy to use, and completely fooly. Download the decompression and perform &lsquo;nifi.sh start&rsquo; on the &lsquo;bin&rsquo; directory to open the browser input &lsquo;http://127.0.0.1:8080/nifi&rsquo; to see a simple and beautiful WEB UI. So what we&rsquo;re going to configure next is its cluster pattern, which is officially stated, with each node in the cluster performing the same tasks on the dataset, but each node is running on a different dataset (see the official documentation for detailed instructions( <a href=https://nifi.apache.org/docs.html>https://nifi.apache.org/docs.html</a></p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/10-22-zero-master-cluster-http-access.png alt=zero-master-cluster-http-access.png></p>
+<p><img src=http://imgs.lisenhui.cn/2017/10-22-zero-master-cluster-http-access.png alt=zero-master-cluster-http-access.png></p>
 <p>The system environment and software version</p>
 <ul>
 <li>
@@ -403,8 +403,8 @@ nifi.kerberos.service.keytab.location=/data/root.keytab
 <span style=color:green;font-weight:700>&lt;/provider&gt;</span>
 </code></pre></div><p>Start the NIFI service</p>
 <p>Start the NIFI of the primary node, then start the NIFI from the node, execute the command &lsquo;./bin/nifi.sh start&rsquo;, then open the browser input &lsquo;https://centos7-master:9443/nifi/&rsquo; and you will jump to the login page and enter the user and password created in step 1 to log in successfully. The interface appears as follows:</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/10-22-Apache-NiFi-02.png alt="Apache NiFi02"></p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/10-22-Apache-NiFi-03.png alt="Apache NiFi03"></p>
+<p><img src=http://imgs.lisenhui.cn/2017/10-22-Apache-NiFi-02.png alt="Apache NiFi02"></p>
+<p><img src=http://imgs.lisenhui.cn/2017/10-22-Apache-NiFi-03.png alt="Apache NiFi03"></p>
 <p>As shown in the above two figures, in the upper left corner of the interface can clearly see that the current number of nodes is 2, the user is &lsquo;<a href=mailto:root/admin@CENTOS7-MASTER.COM>root/admin@CENTOS7-MASTER.COM</a>&rsquo;, where &lsquo;centos7-master&rsquo; is the coordinator, &lsquo;centos 7-cluster01&rsquo; is the main node, the main menu also added &lsquo;Cluster&rsquo;, &lsquo;User&rsquo; and &lsquo;Policies&rsquo; options.</p>
 <p>At this point, &lsquo;Apache NIFI&rsquo; cluster services and user authentication are complete, and then we can take the next step.</p>
 <p>The pits encountered:
@@ -526,19 +526,19 @@ Never forget your dreams！
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/en/post/>
-<span class=site-state-item-count>51</span>
+<span class=site-state-item-count>52</span>
 <span class=site-state-item-name>Blogs</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/en/categories/>
-<span class=site-state-item-count>25</span>
+<span class=site-state-item-count>26</span>
 <span class=site-state-item-name>Categories</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/en/tags/>
-<span class=site-state-item-count>59</span>
+<span class=site-state-item-count>61</span>
 <span class=site-state-item-name>Tags</span>
 </a>
 </div>
@@ -590,6 +590,9 @@ TagCloud
 <a href=/en/tags/big-data>Big data</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/java>Java</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
 <a href=/en/tags/linux>Linux</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
@@ -600,9 +603,6 @@ TagCloud
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/en/tags/github>Github</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/en/tags/java>Java</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/en/tags/kindeditor>Kindeditor</a>

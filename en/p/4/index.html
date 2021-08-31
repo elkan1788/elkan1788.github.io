@@ -106,6 +106,92 @@
 <article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
 <header class=post-header>
 <h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/en/2017/10/26/nifi-windows-local-cluster.html itemprop=url>
+Apache Nifi builds pseudo-clusters and certificate logins in a Windows environment
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>Published at:</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-10-26">
+2017-10-26
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>Categories:</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/en/categories/big-data itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>Big data</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>967 words</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>5 minutes</span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>Some time ago did about the &lsquo;Apache Nifi&rsquo;distributed clusterset-up sharing, but a lot of times to build distributed cluster machine resources is a problem, and now the stand-alone configuration is quite good, so now do a share about building a pseudo-distributed cluster on Windows, and through another way to achieve the authorization of the &ldquo;Apache Nifi.</p>
+<p>The system environment and software version</p>
+<ul>
+<li>
+<p>Windows8.1</p>
+</li>
+<li>
+<p>JDK1.8.0_131</p>
+</li>
+<li>
+<p>Nifi-1.4.0</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style=text-align:center>Nifi installation directory</th>
+<th style=text-align:center>The WEB port</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:center>xxx\nifi-ncm</td>
+<td style=text-align:center>9443</td>
+</tr>
+<tr>
+<td style=text-align:center>xxx\nifi-cluster01</td>
+<td style=text-align:center>9444</td>
+</tr>
+<tr>
+<td style=text-align:center>xxx\nifi-cluster02</td>
+<td style=text-align:center>9445</td>
+</tr>
+</tbody>
+</table>
+<p>(Other versions can refer to this article)
+Another problem in testing, using&rsquo;Zookeyer&rsquo; embedded in &lsquo;Apache Nifi&rsquo;to build pseudo-clusters, always prompts for port occupancy issues, so give up using only single-node startup.</p>
+</div>
+<div class="post-more-link text-center">
+<a class=btn href=https://lisenhui.cn/en/2017/10/26/nifi-windows-local-cluster.html rel=contents>
+Read More &#187;
+</a>
+</div>
+<footer class=post-footer><div class=post-eof></div></footer>
+</article>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
 <a class=post-title-link href=https://lisenhui.cn/en/2017/10/22/ninfi-cluster-deploy-with-kerberos.html itemprop=url>
 Apache Nifi clustering and user authentication with kerberos
 </a>
@@ -145,7 +231,7 @@ Apache Nifi clustering and user authentication with kerberos
 </header>
 <div class=post-body itemprop=articleBody>
 <p>Recently, some of the lessons learned from the installation configuration are being shared with the help of the .Apache NIFI for contact with data streaming processing. This article is primarily about clusters and user rights, and the description of the &ldquo;Apache NIFI&rdquo; (<a href=https://nifi.apache.org/>https://nifi.apache.org/</a>) is not much of a description, with a direct reference to the official home page as follows:</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/10-22-Apache-NiFi-01.png alt=NiFi-01.png></p>
+<p><img src=http://imgs.lisenhui.cn/2017/10-22-Apache-NiFi-01.png alt=NiFi-01.png></p>
 </div>
 <div class="post-more-link text-center">
 <a class=btn href=https://lisenhui.cn/en/2017/10/22/ninfi-cluster-deploy-with-kerberos.html rel=contents>
@@ -196,7 +282,7 @@ An issue with the service in Ambari that is functioning properly but the service
 </header>
 <div class=post-body itemprop=articleBody>
 <p>Many times the maintenance of the environment is indeed a headache event, which does not originally show the monitoring of normal services on Ambari&rsquo;s Dashboard page, there is a strange phenomenon: in the machine query service running process is normal, but partial Ambari&rsquo;s UI interface is displayed as a stop, but the port check shows normal. Here&rsquo;s the picture:</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/10-18-ambari-red.png alt=alert_stopped.png></p>
+<p><img src=http://imgs.lisenhui.cn/2017/10-18-ambari-red.png alt=alert_stopped.png></p>
 </div>
 <div class="post-more-link text-center">
 <a class=btn href=https://lisenhui.cn/en/2017/10/18/ambari-monitor-status-issues.html rel=contents>
@@ -322,65 +408,6 @@ Read More &#187;
 </div>
 <footer class=post-footer><div class=post-eof></div></footer>
 </article>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lisenhui.cn/en/2017/09/08/azkaban-install-use-share.html itemprop=url>
-Timed scheduling tasker Azkaban installation
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-time>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>Published at:</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-09-08">
-2017-09-08
-</time>
-</span>
-<span class=post-category>
-&nbsp; | &nbsp;
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>Categories:</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a href=/en/categories/big-data itemprop=url rel=index style=text-decoration:underline>
-<span itemprop=name>Big data</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span>
-|
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>1342 words</span>
-</span>
-<span>
-|
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>Reading:</span>
-<span class=leancloud-view-count>7 minutes</span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>Background and introduction</p>
-<p>In the big data complex ETL or other data processing processes, some tasks need to be performed on a timed basis, although Linux brings itsown&rsquo;cron' commandfunction, but still can not meet the biggest point is that it does notprovide centralized management and visual editing. In fact, in the big data ecology has been integrated with a timed scheduling framework &lsquo;Oozie&rsquo;, but the practice found that its learning costs are not low, the process of distribution is more complex. After trying other distribution worker scheduling frameworks, such as Ali&rsquo;s Zeus &lsquo;Zeus&rsquo;, or &lsquo;Azkaban&rsquo;, which is used by more people in the community.</p>
-<p>&lsquo;Azkaban3&rsquo; is still relatively large compared to the changes made in the previous version, and interested parties can be found on its official website, <a href=https://azkaban.github.io/azkaban/docs/latest/>Azkaban</a>. Next, mainly to share the installation of &lsquo;Azkaban 3&rsquo;, the following is &lsquo;Azkaban 3&rsquo; system architecture design:</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/09-08-Azkaban-Install00.png alt=Azkaban-Install00></p>
-<p>The three components in the figure are an important part of &lsquo;Azkaban3&rsquo;:</p>
-<ul>
-<li>MySQL relationship data storage data</li>
-<li>Web Server GUI management service provider</li>
-<li>Executor Server Distributed Node Service</li>
-</ul>
-</div>
-<div class="post-more-link text-center">
-<a class=btn href=https://lisenhui.cn/en/2017/09/08/azkaban-install-use-share.html rel=contents>
-Read More &#187;
-</a>
-</div>
-<footer class=post-footer><div class=post-eof></div></footer>
-</article>
 </section>
 <nav class=pagination>
 <a class="extend prev" rel=prev href=/en/p/3/><i class="fa fa-angle-left"></i></a>
@@ -416,19 +443,19 @@ Never forget your dreams！
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/en/post/>
-<span class=site-state-item-count>51</span>
+<span class=site-state-item-count>52</span>
 <span class=site-state-item-name>Blogs</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/en/categories/>
-<span class=site-state-item-count>25</span>
+<span class=site-state-item-count>26</span>
 <span class=site-state-item-name>Categories</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/en/tags/>
-<span class=site-state-item-count>59</span>
+<span class=site-state-item-count>61</span>
 <span class=site-state-item-name>Tags</span>
 </a>
 </div>
@@ -486,6 +513,9 @@ TagCloud
 <a href=/en/tags/big-data>Big data</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/java>Java</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
 <a href=/en/tags/linux>Linux</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
@@ -496,9 +526,6 @@ TagCloud
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/en/tags/github>Github</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/en/tags/java>Java</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/en/tags/kindeditor>Kindeditor</a>

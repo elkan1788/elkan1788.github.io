@@ -163,10 +163,10 @@
 <p>Ruby的安装请移步搜索引擎，在此只是提示下建议使用2.0以上的版本，另外就是注意更新<code>gem</code>的镜像地址： <a href=https://gems.ruby-china.org>Ruby China</a>。</p>
 <h3 id=travis-ci账户>Travis CI账户</h3>
 <p>如有需要可以单独注册账号，建议直接使用<code>Github Token</code>登录即可。 接下来就是需要生成个<code>Github Token</code>，在<code>Github</code>的个设置面板中找到，或者是直接点击<a href=https://github.com/settings/tokens>Github Tokens</a>进行创建，如下图所示：</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/08-19-travis-ci-deploy01.png alt=travis-ci-deploy01>
-<img src=http://siteimgs.cn-sh2.ufileos.com/2017/08-19-travis-ci-deploy02.png alt=travis-ci-deploy02></p>
+<p><img src=http://imgs.lisenhui.cn/2017/08-19-travis-ci-deploy01.png alt=travis-ci-deploy01>
+<img src=http://imgs.lisenhui.cn/2017/08-19-travis-ci-deploy02.png alt=travis-ci-deploy02></p>
 <p>保存好刚刚创建的<code>Token</code>，然后使用<code>Github</code>授权登录<code>Travis CI</code>并跳转至控制面板<a href=https://travis-ci.org/profile/>Travis Profile</a>，选择需要创建的项目(即你的博客项目)如下图所示</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/08-19-travis-ci-deploy03.png alt=travis-ci-deploy03></p>
+<p><img src=http://imgs.lisenhui.cn/2017/08-19-travis-ci-deploy03.png alt=travis-ci-deploy03></p>
 <h3 id=travis-client安装>Travis Client安装</h3>
 <p><code>Travis Client</code>安装非常的简单，命令如下：</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>sudo gem install travis -v 1.8.8 --no-rdoc --no-ri
@@ -274,7 +274,7 @@ hexo clean <span style=color:#666>&amp;&amp;</span> hexo g <span style=color:#66
 
 </code></pre></div><h2 id=发表文章>发表文章</h2>
 <p>使用<code>hexo new "article tittle"</code>命令创建一篇文章，然后加入你想吐槽的观点，内容等保存，然后用<code>git push</code>命令推送代码到<code>Github</code>服务器，此时登录<code>Travis CI</code>便可以在对应的项目中看到"华丽"的日志输出如下图所示：</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/08-19-travis-ci-deploy04.png alt=travis-ci-deploy04></p>
+<p><img src=http://imgs.lisenhui.cn/2017/08-19-travis-ci-deploy04.png alt=travis-ci-deploy04></p>
 <p>如果最后的结果是绿色，那么恭喜你，你的博客已经布署成功，赶紧去刷新页面瞅瞅。</p>
 <p>至此所有的配置结束，怎么样，感觉是不是很炫，只要一个简单的<code>git push</code>命令即保存代码又搞定博客站点布署，如有问题欢迎吐槽。</p>
 <p>参考：</p>
@@ -372,19 +372,19 @@ pymssql连接azure云的MSSQL数据库
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>51</span>
+<span class=site-state-item-count>52</span>
 <span class=site-state-item-name>日志</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/categories/>
-<span class=site-state-item-count>25</span>
+<span class=site-state-item-count>26</span>
 <span class=site-state-item-name>分类</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>58</span>
+<span class=site-state-item-count>60</span>
 <span class=site-state-item-name>标签</span>
 </a>
 </div>
@@ -436,6 +436,9 @@ GitHub
 <a href=/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE>大数据</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
+<a href=/tags/java>Java</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
 <a href=/tags/linux>Linux</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
@@ -443,9 +446,6 @@ GitHub
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/tags/github>Github</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/java>Java</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/tags/kindeditor>Kindeditor</a>

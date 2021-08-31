@@ -1,4 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>加入Istio官方翻译组织的历程记录</title><url>https://lisenhui.cn/2021/03/20/join-istio-translation-org.html</url><categories><category>社区</category></categories><tags><tag>istio</tag><tag>云原生</tag></tags><content type="html"> 作为曾经的程序猿，自己也一直“享受”着来自开源社区的那些无私分享。这些开源项目对自己的影响和启发还是很大的，之前就有想过如何去回馈开源社区，也开贡献过自己的一些项目，参与过一些开源项目，但都还是仅限国内的项目。不久前正好看到 Jimmy Song 在微信朋友圈发布《Istio 官网翻译工作组成立暨志愿者招募》的动态，没有任何的犹豫，下班后便联系 Jimmy 申请加入翻译工作，并在随后的时间完成自己的首次翻译，也成功被合并到了 Istio 官方仓库的主分支当中。如果你也有和我一样的想法，那么欢迎您也来一起加入，期待。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>替换SpringBoot里的文件</title><url>https://lisenhui.cn/2021/04/14/replace-files-in-springboot.html</url><categories><category>springboot</category></categories><tags><tag>spring</tag><tag>springboot</tag><tag>java</tag></tags><content type="html"> 现在使用Spring Boot架构的应用开发来说是非常的普遍，统一化的打包部署确实带来不少便利，但当遇到问题时也是会比较棘手。或许你会觉得很惊讶，但如果说这是产品部署运维过程中遇到的难题需要修改Spring Boot应用程序，你就会觉得困难也是不奇怪的。本文就来分享下如何使用jar命令应对线上部署产品时，要临时替换Spring Boot应用中的Jar包的操作。
+在测试环境部署某个产品应用时，在最后启动时遇到失败，查看并分析启动日志，发现了如下的堆栈日志信息：
+看到此MySQL驱动的类名，当时心中已经有了答案，估计肯定是因为高版本的MySQL驱动程序不兼容低版本的MySQL Server所引起的。接下来使用如下的 jar 命令进一步确认下便是：
+$ jar -tvf semxxx.jar | grep mysql mysql-connector-java-8.0.12.jar 当前测试环境使用的 VM 集成镜像，里面很多组件版本相对比较低，但一直使用都没有问题也未曾再升级。
+从上面错误的堆栈日志中有看到DruidDataSource字样，猜测此开发使用了Druid数据库连接池，那还是很有希望的，因为Druid数据库连接池有个自动适配数据库驱动程序类的能力特性，但愿开发在写代码时没有使用硬编码的形式。
+网上搜索了一些关于 jar 命令如何打包有主运行程序的JAR包后，便着手开始替换MySQL程序的工作。相关步骤如下：
+解压产品打包好的spring-boot应用程序 $ jar xf semantic-xxxx.jar -C tmp/ 删除lib目录下的MySQL高版本驱动 $ cd ./tmp/BOOT-INF/lib/ $ rm -rf mysql-connector-java-8.0.16.jar 添加低版本的MySQL驱动包 $ cd ./tmp $ cp ~/mysql-connector-java-5.1.34-bin.jar ./BOOT-INF/lib/ 修改classpath.idx文件中的JAR列表 $ cd ./tmp/BOOT-INF/ $ vim classpath.idx $ # 把那个高版本驱动程序JAR名称修改成低版本的名称即可 重新打包Jar $ cd ./tmp $ jar cfM0 semantic-xxxx.jar . 最后就是重新启动应用程序，“万幸”我们的程序员们没有写硬编码，启动成功，如愿进入到了产品的操作界面，功能使用也一切正常。
+参考文章：
+jar命令修改 springBoot打包成的jar 直接替换Springboot jar包中的文件 springboot项目jar包发布的，如何线上修改jar包</content></entry><entry><title>加入Istio官方翻译组织的历程记录</title><url>https://lisenhui.cn/2021/03/20/join-istio-translation-org.html</url><categories><category>社区</category></categories><tags><tag>istio</tag><tag>云原生</tag></tags><content type="html"> 作为曾经的程序猿，自己也一直“享受”着来自开源社区的那些无私分享。这些开源项目对自己的影响和启发还是很大的，之前就有想过如何去回馈开源社区，也开贡献过自己的一些项目，参与过一些开源项目，但都还是仅限国内的项目。不久前正好看到 Jimmy Song 在微信朋友圈发布《Istio 官网翻译工作组成立暨志愿者招募》的动态，没有任何的犹豫，下班后便联系 Jimmy 申请加入翻译工作，并在随后的时间完成自己的首次翻译，也成功被合并到了 Istio 官方仓库的主分支当中。如果你也有和我一样的想法，那么欢迎您也来一起加入，期待。
 接下来给大家一起分享下，加入Istio官方翻译组织的历程，为后续想加入（或是参与其他开源项目）的小伙伴们做个引路参考，如有不明白之处，可以在文章下的评论区，发表你的建议或意见，谢谢。
 翻译的全流程概览如下：
 1. 准备工作 俗话说： “磨刀不误砍柴功。” 在正式参与项目合作之前，还是有不少的准备工作需要做的。 当然如果您是资深的开源玩家，那么这些对您来说都是轻车熟路，可以直接跳过本篇文章，参与到实际的项目合作中去。

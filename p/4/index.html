@@ -106,6 +106,94 @@
 <article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
 <header class=post-header>
 <h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/2017/10/26/nifi-windows-local-cluster.html itemprop=url>
+Apache Nifi在Windows环境下搭建伪群集及证书登录
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>时间：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-10-26">
+2017-10-26
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分类：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>大数据</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>2078 字</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>5分钟</span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>前些时间做了关于<code>Apache Nifi</code>分布式集群的搭建分享，但很多时候要搭建分布式集群机器资源是个问题，而现在的单机的配置还是相当不错的，故现在就做个关于Windows上搭建个伪分布式集群的分享，同时通过另外一种方式实现<strong>Apache Nifi</strong>的授权认证。</p>
+<h1 id=系统环境及软件版本>系统环境及软件版本</h1>
+<ul>
+<li>
+<p>Windows8.1</p>
+</li>
+<li>
+<p>JDK1.8.0_131</p>
+</li>
+<li>
+<p>Nifi-1.4.0</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style=text-align:center>Nifi安装目录</th>
+<th style=text-align:center>WEB端口</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style=text-align:center>xxx\nifi-ncm</td>
+<td style=text-align:center>9443</td>
+</tr>
+<tr>
+<td style=text-align:center>xxx\nifi-cluster01</td>
+<td style=text-align:center>9444</td>
+</tr>
+<tr>
+<td style=text-align:center>xxx\nifi-cluster02</td>
+<td style=text-align:center>9445</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>(其它版本可参考此篇文章)
+另在测试中发个问题，使用<code>Apache Nifi</code>内嵌的<code>Zookeeper</code>搭建伪集群里启动总是提示端口占用的问题，故放弃只采用了单结点启动。</p>
+</blockquote>
+</div>
+<div class="post-more-link text-center">
+<a class=btn href=https://lisenhui.cn/2017/10/26/nifi-windows-local-cluster.html rel=contents>
+阅读全文 &#187;
+</a>
+</div>
+<footer class=post-footer><div class=post-eof></div></footer>
+</article>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
 <a class=post-title-link href=https://lisenhui.cn/2017/10/22/ninfi-cluster-deploy-with-kerberos.html itemprop=url>
 Apache Nifi集群搭建及用kerberos实现用户认证
 </a>
@@ -145,7 +233,7 @@ Apache Nifi集群搭建及用kerberos实现用户认证
 </header>
 <div class=post-body itemprop=articleBody>
 <p>最近这段时间在接触数据流式处理方面的事宜，用到了<strong>Apache NIFI</strong>现把安装配置中学习的一些经验分享下。此篇文章主要是针对集群及用户权限方面，关于<a href=https://nifi.apache.org/>Apache NIFI</a>的介绍就不做过多的说明，直接引用官方的首页的说明如下图所示：</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/10-22-Apache-NiFi-01.png alt=NiFi-01.png></p>
+<p><img src=http://imgs.lisenhui.cn/2017/10-22-Apache-NiFi-01.png alt=NiFi-01.png></p>
 </div>
 <div class="post-more-link text-center">
 <a class=btn href=https://lisenhui.cn/2017/10/22/ninfi-cluster-deploy-with-kerberos.html rel=contents>
@@ -196,7 +284,7 @@ Apache Nifi集群搭建及用kerberos实现用户认证
 </header>
 <div class=post-body itemprop=articleBody>
 <p>很多时候环境的维护的确是件头痛的事件，这不本来在Ambari的Dashboard页面显示正常服务的监控，实然间出现了个奇怪的现象： 在机器查询服务的运行进程是正常的，可偏偏Ambari的UI界面却显示状为停止，但端口检查又显示正常的。如下图：</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/10-18-ambari-red.png alt=alert_stopped.png></p>
+<p><img src=http://imgs.lisenhui.cn/2017/10-18-ambari-red.png alt=alert_stopped.png></p>
 </div>
 <div class="post-more-link text-center">
 <a class=btn href=https://lisenhui.cn/2017/10/18/ambari-monitor-status-issues.html rel=contents>
@@ -326,65 +414,6 @@ Azkaban所支持的Job类型及示例
 </div>
 <footer class=post-footer><div class=post-eof></div></footer>
 </article>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lisenhui.cn/2017/09/08/azkaban-install-use-share.html itemprop=url>
-定时调度任务器Azkaban安装
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-time>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-09-08">
-2017-09-08
-</time>
-</span>
-<span class=post-category>
-&nbsp; | &nbsp;
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>分类：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a href=/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE itemprop=url rel=index style=text-decoration:underline>
-<span itemprop=name>大数据</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span>
-|
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>2655 字</span>
-</span>
-<span>
-|
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>6分钟</span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<h1 id=背景与介绍>背景与介绍</h1>
-<p>在大数据繁杂的ETL或其它数据处理过程当中，有些任务是需要定时执行的，虽然Linux自带了<code>cron</code>命令功能，但是仍不能满足最大的一点就是它不能提供集中式的管理和可视化的编辑。其实在大数据的生态当中已集成有个定时调度框架<code>Oozie</code>，只是实践下来发现其学习成本不低，布署的过程也较复杂。在尝试过其它分布工调度框架后（如阿里的宙斯<code>Zeus</code>），还是选择了社区较多人使用的<code>Azkaban</code>。</p>
-<p><code>Azkaban3</code>相对于上个版本所做的更改还是比较大的，感兴趣的话可以到其官方网站<a href=https://azkaban.github.io/azkaban/docs/latest/>Azkaban</a>了解下。接下来主要还是分享下<code>Azkaban3</code>的安装布署，下面是<code>Azkaban3</code>的系统架构设计图：</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/09-08-Azkaban-Install00.png alt=Azkaban-Install00></p>
-<p>图中的3个组件便是<code>Azkaban3</code>的重要组成部分：</p>
-<ul>
-<li>MySQL关系数据存储数据</li>
-<li>Web Server GUI管理服务提供者</li>
-<li>Executor Server 分布式节点服务布署</li>
-</ul>
-</div>
-<div class="post-more-link text-center">
-<a class=btn href=https://lisenhui.cn/2017/09/08/azkaban-install-use-share.html rel=contents>
-阅读全文 &#187;
-</a>
-</div>
-<footer class=post-footer><div class=post-eof></div></footer>
-</article>
 </section>
 <nav class=pagination>
 <a class="extend prev" rel=prev href=/p/3/><i class="fa fa-angle-left"></i></a>
@@ -420,19 +449,19 @@ Azkaban所支持的Job类型及示例
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>51</span>
+<span class=site-state-item-count>52</span>
 <span class=site-state-item-name>日志</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/categories/>
-<span class=site-state-item-count>25</span>
+<span class=site-state-item-count>26</span>
 <span class=site-state-item-name>分类</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>58</span>
+<span class=site-state-item-count>60</span>
 <span class=site-state-item-name>标签</span>
 </a>
 </div>
@@ -490,6 +519,9 @@ GitHub
 <a href=/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE>大数据</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
+<a href=/tags/java>Java</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
 <a href=/tags/linux>Linux</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
@@ -497,9 +529,6 @@ GitHub
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/tags/github>Github</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/java>Java</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/tags/kindeditor>Kindeditor</a>

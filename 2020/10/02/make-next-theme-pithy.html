@@ -173,10 +173,10 @@
 &lt;<span style=color:green;font-weight:700>div</span> <span style=color:#b44>id</span><span style=color:#666>=</span><span style=color:#b44>&#34;lv-container&#34;</span> <span style=color:#b44>data-id</span><span style=color:#666>=</span><span style=color:#b44>&#34;city&#34;</span> <span style=color:#b44>data-uid</span><span style=color:#666>=</span><span style=color:#b44>&#34;{{ .Site.Params.LiveReId }}&#34;</span>&gt;
 {{ end }}
 </code></pre></div><p>最后的效果如下：</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2020/10-02-hugo-next-LiveRe-comment.png alt="LiveRe Comment"></p>
+<p><img src=http://imgs.lisenhui.cn/2020/10-02-hugo-next-LiveRe-comment.png alt="LiveRe Comment"></p>
 <h3 id=22-valine>2.2 Valine</h3>
 <p><a href=https://valine.js.org/>Valine</a>,是一款基于LeanCloud的快速、简洁且高效的无后端评论系统。官方的文档非常详细，这里就不再赘述，最后实现的效果如下：</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2020/10-02-hugo-next-valine-comment.png alt="Valine Comment"></p>
+<p><img src=http://imgs.lisenhui.cn/2020/10-02-hugo-next-valine-comment.png alt="Valine Comment"></p>
 <blockquote>
 <p>需要注意一下，由于Valine里面集成了LeanCloud的SDK引用，所以自己再使用LearnCloud功能就不需要再引用相关的SDK，不然后就会发生冲突。</p>
 </blockquote>
@@ -184,7 +184,7 @@
 <p>作为博客站长，肯定是会比较关注自己空间的访问状况和相关的数据，比如PU和UV流量，可以借助一些现有平台帮助我们收集。</p>
 <h3 id=31-博客空间访问统计>3.1 博客空间访问统计</h3>
 <p>像CNZZ，百度，谷歌(可能被墙)，GrowingIO等（你也可以集成自己熟悉的平台）都可以实现对博客空间访问的统计与相关数据收集，另外这些平台的埋点脚本也是支持一起集成使用。 此次主要是集成了CNZZ, 百度和谷歌，但是这些平台的数据只有站长才有权限查看，所以另外引入不蒜子计数器，把网站PU和UV数据公开展示，效果如下：</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2020/10-02-hugo-next-busuanzi-viewers.png alt="Busuanzi Counter"></p>
+<p><img src=http://imgs.lisenhui.cn/2020/10-02-hugo-next-busuanzi-viewers.png alt="Busuanzi Counter"></p>
 <h3 id=32-文章访问统计>3.2 文章访问统计</h3>
 <p>除了空间访问数据以外，文章的热度也可以进行统计，之前NexT上也是使用LearnCloud作为后台计数的，此次可借助上面Valine评论插件自带的文章计数器功能。 但同时考虑到要是引用LiveRe评论插件的可能，于是移植原有Hexo上面的相关代码，并更新最新LearnCloud SDK代码，最终实现不管是在引用哪个评论插件，均可以实现文章热度的统计。</p>
 <blockquote>
@@ -216,16 +216,16 @@
 </ul>
 <h3 id=42-bshare分享>4.2 bshare分享</h3>
 <p>另外通过站点自带的分享功能，可以快速将文章分享给不同的读者或者是其他平台。此次采用的是BShare插件，可以快速生成不同平台的分享链接，读者只需要一键点击便可快速分享，效果如下：</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2020/10-02-hugo-next-bshare.png alt="Bshare Plugin"></p>
+<p><img src=http://imgs.lisenhui.cn/2020/10-02-hugo-next-bshare.png alt="Bshare Plugin"></p>
 <blockquote>
 <p>目前关于BShare的HTTPS引用问题已通过Meta标签解决，但其内部有好几个引用是无效的，会在控制台输出一些报错信息，但不会影响整个页面的渲染。此问题已经提交BShare反馈，期待后续有升级修复。</p>
 </blockquote>
 <h2 id=5-自我介绍>5. 自我介绍</h2>
 <p>原有的NexT主题里并没有带自我介绍的页面，参考原来Hexo主题里面的个人介绍页面，增加一些shortcode的代码，实现一个有别于文章的个人信息介绍页面，效果如下：</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2020/10-02-hugo-next-about-me.png alt="About ME"></p>
+<p><img src=http://imgs.lisenhui.cn/2020/10-02-hugo-next-about-me.png alt="About ME"></p>
 <h2 id=6-本地搜索>6. 本地搜索</h2>
 <p>本地搜索可通过文章标题或内容关键字快速检索出相关的内容，原理也比较简单，就是把文章标题和内容先抽取到一个XML文本中记录，然后通过JavaScript脚本读取解析。原来主题中的实现是通过sitemap.xml来解析，但这样会与真正的sitemap.xml文件产品冲突，后来改用robots.txt文件进行存储，同时修正相正相关的弹出框等相关样式和图标，最终效果呈现如下：</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2020/10-02-hugo-next-search-in-local.png alt="Local Search"></p>
+<p><img src=http://imgs.lisenhui.cn/2020/10-02-hugo-next-search-in-local.png alt="Local Search"></p>
 <h2 id=7-公益404>7. 公益404</h2>
 <p>引入腾讯的404公益页面，虽然本站点没有什么流量，但也希望通过这种方式让更多的失散儿童能够早日回家。</p>
 <h2 id=8-在线聊天>8. 在线聊天</h2>
@@ -240,10 +240,10 @@ daovoice(<span style=color:#b44>&#39;update&#39;</span>);
 <span style=color:#666>&lt;</span>script<span style=color:#666>&gt;</span>(<span style=color:#a2f;font-weight:700>function</span>(i,s,o,g,r,a,m){i[<span style=color:#b44>&#34;DaoVoiceObject&#34;</span>]<span style=color:#666>=</span>r;i[r]<span style=color:#666>=</span>i[r]<span style=color:#666>||</span><span style=color:#a2f;font-weight:700>function</span>(){(i[r].q<span style=color:#666>=</span>i[r].q<span style=color:#666>||</span>[]).push(arguments)},i[r].l<span style=color:#666>=</span><span style=color:#666>1</span><span style=color:#666>*</span><span style=color:#a2f;font-weight:700>new</span> <span style=color:#a2f>Date</span>();a<span style=color:#666>=</span>s.createElement(o),m<span style=color:#666>=</span>s.getElementsByTagName(o)[<span style=color:#666>0</span>];a.<span style=color:#a2f;font-weight:700>async</span><span style=color:#666>=</span><span style=color:#666>1</span>;a.src<span style=color:#666>=</span>g;a.charset<span style=color:#666>=</span><span style=color:#b44>&#34;utf-8&#34;</span>;m.parentNode.insertBefore(a,m)})(<span style=color:#a2f>window</span>,<span style=color:#a2f>document</span>,<span style=color:#b44>&#34;script&#34;</span>,(<span style=color:#b44>&#39;https:&#39;</span> <span style=color:#666>==</span> <span style=color:#a2f>document</span>.location.protocol <span style=color:#666>?</span> <span style=color:#b44>&#39;https:&#39;</span><span style=color:#666>:</span><span style=color:#b44>&#39;http:&#39;</span>) <span style=color:#666>+</span> <span style=color:#b44>&#34;//widget.daovoice.io/widget/xxxxx.js&#34;</span>,<span style=color:#b44>&#34;daovoice&#34;</span>)<span style=color:#666>&lt;</span><span>/script&gt;</span>
 
 </code></pre></div><p>最后实现的效果如下：</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2020/10-02-hugo-next-daovoice.png alt=DaoVoice></p>
+<p><img src=http://imgs.lisenhui.cn/2020/10-02-hugo-next-daovoice.png alt=DaoVoice></p>
 <h2 id=9-图片浏览功能>9. 图片浏览功能</h2>
 <p>通过在文章里面直接引用的图片都会是被压缩，或是缩小，无法查看原图的清晰明了。之前NextT自带的图片浏览插件并不好用，所以替换成了ImageViewer来实现对文章内的图片浏览，会有类似幻灯片的效果，如下：</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2020/10-02-hugo-next-imageviewer.png alt=ImageViewer></p>
+<p><img src=http://imgs.lisenhui.cn/2020/10-02-hugo-next-imageviewer.png alt=ImageViewer></p>
 <h2 id=10-其它优化>10. 其它优化</h2>
 <p>考虑到HTTPS流量计费原因，所以把所有页面中无关的因素全都进行剔除，把各种JavaScript类库和CSS样式用CDN链接进行替换，同时开启压缩模式让网页体积更小。</p>
 <p>另外还增加了标签云、3D访问显示，打赏功能，修复显示问题等小细节的处理，让整个博客站点功能看起来更加完整。</p>
@@ -341,19 +341,19 @@ daovoice(<span style=color:#b44>&#39;update&#39;</span>);
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>51</span>
+<span class=site-state-item-count>52</span>
 <span class=site-state-item-name>日志</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/categories/>
-<span class=site-state-item-count>25</span>
+<span class=site-state-item-count>26</span>
 <span class=site-state-item-name>分类</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>58</span>
+<span class=site-state-item-count>60</span>
 <span class=site-state-item-name>标签</span>
 </a>
 </div>
@@ -405,6 +405,9 @@ GitHub
 <a href=/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE>大数据</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
+<a href=/tags/java>Java</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
 <a href=/tags/linux>Linux</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
@@ -412,9 +415,6 @@ GitHub
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/tags/github>Github</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/java>Java</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/tags/kindeditor>Kindeditor</a>

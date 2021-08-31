@@ -106,6 +106,60 @@
 <article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
 <header class=post-header>
 <h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/en/2010/11/03/jquery-ajax-struts2.html itemprop=url>
+Struts2 and jQuery implementation of non - refresh paging problem
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>Published at:</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2010-11-03">
+2010-11-03
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>Categories:</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/en/categories/front itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>Front</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>410 words</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>2 minutes</span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>Recently, I am doing a non-refresh website management background, and it as my graduation design theme, but in the code implementation encountered a little problem, I would like to ask you a two.
+My design idea is roughly like this: output the generated data in the background in JSON format, and write the transmitted data in the foreground with the help of jQuery&rsquo;s Ajax function.
+This way in the realization of data add, change, delete function will not be difficult, but in the data query will be troublesome, how to achieve the data without refreshing paging?
+I checked what some people did online, but generally found that their code was a bit cumbersome and not in line with my original design.
+By looking at the JQUERY API I came up with a feasible solution (now realize some function) : in the query page countless according to first create a table style, through the JQUERY CLONE can work when querying data copy this form style at the same time will pass the data fill the background and remove the line of countless according to the style of the form.</p>
+</div>
+<div class="post-more-link text-center">
+<a class=btn href=https://lisenhui.cn/en/2010/11/03/jquery-ajax-struts2.html rel=contents>
+Read More &#187;
+</a>
+</div>
+<footer class=post-footer><div class=post-eof></div></footer>
+</article>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
 <a class=post-title-link href=https://lisenhui.cn/en/2010/09/05/jquery-ajax-struts1.html itemprop=url>
 JQuery+ strusts1.x implements Ajax login without refresh
 </a>
@@ -188,19 +242,19 @@ Never forget your dreams！
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/en/post/>
-<span class=site-state-item-count>51</span>
+<span class=site-state-item-count>52</span>
 <span class=site-state-item-name>Blogs</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/en/categories/>
-<span class=site-state-item-count>25</span>
+<span class=site-state-item-count>26</span>
 <span class=site-state-item-name>Categories</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/en/tags/>
-<span class=site-state-item-count>59</span>
+<span class=site-state-item-count>61</span>
 <span class=site-state-item-name>Tags</span>
 </a>
 </div>
@@ -258,6 +312,9 @@ TagCloud
 <a href=/en/tags/big-data>Big data</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/java>Java</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
 <a href=/en/tags/linux>Linux</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
@@ -268,9 +325,6 @@ TagCloud
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/en/tags/github>Github</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/en/tags/java>Java</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/en/tags/kindeditor>Kindeditor</a>

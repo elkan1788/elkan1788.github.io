@@ -157,13 +157,13 @@ Kylin integrates Zeppelin presentation data
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>bin/zeppelin-daemon.sh start
 Stop stop
 </code></pre></div><p>You can now open the browser and access Zeppelin&rsquo;s WEB UI, as shown in the following image:</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/06-02-zeppelin-01.png alt=zeppelin-01.png></p>
+<p><img src=http://imgs.lisenhui.cn/2017/06-02-zeppelin-01.png alt=zeppelin-01.png></p>
 <p>OK, the next step is to create a connection to Kylin, called &lsquo;Interpreter&rsquo; in Zeppelin, click &lsquo;anonymous&rsquo; in the upper right corner of the page to select it as follows:</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/06-02-zeppelin-02.png alt=zeppelin-02.png></p>
+<p><img src=http://imgs.lisenhui.cn/2017/06-02-zeppelin-02.png alt=zeppelin-02.png></p>
 <p>Also click on the &lsquo;Create&rsquo; button in the upper right corner and fill in your real data with the data filled in in the figure below:</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/06-02-zeppelin-03.png alt=zeppelin-03.png></p>
+<p><img src=http://imgs.lisenhui.cn/2017/06-02-zeppelin-03.png alt=zeppelin-03.png></p>
 <p>Once saved, click on the &lsquo;Notebook&rsquo; in the upper left corner &ndash; as shown in the figure below:</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/06-02-zeppelin-04.png alt=zeppelin-04.png></p>
+<p><img src=http://imgs.lisenhui.cn/2017/06-02-zeppelin-04.png alt=zeppelin-04.png></p>
 <p>Write the following SQL statement to notebook:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>select fact.part_dt, lookup.categ_lvl2_name, count(distinct seller_id) as sellers
 from kylin_sales fact
@@ -172,7 +172,7 @@ on fact.leaf_categ_id = lookup.leaf_categ_id and fact.lstg_site_id = lookup.site
 group by fact.part_dt, lookup.categ_lvl2_name
 order by fact.part_dt desc
 </code></pre></div><p>Click the start button on the right to complete the query, come out a table data, and then choose the graphical report form you need, the data will automatically render, click &lsquo;sets&rsquo; can have more adjustments.</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/06-02-zeppelin-05.png alt=zeppelin-05.png></p>
+<p><img src=http://imgs.lisenhui.cn/2017/06-02-zeppelin-05.png alt=zeppelin-05.png></p>
 <p>Other applications about &lsquo;Zeppelin&rsquo; need to be understood slowly and followed up.</p>
 <p>Reference:</p>
 <ul>
@@ -265,19 +265,19 @@ Never forget your dreams！
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/en/post/>
-<span class=site-state-item-count>51</span>
+<span class=site-state-item-count>52</span>
 <span class=site-state-item-name>Blogs</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/en/categories/>
-<span class=site-state-item-count>25</span>
+<span class=site-state-item-count>26</span>
 <span class=site-state-item-name>Categories</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/en/tags/>
-<span class=site-state-item-count>59</span>
+<span class=site-state-item-count>61</span>
 <span class=site-state-item-name>Tags</span>
 </a>
 </div>
@@ -329,6 +329,9 @@ TagCloud
 <a href=/en/tags/big-data>Big data</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/java>Java</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
 <a href=/en/tags/linux>Linux</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
@@ -339,9 +342,6 @@ TagCloud
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/en/tags/github>Github</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/en/tags/java>Java</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/en/tags/kindeditor>Kindeditor</a>

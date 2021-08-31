@@ -160,7 +160,7 @@ Java程序与RSR232串口通讯小练手
 <li>拷贝<code>win32com.dll</code>到<code>X:\jre\bin</code>目录下面;</li>
 <li>更新下IDE里面的JDK环境，如下图：</li>
 </ul>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2012/03-24-java-hard-rsr232-1.png alt=java-hard-rsr232-1></p>
+<p><img src=http://imgs.lisenhui.cn/2012/03-24-java-hard-rsr232-1.png alt=java-hard-rsr232-1></p>
 <p>接着是硬件虚拟环境安装虚拟串口，这里我用的是VSPD6.0(附件提供下载)，安装好后启动VSPD添加我们所需要的端口，注意这里是按组的方式添加的，例如COM1和COM2是一组同时添加，以此类推。</p>
 <p>所有环境都准备好后，先来简单认识下comm.jar的内容。单从comm API的javadoc来看，SUM提供给我们的只有区区以下13个类或接口，具体如下：</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>
@@ -187,7 +187,7 @@ CommPortIdentifier portId<span style=color:#666>;</span>
 <span style=color:#666>}</span>
 
 </code></pre></div><p>运行代码后，控制台有输出正确的端口(如下图)，说明所有环境正常可进行下步工作，否则请检查。</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2012/03-24-java-hard-rsr232-2.png alt=java-hard-rsr232-2></p>
+<p><img src=http://imgs.lisenhui.cn/2012/03-24-java-hard-rsr232-2.png alt=java-hard-rsr232-2></p>
 <p>最后要解决的就是与串口数据交互的问题。在这个问题上，最主要的难点就是数据读取，因为我们不知道端口什么时候会有数据到来，也不知数据长度如何。通常，串口通信应用程序有两种模式，一种是实现SerialPortEventListener接口，监听各种串口事件并作相应处理；另一种就是建立一个独立的接收线程专门负责数据的接收。参考众多老前辈的代码后，下面就采用第一种方式写了个简单的助手程序，具体的实现请看详细代码，如下：</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>
 <span style=color:#a2f;font-weight:700>package</span> <span style=color:#00f;font-weight:700>com.elkan1788.view</span><span style=color:#666>;</span>
@@ -627,20 +627,20 @@ CommPortIdentifier portId<span style=color:#666>;</span>
 <ul>
 <li>启动界面</li>
 </ul>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2012/03-24-java-hard-rsr232-3.png alt=java-hard-rsr232-3></p>
+<p><img src=http://imgs.lisenhui.cn/2012/03-24-java-hard-rsr232-3.png alt=java-hard-rsr232-3></p>
 <ul>
 <li>端口检测</li>
 </ul>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2012/03-24-java-hard-rsr232-4.png alt=java-hard-rsr232-4></p>
+<p><img src=http://imgs.lisenhui.cn/2012/03-24-java-hard-rsr232-4.png alt=java-hard-rsr232-4></p>
 <ul>
 <li>通讯测试</li>
 </ul>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2012/03-24-java-hard-rsr232-5.png alt=java-hard-rsr232-5></p>
+<p><img src=http://imgs.lisenhui.cn/2012/03-24-java-hard-rsr232-5.png alt=java-hard-rsr232-5></p>
 <ul>
 <li>最后再抽空来美化程序下，效果更漂亮</li>
 </ul>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2012/03-24-java-hard-rsr232-6.png alt=java-hard-rsr232-6></p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2012/03-24-java-hard-rsr232-7.png alt=java-hard-rsr232-7></p>
+<p><img src=http://imgs.lisenhui.cn/2012/03-24-java-hard-rsr232-6.png alt=java-hard-rsr232-6></p>
+<p><img src=http://imgs.lisenhui.cn/2012/03-24-java-hard-rsr232-7.png alt=java-hard-rsr232-7></p>
 <p>PS: <a href=http://dl.iteye.com/topics/download/80f67e6e-45eb-31ff-8086-da09f8d5762e>示例源下载</a></p>
 </div>
 <footer class=post-footer>
@@ -727,19 +727,19 @@ CommPortIdentifier portId<span style=color:#666>;</span>
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>51</span>
+<span class=site-state-item-count>52</span>
 <span class=site-state-item-name>日志</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/categories/>
-<span class=site-state-item-count>25</span>
+<span class=site-state-item-count>26</span>
 <span class=site-state-item-name>分类</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>58</span>
+<span class=site-state-item-count>60</span>
 <span class=site-state-item-name>标签</span>
 </a>
 </div>
@@ -791,6 +791,9 @@ GitHub
 <a href=/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE>大数据</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
+<a href=/tags/java>Java</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
 <a href=/tags/linux>Linux</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
@@ -798,9 +801,6 @@ GitHub
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/tags/github>Github</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/java>Java</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/tags/kindeditor>Kindeditor</a>

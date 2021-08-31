@@ -151,10 +151,10 @@ An issue with the service in Ambari that is functioning properly but the service
 </header>
 <div class=post-body itemprop=articleBody>
 <p>Many times the maintenance of the environment is indeed a headache event, which does not originally show the monitoring of normal services on Ambari&rsquo;s Dashboard page, there is a strange phenomenon: in the machine query service running process is normal, but partial Ambari&rsquo;s UI interface is displayed as a stop, but the port check shows normal. Here&rsquo;s the picture:</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/10-18-ambari-red.png alt=alert_stopped.png></p>
+<p><img src=http://imgs.lisenhui.cn/2017/10-18-ambari-red.png alt=alert_stopped.png></p>
 <p>Ben can also let go (anyway, the service is running normally), but helpless obsessive compulsive disorder &ldquo;fault&rdquo; and committed, had to eliminate it out of the heart is comfortable. After several unsuccessful attempts, it turned out that it was as if a colleague had manually started some components, which is why. The processusers who used &lsquo;ps&rsquo; to examine these components found that this was the case, forced the killing of these components, and then restarted them using the Ambari UI, but the end result remained the same.</p>
 <p>Really very depressed, at this time also had to use google, and then found a similar problem of the article, which mentioned the runtime&rsquo;xx.pid&rsquo;permission problem, really a bit ofwake-up call dreamers, hasten to look at these components of the pid file permissions, indeed, because the previous start-up is with super-tube users, and in fact these components have corresponding user maintenance. Delete these&rsquo;xxx.pid&rsquo;files, re-open these services on theAmbari UI, everything is back to normal, and the beautiful green interface is back.</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/10-18-ambari-green.png alt=ambari-green.png></p>
+<p><img src=http://imgs.lisenhui.cn/2017/10-18-ambari-green.png alt=ambari-green.png></p>
 <p>Reference quote:</p>
 <ul>
 <li><a href=https://community.hortonworks.com/questions/41069/service-is-running-but-ambari-shows-serice-is-stop.html>service-is-running-but-ambari-shows-serice-is-stop</a></li>
@@ -245,19 +245,19 @@ Never forget your dreams！
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/en/post/>
-<span class=site-state-item-count>51</span>
+<span class=site-state-item-count>52</span>
 <span class=site-state-item-name>Blogs</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/en/categories/>
-<span class=site-state-item-count>25</span>
+<span class=site-state-item-count>26</span>
 <span class=site-state-item-name>Categories</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/en/tags/>
-<span class=site-state-item-count>59</span>
+<span class=site-state-item-count>61</span>
 <span class=site-state-item-name>Tags</span>
 </a>
 </div>
@@ -309,6 +309,9 @@ TagCloud
 <a href=/en/tags/big-data>Big data</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/java>Java</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
 <a href=/en/tags/linux>Linux</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
@@ -319,9 +322,6 @@ TagCloud
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/en/tags/github>Github</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/en/tags/java>Java</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/en/tags/kindeditor>Kindeditor</a>

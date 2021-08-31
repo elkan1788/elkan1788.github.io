@@ -160,18 +160,18 @@ FATAL ERROR<span style=color:#666>:</span> No supported authentication methods <
 Please make sure you have the correct access rights
 and the repository exists<span style=color:#666>.</span>
 
-</code></pre></div><p><img src=http://siteimgs.cn-sh2.ufileos.com/2021/02-22-git-extensions-failed-01.png alt=git-extensions-failed-01.png></p>
+</code></pre></div><p><img src=http://imgs.lisenhui.cn/2021/02-22-git-extensions-failed-01.png alt=git-extensions-failed-01.png></p>
 <p>看到这个错误真是一脸的发楞呀，没有修改过任何SSH KEY相关的配置，咋就没有相应的权限进行操作了呢？</p>
 <p>开始脑子里想到的是，难道是本地的SSH KEY被清理了？但检查了文件后发现一切正常，而且使用git push命令操作也是正常的。真是百思不得其解，暂时只能参考报错的提示出来尝试操作修复。</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2021/02-22-git-extensions-failed-02.png alt=git-extensions-failed-02.png></p>
+<p><img src=http://imgs.lisenhui.cn/2021/02-22-git-extensions-failed-02.png alt=git-extensions-failed-02.png></p>
 <h2 id=初步解决办法>初步解决办法</h2>
 <p>根据报错窗口的提示，使用Putty工具把本地的SSH KEY生成Private模式，操作如下：</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2021/02-22-git-extensions-failed-03.png alt=git-extensions-failed-03.png></p>
+<p><img src=http://imgs.lisenhui.cn/2021/02-22-git-extensions-failed-03.png alt=git-extensions-failed-03.png></p>
 <p>然后把这个Private KEY加载到推送的流程中，再次点击推送按钮就会看到操作成功提示信息。</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2021/02-22-git-extensions-failed-04.png alt=git-extensions-failed-04.png></p>
+<p><img src=http://imgs.lisenhui.cn/2021/02-22-git-extensions-failed-04.png alt=git-extensions-failed-04.png></p>
 <h2 id=问题定位>问题定位</h2>
 <p>虽然解决完这个推送的问题，但还觉得事情有点奇怪和蹊跷。于是想到了Git Extensions的配置是否有变化，经过一番查找测试后，确认是由于官方当前默认在Windows使用Putty作为客户端，把它调整为OpenSSH方式，问题便不再出现。</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2021/02-22-git-extensions-failed-05.png alt=git-extensions-failed-05.png></p>
+<p><img src=http://imgs.lisenhui.cn/2021/02-22-git-extensions-failed-05.png alt=git-extensions-failed-05.png></p>
 <h2 id=总结>总结</h2>
 <p>在非必要的情况下，还是不太建议升级软件版本，稳定的环境比用不到的新功能更具价值。</p>
 </div>
@@ -267,19 +267,19 @@ Github个人信息卡片
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>51</span>
+<span class=site-state-item-count>52</span>
 <span class=site-state-item-name>日志</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/categories/>
-<span class=site-state-item-count>25</span>
+<span class=site-state-item-count>26</span>
 <span class=site-state-item-name>分类</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>58</span>
+<span class=site-state-item-count>60</span>
 <span class=site-state-item-name>标签</span>
 </a>
 </div>
@@ -331,6 +331,9 @@ GitHub
 <a href=/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE>大数据</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
+<a href=/tags/java>Java</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
 <a href=/tags/linux>Linux</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
@@ -338,9 +341,6 @@ GitHub
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/tags/github>Github</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/java>Java</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/tags/kindeditor>Kindeditor</a>

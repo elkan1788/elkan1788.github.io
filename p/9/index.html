@@ -106,6 +106,57 @@
 <article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
 <header class=post-header>
 <h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/2016/01/19/mapdb-write-read-sync.html itemprop=url>
+MapDB 同步读写示例
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>时间：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2016-01-19">
+2016-01-19
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分类：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/categories/%E5%86%85%E5%AD%98%E6%95%B0%E6%8D%AE%E5%BA%93 itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>内存数据库</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>1348 字</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>3分钟</span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>MapDB 是一个快速、易用的嵌入式Java数据库引擎. 最主要的特点之一就是支持磁盘存储,直接把内存中的Hash Map同步写入到磁盘. 另外特别惊喜的是它支持ACID事务,MVCC隔离, 且有全职的开发者支持.</p>
+<p>看完官方的文档与示例后,基本上可以确定它符合业务场景的使用要求.另外发现官方正在重构3.x的版本, 但应该不会这么快发布吧.用google搜索了下关于MapDB的使用案例, 也不是很多. 可能是本来官方的文档就齐全有关吧,API也不复杂,跟着官方的文档走一遍就可以上手了.</p>
+</div>
+<div class="post-more-link text-center">
+<a class=btn href=https://lisenhui.cn/2016/01/19/mapdb-write-read-sync.html rel=contents>
+阅读全文 &#187;
+</a>
+</div>
+<footer class=post-footer><div class=post-eof></div></footer>
+</article>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
 <a class=post-title-link href=https://lisenhui.cn/2015/06/29/redis-install-settings.html itemprop=url>
 Redis 安装与配置
 </a>
@@ -304,57 +355,6 @@ Java程序与RSR232串口通讯小练手
 </div>
 <footer class=post-footer><div class=post-eof></div></footer>
 </article>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lisenhui.cn/2011/11/18/whosip-tool.html itemprop=url>
-IP地址查询Web接口调用
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-time>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2011-11-18">
-2011-11-18
-</time>
-</span>
-<span class=post-category>
-&nbsp; | &nbsp;
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>分类：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a href=/categories/%E6%8E%A5%E5%8F%A3 itemprop=url rel=index style=text-decoration:underline>
-<span itemprop=name>接口</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span>
-|
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>225 字</span>
-</span>
-<span>
-|
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>1分钟</span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>今天刚好有个站点上要用到一个IP地址显示的功能，随即便想想应该有免费的接口可用吧，百度一下找到了太平洋网站提供的API，那么接下来便是Code Time。</p>
-<p>看完了它的参数说明和调用方式后，选择了其中的jsFunction方式，现在把经验分享出来给大家参考，具体的代码和效果如下：：</p>
-</div>
-<div class="post-more-link text-center">
-<a class=btn href=https://lisenhui.cn/2011/11/18/whosip-tool.html rel=contents>
-阅读全文 &#187;
-</a>
-</div>
-<footer class=post-footer><div class=post-eof></div></footer>
-</article>
 </section>
 <nav class=pagination>
 <a class="extend prev" rel=prev href=/p/8/><i class="fa fa-angle-left"></i></a>
@@ -391,19 +391,19 @@ IP地址查询Web接口调用
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>51</span>
+<span class=site-state-item-count>52</span>
 <span class=site-state-item-name>日志</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/categories/>
-<span class=site-state-item-count>25</span>
+<span class=site-state-item-count>26</span>
 <span class=site-state-item-name>分类</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>58</span>
+<span class=site-state-item-count>60</span>
 <span class=site-state-item-name>标签</span>
 </a>
 </div>
@@ -461,6 +461,9 @@ GitHub
 <a href=/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE>大数据</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
+<a href=/tags/java>Java</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
 <a href=/tags/linux>Linux</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
@@ -468,9 +471,6 @@ GitHub
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/tags/github>Github</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/java>Java</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/tags/kindeditor>Kindeditor</a>

@@ -106,6 +106,65 @@
 <article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
 <header class=post-header>
 <h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/en/2017/09/08/azkaban-install-use-share.html itemprop=url>
+Timed scheduling tasker Azkaban installation
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>Published at:</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-09-08">
+2017-09-08
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>Categories:</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/en/categories/big-data itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>Big data</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>1342 words</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>7 minutes</span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>Background and introduction</p>
+<p>In the big data complex ETL or other data processing processes, some tasks need to be performed on a timed basis, although Linux brings itsown&rsquo;cron' commandfunction, but still can not meet the biggest point is that it does notprovide centralized management and visual editing. In fact, in the big data ecology has been integrated with a timed scheduling framework &lsquo;Oozie&rsquo;, but the practice found that its learning costs are not low, the process of distribution is more complex. After trying other distribution worker scheduling frameworks, such as Ali&rsquo;s Zeus &lsquo;Zeus&rsquo;, or &lsquo;Azkaban&rsquo;, which is used by more people in the community.</p>
+<p>&lsquo;Azkaban3&rsquo; is still relatively large compared to the changes made in the previous version, and interested parties can be found on its official website, <a href=https://azkaban.github.io/azkaban/docs/latest/>Azkaban</a>. Next, mainly to share the installation of &lsquo;Azkaban 3&rsquo;, the following is &lsquo;Azkaban 3&rsquo; system architecture design:</p>
+<p><img src=http://imgs.lisenhui.cn/2017/09-08-Azkaban-Install00.png alt=Azkaban-Install00></p>
+<p>The three components in the figure are an important part of &lsquo;Azkaban3&rsquo;:</p>
+<ul>
+<li>MySQL relationship data storage data</li>
+<li>Web Server GUI management service provider</li>
+<li>Executor Server Distributed Node Service</li>
+</ul>
+</div>
+<div class="post-more-link text-center">
+<a class=btn href=https://lisenhui.cn/en/2017/09/08/azkaban-install-use-share.html rel=contents>
+Read More &#187;
+</a>
+</div>
+<footer class=post-footer><div class=post-eof></div></footer>
+</article>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
 <a class=post-title-link href=https://lisenhui.cn/en/2017/08/19/use-travis-ci-push-hexo-blog.html itemprop=url>
 Use Github, Travis CI to automatically deploy HexoCoding to OSChina Server
 </a>
@@ -316,57 +375,6 @@ Read More &#187;
 </div>
 <footer class=post-footer><div class=post-eof></div></footer>
 </article>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lisenhui.cn/en/2017/08/13/python-output-conosle-intime.html itemprop=url>
-Python outputs instantly on the command line
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-time>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>Published at:</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-08-13">
-2017-08-13
-</time>
-</span>
-<span class=post-category>
-&nbsp; | &nbsp;
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>Categories:</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a href=/en/categories/python itemprop=url rel=index style=text-decoration:underline>
-<span itemprop=name>Python</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span>
-|
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>243 words</span>
-</span>
-<span>
-|
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>Reading:</span>
-<span class=leancloud-view-count>2 minutes</span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>When a program encounters problems that require DEBUG, output by adding some &lsquo;print&rsquo; statements. So by convention also in the &lsquo;Python&rsquo; code to add print debugging, and then enter &lsquo;python xxxx.py&rsquo;, confidently looking forward to debugging information full screen scrolling, the result is after a long time to show. Why is this so?</p>
-<p>According to the netizen suggested to add a &lsquo;-u&rsquo; parameter OK, and later checked the reason: &lsquo;Python&rsquo; in the default situation will first &lsquo;print&rsquo; output to the buffer, until the buffer is full or the program before output. So it&rsquo;s useful to add this parameter when you&rsquo;re running a &lsquo;Python&rsquo; program.</p>
-</div>
-<div class="post-more-link text-center">
-<a class=btn href=https://lisenhui.cn/en/2017/08/13/python-output-conosle-intime.html rel=contents>
-Read More &#187;
-</a>
-</div>
-<footer class=post-footer><div class=post-eof></div></footer>
-</article>
 </section>
 <nav class=pagination>
 <a class="extend prev" rel=prev href=/en/p/4/><i class="fa fa-angle-left"></i></a>
@@ -403,19 +411,19 @@ Never forget your dreams！
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/en/post/>
-<span class=site-state-item-count>51</span>
+<span class=site-state-item-count>52</span>
 <span class=site-state-item-name>Blogs</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/en/categories/>
-<span class=site-state-item-count>25</span>
+<span class=site-state-item-count>26</span>
 <span class=site-state-item-name>Categories</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/en/tags/>
-<span class=site-state-item-count>59</span>
+<span class=site-state-item-count>61</span>
 <span class=site-state-item-name>Tags</span>
 </a>
 </div>
@@ -473,6 +481,9 @@ TagCloud
 <a href=/en/tags/big-data>Big data</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/java>Java</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
 <a href=/en/tags/linux>Linux</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
@@ -483,9 +494,6 @@ TagCloud
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/en/tags/github>Github</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/en/tags/java>Java</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/en/tags/kindeditor>Kindeditor</a>

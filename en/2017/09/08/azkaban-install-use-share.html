@@ -153,7 +153,7 @@ Timed scheduling tasker Azkaban installation
 <p>Background and introduction</p>
 <p>In the big data complex ETL or other data processing processes, some tasks need to be performed on a timed basis, although Linux brings itsown&rsquo;cron' commandfunction, but still can not meet the biggest point is that it does notprovide centralized management and visual editing. In fact, in the big data ecology has been integrated with a timed scheduling framework &lsquo;Oozie&rsquo;, but the practice found that its learning costs are not low, the process of distribution is more complex. After trying other distribution worker scheduling frameworks, such as Ali&rsquo;s Zeus &lsquo;Zeus&rsquo;, or &lsquo;Azkaban&rsquo;, which is used by more people in the community.</p>
 <p>&lsquo;Azkaban3&rsquo; is still relatively large compared to the changes made in the previous version, and interested parties can be found on its official website, <a href=https://azkaban.github.io/azkaban/docs/latest/>Azkaban</a>. Next, mainly to share the installation of &lsquo;Azkaban 3&rsquo;, the following is &lsquo;Azkaban 3&rsquo; system architecture design:</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/09-08-Azkaban-Install00.png alt=Azkaban-Install00></p>
+<p><img src=http://imgs.lisenhui.cn/2017/09-08-Azkaban-Install00.png alt=Azkaban-Install00></p>
 <p>The three components in the figure are an important part of &lsquo;Azkaban3&rsquo;:</p>
 <ul>
 <li>MySQL relationship data storage data</li>
@@ -424,18 +424,18 @@ bin/azkaban-executor-shutdown.sh &gt; /dev/null 2&gt;&amp;<span style=color:#666
 </ul>
 <p>Note: Make sure that the port is not properly occupied before starting, and keep an eye out for memory usage.</p>
 <p>After successful launch, enter &lsquo;http://localhost:8081&rsquo; in your browser to see the &lsquo;Web Server&rsquo; interface, as shown in the following image:</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/09-08-Azkaban-Install01.png alt=Azkaban-Install01></p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/09-08-Azkaban-Install02.png alt=Azkaban-Install02></p>
+<p><img src=http://imgs.lisenhui.cn/2017/09-08-Azkaban-Install01.png alt=Azkaban-Install01></p>
+<p><img src=http://imgs.lisenhui.cn/2017/09-08-Azkaban-Install02.png alt=Azkaban-Install02></p>
 <h2 id=demo>Demo</h2>
 <p>Create a new project in the &lsquo;Web Server&rsquo; that startedsuccessfully above, named:ShellJob-Demo,and then download and upload the following example, Job, to the project you just created,note that you don&rsquo;t need to unziw it. Then find the&rsquo;Exectue Flow&rsquo; button in your project, and you&rsquo;ll continue to take the next step, as shown in the following group:</p>
 <p>Base Flow Demo Password: 4f4f (<a href=https://pan.baidu.com/s/19iEqfyShVTnVrfzfdST__A>https://pan.baidu.com/s/19iEqfyShVTnVrfzfdST__A</a>)</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/09-08-Azkaban-Install03.png alt=Azkaban-Install03></p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/09-08-Azkaban-Install04.png alt=Azkaban-Install04></p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/09-08-Azkaban-Install05.png alt=Azkaban-Install05></p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/09-08-Azkaban-Install06.png alt=Azkaban-Install06></p>
+<p><img src=http://imgs.lisenhui.cn/2017/09-08-Azkaban-Install03.png alt=Azkaban-Install03></p>
+<p><img src=http://imgs.lisenhui.cn/2017/09-08-Azkaban-Install04.png alt=Azkaban-Install04></p>
+<p><img src=http://imgs.lisenhui.cn/2017/09-08-Azkaban-Install05.png alt=Azkaban-Install05></p>
+<p><img src=http://imgs.lisenhui.cn/2017/09-08-Azkaban-Install06.png alt=Azkaban-Install06></p>
 <p>&lsquo;Azkaban3&rsquo; is performed by submitting a task (Job) to &lsquo;Executor Server&rsquo; through &lsquo;Web Server&rsquo;, so it is not intuitive to see the program execution process visually on the interface, but you can understand the running process by finding the running task in the execution list and viewing its logs, as shown in the following group:</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/09-08-Azkaban-Install07.png alt=Azkaban-Install07></p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2017/09-08-Azkaban-Install08.png alt=Azkaban-Install08></p>
+<p><img src=http://imgs.lisenhui.cn/2017/09-08-Azkaban-Install07.png alt=Azkaban-Install07></p>
+<p><img src=http://imgs.lisenhui.cn/2017/09-08-Azkaban-Install08.png alt=Azkaban-Install08></p>
 <p>Well, isn&rsquo;t it relatively simple to complete the &lsquo;Azkaban 3&rsquo; service and simple examples. At the initial stage, the use of &lsquo;Azkaban 3&rsquo; can still be used in a business-appropriate scenario, but the later promotion process finds that it is not perfect, such as manually updating the database during the above startup process to activate &lsquo;Executor Server&rsquo; (only the first time it starts), and the official does not provide the management of the &lsquo;Executor Server&rsquo; run, the distributed runtime needs to manually specify &lsquo;Executor Server&rsquo;s ID&rsquo; and so on. But it&rsquo;s basically enough for everyday use, especially its &lsquo;Job Flow&rsquo; design. Finally, if you have questions about &lsquo;Azkaban3&rsquo; that can be discussed together in the comments, the relevant usage tutorials will be updated later, so stay tuned.</p>
 </div>
 <footer class=post-footer>
@@ -523,19 +523,19 @@ Never forget your dreams！
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/en/post/>
-<span class=site-state-item-count>51</span>
+<span class=site-state-item-count>52</span>
 <span class=site-state-item-name>Blogs</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/en/categories/>
-<span class=site-state-item-count>25</span>
+<span class=site-state-item-count>26</span>
 <span class=site-state-item-name>Categories</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/en/tags/>
-<span class=site-state-item-count>59</span>
+<span class=site-state-item-count>61</span>
 <span class=site-state-item-name>Tags</span>
 </a>
 </div>
@@ -587,6 +587,9 @@ TagCloud
 <a href=/en/tags/big-data>Big data</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/java>Java</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
 <a href=/en/tags/linux>Linux</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
@@ -597,9 +600,6 @@ TagCloud
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/en/tags/github>Github</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/en/tags/java>Java</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/en/tags/kindeditor>Kindeditor</a>

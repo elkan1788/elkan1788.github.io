@@ -106,6 +106,74 @@
 <article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
 <header class=post-header>
 <h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/2019/03/21/unable-create-tmp-file-in-hdfs-nodes.html itemprop=url>
+不能在HDFS Data节点上创建临时文件
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>时间：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2019-03-21">
+2019-03-21
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分类：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>大数据</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>749 字</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>2分钟</span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>在新创建的<code>Hadoop</code>边缘节点上，尝试通过<code>Hive CLI</code>模式进行数据插入操作，结果没有出现意想中的成功信息，反倒是捕获到如下的异常：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=color:#a0a000>FAILED:</span> SemanticException <span style=color:#666>[</span>Error 10293<span style=color:#666>]:</span> Unable to create temp file <span style=color:#a2f;font-weight:700>for</span> insert values File <span style=color:#666>/</span>tmp<span style=color:#666>/</span>hive<span style=color:#666>/</span>kylin<span style=color:#666>/</span>9c84de0a<span style=color:#666>-</span>fca2<span style=color:#666>-</span>4d3c<span style=color:#666>-</span>8f72<span style=color:#666>-</span>47436a4adb83<span style=color:#666>/</span>_tmp_space<span style=color:#666>.</span><span style=color:#b44>db</span><span style=color:#666>/</span>Values__Tmp__Table__1<span style=color:#666>/</span>data_file could only be replicated to 0 nodes instead of <span style=color:#00a000>minReplication</span> <span style=color:#666>(=</span>1<span style=color:#666>).</span>  There are 1 <span style=color:#00a000>datanode</span><span style=color:#666>(</span>s<span style=color:#666>)</span> running and 1 <span style=color:#00a000>node</span><span style=color:#666>(</span>s<span style=color:#666>)</span> are excluded in <span style=color:#a2f;font-weight:700>this</span> operation<span style=color:#666>.</span>
+	at org<span style=color:#666>.</span><span style=color:#b44>apache</span><span style=color:#666>.</span><span style=color:#b44>hadoop</span><span style=color:#666>.</span><span style=color:#b44>hdfs</span><span style=color:#666>.</span><span style=color:#b44>server</span><span style=color:#666>.</span><span style=color:#b44>blockmanagement</span><span style=color:#666>.</span><span style=color:#b44>BlockManager</span><span style=color:#666>.</span><span style=color:#b44>chooseTarget4NewBlock</span><span style=color:#666>(</span>BlockManager<span style=color:#666>.</span><span style=color:#b44>java</span><span style=color:#666>:</span>1720<span style=color:#666>)</span>
+	at org<span style=color:#666>.</span><span style=color:#b44>apache</span><span style=color:#666>.</span><span style=color:#b44>hadoop</span><span style=color:#666>.</span><span style=color:#b44>hdfs</span><span style=color:#666>.</span><span style=color:#b44>server</span><span style=color:#666>.</span><span style=color:#b44>namenode</span><span style=color:#666>.</span><span style=color:#b44>FSNamesystem</span><span style=color:#666>.</span><span style=color:#b44>getAdditionalBlock</span><span style=color:#666>(</span>FSNamesystem<span style=color:#666>.</span><span style=color:#b44>java</span><span style=color:#666>:</span>3440<span style=color:#666>)</span>
+	at org<span style=color:#666>.</span><span style=color:#b44>apache</span><span style=color:#666>.</span><span style=color:#b44>hadoop</span><span style=color:#666>.</span><span style=color:#b44>hdfs</span><span style=color:#666>.</span><span style=color:#b44>server</span><span style=color:#666>.</span><span style=color:#b44>namenode</span><span style=color:#666>.</span><span style=color:#b44>NameNodeRpcServer</span><span style=color:#666>.</span><span style=color:#b44>addBlock</span><span style=color:#666>(</span>NameNodeRpcServer<span style=color:#666>.</span><span style=color:#b44>java</span><span style=color:#666>:</span>686<span style=color:#666>)</span>
+	at org<span style=color:#666>.</span><span style=color:#b44>apache</span><span style=color:#666>.</span><span style=color:#b44>hadoop</span><span style=color:#666>.</span><span style=color:#b44>hdfs</span><span style=color:#666>.</span><span style=color:#b44>server</span><span style=color:#666>.</span><span style=color:#b44>namenode</span><span style=color:#666>.</span><span style=color:#b44>AuthorizationProviderProxyClientProtocol</span><span style=color:#666>.</span><span style=color:#b44>addBlock</span><span style=color:#666>(</span>AuthorizationProviderProxyClientProtocol<span style=color:#666>.</span><span style=color:#b44>java</span><span style=color:#666>:</span>217<span style=color:#666>)</span>
+	at org<span style=color:#666>.</span><span style=color:#b44>apache</span><span style=color:#666>.</span><span style=color:#b44>hadoop</span><span style=color:#666>.</span><span style=color:#b44>hdfs</span><span style=color:#666>.</span><span style=color:#b44>protocolPB</span><span style=color:#666>.</span><span style=color:#b44>ClientNamenodeProtocolServerSideTranslatorPB</span><span style=color:#666>.</span><span style=color:#b44>addBlock</span><span style=color:#666>(</span>ClientNamenodeProtocolServerSideTranslatorPB<span style=color:#666>.</span><span style=color:#b44>java</span><span style=color:#666>:</span>506<span style=color:#666>)</span>
+	at org<span style=color:#666>.</span><span style=color:#b44>apache</span><span style=color:#666>.</span><span style=color:#b44>hadoop</span><span style=color:#666>.</span><span style=color:#b44>hdfs</span><span style=color:#666>.</span><span style=color:#b44>protocol</span><span style=color:#666>.</span><span style=color:#b44>proto</span><span style=color:#666>.</span><span style=color:#b44>ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2</span><span style=color:#666>.</span><span style=color:#b44>callBlockingMethod</span><span style=color:#666>(</span>ClientNamenodeProtocolProtos<span style=color:#666>.</span><span style=color:#b44>java</span><span style=color:#666>)</span>
+	at org<span style=color:#666>.</span><span style=color:#b44>apache</span><span style=color:#666>.</span><span style=color:#b44>hadoop</span><span style=color:#666>.</span><span style=color:#b44>ipc</span><span style=color:#666>.</span><span style=color:#b44>ProtobufRpcEngine$Server$ProtoBufRpcInvoker</span><span style=color:#666>.</span><span style=color:#b44>call</span><span style=color:#666>(</span>ProtobufRpcEngine<span style=color:#666>.</span><span style=color:#b44>java</span><span style=color:#666>:</span>617<span style=color:#666>)</span>
+	at org<span style=color:#666>.</span><span style=color:#b44>apache</span><span style=color:#666>.</span><span style=color:#b44>hadoop</span><span style=color:#666>.</span><span style=color:#b44>ipc</span><span style=color:#666>.</span><span style=color:#b44>RPC$Server</span><span style=color:#666>.</span><span style=color:#b44>call</span><span style=color:#666>(</span>RPC<span style=color:#666>.</span><span style=color:#b44>java</span><span style=color:#666>:</span>1073<span style=color:#666>)</span>
+	at org<span style=color:#666>.</span><span style=color:#b44>apache</span><span style=color:#666>.</span><span style=color:#b44>hadoop</span><span style=color:#666>.</span><span style=color:#b44>ipc</span><span style=color:#666>.</span><span style=color:#b44>Server$Handler$1</span><span style=color:#666>.</span><span style=color:#b44>run</span><span style=color:#666>(</span>Server<span style=color:#666>.</span><span style=color:#b44>java</span><span style=color:#666>:</span>2226<span style=color:#666>)</span>
+	at org<span style=color:#666>.</span><span style=color:#b44>apache</span><span style=color:#666>.</span><span style=color:#b44>hadoop</span><span style=color:#666>.</span><span style=color:#b44>ipc</span><span style=color:#666>.</span><span style=color:#b44>Server$Handler$1</span><span style=color:#666>.</span><span style=color:#b44>run</span><span style=color:#666>(</span>Server<span style=color:#666>.</span><span style=color:#b44>java</span><span style=color:#666>:</span>2222<span style=color:#666>)</span>
+	at java<span style=color:#666>.</span><span style=color:#b44>security</span><span style=color:#666>.</span><span style=color:#b44>AccessController</span><span style=color:#666>.</span><span style=color:#b44>doPrivileged</span><span style=color:#666>(</span>Native Method<span style=color:#666>)</span>
+	at javax<span style=color:#666>.</span><span style=color:#b44>security</span><span style=color:#666>.</span><span style=color:#b44>auth</span><span style=color:#666>.</span><span style=color:#b44>Subject</span><span style=color:#666>.</span><span style=color:#b44>doAs</span><span style=color:#666>(</span>Subject<span style=color:#666>.</span><span style=color:#b44>java</span><span style=color:#666>:</span>415<span style=color:#666>)</span>
+	at org<span style=color:#666>.</span><span style=color:#b44>apache</span><span style=color:#666>.</span><span style=color:#b44>hadoop</span><span style=color:#666>.</span><span style=color:#b44>security</span><span style=color:#666>.</span><span style=color:#b44>UserGroupInformation</span><span style=color:#666>.</span><span style=color:#b44>doAs</span><span style=color:#666>(</span>UserGroupInformation<span style=color:#666>.</span><span style=color:#b44>java</span><span style=color:#666>:</span>1917<span style=color:#666>)</span>
+	at org<span style=color:#666>.</span><span style=color:#b44>apache</span><span style=color:#666>.</span><span style=color:#b44>hadoop</span><span style=color:#666>.</span><span style=color:#b44>ipc</span><span style=color:#666>.</span><span style=color:#b44>Server$Handler</span><span style=color:#666>.</span><span style=color:#b44>run</span><span style=color:#666>(</span>Server<span style=color:#666>.</span><span style=color:#b44>java</span><span style=color:#666>:</span>2220<span style=color:#666>)</span>
+<span style=color:#a0a000>
+</span><span style=color:#a0a000>ERROR:</span> Current user has no permission to create Hive table in working directory<span style=color:#666>:</span> <span style=color:#666>/</span>user<span style=color:#666>/</span>kylin
+</code></pre></div>
+</div>
+<div class="post-more-link text-center">
+<a class=btn href=https://lisenhui.cn/2019/03/21/unable-create-tmp-file-in-hdfs-nodes.html rel=contents>
+阅读全文 &#187;
+</a>
+</div>
+<footer class=post-footer><div class=post-eof></div></footer>
+</article>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
 <a class=post-title-link href=https://lisenhui.cn/2018/08/08/win10-quick-operations.html itemprop=url>
 Win10常用的快捷操作方式
 </a>
@@ -197,7 +265,7 @@ Axure教程：动态面板内容超出界线显示
 <div class=post-body itemprop=articleBody>
 <h1 id=问题>问题</h1>
 <p>随着用户需求的不断更新，产品原型的设计也在不断迭代升级，那么是必会让整体的设计复杂增加，各中组件相互影响的因素就更多。这不现在就遇到在动态面板上显示一个隐藏的元件时，结果下拉的组件显示不完全了，真的好是郁闷，如下图所示：</p>
-<p><img src=http://siteimgs.cn-sh2.ufileos.com/2018/03-12-axure-state-auto-display01.png alt=axure-state-auto-display01.png></p>
+<p><img src=http://imgs.lisenhui.cn/2018/03-12-axure-state-auto-display01.png alt=axure-state-auto-display01.png></p>
 </div>
 <div class="post-more-link text-center">
 <a class=btn href=https://lisenhui.cn/2018/03/12/axure-lightbox-shade.html rel=contents>
@@ -306,94 +374,6 @@ Axure教程：实现动态的遮罩层
 </div>
 <footer class=post-footer><div class=post-eof></div></footer>
 </article>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lisenhui.cn/2017/10/26/nifi-windows-local-cluster.html itemprop=url>
-Apache Nifi在Windows环境下搭建伪群集及证书登录
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-time>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-10-26">
-2017-10-26
-</time>
-</span>
-<span class=post-category>
-&nbsp; | &nbsp;
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>分类：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a href=/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE itemprop=url rel=index style=text-decoration:underline>
-<span itemprop=name>大数据</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span>
-|
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>2078 字</span>
-</span>
-<span>
-|
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>5分钟</span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>前些时间做了关于<code>Apache Nifi</code>分布式集群的搭建分享，但很多时候要搭建分布式集群机器资源是个问题，而现在的单机的配置还是相当不错的，故现在就做个关于Windows上搭建个伪分布式集群的分享，同时通过另外一种方式实现<strong>Apache Nifi</strong>的授权认证。</p>
-<h1 id=系统环境及软件版本>系统环境及软件版本</h1>
-<ul>
-<li>
-<p>Windows8.1</p>
-</li>
-<li>
-<p>JDK1.8.0_131</p>
-</li>
-<li>
-<p>Nifi-1.4.0</p>
-</li>
-</ul>
-<table>
-<thead>
-<tr>
-<th style=text-align:center>Nifi安装目录</th>
-<th style=text-align:center>WEB端口</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style=text-align:center>xxx\nifi-ncm</td>
-<td style=text-align:center>9443</td>
-</tr>
-<tr>
-<td style=text-align:center>xxx\nifi-cluster01</td>
-<td style=text-align:center>9444</td>
-</tr>
-<tr>
-<td style=text-align:center>xxx\nifi-cluster02</td>
-<td style=text-align:center>9445</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>(其它版本可参考此篇文章)
-另在测试中发个问题，使用<code>Apache Nifi</code>内嵌的<code>Zookeeper</code>搭建伪集群里启动总是提示端口占用的问题，故放弃只采用了单结点启动。</p>
-</blockquote>
-</div>
-<div class="post-more-link text-center">
-<a class=btn href=https://lisenhui.cn/2017/10/26/nifi-windows-local-cluster.html rel=contents>
-阅读全文 &#187;
-</a>
-</div>
-<footer class=post-footer><div class=post-eof></div></footer>
-</article>
 </section>
 <nav class=pagination>
 <a class="extend prev" rel=prev href=/p/2/><i class="fa fa-angle-left"></i></a>
@@ -429,19 +409,19 @@ Apache Nifi在Windows环境下搭建伪群集及证书登录
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>51</span>
+<span class=site-state-item-count>52</span>
 <span class=site-state-item-name>日志</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/categories/>
-<span class=site-state-item-count>25</span>
+<span class=site-state-item-count>26</span>
 <span class=site-state-item-name>分类</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>58</span>
+<span class=site-state-item-count>60</span>
 <span class=site-state-item-name>标签</span>
 </a>
 </div>
@@ -499,6 +479,9 @@ GitHub
 <a href=/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE>大数据</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
+<a href=/tags/java>Java</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
 <a href=/tags/linux>Linux</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
@@ -506,9 +489,6 @@ GitHub
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/tags/github>Github</a>
-</li>
-<li class=tagcloud-of-blogroll-item>
-<a href=/tags/java>Java</a>
 </li>
 <li class=tagcloud-of-blogroll-item>
 <a href=/tags/kindeditor>Kindeditor</a>
