@@ -1,6 +1,6 @@
 ---
 title: "替换SpringBoot里的文件"
-url: "2021/04/14/replace-fies-in-springboot.html"
+url: "2021/04/14/replace-files-in-springboot.html"
 date: "2021-04-14T17:43:20+08:00"
 draft: false
 categories:
