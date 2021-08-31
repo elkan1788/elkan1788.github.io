@@ -15,35 +15,16 @@
 
 # 预览：
 
-![my-hugo-blog](http://siteimgs.cn-sh2.ufileos.com/my-hugo-blog.png)
+![my-hugo-blog](http://imgs.lisenhui.cn/my-hugo-blog.png)
 
 
-# 使用七牛云存储
+# 使用UCloud云存储
 
-下载工具包：[qshell](https://developer.qiniu.com/sdk#official-tool)
+下载工具：[US3 Browser](https://us3-release.cn-bj.ufileos.com/us3cli/us3cli-windows.exe)
 
-关于`qshell`的使用步骤:
-```
-# 1. 设置你的账号
-qshell account ak sk
+![us3-browser](http://imgs.lisenhui.cn/us3-browser.png)
 
-# 2. 创建目录存放上传的图片
-mkdir -p tools/qiniu
-
-# 3. 修改文件名，并修改相关的属性，如你的空间名称，本地路径等
-mv tools/_qoniu.json.sample tools/_qiniu.json
-vi tools/_qiniu.json 
-
-# 4. 执行上传脚本
-qupload.sh
-
-```
-
-图片上传成功日志：
-
-![my-hexo-blog2](http://siteimgs.cn-sh2.ufileos.com/my-hexo-blog2.png)
-
-> 建议可以使用官方最新推出的图形化工具 [Kodo Browser](https://developer.qiniu.com/kodo/5972/kodo-browser)，它操作非常的简单，可以很方便的管理你的资源。
+> 你可以通过拖拽的方式快速上传图片或者是文件夹。
 
 
 ## 许可证

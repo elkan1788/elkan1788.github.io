@@ -17,35 +17,16 @@ I'm a Geek, so like try the new things which is better. But maybe it's my last w
 
 # Demo：
 
-![my-hugo-blog](http://siteimgs.cn-sh2.ufileos.com/my-hugo-blog.png)
+![my-hugo-blog](http://imgs.lisenhui.cn/my-hugo-blog.png)
 
 
-# Use qiniu Cloud storage
+# Use UCloud storage
 
-Download toolkit：[qshell](https://developer.qiniu.com/sdk#official-tool)
+Download toolkit：[US3 Browser](https://us3-release.cn-bj.ufileos.com/us3cli/us3cli-windows.exe)
 
-Follow by below steps:
-```
-# 1. set your account
-qshell account ak sk
+![us3-browser](http://imgs.lisenhui.cn/us3-browser.png)
 
-# 2. create new folder to save upload images
-mkdir -p tools/qiniu
-
-# 3. change the template file name and set your bluck namespace
-mv tools/_qoniu.json.sample tools/_qiniu.json
-vi tools/_qiniu.json 
-
-# 4. execute the script then upload files
-qupload.sh
-
-```
-
-Upload successful logs：
-
-![my-hexo-blog2](http://siteimgs.cn-sh2.ufileos.com/my-hexo-blog2.png)
-
-> Also you can use the latest GUI tools which name is [Kodo Browser](https://developer.qiniu.com/kodo/5972/kodo-browser), it can easy upload and manager your cotent.
+> You can upload pictures or folders quickly by dragging and dropping them.
 
 ## License
 [MIT License](LICENSE).
