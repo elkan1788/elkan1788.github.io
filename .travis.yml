@@ -1,5 +1,8 @@
 language: go
 
+go:
+  - 1.12.1
+
 git:
   submodules: false
 
