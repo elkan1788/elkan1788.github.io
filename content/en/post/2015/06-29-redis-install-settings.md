@@ -10,7 +10,7 @@ categories:
 ---
 
 'Redis' is a high-performance 'Cache and Store' storage system released under the 'BSD' open source protocol. It is often referred to as a data structure server because values ('value') can be types such as strings ('String'), hash ('Map'), lists ('lists'), collections ('sets'), and ordered collections ('sorted sets'). All of Redis' data is stored in memory and then saved asynchronously to disk from time to time (this is called "semi-persistent mode"), or every change in data can be written to an'appendonly file'(this is called 'full persistence mode'). 
-(More introduction) (http://www.redis.cn/topics/introduction.html)
+[More introduction](http://www.redis.cn/topics/introduction.html)
 
 <!--more-->
 
