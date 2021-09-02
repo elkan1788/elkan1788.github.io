@@ -32,7 +32,7 @@ toc: true
 
 定位到显示隐藏元件的点击事件，在显示的时候同时将其至为顶层，如下图所示：
 
-![axure-state-auto-display02.png](http://imgs.lisenhui.cn/axure-state-auto-display02.png)
+![axure-state-auto-display02.png](http://imgs.lisenhui.cn/2018/03-12-axure-state-auto-display02.png)
 
 ## 面板自适应
 

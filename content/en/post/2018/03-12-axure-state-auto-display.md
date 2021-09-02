@@ -32,7 +32,7 @@ Top-level settings
 
 Navigate to the click event that shows the hidden symbol and place it at the top when displayed, as shown in the following image:
 
-![axure-state-auto-display02.png](http://imgs.lisenhui.cn/axure-state-auto-display02.png)
+![axure-state-auto-display02.png](http://imgs.lisenhui.cn/2018/03-12-axure-state-auto-display02.png)
 
 Panel adaptation
 
