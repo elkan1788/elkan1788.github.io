@@ -23,7 +23,7 @@ toc: true
 
 在你的本地使用ssh-keygen命令生成用密钥时，**千万不要使用密码**，在执行`ssh-keygen -t rsa -C "youremail@example.com"`命令时，直接不断敲下回车键即可。
 
-![gen_ssh_key.png](https://github.com/yanglbme/gitee-pages-action/raw/main/images/gen_ssh_key.png)
+![gen_ssh_key.png](//siteimgs.cn-sh2.ufileos.com/2021/02-25-gen_ssh_key.png)
 
 ### 2.2 Gitee相关
 
@@ -31,15 +31,15 @@ toc: true
 
 1.Github: [Settings -> SSH and GPG keys](https://github.com/settings/keys)
 
-![add_ssh_key_github.png](https://github.com/yanglbme/gitee-pages-action/raw/main/images/add_ssh_key_github.png)
+![add_ssh_key_github.png](//siteimgs.cn-sh2.ufileos.com/2021/02-25-add_ssh_key_github.png)
 
 2.Gitee: [安全设置 -> SSH 公钥](https://gitee.com/profile/sshkeys)
 
-![add_ssh_key_gitee.png](https://github.com/yanglbme/gitee-pages-action/raw/main/images/add_ssh_key_gitee.png)
+![add_ssh_key_gitee.png](//siteimgs.cn-sh2.ufileos.com/2021/02-25-add_ssh_key_gitee.png)
 
 另外还有一个重点就是，**一定要关注Gitee的公众号**： giteecom，不然后面Github workflow执行就会失败的。
 
-![wechat_notification.png](https://github.com/yanglbme/gitee-pages-action/raw/main/images/wechat_notification.png)
+![wechat_notification.png](//siteimgs.cn-sh2.ufileos.com/2021/02-25-wechat_notification.png)
 
 ### 2.3 Github加密设置
 
