@@ -290,32 +290,32 @@ nifi.zookeeper.connect.string=localhost:2181
 <p>Note: The OU in &lsquo;Node Identity x&rsquo; is to be written as NIFI, and has tried to use a different name as if it were unsuccessful, the specific reason is unknown, interested can explore one or two on its own.</p>
 <p>The installation certificate</p>
 <p>Open Google Chrome, find the security options in the settings, click Onport to start importing the certificate generated above: &lsquo;CNs Admin_OUsapacheNIFI.p12&rsquo;, password in the suffix &lsquo;.password&rsquo; file, as shown in the following image:
-<img src=http://imgs.lisenhui.cn/2017/10-26-WIN-NIFI-CLUSTER-00.png alt=WIN-NIFI-CLUSTER-00>
-<img src=http://imgs.lisenhui.cn/2017/10-26-WIN-NIFI-CLUSTER-01.png alt=WIN-NIFI-CLUSTER-01></p>
+<img src=//siteimgs.cn-sh2.ufileos.com/2017/10-26-WIN-NIFI-CLUSTER-00.png alt=WIN-NIFI-CLUSTER-00>
+<img src=//siteimgs.cn-sh2.ufileos.com/2017/10-26-WIN-NIFI-CLUSTER-01.png alt=WIN-NIFI-CLUSTER-01></p>
 <p>Start the Nifi service</p>
 <p>Enter the Nifi installation directory, then find the run-nifi.bat file in the bin directory and double-click on the run, paying attention to the order of startup: nifi-ncm&ndash; nifi-cluster01/2, wait a moment (which may be a little too long, require an election process) to open the browser input &ldquo;https://localhost:9443/nifi"and select the certificate you justimported,as shown in the following screento start successfully:
-<img src=http://imgs.lisenhui.cn/2017/10-26-WIN-NIFI-CLUSTER-02.png alt=WIN-NIFI-CLUSTER-02>
-<img src=http://imgs.lisenhui.cn/2017/10-26-WIN-NIFI-CLUSTER-03.png alt=WIN-NIFI-CLUSTER-03></p>
+<img src=//siteimgs.cn-sh2.ufileos.com/2017/10-26-WIN-NIFI-CLUSTER-02.png alt=WIN-NIFI-CLUSTER-02>
+<img src=//siteimgs.cn-sh2.ufileos.com/2017/10-26-WIN-NIFI-CLUSTER-03.png alt=WIN-NIFI-CLUSTER-03></p>
 <p>The user policy</p>
 <p>When you first log on to the NIFI page, you&rsquo;ll notice that the icons are gray and you need to give permission to start editing before you can start editing. Clicking on the key icon on the left panel of the page will pop up the window for the access policy, as shown in the following image:</p>
 <p>If you see that the list of users is empty here, you&rsquo;ll add users to the appropriate behavior, and click on the &ldquo;Create&rdquo; link to start adding them, as shown in the following image:
-<img src=http://imgs.lisenhui.cn/2017/10-26-WIN-NIFI-CLUSTER-04.png alt=WIN-NIFI-CLUSTER-04>
-<img src=http://imgs.lisenhui.cn/2017/10-26-WIN-NIFI-CLUSTER-05.png alt=WIN-NIFI-CLUSTER-05>
-<img src=http://imgs.lisenhui.cn/2017/10-26-WIN-NIFI-CLUSTER-044.png alt=WIN-NIFI-CLUSTER-044></p>
+<img src=//siteimgs.cn-sh2.ufileos.com/2017/10-26-WIN-NIFI-CLUSTER-04.png alt=WIN-NIFI-CLUSTER-04>
+<img src=//siteimgs.cn-sh2.ufileos.com/2017/10-26-WIN-NIFI-CLUSTER-05.png alt=WIN-NIFI-CLUSTER-05>
+<img src=//siteimgs.cn-sh2.ufileos.com/2017/10-26-WIN-NIFI-CLUSTER-044.png alt=WIN-NIFI-CLUSTER-044></p>
 <p>Once all permissions have been added, you can see that the buttons on the NIFI page are lit and you can start the creation process.</p>
 <p>An example demonstration</p>
 <p>The template is uploaded</p>
 <p>Download the &ldquo;DEMO&rdquo; () compression pack and unzip out a &lsquo;WordCountDemo.xml&rsquo; file. Then open the browser and enter the NIFI access address: &lsquo;https://localhost:9443/nifi/&rsquo;, click the upload button in the left panel to upload the template, as shown in the image below:
-<img src=http://imgs.lisenhui.cn/2017/10-26-WIN-NIFI-CLUSTER-06.png alt=WIN-NIFI-CLUSTER-06></p>
+<img src=//siteimgs.cn-sh2.ufileos.com/2017/10-26-WIN-NIFI-CLUSTER-06.png alt=WIN-NIFI-CLUSTER-06></p>
 <p>The creation process</p>
 <p>Drag the template button at the top of the NIFI page into the blank space of the artboard, click the add button, and double-clickon the&rsquo;WordCountDemo&rsquo;group to find the&rsquo;PutFile&rsquo; componentand modify the directory address for yourmachine&rsquo;sactual accessiblepath, as shown in the following image:</p>
-<p><img src=http://imgs.lisenhui.cn/2017/10-26-WIN-NIFI-CLUSTER-07.png alt=WIN-NIFI-CLUSTER-07>
-<img src=http://imgs.lisenhui.cn/2017/10-26-WIN-NIFI-CLUSTER-08.png alt=WIN-NIFI-CLUSTER-08></p>
+<p><img src=//siteimgs.cn-sh2.ufileos.com/2017/10-26-WIN-NIFI-CLUSTER-07.png alt=WIN-NIFI-CLUSTER-07>
+<img src=//siteimgs.cn-sh2.ufileos.com/2017/10-26-WIN-NIFI-CLUSTER-08.png alt=WIN-NIFI-CLUSTER-08></p>
 <p>Start the process</p>
 <p>Click the &lsquo;NiFi Flow&rsquo; link in the lower left corner of the NIFI page to return to the main panel, click on the&rsquo;WordCountDemo&rsquo; group,and then click the Start button in the left panel to startthe process, as shown in the following image:</p>
-<p><img src=http://imgs.lisenhui.cn/2017/10-26-WIN-NIFI-CLUSTER-09.png alt=WIN-NIFI-CLUSTER-09></p>
+<p><img src=//siteimgs.cn-sh2.ufileos.com/2017/10-26-WIN-NIFI-CLUSTER-09.png alt=WIN-NIFI-CLUSTER-09></p>
 <p>If there are no exceptions, you can now find a filenamed &ldquo;Telltale_heart_wordcount"in the directory, and when you open it, you&rsquo;ll see the statistics for the following image:</p>
-<p><img src=http://imgs.lisenhui.cn/2017/10-26-WIN-NIFI-CLUSTER-10.png alt=WIN-NIFI-CLUSTER-10></p>
+<p><img src=//siteimgs.cn-sh2.ufileos.com/2017/10-26-WIN-NIFI-CLUSTER-10.png alt=WIN-NIFI-CLUSTER-10></p>
 <p>At this point in the local construction of NIFI pseudo-cluster is complete, there are questions welcome message.</p>
 </div>
 <footer class=post-footer>

@@ -7,7 +7,7 @@
 
 [中文](README.zh.md) | [English](README.md)
 
-![my-hugo-blog](http://siteimgs.cn-sh2.ufileos.com/hugo-logo.png)
+![my-hugo-blog](//siteimgs.cn-sh2.ufileos.com/hugo-logo.png)
 
 
 # Use Hugo framework rebuild my blog site.
@@ -17,14 +17,14 @@ I'm a Geek, so like try the new things which is better. But maybe it's my last w
 
 # Demo：
 
-![my-hugo-blog](http://imgs.lisenhui.cn/my-hugo-blog.png)
+![my-hugo-blog](//siteimgs.cn-sh2.ufileos.com/my-hugo-blog.png)
 
 
 # Use UCloud storage
 
 Download toolkit：[US3 Browser](https://us3-release.cn-bj.ufileos.com/us3cli/us3cli-windows.exe)
 
-![us3-browser](http://imgs.lisenhui.cn/us3-browser.png)
+![us3-browser](//siteimgs.cn-sh2.ufileos.com/us3-browser.png)
 
 > You can upload pictures or folders quickly by dragging and dropping them.
 

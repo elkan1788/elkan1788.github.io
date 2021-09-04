@@ -152,8 +152,8 @@
 <div class=post-body itemprop=articleBody>
 <h2 id=背景>背景</h2>
 <p>平时一般都很少在Linux服务机器上使用UI桌面，但也还是有机会遇到，这不今天便遇到Linux版本的火狐浏览器显示中文乱码。无论怎么调试浏览器的相关设置，都没有办法凑效，甚是有点郁闷。</p>
-<p><img src=http://imgs.lisenhui.cn/2019/10-31-firefox-browser-err01.png alt=firefox-browser-err01.png>
-<img src=http://imgs.lisenhui.cn/2019/10-31-firefox-browser-err02.png alt=firefox-browser-err02.png></p>
+<p><img src=//siteimgs.cn-sh2.ufileos.com/2019/10-31-firefox-browser-err01.png alt=firefox-browser-err01.png>
+<img src=//siteimgs.cn-sh2.ufileos.com/2019/10-31-firefox-browser-err02.png alt=firefox-browser-err02.png></p>
 <h2 id=安装字体>安装字体</h2>
 <p>在前面调试浏览器设置，在字体设置那栏就发现没有适合中文显示的字体库，那就是意味着安装个字体就可以解决问题啦。从Windows系统中找了个微软雅黑字体库（<code>msyh.ttc</code>,<code>msyhl.ttc</code>,<code>msyhbd.ttc</code>），并上传到Linux服务器的指定目录下： <code>/usr/share/fonts</code></p>
 <blockquote>
@@ -170,7 +170,7 @@ Microsoft YaHei,微软雅黑,Microsoft YaHei Light,微软雅黑 Light:style<span
 Microsoft YaHei UI:style<span style=color:#666>=</span>Bold,Negreta,tu?né,fed,Fett,?ντονα,Negrita,Lihavoitu,Gras,Félk?vér,Grassetto,Vet,Halvfet,Pogrubiony,Negrito,Полужирный,Fet,Kal?n,Krepko,Lodia
 Microsoft YaHei,微软雅黑:style<span style=color:#666>=</span>Bold,Negreta,tu?né,fed,Fett,?ντονα,Negrita,Lihavoitu,Gras,Félk?vér,Grassetto,Vet,Halvfet,Pogrubiony,Negrito,Полужирный,Fet,Kal?n,Krepko,Lodia
 </code></pre></div><p>如能显示出来<strong>微软雅黑</strong>字样，那就表示显示成功，再到火狐浏览器的高级设置中把字体选项调整为微软雅黑即可，效果如下：</p>
-<p><img src=http://imgs.lisenhui.cn/2019/10-31-firefox-browser-err03.png alt=firefox-browser-err03.png></p>
+<p><img src=//siteimgs.cn-sh2.ufileos.com/2019/10-31-firefox-browser-err03.png alt=firefox-browser-err03.png></p>
 <h2 id=总结>总结</h2>
 <p>遇到乱码问题，除了查找<code>lang</code>设置之外，还需要关心一下字体库。</p>
 <blockquote>

@@ -160,18 +160,18 @@ FATAL ERROR<span style=color:#666>:</span> No supported authentication methods <
 Please make sure you have the correct access rights
 and the repository exists<span style=color:#666>.</span>
 
-</code></pre></div><p><img src=http://imgs.lisenhui.cn/2021/02-22-git-extensions-failed-01.png alt=git-extensions-failed-01.png></p>
+</code></pre></div><p><img src=//siteimgs.cn-sh2.ufileos.com/2021/02-22-git-extensions-failed-01.png alt=git-extensions-failed-01.png></p>
 <p>See this error is really a face of hair, ah, did not modify any SSH KEY-related configuration, there is no corresponding permissions to operate it?</p>
 <p>The first thing that came to mind was, was the local SSH KEY cleaned up? However, after examining the file, everything is fine, and it is normal to use the git push command. It&rsquo;s really hard to understand, for the time being can only refer to the wrong prompt to come out and try to fix the operation.</p>
-<p><img src=http://imgs.lisenhui.cn/2021/02-22-git-extensions-failed-02.png alt=git-extensions-failed-02.png></p>
+<p><img src=//siteimgs.cn-sh2.ufileos.com/2021/02-22-git-extensions-failed-02.png alt=git-extensions-failed-02.png></p>
 <h2 id=preliminary-solution>Preliminary Solution</h2>
 <p>Based on the prompts of the error window, use the Putty tool to generate a Private mode for the local SSH KEY, as follows:</p>
-<p><img src=http://imgs.lisenhui.cn/2021/02-22-git-extensions-failed-03.png alt=git-extensions-failed-03.png></p>
+<p><img src=//siteimgs.cn-sh2.ufileos.com/2021/02-22-git-extensions-failed-03.png alt=git-extensions-failed-03.png></p>
 <p>Then load this Private KEY into the push process and click the push button again to see the action success prompt.</p>
-<p><img src=http://imgs.lisenhui.cn/2021/02-22-git-extensions-failed-04.png alt=git-extensions-failed-04.png></p>
+<p><img src=//siteimgs.cn-sh2.ufileos.com/2021/02-22-git-extensions-failed-04.png alt=git-extensions-failed-04.png></p>
 <h2 id=problem-positioning>Problem positioning</h2>
 <p>Although the problem of pushing was solved, I still found things a little strange and strange. So I thought about whether the configuration of Git Extensions has changed, after some search testing, confirmed that it is due to the official current default in Windows to use Putty as a client, adjust it to OpenSSH mode, the problem no longer occurs.</p>
-<p><img src=http://imgs.lisenhui.cn/2021/02-22-git-extensions-failed-05.png alt=git-extensions-failed-05.png></p>
+<p><img src=//siteimgs.cn-sh2.ufileos.com/2021/02-22-git-extensions-failed-05.png alt=git-extensions-failed-05.png></p>
 <h2 id=summary>Summary</h2>
 <p>In case of non-necessity, it is still less recommended to upgrade the software version, and a stable environment is more valuable than new features that are not available.</p>
 </div>

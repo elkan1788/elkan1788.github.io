@@ -152,7 +152,7 @@
 <div class=post-body itemprop=articleBody>
 <p>现在使用<code>Spring Boot</code>架构的应用开发来说是非常的普遍，统一化的打包部署确实带来不少便利，但当遇到问题时也是会比较棘手。或许你会觉得很惊讶，但如果说这是产品部署运维过程中遇到的难题需要修改<code>Spring Boot</code>应用程序，你就会觉得困难也是不奇怪的。本文就来分享下如何使用<code>jar</code>命令应对线上部署产品时，要临时替换<code>Spring Boot</code>应用中的Jar包的操作。</p>
 <p>在测试环境部署某个产品应用时，在最后启动时遇到失败，查看并分析启动日志，发现了如下的堆栈日志信息：</p>
-<p><img src=http://imgs.lisenhui.cn/2021/04-14-spring-boot-replace-jar-01.png alt=spring-boot-replace-jar-01.png></p>
+<p><img src=//siteimgs.cn-sh2.ufileos.com/2021/04-14-spring-boot-replace-jar-01.png alt=spring-boot-replace-jar-01.png></p>
 <p>看到此<code>MySQL</code>驱动的类名，当时心中已经有了答案，估计肯定是因为高版本的<code>MySQL</code>驱动程序不兼容低版本的<code>MySQL Server</code>所引起的。接下来使用如下的 jar 命令进一步确认下便是：</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ jar -tvf semxxx.jar | grep mysql
 mysql-connector-java-8.0.12.jar

@@ -151,10 +151,10 @@
 </header>
 <div class=post-body itemprop=articleBody>
 <p>很多时候环境的维护的确是件头痛的事件，这不本来在Ambari的Dashboard页面显示正常服务的监控，实然间出现了个奇怪的现象： 在机器查询服务的运行进程是正常的，可偏偏Ambari的UI界面却显示状为停止，但端口检查又显示正常的。如下图：</p>
-<p><img src=http://imgs.lisenhui.cn/2017/10-18-ambari-red.png alt=alert_stopped.png></p>
+<p><img src=//siteimgs.cn-sh2.ufileos.com/2017/10-18-ambari-red.png alt=alert_stopped.png></p>
 <p>本也可以放任不管的(反正服务运行正常就好)，但无奈强迫症的"毛病"又犯了，非得把它消灭掉心里才舒服。尝试了几次都没能成功，后来回想下好像同事有手动启动的某些组件，难道是这个原因。使用<code>ps</code>检查了这些组件的进程用户，发现确实如此，强制杀死这些组件，然后使用Ambari UI重启它们，可最终的结果还是没变。</p>
 <p>真是挺郁闷的，此时也只好借助google啦，然后找到一篇类似问题的文章，里面提及到了运行时的<code>xx.pid</code>权限问题，真是一语点醒梦中人，赶紧的查看下这些组件的pid文件权限，果然如此，因为之前的启动是用超管用户，而实际上这些组件有对应的用户维护。删除这些<code>xxx.pid</code>文件，再在Ambari UI上重启这些服务，一切恢复正常，漂亮的绿色界面又回来啦。</p>
-<p><img src=http://imgs.lisenhui.cn/2017/10-18-ambari-green.png alt=ambari-green.png></p>
+<p><img src=//siteimgs.cn-sh2.ufileos.com/2017/10-18-ambari-green.png alt=ambari-green.png></p>
 <p>参考引用：</p>
 <ul>
 <li><a href=https://community.hortonworks.com/questions/41069/service-is-running-but-ambari-shows-serice-is-stop.html>service-is-running-but-ambari-shows-serice-is-stop</a></li>
