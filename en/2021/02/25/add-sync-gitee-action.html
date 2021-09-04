@@ -133,7 +133,7 @@
 |
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>605 words</span>
+<span class=leancloud-world-count>604 words</span>
 </span>
 <span>
 |
@@ -153,18 +153,18 @@
 <h2 id=1-background>1. Background</h2>
 <p>You were born as a programmer and certainly know the importance of backup. Besides, in the context of the current environment, the political relations in the United States are still rather chaotic, and for the projects stored on Github, it is no longer a country of technological freedom. So it&rsquo;s still necessary for our code to have a &ldquo;double&rdquo; backup, and then we&rsquo;ll show you how to use Action on Github to synchronize the code above Github to the Gitee warehouse site in China.</p>
 <h2 id=2-preparations>2. Preparations</h2>
-<p>Add Github Action to your blog project after an unwitting glance at a Git Page Action (<a href=https://github.com/marketplace/action/gitee-pages-action>https://github.com/marketplace/action/gitee-pages-action</a> code that feels good after a simple attempt to verify that it&rsquo;s still useful. Most of the steps in the above site have been introduced, here is probably a small conclusion to pay attention to the point.</p>
+<p>Add Github Action to your blog project after an unwitting glance at a <a href=https://github.com/marketplace/action/gitee-pages-action>Git Page Action</a> code that feels good after a simple attempt to verify that it&rsquo;s still useful. Most of the steps in the above site have been introduced, here is probably a small conclusion to pay attention to the point.</p>
 <h3 id=21-prepare-the-ssh-key>2.1 Prepare the SSH key</h3>
 <p>When you generate keys locallyusing the ssh-keygen command,don&rsquo;tuse a password, just keep tapping the enter key while executing the&rsquo;ssh-keygen-t rsa -C &lsquo;<a href=mailto:youremail@example.com>youremail@example.com</a>&rsquo; command.</p>
-<p><img src=https://github.com/yanglbme/gitee-pages-action/raw/main/images/gen_ssh_key.png alt=gen_ssh_key.png></p>
+<p><img src=//siteimgs.cn-sh2.ufileos.com/2021/02-25-gen_ssh_key.png alt=gen_ssh_key.png></p>
 <h3 id=22-gitee-related>2.2 Gitee Related</h3>
 <p>Github and Gitee are recommended to use the same key, and they are set up as follows:</p>
 <p>1.Github: <a href=https://github.com/settings/keys>Settings -> SSH and GPG keys</a></p>
-<p><img src=https://github.com/yanglbme/gitee-pages-action/raw/main/images/add_ssh_key_github.png alt=add_ssh_key_github.png></p>
+<p><img src=//siteimgs.cn-sh2.ufileos.com/2021/02-25-add_ssh_key_github.png alt=add_ssh_key_github.png></p>
 <p>2.Gitee: &ldquo;Security Settings - SSH Public Key&rdquo; (<a href=https://gitee.com/profile/sshkeys)>https://gitee.com/profile/sshkeys)</a>.</p>
-<p><img src=https://github.com/yanglbme/gitee-pages-action/raw/main/images/add_ssh_key_gitee.png alt=add_ssh_key_gitee.png></p>
+<p><img src=//siteimgs.cn-sh2.ufileos.com/2021/02-25-add_ssh_key_gitee.png alt=add_ssh_key_gitee.png></p>
 <p>Another important point is, be sure to pay attention to Gitee&rsquo;s public number: giteecom, or the github workflow execution will fail later.</p>
-<p><img src=https://github.com/yanglbme/gitee-pages-action/raw/main/images/wechat_notification.png alt=wechat_notification.png></p>
+<p><img src=//siteimgs.cn-sh2.ufileos.com/2021/02-25-wechat_notification.png alt=wechat_notification.png></p>
 <h3 id=23-github-encryption-settings>2.3 Github encryption settings</h3>
 <p>Switch to Github,andthen add"Settings - And Secrets" under the current project, which is:</p>
 <p>GITEE_PASSWORD: Gitee login password
