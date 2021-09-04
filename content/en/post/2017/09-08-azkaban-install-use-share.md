@@ -16,7 +16,7 @@ In the big data complex ETL or other data processing processes, some tasks need 
 
 'Azkaban3' is still relatively large compared to the changes made in the previous version, and interested parties can be found on its official website, [Azkaban]( https://azkaban.github.io/azkaban/docs/latest/). Next, mainly to share the installation of 'Azkaban 3', the following is 'Azkaban 3' system architecture design:
 
-![Azkaban-Install00](http://imgs.lisenhui.cn/2017/09-08-Azkaban-Install00.png)
+![Azkaban-Install00](//siteimgs.cn-sh2.ufileos.com/2017/09-08-Azkaban-Install00.png)
 
 The three components in the figure are an important part of 'Azkaban3':
 
@@ -293,9 +293,9 @@ Note: Make sure that the port is not properly occupied before starting, and keep
 
 After successful launch, enter 'http://localhost:8081' in your browser to see the 'Web Server' interface, as shown in the following image:
 
-![Azkaban-Install01](http://imgs.lisenhui.cn/2017/09-08-Azkaban-Install01.png)
+![Azkaban-Install01](//siteimgs.cn-sh2.ufileos.com/2017/09-08-Azkaban-Install01.png)
 
-![Azkaban-Install02](http://imgs.lisenhui.cn/2017/09-08-Azkaban-Install02.png)
+![Azkaban-Install02](//siteimgs.cn-sh2.ufileos.com/2017/09-08-Azkaban-Install02.png)
 
 ## Demo
 
@@ -303,18 +303,18 @@ Create a new project in the 'Web Server' that startedsuccessfully above, named:S
 
 Base Flow Demo Password: 4f4f (https://pan.baidu.com/s/19iEqfyShVTnVrfzfdST__A)
 
-![Azkaban-Install03](http://imgs.lisenhui.cn/2017/09-08-Azkaban-Install03.png)
+![Azkaban-Install03](//siteimgs.cn-sh2.ufileos.com/2017/09-08-Azkaban-Install03.png)
 
-![Azkaban-Install04](http://imgs.lisenhui.cn/2017/09-08-Azkaban-Install04.png)
+![Azkaban-Install04](//siteimgs.cn-sh2.ufileos.com/2017/09-08-Azkaban-Install04.png)
 
-![Azkaban-Install05](http://imgs.lisenhui.cn/2017/09-08-Azkaban-Install05.png)
+![Azkaban-Install05](//siteimgs.cn-sh2.ufileos.com/2017/09-08-Azkaban-Install05.png)
 
-![Azkaban-Install06](http://imgs.lisenhui.cn/2017/09-08-Azkaban-Install06.png)
+![Azkaban-Install06](//siteimgs.cn-sh2.ufileos.com/2017/09-08-Azkaban-Install06.png)
 
 'Azkaban3' is performed by submitting a task (Job) to 'Executor Server' through 'Web Server', so it is not intuitive to see the program execution process visually on the interface, but you can understand the running process by finding the running task in the execution list and viewing its logs, as shown in the following group:
 
-![Azkaban-Install07](http://imgs.lisenhui.cn/2017/09-08-Azkaban-Install07.png)
+![Azkaban-Install07](//siteimgs.cn-sh2.ufileos.com/2017/09-08-Azkaban-Install07.png)
 
-![Azkaban-Install08](http://imgs.lisenhui.cn/2017/09-08-Azkaban-Install08.png)
+![Azkaban-Install08](//siteimgs.cn-sh2.ufileos.com/2017/09-08-Azkaban-Install08.png)
 
 Well, isn't it relatively simple to complete the 'Azkaban 3' service and simple examples. At the initial stage, the use of 'Azkaban 3' can still be used in a business-appropriate scenario, but the later promotion process finds that it is not perfect, such as manually updating the database during the above startup process to activate 'Executor Server' (only the first time it starts), and the official does not provide the management of the 'Executor Server' run, the distributed runtime needs to manually specify 'Executor Server's ID' and so on. But it's basically enough for everyday use, especially its 'Job Flow' design. Finally, if you have questions about 'Azkaban3' that can be discussed together in the comments, the relevant usage tutorials will be updated later, so stay tuned. 

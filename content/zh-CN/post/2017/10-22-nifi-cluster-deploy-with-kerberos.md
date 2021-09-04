@@ -11,14 +11,14 @@ categories:
 
 最近这段时间在接触数据流式处理方面的事宜，用到了**Apache NIFI**现把安装配置中学习的一些经验分享下。此篇文章主要是针对集群及用户权限方面，关于[Apache NIFI](https://nifi.apache.org/)的介绍就不做过多的说明，直接引用官方的首页的说明如下图所示：
 
-![NiFi-01.png](http://imgs.lisenhui.cn/2017/10-22-Apache-NiFi-01.png)
+![NiFi-01.png](//siteimgs.cn-sh2.ufileos.com/2017/10-22-Apache-NiFi-01.png)
 
 <!--more-->
 
 
 **Apahce NIFI**的单机运行是相当的简单，易用，完全就是傻瓜式的。下载解压，进行`bin`目录执行`nifi.sh start` 打开浏览器输入`http://127.0.0.1:8080/nifi`即可看到一个简洁漂亮的WEB UI。那么接下来我们要配置的是它的集群模式，官方说明***NIFI***采用的是**0**主节点模式，集群中的每个节点在数据集上执行相同的任务，但是每个节点都在不同的数据集上运行（详细的说明请查看[官方文档](https://nifi.apache.org/docs.html#clustering)），并且内置了**Zookeeper**服务，如下图所示：
 
-![zero-master-cluster-http-access.png](http://imgs.lisenhui.cn/2017/10-22-zero-master-cluster-http-access.png)
+![zero-master-cluster-http-access.png](//siteimgs.cn-sh2.ufileos.com/2017/10-22-zero-master-cluster-http-access.png)
 
 
 # 系统环境及软件版本 
@@ -346,9 +346,9 @@ nifi.kerberos.service.keytab.location=/data/root.keytab
 
 先启动主节点的NIFI，而后启动从节点的NIFI，执行命令`./bin/nifi.sh start`， 然后打开浏览器输入`https://centos7-master:9443/nifi/`便会跳转到登录页面，输入在第1步骤创建的用户与密码，即可登录成功。界面显示如下：
 
-![Apache NiFi02](http://imgs.lisenhui.cn/2017/10-22-Apache-NiFi-02.png)
+![Apache NiFi02](//siteimgs.cn-sh2.ufileos.com/2017/10-22-Apache-NiFi-02.png)
 
-![Apache NiFi03](http://imgs.lisenhui.cn/2017/10-22-Apache-NiFi-03.png)
+![Apache NiFi03](//siteimgs.cn-sh2.ufileos.com/2017/10-22-Apache-NiFi-03.png)
 
 如上面两图显示，在界面的左上角可以清楚的看到当前节点数为2，用户为**`root/admin@CENTOS7-MASTER.COM`**，其中`centos7-master`是协调器，`centos7-cluster01`是主要节点，主菜单中也增加有了`Cluster`，`User`和`Policies`选项。
 

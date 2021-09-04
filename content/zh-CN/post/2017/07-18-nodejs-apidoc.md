@@ -163,7 +163,7 @@ apidoc -i apidoc/ -o apidoc/
 
 文档效果如下图所示：
 
-![nodejs-apidoc-01.png](http://imgs.lisenhui.cn/2017/07-18-nodejs-apidoc-01.png)
+![nodejs-apidoc-01.png](//siteimgs.cn-sh2.ufileos.com/2017/07-18-nodejs-apidoc-01.png)
 
 # 常见问题
 

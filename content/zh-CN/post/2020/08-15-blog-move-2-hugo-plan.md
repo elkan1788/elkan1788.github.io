@@ -17,7 +17,7 @@ categories:
 
 不过还好最后在Github找到有人已经移植了Hexo NexT主题： [hugo-theme-next](https://github.com/xtfly/hugo-theme-next)，所以后续的迁移计划便是基于此展开，整体的思路和计划如下：
 
-![Hugo blog plan](http://imgs.lisenhui.cn/2020/08-15-blog-move-2-hugo-plan.png)
+![Hugo blog plan](//siteimgs.cn-sh2.ufileos.com/2020/08-15-blog-move-2-hugo-plan.png)
 
 考虑到都是使用业余时间来完成，所以时间线拉的比较长一些，也不知道当中遇到的问题能否顺利解决。先不管这么多啦，凡事都是得先有个Flag嘛，后续努力的把Flag实现就好啦。
 

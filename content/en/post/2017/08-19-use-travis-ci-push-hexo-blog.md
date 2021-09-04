@@ -36,12 +36,12 @@ Travis CI account
 
 If you need to register your account separately, it is recommended to log in directly using 'Github Token'. The next step is to generate a 'Github Token', find it in the 'Github' settings panel, or create it directly by clicking on the "Github Tokens" (https://github.com/settings/tokens, as shown in the following image:
 
-![travis-ci-deploy01](http://imgs.lisenhui.cn/2017/08-19-travis-ci-deploy01.png)
-![travis-ci-deploy02](http://imgs.lisenhui.cn/2017/08-19-travis-ci-deploy02.png)
+![travis-ci-deploy01](//siteimgs.cn-sh2.ufileos.com/2017/08-19-travis-ci-deploy01.png)
+![travis-ci-deploy02](//siteimgs.cn-sh2.ufileos.com/2017/08-19-travis-ci-deploy02.png)
 
 Save the 'Token' you just created, then sign in to 'Travis CI' with the 'Github' authorization and jump to the control panel (https://travis-ci.org/profile/) to select the item you want to create (that is, your blog project) as shown in the following image
 
-![travis-ci-deploy03](http://imgs.lisenhui.cn/2017/08-19-travis-ci-deploy03.png)
+![travis-ci-deploy03](//siteimgs.cn-sh2.ufileos.com/2017/08-19-travis-ci-deploy03.png)
 
 Travis Client installation
 
@@ -191,7 +191,7 @@ Publish an article
 
 Create an article using the 'hexo new 'article tittle'command' command, then add the idea you want to spit, save the content, and so on, and then push the code to the 'Github' server with the 'git push' command, where you can log in to 'Travis CI' and you'll see the 'gorgeous' log output in the corresponding project as shown in the following image:
 
-![travis-ci-deploy04](http://imgs.lisenhui.cn/2017/08-19-travis-ci-deploy04.png)
+![travis-ci-deploy04](//siteimgs.cn-sh2.ufileos.com/2017/08-19-travis-ci-deploy04.png)
 
 If the final result is green, then congratulations, your blog has been successfully put in place, hurry to refresh the page.
 

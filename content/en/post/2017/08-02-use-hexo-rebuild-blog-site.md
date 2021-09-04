@@ -43,10 +43,10 @@ npm install hexo-deployer-git --save
 As a blog site is certainly an interactive link, the Internet world has long provided this feature, in this mainly used functions are: article reading, article digital statistics, site PV/UV, comment reply. Other functional integration should not be difficult, as long as the corresponding service provider site registration, fill in the corresponding ID, KEY can be. Mainly mentions the function of the following article digital statistics:
 
 Sign in toleanCloud(https://leancloud.cn) to find your app and click on the settings button in the upper right corner, as shown in the following image:
-![learnclound-1.png](http://imgs.lisenhui.cn/2017/08-02-leancloud-1.png)
+![learnclound-1.png](//siteimgs.cn-sh2.ufileos.com/2017/08-02-leancloud-1.png)
 
 Then click on "Storage" in the menu on the left, then click "Create Class" in the middle of the list, enter the name click create, as shown in the following image:
-![learnclound-2.png](http://imgs.lisenhui.cn/2017/08-02-leancloud-2.png)
+![learnclound-2.png](//siteimgs.cn-sh2.ufileos.com/2017/08-02-leancloud-2.png)
 
 At this point don't set a secure domain name, directly start the Hexo service locally, keep refreshing the page, you can see you want the results, it's as simple as that. 
 

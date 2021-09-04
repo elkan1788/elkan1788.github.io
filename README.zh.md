@@ -7,7 +7,7 @@
 
 [中文](README.zh.md) | [English](README.md)
 
-![my-hugo-blog](http://siteimgs.cn-sh2.ufileos.com/hugo-logo.png)
+![my-hugo-blog](//siteimgs.cn-sh2.ufileos.com/hugo-logo.png)
 
 # 使用Hugo引擎重建个人博客
 
@@ -15,14 +15,14 @@
 
 # 预览：
 
-![my-hugo-blog](http://imgs.lisenhui.cn/my-hugo-blog.png)
+![my-hugo-blog](//siteimgs.cn-sh2.ufileos.com/my-hugo-blog.png)
 
 
 # 使用UCloud云存储
 
 下载工具：[US3 Browser](https://us3-release.cn-bj.ufileos.com/us3cli/us3cli-windows.exe)
 
-![us3-browser](http://imgs.lisenhui.cn/us3-browser.png)
+![us3-browser](//siteimgs.cn-sh2.ufileos.com/us3-browser.png)
 
 > 你可以通过拖拽的方式快速上传图片或者是文件夹。
 

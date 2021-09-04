@@ -17,6 +17,6 @@ Visit Hugo's official website and look through the official documents, which are
 
 But it's good to finally find someone in Github  who has transplanted the Hexo  NexT theme:"Hugo-theme-next" (https://github.com/xtfly/hugo-theme-next), so the subsequent migration plan is based on this, and the overall thinking and plan is as follows:
 
-![Hugo blog plan](http://imgs.lisenhui.cn/2020/08-15-blog-move-2-hugo-plan.png)
+![Hugo blog plan](//siteimgs.cn-sh2.ufileos.com/2020/08-15-blog-move-2-hugo-plan.png)
 
 Considering that they are all done in their spare time, the timeline is longer and I don't know if the problems encountered can be solved smoothly. No matter how much you do, everything has to have a Flag first, follow-up efforts to achieve Flag is good. 

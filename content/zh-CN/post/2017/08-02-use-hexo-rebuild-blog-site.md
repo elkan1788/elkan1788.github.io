@@ -43,10 +43,10 @@ npm install hexo-deployer-git --save
 作为博客网站肯定是少不了互动的环节，现在的互联网世界早就已提供了此功能，在此主要用到的功能有：文章阅读，文章数字统计，站点PV/UV，评论回复。其它的功能集成应该都没难度，只要在对应的服务商站点注册好，填写对应的ID，KEY即可。主要提及下**文章数字统计**的功能：
 
 登录[LeanCloud](https://leancloud.cn)找到你的应用，点击其右上角的设置按钮，如下图所示:
-![learnclound-1.png](http://imgs.lisenhui.cn/2017/08-02-leancloud-1.png)
+![learnclound-1.png](//siteimgs.cn-sh2.ufileos.com/2017/08-02-leancloud-1.png)
 
 接着点击左侧菜单中的**存储**，然后在中间的列表中点击**创建Class**，输入名称点击创建即可，如下图所示：
-![learnclound-2.png](http://imgs.lisenhui.cn/2017/08-02-leancloud-2.png)
+![learnclound-2.png](//siteimgs.cn-sh2.ufileos.com/2017/08-02-leancloud-2.png)
 
 此时先别设置安全域名，直接在本地启动Hexo服务，不停的刷新页面，便可以看到你想结果啦，就是这么的简单。
 
