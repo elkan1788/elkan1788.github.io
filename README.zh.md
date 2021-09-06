@@ -8,7 +8,7 @@
 
 [中文](README.zh.md) | [English](README.md)
 
-![my-hugo-blog](//lisenhui.gitee.io/imgs/blog/hugo-logo.png)
+![my-hugo-blog](https://lisenhui.gitee.io/imgs/blog/hugo-logo.png)
 
 # 使用Hugo引擎重建个人博客
 
@@ -16,7 +16,7 @@
 
 # 预览：
 
-![my-hugo-blog](//lisenhui.gitee.io/imgs/blog/my-hugo-blog.png)
+![my-hugo-blog](https://lisenhui.gitee.io/imgs/blog/my-hugo-blog.png)
 
 ## 许可证
 [MIT License](LICENSE).
