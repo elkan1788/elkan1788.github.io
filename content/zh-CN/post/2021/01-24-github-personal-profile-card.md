@@ -10,7 +10,7 @@ tags:
 
 Github上总是会有一些新奇的东西出现，这不无意间又发现了个有趣的玩法，可以用它来作为你的个人开发者名信片展现。具体展现效果如下：
 
-![01-24-elkan1788-profile-02.png](//siteimgs.cn-sh2.ufileos.com/2021/01-24-elkan1788-profile-02.png)
+![01-24-elkan1788-profile-02.png](//lisenhui.gitee.io/imgs/blog/2021/01-24-elkan1788-profile-02.png)
 
 操作起来也不繁琐，类似以前的pages服务那样，只准备个特定的仓库就可以，具体操作如下：
 
@@ -20,7 +20,7 @@ Github上总是会有一些新奇的东西出现，这不无意间又发现了�
 
 在Github上面申请个与你用户名同名的公开仓库，然后你就会发现收到来自Github的“赞美”提示信息，如下：
 
-![01-24-elkan1788-profile-01.png](//siteimgs.cn-sh2.ufileos.com/2021/01-24-elkan1788-profile-01.png)
+![01-24-elkan1788-profile-01.png](//lisenhui.gitee.io/imgs/blog/2021/01-24-elkan1788-profile-01.png)
 
 
 仓库创建好后，会默认准备好一个`README.md`文件，后续你在这上面写相关的信息即可。

@@ -15,7 +15,7 @@ toc: true
 
 随着用户需求的不断更新，产品原型的设计也在不断迭代升级，那么是必会让整体的设计复杂增加，各中组件相互影响的因素就更多。这不现在就遇到在动态面板上显示一个隐藏的元件时，结果下拉的组件显示不完全了，真的好是郁闷，如下图所示：
 
-![axure-state-auto-display01.png](//siteimgs.cn-sh2.ufileos.com/2018/03-12-axure-state-auto-display01.png)
+![axure-state-auto-display01.png](//lisenhui.gitee.io/imgs/blog/2018/03-12-axure-state-auto-display01.png)
 
 <!--more-->
 
@@ -32,19 +32,19 @@ toc: true
 
 定位到显示隐藏元件的点击事件，在显示的时候同时将其至为顶层，如下图所示：
 
-![axure-state-auto-display02.png](//siteimgs.cn-sh2.ufileos.com/2018/03-12-axure-state-auto-display02.png)
+![axure-state-auto-display02.png](//lisenhui.gitee.io/imgs/blog/2018/03-12-axure-state-auto-display02.png)
 
 ## 面板自适应
 
 定位到隐藏元件所在的面板，在面板的属性上，将自动调整为内容尺寸打勾，如下图所示：
 
-![axure-state-auto-display03.png](//siteimgs.cn-sh2.ufileos.com/2018/03-12-axure-state-auto-display03.png)
+![axure-state-auto-display03.png](//lisenhui.gitee.io/imgs/blog/2018/03-12-axure-state-auto-display03.png)
 
 
 # 效果预览
 
 操作完以上2步后，即可查看到如下的效果：
 
-![axure-state-auto-display04.png](//siteimgs.cn-sh2.ufileos.com/2018/03-12-axure-state-auto-display04.png)
+![axure-state-auto-display04.png](//lisenhui.gitee.io/imgs/blog/2018/03-12-axure-state-auto-display04.png)
 
 OK，至此已经实现我们想要解决的问题，遇过问题可以多点点Axure的各种设置，会有预想不到的效果，哈~。

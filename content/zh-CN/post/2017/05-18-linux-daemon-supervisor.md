@@ -124,7 +124,7 @@ supervisorctl reload
 
 然后在浏览器中输入： http://127.0.0.1:9001， 输入登录信息， 界面展现如下：
 
-![supervisor-web.png](//siteimgs.cn-sh2.ufileos.com/2017/05-18-supervisor-web.png)
+![supervisor-web.png](//lisenhui.gitee.io/imgs/blog/2017/05-18-supervisor-web.png)
 
 现在你可以尝试下杀死守护进程，看看它是不是又自动重启， 当然如果要是supervisord服务被杀死那么也就没戏啦。
 

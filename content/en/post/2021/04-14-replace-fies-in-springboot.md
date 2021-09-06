@@ -17,7 +17,7 @@ Nowadays, it is very common to use the `Spring Boot` architecture for applicatio
 
 When a product application is deployed in the test environment, the startup fails. The following stack logs are found in the startup logs:
 
-![spring-boot-replace-jar-01.png](//siteimgs.cn-sh2.ufileos.com/2021/04-14-spring-boot-replace-jar-01.png)
+![spring-boot-replace-jar-01.png](//lisenhui.gitee.io/imgs/blog/2021/04-14-spring-boot-replace-jar-01.png)
 
 The MySQL driver is not compatible with the MySQL Server. The MySQL driver is not compatible with the MySQL Server.To verify this, use the following jar command:
 

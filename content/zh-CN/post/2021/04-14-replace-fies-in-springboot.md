@@ -17,7 +17,7 @@ tags:
 
 在测试环境部署某个产品应用时，在最后启动时遇到失败，查看并分析启动日志，发现了如下的堆栈日志信息：
 
-![spring-boot-replace-jar-01.png](//siteimgs.cn-sh2.ufileos.com/2021/04-14-spring-boot-replace-jar-01.png)
+![spring-boot-replace-jar-01.png](//lisenhui.gitee.io/imgs/blog/2021/04-14-spring-boot-replace-jar-01.png)
 
 看到此`MySQL`驱动的类名，当时心中已经有了答案，估计肯定是因为高版本的`MySQL`驱动程序不兼容低版本的`MySQL Server`所引起的。接下来使用如下的 jar  命令进一步确认下便是：
 

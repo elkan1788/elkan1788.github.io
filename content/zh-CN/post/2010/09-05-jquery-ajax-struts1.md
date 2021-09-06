@@ -124,11 +124,11 @@ public ActionForward execute(ActionMapping mapping, ActionForm form,
 
 说了那么多，下面先来看看通上面的代码所实现的效果吧：
 
-![struts1-ajax-1](//siteimgs.cn-sh2.ufileos.com/2010/09-05-struts1-ajax-1.jpg)
+![struts1-ajax-1](//lisenhui.gitee.io/imgs/blog/2010/09-05-struts1-ajax-1.jpg)
 
-![struts1-ajax-2](//siteimgs.cn-sh2.ufileos.com/2010/09-05-struts1-ajax-2.jpg)
+![struts1-ajax-2](//lisenhui.gitee.io/imgs/blog/2010/09-05-struts1-ajax-2.jpg)
 
-![struts1-ajax-3](//siteimgs.cn-sh2.ufileos.com/2010/09-05-struts1-ajax-3.jpg)
+![struts1-ajax-3](//lisenhui.gitee.io/imgs/blog/2010/09-05-struts1-ajax-3.jpg)
 
 
 看到上面的效果，你是不是也想展示一下自己的身手呢，那就赶紧动手吧，相信有了上面的那些代码的提示做个DEMO应该不会很难吧，如果有什么问题的话可以留言给我。谢谢支持。

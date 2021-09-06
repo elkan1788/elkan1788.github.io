@@ -23,7 +23,7 @@ toc: true
 
 在你的本地使用ssh-keygen命令生成用密钥时，**千万不要使用密码**，在执行`ssh-keygen -t rsa -C "youremail@example.com"`命令时，直接不断敲下回车键即可。
 
-![gen_ssh_key.png](//siteimgs.cn-sh2.ufileos.com/2021/02-25-gen_ssh_key.png)
+![gen_ssh_key.png](//lisenhui.gitee.io/imgs/blog/2021/02-25-gen_ssh_key.png)
 
 ### 2.2 Gitee相关
 
@@ -31,15 +31,15 @@ toc: true
 
 1.Github: [Settings -> SSH and GPG keys](https://github.com/settings/keys)
 
-![add_ssh_key_github.png](//siteimgs.cn-sh2.ufileos.com/2021/02-25-add_ssh_key_github.png)
+![add_ssh_key_github.png](//lisenhui.gitee.io/imgs/blog/2021/02-25-add_ssh_key_github.png)
 
 2.Gitee: [安全设置 -> SSH 公钥](https://gitee.com/profile/sshkeys)
 
-![add_ssh_key_gitee.png](//siteimgs.cn-sh2.ufileos.com/2021/02-25-add_ssh_key_gitee.png)
+![add_ssh_key_gitee.png](//lisenhui.gitee.io/imgs/blog/2021/02-25-add_ssh_key_gitee.png)
 
 另外还有一个重点就是，**一定要关注Gitee的公众号**： giteecom，不然后面Github workflow执行就会失败的。
 
-![wechat_notification.png](//siteimgs.cn-sh2.ufileos.com/2021/02-25-wechat_notification.png)
+![wechat_notification.png](//lisenhui.gitee.io/imgs/blog/2021/02-25-wechat_notification.png)
 
 ### 2.3 Github加密设置
 
@@ -97,7 +97,7 @@ jobs:
 
 那后续在给Github仓库推送代码时，便会有自动同步代码到Gitee仓库，同时也会重新reload静态页面服务，省去手动干预的流程。
 
-![02-25-sync-2-gitee-flow-01.png](//siteimgs.cn-sh2.ufileos.com/2021/02-25-sync-2-gitee-flow-01.png)
+![02-25-sync-2-gitee-flow-01.png](//lisenhui.gitee.io/imgs/blog/2021/02-25-sync-2-gitee-flow-01.png)
 
 ## 3.小结
 

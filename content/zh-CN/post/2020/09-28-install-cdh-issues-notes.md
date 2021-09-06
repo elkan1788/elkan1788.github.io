@@ -19,7 +19,7 @@ categories:
 
 在过往安装CDH环境的经验中，一般都是会把CM和MySQL数据库安装在同一台机器上（非生产环境）。但这次恰好是在云上环境搭建，所以MySQL直接使用的是云上服务，结果在安装好CM，执行好`scm_prepare_database.sh`脚本后，启动CM并没有出现预期的成功消息。查看启动日志发现如下错误：
 
-![scm_version_table_not_exist](//siteimgs.cn-sh2.ufileos.com/2020/09-28-install-cm-scm_version_table_not_exist.png)
+![scm_version_table_not_exist](//lisenhui.gitee.io/imgs/blog/2020/09-28-install-cm-scm_version_table_not_exist.png)
 
 提示`scm.cm_version`表不存在，难道是之前执行`scm_prepare_database.sh`脚本有问题？于是乎又重新执行一次该脚本，确定输出结果是成功的，但CM启动仍然是失败的。当时就真是纳闷了，这个CM的元数据库是在哪一步初始化的呢？
 
@@ -31,7 +31,7 @@ categories:
 
 前面第1步中遇到的问题，其实在后来分析日志时发现，根本原因是CM在执行数据库初始化时，有些DDL语法不支持导致初始化工作并未完成。部分错误日志如下：
 
-![install-cm-init-ddl-err](//siteimgs.cn-sh2.ufileos.com/2020/09-28-install-cm-init-ddl-err.png)
+![install-cm-init-ddl-err](//lisenhui.gitee.io/imgs/blog/2020/09-28-install-cm-init-ddl-err.png)
 
 但是CM的提示信息并不友好，并未告知CM元数据库初始化是否完成，导致定位问题有点难度挑战，后来是手动调整DDL语法才得以完成初始化工作。
 
@@ -52,7 +52,7 @@ Statement violates GTID consistency: CREATE TABLE ... SELECT.
 
 安装Yarn服务组件时一直报出上传Mapreduce的JAR包失败，查看日志信息提示说是无法创建HDFS目录，告知是没有权限执行。于是乎就去临时调整目录权限，但失望的是安装仍然是失败的，还是报出相同的错误。
 
-![install-cm-init-mapr-err](//siteimgs.cn-sh2.ufileos.com/2020/09-28-install-cm-init-mapr-err.png)
+![install-cm-init-mapr-err](//lisenhui.gitee.io/imgs/blog/2020/09-28-install-cm-init-mapr-err.png)
 
 再重新分析日志时发觉，貌似是HostName书写有问题，于是对比了下Hosts文件和机器的HostName，结果还真是不一样的。由于当时准备Hadoop节点机器时，使用的是云上同步创建功能，会自动在HostName后面添加对应的序号，只是没想到这个序号会是4位数字，但在Hosts文件里填写时只写了3位。 真可谓是：“差之毫厘，谬以千里”。重新调整Hosts文件配置后，所有安装与启动便成功。
 

@@ -26,33 +26,33 @@ Project encoding format:UTF-8
  
 Create a simple WEB project with Netbeans, extract the Nutz-related files downloaded from GOOGLE CODE to create a new library reference necessary for development, these operations and display are normal, but when the code is automatically completed, found a problem, the code to complete the JDOC is actually garbled, as shown in the following image:
 
-![nutz-Chinese-1](//siteimgs.cn-sh2.ufileos.com/2012/04-20-nutz-Chinese-1.png)
+![nutz-Chinese-1](//lisenhui.gitee.io/imgs/blog/2012/04-20-nutz-Chinese-1.png)
 
 Hey, what's going on here? Re-examine your engineering coding properties to determine if there is nothing wrong with UTF-8, as shown in the following image:
 
-![nutz-Chinese-2](//siteimgs.cn-sh2.ufileos.com/2012/04-20-nutz-Chinese-2.png)
+![nutz-Chinese-2](//lisenhui.gitee.io/imgs/blog/2012/04-20-nutz-Chinese-2.png)
 
 Try to open the source view, but get a prompt saying, "You can't safely open the file using gbK encoding format, do you want to continue opening it?" ”
 
-![nutz-Chinese-3](//siteimgs.cn-sh2.ufileos.com/2012/04-20-nutz-Chinese-3.png)
+![nutz-Chinese-3](//lisenhui.gitee.io/imgs/blog/2012/04-20-nutz-Chinese-3.png)
 
 Did Nutz build JDOC using GBK encoding, it seems to have to connect to the GitHub library to download a library to see. Download it down to see that the encoding format of the project is also UTC-8, which is strange -- where does the garbled code come from? It seems that we have to generate a JDOC to see, in the UTC-8 environment to generate JDOC should pay attention to the encoding format settings, as shown in the following figure,
 
-![nutz-Chinese-4](//siteimgs.cn-sh2.ufileos.com/2012/04-20-nutz-Chinese-4.png)
+![nutz-Chinese-4](//lisenhui.gitee.io/imgs/blog/2012/04-20-nutz-Chinese-4.png)
 
 After generating JDOC, directly modify the source code and JDOC connection of the Netbeans library and open the creation of the project using code auto-complement prompts everything to work
 
-![nutz-Chinese-5](//siteimgs.cn-sh2.ufileos.com/2012/04-20-nutz-Chinese-5.png)
+![nutz-Chinese-5](//lisenhui.gitee.io/imgs/blog/2012/04-20-nutz-Chinese-5.png)
 
-![nutz-Chinese-6](//siteimgs.cn-sh2.ufileos.com/2012/04-20-nutz-Chinese-6.png)
+![nutz-Chinese-6](//lisenhui.gitee.io/imgs/blog/2012/04-20-nutz-Chinese-6.png)
 
 The problem is solved, but the cause of this problem really has to think about, the impact of different coding formats is really depressed. "You can't safely open the file using the GBK encoding format, do you want to continue opening it?" said the message "Can't open the file safely without modification?" Is it okay to modify Nutz's source code into a GBK encoding format as described in the information? So wrote a coding format rotation output program tested, the results show that the guess is correct, oh
 
-![nutz-Chinese-7](//siteimgs.cn-sh2.ufileos.com/2012/04-20-nutz-Chinese-7.png)
+![nutz-Chinese-7](//lisenhui.gitee.io/imgs/blog/2012/04-20-nutz-Chinese-7.png)
 
-![nutz-Chinese-8](//siteimgs.cn-sh2.ufileos.com/2012/04-20-nutz-Chinese-8.png)
+![nutz-Chinese-8](//lisenhui.gitee.io/imgs/blog/2012/04-20-nutz-Chinese-8.png)
 
-![nutz-Chinese-9](//siteimgs.cn-sh2.ufileos.com/2012/04-20-nutz-Chinese-9.png)
+![nutz-Chinese-9](//lisenhui.gitee.io/imgs/blog/2012/04-20-nutz-Chinese-9.png)
 
 In fact, this small program can not only convert nutz's source code, it can also convert any project's encoding format (only support JAVA files), note that by UTF-8 to GBK encoding format Oh, then slowly experience next Nutz to bring you the "wonderful experience" it, oh
 

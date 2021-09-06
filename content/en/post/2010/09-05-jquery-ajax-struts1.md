@@ -125,11 +125,11 @@ Finally, there is the following struts-config.xml configuration file:
 
 Having said that, let's take a look at the above code to achieve the effect：
 
-![struts1-ajax-1](//siteimgs.cn-sh2.ufileos.com/2010/09-05-struts1-ajax-1.jpg)
+![struts1-ajax-1](//lisenhui.gitee.io/imgs/blog/2010/09-05-struts1-ajax-1.jpg)
 
-![struts1-ajax-2](//siteimgs.cn-sh2.ufileos.com/2010/09-05-struts1-ajax-2.jpg)
+![struts1-ajax-2](//lisenhui.gitee.io/imgs/blog/2010/09-05-struts1-ajax-2.jpg)
 
-![struts1-ajax-3](//siteimgs.cn-sh2.ufileos.com/2010/09-05-struts1-ajax-3.jpg)
+![struts1-ajax-3](//lisenhui.gitee.io/imgs/blog/2010/09-05-struts1-ajax-3.jpg)
 
 
 See the above effect, do you also want to show their skills, then hurry to do it, I believe that with the above code tips to do a DEMO should not be very difficult, if there is any problem you can leave a message to me.

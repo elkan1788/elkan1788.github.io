@@ -23,7 +23,7 @@ Add Github Action  to your blog project after an unwitting glance at a [Git Page
 
 When you generate keys locallyusing the ssh-keygen command,don'tuse a password, just keep tapping the enter key while executing the'ssh-keygen-t  rsa  -C 'youremail@example.com' command. 
 
-![gen_ssh_key.png](//siteimgs.cn-sh2.ufileos.com/2021/02-25-gen_ssh_key.png)
+![gen_ssh_key.png](//lisenhui.gitee.io/imgs/blog/2021/02-25-gen_ssh_key.png)
 
 ### 2.2 Gitee Related
 
@@ -31,15 +31,15 @@ Github and  Gitee are recommended to use the same key, and they are set up as fo
 
 1.Github: [Settings -> SSH and GPG keys](https://github.com/settings/keys)
 
-![add_ssh_key_github.png](//siteimgs.cn-sh2.ufileos.com/2021/02-25-add_ssh_key_github.png)
+![add_ssh_key_github.png](//lisenhui.gitee.io/imgs/blog/2021/02-25-add_ssh_key_github.png)
 
 2.Gitee: "Security Settings - SSH Public Key" (https://gitee.com/profile/sshkeys).
 
-![add_ssh_key_gitee.png](//siteimgs.cn-sh2.ufileos.com/2021/02-25-add_ssh_key_gitee.png)
+![add_ssh_key_gitee.png](//lisenhui.gitee.io/imgs/blog/2021/02-25-add_ssh_key_gitee.png)
 
 Another important point is, be sure to pay attention to Gitee's public number:  giteecom, or the github workflow execution will fail later. 
 
-![wechat_notification.png](//siteimgs.cn-sh2.ufileos.com/2021/02-25-wechat_notification.png)
+![wechat_notification.png](//lisenhui.gitee.io/imgs/blog/2021/02-25-wechat_notification.png)
 
 ### 2.3 Github encryption settings
 
@@ -97,7 +97,7 @@ The effect of the operation of the 2.4
 
 When you push the code to the Github  repository, you'll have automatically sync the code to the Gitee repository, and you'll re-create the static page service, saving the process of manual intervention. 
 
-![02-25-sync-2-gitee-flow-01.png](//siteimgs.cn-sh2.ufileos.com/2021/02-25-sync-2-gitee-flow-01.png)
+![02-25-sync-2-gitee-flow-01.png](//lisenhui.gitee.io/imgs/blog/2021/02-25-sync-2-gitee-flow-01.png)
 
 
 ## 3.Summary

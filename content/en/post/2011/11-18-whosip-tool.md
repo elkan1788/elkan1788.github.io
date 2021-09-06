@@ -43,10 +43,10 @@ After reading its parameter description and call method, selected one of the jsF
 
 The effect is as follows:
 
-![whoisip-api-1](//siteimgs.cn-sh2.ufileos.com/2011/11-18-whoisip-api-1.png)
+![whoisip-api-1](//lisenhui.gitee.io/imgs/blog/2011/11-18-whoisip-api-1.png)
 
 The parameters are as follows:
 
-![whoisip-api-2](//siteimgs.cn-sh2.ufileos.com/2011/11-18-whoisip-api-2.png)
+![whoisip-api-2](//lisenhui.gitee.io/imgs/blog/2011/11-18-whoisip-api-2.png)
 
 There is no understanding of the place, you can leave a message to discuss.
