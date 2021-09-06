@@ -8,7 +8,7 @@
 
 [中文](README.zh.md) | [English](README.md)
 
-![my-hugo-blog](h//lisenhui.gitee.io/imgs/blog/hugo-logo.png)
+![my-hugo-blog](https://lisenhui.gitee.io/imgs/blog/hugo-logo.png)
 
 
 # Use Hugo framework rebuild my blog site.
@@ -18,7 +18,7 @@ I'm a Geek, so like try the new things which is better. But maybe it's my last w
 
 # Preview：
 
-![my-hugo-blog](//lisenhui.gitee.io/imgs/blog/my-hugo-blog.png)
+![my-hugo-blog](https://lisenhui.gitee.io/imgs/blog/my-hugo-blog.png)
 
 ## License
 [MIT License](LICENSE).
