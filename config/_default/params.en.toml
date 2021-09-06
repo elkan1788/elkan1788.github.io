@@ -8,6 +8,12 @@ DateFormat = "2006-01-02"
 YearFormat = "2006年"
 MonthFormat = "01-02"
 
+[Footer]
+  StorageLink = "https://www.gitee.com/"
+  StorageName = "Gitee Storage"
+  ICPLink = "http://beian.miit.gov.cn"
+  ICPNo = "ICP.NO 18047355"
+
 [[Socials]]
   Name = "GitHub"
   Icon = "github"
