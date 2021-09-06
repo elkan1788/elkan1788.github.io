@@ -1,13 +1,14 @@
-![GitHub repo size](https://img.shields.io/github/repo-size/elkan1788/elkan1788.github.io)
-![GitHub language count](https://img.shields.io/github/languages/count/elkan1788/elkan1788.github.io)
-![GitHub branch checks state](https://img.shields.io/github/checks-status/elkan1788/elkan1788.github.io/main)
-[![Build Status](https://api.travis-ci.com/elkan1788/elkan1788.github.io.svg?branch=hugo)](https://travis-ci.com/elkan1788/elkan1788.github.io)
-![GitHub deployments](https://img.shields.io/github/deployments/elkan1788/elkan1788.github.io/github-pages)
-![GitHub](https://img.shields.io/github/license/elkan1788/elkan1788.github.io)
+[![Build Hugo Version](https://img.shields.io/static/v1?label=Hugo&message=0.87.0&color=%23FF4088&logo=hugo)](https://github.com/gohugoio/hugo/releases/tag/v0.87.0)
+![GitHub language count](https://img.shields.io/github/languages/count/elkan1788/elkan1788.github.io?logo=LibraryThing)
+![GitHub branch checks state](https://img.shields.io/github/checks-status/elkan1788/elkan1788.github.io/main?label=Check%20State&logo=Checkmarx)
+[![Build Status](https://img.shields.io/travis/com/elkan1788/elkan1788.github.io/hugo?label=Building&logo=Travis%20CI)](https://travis-ci.com/elkan1788/elkan1788.github.io)
+[![GitHub deployments](https://img.shields.io/github/deployments/elkan1788/elkan1788.github.io/github-pages?label=gh-pg&logo=GitHub)](https://github.com/elkan1788/elkan1788.github.io/tree/gh-pg)
+![GitHub repo size](https://img.shields.io/github/repo-size/elkan1788/elkan1788.github.io?label=Repo%20Size&logo=Files)
+![GitHub](https://img.shields.io/github/license/elkan1788/elkan1788.github.io?label=License&logo=WebAuthn)
 
 [中文](README.zh.md) | [English](README.md)
 
-![my-hugo-blog](//siteimgs.cn-sh2.ufileos.com/hugo-logo.png)
+![my-hugo-blog](//lisenhui.gitee.io/imgs/blog/hugo-logo.png)
 
 # 使用Hugo引擎重建个人博客
 
@@ -15,17 +16,7 @@
 
 # 预览：
 
-![my-hugo-blog](//siteimgs.cn-sh2.ufileos.com/my-hugo-blog.png)
-
-
-# 使用UCloud云存储
-
-下载工具：[US3 Browser](https://us3-release.cn-bj.ufileos.com/us3cli/us3cli-windows.exe)
-
-![us3-browser](//siteimgs.cn-sh2.ufileos.com/us3-browser.png)
-
-> 你可以通过拖拽的方式快速上传图片或者是文件夹。
-
+![my-hugo-blog](//lisenhui.gitee.io/imgs/blog/my-hugo-blog.png)
 
 ## 许可证
 [MIT License](LICENSE).

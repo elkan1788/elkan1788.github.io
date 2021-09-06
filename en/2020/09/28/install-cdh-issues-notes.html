@@ -154,13 +154,13 @@ Several pit records during CDH6 installation
 <h2 id=1-cdhs-metadata-initialization-script>1. CdH&rsquo;s metadata initialization script</h2>
 <p>As everyone who has installed the CDH environment knows, after the CM installation is complete, there is a script named:&lsquo;scm_prepare_database.sh&rsquo;, which is officially used to initialize the CDH meta-database, so everyone is sure to move the execution step by step. But I don&rsquo;t know if you&rsquo;ve ever tried to figure out if there&rsquo;s really any work behind it. In other words, what&rsquo;s wrong with not executing this script?</p>
 <p>In past experience installing CDH environments, CM and MySQL databases have generally been installed on the same machine (non-production environment). But this time it happens to be built in a cloud environment, so MySQL is directly using the cloud service, the result is that after installing cm, executing the &lsquo;scm_prepare_database.sh&rsquo; script, the start-up CM did not appear the expected success message. Looking at the startup log found the following error:</p>
-<p><img src=//siteimgs.cn-sh2.ufileos.com/2020/09-28-install-cm-scm_version_table_not_exist.png alt=scm_version_table_not_exist></p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2020/09-28-install-cm-scm_version_table_not_exist.png alt=scm_version_table_not_exist></p>
 <p>Tip &lsquo;scm.cm_version&rsquo;table does not exist, is there a problem before executing scm_prepare_database.sh&rsquo;s ' script? The script is then re-executed to determine that the output was successful, but the CM boot still fails. At that time really wondered, this CM meta-database is at what stage of initialization?</p>
 <p>After some attempt and validation, confirm that the &lsquo;scm_prepare_database.sh&rsquo; script does not initialize the CM&rsquo;s metadata database, but simply generatesa&rsquo;db.properties&rsquo; file,and creates a database with a specified name, which is performed when the CMstarts for the first time.</p>
 <p>Conclusion: The installation of CM does not necessarily require the execution of a &lsquo;scm_prepare_database.sh&rsquo; script, you can manually create a databaseand configure a &lsquo;db.properties&rsquo;file.</p>
 <h2 id=2-mysql-57-plus-version-issue>2. MySQL 5.7 plus version issue</h2>
 <p>The problem encountered in step 1 earlier, in fact, when analyzing the log later, found that the root cause was that some DDL syntax did not support the initialization when CM performed the database initialization, which resulted in the initialization not being completed. Some of the error logs are as follows:</p>
-<p><img src=//siteimgs.cn-sh2.ufileos.com/2020/09-28-install-cm-init-ddl-err.png alt=install-cm-init-ddl-err></p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2020/09-28-install-cm-init-ddl-err.png alt=install-cm-init-ddl-err></p>
 <p>However, CM&rsquo;s prompt information is not friendly, did not tell the CM metadata database initialization is completed, resulting in positioning problems a bit difficult challenges, and then manually adjust the DDL syntax to complete the initialization work.</p>
 <p>The lesson here is that under normal circumstances the CM meta-database generates a table of 54 sheets, which can be used as a way to determine whether the CM initialization work is complete.</p>
 <p>Another problem is MySQL GTID, which causes the build table to fail all the time:</p>
@@ -170,7 +170,7 @@ Statement violates GTID consistency: CREATE TABLE ... SELECT.
 <p>It is said that the 2 parameter configuration is to be turned off, but the system configuration parameter modification is not supported due to the use of database components on the cloud. Finally, we had to set up a MySQL service on-premises, wait for the CM initialization work to be completed, and then sync the table structure and data to the cloud database, the problem can be solved.</p>
 <h2 id=3-hosts-profile-error>3. Hosts profile error</h2>
 <p>When installing the Yarn service component, you always report that the JAR package that uploaded Mapreduce failed, and viewing the log information indicates that the HDFS directory could not be created, informing you that there is no permission to execute. So go to temporarily adjust the directory permissions, but disappointed that the installation is still a failure, or report the same error.</p>
-<p><img src=//siteimgs.cn-sh2.ufileos.com/2020/09-28-install-cm-init-mapr-err.png alt=install-cm-init-mapr-err></p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2020/09-28-install-cm-init-mapr-err.png alt=install-cm-init-mapr-err></p>
 <p>When I reanalysed the log, I found that there appeared to be something wrong with HostName&rsquo;s writing, so I compared the Hosts file with the machine&rsquo;s HostName,and theresults were really different. Since the Hadoop node machine was ready, the cloud-on-cloud synchronization creation feature was used to automatically add the corresponding serial number after HostName, but I didn&rsquo;t expect the serial number to be a 4-digit number, but only 3 digits were written when filling it in the Hosts file. It&rsquo;s true: &ldquo;It&rsquo;s a thousand miles, it&rsquo;s a thousand miles.&rdquo; When the Hosts file configuration is re-adjusted, all installations and startups succeed.</p>
 <p>Unfinished updates&mldr;</p>
 </div>
@@ -306,9 +306,6 @@ Links
 </li>
 <li class=links-of-blogroll-item>
 <a href=https://www.liaoxuefeng.com/ title=LiaoXueFeng target=_blank>LiaoXueFeng</a>
-</li>
-<li class=links-of-blogroll-item>
-<a href=https://qybit.gitee.io/ title="Qybit's Blog" target=_blank>Qybit's Blog</a>
 </li>
 </ul>
 </div>

@@ -158,7 +158,7 @@ Copy &lsquo;javacomm.jar&rsquo; to &lsquo;X:\jre\lib\ext&rsquo; directory below;
 :: Copy &lsquo;javax.comm.properties&rsquo; to &lsquo;X:\jre.lib&rsquo; directory below;
 Copy &lsquo;win32com.dll&rsquo; to &lsquo;X:\jre&rsquo;bin&rsquo; directory below;
 :: Update the JDK environment inside the IDE, as shown below:</p>
-<p><img src=//siteimgs.cn-sh2.ufileos.com/2012/03-24-java-hard-rsr232-1.png alt=java-hard-rsr232-1></p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2012/03-24-java-hard-rsr232-1.png alt=java-hard-rsr232-1></p>
 <p>Then there is the hardware virtual environment installation virtual serial port, here I use VSPD6.0 (attachment provides download), after installation to start VSPD to add the ports we need, note that here is the way to add by group, such as COM1 and COM2 is a set of simultaneous additions, and so on.</p>
 <p>Once all environments are ready, let&rsquo;s take a quick look at what comm .jar content. From the javadoc of the comm API alone, SUM provides us with only the following 13 classes or interfaces, as follows:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>
@@ -185,7 +185,7 @@ CommPortIdentifier portId<span style=color:#666>;</span>
 <span style=color:#666>}</span>
 
 </code></pre></div><p>After running the code, the console has the correct port to output (see figure below), indicating that all environments are ok to go down, otherwise check.</p>
-<p><img src=//siteimgs.cn-sh2.ufileos.com/2012/03-24-java-hard-rsr232-2.png alt=java-hard-rsr232-2></p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2012/03-24-java-hard-rsr232-2.png alt=java-hard-rsr232-2></p>
 <p>Finally, the problem of interaction with serial data is to be solved. The main difficulty with this is data reading, because we don&rsquo;t know when the port will have data coming or how long it will be. Typically, serial communication applications have two modes, one is to implement the SerialPortEventListener interface, to listen for and handle various serial events, and the other is to establish a separate receiving thread dedicated to receiving data. After referring to the code of many older generations, the following is the first way to write a simple assistant program, the specific implementation of the detailed code, as follows:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>
 <span style=color:#a2f;font-weight:700>package</span> <span style=color:#00f;font-weight:700>com.elkan1788.view</span><span style=color:#666>;</span>
@@ -623,14 +623,14 @@ CommPortIdentifier portId<span style=color:#666>;</span>
 
 </code></pre></div><p>The code is written, press the F11 key to enter the debugging state, everything is working well, please see figure:</p>
 <p>:: Start the interface</p>
-<p><img src=//siteimgs.cn-sh2.ufileos.com/2012/03-24-java-hard-rsr232-3.png alt=java-hard-rsr232-3></p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2012/03-24-java-hard-rsr232-3.png alt=java-hard-rsr232-3></p>
 <p>Port detection</p>
-<p><img src=//siteimgs.cn-sh2.ufileos.com/2012/03-24-java-hard-rsr232-4.png alt=java-hard-rsr232-4></p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2012/03-24-java-hard-rsr232-4.png alt=java-hard-rsr232-4></p>
 <p>:: Communication testing</p>
-<p><img src=//siteimgs.cn-sh2.ufileos.com/2012/03-24-java-hard-rsr232-5.png alt=java-hard-rsr232-5></p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2012/03-24-java-hard-rsr232-5.png alt=java-hard-rsr232-5></p>
 <p>Finally take the time to beautify the program, the effect is more beautiful</p>
-<p><img src=//siteimgs.cn-sh2.ufileos.com/2012/03-24-java-hard-rsr232-6.png alt=java-hard-rsr232-6></p>
-<p><img src=//siteimgs.cn-sh2.ufileos.com/2012/03-24-java-hard-rsr232-7.png alt=java-hard-rsr232-7></p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2012/03-24-java-hard-rsr232-6.png alt=java-hard-rsr232-6></p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2012/03-24-java-hard-rsr232-7.png alt=java-hard-rsr232-7></p>
 <p>PS: (<a href=http://dl.iteye.com/topics/download/80f67e6e-45eb-31ff-8086-da09f8d5762e>http://dl.iteye.com/topics/download/80f67e6e-45eb-31ff-8086-da09f8d5762e</a>)</p>
 </div>
 <footer class=post-footer>
@@ -765,9 +765,6 @@ Links
 </li>
 <li class=links-of-blogroll-item>
 <a href=https://www.liaoxuefeng.com/ title=LiaoXueFeng target=_blank>LiaoXueFeng</a>
-</li>
-<li class=links-of-blogroll-item>
-<a href=https://qybit.gitee.io/ title="Qybit's Blog" target=_blank>Qybit's Blog</a>
 </li>
 </ul>
 </div>
