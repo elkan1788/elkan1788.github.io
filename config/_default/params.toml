@@ -19,9 +19,9 @@
 
 [Statis]
   BusuanziCounter = true
-  CNNZSiteId = "Your CNNZSiteId"
+#  CNNZSiteId = "Your CNNZSiteId"
   BaiduSiteId = "Your BaiduSiteId"
-  GoogleSiteId = "Your GoogleSiteId"
+#  GoogleSiteId = "Your GoogleSiteId"
 
 [OnlineIM]
   Enable = true
