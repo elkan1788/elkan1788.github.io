@@ -1,8 +1,0 @@
-{
-  "src_dir":"which folder you want to upload",
-  "bucket":"bucket name",
-  "ignore_dir":true, // Don't add local path info
-  "log_stdout":true  // Out upload on console window
-}
-
-// More info releate: https://github.com/qiniu/qshell/blob/master/docs/qupload.md
