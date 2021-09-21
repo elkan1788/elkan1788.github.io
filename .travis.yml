@@ -1,33 +1,26 @@
 language: go
-
 go:
 - 1.12.1
-
 git:
   submodules: false
-
 branches:
   only:
   - hugo
-
 addons:
   ssh_known_hosts:
   - github.com
-  - $TENCENT_CLOUD_SER
-
+  - "$TENCENT_CLOUD_SER"
 env:
 - HUGO_VERSION=0.87.0
-
 before_install:
 - ls -al ~/.ssh/
-- openssl aes-256-cbc -K $encrypted_a147f3e1ab06_key -iv $encrypted_a147f3e1ab06_iv 
+- openssl aes-256-cbc -K $encrypted_a147f3e1ab06_key -iv $encrypted_a147f3e1ab06_iv
   -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
 - eval $(ssh-agent)
 - ssh-add ~/.ssh/id_rsa
 - export TZ='Asia/Shanghai'
 - export LANG="zh_CN.UTF-8"
-
 install:
 - wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
   -nd -P soft
@@ -36,18 +29,15 @@ install:
 - export PATH=$PATH:$PWD/soft
 - hugo version
 - echo 'Hugo engine env is ready.'
-
 script:
 - git submodule update --init --recursive
 - rm -rf public
 - sh .travis/replace_params_value.sh
 - hugo -t hugo-theme-next -d public/
-
 before_deploy:
 - cp README.md ./public/README.md
 - cp README.zh.md ./public/README.zh.md
 - cp LICENSE ./public/LICENSE
-
 deploy:
   provider: pages
   skip-cleanup: true
