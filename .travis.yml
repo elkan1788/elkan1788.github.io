@@ -19,13 +19,13 @@ env:
 - HUGO_VERSION=0.87.0
 
 before_install:
-- pwd
-- ls -al
-- ls -al .travis/
+- mkdir ~/.ssh
 - touch ~/.ssh/id_rsa
-- openssl aes-256-cbc -K $encrypted_a147f3e1ab06_key -iv $encrypted_a147f3e1ab06_iv
-  -in .travis/id_rsa.enc -out ~\/.ssh/id_rsa -d
+- ls -al ~/.ssh/
+- openssl aes-256-cbc -K $encrypted_a147f3e1ab06_key -iv $encrypted_a147f3e1ab06_iv -in .travis/id_rsa.enc -out ~\/.ssh/id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
+- eval $(ssh-agent)
+- ssh-add ~/.ssh/id_rsa
 - export TZ='Asia/Shanghai'
 - export LANG="zh_CN.UTF-8"
 
