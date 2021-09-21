@@ -1,59 +1,65 @@
 language: go
 
 go:
-  - 1.12.1
+- 1.12.1
 
 git:
   submodules: false
 
 branches:
   only:
-    - hugo
+  - hugo
 
 addons:
   ssh_known_hosts:
-    - github.com
+  - github.com
+  - $TENCENT_CLOUD_SER
 
 env:
-  - HUGO_VERSION=0.87.0
+- HUGO_VERSION=0.87.0
 
 before_install:
-  - export TZ='Asia/Shanghai'
-  - export LANG="zh_CN.UTF-8"
-#  - sed -i 's/git@github.com:/https:\/\/github.com\//' .gitmodules
+- openssl aes-256-cbc -K $encrypted_a147f3e1ab06_key -iv $encrypted_a147f3e1ab06_iv
+  -in .travis/id_rsa.enc -out ~\/.ssh/id_rsa -d
+- chmod 600 ~/.ssh/id_rsa
+- export TZ='Asia/Shanghai'
+- export LANG="zh_CN.UTF-8"
 
 install:
-  - wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz -nd -P soft
-  - tar -xzvf soft/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz -C soft
-  - chmod +x soft/hugo
-  - export PATH=$PATH:$PWD/soft
-  - hugo version  
-  - echo 'Hugo engine env is ready.'
+- wget https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz
+  -nd -P soft
+- tar -xzvf soft/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz -C soft
+- chmod +x soft/hugo
+- export PATH=$PATH:$PWD/soft
+- hugo version
+- echo 'Hugo engine env is ready.'
 
 script:
-  - git submodule update --init --recursive
-  - rm -rf public
-  - sh .travis/replace_params_value.sh
-  - hugo -t hugo-theme-next -d public/
+- git submodule update --init --recursive
+- rm -rf public
+- sh .travis/replace_params_value.sh
+- hugo -t hugo-theme-next -d public/
 
 before_deploy:
-  - cp README.md ./public/README.md
-  - cp README.zh.md ./public/README.zh.md
-  - cp LICENSE ./public/LICENSE
+- cp README.md ./public/README.md
+- cp README.zh.md ./public/README.zh.md
+- cp LICENSE ./public/LICENSE
 
 deploy:
   provider: pages
   skip-cleanup: true
   local-dir: public
   target-branch: main
-  github-token: $GITHUB_PAGES
+  github-token: "$GITHUB_PAGES"
   fqdn: lisenhui.cn
   keep-history: true
-  commit_message: "Update blog site by TravisCI with build $TRAVIS_BUILD_ID"
+  commit_message: Update blog site by TravisCI with build $TRAVIS_BUILD_ID
   on:
     branch: hugo
-
-after_deploy:    
-  - pwd
-  - ls -al 
-  - echo "Deploy blog article success."
+after_deploy:
+- pwd
+- ls -al
+- echo "Deploy blog article success."
+- echo "Deploy to Tencent cloud server."
+- ssh lighthouse@$TENCENT_CLOUD_SER "sh ~/deploy.sh"
+- echo "Deploy to Tencent cloud server successfully."
