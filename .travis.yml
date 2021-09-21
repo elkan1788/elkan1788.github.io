@@ -13,9 +13,9 @@ addons:
 env:
 - HUGO_VERSION=0.87.0
 before_install:
-- ls -al ~/.ssh/
 - openssl aes-256-cbc -K $encrypted_a147f3e1ab06_key -iv $encrypted_a147f3e1ab06_iv
-  -in .travis/id_rsa.enc -out ~/.ssh/id_rsa -d
+  -in id_rsa.enc -out ~\/.ssh/id_rsa -d
+- ls -al ~/.ssh/
 - chmod 600 ~/.ssh/id_rsa
 - eval $(ssh-agent)
 - ssh-add ~/.ssh/id_rsa
