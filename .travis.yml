@@ -13,14 +13,10 @@ addons:
 env:
 - HUGO_VERSION=0.87.0
 before_install:
-- openssl aes-256-cbc -K $encrypted_39c1b18630f7_key -iv $encrypted_39c1b18630f7_iv
-  -in .travis/id_rsa.enc -out id_rsa -d
-#- openssl aes-256-cbc -K $encrypted_a147f3e1ab06_key -iv $encrypted_a147f3e1ab06_iv
-#  -in .travis/id_rsa.enc -out .travis/id_rsa -d
-#- cp .travis/id_rsa ~/.ssh/id_rsa
-- chmod 600 id_rsa
+- openssl aes-256-cbc -K $encrypted_39c1b18630f7_key -iv $encrypted_39c1b18630f7_iv -in .travis/id_rsa.enc -out /tmp/id_rsa -d
+- chmod 600 /tmp/id_rsa
 - eval $(ssh-agent)
-- ssh-add id_rsa
+- ssh-add /tmp/id_rsa
 - ls -al ~/.ssh/
 - export TZ='Asia/Shanghai'
 - export LANG="zh_CN.UTF-8"
