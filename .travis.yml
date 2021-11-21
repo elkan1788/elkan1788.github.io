@@ -14,7 +14,7 @@ env:
 - HUGO_VERSION=0.87.0
 before_install:
 - openssl aes-256-cbc -K $encrypted_39c1b18630f7_key -iv $encrypted_39c1b18630f7_iv
-  -in id_rsa.enc -out /tmp/id_rsa -d
+  -in .travis/id_rsa.enc -out /tmp/id_rsa -d
 - chmod 600 /tmp/id_rsa
 - eval $(ssh-agent)
 - ssh-add /tmp/id_rsa
