@@ -1,3 +1,8 @@
+jobs:
+  include:
+  - stage: One
+    os: linux
+    dist: focal
 language: go
 go:
 - 1.12.1
