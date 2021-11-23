@@ -19,7 +19,7 @@ env:
 - HUGO_VERSION=0.87.0
 before_install:
 - pwd
-- ll
+- ls -al
 - openssl aes-256-cbc -K $encrypted_7bb00afde559_key -iv $encrypted_7bb00afde559_iv
   -in .travis/id_rsa_139.enc -out /tmp/id_rsa -d
 - chmod 600 /tmp/id_rsa
