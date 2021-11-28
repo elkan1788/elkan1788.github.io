@@ -19,13 +19,9 @@ env:
 - HUGO_VERSION=0.87.0
 before_install:
 - openssl aes-256-cbc -K $encrypted_00a94c4269e8_key -iv $encrypted_00a94c4269e8_iv
-  -in .travis/id_rsa_139.enc -out /tmp/id_rsa -d
-- chmod 600 /tmp/id_rsa
-- eval $(ssh-agent)
-- ssh-add /tmp/id_rsa
-- ls -al ~/.ssh/
-- cp /tmp/id_rsa ~/.ssh/
+  -in .travis/id_rsa_139.enc -out ~/.ssh/id_rsa -d
 - chmod 600 ~/.ssh/id_rsa
+- echo -e "Host $TENCENT_CLOUD_SER\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - export TZ='Asia/Shanghai'
 - export LANG="zh_CN.UTF-8"
 install:
@@ -62,6 +58,6 @@ after_deploy:
 - echo "Deploy blog article success."
 - echo "Deploy to Tencent cloud server."
 - ls -al ~/.ssh/
-- cat ~/.ssh/known_hosts
-- ssh lighthouse@$TENCENT_CLOUD_SER "sh ~/deploy.sh"
+- cat ~/.ssh/config
+- ssh -o "StrictHostKeyChecking no" -i id_rsa lighthouse@$TENCENT_CLOUD_SER "sh ~/deploy.sh"
 - echo "Deploy to Tencent cloud server successfully."
