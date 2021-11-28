@@ -20,7 +20,7 @@ env:
 before_install:
 - pwd
 - ls -al
-- openssl aes-256-cbc -K $encrypted_7bb00afde559_key -iv $encrypted_7bb00afde559_iv
+- openssl aes-256-cbc -K $encrypted_00a94c4269e8_key -iv $encrypted_00a94c4269e8_iv
   -in .travis/id_rsa_139.enc -out /tmp/id_rsa -d
 - chmod 600 /tmp/id_rsa
 - eval $(ssh-agent)
