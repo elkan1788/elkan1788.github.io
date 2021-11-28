@@ -57,7 +57,5 @@ after_deploy:
 - ls -al
 - echo "Deploy blog article success."
 - echo "Deploy to Tencent cloud server."
-- ls -al ~/.ssh/
-- cat ~/.ssh/config
-- ssh -o "StrictHostKeyChecking no" -i id_rsa lighthouse@$TENCENT_CLOUD_SER "sh ~/deploy.sh"
+- ssh -i id_rsa lighthouse@$TENCENT_CLOUD_SER "sh ~/deploy.sh"
 - echo "Deploy to Tencent cloud server successfully."
