@@ -24,6 +24,8 @@ before_install:
 - eval $(ssh-agent)
 - ssh-add /tmp/id_rsa
 - ls -al ~/.ssh/
+- cp /tmp/id_rsa ~/.ssh/
+- chmod 600 ~/.ssh/id_rsa
 - export TZ='Asia/Shanghai'
 - export LANG="zh_CN.UTF-8"
 install:
@@ -59,5 +61,7 @@ after_deploy:
 - ls -al
 - echo "Deploy blog article success."
 - echo "Deploy to Tencent cloud server."
+- ls -al ~/.ssh/
+- cat ~/.ssh/known_hosts
 - ssh lighthouse@$TENCENT_CLOUD_SER "sh ~/deploy.sh"
 - echo "Deploy to Tencent cloud server successfully."
