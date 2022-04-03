@@ -20,11 +20,7 @@ env:
 before_install:
 - openssl aes-256-cbc -K $encrypted_616d5dfb4ec4_key -iv $encrypted_616d5dfb4ec4_iv
   -in .travis/id_rsa_travis.enc -out ~/.ssh/id_rsa -d
-#- openssl aes-256-cbc -K $encrypted_00a94c4269e8_key -iv $encrypted_00a94c4269e8_iv
-#  -in .travis/id_rsa_139.enc -out ~/.ssh/id_rsa -d
 - chmod 700 ~/.ssh/id_rsa
-- ssh-agent -s
-- ssh-add ~/.ssh/id_rsa
 - echo -e "Host $TENCENT_CLOUD_SER\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - export TZ='Asia/Shanghai'
 - export LANG="zh_CN.UTF-8"
