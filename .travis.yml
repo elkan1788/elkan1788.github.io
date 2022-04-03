@@ -14,12 +14,13 @@ branches:
 addons:
   ssh_known_hosts:
   - github.com
-  - "$TENCENT_CLOUD_SER"
+  - $TENCENT_CLOUD_SER
 env:
 - HUGO_VERSION=0.87.0
 before_install:
 - openssl aes-256-cbc -K $encrypted_616d5dfb4ec4_key -iv $encrypted_616d5dfb4ec4_iv
   -in .travis/id_rsa_travis.enc -out ~/.ssh/id_rsa -d
+- chmod chmod o=rw-,go=r-- ~/.ssh/id_rsa
 - cat ~/.ssh/known_hosts
 - ssh-keyscan $TENCENT_CLOUD_SER >> ~/.ssh/known_hosts
 - cat ~/.ssh/known_hosts
