@@ -13,13 +13,15 @@ branches:
   - hugo
 addons:
   ssh_known_hosts:
-  - github.com
+  - secure: T/Y3SvPuJvHPyKDHkq/2/toWbNBXqAwRfOHc1w78gBmnwU9iVF/IxAlYTLp59bXK3EfRXcSbm8eBQio3PDJUeR8JxlglFmxUQyCKR3K/SDvD4a5t/B6bttqQBhkLYp7hVOTYEPvwH8CTXs6BP1ZkPfxwQh20CO88RMJ29ZSodDXlryw3Be920vCc+FCJ7+pQTUCUpfCd11XuhoTkhZ1opv585Af7BG254zq9J4mnep9m15awgQZKHL4y+oGsat+h/CeR6V9tBj+qK2V5IgWRntyRf/RwiOMuAn7+sYfCga1mjXOmdnCJCFURGdlU2cU3Kj1QOYPEut8jh63iNeudVk/HAxYUMlOTMeYgsju2I191DJXQ2Alqs04GCMfU9f3bo04sQdkdlcpWxmb5cidhL+UJ+/76aNRGKLHlFRMhNcqAu1UNTeknja7NjWBsuD23Ux3zZNPBtS1bla+dXi9KIHtZGIoBqWQlKmYytPlFLl0/Fr2KrAAXfFqvONZBHy4xm/3PkNoMmmuVLEyJHRlqKNJDiUfMnXL/ttrsYhuAX/BRNXrG6zBuVLlZWjFwaFtSylyaSZetxqcMbro1bZFEuk5D3sHyJbcmwt+exAmhXFwzOqUMBTr0/vqqkWCp1zq2IUhrbH5h0upe7OtxxZNNvCiPD2a7hFQ/gj15+DmtWeQ=
 env:
 - HUGO_VERSION=0.87.0
 before_install:
 - openssl aes-256-cbc -K $encrypted_616d5dfb4ec4_key -iv $encrypted_616d5dfb4ec4_iv
   -in .travis/id_rsa_travis.enc -out ~/.ssh/id_rsa -d
+- cat ~/.ssh/known_hosts
 - ssh-keyscan $TENCENT_CLOUD_SER >> ~/.ssh/known_hosts
+- cat ~/.ssh/known_hosts
 - chmod 600 ~/.ssh/id_rsa
 - export TZ='Asia/Shanghai'
 - export LANG="zh_CN.UTF-8"
