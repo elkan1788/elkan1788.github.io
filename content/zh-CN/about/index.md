@@ -23,7 +23,7 @@ url: /about.html
 
 凡梦星尘(elkan1788)
 
-留言箱： elkan1788@gmail.com
+留言箱： elkan1788@139.com
 
 
 **历史正文**
