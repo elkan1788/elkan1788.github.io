@@ -57,5 +57,5 @@ after_deploy:
 - ls -al
 - echo "Deploy blog article success."
 - echo "Deploy to Tencent cloud server."
-- ssh -i ~/.ssh/id_rsa lighthouse@$TENCENT_CLOUD_SER "sh ~/deploy.sh > ~/deploy.log"
+- ssh -i ~/.ssh/id_rsa lighthouse@$TENCENT_CLOUD_SER "sh ~/deploy.sh >> ~/deploy.log"
 - echo "Deploy to Tencent cloud server successfully."
