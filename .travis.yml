@@ -20,10 +20,10 @@ env:
 before_install:
 - openssl aes-256-cbc -K $encrypted_616d5dfb4ec4_key -iv $encrypted_616d5dfb4ec4_iv
   -in .travis/id_rsa_travis.enc -out ~/.ssh/id_rsa -d
-- chmod chmod o=rw-,go=r-- ~/.ssh/id_rsa
 - cat ~/.ssh/known_hosts
 - ssh-keyscan $TENCENT_CLOUD_SER >> ~/.ssh/known_hosts
 - cat ~/.ssh/known_hosts
+- chmod o=rw-,go=r-- ~/.ssh/id_rsa
 - export TZ='Asia/Shanghai'
 - export LANG="zh_CN.UTF-8"
 install:
