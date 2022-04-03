@@ -19,7 +19,7 @@
 
 [Statis]
   BusuanziCounter = true
-#  CNNZSiteId = "Your CNNZSiteId"
+  CNNZSiteId = "Your CNNZSiteId"
   BaiduSiteId = "Your BaiduSiteId"
 #  GoogleSiteId = "Your GoogleSiteId"
 
