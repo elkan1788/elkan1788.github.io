@@ -39,7 +39,7 @@ before_deploy:
 - cp LICENSE ./public/LICENSE
 deploy:
   provider: pages
-  cleanup: true
+  skip-cleanup: true
   local-dir: public
   target-branch: main
   github-token: "$GITHUB_PAGES"
