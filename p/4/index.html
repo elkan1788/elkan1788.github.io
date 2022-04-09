@@ -104,6 +104,56 @@
 <article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
 <header class=post-header>
 <h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/2017/12/29/axure-datalist-table.html itemprop=url>
+Axure教程：实现表格数据展示
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>时间：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-12-29">
+2017-12-29
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分类：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/categories/axure itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>Axure</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>719 字</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>2分钟</span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>通常在系统管理后台中，使用列表（表格）形式展示数据是最为常见的方式。而在使用Axure设计产品原型时想实现这个数据列表却不太容易，或许常见的做法就是使用矩形拼凑起来，还有就是直接使用表格控件来布局。但是这都不太方便，首先就是布局麻烦，其次就是数据修改比较麻烦。接下来给大家介绍下如何使用表格+中继器控件实现数据列表。</p>
+</div>
+<div class="post-more-link text-center">
+<a class=btn href=https://lisenhui.cn/2017/12/29/axure-datalist-table.html rel=contents>
+阅读全文 &#187;
+</a>
+</div>
+<footer class=post-footer><div class=post-eof></div></footer>
+</article>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
 <a class=post-title-link href=https://lisenhui.cn/2017/12/15/axure-lightbox-shade.html itemprop=url>
 Axure教程：实现动态的遮罩层
 </a>
@@ -341,65 +391,6 @@ Apache Nifi集群搭建及用kerberos实现用户认证
 </div>
 <footer class=post-footer><div class=post-eof></div></footer>
 </article>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lisenhui.cn/2017/10/17/hive2-jdbc-connector-issues.html itemprop=url>
-HiveServer2因JDBC版本引起的问题
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-time>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-10-17">
-2017-10-17
-</time>
-</span>
-<span class=post-category>
-&nbsp; | &nbsp;
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>分类：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a href=/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE itemprop=url rel=index style=text-decoration:underline>
-<span itemprop=name>大数据</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span>
-|
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>974 字</span>
-</span>
-<span>
-|
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>2分钟</span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>之前一直都是用<code>HDP</code>来搭建和管理<strong>Hadoop</strong>环境，在安装完成调试时也未曾出现过棘手的问题，但这次在<code>Centos6x</code>系统上布署好后却是遇到奇怪的问题：</p>
-<blockquote>
-<p>表面上看来<strong>Hive</strong>服务是正常运行的，进程运行正常，页面UI也正常，日志也没错误输出。简单的建表的语句都能执行，可偏偏在导入本地/<strong>HDFS</strong>数据时，便就抛出异常啦。错误的堆栈信息如下：</p>
-</blockquote>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &#39;OPTION SQL_SELECT_LIMIT=DEFAULT&#39; at line 1 
-</code></pre></div><blockquote>
-<p>另外一个问题在使用<strong>Ambari</strong>提供的<code>HiveView</code> UI进行HDFS数据导入提示文件不存在，错误信息如下：</p>
-</blockquote>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException Line 1:17 Invalid path &#39;&#39;/tmp/xxx/xxxxx.csv&#39;&#39;: No files matching path hdfs:/...
-</code></pre></div>
-</div>
-<div class="post-more-link text-center">
-<a class=btn href=https://lisenhui.cn/2017/10/17/hive2-jdbc-connector-issues.html rel=contents>
-阅读全文 &#187;
-</a>
-</div>
-<footer class=post-footer><div class=post-eof></div></footer>
-</article>
 </section>
 <nav class=pagination>
 <a class="extend prev" rel=prev href=/p/3/><i class="fa fa-angle-left"></i></a>
@@ -435,7 +426,7 @@ HiveServer2因JDBC版本引起的问题
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>53</span>
+<span class=site-state-item-count>54</span>
 <span class=site-state-item-name>日志</span>
 </a>
 </div>
@@ -447,7 +438,7 @@ HiveServer2因JDBC版本引起的问题
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>60</span>
+<span class=site-state-item-count>61</span>
 <span class=site-state-item-name>标签</span>
 </a>
 </div>

@@ -104,6 +104,66 @@
 <article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
 <header class=post-header>
 <h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/2021/02/22/git-extensions-push-fail.html itemprop=url>
+GitExtensions推送Github失败记录
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>时间：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-02-22">
+2021-02-22
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分类：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/categories/%E5%B7%A5%E5%85%B7 itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>工具</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>621 字</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>2分钟</span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<h2 id=问题现身>问题现身</h2>
+<p>555~，今天体验了一把安装最新程序的“快感”！！！</p>
+<p>在使用Git Extensisons推送最新写的文章到Github时，遇到了个SSH KEY认证无效的莫名错误。事情的发生是这样的：今天在首次打开Git Extensions软件时，它非常友好的弹出更新提示窗口，然后就手不自觉的点击了下确认按钮。结果更新好后，在推送文章到Github时就发生了如下面一样神奇的错误阻拦：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>
+FATAL ERROR<span style=color:#666>:</span> No supported authentication methods <span style=color:#00a000>available</span> <span style=color:#666>(</span>server sent<span style=color:#666>:</span> publickey<span style=color:#666>)</span>
+<span style=color:#a0a000>fatal:</span> Could not read from remote repository<span style=color:#666>.</span>
+
+Please make sure you have the correct access rights
+and the repository exists<span style=color:#666>.</span>
+
+</code></pre></div>
+</div>
+<div class="post-more-link text-center">
+<a class=btn href=https://lisenhui.cn/2021/02/22/git-extensions-push-fail.html rel=contents>
+阅读全文 &#187;
+</a>
+</div>
+<footer class=post-footer><div class=post-eof></div></footer>
+</article>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
 <a class=post-title-link href=https://lisenhui.cn/2021/01/24/github-personal-profile-card.html itemprop=url>
 Github个人信息卡片
 </a>
@@ -305,56 +365,6 @@ Github个人信息卡片
 </div>
 <footer class=post-footer><div class=post-eof></div></footer>
 </article>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lisenhui.cn/2020/08/15/blog-move-2-hugo-plan.html itemprop=url>
-博客引擎迁移至Hugo计划
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-time>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2020-08-15">
-2020-08-15
-</time>
-</span>
-<span class=post-category>
-&nbsp; | &nbsp;
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>分类：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a href=/categories/%E5%8D%9A%E5%AE%A2 itemprop=url rel=index style=text-decoration:underline>
-<span itemprop=name>博客</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span>
-|
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>439 字</span>
-</span>
-<span>
-|
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>1分钟</span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>近期发现自己的个人博客空间突然之间不能访问，一番查证后发现原来是之前使用的page服务商已经停止提供服务。无奈只好重新迁移回到Github Pages。但这就是又得到重新准备Hexo的相关开发环境，还得辛苦的调试才能成功。而恰好这时在网上有看到过Hugo静态站点引擎的文章，一款基于Go语言开发的极速框架，开发环境部署也简便快速。另外近期原有的域名也快到期了，正好就一起把博客空间整理整理吧。</p>
-</div>
-<div class="post-more-link text-center">
-<a class=btn href=https://lisenhui.cn/2020/08/15/blog-move-2-hugo-plan.html rel=contents>
-阅读全文 &#187;
-</a>
-</div>
-<footer class=post-footer><div class=post-eof></div></footer>
-</article>
 </section>
 <nav class=pagination>
 <a class="extend prev" rel=prev href=/><i class="fa fa-angle-left"></i></a>
@@ -390,7 +400,7 @@ Github个人信息卡片
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>53</span>
+<span class=site-state-item-count>54</span>
 <span class=site-state-item-name>日志</span>
 </a>
 </div>
@@ -402,7 +412,7 @@ Github个人信息卡片
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>60</span>
+<span class=site-state-item-count>61</span>
 <span class=site-state-item-name>标签</span>
 </a>
 </div>

@@ -104,6 +104,65 @@
 <article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
 <header class=post-header>
 <h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/2017/10/17/hive2-jdbc-connector-issues.html itemprop=url>
+HiveServer2因JDBC版本引起的问题
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>时间：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-10-17">
+2017-10-17
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分类：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>大数据</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>974 字</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>2分钟</span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>之前一直都是用<code>HDP</code>来搭建和管理<strong>Hadoop</strong>环境，在安装完成调试时也未曾出现过棘手的问题，但这次在<code>Centos6x</code>系统上布署好后却是遇到奇怪的问题：</p>
+<blockquote>
+<p>表面上看来<strong>Hive</strong>服务是正常运行的，进程运行正常，页面UI也正常，日志也没错误输出。简单的建表的语句都能执行，可偏偏在导入本地/<strong>HDFS</strong>数据时，便就抛出异常啦。错误的堆栈信息如下：</p>
+</blockquote>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &#39;OPTION SQL_SELECT_LIMIT=DEFAULT&#39; at line 1 
+</code></pre></div><blockquote>
+<p>另外一个问题在使用<strong>Ambari</strong>提供的<code>HiveView</code> UI进行HDFS数据导入提示文件不存在，错误信息如下：</p>
+</blockquote>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException Line 1:17 Invalid path &#39;&#39;/tmp/xxx/xxxxx.csv&#39;&#39;: No files matching path hdfs:/...
+</code></pre></div>
+</div>
+<div class="post-more-link text-center">
+<a class=btn href=https://lisenhui.cn/2017/10/17/hive2-jdbc-connector-issues.html rel=contents>
+阅读全文 &#187;
+</a>
+</div>
+<footer class=post-footer><div class=post-eof></div></footer>
+</article>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
 <a class=post-title-link href=https://lisenhui.cn/2017/09/09/azkaban-execute-jobs.html itemprop=url>
 Azkaban所支持的Job类型及示例
 </a>
@@ -334,56 +393,6 @@ DB-Lib error message 20002, severity 9:\nAdaptive Server connection failed\n&#39
 </div>
 <footer class=post-footer><div class=post-eof></div></footer>
 </article>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lisenhui.cn/2017/08/16/mac-install-pymssql-module.html itemprop=url>
-在Mac/Linux系统下安装pymssql模块
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-time>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-08-16">
-2017-08-16
-</time>
-</span>
-<span class=post-category>
-&nbsp; | &nbsp;
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>分类：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a href=/categories/python itemprop=url rel=index style=text-decoration:underline>
-<span itemprop=name>Python</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span>
-|
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>614 字</span>
-</span>
-<span>
-|
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>2分钟</span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>在非<code>Windows</code>环境下去访问，连接MSSQL数据，本身就是件苦差事来的。自写<code>Python</code>程序以来在<code>ORM</code>方面都是使用**<code>pyxxx</code>**的模块，果不其然连接MSSQL也有个模块叫<code>pymssql</code>，只是实际使用中并不是特别的顺利。如笔者所处的环境就是如此，开发环境为<code>OSX 10.11</code>，发布环境为<code>CentOS 6.4</code>，按官方的安装步骤实行下来，Linux环境是<code>OK</code>的，只是Mac环境下安装失败，错误的堆栈信息如下：</p>
-</div>
-<div class="post-more-link text-center">
-<a class=btn href=https://lisenhui.cn/2017/08/16/mac-install-pymssql-module.html rel=contents>
-阅读全文 &#187;
-</a>
-</div>
-<footer class=post-footer><div class=post-eof></div></footer>
-</article>
 </section>
 <nav class=pagination>
 <a class="extend prev" rel=prev href=/p/4/><i class="fa fa-angle-left"></i></a>
@@ -420,7 +429,7 @@ DB-Lib error message 20002, severity 9:\nAdaptive Server connection failed\n&#39
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>53</span>
+<span class=site-state-item-count>54</span>
 <span class=site-state-item-name>日志</span>
 </a>
 </div>
@@ -432,7 +441,7 @@ DB-Lib error message 20002, severity 9:\nAdaptive Server connection failed\n&#39
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>60</span>
+<span class=site-state-item-count>61</span>
 <span class=site-state-item-name>标签</span>
 </a>
 </div>

@@ -104,6 +104,57 @@
 <article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
 <header class=post-header>
 <h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/2022/02/12/use-sublime-txt-build-hugo-site.html itemprop=url>
+使用Sublime Text搭建Hugo使用环境
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>时间：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2022-02-12">
+2022-02-12
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分类：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/categories/%E5%B7%A5%E5%85%B7 itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>工具</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>786 字</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>2分钟</span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>自从捣鼓 <code>Hugo</code> 建站以来也有好长一段时间啦，但是之前的使用环境比较的 <em>“松散”</em> ，比如编辑博客文章用的是 <code>Sublime Text</code> 文本工具，再通过 <code>CMD</code> 命令行工具调用 <code>Hugo</code>执行本地预览，最后再
+使用 <code>Git Extension</code> 图形工具将博客文章发布到 <code>Github Pages</code> 供网友们浏览。 从整个操作流程上来看还是可以的，只是在过程中要切换不同的工具操作，而恰好看到 <code>Hugo</code> 官网上有个 <code>Sublime Text</code> 的<a href=https://gohugo.io/tools/editors/#sublime-text><strong>插件</strong></a>，于是乎有了重新整合 <code>Hugo</code> 使用环境的想法，哈。</p>
+</div>
+<div class="post-more-link text-center">
+<a class=btn href=https://lisenhui.cn/2022/02/12/use-sublime-txt-build-hugo-site.html rel=contents>
+阅读全文 &#187;
+</a>
+</div>
+<footer class=post-footer><div class=post-eof></div></footer>
+</article>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
 <a class=post-title-link href=https://lisenhui.cn/2021/07/09/make-next-theme-pithy2.html itemprop=url>
 优化Hugo Next主题的过程2
 </a>
@@ -304,66 +355,6 @@
 </div>
 <footer class=post-footer><div class=post-eof></div></footer>
 </article>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lisenhui.cn/2021/02/22/git-extensions-push-fail.html itemprop=url>
-GitExtensions推送Github失败记录
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-time>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-02-22">
-2021-02-22
-</time>
-</span>
-<span class=post-category>
-&nbsp; | &nbsp;
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>分类：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a href=/categories/%E5%B7%A5%E5%85%B7 itemprop=url rel=index style=text-decoration:underline>
-<span itemprop=name>工具</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span>
-|
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>621 字</span>
-</span>
-<span>
-|
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>2分钟</span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<h2 id=问题现身>问题现身</h2>
-<p>555~，今天体验了一把安装最新程序的“快感”！！！</p>
-<p>在使用Git Extensisons推送最新写的文章到Github时，遇到了个SSH KEY认证无效的莫名错误。事情的发生是这样的：今天在首次打开Git Extensions软件时，它非常友好的弹出更新提示窗口，然后就手不自觉的点击了下确认按钮。结果更新好后，在推送文章到Github时就发生了如下面一样神奇的错误阻拦：</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>
-FATAL ERROR<span style=color:#666>:</span> No supported authentication methods <span style=color:#00a000>available</span> <span style=color:#666>(</span>server sent<span style=color:#666>:</span> publickey<span style=color:#666>)</span>
-<span style=color:#a0a000>fatal:</span> Could not read from remote repository<span style=color:#666>.</span>
-
-Please make sure you have the correct access rights
-and the repository exists<span style=color:#666>.</span>
-
-</code></pre></div>
-</div>
-<div class="post-more-link text-center">
-<a class=btn href=https://lisenhui.cn/2021/02/22/git-extensions-push-fail.html rel=contents>
-阅读全文 &#187;
-</a>
-</div>
-<footer class=post-footer><div class=post-eof></div></footer>
-</article>
 </section>
 <nav class=pagination>
 <span class="page-number current">1</span>
@@ -398,7 +389,7 @@ and the repository exists<span style=color:#666>.</span>
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>53</span>
+<span class=site-state-item-count>54</span>
 <span class=site-state-item-name>日志</span>
 </a>
 </div>
@@ -410,7 +401,7 @@ and the repository exists<span style=color:#666>.</span>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>60</span>
+<span class=site-state-item-count>61</span>
 <span class=site-state-item-name>标签</span>
 </a>
 </div>

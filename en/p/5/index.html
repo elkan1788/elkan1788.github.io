@@ -104,6 +104,123 @@
 <article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
 <header class=post-header>
 <h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/en/2017/10/17/hive2-jdbc-connector-issues.html itemprop=url>
+Problems with HiveServer2 due to the JDBC version
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>Published at:</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-10-17">
+2017-10-17
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>Categories:</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/en/categories/big-data itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>Big data</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>583 words</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>3 minutes</span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>Previously, &lsquo;HDP&rsquo; was used to build and manage the &lsquo;Hadoop&rsquo; environment, and there were no difficult problems when the installation was debugged, but this time it was a strange problem when it was deployed on the &lsquo;Centos6x&rsquo; system:</p>
+<p>On the face of it, the Hive service is functioning normally, the process is running normally, the page UI is normal, and the logs are not output incorrectly. Simple table-building statements can be executed, which can be caused by throwing exceptions when importing local/HDFSdata. The wrong stack information is as follows:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near &#39;OPTION SQL_SELECT_LIMIT=DEFAULT&#39; at line 1 
+</code></pre></div><p>Another problem is that the HDFS data import prompt file does not exist using the&rsquo;HiveView&rsquo;UI provided by Ambari,with the error message as follows:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>org.apache.hive.service.cli.HiveSQLException: Error while compiling statement: FAILED: SemanticException Line 1:17 Invalid path &#39;&#39;/tmp/xxx/xxxxx.csv&#39;&#39;: No files matching path hdfs:/...
+</code></pre></div>
+</div>
+<div class="post-more-link text-center">
+<a class=btn href=https://lisenhui.cn/en/2017/10/17/hive2-jdbc-connector-issues.html rel=contents>
+Read More &#187;
+</a>
+</div>
+<footer class=post-footer><div class=post-eof></div></footer>
+</article>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/en/2017/09/09/azkaban-execute-jobs.html itemprop=url>
+The job types and examples supported by Azkaban
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>Published at:</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-09-09">
+2017-09-09
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>Categories:</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/en/categories/big-data itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>Big data</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>532 words</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>3 minutes</span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>In the introduction to the official documentation, it is understood that &lsquo;Azkaban&rsquo; supportsa wide range of types of work, such as: &lsquo;Command&rsquo;,&lsquo;HadoopShell&rsquo;,&lsquo;Python&rsquo;, &lsquo;Java&rsquo;, &lsquo;Hive&rsquo;, &lsquo;Pig&rsquo; and so on. However, here we mainly only to explain the &lsquo;Python&rsquo; and &lsquo;Java&rsquo;job type tasks, other types of work, such as&rsquo;Commnad&rsquo;,&lsquo;Hive&rsquo;,&lsquo;HadoopShell&rsquo;relatively simple without explanation, if necessary, you can practice ityourself.</p>
+<p>Regardless of which task is submitted, &lsquo;Azkaban&rsquo; is managed by uploading a compressed package by default, so it is recommended that you get into the habit ofnot packing the executed files (code) into the &lsquo;Azkaban&rsquo; engineering package. The benefits are obvious, such as:</p>
+<ul>
+<li>
+<p>The project is created so fast that you don&rsquo;t need to pass on some files to execute</p>
+</li>
+<li>
+<p>Avoid modifying the &lsquo;I&rsquo;m max_allow_packet&rsquo;parameterin &lsquo;MySQL&rsquo;to resolve the issue of failed transmissions on engineering files</p>
+</li>
+<li>
+<p>In a distributed environment, when performing Task eliminates the hassle of copying engineering packages in different nodes</p>
+</li>
+</ul>
+</div>
+<div class="post-more-link text-center">
+<a class=btn href=https://lisenhui.cn/en/2017/09/09/azkaban-execute-jobs.html rel=contents>
+Read More &#187;
+</a>
+</div>
+<footer class=post-footer><div class=post-eof></div></footer>
+</article>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
 <a class=post-title-link href=https://lisenhui.cn/en/2017/09/08/azkaban-install-use-share.html itemprop=url>
 Timed scheduling tasker Azkaban installation
 </a>
@@ -272,107 +389,6 @@ Read More &#187;
 </div>
 <footer class=post-footer><div class=post-eof></div></footer>
 </article>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lisenhui.cn/en/2017/08/16/mac-install-pymssql-module.html itemprop=url>
-Install the pymsql module under Mac/Linux
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-time>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>Published at:</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-08-16">
-2017-08-16
-</time>
-</span>
-<span class=post-category>
-&nbsp; | &nbsp;
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>Categories:</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a href=/en/categories/python itemprop=url rel=index style=text-decoration:underline>
-<span itemprop=name>Python</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span>
-|
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>379 words</span>
-</span>
-<span>
-|
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>Reading:</span>
-<span class=leancloud-view-count>2 minutes</span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>Accessing and connecting MSSQL data in a non-&lsquo;Windows&rsquo; environment is a hassle in itself. Since writing the &lsquo;Python&rsquo;program in the &lsquo;ORM&rsquo; aspect are the use of the&rsquo;pyxxx&rsquo;module, it is not true that the connectionMSSQLalso has a module called&rsquo;pymsql&rsquo;,but the actual use is notparticularly smooth. If the author is in the environment is so, the development environment is &lsquo;OSX 10.11&rsquo;, the release environment is &lsquo;CentOS 6.4&rsquo;, according to the official installation steps, the Linux environment is &lsquo;OK&rsquo;, but the Mac environment installation failure, the wrong stack information is as follows:</p>
-</div>
-<div class="post-more-link text-center">
-<a class=btn href=https://lisenhui.cn/en/2017/08/16/mac-install-pymssql-module.html rel=contents>
-Read More &#187;
-</a>
-</div>
-<footer class=post-footer><div class=post-eof></div></footer>
-</article>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lisenhui.cn/en/2017/08/15/hue-rdbms-mysql-chinese.html itemprop=url>
-The integrated MySQL data in Hue shows garbled code
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-time>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>Published at:</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-08-15">
-2017-08-15
-</time>
-</span>
-<span class=post-category>
-&nbsp; | &nbsp;
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>Categories:</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a href=/en/categories/big-data itemprop=url rel=index style=text-decoration:underline>
-<span itemprop=name>Big data</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span>
-|
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>437 words</span>
-</span>
-<span>
-|
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>Reading:</span>
-<span class=leancloud-view-count>3 minutes</span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>Hue is a Web applications that enables you to easily interact with an Hadoop cluster. Hue applications let you browse HDFS, Jobs, run Hive, Pig and Cloudera Impala queries, manage the Hive Metastore, HBase, Sqoop, ZooKeeper, MapReduce jobs, and create and schedule worklows with Oozie.</p>
-<p>For more information and presentations on HUE,visit its officialwebsite: <a href=http://gethue.com>http://gethue.com</a>.</p>
-</div>
-<div class="post-more-link text-center">
-<a class=btn href=https://lisenhui.cn/en/2017/08/15/hue-rdbms-mysql-chinese.html rel=contents>
-Read More &#187;
-</a>
-</div>
-<footer class=post-footer><div class=post-eof></div></footer>
-</article>
 </section>
 <nav class=pagination>
 <a class="extend prev" rel=prev href=/en/p/4/><i class="fa fa-angle-left"></i></a>
@@ -409,19 +425,19 @@ Never forget your dreams！
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/en/post/>
-<span class=site-state-item-count>52</span>
+<span class=site-state-item-count>54</span>
 <span class=site-state-item-name>Blogs</span>
 </a>
 </div>
 <div class="site-state-item site-state-categories">
 <a href=/en/categories/>
-<span class=site-state-item-count>26</span>
+<span class=site-state-item-count>27</span>
 <span class=site-state-item-name>Categories</span>
 </a>
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/en/tags/>
-<span class=site-state-item-count>61</span>
+<span class=site-state-item-count>63</span>
 <span class=site-state-item-name>Tags</span>
 </a>
 </div>
