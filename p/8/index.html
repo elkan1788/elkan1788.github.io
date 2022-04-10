@@ -104,6 +104,56 @@
 <article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
 <header class=post-header>
 <h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/2017/05/18/linux-daemon-supervisor.html itemprop=url>
+Supervisor介绍与使用
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>时间：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-05-18">
+2017-05-18
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分类：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/categories/supervisor itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>Supervisor</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>1125 字</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>3分钟</span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>很多时候我们自己开发的或别的服务都没有后台的守护进程，那么进程很容易就会被不小心的杀死，此时就需要有个程序去监控和维护这些程序服务。网上搜罗了一番后发现<code>Supervisor</code>组件正好能实现我们想要的，同时还支持对这些程序的统一管理，Nice!</p>
+</div>
+<div class="post-more-link text-center">
+<a class=btn href=https://lisenhui.cn/2017/05/18/linux-daemon-supervisor.html rel=contents>
+阅读全文 &#187;
+</a>
+</div>
+<footer class=post-footer><div class=post-eof></div></footer>
+</article>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
 <a class=post-title-link href=https://lisenhui.cn/2017/05/17/maven-deploy-center-sign-failed.html itemprop=url>
 发布jar到Maven时遭遇gpg签名失败
 </a>
@@ -314,56 +364,6 @@ Zookeeper崩溃后无法加载事务日志
 </div>
 <footer class=post-footer><div class=post-eof></div></footer>
 </article>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lisenhui.cn/2016/05/29/ssh-login-without-password.html itemprop=url>
-Linux使用SSH免密码登录
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-time>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2016-05-29">
-2016-05-29
-</time>
-</span>
-<span class=post-category>
-&nbsp; | &nbsp;
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>分类：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a href=/categories/linux itemprop=url rel=index style=text-decoration:underline>
-<span itemprop=name>Linux</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span>
-|
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>1586 字</span>
-</span>
-<span>
-|
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>4分钟</span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>现在分布式集群非常的流行, 经常在不同的机器上面切换来回那是家常便饭. 如果每次切换都需要输入用户名与密码, 那就是要崩溃的节奏啊. 好在<code>SSH-KEY</code>给我们提供了便利, 只要在<code>master</code>生成一个<code>PUB_KEY</code>, 然后拷贝到<code>clusters</code>中, 以后便可以直接使用<code>ssh hostname</code>即能快速,方便的切换到需要操作的机器上面.</p>
-</div>
-<div class="post-more-link text-center">
-<a class=btn href=https://lisenhui.cn/2016/05/29/ssh-login-without-password.html rel=contents>
-阅读全文 &#187;
-</a>
-</div>
-<footer class=post-footer><div class=post-eof></div></footer>
-</article>
 </section>
 <nav class=pagination>
 <a class="extend prev" rel=prev href=/p/7/><i class="fa fa-angle-left"></i></a>
@@ -400,7 +400,7 @@ Linux使用SSH免密码登录
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>54</span>
+<span class=site-state-item-count>55</span>
 <span class=site-state-item-name>日志</span>
 </a>
 </div>
@@ -412,7 +412,7 @@ Linux使用SSH免密码登录
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>61</span>
+<span class=site-state-item-count>62</span>
 <span class=site-state-item-name>标签</span>
 </a>
 </div>

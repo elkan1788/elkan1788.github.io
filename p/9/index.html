@@ -104,6 +104,56 @@
 <article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
 <header class=post-header>
 <h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/2016/05/29/ssh-login-without-password.html itemprop=url>
+Linux使用SSH免密码登录
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>时间：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2016-05-29">
+2016-05-29
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分类：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/categories/linux itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>Linux</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>1586 字</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>4分钟</span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>现在分布式集群非常的流行, 经常在不同的机器上面切换来回那是家常便饭. 如果每次切换都需要输入用户名与密码, 那就是要崩溃的节奏啊. 好在<code>SSH-KEY</code>给我们提供了便利, 只要在<code>master</code>生成一个<code>PUB_KEY</code>, 然后拷贝到<code>clusters</code>中, 以后便可以直接使用<code>ssh hostname</code>即能快速,方便的切换到需要操作的机器上面.</p>
+</div>
+<div class="post-more-link text-center">
+<a class=btn href=https://lisenhui.cn/2016/05/29/ssh-login-without-password.html rel=contents>
+阅读全文 &#187;
+</a>
+</div>
+<footer class=post-footer><div class=post-eof></div></footer>
+</article>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
 <a class=post-title-link href=https://lisenhui.cn/2016/01/29/git-commands-collect.html itemprop=url>
 Git 操作命令收集
 </a>
@@ -303,56 +353,6 @@ Redis 安装与配置
 </div>
 <footer class=post-footer><div class=post-eof></div></footer>
 </article>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lisenhui.cn/2012/04/20/nutz-jdoc-chinese.html itemprop=url>
-Nutz源码Jdoc在IDE中补全提示时出现乱码解决办法
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-time>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2012-04-20">
-2012-04-20
-</time>
-</span>
-<span class=post-category>
-&nbsp; | &nbsp;
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>分类：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a href=/categories/nutz itemprop=url rel=index style=text-decoration:underline>
-<span itemprop=name>Nutz</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span>
-|
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>1011 字</span>
-</span>
-<span>
-|
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>3分钟</span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>接触Nutz也有一段时间，随着对它使用的不断深入了解，才越发觉它的强悍与作者的设计巧妙，特别喜欢它那个JUnit测试报告，而且更新的速度也挺快的，到现在的1.b.44版本，ssh所拥有的功能可以说它也已经完全具备了。对于程序员来说学习一种新技术最快捷的办法就是Demo+API，这两样也是必备之需哪。Nutz在这方面做的也是相当的不错，比如在Demo方面有人贡献出了整个CMS的源码(非常感谢作者的分享哪，从里面学习了不少知识)，API方面提供了常见的CHM格式和JAR包。不过这个JAR的API在实现应用中却是出了点小问题，下面就来详细说说。</p>
-</div>
-<div class="post-more-link text-center">
-<a class=btn href=https://lisenhui.cn/2012/04/20/nutz-jdoc-chinese.html rel=contents>
-阅读全文 &#187;
-</a>
-</div>
-<footer class=post-footer><div class=post-eof></div></footer>
-</article>
 </section>
 <nav class=pagination>
 <a class="extend prev" rel=prev href=/p/8/><i class="fa fa-angle-left"></i></a>
@@ -389,7 +389,7 @@ Nutz源码Jdoc在IDE中补全提示时出现乱码解决办法
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>54</span>
+<span class=site-state-item-count>55</span>
 <span class=site-state-item-name>日志</span>
 </a>
 </div>
@@ -401,7 +401,7 @@ Nutz源码Jdoc在IDE中补全提示时出现乱码解决办法
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>61</span>
+<span class=site-state-item-count>62</span>
 <span class=site-state-item-name>标签</span>
 </a>
 </div>

@@ -7,7 +7,15 @@ Ctrl+Shift+P + git(关键字)： 会显示出 Git 的命令，如add, commit, pu
 最后就是要创建 Hugofy 启动站点服务的快捷方式，不过在此之前需先配置下站点路径等参数，打开 Preferences -> Package Settings -> Hugofy -> Settings - Users 选项，参考如下配置调整自身实际情况：
 { // 站点根目录的上一级 "Directory": "C:\\Users\\senhui.li\\Documents\\GitRepos", "Server": { // 生成草稿 "DRAFTS_FLAG": true, // 服务端口 "PORT": 1313, // 不需要添加主题参数 "THEME_FLAG": false }, // 站点存放的目录名称 "Sitename": "elkan1788.github.io" } 接着打开 Preferences -> Key Bindings 选项，加入你想设置的快捷键，参考如下：
 { "keys": ["ctrl+alt+h"], "command": "hugoserver" } 那么此时只要按下 Ctrl + Alt + H 组合键，后台就会启动 Hugo 站点服务，打开浏览器即可访问站点。
-总结 自此以后便可以在 Sublime Text 的全家桶中“畅游”，喜欢就快来加入吧，给众多网友分享下你的宝贵经验。</content></entry><entry><title>优化Hugo Next主题的过程2</title><url>https://lisenhui.cn/2021/07/09/make-next-theme-pithy2.html</url><categories><category>博客</category></categories><tags><tag>NexT</tag><tag>博客</tag><tag>Hugo</tag></tags><content type="html"> 1.背景 自上次优化NexT主题并分享到Github仓库中hugo-theme-next后，也是受到了不少NexT主题喜爱者的使用和邮件反馈。于是决定还是要花点心思来维护它，便把自己之前一些想法也重新加入到NexT主题中，同时对部分插件的功能做了更新。
+总结 自此以后便可以在 Sublime Text 的全家桶中“畅游”，喜欢就快来加入吧，给众多网友分享下你的宝贵经验。</content></entry><entry><title>Sublime Text安装插件失败</title><url>https://lisenhui.cn/2022/02/08/use-sublime-txt-build-hugo-site.html</url><categories><category>工具</category></categories><tags><tag>插件</tag></tags><content type="html"> 近期因公司之前分配的电脑出了点毛病，无奈只能重新换个新电脑，所以环境也得从头进行搭建。而一直使用的 Sublime Text 是绿色版本，直接拷贝过来后启动，编辑等操作都是正常的，但在尝试安装新的插件时就遇了如下的问题。
+错误信息：There are no packages available for installation
+然后检查安装目录下的 channel_v3.json 文件是正常的，只好尝试打印系统日志来看追踪下问题，使用 Ctrl + ~ 快捷键打开终端，输入如下的代码开启：
+sublime.log_commands(True) 注： 千万记得在调试完成后关闭日志输出
+再次尝试安装插件时，便发现提示系统找不到指定的路径异常，一看那个路径才恍然大悟，然后来是之前电脑的安装位置，那只要更新下配置文件路径就好啦。
+打开 Preferences -> Package Settings -> Package Control -> Settings 选项修改 channels 的参数值，保存后便可以成功安装插件啦。
+{ "bootstrapped": true, "channels": [ "C:/xxxx/channel_v3.json" ] } 最后发现 channel_v3.json 文件也好久没有更新了，便顺道访问官方文件 channel_v3.json 拷贝进行更新。
+参考：
+官方文件地址：https://packagecontrol.io/</content></entry><entry><title>优化Hugo Next主题的过程2</title><url>https://lisenhui.cn/2021/07/09/make-next-theme-pithy2.html</url><categories><category>博客</category></categories><tags><tag>NexT</tag><tag>博客</tag><tag>Hugo</tag></tags><content type="html"> 1.背景 自上次优化NexT主题并分享到Github仓库中hugo-theme-next后，也是受到了不少NexT主题喜爱者的使用和邮件反馈。于是决定还是要花点心思来维护它，便把自己之前一些想法也重新加入到NexT主题中，同时对部分插件的功能做了更新。
 此次优化后发布的版本代号为3.x，原因是整体结构和之前的变化较为大（主要是在配置方面的体现），为此也重写主题的相关介绍等信息，目前正在申请加入官方的主题列表中(点击预览)，欢迎大家的使用和反馈。
 2.中英文切换 或许大家觉得这个功能有点软肋，原因就是个人博客的流量并不会很大。但流量小并不是意味着没有流量，所以我们还是可以增加个中英切换的功能，来助力我们推广自己的博客空间。而且Hugo引擎在多语言化这块的开发也比较简单，不过现在是手动模式，也就意味着你在发表文章写两份。增加中英文切换功能后的效果参考如下：（就是在左上角添加了切换入口）
 后续考虑是否可能引入自动翻译的模式来加载，可以减少写文章耗费的时间。

@@ -104,6 +104,61 @@
 <article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
 <header class=post-header>
 <h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/2017/08/17/pymssql-azure-mssql-datasource-connect.html itemprop=url>
+pymssql连接azure云的MSSQL数据库
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>时间：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-08-17">
+2017-08-17
+</time>
+</span>
+<span class=post-category>
+&nbsp; | &nbsp;
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分类：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a href=/categories/azure itemprop=url rel=index style=text-decoration:underline>
+<span itemprop=name>Azure</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>222 字</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>1分钟</span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>码好代码在测试环境做好测试后，满怀信心的去布署上线到生产环境，结果就是一堆的异常，具体查看了后发现是连接数据库的问题，异常信息如下：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>(40532, &#39;Cannot open server &#34;1433D&#34; requested by the login.  
+The login failed.DB-Lib error message 20018, severity 20:\n
+General SQL Server error: Check messages from the SQL Server\n
+DB-Lib error message 20002, severity 9:\nAdaptive Server connection failed\n&#39;)
+</code></pre></div>
+</div>
+<div class="post-more-link text-center">
+<a class=btn href=https://lisenhui.cn/2017/08/17/pymssql-azure-mssql-datasource-connect.html rel=contents>
+阅读全文 &#187;
+</a>
+</div>
+<footer class=post-footer><div class=post-eof></div></footer>
+</article>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
 <a class=post-title-link href=https://lisenhui.cn/2017/08/16/mac-install-pymssql-module.html itemprop=url>
 在Mac/Linux系统下安装pymssql模块
 </a>
@@ -310,59 +365,6 @@ https://pypi.tuna.tsinghua.edu.cn/simple 清华
 </div>
 <footer class=post-footer><div class=post-eof></div></footer>
 </article>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lisenhui.cn/2017/08/02/use-hexo-rebuild-blog-site.html itemprop=url>
-使用Hexo重新构建个人博客站点
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-time>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-08-02">
-2017-08-02
-</time>
-</span>
-<span class=post-category>
-&nbsp; | &nbsp;
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>分类：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a href=/categories/hexo itemprop=url rel=index style=text-decoration:underline>
-<span itemprop=name>Hexo</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span>
-|
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>1536 字</span>
-</span>
-<span>
-|
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>4分钟</span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>其实在<code>Github Page</code>上面也是混迹许久啦，虽然现在各种Blog网站层出不穷，但是作为IT界的程序猿还是喜欢自己动手捣鼓捣鼓，成功固然是欣喜失败也会不气妥。 <code>Github Page</code>刚出道时使用的是<code>Jekyll</code>，简单的解释其实就是一个静态化网站的工具，这不现在又兴起一个名为<code>Hexo</code>(**<code>Nodejs</code>**实现)的工具。两者的目标皆是一致的，只不过对比下来发现<code>Hexo</code>上手确实要容易些，加者它能轻松的在本地实现调试，故有想法想再次折腾一翻，构建个<code>Hexo</code>版本的个人博客。</p>
-<blockquote>
-<p>介绍另一款静态网站工具<a href=https://github.com/wendal/gor><code>Gor</code></a>，它是鄙人一直崇拜的大拿<a href=http://wendal.net/>Wendal</a>的杰作，熟悉<code>GO</code>语言的朋友有可以关注下。</p>
-</blockquote>
-</div>
-<div class="post-more-link text-center">
-<a class=btn href=https://lisenhui.cn/2017/08/02/use-hexo-rebuild-blog-site.html rel=contents>
-阅读全文 &#187;
-</a>
-</div>
-<footer class=post-footer><div class=post-eof></div></footer>
-</article>
 </section>
 <nav class=pagination>
 <a class="extend prev" rel=prev href=/p/5/><i class="fa fa-angle-left"></i></a>
@@ -399,7 +401,7 @@ https://pypi.tuna.tsinghua.edu.cn/simple 清华
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/post/>
-<span class=site-state-item-count>54</span>
+<span class=site-state-item-count>55</span>
 <span class=site-state-item-name>日志</span>
 </a>
 </div>
@@ -411,7 +413,7 @@ https://pypi.tuna.tsinghua.edu.cn/simple 清华
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/tags/>
-<span class=site-state-item-count>61</span>
+<span class=site-state-item-count>62</span>
 <span class=site-state-item-name>标签</span>
 </a>
 </div>
