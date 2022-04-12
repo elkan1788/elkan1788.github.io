@@ -3,16 +3,16 @@
 echo "Start replace the plugin's paramter"
 
 ## replace the paramter's values
-sed -i 's/Your LiveReId/'$LiveReId'/g' config/_default/params.toml
-sed -i 's/Your RevolverMapId/'$RevolverMapId'/g' config/_default/params.toml
-sed -i 's/Your LCAppId/'$LCAppId'/g' config/_default/params.toml
-sed -i 's/Your LCAppKey/'$LCAppKey'/g' config/_default/params.toml
-sed -i 's|Your LCServer|'$LCServer'|g' config/_default/params.toml
-sed -i 's/Your CNNZSiteId/'$CNNZSiteId'/g' config/_default/params.toml
-sed -i 's/Your BaiduSiteId/'$BaiduSiteId'/g' config/_default/params.toml
-sed -i 's/Your GoogleSiteId/'$GoogleSiteId'/g' config/_default/params.toml
-sed -i 's/Your DaoVoiceId/'$DaoVoiceId'/g' config/_default/params.toml
-sed -i 's/Your AddthisPubid/'$AddthisPubid'/g' config/_default/params.toml
-sed -i 's|Your WalineSerURL|'$WalineSerURL'|g' config/_default/params.toml
+sed -e 's/Your LiveReId/'$LiveReId'/g' \
+-e 's/Your RevolverMapId/'$RevolverMapId'/g' \
+-e 's/Your LCAppId/'$LCAppId'/g' \
+-e 's/Your LCAppKey/'$LCAppKey'/g' \
+-e 's|Your LCServer|'$LCServer'|g' \
+-e 's/Your CNNZSiteId/'$CNNZSiteId'/g' \
+-e 's/Your BaiduSiteId/'$BaiduSiteId'/g' \
+-e 's/Your GoogleSiteId/'$GoogleSiteId'/g' \
+-e 's/Your DaoVoiceId/'$DaoVoiceId'/g' \
+-e 's/Your AddthisPubid/'$AddthisPubid'/g' \
+-e 's|Your WalineSerURL|'$WalineSerURL'|g' config/_default/params.toml
 
 echo "Replace the plugin's paramter is success."
