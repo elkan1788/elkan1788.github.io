@@ -32,6 +32,7 @@ script:
 - git submodule update --init --recursive
 - rm -rf public
 - sh .travis/replace_params_value.sh
+- cat config/_default/params.toml
 - hugo -t hugo-theme-next -d public/
 before_deploy:
 - cp README.md ./public/README.md

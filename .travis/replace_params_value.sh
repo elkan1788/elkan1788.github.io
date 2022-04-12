@@ -1,18 +1,20 @@
 #!/bin/bash
 
-echo "Start replace the plugin's paramter"
+echo "Start replace the theme's paramter"
 
-## replace the paramter's values
-sed -i 's/Your LiveReId/'$LiveReId'/g' config/_default/params.toml
-sed -i 's/Your RevolverMapId/'$RevolverMapId'/g' config/_default/params.toml
-sed -i 's/Your LCAppId/'$LCAppId'/g' config/_default/params.toml
-sed -i 's/Your LCAppKey/'$LCAppKey'/g' config/_default/params.toml
-sed -i 's|Your LCServer|'$LCServer'|g' config/_default/params.toml
-sed -i 's/Your CNNZSiteId/'$CNNZSiteId'/g' config/_default/params.toml
-sed -i 's/Your BaiduSiteId/'$BaiduSiteId'/g' config/_default/params.toml
-sed -i 's/Your GoogleSiteId/'$GoogleSiteId'/g' config/_default/params.toml
-sed -i 's/Your DaoVoiceId/'$DaoVoiceId'/g' config/_default/params.toml
-sed -i 's/Your AddthisPubid/'$AddthisPubid'/g' config/_default/params.toml
-sed -i 's|Your WalineSerURL|'$WalineSerURL'|g' config/_default/params.toml
+## replace the paramter's valuesw
+sed -i '
+s/Your AddthisPubid/'$AddthisPubid'/g
+s/Your BaiduSiteId/'$BaiduSiteId'/g
+s/Your CNNZSiteId/'$CNNZSiteId'/g
+s/Your DaoVoiceId/'$DaoVoiceId'/g
+s/Your GoogleSiteId/'$GoogleSiteId'/g
+s/Your LCAppId/'$LCAppId'/g
+s/Your LCAppKey/'$LCAppKey'/g
+s|Your LCServer|'$LCServer'|g
+s/Your LiveReId/'$LiveReId'/g
+s/Your RevolverMapId/'$RevolverMapId'/g
+s|Your WalineSerURL|'$WalineSerURL'|g
+' config/_default/params.toml 
 
-echo "Replace the plugin's paramter is success."
+echo "Replace the theme's paramter is success."
