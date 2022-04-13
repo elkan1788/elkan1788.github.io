@@ -41,5 +41,9 @@ MonthFormat = "01-02"
   Permalink = "https://www.liaoxuefeng.com/"
 
 [[Links]]
+  Name = "Lanlingzi"
+  Permalink = "http://lanlingzi.cn/"
+
+[[Links]]
   Name = "haiyux's blog"
   Permalink = "https://zhaohaiyu.com/"
