@@ -1,4 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>使用Sublime Text搭建Hugo使用环境</title><url>https://lisenhui.cn/2022/02/12/use-sublime-txt-build-hugo-site.html</url><categories><category>工具</category></categories><tags><tag>Hugo</tag><tag>环境</tag></tags><content type="html"> 自从捣鼓 Hugo 建站以来也有好长一段时间啦，但是之前的使用环境比较的 “松散” ，比如编辑博客文章用的是 Sublime Text 文本工具，再通过 CMD 命令行工具调用 Hugo执行本地预览，最后再 使用 Git Extension 图形工具将博客文章发布到 Github Pages 供网友们浏览。 从整个操作流程上来看还是可以的，只是在过程中要切换不同的工具操作，而恰好看到 Hugo 官网上有个 Sublime Text 的插件，于是乎有了重新整合 Hugo 使用环境的想法，哈。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>使用Mobaxterm登录本地虚拟机很慢</title><url>https://lisenhui.cn/2022/04/04/sshlogin-localvm-slowly-mobaxterm.html</url><categories><category>工具</category></categories><tags><tag>SSH</tag><tag>MobaXterm</tag></tags><content type="html"> 近期因本地虚拟机有问题但重新搭建了个新环境，结果在使用 MobaXterm 工具登录终端时发现每次都要等待个 4 ~ 5 秒才可以进入，操作检验不是很好，不明白为何本地环境连接会是这么的慢，所以还是得想办法分析下。
+看有些网友也有类似的困惑，提示说可能是 SSH 登录时要通过 DNS 来寻址的原因。参考文章上说法找到 /etc/ssh/sshd_config 把里面的 UseDNS 配置项设置为 no，但是发现其已经是关闭的状态。那会是什么原因引起呢？
+提到 DNS 突然想到不会是本地 Host 文件的问题吧（个人习惯使用 hostname 连接服务器），于是尝试直接把 MobaXterm 的连接地址换成服务器 IP 地址，满怀希望的点击登录按钮，可惜结果还是要等待一会才能进入，真是有点抓狂啦。
+稍微“冷静”下来想下，发现现在还是没有确定问题的发生原因，究竟是 MobaXterm 工具还是服务器配置的问题呢？于是使用最简单的 SSH 命令，结果非常惊喜，无论是通过 IP 还是 hostname 方式连接都无须等待，可立马就进入终端操作。那么已经可确认就是 MobaXterm 工具原因。
+于是检查 MobaXterm 的登录配置，个人习惯使用已经配置好的用户名登录，但似乎也是没有问题呀。
+然后点击下旁边的 Passwords 标签卡发现里面也是存储 2 个密码，难道说就是这个原因？
+果断的删除了 Passwords 里的这两 2 个密码记录，再次登录虚拟机的服务器，终于得到自己想到的结局。 🙊
+结论 不知为何产生这个现象，就是 Passwords 中的那 2 条密码记录，暂时还是没有了解清楚，后续要也是遇到类似的情况，可以参考上述的方法，或许能够帮助到你。</content></entry><entry><title>使用Sublime Text搭建Hugo使用环境</title><url>https://lisenhui.cn/2022/02/12/use-sublime-txt-build-hugo-site.html</url><categories><category>工具</category></categories><tags><tag>Hugo</tag><tag>环境</tag></tags><content type="html"> 自从捣鼓 Hugo 建站以来也有好长一段时间啦，但是之前的使用环境比较的 “松散” ，比如编辑博客文章用的是 Sublime Text 文本工具，再通过 CMD 命令行工具调用 Hugo执行本地预览，最后再 使用 Git Extension 图形工具将博客文章发布到 Github Pages 供网友们浏览。 从整个操作流程上来看还是可以的，只是在过程中要切换不同的工具操作，而恰好看到 Hugo 官网上有个 Sublime Text 的插件，于是乎有了重新整合 Hugo 使用环境的想法，哈。
 安装插件 根据上面所说的操作流程，整理需要在 Sublime Text 上安装的插件有如下4款：
 Git MarkdownEditing Hugo Snippets Hugofy 直接在 Sublime Text 使用 Ctrl+Shift+P 快捷键输入 pci 选择第一项，逐一输入上述插件名称安装。
 快捷键设置 这里 Git 和 Hugo Snippets 是没有快捷键可使用的，只能通过 Ctrl+Shift+P 快捷键 + 关键字来执行相关的命令，参考如下：
