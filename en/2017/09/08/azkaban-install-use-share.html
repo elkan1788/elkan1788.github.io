@@ -130,7 +130,7 @@ Timed scheduling tasker Azkaban installation
 |
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>1342 words</span>
+<span class=leancloud-world-count>1344 words</span>
 </span>
 <span>
 |
@@ -149,7 +149,8 @@ Timed scheduling tasker Azkaban installation
 <div class=post-body itemprop=articleBody>
 <p>Background and introduction</p>
 <p>In the big data complex ETL or other data processing processes, some tasks need to be performed on a timed basis, although Linux brings itsown&rsquo;cron' commandfunction, but still can not meet the biggest point is that it does notprovide centralized management and visual editing. In fact, in the big data ecology has been integrated with a timed scheduling framework &lsquo;Oozie&rsquo;, but the practice found that its learning costs are not low, the process of distribution is more complex. After trying other distribution worker scheduling frameworks, such as Ali&rsquo;s Zeus &lsquo;Zeus&rsquo;, or &lsquo;Azkaban&rsquo;, which is used by more people in the community.</p>
-<p>&lsquo;Azkaban3&rsquo; is still relatively large compared to the changes made in the previous version, and interested parties can be found on its official website, <a href=https://azkaban.github.io/azkaban/docs/latest/>Azkaban</a>. Next, mainly to share the installation of &lsquo;Azkaban 3&rsquo;, the following is &lsquo;Azkaban 3&rsquo; system architecture design:</p>
+<p>&lsquo;Azkaban3&rsquo; is still relatively large compared to the changes made in the previous version, and interested parties can be found on its official website, <a href=https://azkaban.github.io/azkaban/docs/latest/ target=_blank rel=noopener>Azkaban</a>
+. Next, mainly to share the installation of &lsquo;Azkaban 3&rsquo;, the following is &lsquo;Azkaban 3&rsquo; system architecture design:</p>
 <p><img src=//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install00.png alt=Azkaban-Install00></p>
 <p>The three components in the figure are an important part of &lsquo;Azkaban3&rsquo;:</p>
 <ul>
@@ -162,7 +163,8 @@ Timed scheduling tasker Azkaban installation
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>mysql&gt; CREATE DATABASE azkaban DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 </code></pre></div><p>Specify a database user to give it&rsquo;SELECT&rsquo;, &lsquo;INSERT&rsquo;, &lsquo;UPDATE&rsquo;, &lsquo;DELETE&rsquo; operating rights to the &lsquo;azkaban&rsquo;database:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>mysql&gt; GRANT SELECT,INSERT,UPDATE,DELETE ON azkaban.* to <span style=color:#b44>&#39;azkaban-dba&#39;</span>@<span style=color:#b44>&#39;%&#39;</span> WITH GRANT OPTION;
-</code></pre></div><p>Finally, the import of the &lsquo;SQL&rsquo; statement that created the table, the official table statement is more scattered, for this purpose specially organized a complete table-building statement (Azkaban Create Tables password: 8ne8) (<a href=https://pan.baidu.com/s/1Dvcky7UJT02O9det4UG0cQ):>https://pan.baidu.com/s/1Dvcky7UJT02O9det4UG0cQ):</a></p>
+</code></pre></div><p>Finally, the import of the &lsquo;SQL&rsquo; statement that created the table, the official table statement is more scattered, for this purpose specially organized a complete table-building statement (Azkaban Create Tables password: 8ne8) (<a href=https://pan.baidu.com/s/1Dvcky7UJT02O9det4UG0cQ%29: target=_blank rel=noopener>https://pan.baidu.com/s/1Dvcky7UJT02O9det4UG0cQ):</a>
+</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>mysql&gt; <span style=color:#a2f>source</span> /opt/download/azkaban-create-tables.sql
 </code></pre></div><p>Note: Since the project release of &lsquo;Azkaban3&rsquo; is achieved by uploading files, it is necessary to adjust the energy size of the allowed upload package in &lsquo;MySQL&rsquo;, and this parameter islocated under &lsquo;mysqld&rsquo;:max_allowed_packet s64M, depending on the actual situation to modify the appropriatesize.</p>
 <p>In fact, there is a way not to modify this parameter, that is, when packaging the &lsquo;Azkaban&rsquo; project, try not to pack dependent files into it, through the reference of the relative path can be. **</p>
@@ -425,7 +427,8 @@ bin/azkaban-executor-shutdown.sh &gt; /dev/null 2&gt;&amp;<span style=color:#666
 <p><img src=//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install02.png alt=Azkaban-Install02></p>
 <h2 id=demo>Demo</h2>
 <p>Create a new project in the &lsquo;Web Server&rsquo; that startedsuccessfully above, named:ShellJob-Demo,and then download and upload the following example, Job, to the project you just created,note that you don&rsquo;t need to unziw it. Then find the&rsquo;Exectue Flow&rsquo; button in your project, and you&rsquo;ll continue to take the next step, as shown in the following group:</p>
-<p>Base Flow Demo Password: 4f4f (<a href=https://pan.baidu.com/s/19iEqfyShVTnVrfzfdST__A>https://pan.baidu.com/s/19iEqfyShVTnVrfzfdST__A</a>)</p>
+<p>Base Flow Demo Password: 4f4f (<a href=https://pan.baidu.com/s/19iEqfyShVTnVrfzfdST__A target=_blank rel=noopener>https://pan.baidu.com/s/19iEqfyShVTnVrfzfdST__A</a>
+)</p>
 <p><img src=//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install03.png alt=Azkaban-Install03></p>
 <p><img src=//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install04.png alt=Azkaban-Install04></p>
 <p><img src=//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install05.png alt=Azkaban-Install05></p>

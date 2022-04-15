@@ -148,8 +148,10 @@
 </header>
 <div class=post-body itemprop=articleBody>
 <h2 id=1参考文档>1.参考文档</h2>
-<p>FYI: <a href=https://docs.hortonworks.com/HDPDocuments/Ambari-2.5.0.3/bk_ambari-installation/content/ch_Getting_Ready.html>HDP Install Documents</a></p>
-<p><a href=https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.0/bk_command-line-installation/content/prepare-environment.html#ref-2822d0e9-bd88-4714-910a-750c5b95a996>HDP Install Manual</a></p>
+<p>FYI: <a href=https://docs.hortonworks.com/HDPDocuments/Ambari-2.5.0.3/bk_ambari-installation/content/ch_Getting_Ready.html target=_blank rel=noopener>HDP Install Documents</a>
+</p>
+<p><a href=https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.0/bk_command-line-installation/content/prepare-environment.html#ref-2822d0e9-bd88-4714-910a-750c5b95a996 target=_blank rel=noopener>HDP Install Manual</a>
+</p>
 <h2 id=2-硬件环境>2. 硬件环境</h2>
 <p>首先是要准备3台机器,安装最新的CentOS7.2，机器的配置参考要求如下：</p>
 <table>
@@ -188,15 +190,18 @@
 <tbody>
 <tr>
 <td>ambari-2.5.0.3</td>
-<td><a href=http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3/ambari-2.5.0.3-centos7.tar.gz>http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3/ambari-2.5.0.3-centos7.tar.gz</a></td>
+<td><a href=http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3/ambari-2.5.0.3-centos7.tar.gz target=_blank rel=noopener>http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3/ambari-2.5.0.3-centos7.tar.gz</a>
+</td>
 </tr>
 <tr>
 <td>HDP-2.6.0.3</td>
-<td><a href=http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.0.3/HDP-2.6.0.3-centos7-rpm.tar.gz>http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.0.3/HDP-2.6.0.3-centos7-rpm.tar.gz</a></td>
+<td><a href=http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.0.3/HDP-2.6.0.3-centos7-rpm.tar.gz target=_blank rel=noopener>http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.0.3/HDP-2.6.0.3-centos7-rpm.tar.gz</a>
+</td>
 </tr>
 <tr>
 <td>HDP-UTILS-1.1.0.21</td>
-<td><a href=http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.21/repos/centos7/HDP-UTILS-1.1.0.21-centos7.tar.gz>http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.21/repos/centos7/HDP-UTILS-1.1.0.21-centos7.tar.gz</a></td>
+<td><a href=http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.21/repos/centos7/HDP-UTILS-1.1.0.21-centos7.tar.gz target=_blank rel=noopener>http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.21/repos/centos7/HDP-UTILS-1.1.0.21-centos7.tar.gz</a>
+</td>
 </tr>
 </tbody>
 </table>
@@ -229,7 +234,8 @@
 </blockquote>
 <p>然后在master机器上使用<code>ssh-keygen -t RSA</code> 密令生成SSH密钥，再使用命令 <strong><code>ssh-copy-id -i ~/.ssh/id_rsa.pub root@test-hdp-cluster01</code></strong> 拷贝到其它两台cluster机器，最后使用SSH登录命令检查是否安装成功，同时把hostname，IP地址写入到每台机器的<code>/etc/hosts</code>文件里面。</p>
 <h2 id=5-时间同步>5. 时间同步</h2>
-<p>安装NTP服务 （<a href=http://blog.csdn.net/andy_yf/article/details/8027635>参考</a>)</p>
+<p>安装NTP服务 （<a href=http://blog.csdn.net/andy_yf/article/details/8027635 target=_blank rel=noopener>参考</a>
+)</p>
 <p>在Master机器上执行以下的命令安装并启动ntpd服务：</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>yum install ntp -y
 
@@ -312,7 +318,8 @@ export CLASSPATH=.:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar
 export PATH=$JAVA_HOME/bin:$PATH
 </code></pre></div><p>最后命令<code>source /etc/profile</code>编绎一下文件即可，在其它两台Cluster上面重复此操作，记得用<code>java -version</code>验证是否安装成功。</p>
 <h2 id=8-安装mysql数据库>8. 安装MySQL数据库</h2>
-<p><a href=http://www.linuxidc.com/Linux/2016-09/135288.htm>参考</a></p>
+<p><a href=http://www.linuxidc.com/Linux/2016-09/135288.htm target=_blank rel=noopener>参考</a>
+</p>
 <p>下载mysql源安装包并安装</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>wget http://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm
 
@@ -435,7 +442,8 @@ vi /usr/lib/python2.6/site-packages/resource_management/core/source.py
 self.url = self.name.replace(&#39;localhost&#39;,&#39;test-hdp-master01&#39;)
 </code></pre></div><h2 id=14-卸载hdp服务>14. 卸载HDP服务</h2>
 <p>参考官方文档：
-<a href=http://www.yourtechchick.com/hadoop/how-to-completely-remove-and-uninstall-hdp-components-hadoop-uninstall-on-linux-system/>Uninstall</a></p>
+<a href=http://www.yourtechchick.com/hadoop/how-to-completely-remove-and-uninstall-hdp-components-hadoop-uninstall-on-linux-system/ target=_blank rel=noopener>Uninstall</a>
+</p>
 </div>
 <footer class=post-footer>
 <div class=post-tags>

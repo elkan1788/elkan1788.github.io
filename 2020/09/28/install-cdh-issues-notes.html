@@ -167,7 +167,8 @@
 <p>另外就是MySQL GTID的问题，导致建表一直失败：</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>错误代码： <span style=color:#666>1786</span>
 Statement violates GTID consistency: CREATE TABLE ... SELECT.
-</code></pre></div><p>参考：<a href=https://www.cnblogs.com/zzw-zyba/p/8044960.html>MYSQL Statement violates GTID consistency: CREATE TABLE &mldr; SELECT. 错误代码： 1786 问题</a></p>
+</code></pre></div><p>参考：<a href=https://www.cnblogs.com/zzw-zyba/p/8044960.html target=_blank rel=noopener>MYSQL Statement violates GTID consistency: CREATE TABLE &mldr; SELECT. 错误代码： 1786 问题</a>
+</p>
 <p>说是要关闭2个参数配置，但是由于使用的云上数据库组件，并未支持系统配置参数修改。最后只好是在本地搭建个MySQL服务，待CM初始化工作完成好，再把表结构和数据同步到云上数据库，问题得以解决。</p>
 <h2 id=3-hosts配置文件失误>3. Hosts配置文件失误</h2>
 <p>安装Yarn服务组件时一直报出上传Mapreduce的JAR包失败，查看日志信息提示说是无法创建HDFS目录，告知是没有权限执行。于是乎就去临时调整目录权限，但失望的是安装仍然是失败的，还是报出相同的错误。</p>

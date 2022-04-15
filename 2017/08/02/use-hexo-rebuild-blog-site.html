@@ -149,10 +149,17 @@
 <div class=post-body itemprop=articleBody>
 <p>其实在<code>Github Page</code>上面也是混迹许久啦，虽然现在各种Blog网站层出不穷，但是作为IT界的程序猿还是喜欢自己动手捣鼓捣鼓，成功固然是欣喜失败也会不气妥。 <code>Github Page</code>刚出道时使用的是<code>Jekyll</code>，简单的解释其实就是一个静态化网站的工具，这不现在又兴起一个名为<code>Hexo</code>(**<code>Nodejs</code>**实现)的工具。两者的目标皆是一致的，只不过对比下来发现<code>Hexo</code>上手确实要容易些，加者它能轻松的在本地实现调试，故有想法想再次折腾一翻，构建个<code>Hexo</code>版本的个人博客。</p>
 <blockquote>
-<p>介绍另一款静态网站工具<a href=https://github.com/wendal/gor><code>Gor</code></a>，它是鄙人一直崇拜的大拿<a href=http://wendal.net/>Wendal</a>的杰作，熟悉<code>GO</code>语言的朋友有可以关注下。</p>
+<p>介绍另一款静态网站工具<a href=https://github.com/wendal/gor target=_blank rel=noopener><code>Gor</code></a>
+，它是鄙人一直崇拜的大拿<a href=http://wendal.net/ target=_blank rel=noopener>Wendal</a>
+的杰作，熟悉<code>GO</code>语言的朋友有可以关注下。</p>
 </blockquote>
-<p>动手前先对<code>Pages</code>服务做了个简单的调查，别无它意，就是现在<code>Github</code>用户越来越多且服务器又在国外的，生活在天朝的我们你懂的啦。惊喜的发现目前国内的<code>Git</code>服务商都提供了<code>Pages</code>实现，最后选择了<a href=http://gitee.com>Gitee</a>和<a href=https://coding.net>Coding</a>作为新博客落脚点，其中<code>Coding</code>作为首先/默认服务，<code>Gitee</code>为备选的服务，作此选择的原因很简单：<code>Coding</code>不但提供了自定义域名，而且还附带了<code>https</code>免费证书，真是漂亮。</p>
-<p>对于<code>Hexo</code>环境的搭建在此就不在累述啦，官方文档给出了详细的说明(操作也是相当的简单)请移步：<a href=https://hexo.io/zh-cn/docs/index.html>https://hexo.io/zh-cn/docs/index.html</a>。搭建好后可以在官方网站提供的<a href=https://hexo.io/themes/>主题</a>页面中选择自己所喜爱的风格，个人选择的是较热门的<a href=http://theme-next.iissnan.com/><code>NexT</code></a>，喜欢它的简单，轻爽。</p>
+<p>动手前先对<code>Pages</code>服务做了个简单的调查，别无它意，就是现在<code>Github</code>用户越来越多且服务器又在国外的，生活在天朝的我们你懂的啦。惊喜的发现目前国内的<code>Git</code>服务商都提供了<code>Pages</code>实现，最后选择了<a href=http://gitee.com target=_blank rel=noopener>Gitee</a>
+和<a href=https://coding.net target=_blank rel=noopener>Coding</a>
+作为新博客落脚点，其中<code>Coding</code>作为首先/默认服务，<code>Gitee</code>为备选的服务，作此选择的原因很简单：<code>Coding</code>不但提供了自定义域名，而且还附带了<code>https</code>免费证书，真是漂亮。</p>
+<p>对于<code>Hexo</code>环境的搭建在此就不在累述啦，官方文档给出了详细的说明(操作也是相当的简单)请移步：<a href=https://hexo.io/zh-cn/docs/index.html target=_blank rel=noopener>https://hexo.io/zh-cn/docs/index.html</a>
+。搭建好后可以在官方网站提供的<a href=https://hexo.io/themes/ target=_blank rel=noopener>主题</a>
+页面中选择自己所喜爱的风格，个人选择的是较热门的<a href=http://theme-next.iissnan.com/ target=_blank rel=noopener><code>NexT</code></a>
+，喜欢它的简单，轻爽。</p>
 <p><code>NexT</code>配置使用也是很简易的，下面就个人在搭建过程中遇到的问题做个简单的归纳：</p>
 <ul>
 <li>1.插件的的安装</li>
@@ -171,13 +178,15 @@ npm install hexo-deployer-git --save
 <li>2.第三方服务集成</li>
 </ul>
 <p>作为博客网站肯定是少不了互动的环节，现在的互联网世界早就已提供了此功能，在此主要用到的功能有：文章阅读，文章数字统计，站点PV/UV，评论回复。其它的功能集成应该都没难度，只要在对应的服务商站点注册好，填写对应的ID，KEY即可。主要提及下<strong>文章数字统计</strong>的功能：</p>
-<p>登录<a href=https://leancloud.cn>LeanCloud</a>找到你的应用，点击其右上角的设置按钮，如下图所示:
+<p>登录<a href=https://leancloud.cn target=_blank rel=noopener>LeanCloud</a>
+找到你的应用，点击其右上角的设置按钮，如下图所示:
 <img src=//lisenhui.gitee.io/imgs/blog/2017/08-02-leancloud-1.png alt=learnclound-1.png></p>
 <p>接着点击左侧菜单中的<strong>存储</strong>，然后在中间的列表中点击<strong>创建Class</strong>，输入名称点击创建即可，如下图所示：
 <img src=//lisenhui.gitee.io/imgs/blog/2017/08-02-leancloud-2.png alt=learnclound-2.png></p>
 <p>此时先别设置安全域名，直接在本地启动Hexo服务，不停的刷新页面，便可以看到你想结果啦，就是这么的简单。</p>
 <blockquote>
-<p>搭建过程中发现<code>NexT</code>的<code>jiathis</code>代码模板已过且没有<code>uid</code>的概念，另外统计代码的存放位置也是有问题的，fork后提交的pull请求，如有兴趣可以关注下：<a href=https://github.com/iissnan/hexo-theme-next/pull/1796>pull-1796</a></p>
+<p>搭建过程中发现<code>NexT</code>的<code>jiathis</code>代码模板已过且没有<code>uid</code>的概念，另外统计代码的存放位置也是有问题的，fork后提交的pull请求，如有兴趣可以关注下：<a href=https://github.com/iissnan/hexo-theme-next/pull/1796 target=_blank rel=noopener>pull-1796</a>
+</p>
 </blockquote>
 <ul>
 <li>3.同时发布到多个Git服务器</li>
@@ -193,7 +202,8 @@ deploy:
 </code></pre></div><ul>
 <li>4.自定义域名绑定</li>
 </ul>
-<p>除了在<code>Git Pages</code>服务商那里绑定自定义的域名外，我们还需要在站点中添加个名为CNAME的文件，内容为你想指向的域名。在此建议使用<a href=https://www.dnspod.cn>DNSPod</a>做域名的解析，可精细指定不来源访问不同的服务(是不是有点分发的味道)，具体的操作可以参考官方/网上教程。</p>
+<p>除了在<code>Git Pages</code>服务商那里绑定自定义的域名外，我们还需要在站点中添加个名为CNAME的文件，内容为你想指向的域名。在此建议使用<a href=https://www.dnspod.cn target=_blank rel=noopener>DNSPod</a>
+做域名的解析，可精细指定不来源访问不同的服务(是不是有点分发的味道)，具体的操作可以参考官方/网上教程。</p>
 <p>到此个人的博客站点便是搭建完成，效果演示如本站, 若是懒的配置，直接clone鄙人的博客项目即可(<strong>记得要把名字改掉呀,哈</strong>), 如下：</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>git clone https://git.oschina.net/lisenhui/my-hexo-blog.git
 </code></pre></div><p>欢迎各位拍砖和鲜花</p>
@@ -211,10 +221,14 @@ deploy:
 </div>
 <p>参考文章：</p>
 <ol>
-<li><a href=https://segmentfault.com/a/1190000002632530>Hexo常用命令</a></li>
-<li><a href=http://www.joryhe.com/2016-05-29-how_to_create_leancloud_read_Counter.html>leanCloud,实现文章阅读量统计</a></li>
-<li><a href=http://blog.csdn.net/hosea1008/article/details/53384382>Hexo+Next主题博客提交百度谷歌收录</a></li>
-<li><a href=http://www.jianshu.com/p/f66103553c45>使用Hexo + Next搭建静态博客</a></li>
+<li><a href=https://segmentfault.com/a/1190000002632530 target=_blank rel=noopener>Hexo常用命令</a>
+</li>
+<li><a href=http://www.joryhe.com/2016-05-29-how_to_create_leancloud_read_Counter.html target=_blank rel=noopener>leanCloud,实现文章阅读量统计</a>
+</li>
+<li><a href=http://blog.csdn.net/hosea1008/article/details/53384382 target=_blank rel=noopener>Hexo+Next主题博客提交百度谷歌收录</a>
+</li>
+<li><a href=http://www.jianshu.com/p/f66103553c45 target=_blank rel=noopener>使用Hexo + Next搭建静态博客</a>
+</li>
 </ol>
 </div>
 <footer class=post-footer>

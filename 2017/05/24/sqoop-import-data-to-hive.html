@@ -148,7 +148,8 @@ Sqoop工具导入数据到Hive小记
 </header>
 <div class=post-body itemprop=articleBody>
 <p>最近正在捣鼓构建数据仓库的事宜，正好有部分维度表的数据需要来自于RDBMS的数据，在HADOOP环境最流行的莫过于Apache的Sqoop工具，按官方的文档操作下来也很顺畅的，不过当要应用到业务场景上时问题便出现了。</p>
-<p>在Hive上面创建了一个Dimension表并用ORC格式储存（关于Hive ORC存储的介绍参考<a href=https://www.iteblog.com/archives/1014.html>Hive:ORC File Format存储格式详解</a>），然后在执行Sqoop导入便会抛出下面的异常：</p>
+<p>在Hive上面创建了一个Dimension表并用ORC格式储存（关于Hive ORC存储的介绍参考<a href=https://www.iteblog.com/archives/1014.html target=_blank rel=noopener>Hive:ORC File Format存储格式详解</a>
+），然后在执行Sqoop导入便会抛出下面的异常：</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>FAILED: SemanticException Unable to load data to destination table. Error: The file that you are trying to load does not match the file format of the destination table.
 </code></pre></div><p>经过几番测试后发现，Sqoop默认导入的数据格式为<strong>TXTFILE</strong>，所以当建表时使用TXTFILE存储格式就能正常的导入数据，但这不是我们所想要的，又查看了一下文档，发现其在1.4.5版本后提供了一个hcatalog命令是可以支持<code>ORC File Format</code>，参考命令如下：</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>sqoop import 
@@ -173,11 +174,16 @@ WARN hcat.SqoopHCatUtilities: Column ts had to be cast to a less precise type TI
 </blockquote>
 <p>参考：</p>
 <ul>
-<li><a href=https://www.cnblogs.com/xiaodf/p/6030102.html>Sqoop使用手册</a></li>
-<li><a href=https://www.iteblog.com/archives/1014.html>Hive:ORC File Format存储格式详解</a></li>
-<li><a href=https://www.58jb.com/html/103.html>Hive创建表时添加中文注释后乱码问题</a></li>
-<li><a href=https://community.hortonworks.com/questions/35600/sqoop-import-to-snappy-orc.html>SQOOP Import to Snappy ORC</a></li>
-<li><a href=https://stackoverflow.com/questions/21324643/sqoop-hive-table-import-table-datatype-doesnt-match-with-database>qoop Hive table import, Table dataType doesn&rsquo;t match with database</a></li>
+<li><a href=https://www.cnblogs.com/xiaodf/p/6030102.html target=_blank rel=noopener>Sqoop使用手册</a>
+</li>
+<li><a href=https://www.iteblog.com/archives/1014.html target=_blank rel=noopener>Hive:ORC File Format存储格式详解</a>
+</li>
+<li><a href=https://www.58jb.com/html/103.html target=_blank rel=noopener>Hive创建表时添加中文注释后乱码问题</a>
+</li>
+<li><a href=https://community.hortonworks.com/questions/35600/sqoop-import-to-snappy-orc.html target=_blank rel=noopener>SQOOP Import to Snappy ORC</a>
+</li>
+<li><a href=https://stackoverflow.com/questions/21324643/sqoop-hive-table-import-table-datatype-doesnt-match-with-database target=_blank rel=noopener>qoop Hive table import, Table dataType doesn&rsquo;t match with database</a>
+</li>
 </ul>
 </div>
 <footer class=post-footer>

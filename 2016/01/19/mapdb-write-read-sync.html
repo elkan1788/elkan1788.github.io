@@ -279,9 +279,12 @@ public class MapDBTest {
 </code></pre></div><p>在这里没有详细的探讨关于MapDB是如何实现与磁盘持久化同步, 直接使用官方默认的值, 当然你也可以自己配置读写同步的心跳时间间隔. 在测试的过程观察发现, MapDB在创建磁盘的数据库文件时, 初始化大小写为2MB, 然后在同步内存数据时, 会先产生出一个临时文件, 当这个临时文件达到一定大小时就会合并到主体数据库文件. 至于其它的功能和代码中的疑问, 有待继续观察, 欢迎共同交流.</p>
 <p>参考资料:</p>
 <ul>
-<li><a href=http://www.mapdb.org/>MapDB 官网</a></li>
-<li><a href=https://github.com/jankotek/MapDB/tree/master/src/test/java/examples>官方示例</a></li>
-<li><a href=http://hill007299.iteye.com/blog/2031208>MapDB实现分析</a></li>
+<li><a href=http://www.mapdb.org/ target=_blank rel=noopener>MapDB 官网</a>
+</li>
+<li><a href=https://github.com/jankotek/MapDB/tree/master/src/test/java/examples target=_blank rel=noopener>官方示例</a>
+</li>
+<li><a href=http://hill007299.iteye.com/blog/2031208 target=_blank rel=noopener>MapDB实现分析</a>
+</li>
 </ul>
 </div>
 <footer class=post-footer>

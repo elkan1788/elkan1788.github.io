@@ -148,7 +148,8 @@ Kylin集成Zeppelin展示数据
 </header>
 <div class=post-body itemprop=articleBody>
 <p>实际上kylin自带的WEB UI已经集成了建议的图形报表，有常见的线形，柱形及饼图，用于数据的初步展示是完全够用的。如果要更加丰富的展示，那可以考虑使用别的工具，现在就试试官方推荐的Apache Zeppelin。</p>
-<p>打开<a href=http://zeppelin.apache.org/download.html>Apache Zeppelin官方网站</a>，选择下载**<code>zeppelin-0.7.1-bin-netinst.tgz</code>**，版本其它的插件可以后续再安装。下载并解压到你想要运行的目录，然后拷贝<code>conf/zeppelin-site.xml.template</code>为<code>conf/zeppelin-site.xml</code> 修改对应的绑定地址和商口号。接着就是安装kylin插件， 命令如下：</p>
+<p>打开<a href=http://zeppelin.apache.org/download.html target=_blank rel=noopener>Apache Zeppelin官方网站</a>
+，选择下载**<code>zeppelin-0.7.1-bin-netinst.tgz</code>**，版本其它的插件可以后续再安装。下载并解压到你想要运行的目录，然后拷贝<code>conf/zeppelin-site.xml.template</code>为<code>conf/zeppelin-site.xml</code> 修改对应的绑定地址和商口号。接着就是安装kylin插件， 命令如下：</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>bin/install-interpreter.sh --name kylin --artifact org.apache.zeppelin:zeppelin-kylin:0.7.1
 </code></pre></div><p>安装完成后使用如下命令启动zeppelin：</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>bin/zeppelin-daemon.sh start
@@ -173,8 +174,10 @@ order by fact.part_dt desc
 <p>关于<code>Zeppelin</code>其它应用还需要慢慢了解，后续再跟进。</p>
 <p>参考：</p>
 <ul>
-<li><a href=http://zeppelin.apache.org/docs/0.7.1/manual/interpreterinstallation.html>interpreter-installation</a></li>
-<li><a href=http://zeppelin.apache.org/docs/0.7.1/interpreter/kylin.html>kylin</a></li>
+<li><a href=http://zeppelin.apache.org/docs/0.7.1/manual/interpreterinstallation.html target=_blank rel=noopener>interpreter-installation</a>
+</li>
+<li><a href=http://zeppelin.apache.org/docs/0.7.1/interpreter/kylin.html target=_blank rel=noopener>kylin</a>
+</li>
 </ul>
 </div>
 <footer class=post-footer>

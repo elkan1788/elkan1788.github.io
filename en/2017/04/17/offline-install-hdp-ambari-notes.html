@@ -130,7 +130,7 @@ Install HDP2.6 (1)-Ambari Server offline
 |
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>1212 words</span>
+<span class=leancloud-world-count>1213 words</span>
 </span>
 <span>
 |
@@ -150,8 +150,10 @@ Install HDP2.6 (1)-Ambari Server offline
 <ol>
 <li>Reference documentation</li>
 </ol>
-<p>FYI: <a href=https://docs.hortonworks.com/HDPDocuments/Ambari-2.5.0.3/bk_ambari-installation/content/ch_Getting_Ready.html>HDP Install Documents</a></p>
-<p><a href=https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.0/bk_command-line-installation/content/prepare-environment.html#ref-2822d0e9-bd88-4714-910a-750c5b95a996>HDP Install Manual</a></p>
+<p>FYI: <a href=https://docs.hortonworks.com/HDPDocuments/Ambari-2.5.0.3/bk_ambari-installation/content/ch_Getting_Ready.html target=_blank rel=noopener>HDP Install Documents</a>
+</p>
+<p><a href=https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.0/bk_command-line-installation/content/prepare-environment.html#ref-2822d0e9-bd88-4714-910a-750c5b95a996 target=_blank rel=noopener>HDP Install Manual</a>
+</p>
 <h2 id=2-the-hardware-environment>2. The hardware environment</h2>
 <p>The first is to prepare 3 machines, install the latest CentOS 7.2, the configuration reference requirements of the machine are as follows:</p>
 <table>
@@ -190,15 +192,18 @@ Install HDP2.6 (1)-Ambari Server offline
 <tbody>
 <tr>
 <td>ambari-2.5.0.3</td>
-<td><a href=http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3/ambari-2.5.0.3-centos7.tar.gz>http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3/ambari-2.5.0.3-centos7.tar.gz</a></td>
+<td><a href=http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3/ambari-2.5.0.3-centos7.tar.gz target=_blank rel=noopener>http://public-repo-1.hortonworks.com/ambari/centos7/2.x/updates/2.5.0.3/ambari-2.5.0.3-centos7.tar.gz</a>
+</td>
 </tr>
 <tr>
 <td>HDP-2.6.0.3</td>
-<td><a href=http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.0.3/HDP-2.6.0.3-centos7-rpm.tar.gz>http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.0.3/HDP-2.6.0.3-centos7-rpm.tar.gz</a></td>
+<td><a href=http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.0.3/HDP-2.6.0.3-centos7-rpm.tar.gz target=_blank rel=noopener>http://public-repo-1.hortonworks.com/HDP/centos7/2.x/updates/2.6.0.3/HDP-2.6.0.3-centos7-rpm.tar.gz</a>
+</td>
 </tr>
 <tr>
 <td>HDP-UTILS-1.1.0.21</td>
-<td><a href=http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.21/repos/centos7/HDP-UTILS-1.1.0.21-centos7.tar.gz>http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.21/repos/centos7/HDP-UTILS-1.1.0.21-centos7.tar.gz</a></td>
+<td><a href=http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.21/repos/centos7/HDP-UTILS-1.1.0.21-centos7.tar.gz target=_blank rel=noopener>http://public-repo-1.hortonworks.com/HDP-UTILS-1.1.0.21/repos/centos7/HDP-UTILS-1.1.0.21-centos7.tar.gz</a>
+</td>
 </tr>
 </tbody>
 </table>
@@ -229,7 +234,8 @@ Install HDP2.6 (1)-Ambari Server offline
 <p>It is important to note that the modification of the &lsquo;'/etc/hosts&rsquo; file in CentOS7 is no longer possible to modify the machine name and requires the use of a new command: &lsquo;hostnamectl set-hostname test-hdp-master01&rsquo;</p>
 <p>Then use the &lsquo;ssh-keygen -t RSA&rsquo; secret order on the master machine to generate the SSH key, and then use the command ssh-copy-id -i-.ssh/id_rsa.pub root@test the h-hdp-cluster01', copied to the other two cluster machines, and finally used the SSH login command to check if the installation was successful, while writing the hostname, IP address to each machine&rsquo;s &lsquo;/etc/hosts&rsquo; file.</p>
 <h2 id=5-time-synchronization>5. Time synchronization</h2>
-<p>Install the NTP service (<a href=http://blog.csdn.net/andy_yf/article/details/8027635)>http://blog.csdn.net/andy_yf/article/details/8027635)</a>.</p>
+<p>Install the NTP service (<a href=http://blog.csdn.net/andy_yf/article/details/8027635%29 target=_blank rel=noopener>http://blog.csdn.net/andy_yf/article/details/8027635)</a>
+.</p>
 <p>Install and start the ntpd service on the Master machine with the following commands:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>yum install ntp -y
 
@@ -310,7 +316,8 @@ export CLASSPATH=.:$JAVA_HOME/lib/tools.jar:$JAVA_HOME/lib/dt.jar
 export PATH=$JAVA_HOME/bin:$PATH
 </code></pre></div><p>Finally command &lsquo;source /etc/profile&rsquo; to edit the file, repeat this on the other two Clubs, and remember to verify that the installation was successful with &lsquo;java-version&rsquo;.</p>
 <h2 id=8-install-the-mysql-database>8. Install the MySQL database</h2>
-<p><a href=http://www.linuxidc.com/Linux/2016-09/135288.htm>Reference</a></p>
+<p><a href=http://www.linuxidc.com/Linux/2016-09/135288.htm target=_blank rel=noopener>Reference</a>
+</p>
 <p>Download the mysql source installation package and install</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>wget http://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm
 
@@ -431,7 +438,8 @@ Update the 169 lines of code as follows:
 self.url = self.name.replace(&#39;localhost&#39;,&#39;test-hdp-master01&#39;)
 </code></pre></div><h2 id=14-uninstall-the-hdp-service>14. Uninstall the HDP service</h2>
 <p>Refer to the official documentation:
-<a href=http://www.yourtechchick.com/hadoop/how-to-completely-remove-and-uninstall-hdp-components-hadoop-uninstall-on-linux-system/>Uninstall</a></p>
+<a href=http://www.yourtechchick.com/hadoop/how-to-completely-remove-and-uninstall-hdp-components-hadoop-uninstall-on-linux-system/ target=_blank rel=noopener>Uninstall</a>
+</p>
 </div>
 <footer class=post-footer>
 <div class=post-tags>

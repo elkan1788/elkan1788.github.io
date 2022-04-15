@@ -130,7 +130,7 @@ The Sqoop tool imports data into the Hive note
 |
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>356 words</span>
+<span class=leancloud-world-count>359 words</span>
 </span>
 <span>
 |
@@ -148,7 +148,8 @@ The Sqoop tool imports data into the Hive note
 </header>
 <div class=post-body itemprop=articleBody>
 <p>Recently, the construction of a data warehouse is being messed up, just some of the dimension table data needs to come from RDBMS data, in the HADOOP environment is the most popular than Apache&rsquo;s Sqoop tool, according to the official documentation operation is also smooth, but when to apply to the business scenario when the problem arises.</p>
-<p>Create a Dimension table on Hiveand store it in ORC format <a href=https://www.iteblog.com/archives/1014.html>(reference toHive: ORC File Format Storage Format)</a> and throw the following exception when performing the Sqoop import:</p>
+<p>Create a Dimension table on Hiveand store it in ORC format <a href=https://www.iteblog.com/archives/1014.html target=_blank rel=noopener>(reference toHive: ORC File Format Storage Format)</a>
+and throw the following exception when performing the Sqoop import:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>FAILED: SemanticException Unable to load data to destination table. Error: The file that you are trying to load does not match the file format of the destination table.
 </code></pre></div><p>After several tests, it was found that Sqoop&rsquo;s default imported data format isTXTFILE, so when the table is built, using the TXTFILE storage format can import data normally, but this is not what we want, and then looked at the documentation, found that it provides an hcatalog command after version 1.4.5 can support &lsquo;ORC Format File&rsquo;, the reference command is as follows:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>sqoop import 
@@ -171,11 +172,16 @@ WARN hcat. SqoopHCatUtilities: Column ts had to be cast to a less precise type T
 <p>When executing the Sqoop command, remember to switch to a cluster machine with both Sqoop Client and Hive Client installed, or you will experience a data import failure.</p>
 <p>Reference:</p>
 <ul>
-<li>Sqoop Manual (<a href=https://www.cnblogs.com/xiaodf/p/6030102.html>https://www.cnblogs.com/xiaodf/p/6030102.html</a>)
--Hive:ORC File Format Storage Format Details( <a href=https://www.iteblog.com/archives/1014.html)>https://www.iteblog.com/archives/1014.html)</a>.</li>
-<li>(Hive adds Chinese after comment when creating table) (<a href=https://www.58jb.com/html/103.html>https://www.58jb.com/html/103.html</a>)</li>
-<li><a href=https://community.hortonworks.com/questions/35600/sqoop-import-to-snappy-orc.html>SQOOP Import to Snappy ORC</a></li>
-<li><a href=https://stackoverflow.com/questions/21324643/sqoop-hive-table-import-table-datatype-doesnt-match-with-database>qoop Hive table import, Table dataType doesn&rsquo;t match with database</a></li>
+<li>Sqoop Manual (<a href=https://www.cnblogs.com/xiaodf/p/6030102.html target=_blank rel=noopener>https://www.cnblogs.com/xiaodf/p/6030102.html</a>
+)
+-Hive:ORC File Format Storage Format Details( <a href=https://www.iteblog.com/archives/1014.html%29 target=_blank rel=noopener>https://www.iteblog.com/archives/1014.html)</a>
+.</li>
+<li>(Hive adds Chinese after comment when creating table) (<a href=https://www.58jb.com/html/103.html target=_blank rel=noopener>https://www.58jb.com/html/103.html</a>
+)</li>
+<li><a href=https://community.hortonworks.com/questions/35600/sqoop-import-to-snappy-orc.html target=_blank rel=noopener>SQOOP Import to Snappy ORC</a>
+</li>
+<li><a href=https://stackoverflow.com/questions/21324643/sqoop-hive-table-import-table-datatype-doesnt-match-with-database target=_blank rel=noopener>qoop Hive table import, Table dataType doesn&rsquo;t match with database</a>
+</li>
 </ul>
 </div>
 <footer class=post-footer>

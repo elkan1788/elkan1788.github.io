@@ -147,7 +147,8 @@ mpsdk4j的点滴记录--MPAccount
 </div>
 </header>
 <div class=post-body itemprop=articleBody>
-<p><code>mpsdk4j</code>是在实际的生产项目中抽离出来的开源分享项目,它的成长至今也算是有不少的经历吧, 最近一直忙于工作与生活上的事情疏忽了对它的关心. 自去年下决心对它重构并建立了QQ交流群(<a href="http://jq.qq.com/?_wv=1027&k=dPDLxk">486192816</a>)后, 逐渐的有不业界朋友前来关注, 在此非常感谢他们的支持. 都说用过方知其好, 可实际情况确不是这么乐观呀,在大家的使用过程中发现<code>mpsdk4j</code>有不少欠缺与不足的地方. 之前一直想在元旦发布的2.b.1版本也拖延至今还没有交工, 在此对大家说声抱歉, 以后定会嘉勉.下面还是先进入此次的主题&ndash;初识<code>mpsdk4j</code>之<code>MPAccount</code>. (注: 对于有微信开发基础与项目经验的可略过)</p>
+<p><code>mpsdk4j</code>是在实际的生产项目中抽离出来的开源分享项目,它的成长至今也算是有不少的经历吧, 最近一直忙于工作与生活上的事情疏忽了对它的关心. 自去年下决心对它重构并建立了QQ交流群(<a href="http://jq.qq.com/?_wv=1027&k=dPDLxk" target=_blank rel=noopener>486192816</a>
+)后, 逐渐的有不业界朋友前来关注, 在此非常感谢他们的支持. 都说用过方知其好, 可实际情况确不是这么乐观呀,在大家的使用过程中发现<code>mpsdk4j</code>有不少欠缺与不足的地方. 之前一直想在元旦发布的2.b.1版本也拖延至今还没有交工, 在此对大家说声抱歉, 以后定会嘉勉.下面还是先进入此次的主题&ndash;初识<code>mpsdk4j</code>之<code>MPAccount</code>. (注: 对于有微信开发基础与项目经验的可略过)</p>
 <p><code>mpsdk4j</code>自发布之时起的目标就是要做到原生态,简单易用. 不过在实际的交流过程中发现一个普遍的现象, 就是对初次接触微信开发的朋友来说,<code>mpsdk4j</code>的使用还是有点难(这也是为何要写这一篇博文的原因之一). 那么接下来我们就先简单的认识下微信公众平台开的所需要的元素, 以及它们与<code>mpsdk4j</code>之的映射关系.</p>
 <h2 id=微信公众号属性>微信公众号属性</h2>
 <table>
@@ -271,8 +272,10 @@ mpsdk4j的点滴记录--MPAccount
 <p>或许你会觉得看完这些文章并没有太大的收获, 那不要紧, 你可以把它收藏起来, 当作是文档工具使用. 哪天你在开发的时候不记得了其中某个属性的含义, 可以倒回头来再拾起. 如有更好的建议或是意见, 可以在下面回复.</p>
 <p>参考:</p>
 <ul>
-<li><a href=https://mp.weixin.qq.com/wiki/8/f9a0b8382e0b77d87b3bcc1ce6fbc104.html>接入指南</a></li>
-<li><a href=https://mp.weixin.qq.com/wiki/14/70e73cedf9fd958d2e23264ba9333ad2.html>消息加密</a></li>
+<li><a href=https://mp.weixin.qq.com/wiki/8/f9a0b8382e0b77d87b3bcc1ce6fbc104.html target=_blank rel=noopener>接入指南</a>
+</li>
+<li><a href=https://mp.weixin.qq.com/wiki/14/70e73cedf9fd958d2e23264ba9333ad2.html target=_blank rel=noopener>消息加密</a>
+</li>
 </ul>
 </div>
 <footer class=post-footer>

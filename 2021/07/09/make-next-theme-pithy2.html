@@ -148,8 +148,10 @@
 </header>
 <div class=post-body itemprop=articleBody>
 <h2 id=1背景>1.背景</h2>
-<p>自上次优化<code>NexT</code>主题并分享到Github仓库中<a href=https://github.com/elkan1788/hugo-theme-next><strong>hugo-theme-next</strong></a>后，也是受到了不少<code>NexT</code>主题喜爱者的使用和邮件反馈。于是决定还是要花点心思来维护它，便把自己之前一些想法也重新加入到<code>NexT</code>主题中，同时对部分插件的功能做了更新。</p>
-<p>此次优化后发布的版本代号为<code>3.x</code>，原因是整体结构和之前的变化较为大（主要是在配置方面的体现），为此也重写主题的相关介绍等信息，目前正在申请加入官方的主题列表中(<a href=https://deploy-preview-73--hugothemes.netlify.app/themes/hugo-theme-next/>点击预览</a>)，欢迎大家的使用和反馈。</p>
+<p>自上次优化<code>NexT</code>主题并分享到Github仓库中<a href=https://github.com/elkan1788/hugo-theme-next target=_blank rel=noopener><strong>hugo-theme-next</strong></a>
+后，也是受到了不少<code>NexT</code>主题喜爱者的使用和邮件反馈。于是决定还是要花点心思来维护它，便把自己之前一些想法也重新加入到<code>NexT</code>主题中，同时对部分插件的功能做了更新。</p>
+<p>此次优化后发布的版本代号为<code>3.x</code>，原因是整体结构和之前的变化较为大（主要是在配置方面的体现），为此也重写主题的相关介绍等信息，目前正在申请加入官方的主题列表中(<a href=https://deploy-preview-73--hugothemes.netlify.app/themes/hugo-theme-next/ target=_blank rel=noopener>点击预览</a>
+)，欢迎大家的使用和反馈。</p>
 <h2 id=2中英文切换>2.中英文切换</h2>
 <p>或许大家觉得这个功能有点软肋，原因就是个人博客的流量并不会很大。但流量小并不是意味着没有流量，所以我们还是可以增加个中英切换的功能，来助力我们推广自己的博客空间。而且<code>Hugo</code>引擎在多语言化这块的开发也比较简单，不过现在是手动模式，也就意味着你在发表文章写两份。增加中英文切换功能后的效果参考如下：（就是在左上角添加了切换入口）</p>
 <p><img src=//lisenhui.gitee.io/imgs/blog/2021/07-09-hugo-next-translate-func.png alt="Translate Function"></p>
@@ -165,7 +167,8 @@
 <p>主题中原来使用的<code>BShare</code>插件，但在某一天突然就发现其无法正常引用。真是感叹在继百度分享插件后，又一国内分享插件的落幕。所以后来就找到了国外一款比较流行的插件<code>addthis</code>，通过一番倒腾研究终于成功集成，用于替换原来的<code>BShare</code>插件。</p>
 <p>在主题中启用也比较简单，分如下2步：</p>
 <ul>
-<li>到<code>addthis</code>官方网站上去注册个账号（<a href=https://www.addthis.com/register>点击注册</a>），然后获取到个人的ID号，类似这样的：<code>ra-6049e46e9ee54287</code>；</li>
+<li>到<code>addthis</code>官方网站上去注册个账号（<a href=https://www.addthis.com/register target=_blank rel=noopener>点击注册</a>
+），然后获取到个人的ID号，类似这样的：<code>ra-6049e46e9ee54287</code>；</li>
 <li>在配置文件中找到Share配置项，设置<code>Enable = true</code>和<code>AddthisId = "Your AddthisPubid"</code>两个参数；</li>
 </ul>
 <p>实现的效果如下：</p>
@@ -186,7 +189,8 @@
 <p><img src=//lisenhui.gitee.io/imgs/blog/2021/07-09-hugo-next-math-func.png alt="Math Function"></p>
 <h2 id=7waline评论>7.Waline评论</h2>
 <p>原来主题中使用一款<code>Valine</code>的评论插件，但网上关于此未评论插件的安全问题也是讨论的“血雨腥风”，但过多的讨论咱就不参合啦。在此背景下便有人衍生出<code>Waline</code>插件，通过服务端的部署来解决安全隐患。个人还是比较喜欢它的评论管理功能（可以有效屏蔽一此恶意灌水），于是又展开了一番研究，成功在<code>Vercel</code>上面部署自己的评论后台服务，也在博客中升级并引用此评论插件功能。</p>
-<p>这款评论插件的部署相对来说还是要有些“成本”，不过官方的文档很完善，社区回答也很活跃，大家可以放心快速使用。具体参考： <a href=https://waline.js.org/guide/get-started.html#vercel-%E9%83%A8%E7%BD%B2-%E6%9C%8D%E5%8A%A1%E7%AB%AF>指南</a></p>
+<p>这款评论插件的部署相对来说还是要有些“成本”，不过官方的文档很完善，社区回答也很活跃，大家可以放心快速使用。具体参考： <a href=https://waline.js.org/guide/get-started.html#vercel-%E9%83%A8%E7%BD%B2-%E6%9C%8D%E5%8A%A1%E7%AB%AF target=_blank rel=noopener>指南</a>
+</p>
 <p>然后在配置参数中找到<code>Comment</code>配置项，填写如下的信息，就可以在博客页面看到评论框。</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-toml data-lang=toml>[Comment]
   Enable = <span style=color:#a2f;font-weight:700>true</span>

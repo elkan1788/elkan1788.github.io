@@ -148,7 +148,8 @@ Hue中集成MySQL数据显示乱码
 </header>
 <div class=post-body itemprop=articleBody>
 <p>Hue is a Web applications that enables you to easily interact with an Hadoop cluster. Hue applications let you browse HDFS, Jobs, run Hive, Pig and Cloudera Impala queries, manage the Hive Metastore, HBase, Sqoop, ZooKeeper, MapReduce jobs, and create and schedule worklows with Oozie.</p>
-<p>更加关于HUE的介绍及演示可访问其官方网站：<a href=http://gethue.com>http://gethue.com</a></p>
+<p>更加关于HUE的介绍及演示可访问其官方网站：<a href=http://gethue.com target=_blank rel=noopener>http://gethue.com</a>
+</p>
 <p>在此主要解决的是在HUE过程中集成MYSQL管理时，遇到了数据库开发中常见的中文乱码问题。先来看看集成MySQL的配置描述：</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>###########################################################################
 # Settings for the RDBMS application
@@ -210,7 +211,8 @@ Hue中集成MySQL数据显示乱码
       # Database options to send to the server when connecting.
       # https://docs.djangoproject.com/en/1.4/ref/databases/
       # options={}
-</code></pre></div><p>这段配置很简单理解起来也难，可实际运行过程中就遇到了两个难题，先是显示出现乱码问题，另外就是配置中给的文档链接地址是**<code>404</code>**，真是尴尬啦。追溯下来最后到找到关于<a href=https://docs.djangoproject.com/en/1.11/ref/databases/#setting-sql-mode>sql-mode</a>设置，想下应该是支持MySQL的命令吧，然后就在配置最后一段加入如下的命令：</p>
+</code></pre></div><p>这段配置很简单理解起来也难，可实际运行过程中就遇到了两个难题，先是显示出现乱码问题，另外就是配置中给的文档链接地址是**<code>404</code>**，真是尴尬啦。追溯下来最后到找到关于<a href=https://docs.djangoproject.com/en/1.11/ref/databases/#setting-sql-mode target=_blank rel=noopener>sql-mode</a>
+设置，想下应该是支持MySQL的命令吧，然后就在配置最后一段加入如下的命令：</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-mysql data-lang=mysql>options<span style=color:#666>=</span><span>{</span><span style=color:#bbb> </span><span style=color:#b44>&#34;init_command&#34;</span>:<span style=color:#b44>&#34;SET NAMES `utf8`&#34;</span><span>}</span><span style=color:#bbb>
 </span></code></pre></div><p>实验了一下，乱码问题OK，中文显示正常。</p>
 <p><img src=//lisenhui.gitee.io/imgs/blog/2017/08-15-hue-mysql-chinese.png alt=hue-mysql-chinese.png></p>

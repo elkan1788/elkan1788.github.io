@@ -130,7 +130,7 @@ Apache Nifi集群搭建及用kerberos实现用户认证
 |
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>2647 字</span>
+<span class=leancloud-world-count>2644 字</span>
 </span>
 <span>
 |
@@ -147,9 +147,11 @@ Apache Nifi集群搭建及用kerberos实现用户认证
 </div>
 </header>
 <div class=post-body itemprop=articleBody>
-<p>最近这段时间在接触数据流式处理方面的事宜，用到了<strong>Apache NIFI</strong>现把安装配置中学习的一些经验分享下。此篇文章主要是针对集群及用户权限方面，关于<a href=https://nifi.apache.org/>Apache NIFI</a>的介绍就不做过多的说明，直接引用官方的首页的说明如下图所示：</p>
+<p>最近这段时间在接触数据流式处理方面的事宜，用到了<strong>Apache NIFI</strong>现把安装配置中学习的一些经验分享下。此篇文章主要是针对集群及用户权限方面，关于<a href=https://nifi.apache.org/ target=_blank rel=noopener>Apache NIFI</a>
+的介绍就不做过多的说明，直接引用官方的首页的说明如下图所示：</p>
 <p><img src=//lisenhui.gitee.io/imgs/blog/2017/10-22-Apache-NiFi-01.png alt=NiFi-01.png></p>
-<p><strong>Apahce NIFI</strong>的单机运行是相当的简单，易用，完全就是傻瓜式的。下载解压，进行<code>bin</code>目录执行<code>nifi.sh start</code> 打开浏览器输入<code>http://127.0.0.1:8080/nifi</code>即可看到一个简洁漂亮的WEB UI。那么接下来我们要配置的是它的集群模式，官方说明<em><strong>NIFI</strong></em>采用的是<strong>0</strong>主节点模式，集群中的每个节点在数据集上执行相同的任务，但是每个节点都在不同的数据集上运行（详细的说明请查看<a href=https://nifi.apache.org/docs.html#clustering>官方文档</a>），并且内置了<strong>Zookeeper</strong>服务，如下图所示：</p>
+<p><strong>Apahce NIFI</strong>的单机运行是相当的简单，易用，完全就是傻瓜式的。下载解压，进行<code>bin</code>目录执行<code>nifi.sh start</code> 打开浏览器输入<code>http://127.0.0.1:8080/nifi</code>即可看到一个简洁漂亮的WEB UI。那么接下来我们要配置的是它的集群模式，官方说明<em><strong>NIFI</strong></em>采用的是<strong>0</strong>主节点模式，集群中的每个节点在数据集上执行相同的任务，但是每个节点都在不同的数据集上运行（详细的说明请查看<a href=https://nifi.apache.org/docs.html#clustering target=_blank rel=noopener>官方文档</a>
+），并且内置了<strong>Zookeeper</strong>服务，如下图所示：</p>
 <p><img src=//lisenhui.gitee.io/imgs/blog/2017/10-22-zero-master-cluster-http-access.png alt=zero-master-cluster-http-access.png></p>
 <h1 id=系统环境及软件版本>系统环境及软件版本</h1>
 <ul>
@@ -421,10 +423,14 @@ nifi.kerberos.service.keytab.location=/data/root.keytab
 </blockquote>
 <p>引用参考</p>
 <ul>
-<li><a href=https://community.hortonworks.com/articles/34147/nifi-security-user-authentication-with-kerberos.html>nifi-security-user-authentication-with-kerberos.html</a></li>
-<li><a href="http://blog.csdn.net/sinat_34233802/article/details/68942176?locationNum=1&fps=1">Nifi-搭建</a></li>
-<li><a href=http://blog.csdn.net/wulantian/article/details/42418231>kerberos认证原理&mdash;讲的非常细致，易懂</a></li>
-<li><a href=http://blog.csdn.net/post_yuan/article/details/54406148>Kerberos 基本安装与配置</a></li>
+<li><a href=https://community.hortonworks.com/articles/34147/nifi-security-user-authentication-with-kerberos.html target=_blank rel=noopener>nifi-security-user-authentication-with-kerberos.html</a>
+</li>
+<li><a href="http://blog.csdn.net/sinat_34233802/article/details/68942176?locationNum=1&fps=1" target=_blank rel=noopener>Nifi-搭建</a>
+</li>
+<li><a href=http://blog.csdn.net/wulantian/article/details/42418231 target=_blank rel=noopener>kerberos认证原理&mdash;讲的非常细致，易懂</a>
+</li>
+<li><a href=http://blog.csdn.net/post_yuan/article/details/54406148 target=_blank rel=noopener>Kerberos 基本安装与配置</a>
+</li>
 </ul>
 <p><strong>收到的赏金</strong>
 <em>感谢各位的慷慨解囊!</em></p>

@@ -130,7 +130,7 @@
 |
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>2262 字</span>
+<span class=leancloud-world-count>2245 字</span>
 </span>
 <span>
 |
@@ -148,11 +148,13 @@
 </header>
 <div class=post-body itemprop=articleBody>
 <h2 id=1-背景>1. 背景</h2>
-<p>经过一番考虑还是把个人博客从Hexo引擎迁移到Hugo引擎，博客主题依旧还是沿用NexT。其实本来还担心又要折腾弄个全新的博客主题，后来Github上看到兰陵子分享的<a href=https://github.com/xtfly/hugo-theme-next>NexT</a>主题，就直接拿过来引用。但在部署后发现还是有些地方需要改善，在此记录下改造优化的过程。如果正好你也喜欢这个主题，那么欢迎拿去使用，也欢迎交流反馈。</p>
+<p>经过一番考虑还是把个人博客从Hexo引擎迁移到Hugo引擎，博客主题依旧还是沿用NexT。其实本来还担心又要折腾弄个全新的博客主题，后来Github上看到兰陵子分享的<a href=https://github.com/xtfly/hugo-theme-next target=_blank rel=noopener>NexT</a>
+主题，就直接拿过来引用。但在部署后发现还是有些地方需要改善，在此记录下改造优化的过程。如果正好你也喜欢这个主题，那么欢迎拿去使用，也欢迎交流反馈。</p>
 <h2 id=2-评论功能>2. 评论功能</h2>
 <p>评论功能是博客空间一项较为重要的功能，作为博主与读者交流的重要桥梁，那自然是不可或缺。之前一直使用的是LiveRe，最近发现访问不太稳定，另外还不支持游客评论模式，于是乎考虑使用Valine来做评论支持，不过最后还是把两个都实现了。</p>
 <h3 id=21-livere>2.1 LiveRe</h3>
-<p><a href=http://livere.com/>LiveRe</a>(来必力)是韩国最大第三方社交评论系统，自打多说评论下线后一直都是使用它做博客的评论框。个人开发者可以到官网网站注册个City免费版本即可，它的集成也是很简单，直接在博客的JavaScript页面中加载如下的代码：</p>
+<p><a href=http://livere.com/ target=_blank rel=noopener>LiveRe</a>
+(来必力)是韩国最大第三方社交评论系统，自打多说评论下线后一直都是使用它做博客的评论框。个人开发者可以到官网网站注册个City免费版本即可，它的集成也是很简单，直接在博客的JavaScript页面中加载如下的代码：</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript>{{ <span style=color:#a2f;font-weight:700>if</span> and (.IsPage) (isset .Site.Params <span style=color:#b44>&#34;comment&#34;</span>) (eq .Site.Params.Comment <span style=color:#b44>&#34;LiveRe&#34;</span>) }}
 <span style=color:#666>&lt;</span>script type<span style=color:#666>=</span><span style=color:#b44>&#34;text/javascript&#34;</span><span style=color:#666>&gt;</span>
 (<span style=color:#a2f;font-weight:700>function</span>(d, s) {
@@ -172,7 +174,8 @@
 </code></pre></div><p>最后的效果如下：</p>
 <p><img src=//lisenhui.gitee.io/imgs/blog/2020/10-02-hugo-next-LiveRe-comment.png alt="LiveRe Comment"></p>
 <h3 id=22-valine>2.2 Valine</h3>
-<p><a href=https://valine.js.org/>Valine</a>,是一款基于LeanCloud的快速、简洁且高效的无后端评论系统。官方的文档非常详细，这里就不再赘述，最后实现的效果如下：</p>
+<p><a href=https://valine.js.org/ target=_blank rel=noopener>Valine</a>
+,是一款基于LeanCloud的快速、简洁且高效的无后端评论系统。官方的文档非常详细，这里就不再赘述，最后实现的效果如下：</p>
 <p><img src=//lisenhui.gitee.io/imgs/blog/2020/10-02-hugo-next-valine-comment.png alt="Valine Comment"></p>
 <blockquote>
 <p>需要注意一下，由于Valine里面集成了LeanCloud的SDK引用，所以自己再使用LearnCloud功能就不需要再引用相关的SDK，不然后就会发生冲突。</p>
@@ -208,8 +211,10 @@
 <span style=color:green;font-weight:700>&lt;/urlset&gt;</span>
 </code></pre></div><p>最后把这个文件路径提交到对应的收录平台即可，比如下面的：</p>
 <ul>
-<li>百度: <a href="https://ziyuan.baidu.com/site/siteadd?siteurl="><strong>收录入口</strong></a></li>
-<li>谷歌: <a href=https://search.google.com/search-console/welcome><strong>收录入口</strong></a></li>
+<li>百度: <a href="https://ziyuan.baidu.com/site/siteadd?siteurl=" target=_blank rel=noopener><strong>收录入口</strong></a>
+</li>
+<li>谷歌: <a href=https://search.google.com/search-console/welcome target=_blank rel=noopener><strong>收录入口</strong></a>
+</li>
 </ul>
 <h3 id=42-bshare分享>4.2 bshare分享</h3>
 <p>另外通过站点自带的分享功能，可以快速将文章分享给不同的读者或者是其他平台。此次采用的是BShare插件，可以快速生成不同平台的分享链接，读者只需要一键点击便可快速分享，效果如下：</p>
@@ -226,7 +231,8 @@
 <h2 id=7-公益404>7. 公益404</h2>
 <p>引入腾讯的404公益页面，虽然本站点没有什么流量，但也希望通过这种方式让更多的失散儿童能够早日回家。</p>
 <h2 id=8-在线聊天>8. 在线聊天</h2>
-<p>评论功能可以实现与读者的交流，只不过实时不是很强，那么在线交流正好是不错的方式。 <a href=http://blog.daovoice.io/>DaoVoice</a>是款不错的在线聊天产品，同时也供了免费使用版本机会，集成也是相当的简单, 只要在Script引用地方加入如下的代码即可：</p>
+<p>评论功能可以实现与读者的交流，只不过实时不是很强，那么在线交流正好是不错的方式。 <a href=http://blog.daovoice.io/ target=_blank rel=noopener>DaoVoice</a>
+是款不错的在线聊天产品，同时也供了免费使用版本机会，集成也是相当的简单, 只要在Script引用地方加入如下的代码即可：</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript>
 daovoice(<span style=color:#b44>&#39;init&#39;</span>, {
   app_id<span style=color:#666>:</span> <span style=color:#b44>&#34;xxxxx&#34;</span>

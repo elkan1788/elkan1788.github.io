@@ -130,7 +130,7 @@
 |
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>2655 字</span>
+<span class=leancloud-world-count>2656 字</span>
 </span>
 <span>
 |
@@ -149,7 +149,8 @@
 <div class=post-body itemprop=articleBody>
 <h1 id=背景与介绍>背景与介绍</h1>
 <p>在大数据繁杂的ETL或其它数据处理过程当中，有些任务是需要定时执行的，虽然Linux自带了<code>cron</code>命令功能，但是仍不能满足最大的一点就是它不能提供集中式的管理和可视化的编辑。其实在大数据的生态当中已集成有个定时调度框架<code>Oozie</code>，只是实践下来发现其学习成本不低，布署的过程也较复杂。在尝试过其它分布工调度框架后（如阿里的宙斯<code>Zeus</code>），还是选择了社区较多人使用的<code>Azkaban</code>。</p>
-<p><code>Azkaban3</code>相对于上个版本所做的更改还是比较大的，感兴趣的话可以到其官方网站<a href=https://azkaban.github.io/azkaban/docs/latest/>Azkaban</a>了解下。接下来主要还是分享下<code>Azkaban3</code>的安装布署，下面是<code>Azkaban3</code>的系统架构设计图：</p>
+<p><code>Azkaban3</code>相对于上个版本所做的更改还是比较大的，感兴趣的话可以到其官方网站<a href=https://azkaban.github.io/azkaban/docs/latest/ target=_blank rel=noopener>Azkaban</a>
+了解下。接下来主要还是分享下<code>Azkaban3</code>的安装布署，下面是<code>Azkaban3</code>的系统架构设计图：</p>
 <p><img src=//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install00.png alt=Azkaban-Install00></p>
 <p>图中的3个组件便是<code>Azkaban3</code>的重要组成部分：</p>
 <ul>
@@ -162,7 +163,8 @@
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>mysql&gt; CREATE DATABASE azkaban DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 </code></pre></div><p>指定某个数据库用户，为其赋予对<code>azkaban</code>数据库具有<code>SELECT</code>,<code>INSERT</code>,<code>UPDATE</code>,<code>DELETE</code>的操作权限：</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>mysql&gt; GRANT SELECT,INSERT,UPDATE,DELETE ON azkaban.* to <span style=color:#b44>&#39;azkaban-dba&#39;</span>@<span style=color:#b44>&#39;%&#39;</span> WITH GRANT OPTION;
-</code></pre></div><p>最后就是导入创建表的<code>SQL</code>语句，官方提供的建表语句比较分散，为此特地整理了份完整的建表语句<a href=https://pan.baidu.com/s/1Dvcky7uJT02O9det4UG0cQ>Azkaban Create Tables 密码: 8ne8</a>:</p>
+</code></pre></div><p>最后就是导入创建表的<code>SQL</code>语句，官方提供的建表语句比较分散，为此特地整理了份完整的建表语句<a href=https://pan.baidu.com/s/1Dvcky7uJT02O9det4UG0cQ target=_blank rel=noopener>Azkaban Create Tables 密码: 8ne8</a>
+:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>mysql&gt; <span style=color:#a2f>source</span> /opt/download/azkaban-create-tables.sql
 </code></pre></div><blockquote>
 <p>注意：由于<code>Azkaban3</code>的项目发布是通过上传文件实现的，因此需要把<code>MySQL</code>中允许上传包大小的能数调整下，此参数位于<code>[mysqld]</code>下：max_allowed_packet=64M，根据实际情况修改适合大小。</p>
@@ -431,7 +433,8 @@ bin/azkaban-executor-shutdown.sh &gt; /dev/null 2&gt;&amp;<span style=color:#666
 <p><img src=//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install02.png alt=Azkaban-Install02></p>
 <h2 id=demo>Demo</h2>
 <p>在上述启动成功的<code>Web Server</code>中创建中新的项目，命名为：<em>ShellJob-Demo</em>，然后把下面示例<em>Job</em>下载并上传至刚才创建好的项目中，注意不需要解压哦。然后在项目中找到<code>Exectue Flow</code>按钮，然后不断的下一步即可，如下图组所示：</p>
-<p><a href=https://pan.baidu.com/s/19iEqfyShVTnVrfzfdST__A>Base Flow Demo 密码: 4f4f</a></p>
+<p><a href=https://pan.baidu.com/s/19iEqfyShVTnVrfzfdST__A target=_blank rel=noopener>Base Flow Demo 密码: 4f4f</a>
+</p>
 <p><img src=//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install03.png alt=Azkaban-Install03></p>
 <p><img src=//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install04.png alt=Azkaban-Install04></p>
 <p><img src=//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install05.png alt=Azkaban-Install05></p>

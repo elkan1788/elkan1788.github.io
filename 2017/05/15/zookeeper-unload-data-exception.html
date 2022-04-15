@@ -154,12 +154,15 @@ Zookeeper崩溃后无法加载事务日志
 2017-05-15 11:02:26,494 - ERROR [main:QuorumPeer@530] - Unable to load database on disk
 </code></pre></div><p>网上一阵搜索，期待可以找到相关的案例分享，案例倒是找到了不过，那些只是遇到问题并没有完全解决， 案例如下：</p>
 <ul>
-<li><a href=https://issues.apache.org/jira/browse/ZOOKEEPER-1621>ZOOKEEPER-1621</a></li>
-<li><a href=http://futeng.iteye.com/blog/2120173>数据文件读取异常</a></li>
+<li><a href=https://issues.apache.org/jira/browse/ZOOKEEPER-1621 target=_blank rel=noopener>ZOOKEEPER-1621</a>
+</li>
+<li><a href=http://futeng.iteye.com/blog/2120173 target=_blank rel=noopener>数据文件读取异常</a>
+</li>
 </ul>
 <p>此时真是有点无语了，在着手查看zookeeper的源码时，同时切换成百度搜索引擎查找案例(大家都比较喜欢用Google，你懂的)，没想到还真的找到解决办法了，网友分享的案例：</p>
 <ul>
-<li><a href=http://blog.sina.com.cn/s/blog_3fe961ae0102xmiv.html>ZooKeeper启动报错Last transaction was partial. 解决方法</a></li>
+<li><a href=http://blog.sina.com.cn/s/blog_3fe961ae0102xmiv.html target=_blank rel=noopener>ZooKeeper启动报错Last transaction was partial. 解决方法</a>
+</li>
 </ul>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>原文如下：
 ZooKeeper 在硬盘满后，无法再次启动，抛出Last transaction was partial.

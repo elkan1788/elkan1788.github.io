@@ -130,7 +130,7 @@ Several pit records during CDH6 installation
 |
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>715 words</span>
+<span class=leancloud-world-count>716 words</span>
 </span>
 <span>
 |
@@ -163,7 +163,8 @@ Several pit records during CDH6 installation
 <p>Another problem is MySQL GTID, which causes the build table to fail all the time:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>Error code: <span style=color:#666>1786</span>
 Statement violates GTID consistency: CREATE TABLE ... SELECT.
-</code></pre></div><p>Re-reference: smh.com.u sqL Statements violates GTID consistency: CREATE TABLE &mldr; SELECT. Error code: 1786 Questions (<a href=https://www.cnblogs.com/zzw-zyba/p/8044960.html)>https://www.cnblogs.com/zzw-zyba/p/8044960.html)</a>.</p>
+</code></pre></div><p>Re-reference: smh.com.u sqL Statements violates GTID consistency: CREATE TABLE &mldr; SELECT. Error code: 1786 Questions (<a href=https://www.cnblogs.com/zzw-zyba/p/8044960.html%29 target=_blank rel=noopener>https://www.cnblogs.com/zzw-zyba/p/8044960.html)</a>
+.</p>
 <p>It is said that the 2 parameter configuration is to be turned off, but the system configuration parameter modification is not supported due to the use of database components on the cloud. Finally, we had to set up a MySQL service on-premises, wait for the CM initialization work to be completed, and then sync the table structure and data to the cloud database, the problem can be solved.</p>
 <h2 id=3-hosts-profile-error>3. Hosts profile error</h2>
 <p>When installing the Yarn service component, you always report that the JAR package that uploaded Mapreduce failed, and viewing the log information indicates that the HDFS directory could not be created, informing you that there is no permission to execute. So go to temporarily adjust the directory permissions, but disappointed that the installation is still a failure, or report the same error.</p>

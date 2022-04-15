@@ -148,7 +148,8 @@ Kylin integrates Zeppelin presentation data
 </header>
 <div class=post-body itemprop=articleBody>
 <p>In fact, kylin&rsquo;s own WEB UI has integrated the recommended graphical reports, with common line, column, and pie charts, which are perfectly sufficient for the initial presentation of the data. If you want a richer presentation, consider using other tools, and try the officially recommended Apache Zeppelin now.</p>
-<p>Open the official website of <a href=http://zeppelin.apache.org/download.html>Apache Zeppelin</a> and choose to download the version of &lsquo;zeppelin-0.7.1-bin-netinst.tgz&rsquo;, and other plug-ins can be installed later. Download and unzip to the directory you want to run, and then copy &lsquo;conf/zeppelin-site.xml.template&rsquo;to modify the binding address and business sloganfor &lsquo;conf/zeppelin-site.xml&rsquo; . Then install the kylin plug-in, and the command is as follows:</p>
+<p>Open the official website of <a href=http://zeppelin.apache.org/download.html target=_blank rel=noopener>Apache Zeppelin</a>
+and choose to download the version of &lsquo;zeppelin-0.7.1-bin-netinst.tgz&rsquo;, and other plug-ins can be installed later. Download and unzip to the directory you want to run, and then copy &lsquo;conf/zeppelin-site.xml.template&rsquo;to modify the binding address and business sloganfor &lsquo;conf/zeppelin-site.xml&rsquo; . Then install the kylin plug-in, and the command is as follows:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>bin/install-interpreter.sh --name kylin --artifact org.apache.zeppelin:zeppelin-kylin:0.7.1
 </code></pre></div><p>When the installation is complete, start zeppelin with the following command:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>bin/zeppelin-daemon.sh start
@@ -173,8 +174,10 @@ order by fact.part_dt desc
 <p>Other applications about &lsquo;Zeppelin&rsquo; need to be understood slowly and followed up.</p>
 <p>Reference:</p>
 <ul>
-<li><a href=http://zeppelin.apache.org/docs/0.7.1/manual/interpreterinstallation.html>interpreter-installation</a></li>
-<li><a href=http://zeppelin.apache.org/docs/0.7.1/interpreter/kylin.html>kylin</a></li>
+<li><a href=http://zeppelin.apache.org/docs/0.7.1/manual/interpreterinstallation.html target=_blank rel=noopener>interpreter-installation</a>
+</li>
+<li><a href=http://zeppelin.apache.org/docs/0.7.1/interpreter/kylin.html target=_blank rel=noopener>kylin</a>
+</li>
 </ul>
 </div>
 <footer class=post-footer>

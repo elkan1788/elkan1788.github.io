@@ -2,5 +2,7 @@
 &lt;p>&lt;img src="//lisenhui.gitee.io/imgs/blog/2017/10-18-ambari-red.png" alt="alert_stopped.png">&lt;/p></description></item><item><title>Install HDP2.6 (1)-Ambari Server offline</title><link>https://lisenhui.cn/en/2017/04/17/offline-install-hdp-ambari-notes.html</link><pubDate>Mon, 17 Apr 2017 19:52:31 +0000</pubDate><guid>https://lisenhui.cn/en/2017/04/17/offline-install-hdp-ambari-notes.html</guid><description>&lt;ol>
 &lt;li>Reference documentation&lt;/li>
 &lt;/ol>
-&lt;p>FYI: &lt;a href="https://docs.hortonworks.com/HDPDocuments/Ambari-2.5.0.3/bk_ambari-installation/content/ch_Getting_Ready.html">HDP Install Documents&lt;/a>&lt;/p>
-&lt;p>&lt;a href="https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.0/bk_command-line-installation/content/prepare-environment.html#ref-2822d0e9-bd88-4714-910a-750c5b95a996">HDP Install Manual&lt;/a>&lt;/p></description></item></channel></rss>
+&lt;p>FYI: &lt;a href="https://docs.hortonworks.com/HDPDocuments/Ambari-2.5.0.3/bk_ambari-installation/content/ch_Getting_Ready.html" target="_blank" rel="noopener">HDP Install Documents&lt;/a>
+&lt;/p>
+&lt;p>&lt;a href="https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.0/bk_command-line-installation/content/prepare-environment.html#ref-2822d0e9-bd88-4714-910a-750c5b95a996" target="_blank" rel="noopener">HDP Install Manual&lt;/a>
+&lt;/p></description></item></channel></rss>

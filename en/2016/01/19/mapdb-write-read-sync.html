@@ -130,7 +130,7 @@ MapDB synchronous read and write example
 |
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>820 words</span>
+<span class=leancloud-world-count>823 words</span>
 </span>
 <span>
 |
@@ -278,10 +278,13 @@ It&#39;s strange why the name here doesn&#39;t work and is automatically merged 
 
 </code></pre></div><p>There is no detailed discussion here about how MapDB achieves disk persistence synchronization. Directly using the official default values, of course, you can also configure your own read and write synchronization heartbeat interval. During the test process observation found that MapDB in the creation of disk database files, the initial case of 2MB, and then when syncing memory data, will first produce a temporary file, when this temporary file reaches a certain size will be merged into the main database files. As for other functions and code questions, to continue to observe, welcome to communicate together</p>
 <p>Resources:</p>
-<p>-MapDB&rsquo;s official website (<a href=http://www.mapdb.org/)>http://www.mapdb.org/)</a>.</p>
+<p>-MapDB&rsquo;s official website (<a href=http://www.mapdb.org/%29 target=_blank rel=noopener>http://www.mapdb.org/)</a>
+.</p>
 <ul>
-<li>(official example) (<a href=https://github.com/jankotek/MapDB/tree/master/src/test/java/examples>https://github.com/jankotek/MapDB/tree/master/src/test/java/examples</a>)
--MapDB Implementation Analysis (<a href=http://hill007299.iteye.com/blog/2031208)>http://hill007299.iteye.com/blog/2031208)</a>.</li>
+<li>(official example) (<a href=https://github.com/jankotek/MapDB/tree/master/src/test/java/examples target=_blank rel=noopener>https://github.com/jankotek/MapDB/tree/master/src/test/java/examples</a>
+)
+-MapDB Implementation Analysis (<a href=http://hill007299.iteye.com/blog/2031208%29 target=_blank rel=noopener>http://hill007299.iteye.com/blog/2031208)</a>
+.</li>
 </ul>
 </div>
 <footer class=post-footer>

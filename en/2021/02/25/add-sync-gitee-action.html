@@ -130,7 +130,7 @@
 |
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>604 words</span>
+<span class=leancloud-world-count>606 words</span>
 </span>
 <span>
 |
@@ -150,15 +150,19 @@
 <h2 id=1-background>1. Background</h2>
 <p>You were born as a programmer and certainly know the importance of backup. Besides, in the context of the current environment, the political relations in the United States are still rather chaotic, and for the projects stored on Github, it is no longer a country of technological freedom. So it&rsquo;s still necessary for our code to have a &ldquo;double&rdquo; backup, and then we&rsquo;ll show you how to use Action on Github to synchronize the code above Github to the Gitee warehouse site in China.</p>
 <h2 id=2-preparations>2. Preparations</h2>
-<p>Add Github Action to your blog project after an unwitting glance at a <a href=https://github.com/marketplace/action/gitee-pages-action>Git Page Action</a> code that feels good after a simple attempt to verify that it&rsquo;s still useful. Most of the steps in the above site have been introduced, here is probably a small conclusion to pay attention to the point.</p>
+<p>Add Github Action to your blog project after an unwitting glance at a <a href=https://github.com/marketplace/action/gitee-pages-action target=_blank rel=noopener>Git Page Action</a>
+code that feels good after a simple attempt to verify that it&rsquo;s still useful. Most of the steps in the above site have been introduced, here is probably a small conclusion to pay attention to the point.</p>
 <h3 id=21-prepare-the-ssh-key>2.1 Prepare the SSH key</h3>
-<p>When you generate keys locallyusing the ssh-keygen command,don&rsquo;tuse a password, just keep tapping the enter key while executing the&rsquo;ssh-keygen-t rsa -C &lsquo;<a href=mailto:youremail@example.com>youremail@example.com</a>&rsquo; command.</p>
+<p>When you generate keys locallyusing the ssh-keygen command,don&rsquo;tuse a password, just keep tapping the enter key while executing the&rsquo;ssh-keygen-t rsa -C &lsquo;<a href=mailto:youremail@example.com>youremail@example.com</a>
+&rsquo; command.</p>
 <p><img src=//lisenhui.gitee.io/imgs/blog/2021/02-25-gen_ssh_key.png alt=gen_ssh_key.png></p>
 <h3 id=22-gitee-related>2.2 Gitee Related</h3>
 <p>Github and Gitee are recommended to use the same key, and they are set up as follows:</p>
-<p>1.Github: <a href=https://github.com/settings/keys>Settings -> SSH and GPG keys</a></p>
+<p>1.Github: <a href=https://github.com/settings/keys target=_blank rel=noopener>Settings -> SSH and GPG keys</a>
+</p>
 <p><img src=//lisenhui.gitee.io/imgs/blog/2021/02-25-add_ssh_key_github.png alt=add_ssh_key_github.png></p>
-<p>2.Gitee: &ldquo;Security Settings - SSH Public Key&rdquo; (<a href=https://gitee.com/profile/sshkeys)>https://gitee.com/profile/sshkeys)</a>.</p>
+<p>2.Gitee: &ldquo;Security Settings - SSH Public Key&rdquo; (<a href=https://gitee.com/profile/sshkeys%29 target=_blank rel=noopener>https://gitee.com/profile/sshkeys)</a>
+.</p>
 <p><img src=//lisenhui.gitee.io/imgs/blog/2021/02-25-add_ssh_key_gitee.png alt=add_ssh_key_gitee.png></p>
 <p>Another important point is, be sure to pay attention to Gitee&rsquo;s public number: giteecom, or the github workflow execution will fail later.</p>
 <p><img src=//lisenhui.gitee.io/imgs/blog/2021/02-25-wechat_notification.png alt=wechat_notification.png></p>
@@ -213,10 +217,14 @@ GITEE_RSA_PRIVATE_KEY: The private key of the previously generated SSH key</p>
 <p>This is the first time you&rsquo;ve experienced the charm of Github Action, and you can keep an eye on it, which is still a great help for automated testing for some small open source projects.</p>
 <h2 id=4reference>4.Reference</h2>
 <ul>
-<li>1.<a href=https://github.com/yanglbme/gitee-pages-action>gitee-pages-action</a></li>
-<li>2.<a href=https://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html>getting-started-with-github-actions</a></li>
-<li>3.<a href=https://china-fanxin.gitee.io/vuepress-blog/pages/04f104/>使用Github Actions实现代码推送Github自动同步到Gitee镜像仓库！</a></li>
-<li>4.<a href=https://blog.csdn.net/qq_40748336/article/details/110749375>基于GITHUB ACTION的定时任务，真香！</a></li>
+<li>1.<a href=https://github.com/yanglbme/gitee-pages-action target=_blank rel=noopener>gitee-pages-action</a>
+</li>
+<li>2.<a href=https://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html target=_blank rel=noopener>getting-started-with-github-actions</a>
+</li>
+<li>3.<a href=https://china-fanxin.gitee.io/vuepress-blog/pages/04f104/ target=_blank rel=noopener>使用Github Actions实现代码推送Github自动同步到Gitee镜像仓库！</a>
+</li>
+<li>4.<a href=https://blog.csdn.net/qq_40748336/article/details/110749375 target=_blank rel=noopener>基于GITHUB ACTION的定时任务，真香！</a>
+</li>
 </ul>
 </div>
 <footer class=post-footer>

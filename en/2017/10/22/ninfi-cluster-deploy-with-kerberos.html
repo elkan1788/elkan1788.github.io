@@ -130,7 +130,7 @@ Apache Nifi clustering and user authentication with kerberos
 |
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>1371 words</span>
+<span class=leancloud-world-count>1375 words</span>
 </span>
 <span>
 |
@@ -147,9 +147,11 @@ Apache Nifi clustering and user authentication with kerberos
 </div>
 </header>
 <div class=post-body itemprop=articleBody>
-<p>Recently, some of the lessons learned from the installation configuration are being shared with the help of the .Apache NIFI for contact with data streaming processing. This article is primarily about clusters and user rights, and the description of the &ldquo;Apache NIFI&rdquo; (<a href=https://nifi.apache.org/>https://nifi.apache.org/</a>) is not much of a description, with a direct reference to the official home page as follows:</p>
+<p>Recently, some of the lessons learned from the installation configuration are being shared with the help of the .Apache NIFI for contact with data streaming processing. This article is primarily about clusters and user rights, and the description of the &ldquo;Apache NIFI&rdquo; (<a href=https://nifi.apache.org/ target=_blank rel=noopener>https://nifi.apache.org/</a>
+) is not much of a description, with a direct reference to the official home page as follows:</p>
 <p><img src=//lisenhui.gitee.io/imgs/blog/2017/10-22-Apache-NiFi-01.png alt=NiFi-01.png></p>
-<p>Apahce NIFI&rsquo;s stand-alone operation is fairly simple, easy to use, and completely fooly. Download the decompression and perform &lsquo;nifi.sh start&rsquo; on the &lsquo;bin&rsquo; directory to open the browser input &lsquo;http://127.0.0.1:8080/nifi&rsquo; to see a simple and beautiful WEB UI. So what we&rsquo;re going to configure next is its cluster pattern, which is officially stated, with each node in the cluster performing the same tasks on the dataset, but each node is running on a different dataset (see the official documentation for detailed instructions( <a href=https://nifi.apache.org/docs.html>https://nifi.apache.org/docs.html</a></p>
+<p>Apahce NIFI&rsquo;s stand-alone operation is fairly simple, easy to use, and completely fooly. Download the decompression and perform &lsquo;nifi.sh start&rsquo; on the &lsquo;bin&rsquo; directory to open the browser input &lsquo;http://127.0.0.1:8080/nifi&rsquo; to see a simple and beautiful WEB UI. So what we&rsquo;re going to configure next is its cluster pattern, which is officially stated, with each node in the cluster performing the same tasks on the dataset, but each node is running on a different dataset (see the official documentation for detailed instructions( <a href=https://nifi.apache.org/docs.html target=_blank rel=noopener>https://nifi.apache.org/docs.html</a>
+</p>
 <p><img src=//lisenhui.gitee.io/imgs/blog/2017/10-22-zero-master-cluster-http-access.png alt=zero-master-cluster-http-access.png></p>
 <p>The system environment and software version</p>
 <ul>
@@ -402,7 +404,8 @@ nifi.kerberos.service.keytab.location=/data/root.keytab
 <p>Start the NIFI of the primary node, then start the NIFI from the node, execute the command &lsquo;./bin/nifi.sh start&rsquo;, then open the browser input &lsquo;https://centos7-master:9443/nifi/&rsquo; and you will jump to the login page and enter the user and password created in step 1 to log in successfully. The interface appears as follows:</p>
 <p><img src=//lisenhui.gitee.io/imgs/blog/2017/10-22-Apache-NiFi-02.png alt="Apache NiFi02"></p>
 <p><img src=//lisenhui.gitee.io/imgs/blog/2017/10-22-Apache-NiFi-03.png alt="Apache NiFi03"></p>
-<p>As shown in the above two figures, in the upper left corner of the interface can clearly see that the current number of nodes is 2, the user is &lsquo;<a href=mailto:root/admin@CENTOS7-MASTER.COM>root/admin@CENTOS7-MASTER.COM</a>&rsquo;, where &lsquo;centos7-master&rsquo; is the coordinator, &lsquo;centos 7-cluster01&rsquo; is the main node, the main menu also added &lsquo;Cluster&rsquo;, &lsquo;User&rsquo; and &lsquo;Policies&rsquo; options.</p>
+<p>As shown in the above two figures, in the upper left corner of the interface can clearly see that the current number of nodes is 2, the user is &lsquo;<a href=mailto:root/admin@CENTOS7-MASTER.COM>root/admin@CENTOS7-MASTER.COM</a>
+&rsquo;, where &lsquo;centos7-master&rsquo; is the coordinator, &lsquo;centos 7-cluster01&rsquo; is the main node, the main menu also added &lsquo;Cluster&rsquo;, &lsquo;User&rsquo; and &lsquo;Policies&rsquo; options.</p>
 <p>At this point, &lsquo;Apache NIFI&rsquo; cluster services and user authentication are complete, and then we can take the next step.</p>
 <p>The pits encountered:
 The user name or password is not valid when you log on for the first time, and the user&rsquo;s password can be updated via kadmin</p>
@@ -411,10 +414,13 @@ The user name or password is not valid when you log on for the first time, and t
 </ul>
 <p>Citation reference</p>
 <ul>
-<li><a href=https://community.hortonworks.com/articles/34147/nifi-security-user-authentication-with-kerberos.html>nifi-security-user-authentication-with-kerberos.html</a>
--Nifi- Build) (<a href="http://blog.csdn.net/sinat_34233802/article/details/68942176?locationNum=1&fps=1)">http://blog.csdn.net/sinat_34233802/article/details/68942176?locationNum=1&fps=1)</a>.
--<a href=http://blog.csdn.net/wulantian/article/details/42418231>The principle of kerberos certification &mdash; is very detailed and easy to understand</a>.</li>
-<li><a href=http://blog.csdn.net/post_yuan/article/details/54406148>Kerberos Basic Installation and Configuration</a></li>
+<li><a href=https://community.hortonworks.com/articles/34147/nifi-security-user-authentication-with-kerberos.html target=_blank rel=noopener>nifi-security-user-authentication-with-kerberos.html</a>
+-Nifi- Build) (<a href="http://blog.csdn.net/sinat_34233802/article/details/68942176?locationNum=1&fps=1%29" target=_blank rel=noopener>http://blog.csdn.net/sinat_34233802/article/details/68942176?locationNum=1&fps=1)</a>
+.
+-<a href=http://blog.csdn.net/wulantian/article/details/42418231 target=_blank rel=noopener>The principle of kerberos certification &mdash; is very detailed and easy to understand</a>
+.</li>
+<li><a href=http://blog.csdn.net/post_yuan/article/details/54406148 target=_blank rel=noopener>Kerberos Basic Installation and Configuration</a>
+</li>
 </ul>
 <p>Bounty received
 Thank you for your generosity!</p>

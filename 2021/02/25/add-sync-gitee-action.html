@@ -130,7 +130,7 @@
 |
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>1408 字</span>
+<span class=leancloud-world-count>1403 字</span>
 </span>
 <span>
 |
@@ -150,15 +150,18 @@
 <h2 id=1背景>1.背景</h2>
 <p>作为程序员出生的你，肯定知道备份的重要性。再说现在大环境背景下，美国的政治关系还是比较混乱的，而对于存放在Github上面的项目，也不再是技术自由的国度啦。所以说我们的代码还是有必要进行“双”备份的，接下来就是介绍下，如何使用Github上面的Action功能，将Github上面的代码同步备份到国内的Gitee仓库站点。</p>
 <h2 id=2准备工作>2.准备工作</h2>
-<p>在一次无意间浏览到了yanglbme的贡献的一个<a href=https://github.com/marketplace/actions/gitee-pages-action>Git Page Action</a>代码，经过简单的尝试验证，感觉还是挺好用的，便在自己的博客项目中加入相应的Github Action。大部分的步骤在上面那个站点都有介绍，在此就大概小结一下要注意的点。</p>
+<p>在一次无意间浏览到了yanglbme的贡献的一个<a href=https://github.com/marketplace/actions/gitee-pages-action target=_blank rel=noopener>Git Page Action</a>
+代码，经过简单的尝试验证，感觉还是挺好用的，便在自己的博客项目中加入相应的Github Action。大部分的步骤在上面那个站点都有介绍，在此就大概小结一下要注意的点。</p>
 <h3 id=21-准备ssh密钥>2.1 准备SSH密钥</h3>
 <p>在你的本地使用ssh-keygen命令生成用密钥时，<strong>千万不要使用密码</strong>，在执行<code>ssh-keygen -t rsa -C "youremail@example.com"</code>命令时，直接不断敲下回车键即可。</p>
 <p><img src=//lisenhui.gitee.io/imgs/blog/2021/02-25-gen_ssh_key.png alt=gen_ssh_key.png></p>
 <h3 id=22-gitee相关>2.2 Gitee相关</h3>
 <p>建议Github和Gitee使用同一个密钥，他们的设置方法如下：</p>
-<p>1.Github: <a href=https://github.com/settings/keys>Settings -> SSH and GPG keys</a></p>
+<p>1.Github: <a href=https://github.com/settings/keys target=_blank rel=noopener>Settings -> SSH and GPG keys</a>
+</p>
 <p><img src=//lisenhui.gitee.io/imgs/blog/2021/02-25-add_ssh_key_github.png alt=add_ssh_key_github.png></p>
-<p>2.Gitee: <a href=https://gitee.com/profile/sshkeys>安全设置 -> SSH 公钥</a></p>
+<p>2.Gitee: <a href=https://gitee.com/profile/sshkeys target=_blank rel=noopener>安全设置 -> SSH 公钥</a>
+</p>
 <p><img src=//lisenhui.gitee.io/imgs/blog/2021/02-25-add_ssh_key_gitee.png alt=add_ssh_key_gitee.png></p>
 <p>另外还有一个重点就是，<strong>一定要关注Gitee的公众号</strong>： giteecom，不然后面Github workflow执行就会失败的。</p>
 <p><img src=//lisenhui.gitee.io/imgs/blog/2021/02-25-wechat_notification.png alt=wechat_notification.png></p>
@@ -215,10 +218,14 @@ GITEE_RSA_PRIVATE_KEY: 前面生成的SSH密钥的私钥</p>
 <p>这是首次体验到Github Action的魅力，后续可以持续关注下，这个功能对于一些开源小项目的自动化测试还是有很大的帮助。</p>
 <p>##　４.参考</p>
 <ul>
-<li>1.<a href=https://github.com/yanglbme/gitee-pages-action>gitee-pages-action</a></li>
-<li>2.<a href=https://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html>getting-started-with-github-actions</a></li>
-<li>3.<a href=https://china-fanxin.gitee.io/vuepress-blog/pages/04f104/>使用Github Actions实现代码推送Github自动同步到Gitee镜像仓库！</a></li>
-<li>4.<a href=https://blog.csdn.net/qq_40748336/article/details/110749375>基于GITHUB ACTION的定时任务，真香！</a></li>
+<li>1.<a href=https://github.com/yanglbme/gitee-pages-action target=_blank rel=noopener>gitee-pages-action</a>
+</li>
+<li>2.<a href=https://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html target=_blank rel=noopener>getting-started-with-github-actions</a>
+</li>
+<li>3.<a href=https://china-fanxin.gitee.io/vuepress-blog/pages/04f104/ target=_blank rel=noopener>使用Github Actions实现代码推送Github自动同步到Gitee镜像仓库！</a>
+</li>
+<li>4.<a href=https://blog.csdn.net/qq_40748336/article/details/110749375 target=_blank rel=noopener>基于GITHUB ACTION的定时任务，真香！</a>
+</li>
 </ul>
 </div>
 <footer class=post-footer>
