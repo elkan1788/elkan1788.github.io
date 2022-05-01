@@ -1,0 +1,535 @@
+<!doctype html><html lang=en dir=content/en>
+<head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta http-equiv=content-security-policy content="upgrade-insecure-requests">
+<title> User Guide of Hugo NexT - Loving life and dreams. </title>
+<meta name=keywords content="Blog,Software,Big Data,Product,Architecture,Java,Kylin">
+<meta name=author content="Elkan.Li">
+<meta property="og:title" content="User Guide of Hugo NexT">
+<meta property="og:site_name" content="Loving life and dreams.">
+<meta property="og:image" content="https://lisenhui.cn/img/author.jpg">
+<meta name=title content="User Guide of Hugo NexT - Loving life and dreams.">
+<meta name=description content="Introduce for NexT theme.">
+<link rel="shortcut icon" href=https://lisenhui.cn/img/favicon.ico>
+<link rel=apple-touch-icon href=https://lisenhui.cn/img/apple-touch-icon.png>
+<link rel=apple-touch-icon-precomposed href=https://lisenhui.cn/img/apple-touch-icon.png>
+<link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css>
+<link href=https://lisenhui.cn/css/main.css rel=stylesheet type=text/css>
+<link href=https://lisenhui.cn/css/syntax.css rel=stylesheet type=text/css>
+<script type=text/javascript>var _hmt=_hmt||[];(function(){var a=document.createElement("script"),b;a.src="https://hm.baidu.com/hm.js?9b021cbfb58b35e79012f9690de1c6ab",b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+</head>
+<body itemscope itemtype=http://schema.org/WebPage lang=zh-hans>
+<div class="container one-collumn sidebar-position-left page-home">
+<div class=headband></div>
+<header id=header class=header itemscope itemtype=http://schema.org/WPHeader>
+<div class=header-inner> <div class=site-brand-container>
+<div class=site-nav-toggle>
+<div class=toggle role=button style=opacity:1;top:0>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span>
+</div>
+</div>
+<div class=site-meta>
+<div class=multi-lang-switch>
+<i class="fa fa-fw fa-language" style=margin-right:5px></i>
+<a class=lang-link id=zh-cn href=https://lisenhui.cn/docs/>中文</a>
+<span class=lang-line> / </span>
+<a class=lang-link id=en href=#>English</a>
+</div>
+<div class=custom-logo-site-title>
+<a href=/en/ class=brand rel=start>
+<span class=logo-line-before><i></i></span>
+<span class=site-title>Loving life and dreams.</span>
+<span class=logo-line-after><i></i></span>
+</a>
+</div>
+<p class=site-subtitle>Don't stop running forward!</p>
+</div>
+<div class=site-nav-right>
+<div class="toggle popup-trigger" style=opacity:1;top:0>
+<i class="fa fa-search fa-fw fa-lg"></i>
+</div>
+</div>
+</div>
+<nav class=site-nav>
+<ul id=menu class=menu>
+<div style=display:none>https://lisenhui.cn/en/docs/, /en/docs/, /</div>
+<li class=menu-item>
+<a href=/en/ rel=section>
+<i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home
+</a>
+<div style=display:none></div>
+</li>
+<div style=display:none>https://lisenhui.cn/en/docs/, /en/docs/, post</div>
+<li class=menu-item>
+<a href=/en/post rel=section>
+<i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archive
+</a>
+<div style=display:none></div>
+</li>
+<div style=display:none>https://lisenhui.cn/en/docs/, /en/docs/, docs</div>
+<li class="menu-item menu-item-active">
+<a href=/en/docs rel=section>
+<i class="menu-item-icon fa fa-fw fa-book"></i> <br>User Guide
+</a>
+<div style=display:none></div>
+</li>
+<div style=display:none>https://lisenhui.cn/en/docs/, /en/docs/, about.html</div>
+<li class=menu-item>
+<a href=/en/about.html rel=section>
+<i class="menu-item-icon fa fa-fw fa-user"></i> <br>About
+</a>
+<div style=display:none></div>
+</li>
+<div style=display:none>https://lisenhui.cn/en/docs/, /en/docs/, /404.html</div>
+<li class=menu-item>
+<a href=/en/404.html rel=section target=_blank>
+<i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>Publice 404
+</a>
+<div style=display:none></div>
+</li>
+<li class="menu-item menu-item-search">
+<a href=javascript:; class=popup-trigger> <i class="menu-item-icon fa fa-search fa-fw"></i> <br> Search</a>
+</li>
+</ul>
+<div class=site-search>
+<div class="popup search-popup local-search-popup">
+<div class="local-search-header clearfix">
+<span class=search-icon><i class="fa fa-search"></i> </span>
+<span class=popup-btn-close><i class="fa fa-times-circle"></i></span>
+<div class=local-search-input-wrapper>
+<input autocomplete=off placeholder="Enter key words..." spellcheck=false type=text id=local-search-input autocapitalize=none autocorrect=off>
+</div>
+</div>
+<div id=local-search-result></div>
+</div>
+</div>
+</nav> </div>
+</header>
+<main id=main class=main>
+<div class=sidebar-toggle>
+<div class=sidebar-toggle-line-wrap>
+<span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+<span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+</div>
+</div>
+<aside id=sidebar class=sidebar>
+<div class=sidebar-inner>
+<section class="site-overview sidebar-panel sidebar-panel-active">
+<div class="site-author motion-element" itemprop=author itemscope itemtype=http://schema.org/Person>
+<img class=site-author-image itemprop=image src=/img/avatar.png alt=Elkan.Li>
+<p class=site-author-name itemprop=name>Elkan.Li</p>
+<p class="site-description motion-element" itemprop=description>
+Never forget your dreams！
+</p>
+</div>
+<nav class="site-state motion-element">
+<div class="site-state-item site-state-posts">
+<a href=/en/post/>
+<span class=site-state-item-count>56</span>
+<span class=site-state-item-name>Blogs</span>
+</a>
+</div>
+<div class="site-state-item site-state-categories">
+<a href=/en/categories/>
+<span class=site-state-item-count>27</span>
+<span class=site-state-item-name>Categories</span>
+</a>
+</div>
+<div class="site-state-item site-state-tags">
+<a href=/en/tags/>
+<span class=site-state-item-count>65</span>
+<span class=site-state-item-name>Tags</span>
+</a>
+</div>
+</nav>
+<div class="feed-link motion-element">
+<a href=/en/docs/index.xml rel=alternate type=application/rss+xml target=_blank>
+<i class="fa fa-rss"></i>
+RSS
+</a>
+</div>
+<div class="links-of-author motion-element">
+<span class=links-of-author-item>
+<a href=https://github.com/elkan1788/ target=_blank title=GitHub>
+<i class="fa fa-fw fa-github"></i>
+GitHub
+</a>
+</span>
+<span class=links-of-author-item>
+<a href=https://www.zhihu.com/people/fan-meng-xing-chen-1 target=_blank title=ZhiHu>
+<i class="fa fa-fw fa-globe"></i>
+ZhiHu
+</a>
+</span>
+</div>
+<div class="links-of-blogroll motion-element links-of-blogroll-inline">
+<div class=links-of-blogroll-title>
+<i class="fa fa-fw fa-globe"></i>
+Links
+</div>
+<ul class=links-of-blogroll-list>
+<li class=links-of-blogroll-item>
+<a href=https://nutzam.com/ title=Nutz target=_blank>Nutz</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=https://jfinal.com/ title=JFinal target=_blank>JFinal</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=http://wendal.net/ title=Wendal target=_blank>Wendal</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=https://www.liaoxuefeng.com/ title=LiaoXueFeng target=_blank>LiaoXueFeng</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=http://lanlingzi.cn/ title=Lanlingzi target=_blank>Lanlingzi</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=https://zhaohaiyu.com/ title="haiyux's blog" target=_blank>haiyux's blog</a>
+</li>
+<li class=links-of-blogroll-item>
+<a href=https://blog.zhheo.com/ title="ZH's Heo" target=_blank>ZH's Heo</a>
+</li>
+</ul>
+</div>
+<div class="tagcloud-of-blogroll motion-element tagcloud-of-blogroll-inline">
+<div class=tagcloud-of-blogroll-title>
+<i class="fa fa-fw fa-tags"></i>
+TagCloud
+</div>
+<ul class=tagcloud-of-blogroll-list>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/big-data>Big data
+<sup>13</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/java>Java
+<sup>5</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/linux>Linux
+<sup>5</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/blog>Blog
+<sup>4</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/git>Git
+<sup>4</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/github>Github
+<sup>4</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/kindeditor>Kindeditor
+<sup>4</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/python>Python
+<sup>4</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/axure>Axure
+<sup>3</sup>
+</a>
+</li>
+<li class=tagcloud-of-blogroll-item>
+<a href=/en/tags/front>Front
+<sup>3</sup>
+</a>
+</li>
+</ul>
+</div>
+<div class="links-of-blogroll motion-element inline">
+<script type=text/javascript src="//rf.revolvermaps.com/0/0/6.js?i=5s83wolvn69&m=7&c=e63100&cr1=ffffff&f=arial&l=0&bv=90&lx=-420&ly=420&hi=20&he=7&hc=a8ddff&rs=80" async></script>
+</div>
+</section>
+</div>
+</aside>
+<div class=main-inner>
+<ul class="sub-menu menu">
+<li class=menu-item>
+<a href=/en/docs/quickstart/ rel=section>
+<i class="fa fa-book fa-fw"></i>
+Quick Start
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/docs/themesettings rel=section>
+<i class="fa fa-star fa-fw"></i>
+Theme Settings
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/docs/thirdparty/ rel=section>
+<i class="fa fa-american-sign-language-interpreting fa-fw"></i>
+Thirdparty-Plugin
+</a>
+</li>
+</ul>
+<ul class="sub-menu menu">
+</ul>
+<div class=content-wrap style=margin-top:10px>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<div class=post-meta>
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>Published at:</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2022-04-23">
+2022-04-23
+</time>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>431 words</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>3 minutes</span>
+</span>
+<span id=/en/docs/ class=leancloud_visitors data-flag-title="User Guide of Hugo NexT">
+|
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>Visited:</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>Welcome to the User Guide of <code>Hugo NexT</code> ！！！</p>
+<h2 id=hugo-theme-of-next>Hugo theme of NexT</h2>
+<p><code>Next</code> is an elegant and powerful theme. It originated from <code>Hexo </code> engine and is loved by many people. Thanks for <a href=https://github.com/xtfly/hugo-theme-next target=_blank rel=noopener>xtfly</a>
+clone it first, but it&rsquo;s a pity that the author didn&rsquo;t update it continuously later.</p>
+<p>In order to let the <code>NexT</code> theme continue to shine on the <code>Hugo</code> high-performance static site engine. Through in-depth optimization and transformation in my spare time, I maintained the original simple and simple tone of <code>NexT</code>, and added many service components related to blog ecology to make the theme more perfect and easy to use. The main features are as follows:</p>
+<ul>
+<li>Multi device display adaptation</li>
+<li>Support bilingual switching between Chinese and English</li>
+<li>Support a variety of site statistics tools, such as Baidu, Google, cnzz, not garlic</li>
+<li>Automatically generate site map, join Baidu link and push SEO optimization</li>
+<li>Integrate multiple comment plug-ins</li>
+<li>Add articles for quick sharing</li>
+<li>Support article access statistics</li>
+<li>Integrated picture browser</li>
+<li>Customize personal information page</li>
+<li>Online chat function</li>
+<li>&mldr;&mldr;</li>
+</ul>
+<h2 id=preview>Preview</h2>
+<p><img src=https://lisenhui.gitee.io/imgs/blog/my-hugo-blog.png alt=my-hugo-blog.png></p>
+<h2 id=compatibility>Compatibility</h2>
+<p>The theme can be displayed on both PC and mobile terminals. The following compatibility instructions for different browsers on PC terminal.</p>
+<table>
+<thead>
+<tr>
+<th>Browser</th>
+<th>Supported versions</th>
+<th>Release date</th>
+<th>Limitation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><i class="fa fa-fw fa-internet-explorer"></i> IE</td>
+<td>N/A</td>
+<td>Oct 17, 2013</td>
+<td>N/A</td>
+</tr>
+<tr>
+<td><i class="fa fa-fw fa-edge"></i> Edge</td>
+<td>79+</td>
+<td>Jan 15, 2020</td>
+<td><a href=https://caniuse.com/mdn-javascript_functions_rest_parameters_destructuring target=_blank rel=noopener>Destructuring rest parameters</a>
+</td>
+</tr>
+<tr>
+<td><i class="fa fa-fw fa-firefox"></i> Firefox</td>
+<td>52+</td>
+<td>Mar 7, 2017</td>
+<td>Destructuring rest parameters</td>
+</tr>
+<tr>
+<td><i class="fa fa-fw fa-chrome"></i> Chrome</td>
+<td>49+</td>
+<td>Mar 3, 2016</td>
+<td><a href=https://caniuse.com/css-variables target=_blank rel=noopener>CSS Variables</a>
+</td>
+</tr>
+<tr>
+<td><i class="fa fa-fw fa-safari"></i> Safari</td>
+<td>10+</td>
+<td>Sep 20, 2016</td>
+<td><a href=https://caniuse.com/arrow-functions target=_blank rel=noopener>Arrow functions</a>
+</td>
+</tr>
+<tr>
+<td><i class="fa fa-fw fa-opera"></i> Opera</td>
+<td>37+</td>
+<td>May 4, 2016</td>
+<td><a href=https://caniuse.com/mdn-javascript_operators_spread_spread_in_arrays target=_blank rel=noopener>Spread in array literals</a>
+</td>
+</tr>
+</tbody>
+</table>
+<h2 id=license>License</h2>
+<p>The theme adopts the <code>MIT</code> licensing strategy, which can be used with confidence.</p>
+<h2 id=use--feedback>Use & Feedback</h2>
+<p>Provide two warehouse images of <code>GitHub</code> and <code>Gitee</code> which can be downloaded and used through your preferred access.</p>
+<ul>
+<li>Github: <a href=https://github.com/elkan1788/hugo-theme-next target=_blank rel=noopener>elkan1788/hugo-theme-next</a>
+</li>
+<li>Gitee: <a href=https://gitee.com/lisenhui/hugo-theme-next target=_blank rel=noopener>lisenhui/hugo-theme-next</a>
+</li>
+</ul>
+<blockquote>
+<p>If you like this <code>NexT</code> theme, please pay attention to the above two warehouses. Thank you.</p>
+</blockquote>
+<p>If you are unclear about the function of the topic during use, you can click the link of <code>GitHub</code> discussion area below to leave a message:</p>
+<p><a href=https://github.com/elkan1788/hugo-theme-next/discussions target=_blank rel=noopener>Disscussion</a>
+</p>
+<p>Or if you find problems with the presentation of the theme, you can also click the link below for feedback.</p>
+<p><a href=https://github.com/elkan1788/hugo-theme-next/issues/new target=_blank rel=noopener>Bug Report</a>
+</p>
+<h2 id=future-plans>Future plans</h2>
+<p>I pay more attention to the loading performance, ease of use, compatibility and other characteristics of this theme. I will continue to build the <code>NexT</code> theme in depth later. The preliminary ideas are as follows:</p>
+<ul>
+<li>Improve the &ldquo;Hugo next&rdquo; theme instruction manual</li>
+<li>Personal blog rapid deployment script</li>
+<li>Continue to optimize and improve the loading efficiency of the page</li>
+<li>Enhance black theme effect</li>
+<li>Follow the update of &lsquo;next&rsquo; Official theme and migrate synchronously</li>
+</ul>
+<p>Thanks for your pay attention and provide more suggestions!</p>
+</div>
+<footer class=post-footer>
+<div class=addthis_inline_share_toolbox></div>
+<div class=post-nav>
+<div class=article-copyright>
+<div class=article-copyright-img>
+<img src=/img/qq_qrcode.png width=129px height=129px>
+<div style=text-align:center>QQ QrCode</div>
+</div>
+<div class=article-copyright-info>
+<p>
+<span>Declaration：</span>User Guide of Hugo NexT
+</p>
+<p>
+<span>Link：</span>https://lisenhui.cn/en/docs/
+</p>
+<p>
+<span>Author：</span>Elkan.Li
+</p>
+<p>
+<span>Declaration： </span>This blog post article is under the <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a> license,Please indicate the source!
+</p>
+</div>
+</div>
+<div class=clear></div>
+</div>
+<div class=reward-qr-info>
+<div>If it can help you, you can give tips for blogger that how much you want. ^_^</div>
+<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
+<span>Reward</span>
+</button>
+<div id=QR style=display:none>
+<div id=wechat style=display:inline-block>
+<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
+<p>Wechat Pay</p>
+</div>
+<div id=alipay style=display:inline-block>
+<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
+<p>Ali Pay</p>
+</div>
+</div>
+</div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
+</div>
+</main>
+<footer id=footer class=footer>
+<div class=footer-inner>
+<div class=copyright>
+<span class=copyright-year>
+&copy; 2010 - 2022
+</span>
+<span class=with-love><i class="fa fa-heart"></i></span>
+<span class=copyright-author>Loving life and dreams.</span>
+</div>
+<div class=powered-info>
+<span class=powered-by>
+Powered by - <a class=powered-link href=//gohugo.io target=_blank title=hugo>Hugo v0.87.0</a>
+</span>
+<span class=separator-line>/</span>
+<span class=theme-info>
+Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next target=_blank> NexT
+</a>
+</span>
+</div>
+<div class=vistor-info>
+<span class=cnzz_icon id=cnzz_stat_icon_1279205305>
+<a href="//www.cnzz.com/stat/website.php?web_id=1279205305" target=_blank title=站长统计>
+<img border=0 hspace=0 vspace=0 src=//icon.cnzz.com/img/pic1.gif>
+</a>
+</span>
+<script type=text/javascript>(function(){var a=document.createElement('script'),b;a.type='text/javascript',a.async=!0,a.charset='utf-8',a.src='https://s4.cnzz.com/z_stat.php?id=1279205305&show=pic1',b=document.getElementsByTagName('script')[0],b.parentNode.insertBefore(a,b)})()</script>
+<script async src=//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js></script>
+<span class=site-uv>
+<i class="fa fa-user"></i>
+<span class=busuanzi-value id=busuanzi_value_site_uv></span>
+</span>
+<span class=separator-line>/</span>
+<span class=site-pv>
+<i class="fa fa-eye"></i>
+<span class=busuanzi-value id=busuanzi_value_site_pv></span>
+</span>
+</div>
+<div class=license-info>
+<span class=storage-info>
+Storage by
+<a href=https://gitee.com/ style=font-weight:700 target=_blank>Gitee Repository</a>
+</span>
+<span class=separator-line>/</span>
+<span class=license-num>
+<a href=http://beian.miit.gov.cn target=_blank>ICP.NO 18047355</a>
+</span>
+</div>
+</div>
+</footer>
+<div class=back-to-top>
+<i class="fa fa-arrow-up"></i>
+<span id=scrollpercent><span>0</span>%</span>
+</div>
+</div>
+<script type=text/javascript src=//cdn.bootcdn.net/ajax/libs/jquery/2.1.4/jquery.min.js></script>
+<script type=text/javascript src=https://lisenhui.cn/js/search.js></script>
+<script type=text/javascript src=https://lisenhui.cn/js/affix.js></script>
+<script type=text/javascript src=https://lisenhui.cn/js/scrollspy.js></script>
+<script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
+<script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
+<script type=text/javascript>$(function(){var b,a;document.body.clientWidth>900&&(b=document.getElementsByTagName('HEAD').item(0),a=document.createElement("script"),a.type="text/javascript",a.innerHTML='(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",(\'https:\' == document.location.protocol ? \'https:\' : \'http:\') + "//widget.daovoice.io/widget/f89653b8.js","daovoice")',b.appendChild(a),daovoice('init',{app_id:"f89653b8"}),daovoice('update'))})</script>
+</body>
+</html>
