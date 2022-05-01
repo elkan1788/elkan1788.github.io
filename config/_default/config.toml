@@ -45,3 +45,8 @@ hasCJKLanguage = true
   disableSVG = false
   disableXML = false
   minifyOutput = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
