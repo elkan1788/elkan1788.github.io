@@ -1,20 +1,133 @@
-[[Main]]
-  Name = "Home"
-  Pre = "home"
-  URL = "/"
-  Weight = 1
-[[Main]]
-  Name = "Archive"
-  Pre = "archive"
-  URL = "post"
-  Weight = 2
-[[Main]]
-  Name = "About"
-  Pre = "user"
-  URL = "about.html"
-  Weight = 3
-[[Main]]
-  Name = "Page404"
-  Pre = "heartbeat"
-  URL = "/404.html"
-  Weight = 4
+[[main]]
+  identifier = "home"
+  name = "Home"
+  pre = "home"
+  url = "/"
+  weight = 1
+[[main]]
+  identifier = "archive"
+  name = "Archive"
+  pre = "archive"
+  url = "post"
+  weight = 2
+[[main]]
+  identifier = "docs"
+  name = "User Guide"
+  pre = "book"
+  url = "docs"
+  weight = 3
+[[main]]
+  identifier = "about"
+  name = "About"
+  pre = "user"
+  url = "about.html"
+  weight = 4
+[[main]]
+  identifier = "public"
+  name = "Publice 404"
+  pre = "heartbeat"
+  url = "/404.html"
+  weight = 5
+
+[[docs]]
+  identifier = "quickstart"
+  name = "Quick Start"
+  pre = "book"
+  url = "/en/docs/quickstart/"
+  weight = 1
+[[docs]]
+  identifier = "installation"
+  name = "Installation"
+  pre = "download"
+  url = "installation.html"
+  weight = 1
+  parent = "quickstart"
+[[docs]]
+  identifier = "configuration"
+  name = "Configuration"
+  pre = "wrench"
+  url = "configuration.html"
+  weight = 2
+  parent = "quickstart"
+[[docs]]
+  identifier = "deployment"
+  name = "Deployment"
+  pre = "upload"
+  url = "deployment.html"
+  weight = 3
+  parent = "quickstart"
+[[docs]]
+  identifier = "upgrade"
+  name = "Upgrade"
+  pre = "history"
+  url = "upgrade.html"
+  weight = 4
+  parent = "quickstart"
+[[docs]]
+  identifier = "themesettings"
+  name = "Theme Settings"
+  pre = "star"
+  url = "/en/docs/themesettings"
+  weight = 2
+[[docs]]
+  identifier = "systemparas"
+  name = "System Parameters"
+  pre = "cog"
+  url = "systemparas.html"
+  weight = 1
+  parent = "themesettings"
+[[docs]]
+  identifier = "customparas"
+  name = "Cutom Parameters"
+  pre = "user-plus"
+  url = "customparas.html"
+  weight = 2
+  parent = "themesettings"
+[[docs]]
+  identifier = "menuparas"
+  name = "Menu Parameters"
+  pre = "bars"
+  url = "menuparas.html"
+  weight = 3
+  parent = "themesettings"
+[[docs]]
+  identifier = "interlization"
+  name = "I18n"
+  pre = "language"
+  url = "interlization.html"
+  weight = 4
+  parent = "themesettings"
+[[docs]]
+  identifier = "thirdparty"
+  name = "Thirdparty-Plugin"
+  pre = "american-sign-language-interpreting"
+  url = "/en/docs/thirdparty/"
+  weight = 3
+[[docs]]
+  identifier = "comment"
+  name = "Comment"
+  pre = "comments"
+  url = "comment.html"
+  weight = 1
+  parent = "thirdparty"
+[[docs]]
+  identifier = "share"
+  name = "Share"
+  pre = "share-alt"
+  url = "share.html"
+  weight = 2
+  parent = "thirdparty"
+[[docs]]
+  identifier = "static"
+  name = "Static"
+  pre = "bar-chart"
+  url = "static.html"
+  weight = 3
+  parent = "thirdparty"
+[[docs]]
+  identifier = "onlinechat"
+  name = "Chat"
+  pre = "commenting"
+  url = "onlinechat.html"
+  weight = 3
+  parent = "thirdparty"

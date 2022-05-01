@@ -1,20 +1,133 @@
-[[Main]]
-  Name = "首页"
-  Pre = "home"
-  URL = "/"
-  Weight = 1
-[[Main]]
-  Name = "归档"
-  Pre = "archive"
-  URL = "post"
-  Weight = 2
-[[Main]]
-  Name = "关于我"
-  Pre = "user"
-  URL = "about.html"
-  Weight = 3
-[[Main]]
-  Name = "公益404"
-  Pre = "heartbeat"
-  URL = "/404.html"
-  Weight = 4
+[[main]]
+  identifier = "home"
+  name = "首页"
+  pre = "home"
+  url = "/"
+  weight = 1
+[[main]]
+  identifier = "archive"
+  name = "归档"
+  pre = "archive"
+  url = "post"
+  weight = 2
+[[main]]
+  identifier = "docs"
+  name = "使用手册"
+  pre = "book"
+  url = "docs"
+  weight = 3
+[[main]]
+  identifier = "about"
+  name = "关于我"
+  pre = "user"
+  url = "about.html"
+  weight = 4
+[[main]]
+  identifier = "public"
+  name = "公益404"
+  pre = "heartbeat"
+  url = "/404.html"
+  weight = 5
+
+[[docs]]
+  identifier = "quickstart"
+  name = "快速开始"
+  pre = "book"
+  url = "/docs/quickstart/"
+  weight = 1
+[[docs]]
+  identifier = "installation"
+  name = "安装"
+  pre = "download"
+  url = "installation.html"
+  weight = 1
+  parent = "quickstart"
+[[docs]]
+  identifier = "configuration"
+  name = "配置"
+  pre = "wrench"
+  url = "configuration.html"
+  weight = 2
+  parent = "quickstart"
+[[docs]]
+  identifier = "deployment"
+  name = "发布"
+  pre = "upload"
+  url = "deployment.html"
+  weight = 3
+  parent = "quickstart"
+[[docs]]
+  identifier = "upgrade"
+  name = "升级"
+  pre = "history"
+  url = "upgrade.html"
+  weight = 4
+  parent = "quickstart"
+[[docs]]
+  identifier = "themesettings"
+  name = "主题配置"
+  pre = "star"
+  url = "/docs/themesettings"
+  weight = 2
+[[docs]]
+  identifier = "systemparas"
+  name = "系统参数"
+  pre = "cog"
+  url = "systemparas.html"
+  weight = 1
+  parent = "themesettings"
+[[docs]]
+  identifier = "customparas"
+  name = "自定义参数"
+  pre = "user-plus"
+  url = "customparas.html"
+  weight = 2
+  parent = "themesettings"
+[[docs]]
+  identifier = "menuparas"
+  name = "菜单配置"
+  pre = "bars"
+  url = "menuparas.html"
+  weight = 3
+  parent = "themesettings"
+[[docs]]
+  identifier = "interlization"
+  name = "多语言"
+  pre = "language"
+  url = "interlization.html"
+  weight = 4
+  parent = "themesettings"
+[[docs]]
+  identifier = "thirdparty"
+  name = "第三方插件"
+  pre = "american-sign-language-interpreting"
+  url = "/docs/thirdparty/"
+  weight = 3
+[[docs]]
+  identifier = "comment"
+  name = "评论"
+  pre = "comments"
+  url = "comment.html"
+  weight = 1
+  parent = "thirdparty"
+[[docs]]
+  identifier = "share"
+  name = "分享"
+  pre = "share-alt"
+  url = "share.html"
+  weight = 2
+  parent = "thirdparty"
+[[docs]]
+  identifier = "static"
+  name = "统计"
+  pre = "bar-chart"
+  url = "static.html"
+  weight = 3
+  parent = "thirdparty"
+[[docs]]
+  identifier = "onlinechat"
+  name = "聊天"
+  pre = "commenting"
+  url = "onlinechat.html"
+  weight = 3
+  parent = "thirdparty"
