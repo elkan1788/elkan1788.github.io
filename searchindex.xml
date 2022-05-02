@@ -1,4 +1,54 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>使用Mobaxterm登录本地虚拟机很慢</title><url>https://lisenhui.cn/2022/04/04/sshlogin-localvm-slowly-mobaxterm.html</url><categories><category>工具</category></categories><tags><tag>SSH</tag><tag>MobaXterm</tag></tags><content type="html"> 近期因本地虚拟机有问题但重新搭建了个新环境，结果在使用 MobaXterm 工具登录终端时发现每次都要等待个 4 ~ 5 秒才可以进入，操作检验不是很好，不明白为何本地环境连接会是这么的慢，所以还是得想办法分析下。
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>其他</title><url>https://lisenhui.cn/docs/thirdparty/others.html</url><categories/><tags/><content type="html"> 另外还是支持标签云，在线聊天，3D地球等功能，统一配置在 params.toml 文件中的参数中， 说明如下：
+TagsCloud 在侧边栏显示标签云
+Enable: 是否开启标签云 Limit: 显示标签的数量 OnlineIM 在右下角显示在线通讯，可到 DaoVoice 官网 注册
+Enable: 是否开启在线通讯功能 DaoVoiceId: 注册 DaoVoice 应用的 ID Others 其他功能
+RevolverMapId: map注册应用的 ID，可到 RevolverMap 官网 注册</content></entry><entry><title>分享</title><url>https://lisenhui.cn/docs/thirdparty/share.html</url><categories/><tags/><content type="html"> 采用国外的 AddThis 分享插件，一配置在 params.toml 文件中的 [Share] 参数，说明如下：
+Enable 是否开启分享功能
+AddthisId AddThis 的注册ID，可通过官方注册 获得</content></entry><entry><title>统计</title><url>https://lisenhui.cn/docs/thirdparty/statis.html</url><categories/><tags/><content type="html"> 当前支持不蒜子、 百度、 谷歌 3 种站点统计插件的集成使用，统一配置在 params.toml 文件中的 [Statis] 参数， 说明如下：
+Statis 可选取自己喜欢的统计方式
+BusuanziCounter: 是否开启不蒜子统计 BaiduSiteId： 百度统计代码 GoogleSiteId： 谷歌统计代码 CNNZSiteId： 友盟统计代码（官方已下线） 另外通过 LeanCloud 存储实现对文章访问量的统计，统一配置在 params.toml 文件中的 [LeanCloud] 参数， 说明如下：
+LeanCloud 访问 LeanCloud 官网 注册，需要有个备案的域名
+AppId： 注册应用的 ID AppKey: 注册应用的密钥 ServerURL： 应用回调 API 地址</content></entry><entry><title>评论</title><url>https://lisenhui.cn/docs/thirdparty/comment.html</url><categories/><tags/><content type="html"> 当前支持LiveRe、 Valine、 Waline 和 Utterances 4 种评论插件的集成使用，统一配置在 params.toml 文件中的 [Comment] 参数，说明如下：
+Enable 是否开启文章的评论功能
+Module 使用哪个插件，可选LiveRe、 Valine、 Waline 和 Utterances
+LiveReId 选择 LiveRe 评论插件时要填写 LiveReId
+WalineSerURL 选择 Waline 评论插件时要填写 Waline 服务器地址
+UtterancesXXX 选择 Utterances 评论插件
+UtterancesRepo： 存放评论数据的仓库地址 UtterancesTheme: 评论框的样式，可选“github-light”、“github-dark”、“preferred-color-scheme”、“github-dark-orange”、“icy-dark”、“dark-blue” UtterancesTitle: 评论与 Issue 之间通过哪种方式映射，可选 “pathname”、“URL”、“title”、“og:title”</content></entry><entry><title>多语言设置</title><url>https://lisenhui.cn/docs/themesettings/interlization.html</url><categories/><tags/><content type="html"> 多语言设置暂只支持中、英两种语言，说明如下：
+lanagues.toml 需要在语言的配置文件中增加相关语言的描述
+[zh-CN] title = "热爱生活与梦想" languageName = "中文" weight = 1 contentdir = "content/zh-CN" [en] title = "Loving life and dreams." languageName = "English" weight = 2 contentdir = "content/en" title: 网站标题 languageName： 语言名称 weight: 显示顺序，数字越小越前 contentdir： 文章发表的目录 paramas.[code].toml 需要增加对应语言的自定义设置配置，文件名称为 paramas.[语言代码].toml，设置说明请参考 自定义设置 content 发表文章时根据支持语言情况，多写几份文章的翻译，放在 content/[语言代码]/ 目录下的对应位置，不同语言读者便可切换对应语种查看。</content></entry><entry><title>系统设置</title><url>https://lisenhui.cn/docs/themesettings/systemparas.html</url><categories/><tags/><content type="html"> 系统设置主要是与 Hugo 输出或站点配置相关的参数，说明如下：
+title 网站的标题
+baseURL 网站访问的根路径（一般就是域名）
+metaDataFormat 网站配置文件的内容格式，支持 toml、 yaml、 json 三种格式，在 Hugo 环境下建议（默认）使用第一种格式，可读性好
+theme 网站配置主题的名称，这里默认值是： hugo-theme-next
+defaultContentLanguage 网站使用的默认语言，默认值是： zh-cn
+注： 这里的语言代码要使用小写，不然后网站文章生成会报错
+permalinks 网站路径访问格式
+paginatePath 内容分页路径标识，默认值为 “p”
+paginate 列表每页显示文章条数，默认值为 5
+disablePathToLower 关闭路径小写功能，默认是支持路径小写
+pygmentsXXX 代码格式显示格式和样式
+enableRobotsTXT 开启 robots.txt 文件生成
+enableEmoji 支持显示表情符号
+hasCJKLanguage 是否包含中、日、韩语言，建议开启
+sitemap 网站站点生成格式和频率
+outputFormats 针对本地搜索文件生成格式
+outputs 站点需要输出的内容
+minify 生成静态文件时的压缩选项
+markup 让 Markdown 文件支持 HTML 代码写法
+正常情况下，只需要调整最前面 2 个参数为自身实际情况就行。</content></entry><entry><title>自定义设置</title><url>https://lisenhui.cn/docs/themesettings/customparas.html</url><categories/><tags/><content type="html"> 自定义设置（params.[language-code].toml）主要是一些与站点描述及友链相关的参数，说明如下：
+Description 网站的描述信息，用于 SEO 优化
+Keywords 网站的关键字定义，用于 SEO 优化
+Subtitle 侧边栏的标题
+AuthorImg 作者头像
+AuthorName 作者姓名
+Introduce 作者简介或座右铭
+DateFormat / YearFormat / MonthFormat 日期、年份、月份的格式化样式
+Footer 网站底部的版本信息，如备案号，使用空间服务
+Socials 作者社交账号，支持多个
+[[Socials]] Name = "GitHub" Icon = "github" URL = "https://github.com/elkan1788/" Name: 社交平台名称 Icon: 社交平台 fontawesome 样式名称 URL： 社交平台链接 Links 站点友情链接，支持多个
+[[Links]] Name = "Wendal" Permalink = "http://wendal.net/" Name: 站点名称 Permalink: 站点链接</content></entry><entry><title>菜单设置</title><url>https://lisenhui.cn/docs/themesettings/menuparas.html</url><categories/><tags/><content type="html"> 菜单设置(menu.[language-code].toml)是站点的导航链接，暂只支持一级菜单，说明如下：
+[[main]] identifier = "home" name = "Home" pre = "home" url = "/" weight = 1 [[main]]: 菜单根目录名称定义 identifier：菜单的唯一标识 name： 菜单名称 pre: 菜单 fontawesome 样式名称 url: 菜单链接地址，或是站点内或公网链接 weight: 菜单显示顺序，数字越小越前</content></entry><entry><title>使用Mobaxterm登录本地虚拟机很慢</title><url>https://lisenhui.cn/2022/04/04/sshlogin-localvm-slowly-mobaxterm.html</url><categories><category>工具</category></categories><tags><tag>SSH</tag><tag>MobaXterm</tag></tags><content type="html"> 近期因本地虚拟机有问题但重新搭建了个新环境，结果在使用 MobaXterm 工具登录终端时发现每次都要等待个 4 ~ 5 秒才可以进入，操作检验不是很好，不明白为何本地环境连接会是这么的慢，所以还是得想办法分析下。
 看有些网友也有类似的困惑，提示说可能是 SSH 登录时要通过 DNS 来寻址的原因。参考文章上说法找到 /etc/ssh/sshd_config 把里面的 UseDNS 配置项设置为 no，但是发现其已经是关闭的状态。那会是什么原因引起呢？
 提到 DNS 突然想到不会是本地 Host 文件的问题吧（个人习惯使用 hostname 连接服务器），于是尝试直接把 MobaXterm 的连接地址换成服务器 IP 地址，满怀希望的点击登录按钮，可惜结果还是要等待一会才能进入，真是有点抓狂啦。
 稍微“冷静”下来想下，发现现在还是没有确定问题的发生原因，究竟是 MobaXterm 工具还是服务器配置的问题呢？于是使用最简单的 SSH 命令，结果非常惊喜，无论是通过 IP 还是 hostname 方式连接都无须等待，可立马就进入终端操作。那么已经可确认就是 MobaXterm 工具原因。

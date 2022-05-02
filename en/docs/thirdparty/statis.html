@@ -4,18 +4,19 @@
 <meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
 <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
 <meta http-equiv=content-security-policy content="upgrade-insecure-requests">
-<title> Quick Start - Loving life and dreams. </title>
+<title> Statis - Loving life and dreams. </title>
 <meta name=keywords content="Blog,Software,Big Data,Product,Architecture,Java,Kylin">
 <meta name=author content="Elkan.Li">
-<meta property="og:title" content="Quick Start">
+<meta property="og:title" content="Statis">
 <meta property="og:site_name" content="Loving life and dreams.">
 <meta property="og:image" content="https://lisenhui.cn/img/author.jpg">
-<meta name=title content="Quick Start - Loving life and dreams.">
-<meta name=description content="NexT quick starter guide">
+<meta name=title content="Statis - Loving life and dreams.">
+<meta name=description content="NexT statis">
 <link rel="shortcut icon" href=https://lisenhui.cn/img/favicon.ico>
 <link rel=apple-touch-icon href=https://lisenhui.cn/img/apple-touch-icon.png>
 <link rel=apple-touch-icon-precomposed href=https://lisenhui.cn/img/apple-touch-icon.png>
 <link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css>
+<link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet>
 <link href=https://lisenhui.cn/css/main.css rel=stylesheet type=text/css>
 <link href=https://lisenhui.cn/css/syntax.css rel=stylesheet type=text/css>
 <script type=text/javascript>var _hmt=_hmt||[];(function(){var a=document.createElement("script"),b;a.src="https://hm.baidu.com/hm.js?9b021cbfb58b35e79012f9690de1c6ab",b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
@@ -35,7 +36,7 @@
 <div class=site-meta>
 <div class=multi-lang-switch>
 <i class="fa fa-fw fa-language" style=margin-right:5px></i>
-<a class=lang-link id=zh-cn href=https://lisenhui.cn/docs/quickstart/>中文</a>
+<a class=lang-link id=zh-cn href=https://lisenhui.cn/docs/thirdparty/statis.html>中文</a>
 <span class=lang-line> / </span>
 <a class=lang-link id=en href=#>English</a>
 </div>
@@ -60,31 +61,31 @@
 <a href=/en/ rel=section>
 <i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home
 </a>
-<div style=display:none>quickstart</div>
+<div style=display:none>thirdparty</div>
 </li>
 <li class=menu-item>
 <a href=/en/post rel=section>
 <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archive
 </a>
-<div style=display:none>quickstart</div>
+<div style=display:none>thirdparty</div>
 </li>
 <li class="menu-item menu-item-active">
 <a href=/en/docs rel=section>
 <i class="menu-item-icon fa fa-fw fa-book"></i> <br>User Guide
 </a>
-<div style=display:none>quickstart</div>
+<div style=display:none>thirdparty</div>
 </li>
 <li class=menu-item>
 <a href=/en/about.html rel=section>
 <i class="menu-item-icon fa fa-fw fa-user"></i> <br>About
 </a>
-<div style=display:none>quickstart</div>
+<div style=display:none>thirdparty</div>
 </li>
 <li class=menu-item>
 <a href=/en/404.html rel=section target=_blank>
 <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>Publice 404
 </a>
-<div style=display:none>quickstart</div>
+<div style=display:none>thirdparty</div>
 </li>
 <li class="menu-item menu-item-search">
 <a href=javascript:; class=popup-trigger> <i class="menu-item-icon fa fa-search fa-fw"></i> <br> Search</a>
@@ -150,12 +151,6 @@ Never forget your dreams！
 </a>
 </div>
 </nav>
-<div class="feed-link motion-element">
-<a href=/en/docs/quickstart/index.xml rel=alternate type=application/rss+xml target=_blank>
-<i class="fa fa-rss"></i>
-RSS
-</a>
-</div>
 <div class="links-of-author motion-element">
 <span class=links-of-author-item>
 <a href=https://github.com/elkan1788/ target=_blank title=GitHub>
@@ -265,12 +260,8 @@ TagCloud
 <div class=post-toc>
 <div class=post-toc-content><nav id=TableOfContents>
 <ul>
-<li><a href=#preconditions>Preconditions</a></li>
-<li><a href=#create-repository>Create Repository</a></li>
-<li><a href=#clone-repository>Clone Repository</a></li>
-<li><a href=#new-post>New Post</a></li>
-<li><a href=#modify-configure>Modify Configure</a></li>
-<li><a href=#preview>Preview</a></li>
+<li><a href=#statis>Statis</a></li>
+<li><a href=#leancloud>LeanCloud</a></li>
 </ul>
 </nav></div>
 </div>
@@ -280,7 +271,7 @@ TagCloud
 <div class=main-inner>
 <ul class="sub-menu menu">
 <li class=menu-item>
-<a href=/en/docs/quickstart/ rel=section class=menu-item-active>
+<a href=/en/docs/quickstart/ rel=section>
 <i class="fa fa-book fa-fw"></i>
 Quick Start
 </a>
@@ -292,7 +283,7 @@ Theme Settings
 </a>
 </li>
 <li class=menu-item>
-<a href=/en/docs/thirdparty/ rel=section>
+<a href=/en/docs/thirdparty/ rel=section class=menu-item-active>
 <i class="fa fa-american-sign-language-interpreting fa-fw"></i>
 Thirdparty-Plugin
 </a>
@@ -300,27 +291,27 @@ Thirdparty-Plugin
 </ul>
 <ul class="sub-menu menu">
 <li class=menu-item>
-<a href=installation.html rel=section>
-<i class="fa fa-download fa-fw"></i>
-Installation
+<a href=comment.html rel=section>
+<i class="fa fa-comments fa-fw"></i>
+Comment
 </a>
 </li>
 <li class=menu-item>
-<a href=configuration.html rel=section>
-<i class="fa fa-wrench fa-fw"></i>
-Configuration
+<a href=share.html rel=section>
+<i class="fa fa-share-alt fa-fw"></i>
+Share
 </a>
 </li>
 <li class=menu-item>
-<a href=deployment.html rel=section>
-<i class="fa fa-upload fa-fw"></i>
-Deployment
+<a href=statis.html rel=section>
+<i class="fa fa-bar-chart fa-fw"></i>
+Static
 </a>
 </li>
 <li class=menu-item>
-<a href=upgrade.html rel=section>
-<i class="fa fa-history fa-fw"></i>
-Upgrade
+<a href=others.html rel=section>
+<i class="fa fa-arrows fa-fw"></i>
+Others
 </a>
 </li>
 </ul>
@@ -333,14 +324,14 @@ Upgrade
 <span class=post-wordcount>
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>271 words</span>
+<span class=leancloud-world-count>124 words</span>
 </span>
 <span class=post-readtime>
 <i class="fa fa-eye fa-fw"></i>
 <span class=post-meta-item-text>Reading:</span>
-<span class=leancloud-view-count>2 minutes</span>
+<span class=leancloud-view-count>1 minutes</span>
 </span>
-<span id=/en/docs/quickstart/ class="leancloud_visitors post-visitor" data-flag-title="Quick Start">
+<span id=/en/docs/thirdparty/statis.html class="leancloud_visitors post-visitor" data-flag-title=Statis>
 <i class="fa fa-binoculars fa-fw"></i>
 <span class=post-meta-item-text>Visited:</span>
 <span class=leancloud-visitors-count></span>
@@ -348,60 +339,28 @@ Upgrade
 </div>
 </header>
 <div class=post-body itemprop=articleBody>
-<p>Quick start will take you how to build site with <code>NexT</code> theme.</p>
-<h2 id=preconditions>Preconditions</h2>
-<p>Please make sure your computer with below environment before start use <code>NexT</code> theme.</p>
+<p>At present, it does not support the integrated use of three site statistics plug-ins: garlic, Baidu and Google, which are uniformly configured in [statis] parameter in the <code>params.toml</code> file is described as follows:</p>
+<h2 id=statis>Statis</h2>
+<p>You can choose your favorite statistical method</p>
 <div class="note danger">
 <ul>
-<li><a href=https://git-scm.com/>Git</a></li>
-<li><a href=https://github.com/gohugoio/hugo/releases>Hugo 0.59+</a></li>
+<li>Busuanzicounter: do you want to enable statistics of garlic</li>
+<li>Baidu siteid: Baidu statistical code</li>
+<li>Google siteid: Google statistics code</li>
+<li><del>CNNZsiteid: Statistics code of Youmeng (officially offline)</del></li>
 </ul>
 </div>
-<h2 id=create-repository>Create Repository</h2>
-<p>Login github website with your account then visit <a href=https://github.com/hugo-next/hugo-theme-next-starter target=_blank rel=noopener>NexT Starter</a>
-, click the green button which name is <code>Use this template</code> and fill in your site name and description, after click bottom button with name <code>Create repository from template</code> that will automatically generate your own site code.</p>
-<blockquote>
-<p>Notice: In China, Recommended use <code>Gitee</code> repository link <a href=https://gitee.com/hugo-next/hugo-theme-next-starter target=_blank rel=noopener>NexT Starter</a>
-, and fork it into your space.</p>
-</blockquote>
-<h2 id=clone-repository>Clone Repository</h2>
-<p>Use <code>git clone</code> command line clone your site code into local and check in site folder fetch the <code>NexT</code> theme code with execute <code>git submodule update --init</code> command.</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ git submodule update --init
-Submodule <span style=color:#b44>&#39;themes/hugo-theme-next&#39;</span> <span style=color:#666>(</span>https://gitee.com/lisenhui/hugo-theme-next.git<span style=color:#666>)</span> registered <span style=color:#a2f;font-weight:700>for</span> path <span style=color:#b44>&#39;themes/hugo-theme-next&#39;</span>
-Cloning into <span style=color:#b44>&#39;C:/xxx/hugo-theme-next-starter/themes/hugo-theme-next&#39;</span>...
-Submodule path <span style=color:#b44>&#39;themes/hugo-theme-next&#39;</span>: checked out <span style=color:#b44>&#39;d79ae281222b2ce62d6d84311048573b16f13aa4&#39;</span>
-</code></pre></div><h2 id=new-post>New Post</h2>
-<p>Recommended use <code>Hugo</code> command line create new post, for example:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>hugo new post/hello-world.md
-</code></pre></div><p>Then will create new file contain preconfigured front matter in <code>content/post</code> folder.</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-yaml data-lang=yaml><span style=color:#00f;font-weight:700>---</span><span style=color:#bbb>
-</span><span style=color:#bbb></span><span style=color:green;font-weight:700>title</span>:<span style=color:#bbb> </span><span style=color:#b44>&#34;Hello-World&#34;</span><span style=color:#bbb>
-</span><span style=color:#bbb></span><span style=color:green;font-weight:700>date</span>:<span style=color:#bbb> </span><span style=color:#b44>&#34;2022-05-01T15:02:05+08:00&#34;</span><span style=color:#bbb>
-</span><span style=color:#bbb></span><span style=color:green;font-weight:700>categories</span>:<span style=color:#bbb>
-</span><span style=color:#bbb> </span>- <span style=color:#b44>&#34;xx&#34;</span><span style=color:#bbb>
-</span><span style=color:#bbb></span><span style=color:green;font-weight:700>tags</span>:<span style=color:#bbb>
-</span><span style=color:#bbb> </span>- <span style=color:#b44>&#34;xxx&#34;</span><span style=color:#bbb>
-</span><span style=color:#bbb> </span>- <span style=color:#b44>&#34;xxx&#34;</span><span style=color:#bbb>
-</span><span style=color:#bbb></span><span style=color:green;font-weight:700>toc</span>:<span style=color:#bbb> </span><span style=color:#a2f;font-weight:700>false</span><span style=color:#bbb>
-</span><span style=color:#bbb></span><span style=color:green;font-weight:700>draft</span>:<span style=color:#bbb> </span><span style=color:#a2f;font-weight:700>true</span><span style=color:#bbb>
-</span><span style=color:#bbb></span><span style=color:#00f;font-weight:700>---</span><span style=color:#bbb>
-</span></code></pre></div><h2 id=modify-configure>Modify Configure</h2>
-<p><code>NexT</code> theme uses modular configuration files by default, and the directory structure is as follows:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>config
-<span style=color:#b44>`</span>-- _default
-    |-- config.toml
-    |-- languages.toml
-    |-- menu.toml
-    |-- params.toml
-    <span style=color:#b44>`</span>-- params.en.toml
-</code></pre></div><p>Just adjust <code>menu.toml</code>、<code>params.toml</code> and <code>params.en.toml</code> the parameters related to the personalization of your site under the three files can be used. For more information, please refer to <a href=/docs/themesettings/>Topic configuration</a>
-.</p>
-<blockquote>
-<p>Notice: If you just want to quickly preview the next theme effect, you can skip this step directly.</p>
-</blockquote>
-<h2 id=preview>Preview</h2>
-<p>Use <code>hugo server -D</code> command start website service, then open browser fill in <a href=http://localhost:1313/ target=_blank rel=noopener><code>http://localhost:1313/</code></a>
-visit site.</p>
+<p>In addition, the statistics of article visits are realized through leancloud storage, which is uniformly configured in parameter [leancloud] in the <code>params.toml</code> file is described as follows:</p>
+<h2 id=leancloud>LeanCloud</h2>
+<p>Visit <a href=https://www.leancloud.cn/ target=_blank rel=noopener>leancloud official website</a>
+Registration requires a registered domain name</p>
+<div class="note danger">
+<ul>
+<li>Appid: the ID of the registered application</li>
+<li>Appkey: the key to register the application</li>
+<li>Serverurl: application callback API address</li>
+</ul>
+</div>
 </div>
 <footer class=post-footer>
 <div class=post-eof style="width:100%;margin:30px 0"></div>
