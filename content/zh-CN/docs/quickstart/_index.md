@@ -13,8 +13,12 @@ toc: true
 
 在使用 `NexT` 主题前，请确认电脑是否具备如下环境：
 
+{{< note >}}
+
 - [Git](https://git-scm.com/)
 - [Hugo 0.59+](https://github.com/gohugoio/hugo/releases)
+
+{{< /note >}}
 
 ## 快速创建
 

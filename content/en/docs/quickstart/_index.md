@@ -13,8 +13,12 @@ Quick start will take you how to build site with `NexT` theme.
 
 Please make sure your computer with below environment before start use `NexT` theme.
 
+{{< note >}}
+
 - [Git](https://git-scm.com/)
 - [Hugo 0.59+](https://github.com/gohugoio/hugo/releases)
+
+{{< /note >}}
 
 ## Create Repository
 
