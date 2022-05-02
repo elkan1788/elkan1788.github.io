@@ -121,13 +121,13 @@
   identifier = "static"
   name = "统计"
   pre = "bar-chart"
-  url = "static.html"
+  url = "statis.html"
   weight = 3
   parent = "thirdparty"
 [[docs]]
-  identifier = "onlinechat"
-  name = "聊天"
-  pre = "commenting"
-  url = "onlinechat.html"
-  weight = 3
+  identifier = "others"
+  name = "其他"
+  pre = "arrows"
+  url = "others.html"
+  weight = 4
   parent = "thirdparty"
