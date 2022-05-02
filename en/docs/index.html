@@ -56,35 +56,30 @@
 </div>
 <nav class=site-nav>
 <ul id=menu class=menu>
-<div style=display:none>https://lisenhui.cn/en/docs/, /en/docs/, /</div>
 <li class=menu-item>
 <a href=/en/ rel=section>
 <i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home
 </a>
 <div style=display:none></div>
 </li>
-<div style=display:none>https://lisenhui.cn/en/docs/, /en/docs/, post</div>
 <li class=menu-item>
 <a href=/en/post rel=section>
 <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archive
 </a>
 <div style=display:none></div>
 </li>
-<div style=display:none>https://lisenhui.cn/en/docs/, /en/docs/, docs</div>
 <li class="menu-item menu-item-active">
 <a href=/en/docs rel=section>
 <i class="menu-item-icon fa fa-fw fa-book"></i> <br>User Guide
 </a>
 <div style=display:none></div>
 </li>
-<div style=display:none>https://lisenhui.cn/en/docs/, /en/docs/, about.html</div>
 <li class=menu-item>
 <a href=/en/about.html rel=section>
 <i class="menu-item-icon fa fa-fw fa-user"></i> <br>About
 </a>
 <div style=display:none></div>
 </li>
-<div style=display:none>https://lisenhui.cn/en/docs/, /en/docs/, /404.html</div>
 <li class=menu-item>
 <a href=/en/404.html rel=section target=_blank>
 <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>Publice 404
@@ -289,27 +284,17 @@ Thirdparty-Plugin
 <article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
 <header class=post-header>
 <div class=post-meta>
-<span class=post-time>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>Published at:</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2022-04-23">
-2022-04-23
-</time>
-</span>
-<span>
-|
+<span class=post-wordcount>
 <i class="fa fa-file-word-o fa-fw"></i>
 <span class=post-meta-item-text>Words:</span>
 <span class=leancloud-world-count>431 words</span>
 </span>
-<span>
-|
+<span class=post-readtime>
 <i class="fa fa-eye fa-fw"></i>
 <span class=post-meta-item-text>Reading:</span>
 <span class=leancloud-view-count>3 minutes</span>
 </span>
-<span id=/en/docs/ class=leancloud_visitors data-flag-title="User Guide of Hugo NexT">
-|
+<span id=/en/docs/ class="leancloud_visitors post-visitor" data-flag-title="User Guide of Hugo NexT">
 <i class="fa fa-binoculars fa-fw"></i>
 <span class=post-meta-item-text>Visited:</span>
 <span class=leancloud-visitors-count></span>
@@ -422,46 +407,8 @@ clone it first, but it&rsquo;s a pity that the author didn&rsquo;t update it con
 <p>Thanks for your pay attention and provide more suggestions!</p>
 </div>
 <footer class=post-footer>
+<div class=post-eof style="width:100%;margin:30px 0"></div>
 <div class=addthis_inline_share_toolbox></div>
-<div class=post-nav>
-<div class=article-copyright>
-<div class=article-copyright-img>
-<img src=/img/qq_qrcode.png width=129px height=129px>
-<div style=text-align:center>QQ QrCode</div>
-</div>
-<div class=article-copyright-info>
-<p>
-<span>Declaration：</span>User Guide of Hugo NexT
-</p>
-<p>
-<span>Link：</span>https://lisenhui.cn/en/docs/
-</p>
-<p>
-<span>Author：</span>Elkan.Li
-</p>
-<p>
-<span>Declaration： </span>This blog post article is under the <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a> license,Please indicate the source!
-</p>
-</div>
-</div>
-<div class=clear></div>
-</div>
-<div class=reward-qr-info>
-<div>If it can help you, you can give tips for blogger that how much you want. ^_^</div>
-<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
-<span>Reward</span>
-</button>
-<div id=QR style=display:none>
-<div id=wechat style=display:inline-block>
-<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
-<p>Wechat Pay</p>
-</div>
-<div id=alipay style=display:inline-block>
-<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
-<p>Ali Pay</p>
-</div>
-</div>
-</div>
 <div id=wcomments></div>
 </footer>
 </article>
@@ -529,6 +476,10 @@ Storage by
 <script type=text/javascript src=https://lisenhui.cn/js/affix.js></script>
 <script type=text/javascript src=https://lisenhui.cn/js/scrollspy.js></script>
 <script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
+<script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
+<script type=text/javascript>$(function(){$('.post-body').viewer()})</script>
+<script type=text/javascript>const locale={placeholder:'Just do what you want leave here, and don\u0027t forget give your email to make exchange. ^_^'};$(function(){detectIE()>0?$.getScript(document.location.protocol+'//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js',function(){new Waline({el:'#wcomments',visitor:!0,emoji:['https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/qq','https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/alus','https://cdn.jsdelivr.net/gh/walinejs/emojis@1.0.0/bilibili'],wordLimit:'200',uploadImage:!1,locale,requiredMeta:['nick','mail'],serverURL:"https://waline.lisenhui.cn",lang:"en"})}):$('#wcomments').html('Sorry, Waline plugin doesn\u0027t support IE or Edge, Please swithc to Chrome browser.')})</script>
+<script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-6049e46e9ee22127"></script>
 <script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
 <script type=text/javascript>$(function(){var b,a;document.body.clientWidth>900&&(b=document.getElementsByTagName('HEAD').item(0),a=document.createElement("script"),a.type="text/javascript",a.innerHTML='(function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",(\'https:\' == document.location.protocol ? \'https:\' : \'http:\') + "//widget.daovoice.io/widget/f89653b8.js","daovoice")',b.appendChild(a),daovoice('init',{app_id:"f89653b8"}),daovoice('update'))})</script>
 </body>
