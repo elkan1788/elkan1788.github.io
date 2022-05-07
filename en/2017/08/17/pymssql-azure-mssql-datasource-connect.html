@@ -106,6 +106,137 @@
 </nav> </div>
 </header>
 <main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/en/2017/08/17/pymssql-azure-mssql-datasource-connect.html itemprop=url>
+pymsql connects to the MSSQL database of the azure cloud
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-pushdate>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>Published at:</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-08-17">
+2017-08-17
+</time>
+</span>
+<span class=post-category>
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>Categories:</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a class=post-category-a href=/en/categories/azure itemprop=url rel=index>
+<span itemprop=name>Azure</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>162 words</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>1 minutes</span>
+</span>
+<span id=/en/2017/08/17/pymssql-azure-mssql-datasource-connect.html class="leancloud_visitors post-visitor" data-flag-title="pymsql connects to the MSSQL database of the azure cloud">
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>Visited:</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>Code good code in the test environment to do a good job of testing, full of confidence to the operation of the online to the production environment, the result is a bunch of exceptions, specifically looked at the problem found to be connected to the database, abnormal information is as follows:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>(40532, &#39;Cannot open server &#34;1433D&#34; requested by the login.  
+The login failed. DB-Lib error message 20018, severity 20:\n
+General SQL Server error: Check messages from the SQL Server\n
+DB-Lib error message 20002, severity 9:\nAdaptive Server connection failed\n&#39;)
+</code></pre></div><p>Is there a problem with the environment installation, switch under the test environment and no problem, well, had to turn to &lsquo;Google&rsquo; again, finally found the reason, should be Microsoft Cloud&rsquo;s own rules, in the user name to add the host name is good, reference as follows:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>import pymssql
+conn = pymssql.connect(server=&#39;yourserver.database.chinacloudapi.cn&#39;, user=&#39;yourusername@yourserver&#39;, password=&#39;yourpassword&#39;, database=&#39;AdventureWorks&#39;)
+</code></pre></div><p>That&rsquo;s @yourserver keyword</p>
+<p>Reference:</p>
+<ul>
+<li>
+<p><a href=https://docs.microsoft.com/zh-cn/azure/sql-database/sql-database-connect-query-python target=_blank rel=noopener>Using Python to query Azure SQL Database</a>
+</p>
+</li>
+<li>
+<p><a href=https://github.com/pymssql/pymssql/issues/330 target=_blank rel=noopener>Cannot open server &ldquo;1433D&rdquo; requested by the login</a>
+</p>
+</li>
+</ul>
+</div>
+<footer class=post-footer>
+<div class=post-tags>
+<a href=/en/tags/python rel=tag title=Python>#Python#</a>
+</div>
+<div class=addthis_inline_share_toolbox></div>
+<div class=post-nav>
+<div class=article-copyright>
+<div class=article-copyright-img>
+<img src=/img/qq_qrcode.png width=129px height=129px>
+<div style=text-align:center>QQ QrCode</div>
+</div>
+<div class=article-copyright-info>
+<p>
+<span>Title：</span>pymsql connects to the MSSQL database of the azure cloud
+</p>
+<p>
+<span>Link：</span>https://lisenhui.cn/en/2017/08/17/pymssql-azure-mssql-datasource-connect.html
+</p>
+<p>
+<span>Author：</span>Elkan.Li
+</p>
+<p>
+<span>Declaration： </span>This blog post article is under the <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a> license,Please indicate the source!
+</p>
+</div>
+</div>
+<div class=clear></div>
+</div>
+<div class=reward-qr-info>
+<div>If it can help you, you can give tips for blogger that how much you want. ^_^</div>
+<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
+<span>Reward</span>
+</button>
+<div id=QR style=display:none>
+<div id=wechat style=display:inline-block>
+<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
+<p>Wechat Pay</p>
+</div>
+<div id=alipay style=display:inline-block>
+<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
+<p>Ali Pay</p>
+</div>
+</div>
+</div>
+<div class=post-nav>
+<div class="post-nav-next post-nav-item">
+<a href=https://lisenhui.cn/en/2017/08/19/use-travis-ci-push-hexo-blog.html rel=next title="Use Github, Travis CI to automatically deploy HexoCoding to OSChina Server">
+<i class="fa fa-chevron-left"></i> Use Github, Travis CI to automatically deploy HexoCoding to OSChina Server
+</a>
+</div>
+<div class="post-nav-prev post-nav-item">
+<a href=https://lisenhui.cn/en/2017/08/16/mac-install-pymssql-module.html rel=prev title="Install the pymsql module under Mac/Linux">
+Install the pymsql module under Mac/Linux
+<i class="fa fa-chevron-right"></i>
+</a>
+</div>
+</div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
 <div class=sidebar-toggle>
 <div class=sidebar-toggle-line-wrap>
 <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -250,137 +381,6 @@ TagCloud
 </section>
 </div>
 </aside>
-<div class=main-inner>
-<div class=content-wrap>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lisenhui.cn/en/2017/08/17/pymssql-azure-mssql-datasource-connect.html itemprop=url>
-pymsql connects to the MSSQL database of the azure cloud
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-pushdate>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>Published at:</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-08-17">
-2017-08-17
-</time>
-</span>
-<span class=post-category>
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>Categories:</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a class=post-category-a href=/en/categories/azure itemprop=url rel=index>
-<span itemprop=name>Azure</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>162 words</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>Reading:</span>
-<span class=leancloud-view-count>1 minutes</span>
-</span>
-<span id=/en/2017/08/17/pymssql-azure-mssql-datasource-connect.html class="leancloud_visitors post-visitor" data-flag-title="pymsql connects to the MSSQL database of the azure cloud">
-<i class="fa fa-binoculars fa-fw"></i>
-<span class=post-meta-item-text>Visited:</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>Code good code in the test environment to do a good job of testing, full of confidence to the operation of the online to the production environment, the result is a bunch of exceptions, specifically looked at the problem found to be connected to the database, abnormal information is as follows:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>(40532, &#39;Cannot open server &#34;1433D&#34; requested by the login.  
-The login failed. DB-Lib error message 20018, severity 20:\n
-General SQL Server error: Check messages from the SQL Server\n
-DB-Lib error message 20002, severity 9:\nAdaptive Server connection failed\n&#39;)
-</code></pre></div><p>Is there a problem with the environment installation, switch under the test environment and no problem, well, had to turn to &lsquo;Google&rsquo; again, finally found the reason, should be Microsoft Cloud&rsquo;s own rules, in the user name to add the host name is good, reference as follows:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>import pymssql
-conn = pymssql.connect(server=&#39;yourserver.database.chinacloudapi.cn&#39;, user=&#39;yourusername@yourserver&#39;, password=&#39;yourpassword&#39;, database=&#39;AdventureWorks&#39;)
-</code></pre></div><p>That&rsquo;s @yourserver keyword</p>
-<p>Reference:</p>
-<ul>
-<li>
-<p><a href=https://docs.microsoft.com/zh-cn/azure/sql-database/sql-database-connect-query-python target=_blank rel=noopener>Using Python to query Azure SQL Database</a>
-</p>
-</li>
-<li>
-<p><a href=https://github.com/pymssql/pymssql/issues/330 target=_blank rel=noopener>Cannot open server &ldquo;1433D&rdquo; requested by the login</a>
-</p>
-</li>
-</ul>
-</div>
-<footer class=post-footer>
-<div class=post-tags>
-<a href=/en/tags/python rel=tag title=Python>#Python#</a>
-</div>
-<div class=addthis_inline_share_toolbox></div>
-<div class=post-nav>
-<div class=article-copyright>
-<div class=article-copyright-img>
-<img src=/img/qq_qrcode.png width=129px height=129px>
-<div style=text-align:center>QQ QrCode</div>
-</div>
-<div class=article-copyright-info>
-<p>
-<span>Title：</span>pymsql connects to the MSSQL database of the azure cloud
-</p>
-<p>
-<span>Link：</span>https://lisenhui.cn/en/2017/08/17/pymssql-azure-mssql-datasource-connect.html
-</p>
-<p>
-<span>Author：</span>Elkan.Li
-</p>
-<p>
-<span>Declaration： </span>This blog post article is under the <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a> license,Please indicate the source!
-</p>
-</div>
-</div>
-<div class=clear></div>
-</div>
-<div class=reward-qr-info>
-<div>If it can help you, you can give tips for blogger that how much you want. ^_^</div>
-<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
-<span>Reward</span>
-</button>
-<div id=QR style=display:none>
-<div id=wechat style=display:inline-block>
-<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
-<p>Wechat Pay</p>
-</div>
-<div id=alipay style=display:inline-block>
-<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
-<p>Ali Pay</p>
-</div>
-</div>
-</div>
-<div class=post-nav>
-<div class="post-nav-next post-nav-item">
-<a href=https://lisenhui.cn/en/2017/08/19/use-travis-ci-push-hexo-blog.html rel=next title="Use Github, Travis CI to automatically deploy HexoCoding to OSChina Server">
-<i class="fa fa-chevron-left"></i> Use Github, Travis CI to automatically deploy HexoCoding to OSChina Server
-</a>
-</div>
-<div class="post-nav-prev post-nav-item">
-<a href=https://lisenhui.cn/en/2017/08/16/mac-install-pymssql-module.html rel=prev title="Install the pymsql module under Mac/Linux">
-Install the pymsql module under Mac/Linux
-<i class="fa fa-chevron-right"></i>
-</a>
-</div>
-</div>
-<div id=wcomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
 </div>
 </main>
 <footer id=footer class=footer>

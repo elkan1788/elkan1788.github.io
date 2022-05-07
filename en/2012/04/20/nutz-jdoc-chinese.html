@@ -100,6 +100,142 @@
 </nav> </div>
 </header>
 <main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/en/2012/04/20/nutz-jdoc-chinese.html itemprop=url>
+Nutz source Jdoc has a garbled solution when filling in the prompt in the IDE
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-pushdate>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>Published at:</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2012-04-20">
+2012-04-20
+</time>
+</span>
+<span class=post-category>
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>Categories:</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a class=post-category-a href=/en/categories/useful itemprop=url rel=index>
+<span itemprop=name>Useful</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>513 words</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>3 minutes</span>
+</span>
+<span id=/en/2012/04/20/nutz-jdoc-chinese.html class="leancloud_visitors post-visitor" data-flag-title="Nutz source Jdoc has a garbled solution when filling in the prompt in the IDE">
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>Visited:</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>There was also a period of exposure to Nutz, with a constant understanding of its use, only to find that it is more powerful and the author&rsquo;s design is clever, especially like its JUnit test report, and the update speed is quite fast, to the present version of 1.b.44,ssh has the function can be said to be fully equipped. The quickest way for programmers to learn a new technology is the Demo-API,both of which are essential. Nutz is doing pretty well in this regard, for example, someone in Demo has contributed the entire CMS source code (thank you very much for sharing it and learning a lot from it), and the API provides common CHM formats and JAR packages. However, this JAR API in the implementation of the application is a little bit of a problem, let&rsquo;s go into more detail.</p>
+<p>My development environment:</p>
+<p>Operating system:Window7</p>
+<p>Java Virtual Machine: JDK1.7</p>
+<p>IDE Tool: Netbeans 7.1</p>
+<p>Project encoding format:UTF-8</p>
+<p>Create a simple WEB project with Netbeans, extract the Nutz-related files downloaded from GOOGLE CODE to create a new library reference necessary for development, these operations and display are normal, but when the code is automatically completed, found a problem, the code to complete the JDOC is actually garbled, as shown in the following image:</p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2012/04-20-nutz-Chinese-1.png alt=nutz-Chinese-1></p>
+<p>Hey, what&rsquo;s going on here? Re-examine your engineering coding properties to determine if there is nothing wrong with UTF-8, as shown in the following image:</p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2012/04-20-nutz-Chinese-2.png alt=nutz-Chinese-2></p>
+<p>Try to open the source view, but get a prompt saying, &ldquo;You can&rsquo;t safely open the file using gbK encoding format, do you want to continue opening it?&rdquo; ”</p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2012/04-20-nutz-Chinese-3.png alt=nutz-Chinese-3></p>
+<p>Did Nutz build JDOC using GBK encoding, it seems to have to connect to the GitHub library to download a library to see. Download it down to see that the encoding format of the project is also UTC-8, which is strange &ndash; where does the garbled code come from? It seems that we have to generate a JDOC to see, in the UTC-8 environment to generate JDOC should pay attention to the encoding format settings, as shown in the following figure,</p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2012/04-20-nutz-Chinese-4.png alt=nutz-Chinese-4></p>
+<p>After generating JDOC, directly modify the source code and JDOC connection of the Netbeans library and open the creation of the project using code auto-complement prompts everything to work</p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2012/04-20-nutz-Chinese-5.png alt=nutz-Chinese-5></p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2012/04-20-nutz-Chinese-6.png alt=nutz-Chinese-6></p>
+<p>The problem is solved, but the cause of this problem really has to think about, the impact of different coding formats is really depressed. &ldquo;You can&rsquo;t safely open the file using the GBK encoding format, do you want to continue opening it?&rdquo; said the message &ldquo;Can&rsquo;t open the file safely without modification?&rdquo; Is it okay to modify Nutz&rsquo;s source code into a GBK encoding format as described in the information? So wrote a coding format rotation output program tested, the results show that the guess is correct, oh</p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2012/04-20-nutz-Chinese-7.png alt=nutz-Chinese-7></p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2012/04-20-nutz-Chinese-8.png alt=nutz-Chinese-8></p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2012/04-20-nutz-Chinese-9.png alt=nutz-Chinese-9></p>
+<p>In fact, this small program can not only convert nutz&rsquo;s source code, it can also convert any project&rsquo;s encoding format (only support JAVA files), note that by UTF-8 to GBK encoding format Oh, then slowly experience next Nutz to bring you the &ldquo;wonderful experience&rdquo; it, oh</p>
+<p>PS: (<a href=http://dl.iteye.com/topics/download/a3e210f6-cdf8-3abe-9490-e6249ecaef0c target=_blank rel=noopener>http://dl.iteye.com/topics/download/a3e210f6-cdf8-3abe-9490-e6249ecaef0c</a>
+)</p>
+</div>
+<footer class=post-footer>
+<div class=post-tags>
+<a href=/en/tags/java rel=tag title=Java>#Java#</a>
+<a href=/en/tags/useful rel=tag title=Useful>#Useful#</a>
+</div>
+<div class=addthis_inline_share_toolbox></div>
+<div class=post-nav>
+<div class=article-copyright>
+<div class=article-copyright-img>
+<img src=/img/qq_qrcode.png width=129px height=129px>
+<div style=text-align:center>QQ QrCode</div>
+</div>
+<div class=article-copyright-info>
+<p>
+<span>Title：</span>Nutz source Jdoc has a garbled solution when filling in the prompt in the IDE
+</p>
+<p>
+<span>Link：</span>https://lisenhui.cn/en/2012/04/20/nutz-jdoc-chinese.html
+</p>
+<p>
+<span>Author：</span>Elkan.Li
+</p>
+<p>
+<span>Declaration： </span>This blog post article is under the <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a> license,Please indicate the source!
+</p>
+</div>
+</div>
+<div class=clear></div>
+</div>
+<div class=reward-qr-info>
+<div>If it can help you, you can give tips for blogger that how much you want. ^_^</div>
+<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
+<span>Reward</span>
+</button>
+<div id=QR style=display:none>
+<div id=wechat style=display:inline-block>
+<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
+<p>Wechat Pay</p>
+</div>
+<div id=alipay style=display:inline-block>
+<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
+<p>Ali Pay</p>
+</div>
+</div>
+</div>
+<div class=post-nav>
+<div class="post-nav-next post-nav-item">
+<a href=https://lisenhui.cn/en/2015/06/29/redis-install-settings.html rel=next title="Redis installation and configuration">
+<i class="fa fa-chevron-left"></i> Redis installation and configuration
+</a>
+</div>
+<div class="post-nav-prev post-nav-item">
+<a href=https://lisenhui.cn/en/2012/03/24/java-hard-rsr232.html rel=prev title="Java program and RSR232 serial communication skills">
+Java program and RSR232 serial communication skills
+<i class="fa fa-chevron-right"></i>
+</a>
+</div>
+</div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
 <div class=sidebar-toggle>
 <div class=sidebar-toggle-line-wrap>
 <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -244,142 +380,6 @@ TagCloud
 </section>
 </div>
 </aside>
-<div class=main-inner>
-<div class=content-wrap>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lisenhui.cn/en/2012/04/20/nutz-jdoc-chinese.html itemprop=url>
-Nutz source Jdoc has a garbled solution when filling in the prompt in the IDE
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-pushdate>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>Published at:</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2012-04-20">
-2012-04-20
-</time>
-</span>
-<span class=post-category>
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>Categories:</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a class=post-category-a href=/en/categories/useful itemprop=url rel=index>
-<span itemprop=name>Useful</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>513 words</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>Reading:</span>
-<span class=leancloud-view-count>3 minutes</span>
-</span>
-<span id=/en/2012/04/20/nutz-jdoc-chinese.html class="leancloud_visitors post-visitor" data-flag-title="Nutz source Jdoc has a garbled solution when filling in the prompt in the IDE">
-<i class="fa fa-binoculars fa-fw"></i>
-<span class=post-meta-item-text>Visited:</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>There was also a period of exposure to Nutz, with a constant understanding of its use, only to find that it is more powerful and the author&rsquo;s design is clever, especially like its JUnit test report, and the update speed is quite fast, to the present version of 1.b.44,ssh has the function can be said to be fully equipped. The quickest way for programmers to learn a new technology is the Demo-API,both of which are essential. Nutz is doing pretty well in this regard, for example, someone in Demo has contributed the entire CMS source code (thank you very much for sharing it and learning a lot from it), and the API provides common CHM formats and JAR packages. However, this JAR API in the implementation of the application is a little bit of a problem, let&rsquo;s go into more detail.</p>
-<p>My development environment:</p>
-<p>Operating system:Window7</p>
-<p>Java Virtual Machine: JDK1.7</p>
-<p>IDE Tool: Netbeans 7.1</p>
-<p>Project encoding format:UTF-8</p>
-<p>Create a simple WEB project with Netbeans, extract the Nutz-related files downloaded from GOOGLE CODE to create a new library reference necessary for development, these operations and display are normal, but when the code is automatically completed, found a problem, the code to complete the JDOC is actually garbled, as shown in the following image:</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2012/04-20-nutz-Chinese-1.png alt=nutz-Chinese-1></p>
-<p>Hey, what&rsquo;s going on here? Re-examine your engineering coding properties to determine if there is nothing wrong with UTF-8, as shown in the following image:</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2012/04-20-nutz-Chinese-2.png alt=nutz-Chinese-2></p>
-<p>Try to open the source view, but get a prompt saying, &ldquo;You can&rsquo;t safely open the file using gbK encoding format, do you want to continue opening it?&rdquo; ”</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2012/04-20-nutz-Chinese-3.png alt=nutz-Chinese-3></p>
-<p>Did Nutz build JDOC using GBK encoding, it seems to have to connect to the GitHub library to download a library to see. Download it down to see that the encoding format of the project is also UTC-8, which is strange &ndash; where does the garbled code come from? It seems that we have to generate a JDOC to see, in the UTC-8 environment to generate JDOC should pay attention to the encoding format settings, as shown in the following figure,</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2012/04-20-nutz-Chinese-4.png alt=nutz-Chinese-4></p>
-<p>After generating JDOC, directly modify the source code and JDOC connection of the Netbeans library and open the creation of the project using code auto-complement prompts everything to work</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2012/04-20-nutz-Chinese-5.png alt=nutz-Chinese-5></p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2012/04-20-nutz-Chinese-6.png alt=nutz-Chinese-6></p>
-<p>The problem is solved, but the cause of this problem really has to think about, the impact of different coding formats is really depressed. &ldquo;You can&rsquo;t safely open the file using the GBK encoding format, do you want to continue opening it?&rdquo; said the message &ldquo;Can&rsquo;t open the file safely without modification?&rdquo; Is it okay to modify Nutz&rsquo;s source code into a GBK encoding format as described in the information? So wrote a coding format rotation output program tested, the results show that the guess is correct, oh</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2012/04-20-nutz-Chinese-7.png alt=nutz-Chinese-7></p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2012/04-20-nutz-Chinese-8.png alt=nutz-Chinese-8></p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2012/04-20-nutz-Chinese-9.png alt=nutz-Chinese-9></p>
-<p>In fact, this small program can not only convert nutz&rsquo;s source code, it can also convert any project&rsquo;s encoding format (only support JAVA files), note that by UTF-8 to GBK encoding format Oh, then slowly experience next Nutz to bring you the &ldquo;wonderful experience&rdquo; it, oh</p>
-<p>PS: (<a href=http://dl.iteye.com/topics/download/a3e210f6-cdf8-3abe-9490-e6249ecaef0c target=_blank rel=noopener>http://dl.iteye.com/topics/download/a3e210f6-cdf8-3abe-9490-e6249ecaef0c</a>
-)</p>
-</div>
-<footer class=post-footer>
-<div class=post-tags>
-<a href=/en/tags/java rel=tag title=Java>#Java#</a>
-<a href=/en/tags/useful rel=tag title=Useful>#Useful#</a>
-</div>
-<div class=addthis_inline_share_toolbox></div>
-<div class=post-nav>
-<div class=article-copyright>
-<div class=article-copyright-img>
-<img src=/img/qq_qrcode.png width=129px height=129px>
-<div style=text-align:center>QQ QrCode</div>
-</div>
-<div class=article-copyright-info>
-<p>
-<span>Title：</span>Nutz source Jdoc has a garbled solution when filling in the prompt in the IDE
-</p>
-<p>
-<span>Link：</span>https://lisenhui.cn/en/2012/04/20/nutz-jdoc-chinese.html
-</p>
-<p>
-<span>Author：</span>Elkan.Li
-</p>
-<p>
-<span>Declaration： </span>This blog post article is under the <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a> license,Please indicate the source!
-</p>
-</div>
-</div>
-<div class=clear></div>
-</div>
-<div class=reward-qr-info>
-<div>If it can help you, you can give tips for blogger that how much you want. ^_^</div>
-<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
-<span>Reward</span>
-</button>
-<div id=QR style=display:none>
-<div id=wechat style=display:inline-block>
-<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
-<p>Wechat Pay</p>
-</div>
-<div id=alipay style=display:inline-block>
-<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
-<p>Ali Pay</p>
-</div>
-</div>
-</div>
-<div class=post-nav>
-<div class="post-nav-next post-nav-item">
-<a href=https://lisenhui.cn/en/2015/06/29/redis-install-settings.html rel=next title="Redis installation and configuration">
-<i class="fa fa-chevron-left"></i> Redis installation and configuration
-</a>
-</div>
-<div class="post-nav-prev post-nav-item">
-<a href=https://lisenhui.cn/en/2012/03/24/java-hard-rsr232.html rel=prev title="Java program and RSR232 serial communication skills">
-Java program and RSR232 serial communication skills
-<i class="fa fa-chevron-right"></i>
-</a>
-</div>
-</div>
-<div id=wcomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
 </div>
 </main>
 <footer id=footer class=footer>

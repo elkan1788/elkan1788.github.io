@@ -106,6 +106,126 @@
 </nav> </div>
 </header>
 <main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/en/2022/04/04/sshlogin-localvm-slowly-mobaxterm.html itemprop=url>
+SSH login local VM slowly with Mobaxterm
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-pushdate>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>Published at:</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2022-04-04">
+2022-04-04
+</time>
+</span>
+<span class=post-category>
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>Categories:</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a class=post-category-a href=/en/categories/tools itemprop=url rel=index>
+<span itemprop=name>tools</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>385 words</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>2 minutes</span>
+</span>
+<span id=/en/2022/04/04/sshlogin-localvm-slowly-mobaxterm.html class="leancloud_visitors post-visitor" data-flag-title="SSH login local VM slowly with Mobaxterm">
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>Visited:</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>Recently, there was a problem with the local virtual machine, but a new environment was rebuilt. As a result, when logging in to the terminal with mobaxterm tool, it was found that you had to wait 4 ~ 5 seconds to enter each time. The operation inspection was not very good. I don&rsquo;t understand why the local environment connection is so slow, so I still have to find a way to analyze it.</p>
+<p>Some netizens have similar puzzles, suggesting that it may be the reason why they need to address through DNS during SSH login. Refer to the article to find <code>/etc/ssh/sshd_config</code> sets the <code>UseDNS</code> configuration item to' no &lsquo;, but it is found that it is closed. What causes that?</p>
+<p>When it comes to DNS, I suddenly think it won&rsquo;t be the problem of the local host file (I&rsquo;m used to using <code>hostname</code> to connect to the server), so I try to directly replace the connection address of mobaxterm with the server IP address, and hopefully click the login button. Unfortunately, I still have to wait for a while to enter. I&rsquo;m a little crazy.</p>
+<p>After a little &ldquo;calm down&rdquo; and think about it, I found that the cause of the problem is still not determined. Is it the problem of mobaxterm tool or server configuration? Therefore, the simplest SSH command is used, and the result is very surprising. No matter whether it is connected through IP or <code>hostname</code>, there is no need to wait, and you can enter the terminal operation immediately. So it can be confirmed that it is the reason for mobaxterm tool.</p>
+<p>So I checked the login configuration of mobaxterm. I am used to logging in with the configured user name, but it seems that there is no problem.</p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2022/04-04-mobaxterm-login-credential.png alt=mobaxterm-login-credential.png></p>
+<p>Then click the passwords tab next to the card and find that there are also two passwords stored in it. Is that why?</p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2022/04-04-mobaxterm-save-password.png alt=mobaxterm-save-password.png></p>
+<p>Decisively deleted the two password records in passwords, logged in to the server of the virtual machine again, and finally got the outcome he thought of.🙊</p>
+<h2 id=conclusion>Conclusion</h2>
+<p>I don&rsquo;t know why this phenomenon occurs, that is, the two password records in passwords are still unclear for the time being. If you encounter similar situations in the future, you can refer to the above methods, which may help you.</p>
+</div>
+<footer class=post-footer>
+<div class=post-tags>
+<a href=/en/tags/ssh rel=tag title=SSH>#SSH#</a>
+<a href=/en/tags/mobaxterm rel=tag title=MobaXterm>#MobaXterm#</a>
+</div>
+<div class=addthis_inline_share_toolbox></div>
+<div class=post-nav>
+<div class=article-copyright>
+<div class=article-copyright-img>
+<img src=/img/qq_qrcode.png width=129px height=129px>
+<div style=text-align:center>QQ QrCode</div>
+</div>
+<div class=article-copyright-info>
+<p>
+<span>Title：</span>SSH login local VM slowly with Mobaxterm
+</p>
+<p>
+<span>Link：</span>https://lisenhui.cn/en/2022/04/04/sshlogin-localvm-slowly-mobaxterm.html
+</p>
+<p>
+<span>Author：</span>Elkan.Li
+</p>
+<p>
+<span>Declaration： </span>This blog post article is under the <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a> license,Please indicate the source!
+</p>
+</div>
+</div>
+<div class=clear></div>
+</div>
+<div class=reward-qr-info>
+<div>If it can help you, you can give tips for blogger that how much you want. ^_^</div>
+<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
+<span>Reward</span>
+</button>
+<div id=QR style=display:none>
+<div id=wechat style=display:inline-block>
+<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
+<p>Wechat Pay</p>
+</div>
+<div id=alipay style=display:inline-block>
+<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
+<p>Ali Pay</p>
+</div>
+</div>
+</div>
+<div class=post-nav>
+<div class="post-nav-next post-nav-item">
+</div>
+<div class="post-nav-prev post-nav-item">
+<a href=https://lisenhui.cn/en/2022/02/12/use-sublime-txt-build-hugo-site.html rel=prev title="Use Sublime Text build Hugo blog environment ">
+Use Sublime Text build Hugo blog environment
+<i class="fa fa-chevron-right"></i>
+</a>
+</div>
+</div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
 <div class=sidebar-toggle>
 <div class=sidebar-toggle-line-wrap>
 <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -250,126 +370,6 @@ TagCloud
 </section>
 </div>
 </aside>
-<div class=main-inner>
-<div class=content-wrap>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lisenhui.cn/en/2022/04/04/sshlogin-localvm-slowly-mobaxterm.html itemprop=url>
-SSH login local VM slowly with Mobaxterm
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-pushdate>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>Published at:</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2022-04-04">
-2022-04-04
-</time>
-</span>
-<span class=post-category>
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>Categories:</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a class=post-category-a href=/en/categories/tools itemprop=url rel=index>
-<span itemprop=name>tools</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>385 words</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>Reading:</span>
-<span class=leancloud-view-count>2 minutes</span>
-</span>
-<span id=/en/2022/04/04/sshlogin-localvm-slowly-mobaxterm.html class="leancloud_visitors post-visitor" data-flag-title="SSH login local VM slowly with Mobaxterm">
-<i class="fa fa-binoculars fa-fw"></i>
-<span class=post-meta-item-text>Visited:</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>Recently, there was a problem with the local virtual machine, but a new environment was rebuilt. As a result, when logging in to the terminal with mobaxterm tool, it was found that you had to wait 4 ~ 5 seconds to enter each time. The operation inspection was not very good. I don&rsquo;t understand why the local environment connection is so slow, so I still have to find a way to analyze it.</p>
-<p>Some netizens have similar puzzles, suggesting that it may be the reason why they need to address through DNS during SSH login. Refer to the article to find <code>/etc/ssh/sshd_config</code> sets the <code>UseDNS</code> configuration item to' no &lsquo;, but it is found that it is closed. What causes that?</p>
-<p>When it comes to DNS, I suddenly think it won&rsquo;t be the problem of the local host file (I&rsquo;m used to using <code>hostname</code> to connect to the server), so I try to directly replace the connection address of mobaxterm with the server IP address, and hopefully click the login button. Unfortunately, I still have to wait for a while to enter. I&rsquo;m a little crazy.</p>
-<p>After a little &ldquo;calm down&rdquo; and think about it, I found that the cause of the problem is still not determined. Is it the problem of mobaxterm tool or server configuration? Therefore, the simplest SSH command is used, and the result is very surprising. No matter whether it is connected through IP or <code>hostname</code>, there is no need to wait, and you can enter the terminal operation immediately. So it can be confirmed that it is the reason for mobaxterm tool.</p>
-<p>So I checked the login configuration of mobaxterm. I am used to logging in with the configured user name, but it seems that there is no problem.</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2022/04-04-mobaxterm-login-credential.png alt=mobaxterm-login-credential.png></p>
-<p>Then click the passwords tab next to the card and find that there are also two passwords stored in it. Is that why?</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2022/04-04-mobaxterm-save-password.png alt=mobaxterm-save-password.png></p>
-<p>Decisively deleted the two password records in passwords, logged in to the server of the virtual machine again, and finally got the outcome he thought of.🙊</p>
-<h2 id=conclusion>Conclusion</h2>
-<p>I don&rsquo;t know why this phenomenon occurs, that is, the two password records in passwords are still unclear for the time being. If you encounter similar situations in the future, you can refer to the above methods, which may help you.</p>
-</div>
-<footer class=post-footer>
-<div class=post-tags>
-<a href=/en/tags/ssh rel=tag title=SSH>#SSH#</a>
-<a href=/en/tags/mobaxterm rel=tag title=MobaXterm>#MobaXterm#</a>
-</div>
-<div class=addthis_inline_share_toolbox></div>
-<div class=post-nav>
-<div class=article-copyright>
-<div class=article-copyright-img>
-<img src=/img/qq_qrcode.png width=129px height=129px>
-<div style=text-align:center>QQ QrCode</div>
-</div>
-<div class=article-copyright-info>
-<p>
-<span>Title：</span>SSH login local VM slowly with Mobaxterm
-</p>
-<p>
-<span>Link：</span>https://lisenhui.cn/en/2022/04/04/sshlogin-localvm-slowly-mobaxterm.html
-</p>
-<p>
-<span>Author：</span>Elkan.Li
-</p>
-<p>
-<span>Declaration： </span>This blog post article is under the <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a> license,Please indicate the source!
-</p>
-</div>
-</div>
-<div class=clear></div>
-</div>
-<div class=reward-qr-info>
-<div>If it can help you, you can give tips for blogger that how much you want. ^_^</div>
-<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
-<span>Reward</span>
-</button>
-<div id=QR style=display:none>
-<div id=wechat style=display:inline-block>
-<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
-<p>Wechat Pay</p>
-</div>
-<div id=alipay style=display:inline-block>
-<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
-<p>Ali Pay</p>
-</div>
-</div>
-</div>
-<div class=post-nav>
-<div class="post-nav-next post-nav-item">
-</div>
-<div class="post-nav-prev post-nav-item">
-<a href=https://lisenhui.cn/en/2022/02/12/use-sublime-txt-build-hugo-site.html rel=prev title="Use Sublime Text build Hugo blog environment ">
-Use Sublime Text build Hugo blog environment
-<i class="fa fa-chevron-right"></i>
-</a>
-</div>
-</div>
-<div id=wcomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
 </div>
 </main>
 <footer id=footer class=footer>

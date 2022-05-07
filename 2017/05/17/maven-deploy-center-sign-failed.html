@@ -106,6 +106,134 @@
 </nav> </div>
 </header>
 <main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/2017/05/17/maven-deploy-center-sign-failed.html itemprop=url>
+发布jar到Maven时遭遇gpg签名失败
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-pushdate>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>时间：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-05-17">
+2017-05-17
+</time>
+</span>
+<span class=post-category>
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分类：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a class=post-category-a href=/categories/maven itemprop=url rel=index>
+<span itemprop=name>Maven</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>358 字</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>1分钟</span>
+</span>
+<span id=/2017/05/17/maven-deploy-center-sign-failed.html class="leancloud_visitors post-visitor" data-flag-title=发布jar到Maven时遭遇gpg签名失败>
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>阅读次数：</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>有许久没维护自己开源的项目了，此次在修复BUG发布时遭遇失败，检查后发现原因是因为gpg签名失败，没办法换了MAC电脑有些操作不熟悉是有点郁闷的。</p>
+<p>关于如何将自己的JAR共享到Maven中央仓库，网上有很多的资源，大家可以自行尝试一下，其实也不难的，完全没必要担心英语的问题。</p>
+<blockquote>
+<p>分享一个别人整理的GitBook: <a href=https://skyao.gitbooks.io/leaning-maven/content/publish/central/ target=_blank rel=noopener>发布到中央仓库</a>
+</p>
+</blockquote>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[INFO] --- maven-gpg-plugin:1.6:sign (sign-artifacts) @ mpsdk4j ---
+gpg: 签名时失败： Inappropriate ioctl for device
+gpg: signing failed: Inappropriate ioctl for device
+</code></pre></div><p>上面就是GPG在签名时遇到的问题，单纯从字面上来看是说对于此设备有个不适合的ioctl，不明白是何东西。最后一步步探究下来发现是因为管理GPG的服务器不能用的缘故，在网上找了个新的服务器重新上传如下：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>gpg --keyserver hkp://pgp.mit.edu --send-keys DAB131AA5564DCF176
+
+#如果不放心的话，可以使用下面的命令检查一下
+gpg --keyserver hkp://pgp.mit.edu --recv-keys DAB131AA5564DCF176
+</code></pre></div><p>好啦，重新打包release jar包， 很开心的看到了SUCCESS的结果，收工。</p>
+</div>
+<footer class=post-footer>
+<div class=post-tags>
+<a href=/tags/maven rel=tag title=Maven>#Maven#</a>
+<a href=/tags/%e5%b7%a5%e5%85%b7 rel=tag title=工具>#工具#</a>
+<a href=/tags/mac rel=tag title=Mac>#Mac#</a>
+</div>
+<div class=addthis_inline_share_toolbox></div>
+<div class=post-nav>
+<div class=article-copyright>
+<div class=article-copyright-img>
+<img src=/img/qq_qrcode.png width=129px height=129px>
+<div style=text-align:center>QQ扫一扫交流</div>
+</div>
+<div class=article-copyright-info>
+<p>
+<span>标题：</span>发布jar到Maven时遭遇gpg签名失败
+</p>
+<p>
+<span>链接：</span>https://lisenhui.cn/2017/05/17/maven-deploy-center-sign-failed.html
+</p>
+<p>
+<span>作者：</span>凡梦星尘
+</p>
+<p>
+<span>声明： </span>本博客文章除特别声明外，均采用 <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a>许可协议，转载请注明出处！
+</p>
+</div>
+</div>
+<div class=clear></div>
+</div>
+<div class=reward-qr-info>
+<div>创作实属不易，如有帮助，那就打赏博主些许茶钱吧 ^_^</div>
+<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
+<span>赏</span>
+</button>
+<div id=QR style=display:none>
+<div id=wechat style=display:inline-block>
+<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
+<p>微信打赏</p>
+</div>
+<div id=alipay style=display:inline-block>
+<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
+<p>支付宝打赏</p>
+</div>
+</div>
+</div>
+<div class=post-nav>
+<div class="post-nav-next post-nav-item">
+<a href=https://lisenhui.cn/2017/05/18/linux-daemon-supervisor.html rel=next title=Supervisor介绍与使用>
+<i class="fa fa-chevron-left"></i> Supervisor介绍与使用
+</a>
+</div>
+<div class="post-nav-prev post-nav-item">
+<a href=https://lisenhui.cn/2017/05/16/github-push-failed.html rel=prev title="Github push失败：Could not resolve hostname">
+Github push失败：Could not resolve hostname
+<i class="fa fa-chevron-right"></i>
+</a>
+</div>
+</div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
 <div class=sidebar-toggle>
 <div class=sidebar-toggle-line-wrap>
 <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -250,134 +378,6 @@ GitHub
 </section>
 </div>
 </aside>
-<div class=main-inner>
-<div class=content-wrap>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lisenhui.cn/2017/05/17/maven-deploy-center-sign-failed.html itemprop=url>
-发布jar到Maven时遭遇gpg签名失败
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-pushdate>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-05-17">
-2017-05-17
-</time>
-</span>
-<span class=post-category>
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>分类：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a class=post-category-a href=/categories/maven itemprop=url rel=index>
-<span itemprop=name>Maven</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>358 字</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>1分钟</span>
-</span>
-<span id=/2017/05/17/maven-deploy-center-sign-failed.html class="leancloud_visitors post-visitor" data-flag-title=发布jar到Maven时遭遇gpg签名失败>
-<i class="fa fa-binoculars fa-fw"></i>
-<span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>有许久没维护自己开源的项目了，此次在修复BUG发布时遭遇失败，检查后发现原因是因为gpg签名失败，没办法换了MAC电脑有些操作不熟悉是有点郁闷的。</p>
-<p>关于如何将自己的JAR共享到Maven中央仓库，网上有很多的资源，大家可以自行尝试一下，其实也不难的，完全没必要担心英语的问题。</p>
-<blockquote>
-<p>分享一个别人整理的GitBook: <a href=https://skyao.gitbooks.io/leaning-maven/content/publish/central/ target=_blank rel=noopener>发布到中央仓库</a>
-</p>
-</blockquote>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[INFO] --- maven-gpg-plugin:1.6:sign (sign-artifacts) @ mpsdk4j ---
-gpg: 签名时失败： Inappropriate ioctl for device
-gpg: signing failed: Inappropriate ioctl for device
-</code></pre></div><p>上面就是GPG在签名时遇到的问题，单纯从字面上来看是说对于此设备有个不适合的ioctl，不明白是何东西。最后一步步探究下来发现是因为管理GPG的服务器不能用的缘故，在网上找了个新的服务器重新上传如下：</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>gpg --keyserver hkp://pgp.mit.edu --send-keys DAB131AA5564DCF176
-
-#如果不放心的话，可以使用下面的命令检查一下
-gpg --keyserver hkp://pgp.mit.edu --recv-keys DAB131AA5564DCF176
-</code></pre></div><p>好啦，重新打包release jar包， 很开心的看到了SUCCESS的结果，收工。</p>
-</div>
-<footer class=post-footer>
-<div class=post-tags>
-<a href=/tags/maven rel=tag title=Maven>#Maven#</a>
-<a href=/tags/%e5%b7%a5%e5%85%b7 rel=tag title=工具>#工具#</a>
-<a href=/tags/mac rel=tag title=Mac>#Mac#</a>
-</div>
-<div class=addthis_inline_share_toolbox></div>
-<div class=post-nav>
-<div class=article-copyright>
-<div class=article-copyright-img>
-<img src=/img/qq_qrcode.png width=129px height=129px>
-<div style=text-align:center>QQ扫一扫交流</div>
-</div>
-<div class=article-copyright-info>
-<p>
-<span>标题：</span>发布jar到Maven时遭遇gpg签名失败
-</p>
-<p>
-<span>链接：</span>https://lisenhui.cn/2017/05/17/maven-deploy-center-sign-failed.html
-</p>
-<p>
-<span>作者：</span>凡梦星尘
-</p>
-<p>
-<span>声明： </span>本博客文章除特别声明外，均采用 <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a>许可协议，转载请注明出处！
-</p>
-</div>
-</div>
-<div class=clear></div>
-</div>
-<div class=reward-qr-info>
-<div>创作实属不易，如有帮助，那就打赏博主些许茶钱吧 ^_^</div>
-<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
-<span>赏</span>
-</button>
-<div id=QR style=display:none>
-<div id=wechat style=display:inline-block>
-<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
-<p>微信打赏</p>
-</div>
-<div id=alipay style=display:inline-block>
-<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
-<p>支付宝打赏</p>
-</div>
-</div>
-</div>
-<div class=post-nav>
-<div class="post-nav-next post-nav-item">
-<a href=https://lisenhui.cn/2017/05/18/linux-daemon-supervisor.html rel=next title=Supervisor介绍与使用>
-<i class="fa fa-chevron-left"></i> Supervisor介绍与使用
-</a>
-</div>
-<div class="post-nav-prev post-nav-item">
-<a href=https://lisenhui.cn/2017/05/16/github-push-failed.html rel=prev title="Github push失败：Could not resolve hostname">
-Github push失败：Could not resolve hostname
-<i class="fa fa-chevron-right"></i>
-</a>
-</div>
-</div>
-<div id=wcomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
 </div>
 </main>
 <footer id=footer class=footer>

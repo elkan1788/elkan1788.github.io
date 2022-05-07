@@ -106,6 +106,137 @@
 </nav> </div>
 </header>
 <main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/en/2017/05/16/github-push-failed.html itemprop=url>
+Github push fail：Could not resolve hostname
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-pushdate>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>Published at:</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-05-16">
+2017-05-16
+</time>
+</span>
+<span class=post-category>
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>Categories:</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a class=post-category-a href=/en/categories/git itemprop=url rel=index>
+<span itemprop=name>Git</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>283 words</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>2 minutes</span>
+</span>
+<span id=/en/2017/05/16/github-push-failed.html class="leancloud_visitors post-visitor" data-flag-title="Github push fail：Could not resolve hostname">
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>Visited:</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>Usually the most commonly used git push command suddenly can not be used (error log as follows), the brain first jumped out of the idea is: Is Github again by the wall! This has happened before and requires accelerated access by specifying hosts.</p>
+<p>Error log returned after git push execution:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>ssh: Could not resolve hostname github.com:elkan1788: nodename nor servname provided, or not known
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+</code></pre></div><p>Start with the simplest SSH command, and the results are as follows:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>ssh -T git@github.com
+Hi elkan1788! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
+
+
+ssh -T git@git.oschina.net
+Welcome to Git@OSC,where dream stardust! 
+</code></pre></div><p>That means git sever is normal, so why does push fail? Netizen methods have been tried, such as specifying hosts, updating ssh key, adding DNS: 8.8.8.8 and so on. Finally, there is no way to temporarily replace ssh with https mode, the execution of git push input user and password submission success. But the fundamental problem was not solved, and finally wanted not to try again clone project, so to re-create the directory, clone project modification file submission, the result was successful.</p>
+<p>At this time can only be said to be too strange, carefully recall whether the configuration has been changed? But sure not, but think of the last time the source code was installed to update the software, is this the problem, the output git version is as follows:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>git --version
+git version 2.11.0 (Apple Git-81)
+</code></pre></div><p>Sure git is updated, but at present no exact root cause of the problem has been found, the main solution is to reclone project, the problem solves itself, follow up with updates.</p>
+</div>
+<footer class=post-footer>
+<div class=post-tags>
+<a href=/en/tags/git rel=tag title=Git>#Git#</a>
+<a href=/en/tags/github rel=tag title=GitHub>#GitHub#</a>
+<a href=/en/tags/mac rel=tag title=Mac>#Mac#</a>
+</div>
+<div class=addthis_inline_share_toolbox></div>
+<div class=post-nav>
+<div class=article-copyright>
+<div class=article-copyright-img>
+<img src=/img/qq_qrcode.png width=129px height=129px>
+<div style=text-align:center>QQ QrCode</div>
+</div>
+<div class=article-copyright-info>
+<p>
+<span>Title：</span>Github push fail：Could not resolve hostname
+</p>
+<p>
+<span>Link：</span>https://lisenhui.cn/en/2017/05/16/github-push-failed.html
+</p>
+<p>
+<span>Author：</span>Elkan.Li
+</p>
+<p>
+<span>Declaration： </span>This blog post article is under the <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a> license,Please indicate the source!
+</p>
+</div>
+</div>
+<div class=clear></div>
+</div>
+<div class=reward-qr-info>
+<div>If it can help you, you can give tips for blogger that how much you want. ^_^</div>
+<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
+<span>Reward</span>
+</button>
+<div id=QR style=display:none>
+<div id=wechat style=display:inline-block>
+<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
+<p>Wechat Pay</p>
+</div>
+<div id=alipay style=display:inline-block>
+<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
+<p>Ali Pay</p>
+</div>
+</div>
+</div>
+<div class=post-nav>
+<div class="post-nav-next post-nav-item">
+<a href=https://lisenhui.cn/en/2017/05/17/maven-deploy-center-sign-failed.html rel=next title="The gpg signature failed when publishing jar to Maven">
+<i class="fa fa-chevron-left"></i> The gpg signature failed when publishing jar to Maven
+</a>
+</div>
+<div class="post-nav-prev post-nav-item">
+<a href=https://lisenhui.cn/en/2017/05/15/zookeeper-unload-data-exception.html rel=prev title="Zookeyer could not load transaction logs after crash">
+Zookeyer could not load transaction logs after crash
+<i class="fa fa-chevron-right"></i>
+</a>
+</div>
+</div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
 <div class=sidebar-toggle>
 <div class=sidebar-toggle-line-wrap>
 <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -250,137 +381,6 @@ TagCloud
 </section>
 </div>
 </aside>
-<div class=main-inner>
-<div class=content-wrap>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lisenhui.cn/en/2017/05/16/github-push-failed.html itemprop=url>
-Github push fail：Could not resolve hostname
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-pushdate>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>Published at:</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-05-16">
-2017-05-16
-</time>
-</span>
-<span class=post-category>
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>Categories:</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a class=post-category-a href=/en/categories/git itemprop=url rel=index>
-<span itemprop=name>Git</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>283 words</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>Reading:</span>
-<span class=leancloud-view-count>2 minutes</span>
-</span>
-<span id=/en/2017/05/16/github-push-failed.html class="leancloud_visitors post-visitor" data-flag-title="Github push fail：Could not resolve hostname">
-<i class="fa fa-binoculars fa-fw"></i>
-<span class=post-meta-item-text>Visited:</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>Usually the most commonly used git push command suddenly can not be used (error log as follows), the brain first jumped out of the idea is: Is Github again by the wall! This has happened before and requires accelerated access by specifying hosts.</p>
-<p>Error log returned after git push execution:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>ssh: Could not resolve hostname github.com:elkan1788: nodename nor servname provided, or not known
-fatal: Could not read from remote repository.
-
-Please make sure you have the correct access rights
-</code></pre></div><p>Start with the simplest SSH command, and the results are as follows:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>ssh -T git@github.com
-Hi elkan1788! You&#39;ve successfully authenticated, but GitHub does not provide shell access.
-
-
-ssh -T git@git.oschina.net
-Welcome to Git@OSC,where dream stardust! 
-</code></pre></div><p>That means git sever is normal, so why does push fail? Netizen methods have been tried, such as specifying hosts, updating ssh key, adding DNS: 8.8.8.8 and so on. Finally, there is no way to temporarily replace ssh with https mode, the execution of git push input user and password submission success. But the fundamental problem was not solved, and finally wanted not to try again clone project, so to re-create the directory, clone project modification file submission, the result was successful.</p>
-<p>At this time can only be said to be too strange, carefully recall whether the configuration has been changed? But sure not, but think of the last time the source code was installed to update the software, is this the problem, the output git version is as follows:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>git --version
-git version 2.11.0 (Apple Git-81)
-</code></pre></div><p>Sure git is updated, but at present no exact root cause of the problem has been found, the main solution is to reclone project, the problem solves itself, follow up with updates.</p>
-</div>
-<footer class=post-footer>
-<div class=post-tags>
-<a href=/en/tags/git rel=tag title=Git>#Git#</a>
-<a href=/en/tags/github rel=tag title=GitHub>#GitHub#</a>
-<a href=/en/tags/mac rel=tag title=Mac>#Mac#</a>
-</div>
-<div class=addthis_inline_share_toolbox></div>
-<div class=post-nav>
-<div class=article-copyright>
-<div class=article-copyright-img>
-<img src=/img/qq_qrcode.png width=129px height=129px>
-<div style=text-align:center>QQ QrCode</div>
-</div>
-<div class=article-copyright-info>
-<p>
-<span>Title：</span>Github push fail：Could not resolve hostname
-</p>
-<p>
-<span>Link：</span>https://lisenhui.cn/en/2017/05/16/github-push-failed.html
-</p>
-<p>
-<span>Author：</span>Elkan.Li
-</p>
-<p>
-<span>Declaration： </span>This blog post article is under the <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a> license,Please indicate the source!
-</p>
-</div>
-</div>
-<div class=clear></div>
-</div>
-<div class=reward-qr-info>
-<div>If it can help you, you can give tips for blogger that how much you want. ^_^</div>
-<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
-<span>Reward</span>
-</button>
-<div id=QR style=display:none>
-<div id=wechat style=display:inline-block>
-<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
-<p>Wechat Pay</p>
-</div>
-<div id=alipay style=display:inline-block>
-<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
-<p>Ali Pay</p>
-</div>
-</div>
-</div>
-<div class=post-nav>
-<div class="post-nav-next post-nav-item">
-<a href=https://lisenhui.cn/en/2017/05/17/maven-deploy-center-sign-failed.html rel=next title="The gpg signature failed when publishing jar to Maven">
-<i class="fa fa-chevron-left"></i> The gpg signature failed when publishing jar to Maven
-</a>
-</div>
-<div class="post-nav-prev post-nav-item">
-<a href=https://lisenhui.cn/en/2017/05/15/zookeeper-unload-data-exception.html rel=prev title="Zookeyer could not load transaction logs after crash">
-Zookeyer could not load transaction logs after crash
-<i class="fa fa-chevron-right"></i>
-</a>
-</div>
-</div>
-<div id=wcomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
 </div>
 </main>
 <footer id=footer class=footer>

@@ -106,6 +106,132 @@
 </nav> </div>
 </header>
 <main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/en/2017/05/17/maven-deploy-center-sign-failed.html itemprop=url>
+The gpg signature failed when publishing jar to Maven
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-pushdate>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>Published at:</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-05-17">
+2017-05-17
+</time>
+</span>
+<span class=post-category>
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>Categories:</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a class=post-category-a href=/en/categories/maven itemprop=url rel=index>
+<span itemprop=name>Maven</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>213 words</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>1 minutes</span>
+</span>
+<span id=/en/2017/05/17/maven-deploy-center-sign-failed.html class="leancloud_visitors post-visitor" data-flag-title="The gpg signature failed when publishing jar to Maven">
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>Visited:</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>For a long time did not maintain their own open source projects, this time in the repair bug release encountered failure, inspection found that the reason is because of gpg signature failure, no way to change mac computer some operations are not familiar with is a bit depressed.</p>
+<p>On how to share their JAR to Maven central warehouse, there are a lot of resources on the Internet, you can try it yourself, in fact, it is not difficult, there is no need to worry about English.</p>
+<p>Share a GitBookorganized by someone else: <a href=https://skyao.gitbooks.io/leaning-maven/content/public/central/ target=_blank rel=noopener>&ldquo;Published to CentralWarehouse&rdquo;</a>
+.</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[INFO] --- maven-gpg-plugin:1. 6:sign (sign-artifacts) @ mpsdk4j ---
+gpg: Failed to sign: Inged  ioctl  for device
+gpg: signing failed: Inappropriate ioctl for device
+</code></pre></div><p>Above is the GPG in the signature of the problem, simply literally, there is an inappropriate ioctl for this device,do not understand what is. Finally, a step-by-step exploration found that because the servers that manage GPG are not available, a new server was found on the Internet to re-upload as follows:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>gpg --keyserver hkp://pgp.mit.edu --send-keys DAB131AA5564DCF176
+
+#如果不放心的话, you can check it out using the command below
+gpg --keyserver hkp://pgp.mit.edu --recv-keys DAB131AA5564DCF176
+</code></pre></div><p>Well, repack the release jar package, very happy to see the results of SUCCESS, closed.</p>
+</div>
+<footer class=post-footer>
+<div class=post-tags>
+<a href=/en/tags/maven rel=tag title=Maven>#Maven#</a>
+<a href=/en/tags/tools rel=tag title=Tools>#Tools#</a>
+<a href=/en/tags/mac rel=tag title=Mac>#Mac#</a>
+</div>
+<div class=addthis_inline_share_toolbox></div>
+<div class=post-nav>
+<div class=article-copyright>
+<div class=article-copyright-img>
+<img src=/img/qq_qrcode.png width=129px height=129px>
+<div style=text-align:center>QQ QrCode</div>
+</div>
+<div class=article-copyright-info>
+<p>
+<span>Title：</span>The gpg signature failed when publishing jar to Maven
+</p>
+<p>
+<span>Link：</span>https://lisenhui.cn/en/2017/05/17/maven-deploy-center-sign-failed.html
+</p>
+<p>
+<span>Author：</span>Elkan.Li
+</p>
+<p>
+<span>Declaration： </span>This blog post article is under the <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a> license,Please indicate the source!
+</p>
+</div>
+</div>
+<div class=clear></div>
+</div>
+<div class=reward-qr-info>
+<div>If it can help you, you can give tips for blogger that how much you want. ^_^</div>
+<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
+<span>Reward</span>
+</button>
+<div id=QR style=display:none>
+<div id=wechat style=display:inline-block>
+<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
+<p>Wechat Pay</p>
+</div>
+<div id=alipay style=display:inline-block>
+<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
+<p>Ali Pay</p>
+</div>
+</div>
+</div>
+<div class=post-nav>
+<div class="post-nav-next post-nav-item">
+<a href=https://lisenhui.cn/en/2017/05/18/linux-daemon-supervisor.html rel=next title="Supervisor introduction and use">
+<i class="fa fa-chevron-left"></i> Supervisor introduction and use
+</a>
+</div>
+<div class="post-nav-prev post-nav-item">
+<a href=https://lisenhui.cn/en/2017/05/16/github-push-failed.html rel=prev title="Github push fail：Could not resolve hostname">
+Github push fail：Could not resolve hostname
+<i class="fa fa-chevron-right"></i>
+</a>
+</div>
+</div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
 <div class=sidebar-toggle>
 <div class=sidebar-toggle-line-wrap>
 <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -250,132 +376,6 @@ TagCloud
 </section>
 </div>
 </aside>
-<div class=main-inner>
-<div class=content-wrap>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lisenhui.cn/en/2017/05/17/maven-deploy-center-sign-failed.html itemprop=url>
-The gpg signature failed when publishing jar to Maven
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-pushdate>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>Published at:</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-05-17">
-2017-05-17
-</time>
-</span>
-<span class=post-category>
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>Categories:</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a class=post-category-a href=/en/categories/maven itemprop=url rel=index>
-<span itemprop=name>Maven</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>213 words</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>Reading:</span>
-<span class=leancloud-view-count>1 minutes</span>
-</span>
-<span id=/en/2017/05/17/maven-deploy-center-sign-failed.html class="leancloud_visitors post-visitor" data-flag-title="The gpg signature failed when publishing jar to Maven">
-<i class="fa fa-binoculars fa-fw"></i>
-<span class=post-meta-item-text>Visited:</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>For a long time did not maintain their own open source projects, this time in the repair bug release encountered failure, inspection found that the reason is because of gpg signature failure, no way to change mac computer some operations are not familiar with is a bit depressed.</p>
-<p>On how to share their JAR to Maven central warehouse, there are a lot of resources on the Internet, you can try it yourself, in fact, it is not difficult, there is no need to worry about English.</p>
-<p>Share a GitBookorganized by someone else: <a href=https://skyao.gitbooks.io/leaning-maven/content/public/central/ target=_blank rel=noopener>&ldquo;Published to CentralWarehouse&rdquo;</a>
-.</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[INFO] --- maven-gpg-plugin:1. 6:sign (sign-artifacts) @ mpsdk4j ---
-gpg: Failed to sign: Inged  ioctl  for device
-gpg: signing failed: Inappropriate ioctl for device
-</code></pre></div><p>Above is the GPG in the signature of the problem, simply literally, there is an inappropriate ioctl for this device,do not understand what is. Finally, a step-by-step exploration found that because the servers that manage GPG are not available, a new server was found on the Internet to re-upload as follows:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>gpg --keyserver hkp://pgp.mit.edu --send-keys DAB131AA5564DCF176
-
-#如果不放心的话, you can check it out using the command below
-gpg --keyserver hkp://pgp.mit.edu --recv-keys DAB131AA5564DCF176
-</code></pre></div><p>Well, repack the release jar package, very happy to see the results of SUCCESS, closed.</p>
-</div>
-<footer class=post-footer>
-<div class=post-tags>
-<a href=/en/tags/maven rel=tag title=Maven>#Maven#</a>
-<a href=/en/tags/tools rel=tag title=Tools>#Tools#</a>
-<a href=/en/tags/mac rel=tag title=Mac>#Mac#</a>
-</div>
-<div class=addthis_inline_share_toolbox></div>
-<div class=post-nav>
-<div class=article-copyright>
-<div class=article-copyright-img>
-<img src=/img/qq_qrcode.png width=129px height=129px>
-<div style=text-align:center>QQ QrCode</div>
-</div>
-<div class=article-copyright-info>
-<p>
-<span>Title：</span>The gpg signature failed when publishing jar to Maven
-</p>
-<p>
-<span>Link：</span>https://lisenhui.cn/en/2017/05/17/maven-deploy-center-sign-failed.html
-</p>
-<p>
-<span>Author：</span>Elkan.Li
-</p>
-<p>
-<span>Declaration： </span>This blog post article is under the <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a> license,Please indicate the source!
-</p>
-</div>
-</div>
-<div class=clear></div>
-</div>
-<div class=reward-qr-info>
-<div>If it can help you, you can give tips for blogger that how much you want. ^_^</div>
-<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
-<span>Reward</span>
-</button>
-<div id=QR style=display:none>
-<div id=wechat style=display:inline-block>
-<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
-<p>Wechat Pay</p>
-</div>
-<div id=alipay style=display:inline-block>
-<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
-<p>Ali Pay</p>
-</div>
-</div>
-</div>
-<div class=post-nav>
-<div class="post-nav-next post-nav-item">
-<a href=https://lisenhui.cn/en/2017/05/18/linux-daemon-supervisor.html rel=next title="Supervisor introduction and use">
-<i class="fa fa-chevron-left"></i> Supervisor introduction and use
-</a>
-</div>
-<div class="post-nav-prev post-nav-item">
-<a href=https://lisenhui.cn/en/2017/05/16/github-push-failed.html rel=prev title="Github push fail：Could not resolve hostname">
-Github push fail：Could not resolve hostname
-<i class="fa fa-chevron-right"></i>
-</a>
-</div>
-</div>
-<div id=wcomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
 </div>
 </main>
 <footer id=footer class=footer>

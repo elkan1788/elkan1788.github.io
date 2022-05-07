@@ -106,6 +106,129 @@
 </nav> </div>
 </header>
 <main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/2017/10/18/ambari-monitor-status-issues.html itemprop=url>
+关于Ambari中服务运行正常UI却显示服务停止的问题
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-pushdate>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>时间：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-10-18">
+2017-10-18
+</time>
+</span>
+<span class=post-category>
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分类：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a class=post-category-a href=/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE itemprop=url rel=index>
+<span itemprop=name>大数据</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>459 字</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>1分钟</span>
+</span>
+<span id=/2017/10/18/ambari-monitor-status-issues.html class="leancloud_visitors post-visitor" data-flag-title=关于Ambari中服务运行正常UI却显示服务停止的问题>
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>阅读次数：</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>很多时候环境的维护的确是件头痛的事件，这不本来在Ambari的Dashboard页面显示正常服务的监控，实然间出现了个奇怪的现象： 在机器查询服务的运行进程是正常的，可偏偏Ambari的UI界面却显示状为停止，但端口检查又显示正常的。如下图：</p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2017/10-18-ambari-red.png alt=alert_stopped.png></p>
+<p>本也可以放任不管的(反正服务运行正常就好)，但无奈强迫症的"毛病"又犯了，非得把它消灭掉心里才舒服。尝试了几次都没能成功，后来回想下好像同事有手动启动的某些组件，难道是这个原因。使用<code>ps</code>检查了这些组件的进程用户，发现确实如此，强制杀死这些组件，然后使用Ambari UI重启它们，可最终的结果还是没变。</p>
+<p>真是挺郁闷的，此时也只好借助google啦，然后找到一篇类似问题的文章，里面提及到了运行时的<code>xx.pid</code>权限问题，真是一语点醒梦中人，赶紧的查看下这些组件的pid文件权限，果然如此，因为之前的启动是用超管用户，而实际上这些组件有对应的用户维护。删除这些<code>xxx.pid</code>文件，再在Ambari UI上重启这些服务，一切恢复正常，漂亮的绿色界面又回来啦。</p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2017/10-18-ambari-green.png alt=ambari-green.png></p>
+<p>参考引用：</p>
+<ul>
+<li><a href=https://community.hortonworks.com/questions/41069/service-is-running-but-ambari-shows-serice-is-stop.html target=_blank rel=noopener>service-is-running-but-ambari-shows-serice-is-stop</a>
+</li>
+</ul>
+</div>
+<footer class=post-footer>
+<div class=post-tags>
+<a href=/tags/ambari rel=tag title=Ambari>#Ambari#</a>
+<a href=/tags/hdp rel=tag title=HDP>#HDP#</a>
+<a href=/tags/%e5%a4%a7%e6%95%b0%e6%8d%ae rel=tag title=大数据>#大数据#</a>
+</div>
+<div class=addthis_inline_share_toolbox></div>
+<div class=post-nav>
+<div class=article-copyright>
+<div class=article-copyright-img>
+<img src=/img/qq_qrcode.png width=129px height=129px>
+<div style=text-align:center>QQ扫一扫交流</div>
+</div>
+<div class=article-copyright-info>
+<p>
+<span>标题：</span>关于Ambari中服务运行正常UI却显示服务停止的问题
+</p>
+<p>
+<span>链接：</span>https://lisenhui.cn/2017/10/18/ambari-monitor-status-issues.html
+</p>
+<p>
+<span>作者：</span>凡梦星尘
+</p>
+<p>
+<span>声明： </span>本博客文章除特别声明外，均采用 <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a>许可协议，转载请注明出处！
+</p>
+</div>
+</div>
+<div class=clear></div>
+</div>
+<div class=reward-qr-info>
+<div>创作实属不易，如有帮助，那就打赏博主些许茶钱吧 ^_^</div>
+<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
+<span>赏</span>
+</button>
+<div id=QR style=display:none>
+<div id=wechat style=display:inline-block>
+<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
+<p>微信打赏</p>
+</div>
+<div id=alipay style=display:inline-block>
+<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
+<p>支付宝打赏</p>
+</div>
+</div>
+</div>
+<div class=post-nav>
+<div class="post-nav-next post-nav-item">
+<a href=https://lisenhui.cn/2017/10/22/ninfi-cluster-deploy-with-kerberos.html rel=next title="Apache Nifi集群搭建及用kerberos实现用户认证">
+<i class="fa fa-chevron-left"></i> Apache Nifi集群搭建及用kerberos实现用户认证
+</a>
+</div>
+<div class="post-nav-prev post-nav-item">
+<a href=https://lisenhui.cn/2017/10/17/hive2-jdbc-connector-issues.html rel=prev title=HiveServer2因JDBC版本引起的问题>
+HiveServer2因JDBC版本引起的问题
+<i class="fa fa-chevron-right"></i>
+</a>
+</div>
+</div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
 <div class=sidebar-toggle>
 <div class=sidebar-toggle-line-wrap>
 <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -250,129 +373,6 @@ GitHub
 </section>
 </div>
 </aside>
-<div class=main-inner>
-<div class=content-wrap>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lisenhui.cn/2017/10/18/ambari-monitor-status-issues.html itemprop=url>
-关于Ambari中服务运行正常UI却显示服务停止的问题
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-pushdate>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-10-18">
-2017-10-18
-</time>
-</span>
-<span class=post-category>
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>分类：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a class=post-category-a href=/categories/%E5%A4%A7%E6%95%B0%E6%8D%AE itemprop=url rel=index>
-<span itemprop=name>大数据</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>459 字</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>1分钟</span>
-</span>
-<span id=/2017/10/18/ambari-monitor-status-issues.html class="leancloud_visitors post-visitor" data-flag-title=关于Ambari中服务运行正常UI却显示服务停止的问题>
-<i class="fa fa-binoculars fa-fw"></i>
-<span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>很多时候环境的维护的确是件头痛的事件，这不本来在Ambari的Dashboard页面显示正常服务的监控，实然间出现了个奇怪的现象： 在机器查询服务的运行进程是正常的，可偏偏Ambari的UI界面却显示状为停止，但端口检查又显示正常的。如下图：</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/10-18-ambari-red.png alt=alert_stopped.png></p>
-<p>本也可以放任不管的(反正服务运行正常就好)，但无奈强迫症的"毛病"又犯了，非得把它消灭掉心里才舒服。尝试了几次都没能成功，后来回想下好像同事有手动启动的某些组件，难道是这个原因。使用<code>ps</code>检查了这些组件的进程用户，发现确实如此，强制杀死这些组件，然后使用Ambari UI重启它们，可最终的结果还是没变。</p>
-<p>真是挺郁闷的，此时也只好借助google啦，然后找到一篇类似问题的文章，里面提及到了运行时的<code>xx.pid</code>权限问题，真是一语点醒梦中人，赶紧的查看下这些组件的pid文件权限，果然如此，因为之前的启动是用超管用户，而实际上这些组件有对应的用户维护。删除这些<code>xxx.pid</code>文件，再在Ambari UI上重启这些服务，一切恢复正常，漂亮的绿色界面又回来啦。</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/10-18-ambari-green.png alt=ambari-green.png></p>
-<p>参考引用：</p>
-<ul>
-<li><a href=https://community.hortonworks.com/questions/41069/service-is-running-but-ambari-shows-serice-is-stop.html target=_blank rel=noopener>service-is-running-but-ambari-shows-serice-is-stop</a>
-</li>
-</ul>
-</div>
-<footer class=post-footer>
-<div class=post-tags>
-<a href=/tags/ambari rel=tag title=Ambari>#Ambari#</a>
-<a href=/tags/hdp rel=tag title=HDP>#HDP#</a>
-<a href=/tags/%e5%a4%a7%e6%95%b0%e6%8d%ae rel=tag title=大数据>#大数据#</a>
-</div>
-<div class=addthis_inline_share_toolbox></div>
-<div class=post-nav>
-<div class=article-copyright>
-<div class=article-copyright-img>
-<img src=/img/qq_qrcode.png width=129px height=129px>
-<div style=text-align:center>QQ扫一扫交流</div>
-</div>
-<div class=article-copyright-info>
-<p>
-<span>标题：</span>关于Ambari中服务运行正常UI却显示服务停止的问题
-</p>
-<p>
-<span>链接：</span>https://lisenhui.cn/2017/10/18/ambari-monitor-status-issues.html
-</p>
-<p>
-<span>作者：</span>凡梦星尘
-</p>
-<p>
-<span>声明： </span>本博客文章除特别声明外，均采用 <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a>许可协议，转载请注明出处！
-</p>
-</div>
-</div>
-<div class=clear></div>
-</div>
-<div class=reward-qr-info>
-<div>创作实属不易，如有帮助，那就打赏博主些许茶钱吧 ^_^</div>
-<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
-<span>赏</span>
-</button>
-<div id=QR style=display:none>
-<div id=wechat style=display:inline-block>
-<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
-<p>微信打赏</p>
-</div>
-<div id=alipay style=display:inline-block>
-<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
-<p>支付宝打赏</p>
-</div>
-</div>
-</div>
-<div class=post-nav>
-<div class="post-nav-next post-nav-item">
-<a href=https://lisenhui.cn/2017/10/22/ninfi-cluster-deploy-with-kerberos.html rel=next title="Apache Nifi集群搭建及用kerberos实现用户认证">
-<i class="fa fa-chevron-left"></i> Apache Nifi集群搭建及用kerberos实现用户认证
-</a>
-</div>
-<div class="post-nav-prev post-nav-item">
-<a href=https://lisenhui.cn/2017/10/17/hive2-jdbc-connector-issues.html rel=prev title=HiveServer2因JDBC版本引起的问题>
-HiveServer2因JDBC版本引起的问题
-<i class="fa fa-chevron-right"></i>
-</a>
-</div>
-</div>
-<div id=wcomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
 </div>
 </main>
 <footer id=footer class=footer>

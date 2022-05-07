@@ -106,6 +106,146 @@
 </nav> </div>
 </header>
 <main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/2011/11/18/whosip-tool.html itemprop=url>
+IP地址查询Web接口调用
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-pushdate>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>时间：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2011-11-18">
+2011-11-18
+</time>
+</span>
+<span class=post-category>
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分类：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a class=post-category-a href=/categories/%E6%8E%A5%E5%8F%A3 itemprop=url rel=index>
+<span itemprop=name>接口</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>225 字</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>1分钟</span>
+</span>
+<span id=/2011/11/18/whosip-tool.html class="leancloud_visitors post-visitor" data-flag-title=IP地址查询Web接口调用>
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>阅读次数：</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>今天刚好有个站点上要用到一个IP地址显示的功能，随即便想想应该有免费的接口可用吧，百度一下找到了太平洋网站提供的API，那么接下来便是Code Time。</p>
+<p>看完了它的参数说明和调用方式后，选择了其中的jsFunction方式，现在把经验分享出来给大家参考，具体的代码和效果如下：：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>
+<span style=color:#080>&lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD HTML 4.01 Transitional//EN&#34; &#34;http://www.w3.org/TR/html4/loose.dtd&#34;&gt;</span>
+&lt;<span style=color:green;font-weight:700>html</span>&gt;
+  &lt;<span style=color:green;font-weight:700>head</span>&gt;    
+    &lt;<span style=color:green;font-weight:700>title</span>&gt;ip查询&lt;/<span style=color:green;font-weight:700>title</span>&gt;
+	&lt;<span style=color:green;font-weight:700>script</span> <span style=color:#b44>type</span><span style=color:#666>=</span><span style=color:#b44>&#34;text/javascript&#34;</span> <span style=color:#b44>src</span><span style=color:#666>=</span><span style=color:#b44>&#34;https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js&#34;</span>&gt;&lt;/<span style=color:green;font-weight:700>script</span>&gt;
+	&lt;<span style=color:green;font-weight:700>script</span> <span style=color:#b44>type</span><span style=color:#666>=</span><span style=color:#b44>&#34;text/javascript&#34;</span>&gt;
+		$(<span style=color:#a2f;font-weight:700>function</span>(){
+			$(<span style=color:#b44>&#34;&lt;span id=&#39;ipShow&#39;&gt;&lt;/span&gt;&#34;</span>).appendTo(<span style=color:#b44>&#34;body&#34;</span>);			
+			$.getScript(<span style=color:#b44>&#34;http://whois.pconline.com.cn/jsFunction.jsp?callback=jsShow&amp;ip=61.235.82.163&#34;</span>);
+		});
+		
+		<span style=color:#a2f;font-weight:700>function</span> jsShow(location){
+			$(<span style=color:#b44>&#34;#ipShow&#34;</span>).html(location);
+		}
+	&lt;/<span style=color:green;font-weight:700>script</span>&gt;	
+  &lt;/<span style=color:green;font-weight:700>head</span>&gt;
+  	
+  &lt;<span style=color:green;font-weight:700>body</span>&gt;
+  &lt;/<span style=color:green;font-weight:700>body</span>&gt;
+&lt;/<span style=color:green;font-weight:700>html</span>&gt;
+
+</code></pre></div><p>效果如下：</p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2011/11-18-whoisip-api-1.png alt=whoisip-api-1></p>
+<p>具体参数如下：</p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2011/11-18-whoisip-api-2.png alt=whoisip-api-2></p>
+<p>有不明白的地方，可以留言讨论。</p>
+</div>
+<footer class=post-footer>
+<div class=post-tags>
+<a href=/tags/%e6%8e%a5%e5%8f%a3 rel=tag title=接口>#接口#</a>
+</div>
+<div class=addthis_inline_share_toolbox></div>
+<div class=post-nav>
+<div class=article-copyright>
+<div class=article-copyright-img>
+<img src=/img/qq_qrcode.png width=129px height=129px>
+<div style=text-align:center>QQ扫一扫交流</div>
+</div>
+<div class=article-copyright-info>
+<p>
+<span>标题：</span>IP地址查询Web接口调用
+</p>
+<p>
+<span>链接：</span>https://lisenhui.cn/2011/11/18/whosip-tool.html
+</p>
+<p>
+<span>作者：</span>凡梦星尘
+</p>
+<p>
+<span>声明： </span>本博客文章除特别声明外，均采用 <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a>许可协议，转载请注明出处！
+</p>
+</div>
+</div>
+<div class=clear></div>
+</div>
+<div class=reward-qr-info>
+<div>创作实属不易，如有帮助，那就打赏博主些许茶钱吧 ^_^</div>
+<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
+<span>赏</span>
+</button>
+<div id=QR style=display:none>
+<div id=wechat style=display:inline-block>
+<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
+<p>微信打赏</p>
+</div>
+<div id=alipay style=display:inline-block>
+<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
+<p>支付宝打赏</p>
+</div>
+</div>
+</div>
+<div class=post-nav>
+<div class="post-nav-next post-nav-item">
+<a href=https://lisenhui.cn/2012/01/13/nutz-ke-lhg-my97.html rel=next title=国内技术强强联手之Nutz+KindEditor+LHGDialog+My97DatePicker>
+<i class="fa fa-chevron-left"></i> 国内技术强强联手之Nutz+KindEditor+LHGDialog+My97DatePicker
+</a>
+</div>
+<div class="post-nav-prev post-nav-item">
+<a href=https://lisenhui.cn/2011/10/17/kindeditor-jsp-struts2-servlet.html rel=prev title=JSP版本的KindEidtor在线编辑器第二季：Servlet+Struts2集成版>
+JSP版本的KindEidtor在线编辑器第二季：Servlet+Struts2集成版
+<i class="fa fa-chevron-right"></i>
+</a>
+</div>
+</div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
 <div class=sidebar-toggle>
 <div class=sidebar-toggle-line-wrap>
 <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -250,146 +390,6 @@ GitHub
 </section>
 </div>
 </aside>
-<div class=main-inner>
-<div class=content-wrap>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lisenhui.cn/2011/11/18/whosip-tool.html itemprop=url>
-IP地址查询Web接口调用
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-pushdate>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2011-11-18">
-2011-11-18
-</time>
-</span>
-<span class=post-category>
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>分类：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a class=post-category-a href=/categories/%E6%8E%A5%E5%8F%A3 itemprop=url rel=index>
-<span itemprop=name>接口</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>225 字</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>1分钟</span>
-</span>
-<span id=/2011/11/18/whosip-tool.html class="leancloud_visitors post-visitor" data-flag-title=IP地址查询Web接口调用>
-<i class="fa fa-binoculars fa-fw"></i>
-<span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>今天刚好有个站点上要用到一个IP地址显示的功能，随即便想想应该有免费的接口可用吧，百度一下找到了太平洋网站提供的API，那么接下来便是Code Time。</p>
-<p>看完了它的参数说明和调用方式后，选择了其中的jsFunction方式，现在把经验分享出来给大家参考，具体的代码和效果如下：：</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>
-<span style=color:#080>&lt;!DOCTYPE html PUBLIC &#34;-//W3C//DTD HTML 4.01 Transitional//EN&#34; &#34;http://www.w3.org/TR/html4/loose.dtd&#34;&gt;</span>
-&lt;<span style=color:green;font-weight:700>html</span>&gt;
-  &lt;<span style=color:green;font-weight:700>head</span>&gt;    
-    &lt;<span style=color:green;font-weight:700>title</span>&gt;ip查询&lt;/<span style=color:green;font-weight:700>title</span>&gt;
-	&lt;<span style=color:green;font-weight:700>script</span> <span style=color:#b44>type</span><span style=color:#666>=</span><span style=color:#b44>&#34;text/javascript&#34;</span> <span style=color:#b44>src</span><span style=color:#666>=</span><span style=color:#b44>&#34;https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js&#34;</span>&gt;&lt;/<span style=color:green;font-weight:700>script</span>&gt;
-	&lt;<span style=color:green;font-weight:700>script</span> <span style=color:#b44>type</span><span style=color:#666>=</span><span style=color:#b44>&#34;text/javascript&#34;</span>&gt;
-		$(<span style=color:#a2f;font-weight:700>function</span>(){
-			$(<span style=color:#b44>&#34;&lt;span id=&#39;ipShow&#39;&gt;&lt;/span&gt;&#34;</span>).appendTo(<span style=color:#b44>&#34;body&#34;</span>);			
-			$.getScript(<span style=color:#b44>&#34;http://whois.pconline.com.cn/jsFunction.jsp?callback=jsShow&amp;ip=61.235.82.163&#34;</span>);
-		});
-		
-		<span style=color:#a2f;font-weight:700>function</span> jsShow(location){
-			$(<span style=color:#b44>&#34;#ipShow&#34;</span>).html(location);
-		}
-	&lt;/<span style=color:green;font-weight:700>script</span>&gt;	
-  &lt;/<span style=color:green;font-weight:700>head</span>&gt;
-  	
-  &lt;<span style=color:green;font-weight:700>body</span>&gt;
-  &lt;/<span style=color:green;font-weight:700>body</span>&gt;
-&lt;/<span style=color:green;font-weight:700>html</span>&gt;
-
-</code></pre></div><p>效果如下：</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2011/11-18-whoisip-api-1.png alt=whoisip-api-1></p>
-<p>具体参数如下：</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2011/11-18-whoisip-api-2.png alt=whoisip-api-2></p>
-<p>有不明白的地方，可以留言讨论。</p>
-</div>
-<footer class=post-footer>
-<div class=post-tags>
-<a href=/tags/%e6%8e%a5%e5%8f%a3 rel=tag title=接口>#接口#</a>
-</div>
-<div class=addthis_inline_share_toolbox></div>
-<div class=post-nav>
-<div class=article-copyright>
-<div class=article-copyright-img>
-<img src=/img/qq_qrcode.png width=129px height=129px>
-<div style=text-align:center>QQ扫一扫交流</div>
-</div>
-<div class=article-copyright-info>
-<p>
-<span>标题：</span>IP地址查询Web接口调用
-</p>
-<p>
-<span>链接：</span>https://lisenhui.cn/2011/11/18/whosip-tool.html
-</p>
-<p>
-<span>作者：</span>凡梦星尘
-</p>
-<p>
-<span>声明： </span>本博客文章除特别声明外，均采用 <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a>许可协议，转载请注明出处！
-</p>
-</div>
-</div>
-<div class=clear></div>
-</div>
-<div class=reward-qr-info>
-<div>创作实属不易，如有帮助，那就打赏博主些许茶钱吧 ^_^</div>
-<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
-<span>赏</span>
-</button>
-<div id=QR style=display:none>
-<div id=wechat style=display:inline-block>
-<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
-<p>微信打赏</p>
-</div>
-<div id=alipay style=display:inline-block>
-<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
-<p>支付宝打赏</p>
-</div>
-</div>
-</div>
-<div class=post-nav>
-<div class="post-nav-next post-nav-item">
-<a href=https://lisenhui.cn/2012/01/13/nutz-ke-lhg-my97.html rel=next title=国内技术强强联手之Nutz+KindEditor+LHGDialog+My97DatePicker>
-<i class="fa fa-chevron-left"></i> 国内技术强强联手之Nutz+KindEditor+LHGDialog+My97DatePicker
-</a>
-</div>
-<div class="post-nav-prev post-nav-item">
-<a href=https://lisenhui.cn/2011/10/17/kindeditor-jsp-struts2-servlet.html rel=prev title=JSP版本的KindEidtor在线编辑器第二季：Servlet+Struts2集成版>
-JSP版本的KindEidtor在线编辑器第二季：Servlet+Struts2集成版
-<i class="fa fa-chevron-right"></i>
-</a>
-</div>
-</div>
-<div id=wcomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
 </div>
 </main>
 <footer id=footer class=footer>

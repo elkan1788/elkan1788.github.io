@@ -106,6 +106,142 @@
 </nav> </div>
 </header>
 <main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/2021/02/22/git-extensions-push-fail.html itemprop=url>
+GitExtensions推送Github失败记录
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-pushdate>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>时间：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-02-22">
+2021-02-22
+</time>
+</span>
+<span class=post-category>
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>分类：</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a class=post-category-a href=/categories/%E5%B7%A5%E5%85%B7 itemprop=url rel=index>
+<span itemprop=name>工具</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>621 字</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>2分钟</span>
+</span>
+<span id=/2021/02/22/git-extensions-push-fail.html class="leancloud_visitors post-visitor" data-flag-title=GitExtensions推送Github失败记录>
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>阅读次数：</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<h2 id=问题现身>问题现身</h2>
+<p>555~，今天体验了一把安装最新程序的“快感”！！！</p>
+<p>在使用Git Extensisons推送最新写的文章到Github时，遇到了个SSH KEY认证无效的莫名错误。事情的发生是这样的：今天在首次打开Git Extensions软件时，它非常友好的弹出更新提示窗口，然后就手不自觉的点击了下确认按钮。结果更新好后，在推送文章到Github时就发生了如下面一样神奇的错误阻拦：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>
+FATAL ERROR<span style=color:#666>:</span> No supported authentication methods <span style=color:#00a000>available</span> <span style=color:#666>(</span>server sent<span style=color:#666>:</span> publickey<span style=color:#666>)</span>
+<span style=color:#a0a000>fatal:</span> Could not read from remote repository<span style=color:#666>.</span>
+
+Please make sure you have the correct access rights
+and the repository exists<span style=color:#666>.</span>
+
+</code></pre></div><p><img src=//lisenhui.gitee.io/imgs/blog/2021/02-22-git-extensions-failed-01.png alt=git-extensions-failed-01.png></p>
+<p>看到这个错误真是一脸的发楞呀，没有修改过任何SSH KEY相关的配置，咋就没有相应的权限进行操作了呢？</p>
+<p>开始脑子里想到的是，难道是本地的SSH KEY被清理了？但检查了文件后发现一切正常，而且使用git push命令操作也是正常的。真是百思不得其解，暂时只能参考报错的提示出来尝试操作修复。</p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2021/02-22-git-extensions-failed-02.png alt=git-extensions-failed-02.png></p>
+<h2 id=初步解决办法>初步解决办法</h2>
+<p>根据报错窗口的提示，使用Putty工具把本地的SSH KEY生成Private模式，操作如下：</p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2021/02-22-git-extensions-failed-03.png alt=git-extensions-failed-03.png></p>
+<p>然后把这个Private KEY加载到推送的流程中，再次点击推送按钮就会看到操作成功提示信息。</p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2021/02-22-git-extensions-failed-04.png alt=git-extensions-failed-04.png></p>
+<h2 id=问题定位>问题定位</h2>
+<p>虽然解决完这个推送的问题，但还觉得事情有点奇怪和蹊跷。于是想到了Git Extensions的配置是否有变化，经过一番查找测试后，确认是由于官方当前默认在Windows使用Putty作为客户端，把它调整为OpenSSH方式，问题便不再出现。</p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2021/02-22-git-extensions-failed-05.png alt=git-extensions-failed-05.png></p>
+<h2 id=总结>总结</h2>
+<p>在非必要的情况下，还是不太建议升级软件版本，稳定的环境比用不到的新功能更具价值。</p>
+</div>
+<footer class=post-footer>
+<div class=post-tags>
+<a href=/tags/git rel=tag title=Git>#Git#</a>
+<a href=/tags/%e5%b7%a5%e5%85%b7 rel=tag title=工具>#工具#</a>
+</div>
+<div class=addthis_inline_share_toolbox></div>
+<div class=post-nav>
+<div class=article-copyright>
+<div class=article-copyright-img>
+<img src=/img/qq_qrcode.png width=129px height=129px>
+<div style=text-align:center>QQ扫一扫交流</div>
+</div>
+<div class=article-copyright-info>
+<p>
+<span>标题：</span>GitExtensions推送Github失败记录
+</p>
+<p>
+<span>链接：</span>https://lisenhui.cn/2021/02/22/git-extensions-push-fail.html
+</p>
+<p>
+<span>作者：</span>凡梦星尘
+</p>
+<p>
+<span>声明： </span>本博客文章除特别声明外，均采用 <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a>许可协议，转载请注明出处！
+</p>
+</div>
+</div>
+<div class=clear></div>
+</div>
+<div class=reward-qr-info>
+<div>创作实属不易，如有帮助，那就打赏博主些许茶钱吧 ^_^</div>
+<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
+<span>赏</span>
+</button>
+<div id=QR style=display:none>
+<div id=wechat style=display:inline-block>
+<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
+<p>微信打赏</p>
+</div>
+<div id=alipay style=display:inline-block>
+<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
+<p>支付宝打赏</p>
+</div>
+</div>
+</div>
+<div class=post-nav>
+<div class="post-nav-next post-nav-item">
+<a href=https://lisenhui.cn/2021/02/25/add-sync-gitee-action.html rel=next title="使用Github Action自动同步仓库到Gitee">
+<i class="fa fa-chevron-left"></i> 使用Github Action自动同步仓库到Gitee
+</a>
+</div>
+<div class="post-nav-prev post-nav-item">
+<a href=https://lisenhui.cn/2021/01/24/github-personal-profile-card.html rel=prev title=Github个人信息卡片>
+Github个人信息卡片
+<i class="fa fa-chevron-right"></i>
+</a>
+</div>
+</div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
 <div class=sidebar-toggle>
 <div class=sidebar-toggle-line-wrap>
 <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -270,142 +406,6 @@ GitHub
 </section>
 </div>
 </aside>
-<div class=main-inner>
-<div class=content-wrap>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lisenhui.cn/2021/02/22/git-extensions-push-fail.html itemprop=url>
-GitExtensions推送Github失败记录
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-pushdate>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>时间：</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-02-22">
-2021-02-22
-</time>
-</span>
-<span class=post-category>
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>分类：</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a class=post-category-a href=/categories/%E5%B7%A5%E5%85%B7 itemprop=url rel=index>
-<span itemprop=name>工具</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>621 字</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>2分钟</span>
-</span>
-<span id=/2021/02/22/git-extensions-push-fail.html class="leancloud_visitors post-visitor" data-flag-title=GitExtensions推送Github失败记录>
-<i class="fa fa-binoculars fa-fw"></i>
-<span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<h2 id=问题现身>问题现身</h2>
-<p>555~，今天体验了一把安装最新程序的“快感”！！！</p>
-<p>在使用Git Extensisons推送最新写的文章到Github时，遇到了个SSH KEY认证无效的莫名错误。事情的发生是这样的：今天在首次打开Git Extensions软件时，它非常友好的弹出更新提示窗口，然后就手不自觉的点击了下确认按钮。结果更新好后，在推送文章到Github时就发生了如下面一样神奇的错误阻拦：</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>
-FATAL ERROR<span style=color:#666>:</span> No supported authentication methods <span style=color:#00a000>available</span> <span style=color:#666>(</span>server sent<span style=color:#666>:</span> publickey<span style=color:#666>)</span>
-<span style=color:#a0a000>fatal:</span> Could not read from remote repository<span style=color:#666>.</span>
-
-Please make sure you have the correct access rights
-and the repository exists<span style=color:#666>.</span>
-
-</code></pre></div><p><img src=//lisenhui.gitee.io/imgs/blog/2021/02-22-git-extensions-failed-01.png alt=git-extensions-failed-01.png></p>
-<p>看到这个错误真是一脸的发楞呀，没有修改过任何SSH KEY相关的配置，咋就没有相应的权限进行操作了呢？</p>
-<p>开始脑子里想到的是，难道是本地的SSH KEY被清理了？但检查了文件后发现一切正常，而且使用git push命令操作也是正常的。真是百思不得其解，暂时只能参考报错的提示出来尝试操作修复。</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2021/02-22-git-extensions-failed-02.png alt=git-extensions-failed-02.png></p>
-<h2 id=初步解决办法>初步解决办法</h2>
-<p>根据报错窗口的提示，使用Putty工具把本地的SSH KEY生成Private模式，操作如下：</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2021/02-22-git-extensions-failed-03.png alt=git-extensions-failed-03.png></p>
-<p>然后把这个Private KEY加载到推送的流程中，再次点击推送按钮就会看到操作成功提示信息。</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2021/02-22-git-extensions-failed-04.png alt=git-extensions-failed-04.png></p>
-<h2 id=问题定位>问题定位</h2>
-<p>虽然解决完这个推送的问题，但还觉得事情有点奇怪和蹊跷。于是想到了Git Extensions的配置是否有变化，经过一番查找测试后，确认是由于官方当前默认在Windows使用Putty作为客户端，把它调整为OpenSSH方式，问题便不再出现。</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2021/02-22-git-extensions-failed-05.png alt=git-extensions-failed-05.png></p>
-<h2 id=总结>总结</h2>
-<p>在非必要的情况下，还是不太建议升级软件版本，稳定的环境比用不到的新功能更具价值。</p>
-</div>
-<footer class=post-footer>
-<div class=post-tags>
-<a href=/tags/git rel=tag title=Git>#Git#</a>
-<a href=/tags/%e5%b7%a5%e5%85%b7 rel=tag title=工具>#工具#</a>
-</div>
-<div class=addthis_inline_share_toolbox></div>
-<div class=post-nav>
-<div class=article-copyright>
-<div class=article-copyright-img>
-<img src=/img/qq_qrcode.png width=129px height=129px>
-<div style=text-align:center>QQ扫一扫交流</div>
-</div>
-<div class=article-copyright-info>
-<p>
-<span>标题：</span>GitExtensions推送Github失败记录
-</p>
-<p>
-<span>链接：</span>https://lisenhui.cn/2021/02/22/git-extensions-push-fail.html
-</p>
-<p>
-<span>作者：</span>凡梦星尘
-</p>
-<p>
-<span>声明： </span>本博客文章除特别声明外，均采用 <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a>许可协议，转载请注明出处！
-</p>
-</div>
-</div>
-<div class=clear></div>
-</div>
-<div class=reward-qr-info>
-<div>创作实属不易，如有帮助，那就打赏博主些许茶钱吧 ^_^</div>
-<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
-<span>赏</span>
-</button>
-<div id=QR style=display:none>
-<div id=wechat style=display:inline-block>
-<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
-<p>微信打赏</p>
-</div>
-<div id=alipay style=display:inline-block>
-<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
-<p>支付宝打赏</p>
-</div>
-</div>
-</div>
-<div class=post-nav>
-<div class="post-nav-next post-nav-item">
-<a href=https://lisenhui.cn/2021/02/25/add-sync-gitee-action.html rel=next title="使用Github Action自动同步仓库到Gitee">
-<i class="fa fa-chevron-left"></i> 使用Github Action自动同步仓库到Gitee
-</a>
-</div>
-<div class="post-nav-prev post-nav-item">
-<a href=https://lisenhui.cn/2021/01/24/github-personal-profile-card.html rel=prev title=Github个人信息卡片>
-Github个人信息卡片
-<i class="fa fa-chevron-right"></i>
-</a>
-</div>
-</div>
-<div id=wcomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
 </div>
 </main>
 <footer id=footer class=footer>

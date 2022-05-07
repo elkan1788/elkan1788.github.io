@@ -106,6 +106,144 @@
 </nav> </div>
 </header>
 <main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/en/2022/02/08/use-sublime-txt-build-hugo-site.html itemprop=url>
+Sublime Text install package failure
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-pushdate>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>Published at:</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2022-02-08">
+2022-02-08
+</time>
+</span>
+<span class=post-category>
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>Categories:</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a class=post-category-a href=/en/categories/tools itemprop=url rel=index>
+<span itemprop=name>tools</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>242 words</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>2 minutes</span>
+</span>
+<span id=/en/2022/02/08/use-sublime-txt-build-hugo-site.html class="leancloud_visitors post-visitor" data-flag-title="Sublime Text install package failure">
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>Visited:</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>Recently, there was something wrong with the computer previously assigned by the company, so we had to replace it with a new one, so the environment had to be built from scratch. The always used <code>Sublime Text</code> is a green version. It is normal to start and edit after copying directly. However, when trying to install a new plug-in, you encounter the following problems.</p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2022/02-08-sublime-install-package-failure.png alt="There are no packages available for installation"></p>
+<blockquote>
+<p>Error tips: There are no packages available for installation</p>
+</blockquote>
+<p>Then check the <code>channel_v3.json</code> in the installation directory. The JSON file is normal, so you have to try to print the system log to see the tracking problem, use the shortcut key <code>Ctrl + ~</code> to open the terminal, and enter the following code to open it:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-plaintext data-lang=plaintext>sublime.log_commands(True)
+</code></pre></div><blockquote>
+<p>Note: be sure to turn off log output after debugging</p>
+</blockquote>
+<p>When you try to install the plug-in again, you will find that the prompt <code>the system can't find the specified path</code> is abnormal. When you look at the path, you suddenly realize it. Then come to the installation location of the previous computer. Just update the configuration file path.
+Open <code>Preferences -> Package Settings -> Package Control -> Settings</code> and modify the parameter value of' channels'. After saving, you can successfully install the plug-in.</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+  <span style=color:green;font-weight:700>&#34;bootstrapped&#34;</span>: <span style=color:#a2f;font-weight:700>true</span>,
+  <span style=color:green;font-weight:700>&#34;channels&#34;</span>:
+  [
+    <span style=color:#b44>&#34;C:/xxxx/channel_v3.json&#34;</span>
+  ]
+}
+</code></pre></div><p>Last found <code>channel_v3.json</code> file has not been updated for a long time, so I click to visit the official file <code>channel_v3.json</code> copy to update.</p>
+<blockquote>
+<p>Reference Resources:</p>
+<ul>
+<li>Official file link：<a href=https://packagecontrol.io/ target=_blank rel=noopener>https://packagecontrol.io/</a>
+</li>
+</ul>
+</blockquote>
+</div>
+<footer class=post-footer>
+<div class=post-tags>
+<a href=/en/tags/plugin rel=tag title=Plugin>#Plugin#</a>
+</div>
+<div class=addthis_inline_share_toolbox></div>
+<div class=post-nav>
+<div class=article-copyright>
+<div class=article-copyright-img>
+<img src=/img/qq_qrcode.png width=129px height=129px>
+<div style=text-align:center>QQ QrCode</div>
+</div>
+<div class=article-copyright-info>
+<p>
+<span>Title：</span>Sublime Text install package failure
+</p>
+<p>
+<span>Link：</span>https://lisenhui.cn/en/2022/02/08/use-sublime-txt-build-hugo-site.html
+</p>
+<p>
+<span>Author：</span>Elkan.Li
+</p>
+<p>
+<span>Declaration： </span>This blog post article is under the <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a> license,Please indicate the source!
+</p>
+</div>
+</div>
+<div class=clear></div>
+</div>
+<div class=reward-qr-info>
+<div>If it can help you, you can give tips for blogger that how much you want. ^_^</div>
+<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
+<span>Reward</span>
+</button>
+<div id=QR style=display:none>
+<div id=wechat style=display:inline-block>
+<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
+<p>Wechat Pay</p>
+</div>
+<div id=alipay style=display:inline-block>
+<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
+<p>Ali Pay</p>
+</div>
+</div>
+</div>
+<div class=post-nav>
+<div class="post-nav-next post-nav-item">
+<a href=https://lisenhui.cn/en/2022/02/12/use-sublime-txt-build-hugo-site.html rel=next title="Use Sublime Text build Hugo blog environment ">
+<i class="fa fa-chevron-left"></i> Use Sublime Text build Hugo blog environment
+</a>
+</div>
+<div class="post-nav-prev post-nav-item">
+<a href=https://lisenhui.cn/en/2021/07/09/make-next-theme-pithy2.html rel=prev title="Make Hugo NexT theme pithy 2">
+Make Hugo NexT theme pithy 2
+<i class="fa fa-chevron-right"></i>
+</a>
+</div>
+</div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
 <div class=sidebar-toggle>
 <div class=sidebar-toggle-line-wrap>
 <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -250,144 +388,6 @@ TagCloud
 </section>
 </div>
 </aside>
-<div class=main-inner>
-<div class=content-wrap>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lisenhui.cn/en/2022/02/08/use-sublime-txt-build-hugo-site.html itemprop=url>
-Sublime Text install package failure
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-pushdate>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>Published at:</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2022-02-08">
-2022-02-08
-</time>
-</span>
-<span class=post-category>
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>Categories:</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a class=post-category-a href=/en/categories/tools itemprop=url rel=index>
-<span itemprop=name>tools</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>242 words</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>Reading:</span>
-<span class=leancloud-view-count>2 minutes</span>
-</span>
-<span id=/en/2022/02/08/use-sublime-txt-build-hugo-site.html class="leancloud_visitors post-visitor" data-flag-title="Sublime Text install package failure">
-<i class="fa fa-binoculars fa-fw"></i>
-<span class=post-meta-item-text>Visited:</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>Recently, there was something wrong with the computer previously assigned by the company, so we had to replace it with a new one, so the environment had to be built from scratch. The always used <code>Sublime Text</code> is a green version. It is normal to start and edit after copying directly. However, when trying to install a new plug-in, you encounter the following problems.</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2022/02-08-sublime-install-package-failure.png alt="There are no packages available for installation"></p>
-<blockquote>
-<p>Error tips: There are no packages available for installation</p>
-</blockquote>
-<p>Then check the <code>channel_v3.json</code> in the installation directory. The JSON file is normal, so you have to try to print the system log to see the tracking problem, use the shortcut key <code>Ctrl + ~</code> to open the terminal, and enter the following code to open it:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-plaintext data-lang=plaintext>sublime.log_commands(True)
-</code></pre></div><blockquote>
-<p>Note: be sure to turn off log output after debugging</p>
-</blockquote>
-<p>When you try to install the plug-in again, you will find that the prompt <code>the system can't find the specified path</code> is abnormal. When you look at the path, you suddenly realize it. Then come to the installation location of the previous computer. Just update the configuration file path.
-Open <code>Preferences -> Package Settings -> Package Control -> Settings</code> and modify the parameter value of' channels'. After saving, you can successfully install the plug-in.</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
-  <span style=color:green;font-weight:700>&#34;bootstrapped&#34;</span>: <span style=color:#a2f;font-weight:700>true</span>,
-  <span style=color:green;font-weight:700>&#34;channels&#34;</span>:
-  [
-    <span style=color:#b44>&#34;C:/xxxx/channel_v3.json&#34;</span>
-  ]
-}
-</code></pre></div><p>Last found <code>channel_v3.json</code> file has not been updated for a long time, so I click to visit the official file <code>channel_v3.json</code> copy to update.</p>
-<blockquote>
-<p>Reference Resources:</p>
-<ul>
-<li>Official file link：<a href=https://packagecontrol.io/ target=_blank rel=noopener>https://packagecontrol.io/</a>
-</li>
-</ul>
-</blockquote>
-</div>
-<footer class=post-footer>
-<div class=post-tags>
-<a href=/en/tags/plugin rel=tag title=Plugin>#Plugin#</a>
-</div>
-<div class=addthis_inline_share_toolbox></div>
-<div class=post-nav>
-<div class=article-copyright>
-<div class=article-copyright-img>
-<img src=/img/qq_qrcode.png width=129px height=129px>
-<div style=text-align:center>QQ QrCode</div>
-</div>
-<div class=article-copyright-info>
-<p>
-<span>Title：</span>Sublime Text install package failure
-</p>
-<p>
-<span>Link：</span>https://lisenhui.cn/en/2022/02/08/use-sublime-txt-build-hugo-site.html
-</p>
-<p>
-<span>Author：</span>Elkan.Li
-</p>
-<p>
-<span>Declaration： </span>This blog post article is under the <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a> license,Please indicate the source!
-</p>
-</div>
-</div>
-<div class=clear></div>
-</div>
-<div class=reward-qr-info>
-<div>If it can help you, you can give tips for blogger that how much you want. ^_^</div>
-<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
-<span>Reward</span>
-</button>
-<div id=QR style=display:none>
-<div id=wechat style=display:inline-block>
-<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
-<p>Wechat Pay</p>
-</div>
-<div id=alipay style=display:inline-block>
-<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
-<p>Ali Pay</p>
-</div>
-</div>
-</div>
-<div class=post-nav>
-<div class="post-nav-next post-nav-item">
-<a href=https://lisenhui.cn/en/2022/02/12/use-sublime-txt-build-hugo-site.html rel=next title="Use Sublime Text build Hugo blog environment ">
-<i class="fa fa-chevron-left"></i> Use Sublime Text build Hugo blog environment
-</a>
-</div>
-<div class="post-nav-prev post-nav-item">
-<a href=https://lisenhui.cn/en/2021/07/09/make-next-theme-pithy2.html rel=prev title="Make Hugo NexT theme pithy 2">
-Make Hugo NexT theme pithy 2
-<i class="fa fa-chevron-right"></i>
-</a>
-</div>
-</div>
-<div id=wcomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
 </div>
 </main>
 <footer id=footer class=footer>

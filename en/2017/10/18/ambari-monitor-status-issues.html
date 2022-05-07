@@ -106,6 +106,129 @@
 </nav> </div>
 </header>
 <main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/en/2017/10/18/ambari-monitor-status-issues.html itemprop=url>
+An issue with the service in Ambari that is functioning properly but the service stops
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-pushdate>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>Published at:</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-10-18">
+2017-10-18
+</time>
+</span>
+<span class=post-category>
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>Categories:</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a class=post-category-a href=/en/categories/big-data itemprop=url rel=index>
+<span itemprop=name>Big data</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>229 words</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>2 minutes</span>
+</span>
+<span id=/en/2017/10/18/ambari-monitor-status-issues.html class="leancloud_visitors post-visitor" data-flag-title="An issue with the service in Ambari that is functioning properly but the service stops">
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>Visited:</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>Many times the maintenance of the environment is indeed a headache event, which does not originally show the monitoring of normal services on Ambari&rsquo;s Dashboard page, there is a strange phenomenon: in the machine query service running process is normal, but partial Ambari&rsquo;s UI interface is displayed as a stop, but the port check shows normal. Here&rsquo;s the picture:</p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2017/10-18-ambari-red.png alt=alert_stopped.png></p>
+<p>Ben can also let go (anyway, the service is running normally), but helpless obsessive compulsive disorder &ldquo;fault&rdquo; and committed, had to eliminate it out of the heart is comfortable. After several unsuccessful attempts, it turned out that it was as if a colleague had manually started some components, which is why. The processusers who used &lsquo;ps&rsquo; to examine these components found that this was the case, forced the killing of these components, and then restarted them using the Ambari UI, but the end result remained the same.</p>
+<p>Really very depressed, at this time also had to use google, and then found a similar problem of the article, which mentioned the runtime&rsquo;xx.pid&rsquo;permission problem, really a bit ofwake-up call dreamers, hasten to look at these components of the pid file permissions, indeed, because the previous start-up is with super-tube users, and in fact these components have corresponding user maintenance. Delete these&rsquo;xxx.pid&rsquo;files, re-open these services on theAmbari UI, everything is back to normal, and the beautiful green interface is back.</p>
+<p><img src=//lisenhui.gitee.io/imgs/blog/2017/10-18-ambari-green.png alt=ambari-green.png></p>
+<p>Reference quote:</p>
+<ul>
+<li><a href=https://community.hortonworks.com/questions/41069/service-is-running-but-ambari-shows-serice-is-stop.html target=_blank rel=noopener>service-is-running-but-ambari-shows-serice-is-stop</a>
+</li>
+</ul>
+</div>
+<footer class=post-footer>
+<div class=post-tags>
+<a href=/en/tags/ambari rel=tag title=Ambari>#Ambari#</a>
+<a href=/en/tags/hdp rel=tag title=HDP>#HDP#</a>
+<a href=/en/tags/big-data rel=tag title="Big data">#Big data#</a>
+</div>
+<div class=addthis_inline_share_toolbox></div>
+<div class=post-nav>
+<div class=article-copyright>
+<div class=article-copyright-img>
+<img src=/img/qq_qrcode.png width=129px height=129px>
+<div style=text-align:center>QQ QrCode</div>
+</div>
+<div class=article-copyright-info>
+<p>
+<span>Title：</span>An issue with the service in Ambari that is functioning properly but the service stops
+</p>
+<p>
+<span>Link：</span>https://lisenhui.cn/en/2017/10/18/ambari-monitor-status-issues.html
+</p>
+<p>
+<span>Author：</span>Elkan.Li
+</p>
+<p>
+<span>Declaration： </span>This blog post article is under the <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a> license,Please indicate the source!
+</p>
+</div>
+</div>
+<div class=clear></div>
+</div>
+<div class=reward-qr-info>
+<div>If it can help you, you can give tips for blogger that how much you want. ^_^</div>
+<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
+<span>Reward</span>
+</button>
+<div id=QR style=display:none>
+<div id=wechat style=display:inline-block>
+<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
+<p>Wechat Pay</p>
+</div>
+<div id=alipay style=display:inline-block>
+<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
+<p>Ali Pay</p>
+</div>
+</div>
+</div>
+<div class=post-nav>
+<div class="post-nav-next post-nav-item">
+<a href=https://lisenhui.cn/en/2017/10/22/ninfi-cluster-deploy-with-kerberos.html rel=next title="Apache Nifi clustering and user authentication with kerberos">
+<i class="fa fa-chevron-left"></i> Apache Nifi clustering and user authentication with kerberos
+</a>
+</div>
+<div class="post-nav-prev post-nav-item">
+<a href=https://lisenhui.cn/en/2017/10/17/hive2-jdbc-connector-issues.html rel=prev title="Problems with HiveServer2 due to the JDBC version">
+Problems with HiveServer2 due to the JDBC version
+<i class="fa fa-chevron-right"></i>
+</a>
+</div>
+</div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
 <div class=sidebar-toggle>
 <div class=sidebar-toggle-line-wrap>
 <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -250,129 +373,6 @@ TagCloud
 </section>
 </div>
 </aside>
-<div class=main-inner>
-<div class=content-wrap>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lisenhui.cn/en/2017/10/18/ambari-monitor-status-issues.html itemprop=url>
-An issue with the service in Ambari that is functioning properly but the service stops
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-pushdate>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>Published at:</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-10-18">
-2017-10-18
-</time>
-</span>
-<span class=post-category>
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>Categories:</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a class=post-category-a href=/en/categories/big-data itemprop=url rel=index>
-<span itemprop=name>Big data</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>229 words</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>Reading:</span>
-<span class=leancloud-view-count>2 minutes</span>
-</span>
-<span id=/en/2017/10/18/ambari-monitor-status-issues.html class="leancloud_visitors post-visitor" data-flag-title="An issue with the service in Ambari that is functioning properly but the service stops">
-<i class="fa fa-binoculars fa-fw"></i>
-<span class=post-meta-item-text>Visited:</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>Many times the maintenance of the environment is indeed a headache event, which does not originally show the monitoring of normal services on Ambari&rsquo;s Dashboard page, there is a strange phenomenon: in the machine query service running process is normal, but partial Ambari&rsquo;s UI interface is displayed as a stop, but the port check shows normal. Here&rsquo;s the picture:</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/10-18-ambari-red.png alt=alert_stopped.png></p>
-<p>Ben can also let go (anyway, the service is running normally), but helpless obsessive compulsive disorder &ldquo;fault&rdquo; and committed, had to eliminate it out of the heart is comfortable. After several unsuccessful attempts, it turned out that it was as if a colleague had manually started some components, which is why. The processusers who used &lsquo;ps&rsquo; to examine these components found that this was the case, forced the killing of these components, and then restarted them using the Ambari UI, but the end result remained the same.</p>
-<p>Really very depressed, at this time also had to use google, and then found a similar problem of the article, which mentioned the runtime&rsquo;xx.pid&rsquo;permission problem, really a bit ofwake-up call dreamers, hasten to look at these components of the pid file permissions, indeed, because the previous start-up is with super-tube users, and in fact these components have corresponding user maintenance. Delete these&rsquo;xxx.pid&rsquo;files, re-open these services on theAmbari UI, everything is back to normal, and the beautiful green interface is back.</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/10-18-ambari-green.png alt=ambari-green.png></p>
-<p>Reference quote:</p>
-<ul>
-<li><a href=https://community.hortonworks.com/questions/41069/service-is-running-but-ambari-shows-serice-is-stop.html target=_blank rel=noopener>service-is-running-but-ambari-shows-serice-is-stop</a>
-</li>
-</ul>
-</div>
-<footer class=post-footer>
-<div class=post-tags>
-<a href=/en/tags/ambari rel=tag title=Ambari>#Ambari#</a>
-<a href=/en/tags/hdp rel=tag title=HDP>#HDP#</a>
-<a href=/en/tags/big-data rel=tag title="Big data">#Big data#</a>
-</div>
-<div class=addthis_inline_share_toolbox></div>
-<div class=post-nav>
-<div class=article-copyright>
-<div class=article-copyright-img>
-<img src=/img/qq_qrcode.png width=129px height=129px>
-<div style=text-align:center>QQ QrCode</div>
-</div>
-<div class=article-copyright-info>
-<p>
-<span>Title：</span>An issue with the service in Ambari that is functioning properly but the service stops
-</p>
-<p>
-<span>Link：</span>https://lisenhui.cn/en/2017/10/18/ambari-monitor-status-issues.html
-</p>
-<p>
-<span>Author：</span>Elkan.Li
-</p>
-<p>
-<span>Declaration： </span>This blog post article is under the <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a> license,Please indicate the source!
-</p>
-</div>
-</div>
-<div class=clear></div>
-</div>
-<div class=reward-qr-info>
-<div>If it can help you, you can give tips for blogger that how much you want. ^_^</div>
-<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
-<span>Reward</span>
-</button>
-<div id=QR style=display:none>
-<div id=wechat style=display:inline-block>
-<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
-<p>Wechat Pay</p>
-</div>
-<div id=alipay style=display:inline-block>
-<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
-<p>Ali Pay</p>
-</div>
-</div>
-</div>
-<div class=post-nav>
-<div class="post-nav-next post-nav-item">
-<a href=https://lisenhui.cn/en/2017/10/22/ninfi-cluster-deploy-with-kerberos.html rel=next title="Apache Nifi clustering and user authentication with kerberos">
-<i class="fa fa-chevron-left"></i> Apache Nifi clustering and user authentication with kerberos
-</a>
-</div>
-<div class="post-nav-prev post-nav-item">
-<a href=https://lisenhui.cn/en/2017/10/17/hive2-jdbc-connector-issues.html rel=prev title="Problems with HiveServer2 due to the JDBC version">
-Problems with HiveServer2 due to the JDBC version
-<i class="fa fa-chevron-right"></i>
-</a>
-</div>
-</div>
-<div id=wcomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
 </div>
 </main>
 <footer id=footer class=footer>

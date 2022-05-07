@@ -106,6 +106,136 @@
 </nav> </div>
 </header>
 <main id=main class=main>
+<div class=main-inner>
+<div class=content-wrap>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/en/2017/08/13/python-output-conosle-intime.html itemprop=url>
+Python outputs instantly on the command line
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-pushdate>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>Published at:</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-08-13">
+2017-08-13
+</time>
+</span>
+<span class=post-category>
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>Categories:</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a class=post-category-a href=/en/categories/python itemprop=url rel=index>
+<span itemprop=name>Python</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>243 words</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>2 minutes</span>
+</span>
+<span id=/en/2017/08/13/python-output-conosle-intime.html class="leancloud_visitors post-visitor" data-flag-title="Python outputs instantly on the command line">
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>Visited:</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>When a program encounters problems that require DEBUG, output by adding some &lsquo;print&rsquo; statements. So by convention also in the &lsquo;Python&rsquo; code to add print debugging, and then enter &lsquo;python xxxx.py&rsquo;, confidently looking forward to debugging information full screen scrolling, the result is after a long time to show. Why is this so?</p>
+<p>According to the netizen suggested to add a &lsquo;-u&rsquo; parameter OK, and later checked the reason: &lsquo;Python&rsquo; in the default situation will first &lsquo;print&rsquo; output to the buffer, until the buffer is full or the program before output. So it&rsquo;s useful to add this parameter when you&rsquo;re running a &lsquo;Python&rsquo; program.</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>python -u xxxx.py
+</code></pre></div><p>Other parameters are supported, as follows</p>
+<ul>
+<li>The &lsquo;-B&rsquo; parameter does not produce a pyc or pyo file at the time of import</li>
+<li>&lsquo;-c&rsquo; parameter, run the python statement directly
+-'-i&rsquo;parameter, open a python environment after running thepython script file for easy viewing of the results of the operation</li>
+<li>&lsquo;-m&rsquo; parameter, the module will be executed according to the script</li>
+<li>&lsquo;-V&rsquo; parameter, output version of Python</li>
+<li>&lsquo;-O&rsquo; parameter, resulting in an optimized pyo file (not valid with the -B parameter).</li>
+<li>The &lsquo;-v&rsquo; parameter outputs each module reference information, including where it was referenced and when it was cleared</li>
+<li>The &lsquo;-u&rsquo; parameter, which is useful when printing records, forces stdin, stdout, and stderr to become unbuffered and outputs immediately, rather than waiting for the buffer to fill up before printing the data.</li>
+</ul>
+<p>Reference:</p>
+<ul>
+<li><a href=http://blog.163.com/weak_time/blog/static/25852809120169333247925/ target=_blank rel=noopener>Python Command Line Parameter Learning</a>
+</li>
+</ul>
+</div>
+<footer class=post-footer>
+<div class=post-tags>
+<a href=/en/tags/python rel=tag title=Python>#Python#</a>
+</div>
+<div class=addthis_inline_share_toolbox></div>
+<div class=post-nav>
+<div class=article-copyright>
+<div class=article-copyright-img>
+<img src=/img/qq_qrcode.png width=129px height=129px>
+<div style=text-align:center>QQ QrCode</div>
+</div>
+<div class=article-copyright-info>
+<p>
+<span>Title：</span>Python outputs instantly on the command line
+</p>
+<p>
+<span>Link：</span>https://lisenhui.cn/en/2017/08/13/python-output-conosle-intime.html
+</p>
+<p>
+<span>Author：</span>Elkan.Li
+</p>
+<p>
+<span>Declaration： </span>This blog post article is under the <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a> license,Please indicate the source!
+</p>
+</div>
+</div>
+<div class=clear></div>
+</div>
+<div class=reward-qr-info>
+<div>If it can help you, you can give tips for blogger that how much you want. ^_^</div>
+<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
+<span>Reward</span>
+</button>
+<div id=QR style=display:none>
+<div id=wechat style=display:inline-block>
+<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
+<p>Wechat Pay</p>
+</div>
+<div id=alipay style=display:inline-block>
+<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
+<p>Ali Pay</p>
+</div>
+</div>
+</div>
+<div class=post-nav>
+<div class="post-nav-next post-nav-item">
+<a href=https://lisenhui.cn/en/2017/08/15/hue-rdbms-mysql-chinese.html rel=next title="The integrated MySQL data in Hue shows garbled code">
+<i class="fa fa-chevron-left"></i> The integrated MySQL data in Hue shows garbled code
+</a>
+</div>
+<div class="post-nav-prev post-nav-item">
+<a href=https://lisenhui.cn/en/2017/08/11/python-pip-install-chinese-mirror.html rel=prev title="Python pip China Mirror Server Address">
+Python pip China Mirror Server Address
+<i class="fa fa-chevron-right"></i>
+</a>
+</div>
+</div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
 <div class=sidebar-toggle>
 <div class=sidebar-toggle-line-wrap>
 <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -250,136 +380,6 @@ TagCloud
 </section>
 </div>
 </aside>
-<div class=main-inner>
-<div class=content-wrap>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lisenhui.cn/en/2017/08/13/python-output-conosle-intime.html itemprop=url>
-Python outputs instantly on the command line
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-pushdate>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>Published at:</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-08-13">
-2017-08-13
-</time>
-</span>
-<span class=post-category>
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>Categories:</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a class=post-category-a href=/en/categories/python itemprop=url rel=index>
-<span itemprop=name>Python</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>243 words</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>Reading:</span>
-<span class=leancloud-view-count>2 minutes</span>
-</span>
-<span id=/en/2017/08/13/python-output-conosle-intime.html class="leancloud_visitors post-visitor" data-flag-title="Python outputs instantly on the command line">
-<i class="fa fa-binoculars fa-fw"></i>
-<span class=post-meta-item-text>Visited:</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>When a program encounters problems that require DEBUG, output by adding some &lsquo;print&rsquo; statements. So by convention also in the &lsquo;Python&rsquo; code to add print debugging, and then enter &lsquo;python xxxx.py&rsquo;, confidently looking forward to debugging information full screen scrolling, the result is after a long time to show. Why is this so?</p>
-<p>According to the netizen suggested to add a &lsquo;-u&rsquo; parameter OK, and later checked the reason: &lsquo;Python&rsquo; in the default situation will first &lsquo;print&rsquo; output to the buffer, until the buffer is full or the program before output. So it&rsquo;s useful to add this parameter when you&rsquo;re running a &lsquo;Python&rsquo; program.</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>python -u xxxx.py
-</code></pre></div><p>Other parameters are supported, as follows</p>
-<ul>
-<li>The &lsquo;-B&rsquo; parameter does not produce a pyc or pyo file at the time of import</li>
-<li>&lsquo;-c&rsquo; parameter, run the python statement directly
--'-i&rsquo;parameter, open a python environment after running thepython script file for easy viewing of the results of the operation</li>
-<li>&lsquo;-m&rsquo; parameter, the module will be executed according to the script</li>
-<li>&lsquo;-V&rsquo; parameter, output version of Python</li>
-<li>&lsquo;-O&rsquo; parameter, resulting in an optimized pyo file (not valid with the -B parameter).</li>
-<li>The &lsquo;-v&rsquo; parameter outputs each module reference information, including where it was referenced and when it was cleared</li>
-<li>The &lsquo;-u&rsquo; parameter, which is useful when printing records, forces stdin, stdout, and stderr to become unbuffered and outputs immediately, rather than waiting for the buffer to fill up before printing the data.</li>
-</ul>
-<p>Reference:</p>
-<ul>
-<li><a href=http://blog.163.com/weak_time/blog/static/25852809120169333247925/ target=_blank rel=noopener>Python Command Line Parameter Learning</a>
-</li>
-</ul>
-</div>
-<footer class=post-footer>
-<div class=post-tags>
-<a href=/en/tags/python rel=tag title=Python>#Python#</a>
-</div>
-<div class=addthis_inline_share_toolbox></div>
-<div class=post-nav>
-<div class=article-copyright>
-<div class=article-copyright-img>
-<img src=/img/qq_qrcode.png width=129px height=129px>
-<div style=text-align:center>QQ QrCode</div>
-</div>
-<div class=article-copyright-info>
-<p>
-<span>Title：</span>Python outputs instantly on the command line
-</p>
-<p>
-<span>Link：</span>https://lisenhui.cn/en/2017/08/13/python-output-conosle-intime.html
-</p>
-<p>
-<span>Author：</span>Elkan.Li
-</p>
-<p>
-<span>Declaration： </span>This blog post article is under the <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a> license,Please indicate the source!
-</p>
-</div>
-</div>
-<div class=clear></div>
-</div>
-<div class=reward-qr-info>
-<div>If it can help you, you can give tips for blogger that how much you want. ^_^</div>
-<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
-<span>Reward</span>
-</button>
-<div id=QR style=display:none>
-<div id=wechat style=display:inline-block>
-<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
-<p>Wechat Pay</p>
-</div>
-<div id=alipay style=display:inline-block>
-<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
-<p>Ali Pay</p>
-</div>
-</div>
-</div>
-<div class=post-nav>
-<div class="post-nav-next post-nav-item">
-<a href=https://lisenhui.cn/en/2017/08/15/hue-rdbms-mysql-chinese.html rel=next title="The integrated MySQL data in Hue shows garbled code">
-<i class="fa fa-chevron-left"></i> The integrated MySQL data in Hue shows garbled code
-</a>
-</div>
-<div class="post-nav-prev post-nav-item">
-<a href=https://lisenhui.cn/en/2017/08/11/python-pip-install-chinese-mirror.html rel=prev title="Python pip China Mirror Server Address">
-Python pip China Mirror Server Address
-<i class="fa fa-chevron-right"></i>
-</a>
-</div>
-</div>
-<div id=wcomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
 </div>
 </main>
 <footer id=footer class=footer>
