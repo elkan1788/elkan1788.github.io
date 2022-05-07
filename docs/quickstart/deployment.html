@@ -106,6 +106,115 @@
 </nav> </div>
 </header>
 <main id=main class=main>
+<div class=main-inner>
+<ul class="sub-menu menu">
+<li class=menu-item>
+<a href=/docs/quickstart/ rel=section class=menu-item-active>
+<i class="fa fa-book fa-fw"></i>
+快速开始
+</a>
+</li>
+<li class=menu-item>
+<a href=/docs/themesettings rel=section>
+<i class="fa fa-star fa-fw"></i>
+主题配置
+</a>
+</li>
+<li class=menu-item>
+<a href=/docs/thirdparty/ rel=section>
+<i class="fa fa-american-sign-language-interpreting fa-fw"></i>
+第三方插件
+</a>
+</li>
+</ul>
+<ul class="sub-menu menu">
+<li class=menu-item>
+<a href=installation.html rel=section>
+<i class="fa fa-download fa-fw"></i>
+安装
+</a>
+</li>
+<li class=menu-item>
+<a href=configuration.html rel=section>
+<i class="fa fa-wrench fa-fw"></i>
+配置
+</a>
+</li>
+<li class=menu-item>
+<a href=deployment.html rel=section class=menu-item-active>
+<i class="fa fa-upload fa-fw"></i>
+发布
+</a>
+</li>
+<li class=menu-item>
+<a href=upgrade.html rel=section>
+<i class="fa fa-history fa-fw"></i>
+升级
+</a>
+</li>
+</ul>
+<div class=content-wrap style=margin-top:10px>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<div class=post-meta>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>252 字</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>1分钟</span>
+</span>
+<span id=/docs/quickstart/deployment.html class="leancloud_visitors post-visitor" data-flag-title=发布>
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>阅读次数：</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p><code>Github</code> 或 <code>Gitee</code> 都可支持 <code>Hugo</code> 源码或静态站点代码两种发布方式。</p>
+<h2 id=hugo-源码>Hugo 源码</h2>
+<h3 id=github-操作>Github 操作</h3>
+<p>打开你站点的 <code>Github</code> 仓库访问地址，在 <code>Settings -> Pages</code> 路径下的 Source 中选取站点代码对应分支和路径便可生效。</p>
+<h3 id=gitee-操作>Gitee 操作</h3>
+<p>打开你站点的 <code>Gitee</code> 仓库访问地址，在 <code>服务 -> Gitee Pages</code> 路径下的部署分支和部署目录中选取站点的对应位置， 点击发布按钮便可生效。</p>
+<blockquote>
+<p>注： 支持开启强制使用 HTTPS 功能。</p>
+</blockquote>
+<h2 id=静态代码>静态代码</h2>
+<p>使用 <code>Hugo</code> 命令生成全站静态代码，参考如下：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ hugo -e production -d product
+Start building sites …
+hugo v0.92.1-85E2E862 windows/amd64 <span style=color:#b8860b>BuildDate</span><span style=color:#666>=</span>2022-01-27T11:44:41Z <span style=color:#b8860b>VendorInfo</span><span style=color:#666>=</span>gohugoio
+
+                   | ZH-CN
+-------------------+--------
+  Pages            |    <span style=color:#666>20</span>
+  Paginator pages  |     <span style=color:#666>0</span>
+  Non-page files   |     <span style=color:#666>0</span>
+  Static files     |    <span style=color:#666>26</span>
+  Processed images |     <span style=color:#666>0</span>
+  Aliases          |     <span style=color:#666>6</span>
+  Sitemaps         |     <span style=color:#666>1</span>
+  Cleaned          |     <span style=color:#666>0</span>
+
+Total in <span style=color:#666>128</span> ms
+</code></pre></div><p>然后把 product 目录的文件打包发布你的站点服务根目录下，输入站点地址便可访问。</p>
+</div>
+<footer class=post-footer>
+<div class=post-eof style="width:100%;margin:30px 0"></div>
+<div class=addthis_inline_share_toolbox></div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
 <div class=sidebar-toggle>
 <div class=sidebar-toggle-line-wrap>
 <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -273,115 +382,6 @@ GitHub
 </section>
 </div>
 </aside>
-<div class=main-inner>
-<ul class="sub-menu menu">
-<li class=menu-item>
-<a href=/docs/quickstart/ rel=section class=menu-item-active>
-<i class="fa fa-book fa-fw"></i>
-快速开始
-</a>
-</li>
-<li class=menu-item>
-<a href=/docs/themesettings rel=section>
-<i class="fa fa-star fa-fw"></i>
-主题配置
-</a>
-</li>
-<li class=menu-item>
-<a href=/docs/thirdparty/ rel=section>
-<i class="fa fa-american-sign-language-interpreting fa-fw"></i>
-第三方插件
-</a>
-</li>
-</ul>
-<ul class="sub-menu menu">
-<li class=menu-item>
-<a href=installation.html rel=section>
-<i class="fa fa-download fa-fw"></i>
-安装
-</a>
-</li>
-<li class=menu-item>
-<a href=configuration.html rel=section>
-<i class="fa fa-wrench fa-fw"></i>
-配置
-</a>
-</li>
-<li class=menu-item>
-<a href=deployment.html rel=section class=menu-item-active>
-<i class="fa fa-upload fa-fw"></i>
-发布
-</a>
-</li>
-<li class=menu-item>
-<a href=upgrade.html rel=section>
-<i class="fa fa-history fa-fw"></i>
-升级
-</a>
-</li>
-</ul>
-<div class=content-wrap style=margin-top:10px>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<div class=post-meta>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>252 字</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>1分钟</span>
-</span>
-<span id=/docs/quickstart/deployment.html class="leancloud_visitors post-visitor" data-flag-title=发布>
-<i class="fa fa-binoculars fa-fw"></i>
-<span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p><code>Github</code> 或 <code>Gitee</code> 都可支持 <code>Hugo</code> 源码或静态站点代码两种发布方式。</p>
-<h2 id=hugo-源码>Hugo 源码</h2>
-<h3 id=github-操作>Github 操作</h3>
-<p>打开你站点的 <code>Github</code> 仓库访问地址，在 <code>Settings -> Pages</code> 路径下的 Source 中选取站点代码对应分支和路径便可生效。</p>
-<h3 id=gitee-操作>Gitee 操作</h3>
-<p>打开你站点的 <code>Gitee</code> 仓库访问地址，在 <code>服务 -> Gitee Pages</code> 路径下的部署分支和部署目录中选取站点的对应位置， 点击发布按钮便可生效。</p>
-<blockquote>
-<p>注： 支持开启强制使用 HTTPS 功能。</p>
-</blockquote>
-<h2 id=静态代码>静态代码</h2>
-<p>使用 <code>Hugo</code> 命令生成全站静态代码，参考如下：</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ hugo -e production -d product
-Start building sites …
-hugo v0.92.1-85E2E862 windows/amd64 <span style=color:#b8860b>BuildDate</span><span style=color:#666>=</span>2022-01-27T11:44:41Z <span style=color:#b8860b>VendorInfo</span><span style=color:#666>=</span>gohugoio
-
-                   | ZH-CN
--------------------+--------
-  Pages            |    <span style=color:#666>20</span>
-  Paginator pages  |     <span style=color:#666>0</span>
-  Non-page files   |     <span style=color:#666>0</span>
-  Static files     |    <span style=color:#666>26</span>
-  Processed images |     <span style=color:#666>0</span>
-  Aliases          |     <span style=color:#666>6</span>
-  Sitemaps         |     <span style=color:#666>1</span>
-  Cleaned          |     <span style=color:#666>0</span>
-
-Total in <span style=color:#666>128</span> ms
-</code></pre></div><p>然后把 product 目录的文件打包发布你的站点服务根目录下，输入站点地址便可访问。</p>
-</div>
-<footer class=post-footer>
-<div class=post-eof style="width:100%;margin:30px 0"></div>
-<div class=addthis_inline_share_toolbox></div>
-<div id=wcomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
 </div>
 </main>
 <footer id=footer class=footer>

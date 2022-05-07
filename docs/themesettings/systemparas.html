@@ -106,6 +106,128 @@
 </nav> </div>
 </header>
 <main id=main class=main>
+<div class=main-inner>
+<ul class="sub-menu menu">
+<li class=menu-item>
+<a href=/docs/quickstart/ rel=section>
+<i class="fa fa-book fa-fw"></i>
+快速开始
+</a>
+</li>
+<li class=menu-item>
+<a href=/docs/themesettings rel=section class=menu-item-active>
+<i class="fa fa-star fa-fw"></i>
+主题配置
+</a>
+</li>
+<li class=menu-item>
+<a href=/docs/thirdparty/ rel=section>
+<i class="fa fa-american-sign-language-interpreting fa-fw"></i>
+第三方插件
+</a>
+</li>
+</ul>
+<ul class="sub-menu menu">
+<li class=menu-item>
+<a href=systemparas.html rel=section class=menu-item-active>
+<i class="fa fa-cog fa-fw"></i>
+系统参数
+</a>
+</li>
+<li class=menu-item>
+<a href=customparas.html rel=section>
+<i class="fa fa-user-plus fa-fw"></i>
+自定义参数
+</a>
+</li>
+<li class=menu-item>
+<a href=menuparas.html rel=section>
+<i class="fa fa-bars fa-fw"></i>
+菜单配置
+</a>
+</li>
+<li class=menu-item>
+<a href=interlization.html rel=section>
+<i class="fa fa-language fa-fw"></i>
+多语言
+</a>
+</li>
+</ul>
+<div class=content-wrap style=margin-top:10px>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<div class=post-meta>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>363 字</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>1分钟</span>
+</span>
+<span id=/docs/themesettings/systemparas.html class="leancloud_visitors post-visitor" data-flag-title=系统设置>
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>阅读次数：</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>系统设置主要是与 <code>Hugo</code> 输出或站点配置相关的参数，说明如下：</p>
+<h2 id=title>title</h2>
+<p>网站的标题</p>
+<h2 id=baseurl>baseURL</h2>
+<p>网站访问的根路径（一般就是域名）</p>
+<h2 id=metadataformat>metaDataFormat</h2>
+<p>网站配置文件的内容格式，支持 <code>toml</code>、 <code>yaml</code>、 <code>json</code> 三种格式，在 Hugo 环境下建议（默认）使用第一种格式，可读性好</p>
+<h2 id=theme>theme</h2>
+<p>网站配置主题的名称，这里默认值是： <code>hugo-theme-next</code></p>
+<h2 id=defaultcontentlanguage>defaultContentLanguage</h2>
+<p>网站使用的默认语言，默认值是： <code>zh-cn</code></p>
+<blockquote>
+<p>注： 这里的语言代码要使用小写，不然后网站文章生成会报错</p>
+</blockquote>
+<h2 id=permalinks>permalinks</h2>
+<p>网站路径访问格式</p>
+<h2 id=paginatepath>paginatePath</h2>
+<p>内容分页路径标识，默认值为 “p”</p>
+<h2 id=paginate>paginate</h2>
+<p>列表每页显示文章条数，默认值为 5</p>
+<h2 id=disablepathtolower>disablePathToLower</h2>
+<p>关闭路径小写功能，默认是支持路径小写</p>
+<h2 id=pygmentsxxx>pygmentsXXX</h2>
+<p>代码格式显示格式和样式</p>
+<h2 id=enablerobotstxt>enableRobotsTXT</h2>
+<p>开启 <code>robots.txt</code> 文件生成</p>
+<h2 id=enableemoji>enableEmoji</h2>
+<p>支持显示表情符号</p>
+<h2 id=hascjklanguage>hasCJKLanguage</h2>
+<p>是否包含中、日、韩语言，建议开启</p>
+<h2 id=sitemap>sitemap</h2>
+<p>网站站点生成格式和频率</p>
+<h2 id=outputformats>outputFormats</h2>
+<p>针对本地搜索文件生成格式</p>
+<h2 id=outputs>outputs</h2>
+<p>站点需要输出的内容</p>
+<h2 id=minify>minify</h2>
+<p>生成静态文件时的压缩选项</p>
+<h2 id=markup>markup</h2>
+<p>让 <code>Markdown</code> 文件支持 HTML 代码写法</p>
+<p>正常情况下，只需要调整最前面 2 个参数为自身实际情况就行。</p>
+</div>
+<footer class=post-footer>
+<div class=post-eof style="width:100%;margin:30px 0"></div>
+<div class=addthis_inline_share_toolbox></div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
 <div class=sidebar-toggle>
 <div class=sidebar-toggle-line-wrap>
 <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -284,128 +406,6 @@ GitHub
 </section>
 </div>
 </aside>
-<div class=main-inner>
-<ul class="sub-menu menu">
-<li class=menu-item>
-<a href=/docs/quickstart/ rel=section>
-<i class="fa fa-book fa-fw"></i>
-快速开始
-</a>
-</li>
-<li class=menu-item>
-<a href=/docs/themesettings rel=section class=menu-item-active>
-<i class="fa fa-star fa-fw"></i>
-主题配置
-</a>
-</li>
-<li class=menu-item>
-<a href=/docs/thirdparty/ rel=section>
-<i class="fa fa-american-sign-language-interpreting fa-fw"></i>
-第三方插件
-</a>
-</li>
-</ul>
-<ul class="sub-menu menu">
-<li class=menu-item>
-<a href=systemparas.html rel=section class=menu-item-active>
-<i class="fa fa-cog fa-fw"></i>
-系统参数
-</a>
-</li>
-<li class=menu-item>
-<a href=customparas.html rel=section>
-<i class="fa fa-user-plus fa-fw"></i>
-自定义参数
-</a>
-</li>
-<li class=menu-item>
-<a href=menuparas.html rel=section>
-<i class="fa fa-bars fa-fw"></i>
-菜单配置
-</a>
-</li>
-<li class=menu-item>
-<a href=interlization.html rel=section>
-<i class="fa fa-language fa-fw"></i>
-多语言
-</a>
-</li>
-</ul>
-<div class=content-wrap style=margin-top:10px>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<div class=post-meta>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>363 字</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>1分钟</span>
-</span>
-<span id=/docs/themesettings/systemparas.html class="leancloud_visitors post-visitor" data-flag-title=系统设置>
-<i class="fa fa-binoculars fa-fw"></i>
-<span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>系统设置主要是与 <code>Hugo</code> 输出或站点配置相关的参数，说明如下：</p>
-<h2 id=title>title</h2>
-<p>网站的标题</p>
-<h2 id=baseurl>baseURL</h2>
-<p>网站访问的根路径（一般就是域名）</p>
-<h2 id=metadataformat>metaDataFormat</h2>
-<p>网站配置文件的内容格式，支持 <code>toml</code>、 <code>yaml</code>、 <code>json</code> 三种格式，在 Hugo 环境下建议（默认）使用第一种格式，可读性好</p>
-<h2 id=theme>theme</h2>
-<p>网站配置主题的名称，这里默认值是： <code>hugo-theme-next</code></p>
-<h2 id=defaultcontentlanguage>defaultContentLanguage</h2>
-<p>网站使用的默认语言，默认值是： <code>zh-cn</code></p>
-<blockquote>
-<p>注： 这里的语言代码要使用小写，不然后网站文章生成会报错</p>
-</blockquote>
-<h2 id=permalinks>permalinks</h2>
-<p>网站路径访问格式</p>
-<h2 id=paginatepath>paginatePath</h2>
-<p>内容分页路径标识，默认值为 “p”</p>
-<h2 id=paginate>paginate</h2>
-<p>列表每页显示文章条数，默认值为 5</p>
-<h2 id=disablepathtolower>disablePathToLower</h2>
-<p>关闭路径小写功能，默认是支持路径小写</p>
-<h2 id=pygmentsxxx>pygmentsXXX</h2>
-<p>代码格式显示格式和样式</p>
-<h2 id=enablerobotstxt>enableRobotsTXT</h2>
-<p>开启 <code>robots.txt</code> 文件生成</p>
-<h2 id=enableemoji>enableEmoji</h2>
-<p>支持显示表情符号</p>
-<h2 id=hascjklanguage>hasCJKLanguage</h2>
-<p>是否包含中、日、韩语言，建议开启</p>
-<h2 id=sitemap>sitemap</h2>
-<p>网站站点生成格式和频率</p>
-<h2 id=outputformats>outputFormats</h2>
-<p>针对本地搜索文件生成格式</p>
-<h2 id=outputs>outputs</h2>
-<p>站点需要输出的内容</p>
-<h2 id=minify>minify</h2>
-<p>生成静态文件时的压缩选项</p>
-<h2 id=markup>markup</h2>
-<p>让 <code>Markdown</code> 文件支持 HTML 代码写法</p>
-<p>正常情况下，只需要调整最前面 2 个参数为自身实际情况就行。</p>
-</div>
-<footer class=post-footer>
-<div class=post-eof style="width:100%;margin:30px 0"></div>
-<div class=addthis_inline_share_toolbox></div>
-<div id=wcomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
 </div>
 </main>
 <footer id=footer class=footer>

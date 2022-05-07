@@ -106,6 +106,109 @@
 </nav> </div>
 </header>
 <main id=main class=main>
+<div class=main-inner>
+<ul class="sub-menu menu">
+<li class=menu-item>
+<a href=/en/docs/quickstart/ rel=section>
+<i class="fa fa-book fa-fw"></i>
+Quick Start
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/docs/themesettings rel=section>
+<i class="fa fa-star fa-fw"></i>
+Theme Settings
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/docs/thirdparty/ rel=section class=menu-item-active>
+<i class="fa fa-american-sign-language-interpreting fa-fw"></i>
+Thirdparty-Plugin
+</a>
+</li>
+</ul>
+<ul class="sub-menu menu">
+<li class=menu-item>
+<a href=comment.html rel=section>
+<i class="fa fa-comments fa-fw"></i>
+Comment
+</a>
+</li>
+<li class=menu-item>
+<a href=share.html rel=section>
+<i class="fa fa-share-alt fa-fw"></i>
+Share
+</a>
+</li>
+<li class=menu-item>
+<a href=statis.html rel=section>
+<i class="fa fa-bar-chart fa-fw"></i>
+Static
+</a>
+</li>
+<li class=menu-item>
+<a href=others.html rel=section>
+<i class="fa fa-arrows fa-fw"></i>
+Others
+</a>
+</li>
+</ul>
+<div class=content-wrap style=margin-top:10px>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<div class=post-meta>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>124 words</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>1 minutes</span>
+</span>
+<span id=/en/docs/thirdparty/statis.html class="leancloud_visitors post-visitor" data-flag-title=Statis>
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>Visited:</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>At present, it does not support the integrated use of three site statistics plug-ins: garlic, Baidu and Google, which are uniformly configured in [statis] parameter in the <code>params.toml</code> file is described as follows:</p>
+<h2 id=statis>Statis</h2>
+<p>You can choose your favorite statistical method</p>
+<div class="note danger">
+<ul>
+<li>Busuanzicounter: do you want to enable statistics of garlic</li>
+<li>Baidu siteid: Baidu statistical code</li>
+<li>Google siteid: Google statistics code</li>
+<li><del>CNNZsiteid: Statistics code of Youmeng (officially offline)</del></li>
+</ul>
+</div>
+<p>In addition, the statistics of article visits are realized through leancloud storage, which is uniformly configured in parameter [leancloud] in the <code>params.toml</code> file is described as follows:</p>
+<h2 id=leancloud>LeanCloud</h2>
+<p>Visit <a href=https://www.leancloud.cn/ target=_blank rel=noopener>leancloud official website</a>
+Registration requires a registered domain name</p>
+<div class="note danger">
+<ul>
+<li>Appid: the ID of the registered application</li>
+<li>Appkey: the key to register the application</li>
+<li>Serverurl: application callback API address</li>
+</ul>
+</div>
+</div>
+<footer class=post-footer>
+<div class=post-eof style="width:100%;margin:30px 0"></div>
+<div class=addthis_inline_share_toolbox></div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
 <div class=sidebar-toggle>
 <div class=sidebar-toggle-line-wrap>
 <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -268,109 +371,6 @@ TagCloud
 </section>
 </div>
 </aside>
-<div class=main-inner>
-<ul class="sub-menu menu">
-<li class=menu-item>
-<a href=/en/docs/quickstart/ rel=section>
-<i class="fa fa-book fa-fw"></i>
-Quick Start
-</a>
-</li>
-<li class=menu-item>
-<a href=/en/docs/themesettings rel=section>
-<i class="fa fa-star fa-fw"></i>
-Theme Settings
-</a>
-</li>
-<li class=menu-item>
-<a href=/en/docs/thirdparty/ rel=section class=menu-item-active>
-<i class="fa fa-american-sign-language-interpreting fa-fw"></i>
-Thirdparty-Plugin
-</a>
-</li>
-</ul>
-<ul class="sub-menu menu">
-<li class=menu-item>
-<a href=comment.html rel=section>
-<i class="fa fa-comments fa-fw"></i>
-Comment
-</a>
-</li>
-<li class=menu-item>
-<a href=share.html rel=section>
-<i class="fa fa-share-alt fa-fw"></i>
-Share
-</a>
-</li>
-<li class=menu-item>
-<a href=statis.html rel=section>
-<i class="fa fa-bar-chart fa-fw"></i>
-Static
-</a>
-</li>
-<li class=menu-item>
-<a href=others.html rel=section>
-<i class="fa fa-arrows fa-fw"></i>
-Others
-</a>
-</li>
-</ul>
-<div class=content-wrap style=margin-top:10px>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<div class=post-meta>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>124 words</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>Reading:</span>
-<span class=leancloud-view-count>1 minutes</span>
-</span>
-<span id=/en/docs/thirdparty/statis.html class="leancloud_visitors post-visitor" data-flag-title=Statis>
-<i class="fa fa-binoculars fa-fw"></i>
-<span class=post-meta-item-text>Visited:</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>At present, it does not support the integrated use of three site statistics plug-ins: garlic, Baidu and Google, which are uniformly configured in [statis] parameter in the <code>params.toml</code> file is described as follows:</p>
-<h2 id=statis>Statis</h2>
-<p>You can choose your favorite statistical method</p>
-<div class="note danger">
-<ul>
-<li>Busuanzicounter: do you want to enable statistics of garlic</li>
-<li>Baidu siteid: Baidu statistical code</li>
-<li>Google siteid: Google statistics code</li>
-<li><del>CNNZsiteid: Statistics code of Youmeng (officially offline)</del></li>
-</ul>
-</div>
-<p>In addition, the statistics of article visits are realized through leancloud storage, which is uniformly configured in parameter [leancloud] in the <code>params.toml</code> file is described as follows:</p>
-<h2 id=leancloud>LeanCloud</h2>
-<p>Visit <a href=https://www.leancloud.cn/ target=_blank rel=noopener>leancloud official website</a>
-Registration requires a registered domain name</p>
-<div class="note danger">
-<ul>
-<li>Appid: the ID of the registered application</li>
-<li>Appkey: the key to register the application</li>
-<li>Serverurl: application callback API address</li>
-</ul>
-</div>
-</div>
-<footer class=post-footer>
-<div class=post-eof style="width:100%;margin:30px 0"></div>
-<div class=addthis_inline_share_toolbox></div>
-<div id=wcomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
 </div>
 </main>
 <footer id=footer class=footer>

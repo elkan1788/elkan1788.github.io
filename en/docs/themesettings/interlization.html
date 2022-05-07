@@ -106,6 +106,114 @@
 </nav> </div>
 </header>
 <main id=main class=main>
+<div class=main-inner>
+<ul class="sub-menu menu">
+<li class=menu-item>
+<a href=/en/docs/quickstart/ rel=section>
+<i class="fa fa-book fa-fw"></i>
+Quick Start
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/docs/themesettings rel=section class=menu-item-active>
+<i class="fa fa-star fa-fw"></i>
+Theme Settings
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/docs/thirdparty/ rel=section>
+<i class="fa fa-american-sign-language-interpreting fa-fw"></i>
+Thirdparty-Plugin
+</a>
+</li>
+</ul>
+<ul class="sub-menu menu">
+<li class=menu-item>
+<a href=systemparas.html rel=section>
+<i class="fa fa-cog fa-fw"></i>
+System Parameters
+</a>
+</li>
+<li class=menu-item>
+<a href=customparas.html rel=section>
+<i class="fa fa-user-plus fa-fw"></i>
+Cutom Parameters
+</a>
+</li>
+<li class=menu-item>
+<a href=menuparas.html rel=section>
+<i class="fa fa-bars fa-fw"></i>
+Menu Parameters
+</a>
+</li>
+<li class=menu-item>
+<a href=interlization.html rel=section class=menu-item-active>
+<i class="fa fa-language fa-fw"></i>
+I18n
+</a>
+</li>
+</ul>
+<div class=content-wrap style=margin-top:10px>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<div class=post-meta>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>156 words</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>1 minutes</span>
+</span>
+<span id=/en/docs/themesettings/interlization.html class="leancloud_visitors post-visitor" data-flag-title=多语言设置>
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>Visited:</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>Multilingual Settings only support Chinese and English languages temporarily. The description is as follows:</p>
+<h2 id=lanagues-toml>lanagues. toml</h2>
+<p>You need to add a description of the relevant language in the language configuration file</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-toml data-lang=toml>[zh-CN]
+Title = <span style=color:#b44>&#34;love life and dream&#34;</span>
+Languagename = <span style=color:#b44>&#34;Chinese&#34;</span>
+weight = <span style=color:#666>1</span>
+contentdir = <span style=color:#b44>&#34;content/zh-CN&#34;</span>
+[en]
+title = <span style=color:#b44>&#34;Loving life and dreams.&#34;</span>
+languageName = <span style=color:#b44>&#34;English&#34;</span>
+weight = <span style=color:#666>2</span>
+contentdir = <span style=color:#b44>&#34;content/en&#34;</span>
+</code></pre></div><div class="note danger">
+<ul>
+<li>[zh-CN]: custom language code</li>
+<li>Title: website title</li>
+<li>Languagename: language name</li>
+<li>Weight: display order. The smaller the number, the more front</li>
+<li>Contentdir: directory of articles published</li>
+</ul>
+</div>
+<h2 id=paramaslanguage-codetoml>paramas.[language code].toml</h2>
+<p>You need to add a custom setting configuration for the corresponding language. The file name is <code>paramas.[language code].oml</code>, please refer to <a href=/en/docs/themesettings/customparas.html>custom settings</a>
+for setting instructions</p>
+<h2 id=content>content</h2>
+<p>When publishing an article, according to the supported language, write more translations of the article and put them in the corresponding position under the <code>content/[language code]/</code> directory. Readers in different languages can switch to the corresponding language to view.</p>
+</div>
+<footer class=post-footer>
+<div class=post-eof style="width:100%;margin:30px 0"></div>
+<div class=addthis_inline_share_toolbox></div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
 <div class=sidebar-toggle>
 <div class=sidebar-toggle-line-wrap>
 <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -269,114 +377,6 @@ TagCloud
 </section>
 </div>
 </aside>
-<div class=main-inner>
-<ul class="sub-menu menu">
-<li class=menu-item>
-<a href=/en/docs/quickstart/ rel=section>
-<i class="fa fa-book fa-fw"></i>
-Quick Start
-</a>
-</li>
-<li class=menu-item>
-<a href=/en/docs/themesettings rel=section class=menu-item-active>
-<i class="fa fa-star fa-fw"></i>
-Theme Settings
-</a>
-</li>
-<li class=menu-item>
-<a href=/en/docs/thirdparty/ rel=section>
-<i class="fa fa-american-sign-language-interpreting fa-fw"></i>
-Thirdparty-Plugin
-</a>
-</li>
-</ul>
-<ul class="sub-menu menu">
-<li class=menu-item>
-<a href=systemparas.html rel=section>
-<i class="fa fa-cog fa-fw"></i>
-System Parameters
-</a>
-</li>
-<li class=menu-item>
-<a href=customparas.html rel=section>
-<i class="fa fa-user-plus fa-fw"></i>
-Cutom Parameters
-</a>
-</li>
-<li class=menu-item>
-<a href=menuparas.html rel=section>
-<i class="fa fa-bars fa-fw"></i>
-Menu Parameters
-</a>
-</li>
-<li class=menu-item>
-<a href=interlization.html rel=section class=menu-item-active>
-<i class="fa fa-language fa-fw"></i>
-I18n
-</a>
-</li>
-</ul>
-<div class=content-wrap style=margin-top:10px>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<div class=post-meta>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>156 words</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>Reading:</span>
-<span class=leancloud-view-count>1 minutes</span>
-</span>
-<span id=/en/docs/themesettings/interlization.html class="leancloud_visitors post-visitor" data-flag-title=多语言设置>
-<i class="fa fa-binoculars fa-fw"></i>
-<span class=post-meta-item-text>Visited:</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>Multilingual Settings only support Chinese and English languages temporarily. The description is as follows:</p>
-<h2 id=lanagues-toml>lanagues. toml</h2>
-<p>You need to add a description of the relevant language in the language configuration file</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-toml data-lang=toml>[zh-CN]
-Title = <span style=color:#b44>&#34;love life and dream&#34;</span>
-Languagename = <span style=color:#b44>&#34;Chinese&#34;</span>
-weight = <span style=color:#666>1</span>
-contentdir = <span style=color:#b44>&#34;content/zh-CN&#34;</span>
-[en]
-title = <span style=color:#b44>&#34;Loving life and dreams.&#34;</span>
-languageName = <span style=color:#b44>&#34;English&#34;</span>
-weight = <span style=color:#666>2</span>
-contentdir = <span style=color:#b44>&#34;content/en&#34;</span>
-</code></pre></div><div class="note danger">
-<ul>
-<li>[zh-CN]: custom language code</li>
-<li>Title: website title</li>
-<li>Languagename: language name</li>
-<li>Weight: display order. The smaller the number, the more front</li>
-<li>Contentdir: directory of articles published</li>
-</ul>
-</div>
-<h2 id=paramaslanguage-codetoml>paramas.[language code].toml</h2>
-<p>You need to add a custom setting configuration for the corresponding language. The file name is <code>paramas.[language code].oml</code>, please refer to <a href=/en/docs/themesettings/customparas.html>custom settings</a>
-for setting instructions</p>
-<h2 id=content>content</h2>
-<p>When publishing an article, according to the supported language, write more translations of the article and put them in the corresponding position under the <code>content/[language code]/</code> directory. Readers in different languages can switch to the corresponding language to view.</p>
-</div>
-<footer class=post-footer>
-<div class=post-eof style="width:100%;margin:30px 0"></div>
-<div class=addthis_inline_share_toolbox></div>
-<div id=wcomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
 </div>
 </main>
 <footer id=footer class=footer>

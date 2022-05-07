@@ -106,6 +106,109 @@
 </nav> </div>
 </header>
 <main id=main class=main>
+<div class=main-inner>
+<ul class="sub-menu menu">
+<li class=menu-item>
+<a href=/docs/quickstart/ rel=section class=menu-item-active>
+<i class="fa fa-book fa-fw"></i>
+快速开始
+</a>
+</li>
+<li class=menu-item>
+<a href=/docs/themesettings rel=section>
+<i class="fa fa-star fa-fw"></i>
+主题配置
+</a>
+</li>
+<li class=menu-item>
+<a href=/docs/thirdparty/ rel=section>
+<i class="fa fa-american-sign-language-interpreting fa-fw"></i>
+第三方插件
+</a>
+</li>
+</ul>
+<ul class="sub-menu menu">
+<li class=menu-item>
+<a href=installation.html rel=section class=menu-item-active>
+<i class="fa fa-download fa-fw"></i>
+安装
+</a>
+</li>
+<li class=menu-item>
+<a href=configuration.html rel=section>
+<i class="fa fa-wrench fa-fw"></i>
+配置
+</a>
+</li>
+<li class=menu-item>
+<a href=deployment.html rel=section>
+<i class="fa fa-upload fa-fw"></i>
+发布
+</a>
+</li>
+<li class=menu-item>
+<a href=upgrade.html rel=section>
+<i class="fa fa-history fa-fw"></i>
+升级
+</a>
+</li>
+</ul>
+<div class=content-wrap style=margin-top:10px>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<div class=post-meta>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>308 字</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>1分钟</span>
+</span>
+<span id=/docs/quickstart/installation.html class="leancloud_visitors post-visitor" data-flag-title=安装>
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>阅读次数：</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p><code>NexT</code> 提供模板和 <code>Git 子模块</code> 两种安装方式，可根据你自身情况选择。</p>
+<h2 id=模板安装>模板安装</h2>
+<div class="note danger">
+适用于首次搭建个人站点的情形
+</div>
+<p>点击访问 <a href=https://github.com/hugo-next/hugo-theme-next-starter target=_blank rel=noopener>NexT 主题模板</a>
+并登录你的 Github 账户，点击绿色的 <code>Use this template</code> 按钮，然后填写你自己的站点名称和描述信息，最后点击底部的 <code>Create repository from template</code> 按钮便可自动生成属于你自己的站点代码。</p>
+<blockquote>
+<p>注：中国镜内建议切换访问 <a href=https://gitee.com/hugo-next/hugo-theme-next-starter target=_blank rel=noopener>NexT 主题模板(Gitee)</a>
+, 然后点击右上角的 Fork 按钮，最后在自己空间中修改仓库名称为站点名称。</p>
+</blockquote>
+<p>使用 Git 克隆命令将上面生成的站点仓库克隆到本地，然后切换至站点目录执行 <code>git submodule update --init</code> 命令拉取主题代码。</p>
+<h2 id=git-子模块>Git 子模块</h2>
+<div class="note danger">
+适用于想迁移至 <code>NexT</code> 主题的情形
+</div>
+<p>切换到你的站点目录下，使用如下的命令添加主题：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>git submodule add https://github.com/elkan1788/hugo-theme-next.git themes/hugo-theme-next
+</code></pre></div><blockquote>
+<p>注：中国镜内建议使用 Gitee 仓库地址替换为 <code>https://gitee.com/lisenhui/hugo-theme-next.git</code></p>
+</blockquote>
+<p>然后执行 <code>git submodule update --init</code> 命令拉取主题代码。</p>
+</div>
+<footer class=post-footer>
+<div class=post-eof style="width:100%;margin:30px 0"></div>
+<div class=addthis_inline_share_toolbox></div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
 <div class=sidebar-toggle>
 <div class=sidebar-toggle-line-wrap>
 <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -268,109 +371,6 @@ GitHub
 </section>
 </div>
 </aside>
-<div class=main-inner>
-<ul class="sub-menu menu">
-<li class=menu-item>
-<a href=/docs/quickstart/ rel=section class=menu-item-active>
-<i class="fa fa-book fa-fw"></i>
-快速开始
-</a>
-</li>
-<li class=menu-item>
-<a href=/docs/themesettings rel=section>
-<i class="fa fa-star fa-fw"></i>
-主题配置
-</a>
-</li>
-<li class=menu-item>
-<a href=/docs/thirdparty/ rel=section>
-<i class="fa fa-american-sign-language-interpreting fa-fw"></i>
-第三方插件
-</a>
-</li>
-</ul>
-<ul class="sub-menu menu">
-<li class=menu-item>
-<a href=installation.html rel=section class=menu-item-active>
-<i class="fa fa-download fa-fw"></i>
-安装
-</a>
-</li>
-<li class=menu-item>
-<a href=configuration.html rel=section>
-<i class="fa fa-wrench fa-fw"></i>
-配置
-</a>
-</li>
-<li class=menu-item>
-<a href=deployment.html rel=section>
-<i class="fa fa-upload fa-fw"></i>
-发布
-</a>
-</li>
-<li class=menu-item>
-<a href=upgrade.html rel=section>
-<i class="fa fa-history fa-fw"></i>
-升级
-</a>
-</li>
-</ul>
-<div class=content-wrap style=margin-top:10px>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<div class=post-meta>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>308 字</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>1分钟</span>
-</span>
-<span id=/docs/quickstart/installation.html class="leancloud_visitors post-visitor" data-flag-title=安装>
-<i class="fa fa-binoculars fa-fw"></i>
-<span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p><code>NexT</code> 提供模板和 <code>Git 子模块</code> 两种安装方式，可根据你自身情况选择。</p>
-<h2 id=模板安装>模板安装</h2>
-<div class="note danger">
-适用于首次搭建个人站点的情形
-</div>
-<p>点击访问 <a href=https://github.com/hugo-next/hugo-theme-next-starter target=_blank rel=noopener>NexT 主题模板</a>
-并登录你的 Github 账户，点击绿色的 <code>Use this template</code> 按钮，然后填写你自己的站点名称和描述信息，最后点击底部的 <code>Create repository from template</code> 按钮便可自动生成属于你自己的站点代码。</p>
-<blockquote>
-<p>注：中国镜内建议切换访问 <a href=https://gitee.com/hugo-next/hugo-theme-next-starter target=_blank rel=noopener>NexT 主题模板(Gitee)</a>
-, 然后点击右上角的 Fork 按钮，最后在自己空间中修改仓库名称为站点名称。</p>
-</blockquote>
-<p>使用 Git 克隆命令将上面生成的站点仓库克隆到本地，然后切换至站点目录执行 <code>git submodule update --init</code> 命令拉取主题代码。</p>
-<h2 id=git-子模块>Git 子模块</h2>
-<div class="note danger">
-适用于想迁移至 <code>NexT</code> 主题的情形
-</div>
-<p>切换到你的站点目录下，使用如下的命令添加主题：</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>git submodule add https://github.com/elkan1788/hugo-theme-next.git themes/hugo-theme-next
-</code></pre></div><blockquote>
-<p>注：中国镜内建议使用 Gitee 仓库地址替换为 <code>https://gitee.com/lisenhui/hugo-theme-next.git</code></p>
-</blockquote>
-<p>然后执行 <code>git submodule update --init</code> 命令拉取主题代码。</p>
-</div>
-<footer class=post-footer>
-<div class=post-eof style="width:100%;margin:30px 0"></div>
-<div class=addthis_inline_share_toolbox></div>
-<div id=wcomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
 </div>
 </main>
 <footer id=footer class=footer>

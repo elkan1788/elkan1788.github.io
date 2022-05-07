@@ -106,6 +106,128 @@
 </nav> </div>
 </header>
 <main id=main class=main>
+<div class=main-inner>
+<ul class="sub-menu menu">
+<li class=menu-item>
+<a href=/en/docs/quickstart/ rel=section>
+<i class="fa fa-book fa-fw"></i>
+Quick Start
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/docs/themesettings rel=section class=menu-item-active>
+<i class="fa fa-star fa-fw"></i>
+Theme Settings
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/docs/thirdparty/ rel=section>
+<i class="fa fa-american-sign-language-interpreting fa-fw"></i>
+Thirdparty-Plugin
+</a>
+</li>
+</ul>
+<ul class="sub-menu menu">
+<li class=menu-item>
+<a href=systemparas.html rel=section class=menu-item-active>
+<i class="fa fa-cog fa-fw"></i>
+System Parameters
+</a>
+</li>
+<li class=menu-item>
+<a href=customparas.html rel=section>
+<i class="fa fa-user-plus fa-fw"></i>
+Cutom Parameters
+</a>
+</li>
+<li class=menu-item>
+<a href=menuparas.html rel=section>
+<i class="fa fa-bars fa-fw"></i>
+Menu Parameters
+</a>
+</li>
+<li class=menu-item>
+<a href=interlization.html rel=section>
+<i class="fa fa-language fa-fw"></i>
+I18n
+</a>
+</li>
+</ul>
+<div class=content-wrap style=margin-top:10px>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<div class=post-meta>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>232 words</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>2 minutes</span>
+</span>
+<span id=/en/docs/themesettings/systemparas.html class="leancloud_visitors post-visitor" data-flag-title="System Settings">
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>Visited:</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>System settings are mainly parameters related to <code>Hugo</code> output or site configuration. The description is as follows:</p>
+<h2 id=title>title</h2>
+<p>Title of the website</p>
+<h2 id=baseurl>baseURL</h2>
+<p>The root path of website access (usually the domain name)</p>
+<h2 id=metadataformat>metaDataFormat</h2>
+<p>The content format of the website configuration file supports<code>toml</code>,<code>yaml</code>and <code>json</code>. In Hugo environment, it is recommended (by default) to use the first format with good readability</p>
+<h2 id=theme>theme</h2>
+<p>The name of the website configuration theme. The default value here is: <code> Hugo theme next</code></p>
+<h2 id=defaultcontentlanguage>defaultContentLanguage</h2>
+<p>The default language used by the website is: <code>zh-CN</code></p>
+<blockquote>
+<p>Note: the language code here should be in lowercase. No error will be reported when the website article is generated</p>
+</blockquote>
+<h2 id=permalinks>permalinks</h2>
+<p>Website path access format</p>
+<h2 id=paginatepath>paginatePath</h2>
+<p>Content paging path ID, default value is &ldquo;P&rdquo;</p>
+<h2 id=paginate>paginate</h2>
+<p>The list displays the number of articles per page. The default value is 5</p>
+<h2 id=disablepathtolower>disablePathToLower</h2>
+<p>Turn off the path lowercase function. The default is to support path lowercase</p>
+<h2 id=pygmentsxxx>pygmentsXXX</h2>
+<p>Code format display format and style</p>
+<h2 id=enablerobotstxt>enableRobotsTXT</h2>
+<p>Open <code>robots.txt</code> file generation</p>
+<h2 id=enableemoji>enableEmoji</h2>
+<p>Support the display of emoticons</p>
+<h2 id=hascjklanguage>hasCJKLanguage</h2>
+<p>Whether it contains Chinese, Japanese and Korean languages. It is recommended to open it</p>
+<h2 id=sitemap>sitemap</h2>
+<p>Website generation format and frequency</p>
+<h2 id=outputformats>outputFormats</h2>
+<p>Generate formats for local search files</p>
+<h2 id=outputs>outputs</h2>
+<p>What the site needs to output</p>
+<h2 id=minify>minify</h2>
+<p>Compression options when generating static files</p>
+<h2 id=markup>markup</h2>
+<p>Make the <code>markdown</code> file support HTML code writing
+Normally, you only need to adjust the first two parameters to your actual situation.</p>
+</div>
+<footer class=post-footer>
+<div class=post-eof style="width:100%;margin:30px 0"></div>
+<div class=addthis_inline_share_toolbox></div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
 <div class=sidebar-toggle>
 <div class=sidebar-toggle-line-wrap>
 <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -284,128 +406,6 @@ TagCloud
 </section>
 </div>
 </aside>
-<div class=main-inner>
-<ul class="sub-menu menu">
-<li class=menu-item>
-<a href=/en/docs/quickstart/ rel=section>
-<i class="fa fa-book fa-fw"></i>
-Quick Start
-</a>
-</li>
-<li class=menu-item>
-<a href=/en/docs/themesettings rel=section class=menu-item-active>
-<i class="fa fa-star fa-fw"></i>
-Theme Settings
-</a>
-</li>
-<li class=menu-item>
-<a href=/en/docs/thirdparty/ rel=section>
-<i class="fa fa-american-sign-language-interpreting fa-fw"></i>
-Thirdparty-Plugin
-</a>
-</li>
-</ul>
-<ul class="sub-menu menu">
-<li class=menu-item>
-<a href=systemparas.html rel=section class=menu-item-active>
-<i class="fa fa-cog fa-fw"></i>
-System Parameters
-</a>
-</li>
-<li class=menu-item>
-<a href=customparas.html rel=section>
-<i class="fa fa-user-plus fa-fw"></i>
-Cutom Parameters
-</a>
-</li>
-<li class=menu-item>
-<a href=menuparas.html rel=section>
-<i class="fa fa-bars fa-fw"></i>
-Menu Parameters
-</a>
-</li>
-<li class=menu-item>
-<a href=interlization.html rel=section>
-<i class="fa fa-language fa-fw"></i>
-I18n
-</a>
-</li>
-</ul>
-<div class=content-wrap style=margin-top:10px>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<div class=post-meta>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>232 words</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>Reading:</span>
-<span class=leancloud-view-count>2 minutes</span>
-</span>
-<span id=/en/docs/themesettings/systemparas.html class="leancloud_visitors post-visitor" data-flag-title="System Settings">
-<i class="fa fa-binoculars fa-fw"></i>
-<span class=post-meta-item-text>Visited:</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>System settings are mainly parameters related to <code>Hugo</code> output or site configuration. The description is as follows:</p>
-<h2 id=title>title</h2>
-<p>Title of the website</p>
-<h2 id=baseurl>baseURL</h2>
-<p>The root path of website access (usually the domain name)</p>
-<h2 id=metadataformat>metaDataFormat</h2>
-<p>The content format of the website configuration file supports<code>toml</code>,<code>yaml</code>and <code>json</code>. In Hugo environment, it is recommended (by default) to use the first format with good readability</p>
-<h2 id=theme>theme</h2>
-<p>The name of the website configuration theme. The default value here is: <code> Hugo theme next</code></p>
-<h2 id=defaultcontentlanguage>defaultContentLanguage</h2>
-<p>The default language used by the website is: <code>zh-CN</code></p>
-<blockquote>
-<p>Note: the language code here should be in lowercase. No error will be reported when the website article is generated</p>
-</blockquote>
-<h2 id=permalinks>permalinks</h2>
-<p>Website path access format</p>
-<h2 id=paginatepath>paginatePath</h2>
-<p>Content paging path ID, default value is &ldquo;P&rdquo;</p>
-<h2 id=paginate>paginate</h2>
-<p>The list displays the number of articles per page. The default value is 5</p>
-<h2 id=disablepathtolower>disablePathToLower</h2>
-<p>Turn off the path lowercase function. The default is to support path lowercase</p>
-<h2 id=pygmentsxxx>pygmentsXXX</h2>
-<p>Code format display format and style</p>
-<h2 id=enablerobotstxt>enableRobotsTXT</h2>
-<p>Open <code>robots.txt</code> file generation</p>
-<h2 id=enableemoji>enableEmoji</h2>
-<p>Support the display of emoticons</p>
-<h2 id=hascjklanguage>hasCJKLanguage</h2>
-<p>Whether it contains Chinese, Japanese and Korean languages. It is recommended to open it</p>
-<h2 id=sitemap>sitemap</h2>
-<p>Website generation format and frequency</p>
-<h2 id=outputformats>outputFormats</h2>
-<p>Generate formats for local search files</p>
-<h2 id=outputs>outputs</h2>
-<p>What the site needs to output</p>
-<h2 id=minify>minify</h2>
-<p>Compression options when generating static files</p>
-<h2 id=markup>markup</h2>
-<p>Make the <code>markdown</code> file support HTML code writing
-Normally, you only need to adjust the first two parameters to your actual situation.</p>
-</div>
-<footer class=post-footer>
-<div class=post-eof style="width:100%;margin:30px 0"></div>
-<div class=addthis_inline_share_toolbox></div>
-<div id=wcomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
 </div>
 </main>
 <footer id=footer class=footer>

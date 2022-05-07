@@ -106,6 +106,113 @@
 </nav> </div>
 </header>
 <main id=main class=main>
+<div class=main-inner>
+<ul class="sub-menu menu">
+<li class=menu-item>
+<a href=/docs/quickstart/ rel=section class=menu-item-active>
+<i class="fa fa-book fa-fw"></i>
+快速开始
+</a>
+</li>
+<li class=menu-item>
+<a href=/docs/themesettings rel=section>
+<i class="fa fa-star fa-fw"></i>
+主题配置
+</a>
+</li>
+<li class=menu-item>
+<a href=/docs/thirdparty/ rel=section>
+<i class="fa fa-american-sign-language-interpreting fa-fw"></i>
+第三方插件
+</a>
+</li>
+</ul>
+<ul class="sub-menu menu">
+<li class=menu-item>
+<a href=installation.html rel=section>
+<i class="fa fa-download fa-fw"></i>
+安装
+</a>
+</li>
+<li class=menu-item>
+<a href=configuration.html rel=section class=menu-item-active>
+<i class="fa fa-wrench fa-fw"></i>
+配置
+</a>
+</li>
+<li class=menu-item>
+<a href=deployment.html rel=section>
+<i class="fa fa-upload fa-fw"></i>
+发布
+</a>
+</li>
+<li class=menu-item>
+<a href=upgrade.html rel=section>
+<i class="fa fa-history fa-fw"></i>
+升级
+</a>
+</li>
+</ul>
+<div class=content-wrap style=margin-top:10px>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<div class=post-meta>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>348 字</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>1分钟</span>
+</span>
+<span id=/docs/quickstart/configuration.html class="leancloud_visitors post-visitor" data-flag-title=配置>
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>阅读次数：</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p><code>NexT</code> 主题默认使用模块化的配置文件进行，目录结构如下：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>config
+<span style=color:#b44>`</span>-- _default
+    |-- config.toml
+    |-- languages.toml
+    |-- menu.toml
+    |-- params.toml
+    <span style=color:#b44>`</span>-- params.zh-CN.toml
+</code></pre></div><div class="note danger">
+<ul>
+<li><code>config.toml</code>： Hugo 相关系统级别参数配置</li>
+<li><code>languages.toml</code>： 站点语言配置(默认是中文)</li>
+<li><code>menu.toml</code>： 站点导航菜单配置</li>
+<li><code>params.toml</code>： 公共的第三方组件参数配置</li>
+<li><code>params.zh-CN.toml</code>： 中文站点的参数配置</li>
+</ul>
+</div>
+<p>在本地开发（写文章）过程中，为了便于调试或是保证一些账户信息不泄漏，可以在 config 目录下创建个 develop （名称可自定义）文件夹使用与 _default 文件下同名的配置文件来覆盖默认的配置信息。 比如：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>config
+|-- _default
+<span style=color:#b44>`</span>-- develop
+    |-- params.toml
+    <span style=color:#b44>`</span>-- params.zh-CN.toml
+</code></pre></div><p>然后在生成站点时带上环境变量参数，例如： <code>hugo server -D -e develop</code> 。</p>
+<p>一般情况下，只需要调整 <code>menu.toml</code>、<code>params.toml</code> 和 <code>params.zh-CN.toml</code> 三个文件下与你站点个性化相关的参数即可，如想深入了解可以参考 <a href=/docs/themesettings/>主题配置</a>
+内容。</p>
+</div>
+<footer class=post-footer>
+<div class=post-eof style="width:100%;margin:30px 0"></div>
+<div class=addthis_inline_share_toolbox></div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
 <div class=sidebar-toggle>
 <div class=sidebar-toggle-line-wrap>
 <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -263,113 +370,6 @@ GitHub
 </section>
 </div>
 </aside>
-<div class=main-inner>
-<ul class="sub-menu menu">
-<li class=menu-item>
-<a href=/docs/quickstart/ rel=section class=menu-item-active>
-<i class="fa fa-book fa-fw"></i>
-快速开始
-</a>
-</li>
-<li class=menu-item>
-<a href=/docs/themesettings rel=section>
-<i class="fa fa-star fa-fw"></i>
-主题配置
-</a>
-</li>
-<li class=menu-item>
-<a href=/docs/thirdparty/ rel=section>
-<i class="fa fa-american-sign-language-interpreting fa-fw"></i>
-第三方插件
-</a>
-</li>
-</ul>
-<ul class="sub-menu menu">
-<li class=menu-item>
-<a href=installation.html rel=section>
-<i class="fa fa-download fa-fw"></i>
-安装
-</a>
-</li>
-<li class=menu-item>
-<a href=configuration.html rel=section class=menu-item-active>
-<i class="fa fa-wrench fa-fw"></i>
-配置
-</a>
-</li>
-<li class=menu-item>
-<a href=deployment.html rel=section>
-<i class="fa fa-upload fa-fw"></i>
-发布
-</a>
-</li>
-<li class=menu-item>
-<a href=upgrade.html rel=section>
-<i class="fa fa-history fa-fw"></i>
-升级
-</a>
-</li>
-</ul>
-<div class=content-wrap style=margin-top:10px>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<div class=post-meta>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>348 字</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>1分钟</span>
-</span>
-<span id=/docs/quickstart/configuration.html class="leancloud_visitors post-visitor" data-flag-title=配置>
-<i class="fa fa-binoculars fa-fw"></i>
-<span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p><code>NexT</code> 主题默认使用模块化的配置文件进行，目录结构如下：</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>config
-<span style=color:#b44>`</span>-- _default
-    |-- config.toml
-    |-- languages.toml
-    |-- menu.toml
-    |-- params.toml
-    <span style=color:#b44>`</span>-- params.zh-CN.toml
-</code></pre></div><div class="note danger">
-<ul>
-<li><code>config.toml</code>： Hugo 相关系统级别参数配置</li>
-<li><code>languages.toml</code>： 站点语言配置(默认是中文)</li>
-<li><code>menu.toml</code>： 站点导航菜单配置</li>
-<li><code>params.toml</code>： 公共的第三方组件参数配置</li>
-<li><code>params.zh-CN.toml</code>： 中文站点的参数配置</li>
-</ul>
-</div>
-<p>在本地开发（写文章）过程中，为了便于调试或是保证一些账户信息不泄漏，可以在 config 目录下创建个 develop （名称可自定义）文件夹使用与 _default 文件下同名的配置文件来覆盖默认的配置信息。 比如：</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>config
-|-- _default
-<span style=color:#b44>`</span>-- develop
-    |-- params.toml
-    <span style=color:#b44>`</span>-- params.zh-CN.toml
-</code></pre></div><p>然后在生成站点时带上环境变量参数，例如： <code>hugo server -D -e develop</code> 。</p>
-<p>一般情况下，只需要调整 <code>menu.toml</code>、<code>params.toml</code> 和 <code>params.zh-CN.toml</code> 三个文件下与你站点个性化相关的参数即可，如想深入了解可以参考 <a href=/docs/themesettings/>主题配置</a>
-内容。</p>
-</div>
-<footer class=post-footer>
-<div class=post-eof style="width:100%;margin:30px 0"></div>
-<div class=addthis_inline_share_toolbox></div>
-<div id=wcomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
 </div>
 </main>
 <footer id=footer class=footer>

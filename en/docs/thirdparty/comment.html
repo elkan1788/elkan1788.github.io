@@ -106,6 +106,105 @@
 </nav> </div>
 </header>
 <main id=main class=main>
+<div class=main-inner>
+<ul class="sub-menu menu">
+<li class=menu-item>
+<a href=/en/docs/quickstart/ rel=section>
+<i class="fa fa-book fa-fw"></i>
+Quick Start
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/docs/themesettings rel=section>
+<i class="fa fa-star fa-fw"></i>
+Theme Settings
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/docs/thirdparty/ rel=section class=menu-item-active>
+<i class="fa fa-american-sign-language-interpreting fa-fw"></i>
+Thirdparty-Plugin
+</a>
+</li>
+</ul>
+<ul class="sub-menu menu">
+<li class=menu-item>
+<a href=comment.html rel=section class=menu-item-active>
+<i class="fa fa-comments fa-fw"></i>
+Comment
+</a>
+</li>
+<li class=menu-item>
+<a href=share.html rel=section>
+<i class="fa fa-share-alt fa-fw"></i>
+Share
+</a>
+</li>
+<li class=menu-item>
+<a href=statis.html rel=section>
+<i class="fa fa-bar-chart fa-fw"></i>
+Static
+</a>
+</li>
+<li class=menu-item>
+<a href=others.html rel=section>
+<i class="fa fa-arrows fa-fw"></i>
+Others
+</a>
+</li>
+</ul>
+<div class=content-wrap style=margin-top:10px>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<div class=post-meta>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>129 words</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>1 minutes</span>
+</span>
+<span id=/en/docs/thirdparty/comment.html class="leancloud_visitors post-visitor" data-flag-title=Comment>
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>Visited:</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>Currently, it supports the integrated use of livere, valine, waline and utterances, which are uniformly configured in [comment] parameter in the <code>params.toml</code> file is described as follows:</p>
+<h2 id=enable>Enable</h2>
+<p>Whether to enable the comment function of the article</p>
+<h2 id=module>Module</h2>
+<p>Which plug-in to use, livere, valine, waline and utterances</p>
+<h2 id=livereid>LiveReId</h2>
+<p>Livereid should be filled in when selecting livere comment plug-in</p>
+<h2 id=walineserurl>WalineSerURL</h2>
+<p>When selecting the waline comment plug-in, fill in the waline server address</p>
+<h2 id=utterancesxxx>UtterancesXXX</h2>
+<p>Select the utterances comment plugin</p>
+<div class="note danger">
+<ul>
+<li>Utterancesrepo: the address of the warehouse where the comment data is stored</li>
+<li>Utterancestheme: the style of the comment box. You can choose &ldquo;GitHub light&rdquo;, &ldquo;GitHub dark&rdquo;, &ldquo;preferred color scheme&rdquo;, &ldquo;GitHub dark orange&rdquo;, &ldquo;icy dark&rdquo; and &ldquo;dark blue&rdquo;</li>
+<li>Utterancestitle: how to map comments to issues. Options include &ldquo;pathname&rdquo;, &ldquo;URL&rdquo;, &ldquo;title&rdquo; and &ldquo;og: title&rdquo;</li>
+</ul>
+</div>
+</div>
+<footer class=post-footer>
+<div class=post-eof style="width:100%;margin:30px 0"></div>
+<div class=addthis_inline_share_toolbox></div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
 <div class=sidebar-toggle>
 <div class=sidebar-toggle-line-wrap>
 <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -271,105 +370,6 @@ TagCloud
 </section>
 </div>
 </aside>
-<div class=main-inner>
-<ul class="sub-menu menu">
-<li class=menu-item>
-<a href=/en/docs/quickstart/ rel=section>
-<i class="fa fa-book fa-fw"></i>
-Quick Start
-</a>
-</li>
-<li class=menu-item>
-<a href=/en/docs/themesettings rel=section>
-<i class="fa fa-star fa-fw"></i>
-Theme Settings
-</a>
-</li>
-<li class=menu-item>
-<a href=/en/docs/thirdparty/ rel=section class=menu-item-active>
-<i class="fa fa-american-sign-language-interpreting fa-fw"></i>
-Thirdparty-Plugin
-</a>
-</li>
-</ul>
-<ul class="sub-menu menu">
-<li class=menu-item>
-<a href=comment.html rel=section class=menu-item-active>
-<i class="fa fa-comments fa-fw"></i>
-Comment
-</a>
-</li>
-<li class=menu-item>
-<a href=share.html rel=section>
-<i class="fa fa-share-alt fa-fw"></i>
-Share
-</a>
-</li>
-<li class=menu-item>
-<a href=statis.html rel=section>
-<i class="fa fa-bar-chart fa-fw"></i>
-Static
-</a>
-</li>
-<li class=menu-item>
-<a href=others.html rel=section>
-<i class="fa fa-arrows fa-fw"></i>
-Others
-</a>
-</li>
-</ul>
-<div class=content-wrap style=margin-top:10px>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<div class=post-meta>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>129 words</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>Reading:</span>
-<span class=leancloud-view-count>1 minutes</span>
-</span>
-<span id=/en/docs/thirdparty/comment.html class="leancloud_visitors post-visitor" data-flag-title=Comment>
-<i class="fa fa-binoculars fa-fw"></i>
-<span class=post-meta-item-text>Visited:</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>Currently, it supports the integrated use of livere, valine, waline and utterances, which are uniformly configured in [comment] parameter in the <code>params.toml</code> file is described as follows:</p>
-<h2 id=enable>Enable</h2>
-<p>Whether to enable the comment function of the article</p>
-<h2 id=module>Module</h2>
-<p>Which plug-in to use, livere, valine, waline and utterances</p>
-<h2 id=livereid>LiveReId</h2>
-<p>Livereid should be filled in when selecting livere comment plug-in</p>
-<h2 id=walineserurl>WalineSerURL</h2>
-<p>When selecting the waline comment plug-in, fill in the waline server address</p>
-<h2 id=utterancesxxx>UtterancesXXX</h2>
-<p>Select the utterances comment plugin</p>
-<div class="note danger">
-<ul>
-<li>Utterancesrepo: the address of the warehouse where the comment data is stored</li>
-<li>Utterancestheme: the style of the comment box. You can choose &ldquo;GitHub light&rdquo;, &ldquo;GitHub dark&rdquo;, &ldquo;preferred color scheme&rdquo;, &ldquo;GitHub dark orange&rdquo;, &ldquo;icy dark&rdquo; and &ldquo;dark blue&rdquo;</li>
-<li>Utterancestitle: how to map comments to issues. Options include &ldquo;pathname&rdquo;, &ldquo;URL&rdquo;, &ldquo;title&rdquo; and &ldquo;og: title&rdquo;</li>
-</ul>
-</div>
-</div>
-<footer class=post-footer>
-<div class=post-eof style="width:100%;margin:30px 0"></div>
-<div class=addthis_inline_share_toolbox></div>
-<div id=wcomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
 </div>
 </main>
 <footer id=footer class=footer>

@@ -106,6 +106,109 @@
 </nav> </div>
 </header>
 <main id=main class=main>
+<div class=main-inner>
+<ul class="sub-menu menu">
+<li class=menu-item>
+<a href=/en/docs/quickstart/ rel=section class=menu-item-active>
+<i class="fa fa-book fa-fw"></i>
+Quick Start
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/docs/themesettings rel=section>
+<i class="fa fa-star fa-fw"></i>
+Theme Settings
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/docs/thirdparty/ rel=section>
+<i class="fa fa-american-sign-language-interpreting fa-fw"></i>
+Thirdparty-Plugin
+</a>
+</li>
+</ul>
+<ul class="sub-menu menu">
+<li class=menu-item>
+<a href=installation.html rel=section class=menu-item-active>
+<i class="fa fa-download fa-fw"></i>
+Installation
+</a>
+</li>
+<li class=menu-item>
+<a href=configuration.html rel=section>
+<i class="fa fa-wrench fa-fw"></i>
+Configuration
+</a>
+</li>
+<li class=menu-item>
+<a href=deployment.html rel=section>
+<i class="fa fa-upload fa-fw"></i>
+Deployment
+</a>
+</li>
+<li class=menu-item>
+<a href=upgrade.html rel=section>
+<i class="fa fa-history fa-fw"></i>
+Upgrade
+</a>
+</li>
+</ul>
+<div class=content-wrap style=margin-top:10px>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<div class=post-meta>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>184 words</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>1 minutes</span>
+</span>
+<span id=/en/docs/quickstart/installation.html class="leancloud_visitors post-visitor" data-flag-title=Installation>
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>Visited:</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>There were provides template and <code>Git submodule</code> two ways for install NexT theme, which can be selected according to your own situation.</p>
+<h2 id=template>Template</h2>
+<div class="note danger">
+Applicable to the case of setting up a personal site for the first time.
+</div>
+<p>Login github website with your account then visit <a href=https://github.com/hugo-next/hugo-theme-next-starter target=_blank rel=noopener>NexT Starter</a>
+, click the green button which name is <code>Use this template</code> and fill in your site name and description, after click bottom button with name <code>Create repository from template</code> that will automatically generate your own site code.</p>
+<blockquote>
+<p>Notice: In China, Recommended use <code>Gitee</code> repository link <a href=https://gitee.com/hugo-next/hugo-theme-next-starter target=_blank rel=noopener>NexT Starter</a>
+, and fork it into your space.</p>
+</blockquote>
+<p>Use <code>git clone</code> command line clone your site code into local and check in site folder fetch the <code>NexT</code> theme code with execute <code>git submodule update --init</code> command.</p>
+<h2 id=git-submodule>Git Submodule</h2>
+<div class="note danger">
+Applicable to situations where you want to migrate to the <code>NexT</code> theme.
+</div>
+<p>Switch to your site directory and use the following command to add topics:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>git submodule add  https://github.com/elkan1788/hugo-theme-next.git  themes/hugo-theme-next
+</code></pre></div><blockquote>
+<p>Notice: In China, Recommended to replace the Gitee respository link <code>https://gitee.com/lisenhui/hugo-theme-next.git</code></p>
+</blockquote>
+<p>Use <code>git submodule update --init</code> command to fetch the <code>NexT</code> theme code.</p>
+</div>
+<footer class=post-footer>
+<div class=post-eof style="width:100%;margin:30px 0"></div>
+<div class=addthis_inline_share_toolbox></div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
 <div class=sidebar-toggle>
 <div class=sidebar-toggle-line-wrap>
 <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -268,109 +371,6 @@ TagCloud
 </section>
 </div>
 </aside>
-<div class=main-inner>
-<ul class="sub-menu menu">
-<li class=menu-item>
-<a href=/en/docs/quickstart/ rel=section class=menu-item-active>
-<i class="fa fa-book fa-fw"></i>
-Quick Start
-</a>
-</li>
-<li class=menu-item>
-<a href=/en/docs/themesettings rel=section>
-<i class="fa fa-star fa-fw"></i>
-Theme Settings
-</a>
-</li>
-<li class=menu-item>
-<a href=/en/docs/thirdparty/ rel=section>
-<i class="fa fa-american-sign-language-interpreting fa-fw"></i>
-Thirdparty-Plugin
-</a>
-</li>
-</ul>
-<ul class="sub-menu menu">
-<li class=menu-item>
-<a href=installation.html rel=section class=menu-item-active>
-<i class="fa fa-download fa-fw"></i>
-Installation
-</a>
-</li>
-<li class=menu-item>
-<a href=configuration.html rel=section>
-<i class="fa fa-wrench fa-fw"></i>
-Configuration
-</a>
-</li>
-<li class=menu-item>
-<a href=deployment.html rel=section>
-<i class="fa fa-upload fa-fw"></i>
-Deployment
-</a>
-</li>
-<li class=menu-item>
-<a href=upgrade.html rel=section>
-<i class="fa fa-history fa-fw"></i>
-Upgrade
-</a>
-</li>
-</ul>
-<div class=content-wrap style=margin-top:10px>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<div class=post-meta>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>184 words</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>Reading:</span>
-<span class=leancloud-view-count>1 minutes</span>
-</span>
-<span id=/en/docs/quickstart/installation.html class="leancloud_visitors post-visitor" data-flag-title=Installation>
-<i class="fa fa-binoculars fa-fw"></i>
-<span class=post-meta-item-text>Visited:</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>There were provides template and <code>Git submodule</code> two ways for install NexT theme, which can be selected according to your own situation.</p>
-<h2 id=template>Template</h2>
-<div class="note danger">
-Applicable to the case of setting up a personal site for the first time.
-</div>
-<p>Login github website with your account then visit <a href=https://github.com/hugo-next/hugo-theme-next-starter target=_blank rel=noopener>NexT Starter</a>
-, click the green button which name is <code>Use this template</code> and fill in your site name and description, after click bottom button with name <code>Create repository from template</code> that will automatically generate your own site code.</p>
-<blockquote>
-<p>Notice: In China, Recommended use <code>Gitee</code> repository link <a href=https://gitee.com/hugo-next/hugo-theme-next-starter target=_blank rel=noopener>NexT Starter</a>
-, and fork it into your space.</p>
-</blockquote>
-<p>Use <code>git clone</code> command line clone your site code into local and check in site folder fetch the <code>NexT</code> theme code with execute <code>git submodule update --init</code> command.</p>
-<h2 id=git-submodule>Git Submodule</h2>
-<div class="note danger">
-Applicable to situations where you want to migrate to the <code>NexT</code> theme.
-</div>
-<p>Switch to your site directory and use the following command to add topics:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>git submodule add  https://github.com/elkan1788/hugo-theme-next.git  themes/hugo-theme-next
-</code></pre></div><blockquote>
-<p>Notice: In China, Recommended to replace the Gitee respository link <code>https://gitee.com/lisenhui/hugo-theme-next.git</code></p>
-</blockquote>
-<p>Use <code>git submodule update --init</code> command to fetch the <code>NexT</code> theme code.</p>
-</div>
-<footer class=post-footer>
-<div class=post-eof style="width:100%;margin:30px 0"></div>
-<div class=addthis_inline_share_toolbox></div>
-<div id=wcomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
 </div>
 </main>
 <footer id=footer class=footer>

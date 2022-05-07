@@ -106,6 +106,113 @@
 </nav> </div>
 </header>
 <main id=main class=main>
+<div class=main-inner>
+<ul class="sub-menu menu">
+<li class=menu-item>
+<a href=/en/docs/quickstart/ rel=section class=menu-item-active>
+<i class="fa fa-book fa-fw"></i>
+Quick Start
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/docs/themesettings rel=section>
+<i class="fa fa-star fa-fw"></i>
+Theme Settings
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/docs/thirdparty/ rel=section>
+<i class="fa fa-american-sign-language-interpreting fa-fw"></i>
+Thirdparty-Plugin
+</a>
+</li>
+</ul>
+<ul class="sub-menu menu">
+<li class=menu-item>
+<a href=installation.html rel=section>
+<i class="fa fa-download fa-fw"></i>
+Installation
+</a>
+</li>
+<li class=menu-item>
+<a href=configuration.html rel=section class=menu-item-active>
+<i class="fa fa-wrench fa-fw"></i>
+Configuration
+</a>
+</li>
+<li class=menu-item>
+<a href=deployment.html rel=section>
+<i class="fa fa-upload fa-fw"></i>
+Deployment
+</a>
+</li>
+<li class=menu-item>
+<a href=upgrade.html rel=section>
+<i class="fa fa-history fa-fw"></i>
+Upgrade
+</a>
+</li>
+</ul>
+<div class=content-wrap style=margin-top:10px>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<div class=post-meta>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>163 words</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>1 minutes</span>
+</span>
+<span id=/en/docs/quickstart/configuration.html class="leancloud_visitors post-visitor" data-flag-title=Configuration>
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>Visited:</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p><code>NexT</code> theme uses modular configuration files by default, and the directory structure is as follows:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>config
+<span style=color:#b44>`</span>-- _default
+    |-- config.toml
+    |-- languages.toml
+    |-- menu.toml
+    |-- params.toml
+    <span style=color:#b44>`</span>-- params.zh-CN.toml
+</code></pre></div><div class="note danger">
+<ul>
+<li><code>config.toml</code>： Hugo global settings</li>
+<li><code>languages.toml</code>： Multilingual settings</li>
+<li><code>menu.toml</code>： Site&rsquo;s menu settings</li>
+<li><code>params.toml</code>： Common third party settings</li>
+<li><code>params.zh-CN.toml</code>： Parameter configuration of Chinese website</li>
+</ul>
+</div>
+<p>In the process of local development (writing articles), in order to facilitate debugging or ensure that some account information is not leaked, you can create a development (customizable name) folder under the config directory to use and configuration file with the same name under the _default folder files to overwrite the default configuration information. For example:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>config
+|-- _default
+<span style=color:#b44>`</span>-- develop
+    |-- params.toml
+    <span style=color:#b44>`</span>-- params.zh-CN.toml
+</code></pre></div><p>Then bring the environment variable parameters when generating the site, for example: <code>hugo server -D -e develop</code> 。</p>
+<p>Just adjust <code>menu.toml</code>、<code>params.toml</code> and <code>params.en.toml</code> the parameters related to the personalization of your site under the three files can be used. For more information, please refer to <a href=/docs/themesettings/>Topic configuration</a>
+.</p>
+</div>
+<footer class=post-footer>
+<div class=post-eof style="width:100%;margin:30px 0"></div>
+<div class=addthis_inline_share_toolbox></div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
 <div class=sidebar-toggle>
 <div class=sidebar-toggle-line-wrap>
 <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -263,113 +370,6 @@ TagCloud
 </section>
 </div>
 </aside>
-<div class=main-inner>
-<ul class="sub-menu menu">
-<li class=menu-item>
-<a href=/en/docs/quickstart/ rel=section class=menu-item-active>
-<i class="fa fa-book fa-fw"></i>
-Quick Start
-</a>
-</li>
-<li class=menu-item>
-<a href=/en/docs/themesettings rel=section>
-<i class="fa fa-star fa-fw"></i>
-Theme Settings
-</a>
-</li>
-<li class=menu-item>
-<a href=/en/docs/thirdparty/ rel=section>
-<i class="fa fa-american-sign-language-interpreting fa-fw"></i>
-Thirdparty-Plugin
-</a>
-</li>
-</ul>
-<ul class="sub-menu menu">
-<li class=menu-item>
-<a href=installation.html rel=section>
-<i class="fa fa-download fa-fw"></i>
-Installation
-</a>
-</li>
-<li class=menu-item>
-<a href=configuration.html rel=section class=menu-item-active>
-<i class="fa fa-wrench fa-fw"></i>
-Configuration
-</a>
-</li>
-<li class=menu-item>
-<a href=deployment.html rel=section>
-<i class="fa fa-upload fa-fw"></i>
-Deployment
-</a>
-</li>
-<li class=menu-item>
-<a href=upgrade.html rel=section>
-<i class="fa fa-history fa-fw"></i>
-Upgrade
-</a>
-</li>
-</ul>
-<div class=content-wrap style=margin-top:10px>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<div class=post-meta>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>163 words</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>Reading:</span>
-<span class=leancloud-view-count>1 minutes</span>
-</span>
-<span id=/en/docs/quickstart/configuration.html class="leancloud_visitors post-visitor" data-flag-title=Configuration>
-<i class="fa fa-binoculars fa-fw"></i>
-<span class=post-meta-item-text>Visited:</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p><code>NexT</code> theme uses modular configuration files by default, and the directory structure is as follows:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>config
-<span style=color:#b44>`</span>-- _default
-    |-- config.toml
-    |-- languages.toml
-    |-- menu.toml
-    |-- params.toml
-    <span style=color:#b44>`</span>-- params.zh-CN.toml
-</code></pre></div><div class="note danger">
-<ul>
-<li><code>config.toml</code>： Hugo global settings</li>
-<li><code>languages.toml</code>： Multilingual settings</li>
-<li><code>menu.toml</code>： Site&rsquo;s menu settings</li>
-<li><code>params.toml</code>： Common third party settings</li>
-<li><code>params.zh-CN.toml</code>： Parameter configuration of Chinese website</li>
-</ul>
-</div>
-<p>In the process of local development (writing articles), in order to facilitate debugging or ensure that some account information is not leaked, you can create a development (customizable name) folder under the config directory to use and configuration file with the same name under the _default folder files to overwrite the default configuration information. For example:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>config
-|-- _default
-<span style=color:#b44>`</span>-- develop
-    |-- params.toml
-    <span style=color:#b44>`</span>-- params.zh-CN.toml
-</code></pre></div><p>Then bring the environment variable parameters when generating the site, for example: <code>hugo server -D -e develop</code> 。</p>
-<p>Just adjust <code>menu.toml</code>、<code>params.toml</code> and <code>params.en.toml</code> the parameters related to the personalization of your site under the three files can be used. For more information, please refer to <a href=/docs/themesettings/>Topic configuration</a>
-.</p>
-</div>
-<footer class=post-footer>
-<div class=post-eof style="width:100%;margin:30px 0"></div>
-<div class=addthis_inline_share_toolbox></div>
-<div id=wcomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
 </div>
 </main>
 <footer id=footer class=footer>

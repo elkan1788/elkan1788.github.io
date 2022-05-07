@@ -106,6 +106,104 @@
 </nav> </div>
 </header>
 <main id=main class=main>
+<div class=main-inner>
+<ul class="sub-menu menu">
+<li class=menu-item>
+<a href=/docs/quickstart/ rel=section>
+<i class="fa fa-book fa-fw"></i>
+快速开始
+</a>
+</li>
+<li class=menu-item>
+<a href=/docs/themesettings rel=section class=menu-item-active>
+<i class="fa fa-star fa-fw"></i>
+主题配置
+</a>
+</li>
+<li class=menu-item>
+<a href=/docs/thirdparty/ rel=section>
+<i class="fa fa-american-sign-language-interpreting fa-fw"></i>
+第三方插件
+</a>
+</li>
+</ul>
+<ul class="sub-menu menu">
+<li class=menu-item>
+<a href=systemparas.html rel=section>
+<i class="fa fa-cog fa-fw"></i>
+系统参数
+</a>
+</li>
+<li class=menu-item>
+<a href=customparas.html rel=section>
+<i class="fa fa-user-plus fa-fw"></i>
+自定义参数
+</a>
+</li>
+<li class=menu-item>
+<a href=menuparas.html rel=section class=menu-item-active>
+<i class="fa fa-bars fa-fw"></i>
+菜单配置
+</a>
+</li>
+<li class=menu-item>
+<a href=interlization.html rel=section>
+<i class="fa fa-language fa-fw"></i>
+多语言
+</a>
+</li>
+</ul>
+<div class=content-wrap style=margin-top:10px>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<div class=post-meta>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>147 字</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>1分钟</span>
+</span>
+<span id=/docs/themesettings/menuparas.html class="leancloud_visitors post-visitor" data-flag-title=菜单设置>
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>阅读次数：</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>菜单设置(menu.[language-code].toml)是站点的导航链接，暂只支持一级菜单，说明如下：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-toml data-lang=toml>[[main]]
+  identifier = <span style=color:#b44>&#34;home&#34;</span>
+  name = <span style=color:#b44>&#34;Home&#34;</span>
+  pre = <span style=color:#b44>&#34;home&#34;</span>
+  url = <span style=color:#b44>&#34;/&#34;</span>
+  weight = <span style=color:#666>1</span>
+</code></pre></div><div class="note danger">
+<ul>
+<li>[[main]]: 菜单根目录名称定义</li>
+<li>identifier：菜单的唯一标识</li>
+<li>name： 菜单名称</li>
+<li>pre: 菜单 <a href=http://www.fontawesome.com.cn/faicons/>fontawesome</a> 样式名称</li>
+<li>url: 菜单链接地址，或是站点内或公网链接</li>
+<li>weight: 菜单显示顺序，数字越小越前</li>
+</ul>
+</div>
+</div>
+<footer class=post-footer>
+<div class=post-eof style="width:100%;margin:30px 0"></div>
+<div class=addthis_inline_share_toolbox></div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
 <div class=sidebar-toggle>
 <div class=sidebar-toggle-line-wrap>
 <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -263,104 +361,6 @@ GitHub
 </section>
 </div>
 </aside>
-<div class=main-inner>
-<ul class="sub-menu menu">
-<li class=menu-item>
-<a href=/docs/quickstart/ rel=section>
-<i class="fa fa-book fa-fw"></i>
-快速开始
-</a>
-</li>
-<li class=menu-item>
-<a href=/docs/themesettings rel=section class=menu-item-active>
-<i class="fa fa-star fa-fw"></i>
-主题配置
-</a>
-</li>
-<li class=menu-item>
-<a href=/docs/thirdparty/ rel=section>
-<i class="fa fa-american-sign-language-interpreting fa-fw"></i>
-第三方插件
-</a>
-</li>
-</ul>
-<ul class="sub-menu menu">
-<li class=menu-item>
-<a href=systemparas.html rel=section>
-<i class="fa fa-cog fa-fw"></i>
-系统参数
-</a>
-</li>
-<li class=menu-item>
-<a href=customparas.html rel=section>
-<i class="fa fa-user-plus fa-fw"></i>
-自定义参数
-</a>
-</li>
-<li class=menu-item>
-<a href=menuparas.html rel=section class=menu-item-active>
-<i class="fa fa-bars fa-fw"></i>
-菜单配置
-</a>
-</li>
-<li class=menu-item>
-<a href=interlization.html rel=section>
-<i class="fa fa-language fa-fw"></i>
-多语言
-</a>
-</li>
-</ul>
-<div class=content-wrap style=margin-top:10px>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<div class=post-meta>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>字数：</span>
-<span class=leancloud-world-count>147 字</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>阅读：</span>
-<span class=leancloud-view-count>1分钟</span>
-</span>
-<span id=/docs/themesettings/menuparas.html class="leancloud_visitors post-visitor" data-flag-title=菜单设置>
-<i class="fa fa-binoculars fa-fw"></i>
-<span class=post-meta-item-text>阅读次数：</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>菜单设置(menu.[language-code].toml)是站点的导航链接，暂只支持一级菜单，说明如下：</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-toml data-lang=toml>[[main]]
-  identifier = <span style=color:#b44>&#34;home&#34;</span>
-  name = <span style=color:#b44>&#34;Home&#34;</span>
-  pre = <span style=color:#b44>&#34;home&#34;</span>
-  url = <span style=color:#b44>&#34;/&#34;</span>
-  weight = <span style=color:#666>1</span>
-</code></pre></div><div class="note danger">
-<ul>
-<li>[[main]]: 菜单根目录名称定义</li>
-<li>identifier：菜单的唯一标识</li>
-<li>name： 菜单名称</li>
-<li>pre: 菜单 <a href=http://www.fontawesome.com.cn/faicons/>fontawesome</a> 样式名称</li>
-<li>url: 菜单链接地址，或是站点内或公网链接</li>
-<li>weight: 菜单显示顺序，数字越小越前</li>
-</ul>
-</div>
-</div>
-<footer class=post-footer>
-<div class=post-eof style="width:100%;margin:30px 0"></div>
-<div class=addthis_inline_share_toolbox></div>
-<div id=wcomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
 </div>
 </main>
 <footer id=footer class=footer>

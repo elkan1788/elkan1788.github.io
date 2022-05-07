@@ -106,6 +106,115 @@
 </nav> </div>
 </header>
 <main id=main class=main>
+<div class=main-inner>
+<ul class="sub-menu menu">
+<li class=menu-item>
+<a href=/en/docs/quickstart/ rel=section class=menu-item-active>
+<i class="fa fa-book fa-fw"></i>
+Quick Start
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/docs/themesettings rel=section>
+<i class="fa fa-star fa-fw"></i>
+Theme Settings
+</a>
+</li>
+<li class=menu-item>
+<a href=/en/docs/thirdparty/ rel=section>
+<i class="fa fa-american-sign-language-interpreting fa-fw"></i>
+Thirdparty-Plugin
+</a>
+</li>
+</ul>
+<ul class="sub-menu menu">
+<li class=menu-item>
+<a href=installation.html rel=section>
+<i class="fa fa-download fa-fw"></i>
+Installation
+</a>
+</li>
+<li class=menu-item>
+<a href=configuration.html rel=section>
+<i class="fa fa-wrench fa-fw"></i>
+Configuration
+</a>
+</li>
+<li class=menu-item>
+<a href=deployment.html rel=section class=menu-item-active>
+<i class="fa fa-upload fa-fw"></i>
+Deployment
+</a>
+</li>
+<li class=menu-item>
+<a href=upgrade.html rel=section>
+<i class="fa fa-history fa-fw"></i>
+Upgrade
+</a>
+</li>
+</ul>
+<div class=content-wrap style=margin-top:10px>
+<div id=content class=content>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<div class=post-meta>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>196 words</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>1 minutes</span>
+</span>
+<span id=/en/docs/quickstart/deployment.html class="leancloud_visitors post-visitor" data-flag-title=Deployment>
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>Visited:</span>
+<span class=leancloud-visitors-count></span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p><code>GitHub</code> or <code>Gitee</code> can support both <code>Hugo</code> source code and static site code.</p>
+<p>##Hugo source code</p>
+<p>###GitHub operation</p>
+<p>Open the <code>GitHub</code> repository access address of your site, and select the corresponding branch and path of the site code in the source under the <code>settings -> pages</code> path to take effect.</p>
+<p>###Gitee operation</p>
+<p>Open the <code>Gitee</code> repository access address of your site, select the corresponding location of the site in the deployment branch and deployment directory under the path of <code>service -> gitee pages</code>, and click the Publish button to take effect.</p>
+<blockquote>
+<p>Note: it supports enabling the forced use of HTTPS function.</p>
+</blockquote>
+<p>##Static code</p>
+<p>Generate the static code of the whole station by using the <code>Hugo</code> command. Refer to the following:</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ hugo -e production -d product
+Start building sites …
+hugo v0.92.1-85E2E862 windows/amd64 <span style=color:#b8860b>BuildDate</span><span style=color:#666>=</span>2022-01-27T11:44:41Z <span style=color:#b8860b>VendorInfo</span><span style=color:#666>=</span>gohugoio
+
+                   | ZH-CN
+-------------------+--------
+  Pages            |    <span style=color:#666>20</span>
+  Paginator pages  |     <span style=color:#666>0</span>
+  Non-page files   |     <span style=color:#666>0</span>
+  Static files     |    <span style=color:#666>26</span>
+  Processed images |     <span style=color:#666>0</span>
+  Aliases          |     <span style=color:#666>6</span>
+  Sitemaps         |     <span style=color:#666>1</span>
+  Cleaned          |     <span style=color:#666>0</span>
+
+Total in <span style=color:#666>128</span> ms
+</code></pre></div><p>Then package and publish the files in the product directory under the root directory of your site service, and enter the site address to access it.</p>
+</div>
+<footer class=post-footer>
+<div class=post-eof style="width:100%;margin:30px 0"></div>
+<div class=addthis_inline_share_toolbox></div>
+<div id=wcomments></div>
+</footer>
+</article>
+</section>
+</div>
+</div>
 <div class=sidebar-toggle>
 <div class=sidebar-toggle-line-wrap>
 <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
@@ -263,115 +372,6 @@ TagCloud
 </section>
 </div>
 </aside>
-<div class=main-inner>
-<ul class="sub-menu menu">
-<li class=menu-item>
-<a href=/en/docs/quickstart/ rel=section class=menu-item-active>
-<i class="fa fa-book fa-fw"></i>
-Quick Start
-</a>
-</li>
-<li class=menu-item>
-<a href=/en/docs/themesettings rel=section>
-<i class="fa fa-star fa-fw"></i>
-Theme Settings
-</a>
-</li>
-<li class=menu-item>
-<a href=/en/docs/thirdparty/ rel=section>
-<i class="fa fa-american-sign-language-interpreting fa-fw"></i>
-Thirdparty-Plugin
-</a>
-</li>
-</ul>
-<ul class="sub-menu menu">
-<li class=menu-item>
-<a href=installation.html rel=section>
-<i class="fa fa-download fa-fw"></i>
-Installation
-</a>
-</li>
-<li class=menu-item>
-<a href=configuration.html rel=section>
-<i class="fa fa-wrench fa-fw"></i>
-Configuration
-</a>
-</li>
-<li class=menu-item>
-<a href=deployment.html rel=section class=menu-item-active>
-<i class="fa fa-upload fa-fw"></i>
-Deployment
-</a>
-</li>
-<li class=menu-item>
-<a href=upgrade.html rel=section>
-<i class="fa fa-history fa-fw"></i>
-Upgrade
-</a>
-</li>
-</ul>
-<div class=content-wrap style=margin-top:10px>
-<div id=content class=content>
-<section id=posts class=posts-expand>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<div class=post-meta>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>196 words</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>Reading:</span>
-<span class=leancloud-view-count>1 minutes</span>
-</span>
-<span id=/en/docs/quickstart/deployment.html class="leancloud_visitors post-visitor" data-flag-title=Deployment>
-<i class="fa fa-binoculars fa-fw"></i>
-<span class=post-meta-item-text>Visited:</span>
-<span class=leancloud-visitors-count></span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p><code>GitHub</code> or <code>Gitee</code> can support both <code>Hugo</code> source code and static site code.</p>
-<p>##Hugo source code</p>
-<p>###GitHub operation</p>
-<p>Open the <code>GitHub</code> repository access address of your site, and select the corresponding branch and path of the site code in the source under the <code>settings -> pages</code> path to take effect.</p>
-<p>###Gitee operation</p>
-<p>Open the <code>Gitee</code> repository access address of your site, select the corresponding location of the site in the deployment branch and deployment directory under the path of <code>service -> gitee pages</code>, and click the Publish button to take effect.</p>
-<blockquote>
-<p>Note: it supports enabling the forced use of HTTPS function.</p>
-</blockquote>
-<p>##Static code</p>
-<p>Generate the static code of the whole station by using the <code>Hugo</code> command. Refer to the following:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ hugo -e production -d product
-Start building sites …
-hugo v0.92.1-85E2E862 windows/amd64 <span style=color:#b8860b>BuildDate</span><span style=color:#666>=</span>2022-01-27T11:44:41Z <span style=color:#b8860b>VendorInfo</span><span style=color:#666>=</span>gohugoio
-
-                   | ZH-CN
--------------------+--------
-  Pages            |    <span style=color:#666>20</span>
-  Paginator pages  |     <span style=color:#666>0</span>
-  Non-page files   |     <span style=color:#666>0</span>
-  Static files     |    <span style=color:#666>26</span>
-  Processed images |     <span style=color:#666>0</span>
-  Aliases          |     <span style=color:#666>6</span>
-  Sitemaps         |     <span style=color:#666>1</span>
-  Cleaned          |     <span style=color:#666>0</span>
-
-Total in <span style=color:#666>128</span> ms
-</code></pre></div><p>Then package and publish the files in the product directory under the root directory of your site service, and enter the site address to access it.</p>
-</div>
-<footer class=post-footer>
-<div class=post-eof style="width:100%;margin:30px 0"></div>
-<div class=addthis_inline_share_toolbox></div>
-<div id=wcomments></div>
-</footer>
-</article>
-</section>
-</div>
-</div>
 </div>
 </main>
 <footer id=footer class=footer>
