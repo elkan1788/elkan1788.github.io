@@ -10,7 +10,7 @@ tags:
 
 There's always something new on    Github, and it's not unwittingly an interesting game to play with as a personal developer's lettercard. The effect is as follows:
 
-![01-24-elkan1788-profile-02.png](//lisenhui.gitee.io/imgs/blog/2021/01-24-elkan1788-profile-02.png)
+![01-24-elkan1788-profile-02.png](//imgs.lisenhui.cn/blog/2021/01-24-elkan1788-profile-02.png)
 
 It's not cumbersome to operate, as was the case with previous pages services, just prepare a specific repository, as follows:
 
@@ -20,14 +20,14 @@ It's not cumbersome to operate, as was the case with previous pages services, ju
 
 Apply for a public repository with the same name as your user name on Github, and you'll find a "praise" prompt from Github that reads:
 
-![01-24-elkan1788-profile-01.png](//lisenhui.gitee.io/imgs/blog/2021/01-24-elkan1788-profile-01.png)
+![01-24-elkan1788-profile-01.png](//imgs.lisenhui.cn/blog/2021/01-24-elkan1788-profile-01.png)
 
 
-Once the repository is created, a 'README.md' file is prepared by default, and you can then write the relevant information on it. 
+Once the repository is created, a 'README.md' file is prepared by default, and you can then write the relevant information on it.
 
 Personal introduction information
 
-Next up is you'll add personal information to 'README.md', write with standard markdown grammar editing, and support a variety of emoticons to add anything you want. By the way, you can use the Github API to present your own repository-related code submission, quality, hitting, and more, with an opening introduction. 
+Next up is you'll add personal information to 'README.md', write with standard markdown grammar editing, and support a variety of emoticons to add anything you want. By the way, you can use the Github API to present your own repository-related code submission, quality, hitting, and more, with an opening introduction.
 
 ## 3. Example
 

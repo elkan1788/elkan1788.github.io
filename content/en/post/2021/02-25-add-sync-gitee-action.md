@@ -11,19 +11,19 @@ toc: true
 ---
 
 ## 1. Background
-You were born as a programmer and certainly know the importance of backup. Besides, in the context of the current environment, the political relations in the United States are still rather chaotic, and for the projects stored on Github, it is no longer a country of technological freedom. So it's still necessary for our code to have a "double" backup, and then we'll show you how to use Action on Github  to synchronize the code above Github  to the Gitee warehouse site in China. 
+You were born as a programmer and certainly know the importance of backup. Besides, in the context of the current environment, the political relations in the United States are still rather chaotic, and for the projects stored on Github, it is no longer a country of technological freedom. So it's still necessary for our code to have a "double" backup, and then we'll show you how to use Action on Github  to synchronize the code above Github  to the Gitee warehouse site in China.
 
 <!--more-->
 
 ## 2. Preparations
 
-Add Github Action  to your blog project after an unwitting glance at a [Git Page Action](https://github.com/marketplace/action/gitee-pages-action)  code that feels good after a simple attempt to verify that it's still useful.  Most of the steps in the above site have been introduced, here is probably a small conclusion to pay attention to the point. 
+Add Github Action  to your blog project after an unwitting glance at a [Git Page Action](https://github.com/marketplace/action/gitee-pages-action)  code that feels good after a simple attempt to verify that it's still useful.  Most of the steps in the above site have been introduced, here is probably a small conclusion to pay attention to the point.
 
 ### 2.1 Prepare the SSH key
 
-When you generate keys locallyusing the ssh-keygen command,don'tuse a password, just keep tapping the enter key while executing the'ssh-keygen-t  rsa  -C 'youremail@example.com' command. 
+When you generate keys locallyusing the ssh-keygen command,don'tuse a password, just keep tapping the enter key while executing the'ssh-keygen-t  rsa  -C 'youremail@example.com' command.
 
-![gen_ssh_key.png](//lisenhui.gitee.io/imgs/blog/2021/02-25-gen_ssh_key.png)
+![gen_ssh_key.png](//imgs.lisenhui.cn/blog/2021/02-25-gen_ssh_key.png)
 
 ### 2.2 Gitee Related
 
@@ -31,15 +31,15 @@ Github and  Gitee are recommended to use the same key, and they are set up as fo
 
 1.Github: [Settings -> SSH and GPG keys](https://github.com/settings/keys)
 
-![add_ssh_key_github.png](//lisenhui.gitee.io/imgs/blog/2021/02-25-add_ssh_key_github.png)
+![add_ssh_key_github.png](//imgs.lisenhui.cn/blog/2021/02-25-add_ssh_key_github.png)
 
 2.Gitee: "Security Settings - SSH Public Key" (https://gitee.com/profile/sshkeys).
 
-![add_ssh_key_gitee.png](//lisenhui.gitee.io/imgs/blog/2021/02-25-add_ssh_key_gitee.png)
+![add_ssh_key_gitee.png](//imgs.lisenhui.cn/blog/2021/02-25-add_ssh_key_gitee.png)
 
-Another important point is, be sure to pay attention to Gitee's public number:  giteecom, or the github workflow execution will fail later. 
+Another important point is, be sure to pay attention to Gitee's public number:  giteecom, or the github workflow execution will fail later.
 
-![wechat_notification.png](//lisenhui.gitee.io/imgs/blog/2021/02-25-wechat_notification.png)
+![wechat_notification.png](//imgs.lisenhui.cn/blog/2021/02-25-wechat_notification.png)
 
 ### 2.3 Github encryption settings
 
@@ -95,16 +95,16 @@ Note: A small modification of the original version is made here, divided into 2 
 
 The effect of the operation of the 2.4
 
-When you push the code to the Github  repository, you'll have automatically sync the code to the Gitee repository, and you'll re-create the static page service, saving the process of manual intervention. 
+When you push the code to the Github  repository, you'll have automatically sync the code to the Gitee repository, and you'll re-create the static page service, saving the process of manual intervention.
 
-![02-25-sync-2-gitee-flow-01.png](//lisenhui.gitee.io/imgs/blog/2021/02-25-sync-2-gitee-flow-01.png)
+![02-25-sync-2-gitee-flow-01.png](//imgs.lisenhui.cn/blog/2021/02-25-sync-2-gitee-flow-01.png)
 
 
 ## 3.Summary
 
-The whole scenario is relatively simple to implement, and the only risk that may exist is the process of the password process. But this is only a CI process, the log also has desensitization operation, so it is much more secure, and like the individual's account will not receive special attention. 
+The whole scenario is relatively simple to implement, and the only risk that may exist is the process of the password process. But this is only a CI process, the log also has desensitization operation, so it is much more secure, and like the individual's account will not receive special attention.
 
-This is the first time you've experienced the charm of Github Action, and you can keep an eye on it, which is still a great help for automated testing for some small open source projects. 
+This is the first time you've experienced the charm of Github Action, and you can keep an eye on it, which is still a great help for automated testing for some small open source projects.
 
 
 ## 4.Reference

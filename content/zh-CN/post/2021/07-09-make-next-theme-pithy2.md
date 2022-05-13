@@ -24,7 +24,7 @@ toc: true
 
 或许大家觉得这个功能有点软肋，原因就是个人博客的流量并不会很大。但流量小并不是意味着没有流量，所以我们还是可以增加个中英切换的功能，来助力我们推广自己的博客空间。而且`Hugo`引擎在多语言化这块的开发也比较简单，不过现在是手动模式，也就意味着你在发表文章写两份。增加中英文切换功能后的效果参考如下：（就是在左上角添加了切换入口）
 
-![Translate Function](//lisenhui.gitee.io/imgs/blog/2021/07-09-hugo-next-translate-func.png)
+![Translate Function](//imgs.lisenhui.cn/blog/2021/07-09-hugo-next-translate-func.png)
 
 > 后续考虑是否可能引入自动翻译的模式来加载，可以减少写文章耗费的时间。
 
@@ -32,11 +32,11 @@ toc: true
 
 结合上面的中英双语切换功能，对于主题的配置内容管理来说就会变的比较混乱，个人不喜欢在一个文件中写满太多的配置参数。而这块的想法正好`Hugo`引擎的设计不谋而合，它天然就支持按分类的管理方式来独立配置不同的参数。
 
-![Setting Files](//lisenhui.gitee.io/imgs/blog/2021/07-09-hugo-next-setting-files.png)
+![Setting Files](//imgs.lisenhui.cn/blog/2021/07-09-hugo-next-setting-files.png)
 
 同时也对本主题中使用的各服务组件配置做了分类，这样显示更加清楚明了，也便于后续参数的调整及优化。
 
-![Setting Parameters](//lisenhui.gitee.io/imgs/blog/2021/07-09-hugo-next-setting-paras.png)
+![Setting Parameters](//imgs.lisenhui.cn/blog/2021/07-09-hugo-next-setting-paras.png)
 
 ## 4.addthis分享
 
@@ -49,7 +49,7 @@ toc: true
 
 实现的效果如下：
 
-![Add this Share](//lisenhui.gitee.io/imgs/blog/2021/07-09-hugo-next-addthis-share.png)
+![Add this Share](//imgs.lisenhui.cn/blog/2021/07-09-hugo-next-addthis-share.png)
 
 ## 5.本地搜索优化
 
@@ -71,7 +71,7 @@ toc: true
 
 有网友反馈本主题无法支持数学公式的渲染，后来分析了下发现是之前优化文件引用中把`MathJax`文件给移除所造成的。于是重新修复了此功能，使用时只需要在文章的页面参数中加入`math: true`配置即可，效果如下：
 
-![Math Function](//lisenhui.gitee.io/imgs/blog/2021/07-09-hugo-next-math-func.png)
+![Math Function](//imgs.lisenhui.cn/blog/2021/07-09-hugo-next-math-func.png)
 
 ## 7.Waline评论
 
@@ -104,4 +104,4 @@ toc: true
 
 后续会逐步优化使用手册和主题的其他问题，也欢迎更多爱好`NexT`的网友一起参与进来，共同建设，期待。
 
-![my-hugo-blog](https://lisenhui.gitee.io/imgs/blog/my-hugo-blog.png)
+![my-hugo-blog](https://imgs.lisenhui.cn/blog/my-hugo-blog.png)

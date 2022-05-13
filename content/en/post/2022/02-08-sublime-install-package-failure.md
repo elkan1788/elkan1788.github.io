@@ -12,7 +12,7 @@ Recently, there was something wrong with the computer previously assigned by the
 
 <!--more-->
 
-![There are no packages available for installation](//lisenhui.gitee.io/imgs/blog/2022/02-08-sublime-install-package-failure.png)
+![There are no packages available for installation](//imgs.lisenhui.cn/blog/2022/02-08-sublime-install-package-failure.png)
 
 > Error tips: There are no packages available for installation
 

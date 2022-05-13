@@ -21,11 +21,11 @@ tags:
 
 于是检查 MobaXterm 的登录配置，个人习惯使用已经配置好的用户名登录，但似乎也是没有问题呀。
 
-![mobaxterm-login-credential.png](//lisenhui.gitee.io/imgs/blog/2022/04-04-mobaxterm-login-credential.png)
+![mobaxterm-login-credential.png](//imgs.lisenhui.cn/blog/2022/04-04-mobaxterm-login-credential.png)
 
 然后点击下旁边的 Passwords 标签卡发现里面也是存储 2 个密码，难道说就是这个原因？
 
-![mobaxterm-save-password.png](//lisenhui.gitee.io/imgs/blog/2022/04-04-mobaxterm-save-password.png)
+![mobaxterm-save-password.png](//imgs.lisenhui.cn/blog/2022/04-04-mobaxterm-save-password.png)
 
 果断的删除了 Passwords 里的这两 2 个密码记录，再次登录虚拟机的服务器，终于得到自己想到的结局。 🙊
 

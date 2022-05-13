@@ -30,30 +30,30 @@ and the repository exists.
 
 <!--more-->
 
-![git-extensions-failed-01.png](//lisenhui.gitee.io/imgs/blog/2021/02-22-git-extensions-failed-01.png)
+![git-extensions-failed-01.png](//imgs.lisenhui.cn/blog/2021/02-22-git-extensions-failed-01.png)
 
 
-See this error is really a face of hair, ah, did not modify any SSH KEY-related configuration, there is no corresponding permissions to operate it? 
+See this error is really a face of hair, ah, did not modify any SSH KEY-related configuration, there is no corresponding permissions to operate it?
 
-The first thing that came to mind was, was the local SSH KEY cleaned up? However, after examining the file, everything is fine, and it is normal to use the git push command. It's really hard to understand, for the time being can only refer to the wrong prompt to come out and try to fix the operation. 
+The first thing that came to mind was, was the local SSH KEY cleaned up? However, after examining the file, everything is fine, and it is normal to use the git push command. It's really hard to understand, for the time being can only refer to the wrong prompt to come out and try to fix the operation.
 
-![git-extensions-failed-02.png](//lisenhui.gitee.io/imgs/blog/2021/02-22-git-extensions-failed-02.png)
+![git-extensions-failed-02.png](//imgs.lisenhui.cn/blog/2021/02-22-git-extensions-failed-02.png)
 
 ## Preliminary Solution
 
 Based on the prompts of the error window, use the Putty tool to generate a Private mode for the local SSH KEY, as follows:
 
-![git-extensions-failed-03.png](//lisenhui.gitee.io/imgs/blog/2021/02-22-git-extensions-failed-03.png)
+![git-extensions-failed-03.png](//imgs.lisenhui.cn/blog/2021/02-22-git-extensions-failed-03.png)
 
-Then load this Private KEY into the push process and click the push button again to see the action success prompt. 
+Then load this Private KEY into the push process and click the push button again to see the action success prompt.
 
-![git-extensions-failed-04.png](//lisenhui.gitee.io/imgs/blog/2021/02-22-git-extensions-failed-04.png)
+![git-extensions-failed-04.png](//imgs.lisenhui.cn/blog/2021/02-22-git-extensions-failed-04.png)
 
 ## Problem positioning
 
-Although the problem of pushing was solved, I still found things a little strange and strange. So I thought about whether the configuration of Git Extensions has changed, after some search testing, confirmed that it is due to the official current default in Windows to use Putty as a client, adjust it to OpenSSH mode, the problem no longer occurs. 
+Although the problem of pushing was solved, I still found things a little strange and strange. So I thought about whether the configuration of Git Extensions has changed, after some search testing, confirmed that it is due to the official current default in Windows to use Putty as a client, adjust it to OpenSSH mode, the problem no longer occurs.
 
-![git-extensions-failed-05.png](//lisenhui.gitee.io/imgs/blog/2021/02-22-git-extensions-failed-05.png)
+![git-extensions-failed-05.png](//imgs.lisenhui.cn/blog/2021/02-22-git-extensions-failed-05.png)
 
 ## Summary
 

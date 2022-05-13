@@ -12,7 +12,7 @@ tags:
 
 <!--more-->
 
-![There are no packages available for installation](//lisenhui.gitee.io/imgs/blog/2022/02-08-sublime-install-package-failure.png)
+![There are no packages available for installation](//imgs.lisenhui.cn/blog/2022/02-08-sublime-install-package-failure.png)
 
 > 错误信息：There are no packages available for installation
 
