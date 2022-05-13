@@ -11,8 +11,8 @@ MonthFormat = "01-02"
 ArticleDecContent = "This blog post article is under the <a href='https://creativecommons.org/licenses/by-nc-sa/3.0/' target='_blank' style='text-decoration: underline;'>CC BY-NC-SA 3.0</a> license,Please indicate the source!"
 
 [Footer]
-  StorageLink = "https://gitee.com/"
-  StorageName = "Gitee Repository"
+  StorageLink = "https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"
+  StorageName = "CDN/Storage"
   ICPLink = "http://beian.miit.gov.cn"
   ICPNo = "ICP.NO 18047355"
 
