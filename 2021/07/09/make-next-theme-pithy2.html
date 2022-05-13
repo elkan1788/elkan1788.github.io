@@ -155,15 +155,15 @@
 )，欢迎大家的使用和反馈。</p>
 <h2 id=2中英文切换>2.中英文切换</h2>
 <p>或许大家觉得这个功能有点软肋，原因就是个人博客的流量并不会很大。但流量小并不是意味着没有流量，所以我们还是可以增加个中英切换的功能，来助力我们推广自己的博客空间。而且<code>Hugo</code>引擎在多语言化这块的开发也比较简单，不过现在是手动模式，也就意味着你在发表文章写两份。增加中英文切换功能后的效果参考如下：（就是在左上角添加了切换入口）</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2021/07-09-hugo-next-translate-func.png alt="Translate Function"></p>
+<p><img src=//imgs.lisenhui.cn/blog/2021/07-09-hugo-next-translate-func.png alt="Translate Function"></p>
 <blockquote>
 <p>后续考虑是否可能引入自动翻译的模式来加载，可以减少写文章耗费的时间。</p>
 </blockquote>
 <h2 id=3重构配置>3.重构配置</h2>
 <p>结合上面的中英双语切换功能，对于主题的配置内容管理来说就会变的比较混乱，个人不喜欢在一个文件中写满太多的配置参数。而这块的想法正好<code>Hugo</code>引擎的设计不谋而合，它天然就支持按分类的管理方式来独立配置不同的参数。</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2021/07-09-hugo-next-setting-files.png alt="Setting Files"></p>
+<p><img src=//imgs.lisenhui.cn/blog/2021/07-09-hugo-next-setting-files.png alt="Setting Files"></p>
 <p>同时也对本主题中使用的各服务组件配置做了分类，这样显示更加清楚明了，也便于后续参数的调整及优化。</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2021/07-09-hugo-next-setting-paras.png alt="Setting Parameters"></p>
+<p><img src=//imgs.lisenhui.cn/blog/2021/07-09-hugo-next-setting-paras.png alt="Setting Parameters"></p>
 <h2 id=4addthis分享>4.addthis分享</h2>
 <p>主题中原来使用的<code>BShare</code>插件，但在某一天突然就发现其无法正常引用。真是感叹在继百度分享插件后，又一国内分享插件的落幕。所以后来就找到了国外一款比较流行的插件<code>addthis</code>，通过一番倒腾研究终于成功集成，用于替换原来的<code>BShare</code>插件。</p>
 <p>在主题中启用也比较简单，分如下2步：</p>
@@ -173,7 +173,7 @@
 <li>在配置文件中找到Share配置项，设置<code>Enable = true</code>和<code>AddthisId = "Your AddthisPubid"</code>两个参数；</li>
 </ul>
 <p>实现的效果如下：</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2021/07-09-hugo-next-addthis-share.png alt="Add this Share"></p>
+<p><img src=//imgs.lisenhui.cn/blog/2021/07-09-hugo-next-addthis-share.png alt="Add this Share"></p>
 <h2 id=5本地搜索优化>5.本地搜索优化</h2>
 <p>之前本地搜索生成的索引文件是覆写到<code>robots.txt</code>，但在中英双语的情况下便无法支持两种不同中英文索引，所以需要改造原来的生成索引方式。而这也是再一次感受到<code>Hugo</code>引擎的强大之处，它完全可以支持自定输出文件，只需要如下的几行配置：</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>[outputFormats]
@@ -187,7 +187,7 @@
   home = [&#34;HTML&#34;, &#34;RSS&#34;, &#34;SearchIndex&#34;]
 </code></pre></div><h2 id=6支持数学公式>6.支持数学公式</h2>
 <p>有网友反馈本主题无法支持数学公式的渲染，后来分析了下发现是之前优化文件引用中把<code>MathJax</code>文件给移除所造成的。于是重新修复了此功能，使用时只需要在文章的页面参数中加入<code>math: true</code>配置即可，效果如下：</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2021/07-09-hugo-next-math-func.png alt="Math Function"></p>
+<p><img src=//imgs.lisenhui.cn/blog/2021/07-09-hugo-next-math-func.png alt="Math Function"></p>
 <h2 id=7waline评论>7.Waline评论</h2>
 <p>原来主题中使用一款<code>Valine</code>的评论插件，但网上关于此未评论插件的安全问题也是讨论的“血雨腥风”，但过多的讨论咱就不参合啦。在此背景下便有人衍生出<code>Waline</code>插件，通过服务端的部署来解决安全隐患。个人还是比较喜欢它的评论管理功能（可以有效屏蔽一此恶意灌水），于是又展开了一番研究，成功在<code>Vercel</code>上面部署自己的评论后台服务，也在博客中升级并引用此评论插件功能。</p>
 <p>这款评论插件的部署相对来说还是要有些“成本”，不过官方的文档很完善，社区回答也很活跃，大家可以放心快速使用。具体参考： <a href=https://waline.js.org/guide/get-started.html#vercel-%E9%83%A8%E7%BD%B2-%E6%9C%8D%E5%8A%A1%E7%AB%AF target=_blank rel=noopener>指南</a>
@@ -207,7 +207,7 @@
 <h2 id=10总结>10.总结</h2>
 <p>个人就是比较喜欢<code>NexT</code>的简单清爽，所做的这些改造和优化工作，是为了主题更加完善和好用，并不会去改变<code>NexT</code>主题的设计初心，希望<code>NexT</code>主题能在<code>Hugo</code>引擎下继续发光发热。</p>
 <p>后续会逐步优化使用手册和主题的其他问题，也欢迎更多爱好<code>NexT</code>的网友一起参与进来，共同建设，期待。</p>
-<p><img src=https://lisenhui.gitee.io/imgs/blog/my-hugo-blog.png alt=my-hugo-blog></p>
+<p><img src=https://imgs.lisenhui.cn/blog/my-hugo-blog.png alt=my-hugo-blog></p>
 </div>
 <footer class=post-footer>
 <div class=post-tags>

@@ -150,7 +150,7 @@ Replace the file in SpringBoot
 <div class=post-body itemprop=articleBody>
 <p>Nowadays, it is very common to use the <code>Spring Boot</code> architecture for application development. Unified package deployment does bring a lot of convenience, but it will be more difficult when encountering problems.This may surprise you, but it is not surprising that you will find it difficult to modify the <code>Spring Boot</code> application if this is a problem in production deployment operations.This article will share how to use the <code>jar</code> command to temporarily replace jar packages in <code>Spring Boot</code> applications when deploying products online.</p>
 <p>When a product application is deployed in the test environment, the startup fails. The following stack logs are found in the startup logs:</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2021/04-14-spring-boot-replace-jar-01.png alt=spring-boot-replace-jar-01.png></p>
+<p><img src=//imgs.lisenhui.cn/blog/2021/04-14-spring-boot-replace-jar-01.png alt=spring-boot-replace-jar-01.png></p>
 <p>The MySQL driver is not compatible with the MySQL Server. The MySQL driver is not compatible with the MySQL Server.To verify this, use the following jar command:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell>$ jar -tvf semxxx.jar | grep mysql
 mysql-connector-java-8.0.12.jar

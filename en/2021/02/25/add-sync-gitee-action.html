@@ -156,17 +156,17 @@ code that feels good after a simple attempt to verify that it&rsquo;s still usef
 <h3 id=21-prepare-the-ssh-key>2.1 Prepare the SSH key</h3>
 <p>When you generate keys locallyusing the ssh-keygen command,don&rsquo;tuse a password, just keep tapping the enter key while executing the&rsquo;ssh-keygen-t rsa -C &lsquo;<a href=mailto:youremail@example.com>youremail@example.com</a>
 &rsquo; command.</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2021/02-25-gen_ssh_key.png alt=gen_ssh_key.png></p>
+<p><img src=//imgs.lisenhui.cn/blog/2021/02-25-gen_ssh_key.png alt=gen_ssh_key.png></p>
 <h3 id=22-gitee-related>2.2 Gitee Related</h3>
 <p>Github and Gitee are recommended to use the same key, and they are set up as follows:</p>
 <p>1.Github: <a href=https://github.com/settings/keys target=_blank rel=noopener>Settings -> SSH and GPG keys</a>
 </p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2021/02-25-add_ssh_key_github.png alt=add_ssh_key_github.png></p>
+<p><img src=//imgs.lisenhui.cn/blog/2021/02-25-add_ssh_key_github.png alt=add_ssh_key_github.png></p>
 <p>2.Gitee: &ldquo;Security Settings - SSH Public Key&rdquo; (<a href=https://gitee.com/profile/sshkeys%29 target=_blank rel=noopener>https://gitee.com/profile/sshkeys)</a>
 .</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2021/02-25-add_ssh_key_gitee.png alt=add_ssh_key_gitee.png></p>
+<p><img src=//imgs.lisenhui.cn/blog/2021/02-25-add_ssh_key_gitee.png alt=add_ssh_key_gitee.png></p>
 <p>Another important point is, be sure to pay attention to Gitee&rsquo;s public number: giteecom, or the github workflow execution will fail later.</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2021/02-25-wechat_notification.png alt=wechat_notification.png></p>
+<p><img src=//imgs.lisenhui.cn/blog/2021/02-25-wechat_notification.png alt=wechat_notification.png></p>
 <h3 id=23-github-encryption-settings>2.3 Github encryption settings</h3>
 <p>Switch to Github,andthen add"Settings - And Secrets" under the current project, which is:</p>
 <p>GITEE_PASSWORD: Gitee login password
@@ -212,7 +212,7 @@ GITEE_RSA_PRIVATE_KEY: The private key of the previously generated SSH key</p>
 </span></code></pre></div><p>Note: A small modification of the original version is made here, divided into 2 jobs, reflecting the effect of a workflow.</p>
 <p>The effect of the operation of the 2.4</p>
 <p>When you push the code to the Github repository, you&rsquo;ll have automatically sync the code to the Gitee repository, and you&rsquo;ll re-create the static page service, saving the process of manual intervention.</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2021/02-25-sync-2-gitee-flow-01.png alt=02-25-sync-2-gitee-flow-01.png></p>
+<p><img src=//imgs.lisenhui.cn/blog/2021/02-25-sync-2-gitee-flow-01.png alt=02-25-sync-2-gitee-flow-01.png></p>
 <h2 id=3summary>3.Summary</h2>
 <p>The whole scenario is relatively simple to implement, and the only risk that may exist is the process of the password process. But this is only a CI process, the log also has desensitization operation, so it is much more secure, and like the individual&rsquo;s account will not receive special attention.</p>
 <p>This is the first time you&rsquo;ve experienced the charm of Github Action, and you can keep an eye on it, which is still a great help for automated testing for some small open source projects.</p>
