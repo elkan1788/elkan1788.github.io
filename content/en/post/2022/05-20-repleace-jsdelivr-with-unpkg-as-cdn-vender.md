@@ -38,7 +38,7 @@ At this time, you can browse the resources of the corresponding components, as s
 
 ![05-05-replace-cdn-vender02.png](//imgs.lisenhui.cn/blog/2022/05-05-replace-cdn-vender02.png)
 
-After determining the resources to be used, click the file link to view the content. At this time, there will be a button in the upper right corner of the page. The link challenged by copying that button is the CDN access address of the resources. Refer to the following:
+After determining the resources to be used, click the file link to view the content. At this time, there will be a button in the upper right corner of the page. Copy the link on that button is the CDN access address of the resources. Refer to the following:
 
 ```html
 https://unpkg.com/jquery@3.6.0/dist/jquery.js

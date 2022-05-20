@@ -38,7 +38,7 @@ https://unpkg.com/browse/jquery@3.6.0/
 
 ![05-05-replace-cdn-vender02.png](//imgs.lisenhui.cn/blog/2022/05-05-replace-cdn-vender02.png)
 
-确定需要使用的资源后，点击文件链接进入查看内容，此时页面右上角会有个按钮，拷贝那个按钮挑战的链接就是资源的 CDN 访问地址，参考如下：
+确定需要使用的资源后，点击文件链接进入查看内容，此时页面右上角会有个按钮，拷贝那个按钮上的链接就是资源的 CDN 访问地址，参考如下：
 
 ```html
 https://unpkg.com/jquery@3.6.0/dist/jquery.js
