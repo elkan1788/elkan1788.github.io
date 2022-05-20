@@ -108,6 +108,54 @@
 <article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
 <header class=post-header>
 <h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=https://lisenhui.cn/en/2017/05/15/zookeeper-unload-data-exception.html itemprop=url>
+Zookeyer could not load transaction logs after crash
+</a>
+</h1>
+<div class=post-meta>
+<span class=post-pushdate>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>Published at:</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2017-05-15">
+2017-05-15
+</time>
+</span>
+<span class=post-category>
+<i class="fa fa-folder-o fa-fw"></i>
+<span class=post-meta-item-text>Categories:</span>
+<span itemprop=about itemscope itemtype=https://schema.org/Thing>
+<a class=post-category-a href=/en/categories/zookeeper itemprop=url rel=index>
+<span itemprop=name>Zookeeper</span>
+</a>
+&nbsp;
+</span>
+</span>
+<span class=post-wordcount>
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>Words:</span>
+<span class=leancloud-world-count>467 words</span>
+</span>
+<span class=post-readtime>
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>Reading:</span>
+<span class=leancloud-view-count>3 minutes</span>
+</span>
+</div>
+</header>
+<div class=post-body itemprop=articleBody>
+<p>Today in a production HDP environment, encountered a very strange thing. Mingming set up 2 zookeyer cluster, but it is inexplicable missing, and HDP services are not reported wrong, carefully check the environment or did not find abnormal information, really do not understand.</p>
+<p>Let&rsquo;s put it this way: The production environment zookeyer crashes and the log finds that disk space is full. At first thought it was a very simple operation, delete the useless log files to free up disk space (this is having to spit under the SLOT HDP log files are super, helpless production environment and dare not set aside a longer time), and then restart zookeyer happy waiting for the service to return to normal. This time, however, there was no hint of success, and the unusually constant service connections to zookeyer failed. At this time is really depressed, space is clearly already sufficient. The exception information is as follows:</p>
+</div>
+<div class="post-more-link text-center">
+<a class=btn href=https://lisenhui.cn/en/2017/05/15/zookeeper-unload-data-exception.html rel=contents>
+Read More &#187;
+</a>
+</div>
+<footer class=post-footer><div class=post-eof></div></footer>
+</article>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
+<header class=post-header>
+<h1 class=post-title itemprop="name headline">
 <a class=post-title-link href=https://lisenhui.cn/en/2017/04/17/offline-install-hdp-ambari-notes.html itemprop=url>
 Install HDP2.6 (1)-Ambari Server offline
 </a>
@@ -300,54 +348,6 @@ Read More &#187;
 </div>
 <footer class=post-footer><div class=post-eof></div></footer>
 </article>
-<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
-<header class=post-header>
-<h1 class=post-title itemprop="name headline">
-<a class=post-title-link href=https://lisenhui.cn/en/2016/01/19/mapdb-write-read-sync.html itemprop=url>
-MapDB synchronous read and write example
-</a>
-</h1>
-<div class=post-meta>
-<span class=post-pushdate>
-<i class="fa fa-calendar-o fa-fw"></i>
-<span class=post-meta-item-text>Published at:</span>
-<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2016-01-19">
-2016-01-19
-</time>
-</span>
-<span class=post-category>
-<i class="fa fa-folder-o fa-fw"></i>
-<span class=post-meta-item-text>Categories:</span>
-<span itemprop=about itemscope itemtype=https://schema.org/Thing>
-<a class=post-category-a href=/en/categories/memory-database itemprop=url rel=index>
-<span itemprop=name>Memory database</span>
-</a>
-&nbsp;
-</span>
-</span>
-<span class=post-wordcount>
-<i class="fa fa-file-word-o fa-fw"></i>
-<span class=post-meta-item-text>Words:</span>
-<span class=leancloud-world-count>823 words</span>
-</span>
-<span class=post-readtime>
-<i class="fa fa-eye fa-fw"></i>
-<span class=post-meta-item-text>Reading:</span>
-<span class=leancloud-view-count>4 minutes</span>
-</span>
-</div>
-</header>
-<div class=post-body itemprop=articleBody>
-<p>MapDB is a fast, easy-to-use embedded Java database engine. One of the most important features is the support of disk storage, directly in-memory Hash Map synchronous write to disk. Another particular surprise is that it supports ACED transactions, MVCC isolation, and full-time developer support</p>
-<p>After reading the official documentation and examples, you can basically be sure that it meets the requirements of the business scenario. It was also found that officials were refactoring the 3.x version, but it shouldn&rsquo;t be released so soon. Use google to search the next use case for MapDB, not a lot. Maybe the original official documentation is complete about it, the API is not complicated, follow the official documentation to get started</p>
-</div>
-<div class="post-more-link text-center">
-<a class=btn href=https://lisenhui.cn/en/2016/01/19/mapdb-write-read-sync.html rel=contents>
-Read More &#187;
-</a>
-</div>
-<footer class=post-footer><div class=post-eof></div></footer>
-</article>
 </section>
 <nav class=pagination>
 <a class="extend prev" rel=prev href=/en/p/8/><i class="fa fa-angle-left"></i></a>
@@ -384,7 +384,7 @@ Never forget your dreams！
 <nav class="site-state motion-element">
 <div class="site-state-item site-state-posts">
 <a href=/en/post/>
-<span class=site-state-item-count>56</span>
+<span class=site-state-item-count>57</span>
 <span class=site-state-item-name>Blogs</span>
 </a>
 </div>
@@ -396,7 +396,7 @@ Never forget your dreams！
 </div>
 <div class="site-state-item site-state-tags">
 <a href=/en/tags/>
-<span class=site-state-item-count>65</span>
+<span class=site-state-item-count>68</span>
 <span class=site-state-item-name>Tags</span>
 </a>
 </div>
