@@ -185,7 +185,7 @@ very powerful, support the current popular development languages such as &lsquo;
 </span><span style=color:#080;font-style:italic>:: @apiError the time of the transaction at  the time of the transaction
 </span><span style=color:#080;font-style:italic>:: @apiError the serviceId agency code (provided by Dong Wu) at the time
 </span><span style=color:#080;font-style:italic>:: @apiError number of resultCode  1 for success and 0 for failure
-</span><span style=color:#080;font-style:italic>:: @apiError the reason for the failure of the .String?resultComment  
+</span><span style=color:#080;font-style:italic>:: @apiError the reason for the failure of the .String?resultComment
 </span><span style=color:#080;font-style:italic> *
 </span><span style=color:#080;font-style:italic> * @apiErrorExample Error400-Response:
 </span><span style=color:#080;font-style:italic> *     HTTP/1.1 400
@@ -197,7 +197,7 @@ very powerful, support the current popular development languages such as &lsquo;
 </span><span style=color:#080;font-style:italic> ::&#34;resultComment&#34;:&#34;Request data syntax format is incorrect.&#34;
 </span><span style=color:#080;font-style:italic> *     }
 </span><span style=color:#080;font-style:italic> */</span>
- 
+
  <span style=color:#080;font-style:italic>/**
 </span><span style=color:#080;font-style:italic> * @apiDefine Suc200
 </span><span style=color:#080;font-style:italic> *
@@ -205,7 +205,7 @@ very powerful, support the current popular development languages such as &lsquo;
 </span><span style=color:#080;font-style:italic>:: @apiSuccess the time of the transaction at  the time of the transaction
 </span><span style=color:#080;font-style:italic>:: @apiSuccess the serviceId agency code (provided by Dong Wu) at the time of the issue
 </span><span style=color:#080;font-style:italic>:: @apiSuccess number of resultCode  1, which indicates success, and 0 indicates failure
-</span><span style=color:#080;font-style:italic>:: @apiSuccess description of the reason for the failure of the .String?resultComment  
+</span><span style=color:#080;font-style:italic>:: @apiSuccess description of the reason for the failure of the .String?resultComment
 </span><span style=color:#080;font-style:italic> *
 </span><span style=color:#080;font-style:italic> * @apiSuccessExample Success-Response:
 </span><span style=color:#080;font-style:italic> *     HTTP/1.1 200
@@ -217,7 +217,7 @@ very powerful, support the current popular development languages such as &lsquo;
 </span><span style=color:#080;font-style:italic> *       &#34;resultComment&#34;: &#34;Success&#34;
 </span><span style=color:#080;font-style:italic> *     }
 </span><span style=color:#080;font-style:italic> */</span>
- 
+
  <span style=color:#080;font-style:italic>/**
 </span><span style=color:#080;font-style:italic> * @apiDefine AccessKey
 </span><span style=color:#080;font-style:italic> *
@@ -228,24 +228,24 @@ very powerful, support the current popular development languages such as &lsquo;
 </span><span style=color:#080;font-style:italic> *       &#34;access-key&#34;: &#34;cfa1fd55a89f45c9800120d6cbff0b33&#34;
 </span><span style=color:#080;font-style:italic> *     }
 </span><span style=color:#080;font-style:italic> */</span>
- 
+
  <span style=color:#080;font-style:italic>/**
 </span><span style=color:#080;font-style:italic> :: @api the customer base information at the website
 </span><span style=color:#080;font-style:italic> :: @apiDescription customer&#39;s basic information in bulk, it is recommended that each batch not be larger than 1000 records.
-</span><span style=color:#080;font-style:italic> * 
-</span><span style=color:#080;font-style:italic> * @apiVersion 1.0.1 
+</span><span style=color:#080;font-style:italic> *
+</span><span style=color:#080;font-style:italic> * @apiVersion 1.0.1
 </span><span style=color:#080;font-style:italic> * @apiName customer
 </span><span style=color:#080;font-style:italic> * @apiGroup dwHealth
-</span><span style=color:#080;font-style:italic> * 
+</span><span style=color:#080;font-style:italic> *
 </span><span style=color:#080;font-style:italic> * @apiUse AccessKey
 </span><span style=color:#080;font-style:italic> *
-</span><span style=color:#080;font-style:italic>:: @apiParam the name of the .String?cusName  
-</span><span style=color:#080;font-style:italic>:: @apiParam the sex of the .String?cusSex  
-</span><span style=color:#080;font-style:italic>:: @apiParam the birthday of the .String, cusBirthday  
+</span><span style=color:#080;font-style:italic>:: @apiParam the name of the .String?cusName
+</span><span style=color:#080;font-style:italic>:: @apiParam the sex of the .String?cusSex
+</span><span style=color:#080;font-style:italic>:: @apiParam the birthday of the .String, cusBirthday
 </span><span style=color:#080;font-style:italic>:: @apiParam the type of document you&#39;re using   for
 </span><span style=color:#080;font-style:italic>:: @apiParam the number of your .String&#39;s cusIdNo  ID number
-</span><span style=color:#080;font-style:italic>:: @apiParam the work unit of the cusCompanyId  
-</span><span style=color:#080;font-style:italic>:: @apiParam the program number of the &#34;String&#34; cusServItemNo  
+</span><span style=color:#080;font-style:italic>:: @apiParam the work unit of the cusCompanyId
+</span><span style=color:#080;font-style:italic>:: @apiParam the program number of the &#34;String&#34; cusServItemNo
 </span><span style=color:#080;font-style:italic> *
 </span><span style=color:#080;font-style:italic> * @apiParamExample {json} Request-Example:
 </span><span style=color:#080;font-style:italic> *     {
@@ -269,7 +269,7 @@ very powerful, support the current popular development languages such as &lsquo;
 </span><span style=color:#080;font-style:italic> * @apiUse Err400
 </span><span style=color:#080;font-style:italic> *
 </span><span style=color:#080;font-style:italic> */</span>
- 
+
 </code></pre></div><p>The interface document is generated</p>
 <p>Finally, we need only a simple command to generate the interface document, as follows:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>apidoc -and  apidoc/-o  apidoc/
@@ -278,7 +278,7 @@ very powerful, support the current popular development languages such as &lsquo;
 <li>o Interface document output folder</li>
 </ul>
 <p>The document works as follows:</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/07-18-nodejs-apidoc-01.png alt=nodejs-apidoc-01.png></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/07-18-nodejs-apidoc-01.png alt=nodejs-apidoc-01.png></p>
 <p>A frequently asked question</p>
 <ul>
 <li>提示 error: Can not read: package.json, please check the format (e.g. missing comma).</li>
@@ -540,12 +540,12 @@ Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next tar
 </div>
 <div class=license-info>
 <span class=storage-info>
-本站由
-<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>CDN/Storage</a>
+由
+<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>CDN&Storage</a>
 </span>
 <span class=separator-line>/</span>
 <span class=license-num>
-<a href=http://beian.miit.gov.cn target=_blank>ICP.NO 18047355</a>
+<a href=http://beian.miit.gov.cn target=_blank>ICP.NO 18047355-1</a>
 </span>
 </div>
 <style type=text/css>.vendor-logo{background-image:url(/img/upyun_logo.png);background-size:52px;background-repeat:no-repeat;padding-left:54px}</style>

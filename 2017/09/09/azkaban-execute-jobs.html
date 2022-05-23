@@ -211,7 +211,7 @@ file.line=50
 dependencies=java
 command=whoami
 </code></pre></div><p>效果如下：</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/09-09-azkaban-jobs-02.png alt=Azkaban-Jobs02></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/09-09-azkaban-jobs-02.png alt=Azkaban-Jobs02></p>
 <h1 id=pthon工作任务>Pthon工作任务</h1>
 <p>Python的工作任务相对就简单了，不过目前没找到动态入参的方法。执行Python工作任务的方法有两种, 参考代码如下：</p>
 <ul>
@@ -226,7 +226,7 @@ command=python -u /home/azkaban/pythondemo/helloworld.py
 python=python
 script=/home/azkaban/pythondemo/helloworld.py
 </code></pre></div><p>效果如下：</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/09-09-azkaban-jobs-01.png alt=Azkaban-Jobs01></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/09-09-azkaban-jobs-01.png alt=Azkaban-Jobs01></p>
 <h1 id=总结>总结</h1>
 <p>总的来说，<code>Azkaban</code>编写任务的脚本还是简单且灵活的，不过也有比较坑人的地方。比如前面举粟的<code>Java</code>工作任务，在实际的运行过程中是需要添加<code>hadoop</code>的依赖包及相关配置，能过查阅官方文档得知是因为<code>Java</code>任务类型是在<code>HadoopJava</code>衍生出来的，所以也就难怪了。还好这也是只是配置环境时的问题，后续的应用开发还是挺方便的。</p>
 </div>
@@ -486,12 +486,12 @@ Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next tar
 </div>
 <div class=license-info>
 <span class=storage-info>
-本站由
-<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>提供CDN/云存储</a>
+由
+<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>提供CDN&存储</a>
 </span>
 <span class=separator-line>/</span>
 <span class=license-num>
-<a href=http://beian.miit.gov.cn target=_blank>粤 ICP 备 18047355 号</a>
+<a href=http://beian.miit.gov.cn target=_blank>粤ICP备18047355-1号</a>
 </span>
 </div>
 <style type=text/css>.vendor-logo{background-image:url(/img/upyun_logo.png);background-size:52px;background-repeat:no-repeat;padding-left:54px}</style>

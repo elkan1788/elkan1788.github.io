@@ -156,22 +156,22 @@ Kylin集成Zeppelin展示数据
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>bin/zeppelin-daemon.sh start
 # stop 停止
 </code></pre></div><p>至此就可以打开浏览器然后访问zeppelin的WEB UI， 如下图所示：</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/06-02-zeppelin-01.png alt=zeppelin-01.png></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/06-02-zeppelin-01.png alt=zeppelin-01.png></p>
 <p>OK, 接下来就是创建与Kylin的连接，在Zeppelin中叫做<code>Interpreter</code>, 点击页面右上角的<code>anonymous</code>选择它如下图所示：</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/06-02-zeppelin-02.png alt=zeppelin-02.png></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/06-02-zeppelin-02.png alt=zeppelin-02.png></p>
 <p>同样的点击右上角的<code>Create</code>按钮，参考下图填写的数据填写你的真实数据：</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/06-02-zeppelin-03.png alt=zeppelin-03.png></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/06-02-zeppelin-03.png alt=zeppelin-03.png></p>
 <p>保存好后，点击左上角的<code>Notebook</code>&ndash;> <code>+ Create new note</code>如下图所示：</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/06-02-zeppelin-04.png alt=zeppelin-04.png></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/06-02-zeppelin-04.png alt=zeppelin-04.png></p>
 <p>把下面的SQL语句写入到notebook中：</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>select fact.part_dt, lookup.categ_lvl2_name, count(distinct seller_id) as sellers
 from kylin_sales fact
-inner join kylin_category_groupings lookup 
+inner join kylin_category_groupings lookup
 on fact.leaf_categ_id = lookup.leaf_categ_id and fact.lstg_site_id = lookup.site_id
 group by fact.part_dt, lookup.categ_lvl2_name
 order by fact.part_dt desc
 </code></pre></div><p>点击右边的开始按钮即可完成查询，出来一个表格数据 ，然后选取你所需要的图形报表形式，数据便会自动的渲染，点击<code>settings</code>可以有更多的调整。</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/06-02-zeppelin-05.png alt=zeppelin-05.png></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/06-02-zeppelin-05.png alt=zeppelin-05.png></p>
 <p>关于<code>Zeppelin</code>其它应用还需要慢慢了解，后续再跟进。</p>
 <p>参考：</p>
 <ul>
@@ -437,12 +437,12 @@ Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next tar
 </div>
 <div class=license-info>
 <span class=storage-info>
-本站由
-<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>提供CDN/云存储</a>
+由
+<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>提供CDN&存储</a>
 </span>
 <span class=separator-line>/</span>
 <span class=license-num>
-<a href=http://beian.miit.gov.cn target=_blank>粤 ICP 备 18047355 号</a>
+<a href=http://beian.miit.gov.cn target=_blank>粤ICP备18047355-1号</a>
 </span>
 </div>
 <style type=text/css>.vendor-logo{background-image:url(/img/upyun_logo.png);background-size:52px;background-repeat:no-repeat;padding-left:54px}</style>

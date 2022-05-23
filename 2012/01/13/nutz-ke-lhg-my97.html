@@ -149,8 +149,8 @@
 </header>
 <div class=post-body itemprop=articleBody>
 <p>有段时间没关注过国内IT技术发展情况了，前些天在学习国内的一个开源技术<code>Nutz</code>时想练个手，但一时又不知写些什么好，想了一会还是选择了自己的“老友”<code>KindEditor</code>。对它虽不敢说是透彻的了解(个人的JS水平有限，呵~)，但至少也能很熟练的运用。官网很早便推出了大家期待已久的<code>KE4</code>，不过我一起都没有更新，正好这次拿它来历练下，嘻~。可是想到前面写的那些<code>KE</code>应用示例都是单调的，上次的那个还好有<code>EasyUI</code>做衬托，不过这个UI框架对于小小于的练手项目来说还是庞大了点。于是又便开始寻思着找别的UI看看，突然间起了以前用过的<code>LHGDialog</code>弹出窗口组件还蛮不错的，便去它官网逛了一圈。没有想到还真是让人喜出望外呀，<code>LHG</code>现也更新为4的版本了，那效果的炫丽真是让人颇然心动。下面就先来欣赏下花费2个多小时的劳动成果吧（现在是真相时间），呵呵……</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2012/01-13-nutz-ke-lgh-my97-1.png alt=nutz-ke-lgh-my97-1></p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2012/01-13-nutz-ke-lgh-my97-2.png alt=nutz-ke-lgh-my97-2></p>
+<p><img src=//imgs.lisenhui.cn/blog/2012/01-13-nutz-ke-lgh-my97-1.png alt=nutz-ke-lgh-my97-1></p>
+<p><img src=//imgs.lisenhui.cn/blog/2012/01-13-nutz-ke-lgh-my97-2.png alt=nutz-ke-lgh-my97-2></p>
 <p>在此不得不称赞下<code>Nutz</code>的高效简约之美，和以前的KE版本一样还是把上传部分的<code>JSP</code>页面翻译成后台<code>JAVA</code>代码，唯一不同的就是那些相同功能的实现代码精简了好多呀，官网示例中的两个<code>JSP</code>文件被有压缩成了一个只有不到400行的<code>JAVA</code>后台代码，源码如下：</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>
 <span style=color:#a2f;font-weight:700>package</span> <span style=color:#00f;font-weight:700>org.nutz.kindeditor4.plugin</span><span style=color:#666>;</span>
@@ -204,8 +204,8 @@
     <span style=color:#080;font-style:italic>// 允许上传文件大小MAP数组
 </span><span style=color:#080;font-style:italic></span>    <span style=color:#a2f;font-weight:700>private</span> <span style=color:#a2f;font-weight:700>static</span> <span style=color:#a2f;font-weight:700>final</span> HashMap<span style=color:#666>&lt;</span>String<span style=color:#666>,</span>Long<span style=color:#666>&gt;</span> sizeMap <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> HashMap<span style=color:#666>&lt;</span>String<span style=color:#666>,</span> Long<span style=color:#666>&gt;();</span>
     <span style=color:#080;font-style:italic>// 上传文件存放根目录
-</span><span style=color:#080;font-style:italic></span>    <span style=color:#a2f;font-weight:700>private</span> String filePath <span style=color:#666>=</span> <span style=color:#b44>&#34;/attached/&#34;</span><span style=color:#666>;</span>    
-    
+</span><span style=color:#080;font-style:italic></span>    <span style=color:#a2f;font-weight:700>private</span> String filePath <span style=color:#666>=</span> <span style=color:#b44>&#34;/attached/&#34;</span><span style=color:#666>;</span>
+
     <span style=color:#a2f;font-weight:700>static</span> <span style=color:#666>{</span>
         <span style=color:#080;font-style:italic>// 初始后缀名称MAP数组
 </span><span style=color:#080;font-style:italic></span>        extMap<span style=color:#666>.</span><span style=color:#b44>put</span><span style=color:#666>(</span><span style=color:#b44>&#34;image&#34;</span><span style=color:#666>,</span> <span style=color:#b44>&#34;gif,jpg,jpeg,png,bmp&#34;</span><span style=color:#666>);</span>
@@ -220,7 +220,7 @@
     <span style=color:#666>}</span>
 
     <span style=color:#a2f>@At</span>
-    <span style=color:#a2f;font-weight:700>public</span> Map<span style=color:#666>&lt;</span>String<span style=color:#666>,</span> Object<span style=color:#666>&gt;</span> <span style=color:#00a000>upload</span><span style=color:#666>(</span><span style=color:#a2f>@Param</span><span style=color:#666>(</span><span style=color:#b44>&#34;imgFile&#34;</span><span style=color:#666>)</span> File tempFile<span style=color:#666>,</span> 
+    <span style=color:#a2f;font-weight:700>public</span> Map<span style=color:#666>&lt;</span>String<span style=color:#666>,</span> Object<span style=color:#666>&gt;</span> <span style=color:#00a000>upload</span><span style=color:#666>(</span><span style=color:#a2f>@Param</span><span style=color:#666>(</span><span style=color:#b44>&#34;imgFile&#34;</span><span style=color:#666>)</span> File tempFile<span style=color:#666>,</span>
             <span style=color:#a2f>@Param</span><span style=color:#666>(</span><span style=color:#b44>&#34;dir&#34;</span><span style=color:#666>)</span> String dir<span style=color:#666>,</span> ServletContext context<span style=color:#666>)</span> <span style=color:#666>{</span>
         <span style=color:#080;font-style:italic>// 初始相关变量
 </span><span style=color:#080;font-style:italic></span>        Map<span style=color:#666>&lt;</span>String<span style=color:#666>,</span> Object<span style=color:#666>&gt;</span> execute <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> HashMap<span style=color:#666>&lt;</span>String<span style=color:#666>,</span> Object<span style=color:#666>&gt;();</span>
@@ -288,7 +288,7 @@
         execute<span style=color:#666>.</span><span style=color:#b44>put</span><span style=color:#666>(</span><span style=color:#b44>&#34;url&#34;</span><span style=color:#666>,</span> url<span style=color:#666>.</span><span style=color:#b44>toString</span><span style=color:#666>());</span>
         <span style=color:#a2f;font-weight:700>return</span> execute<span style=color:#666>;</span>
     <span style=color:#666>}</span>
-    
+
     <span style=color:#a2f>@At</span>
     <span style=color:#a2f;font-weight:700>public</span> Map<span style=color:#666>&lt;</span>String<span style=color:#666>,</span> Object<span style=color:#666>&gt;</span> <span style=color:#00a000>manager</span><span style=color:#666>(</span><span style=color:#a2f>@Param</span><span style=color:#666>(</span><span style=color:#b44>&#34;dir&#34;</span><span style=color:#666>)</span> String dir<span style=color:#666>,</span>
             <span style=color:#a2f>@Param</span><span style=color:#666>(</span><span style=color:#b44>&#34;path&#34;</span><span style=color:#666>)</span> String path<span style=color:#666>,</span> <span style=color:#a2f>@Param</span><span style=color:#666>(</span><span style=color:#b44>&#34;order&#34;</span><span style=color:#666>)</span> String order<span style=color:#666>,</span>
@@ -315,7 +315,7 @@
 </span><span style=color:#080;font-style:italic></span>        <span style=color:#a2f;font-weight:700>if</span> <span style=color:#666>(!</span><span style=color:#b44>&#34;&#34;</span><span style=color:#666>.</span><span style=color:#b44>equals</span><span style=color:#666>(</span>path<span style=color:#666>))</span> <span style=color:#666>{</span>
             String str <span style=color:#666>=</span> curDir<span style=color:#666>.</span><span style=color:#b44>substring</span><span style=color:#666>(</span>0<span style=color:#666>,</span> curDir<span style=color:#666>.</span><span style=color:#b44>length</span><span style=color:#666>()</span> <span style=color:#666>-</span> 1<span style=color:#666>);</span>
             moveupDir <span style=color:#666>=</span> str<span style=color:#666>.</span><span style=color:#b44>lastIndexOf</span><span style=color:#666>(</span><span style=color:#b44>&#34;/&#34;</span><span style=color:#666>)</span> <span style=color:#666>&gt;=</span> 0 <span style=color:#666>?</span> str<span style=color:#666>.</span><span style=color:#b44>substring</span><span style=color:#666>(</span>0<span style=color:#666>,</span> str<span style=color:#666>.</span><span style=color:#b44>lastIndexOf</span><span style=color:#666>(</span><span style=color:#b44>&#34;/&#34;</span><span style=color:#666>)</span> <span style=color:#666>+</span> 1<span style=color:#666>)</span> <span style=color:#666>:</span> <span style=color:#b44>&#34;&#34;</span><span style=color:#666>;</span>
-        <span style=color:#666>}</span>        
+        <span style=color:#666>}</span>
         <span style=color:#080;font-style:italic>// 检查..命令
 </span><span style=color:#080;font-style:italic></span>        <span style=color:#a2f;font-weight:700>if</span><span style=color:#666>(</span>path<span style=color:#666>.</span><span style=color:#b44>indexOf</span><span style=color:#666>(</span><span style=color:#b44>&#34;..&#34;</span><span style=color:#666>)</span> <span style=color:#666>&gt;=</span> 0<span style=color:#666>){</span>
             execute<span style=color:#666>.</span><span style=color:#b44>put</span><span style=color:#666>(</span><span style=color:#b44>&#34;error&#34;</span><span style=color:#666>,</span> 1<span style=color:#666>);</span>
@@ -374,10 +374,10 @@
         execute<span style=color:#666>.</span><span style=color:#b44>put</span><span style=color:#666>(</span><span style=color:#b44>&#34;current_dir_path&#34;</span><span style=color:#666>,</span> curDir<span style=color:#666>);</span>
         execute<span style=color:#666>.</span><span style=color:#b44>put</span><span style=color:#666>(</span><span style=color:#b44>&#34;current_url&#34;</span><span style=color:#666>,</span> curPath<span style=color:#666>);</span>
         execute<span style=color:#666>.</span><span style=color:#b44>put</span><span style=color:#666>(</span><span style=color:#b44>&#34;total_count&#34;</span><span style=color:#666>,</span> fileList<span style=color:#666>.</span><span style=color:#b44>size</span><span style=color:#666>());</span>
-        execute<span style=color:#666>.</span><span style=color:#b44>put</span><span style=color:#666>(</span><span style=color:#b44>&#34;file_list&#34;</span><span style=color:#666>,</span> fileList<span style=color:#666>);</span>        
+        execute<span style=color:#666>.</span><span style=color:#b44>put</span><span style=color:#666>(</span><span style=color:#b44>&#34;file_list&#34;</span><span style=color:#666>,</span> fileList<span style=color:#666>);</span>
         <span style=color:#a2f;font-weight:700>return</span> execute<span style=color:#666>;</span>
     <span style=color:#666>}</span>
-    
+
     <span style=color:#080;font-style:italic>/**
 </span><span style=color:#080;font-style:italic>     * 判断文件上传保存的文件夹是否存在或可写
 </span><span style=color:#080;font-style:italic>     * @return 如果存在且可写返回&#34;true&#34;,否则返回&#34;false&#34;
@@ -395,7 +395,7 @@
             <span style=color:#a2f;font-weight:700>return</span> <span style=color:#a2f;font-weight:700>false</span><span style=color:#666>;</span>
         <span style=color:#a2f;font-weight:700>return</span> <span style=color:#a2f;font-weight:700>true</span><span style=color:#666>;</span>
     <span style=color:#666>}</span>
-    
+
     <span style=color:#080;font-style:italic>/**
 </span><span style=color:#080;font-style:italic>     * 生成新的文件名,且按日期分类管理
 </span><span style=color:#080;font-style:italic>     */</span>
@@ -410,9 +410,9 @@
         SimpleDateFormat fileNameFormat <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> SimpleDateFormat<span style=color:#666>(</span><span style=color:#b44>&#34;yyyyMMddkkmmss_S&#34;</span><span style=color:#666>);</span>
         tempPath<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;/&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>fileNameFormat<span style=color:#666>.</span><span style=color:#b44>format</span><span style=color:#666>(</span><span style=color:#a2f;font-weight:700>new</span> Date<span style=color:#666>()));</span>
         tempPath<span style=color:#666>.</span><span style=color:#b44>append</span><span style=color:#666>(</span><span style=color:#b44>&#34;.&#34;</span><span style=color:#666>).</span><span style=color:#b44>append</span><span style=color:#666>(</span>fileExt<span style=color:#666>);</span>
-        savePath <span style=color:#666>=</span> tempPath<span style=color:#666>.</span><span style=color:#b44>toString</span><span style=color:#666>().</span><span style=color:#b44>replaceAll</span><span style=color:#666>(</span><span style=color:#b44>&#34;\\\\&#34;</span><span style=color:#666>,</span> <span style=color:#b44>&#34;/&#34;</span><span style=color:#666>);</span>    
+        savePath <span style=color:#666>=</span> tempPath<span style=color:#666>.</span><span style=color:#b44>toString</span><span style=color:#666>().</span><span style=color:#b44>replaceAll</span><span style=color:#666>(</span><span style=color:#b44>&#34;\\\\&#34;</span><span style=color:#666>,</span> <span style=color:#b44>&#34;/&#34;</span><span style=color:#666>);</span>
     <span style=color:#666>}</span>
-    
+
     <span style=color:#080;font-style:italic>/**
 </span><span style=color:#080;font-style:italic>     * 拷贝文件
 </span><span style=color:#080;font-style:italic>     * @param src 源文件
@@ -420,8 +420,8 @@
 </span><span style=color:#080;font-style:italic>     */</span>
     <span style=color:#a2f;font-weight:700>public</span> <span style=color:#0b0;font-weight:700>void</span> <span style=color:#00a000>copy</span><span style=color:#666>(</span>File src<span style=color:#666>,</span> String tar<span style=color:#666>)</span> <span style=color:#666>{</span>
         <span style=color:#080;font-style:italic>// 判断源文件或目标路径是否为空
-</span><span style=color:#080;font-style:italic></span>        <span style=color:#a2f;font-weight:700>if</span> <span style=color:#666>(</span><span style=color:#a2f;font-weight:700>null</span> <span style=color:#666>==</span> src 
-                <span style=color:#666>||</span> <span style=color:#a2f;font-weight:700>null</span> <span style=color:#666>==</span> tar 
+</span><span style=color:#080;font-style:italic></span>        <span style=color:#a2f;font-weight:700>if</span> <span style=color:#666>(</span><span style=color:#a2f;font-weight:700>null</span> <span style=color:#666>==</span> src
+                <span style=color:#666>||</span> <span style=color:#a2f;font-weight:700>null</span> <span style=color:#666>==</span> tar
                 <span style=color:#666>||</span> tar<span style=color:#666>.</span><span style=color:#b44>isEmpty</span><span style=color:#666>())</span> <span style=color:#666>{</span>
             <span style=color:#a2f;font-weight:700>return</span><span style=color:#666>;</span>
         <span style=color:#666>}</span>
@@ -436,7 +436,7 @@
             <span style=color:#a2f;font-weight:700>while</span> <span style=color:#666>(-</span>1 <span style=color:#666>!=</span> <span style=color:#666>(</span>n <span style=color:#666>=</span> srcIs<span style=color:#666>.</span><span style=color:#b44>read</span><span style=color:#666>(</span>buffer<span style=color:#666>)))</span> <span style=color:#666>{</span>
                 tarOs<span style=color:#666>.</span><span style=color:#b44>write</span><span style=color:#666>(</span>buffer<span style=color:#666>,</span> 0<span style=color:#666>,</span> n<span style=color:#666>);</span>
             <span style=color:#666>}</span>
-        <span style=color:#666>}</span> <span style=color:#a2f;font-weight:700>catch</span> <span style=color:#666>(</span>IOException e<span style=color:#666>)</span> <span style=color:#666>{</span>           
+        <span style=color:#666>}</span> <span style=color:#a2f;font-weight:700>catch</span> <span style=color:#666>(</span>IOException e<span style=color:#666>)</span> <span style=color:#666>{</span>
             log<span style=color:#666>.</span><span style=color:#b44>error</span><span style=color:#666>(</span><span style=color:#b44>&#34;Copy File is Fali, Because &#34;</span><span style=color:#666>+</span>e<span style=color:#666>);</span>
         <span style=color:#666>}</span> <span style=color:#a2f;font-weight:700>finally</span> <span style=color:#666>{</span>
             <span style=color:#a2f;font-weight:700>try</span> <span style=color:#666>{</span>
@@ -451,7 +451,7 @@
             <span style=color:#666>}</span>
         <span style=color:#666>}</span>
     <span style=color:#666>}</span>
-    
+
     <span style=color:#080;font-style:italic>/**
 </span><span style=color:#080;font-style:italic>     * 根据文件名称排序
 </span><span style=color:#080;font-style:italic>     */</span>
@@ -517,10 +517,10 @@
 <span style=color:#666>}</span>
 
 </code></pre></div><p>虽说代码精简了，但是功能却是一个没有含糊呀，接着欣赏效果图吧。</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2012/01-13-nutz-ke-lgh-my97-3.png alt=nutz-ke-lgh-my97-3></p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2012/01-13-nutz-ke-lgh-my97-4.png alt=nutz-ke-lgh-my97-4></p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2012/01-13-nutz-ke-lgh-my97-5.png alt=nutz-ke-lgh-my97-5></p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2012/01-13-nutz-ke-lgh-my97-6.png alt=nutz-ke-lgh-my97-6></p>
+<p><img src=//imgs.lisenhui.cn/blog/2012/01-13-nutz-ke-lgh-my97-3.png alt=nutz-ke-lgh-my97-3></p>
+<p><img src=//imgs.lisenhui.cn/blog/2012/01-13-nutz-ke-lgh-my97-4.png alt=nutz-ke-lgh-my97-4></p>
+<p><img src=//imgs.lisenhui.cn/blog/2012/01-13-nutz-ke-lgh-my97-5.png alt=nutz-ke-lgh-my97-5></p>
+<p><img src=//imgs.lisenhui.cn/blog/2012/01-13-nutz-ke-lgh-my97-6.png alt=nutz-ke-lgh-my97-6></p>
 <p>Nutz对于JAVA程序员来说，是除SSH外的另一个选择，一个美好的开始，如果你有使用相信你定会深学的爱上它，嘻~，别的就不多说了，下面直接把源码给奉上吧，因为时间紧迫(待会就要坐车回家了，嘎~，终于放假了)就只是随笔写了下，写的不好还望大家见谅。</p>
 <p>PS: <a href=http://dl.iteye.com/topics/download/f1325e10-20b7-3f71-a3e1-a43efd1574b5 target=_blank rel=noopener>示例源下载</a>
 </p>
@@ -780,12 +780,12 @@ Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next tar
 </div>
 <div class=license-info>
 <span class=storage-info>
-本站由
-<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>提供CDN/云存储</a>
+由
+<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>提供CDN&存储</a>
 </span>
 <span class=separator-line>/</span>
 <span class=license-num>
-<a href=http://beian.miit.gov.cn target=_blank>粤 ICP 备 18047355 号</a>
+<a href=http://beian.miit.gov.cn target=_blank>粤ICP备18047355-1号</a>
 </span>
 </div>
 <style type=text/css>.vendor-logo{background-image:url(/img/upyun_logo.png);background-size:52px;background-repeat:no-repeat;padding-left:54px}</style>

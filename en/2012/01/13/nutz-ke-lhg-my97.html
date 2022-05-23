@@ -149,8 +149,8 @@ Domestic technology power joins forces with Nutz, KindEditor, LHGDialog, My97Dat
 </header>
 <div class=post-body itemprop=articleBody>
 <p>For a while did not pay attention to the development of domestic IT technology, a few days ago in the study of an open source technology &lsquo;Nutz&rsquo; in the country want to practice a hand, but for a while do not know what to write good, think for a while or choose their own &ldquo;old friend&rdquo; &lsquo;KindEditor&rsquo;. Although it dare not be said to be a thorough understanding (personal JS level is limited, oh), but at least can also be very skilled use. Official website very early launched everyone&rsquo;s long-awaited &lsquo;KE4&rsquo;, but I did not update together, just this time to take it to experience, hip-hop. However, the thought of those &lsquo;KE&rsquo; application examples written earlier is monotonous, the last one is good to have &lsquo;EasyUI&rsquo; as the backing, but this UI framework for smaller than the hands-on project is still a bit big. So began to think about looking for other UI to see, suddenly up the previous use of the &lsquo;LHGDialog&rsquo; pop-up components are quite good, then went to its official website a circle. Didn&rsquo;t think it was really amazing ah, &lsquo;LHG&rsquo; is now also updated to 4 version, that effect is really exciting. Let&rsquo;s first appreciate the fruits of the labor that took more than 2 hours (now is the time for truth), ha ha&mldr;</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2012/01-13-nutz-ke-lgh-my97-1.png alt=use-ke-lgh-my97-1></p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2012/01-13-nutz-ke-lgh-my97-2.png alt=use-ke-lgh-my97-2></p>
+<p><img src=//imgs.lisenhui.cn/blog/2012/01-13-nutz-ke-lgh-my97-1.png alt=use-ke-lgh-my97-1></p>
+<p><img src=//imgs.lisenhui.cn/blog/2012/01-13-nutz-ke-lgh-my97-2.png alt=use-ke-lgh-my97-2></p>
 <p>In this has to praise the &lsquo;Nutz&rsquo; of the united states of high efficiency and simplicity, and the previous version of KE or the upload part of the &lsquo;JSP&rsquo; page translated into the background &lsquo;JAVA&rsquo; code, the only difference is that those same functions of the implementation code streamlined a lot ah, the official website example of the two &lsquo;JSP&rsquo; files have been compressed into a less than 400 lines of &lsquo;JAVA&rsquo; background code, the source code is as follows:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java>
 <span style=color:#a2f;font-weight:700>package</span> <span style=color:#00f;font-weight:700>org.nutz.kindeditor4.plugin</span><span style=color:#666>;</span>
@@ -204,8 +204,8 @@ Domestic technology power joins forces with Nutz, KindEditor, LHGDialog, My97Dat
     Allows you to upload an array of file size MAPS
     <span style=color:#a2f;font-weight:700>private</span> <span style=color:#a2f;font-weight:700>static</span> <span style=color:#a2f;font-weight:700>final</span> HashMap<span style=color:#666>&lt;</span>String<span style=color:#666>,</span>Long<span style=color:#666>&gt;</span> sizeMap <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> HashMap<span style=color:#666>&lt;</span>String<span style=color:#666>,</span> Long<span style=color:#666>&gt;();</span>
     Upload the file to store the root
-    <span style=color:#a2f;font-weight:700>private</span> String filePath <span style=color:#666>=</span> <span style=color:#b44>&#34;/attached/&#34;</span><span style=color:#666>;</span>    
-    
+    <span style=color:#a2f;font-weight:700>private</span> String filePath <span style=color:#666>=</span> <span style=color:#b44>&#34;/attached/&#34;</span><span style=color:#666>;</span>
+
     <span style=color:#a2f;font-weight:700>static</span> <span style=color:#666>{</span>
         The initial suffix name MAP array
         extMap<span style=color:#666>.</span><span style=color:#b44>put</span><span style=color:#666>(</span><span style=color:#b44>&#34;image&#34;</span><span style=color:#666>,</span> <span style=color:#b44>&#34;gif,jpg,jpeg,png,bmp&#34;</span><span style=color:#666>);</span>
@@ -220,7 +220,7 @@ Domestic technology power joins forces with Nutz, KindEditor, LHGDialog, My97Dat
     <span style=color:#666>}</span>
 
     <span style=color:#a2f>@At</span>
-    <span style=color:#a2f;font-weight:700>public</span> Map<span style=color:#666>&lt;</span>String<span style=color:#666>,</span> Object<span style=color:#666>&gt;</span> <span style=color:#00a000>upload</span><span style=color:#666>(</span><span style=color:#a2f>@Param</span><span style=color:#666>(</span><span style=color:#b44>&#34;imgFile&#34;</span><span style=color:#666>)</span> File tempFile<span style=color:#666>,</span> 
+    <span style=color:#a2f;font-weight:700>public</span> Map<span style=color:#666>&lt;</span>String<span style=color:#666>,</span> Object<span style=color:#666>&gt;</span> <span style=color:#00a000>upload</span><span style=color:#666>(</span><span style=color:#a2f>@Param</span><span style=color:#666>(</span><span style=color:#b44>&#34;imgFile&#34;</span><span style=color:#666>)</span> File tempFile<span style=color:#666>,</span>
             <span style=color:#a2f>@Param</span><span style=color:#666>(</span><span style=color:#b44>&#34;dir&#34;</span><span style=color:#666>)</span> String dir<span style=color:#666>,</span> ServletContext context<span style=color:#666>)</span> <span style=color:#666>{</span>
         The initial correlation variable
         Map<span style=color:#666>&lt;</span>String<span style=color:#666>,</span> Object<span style=color:#666>&gt;</span> execute <span style=color:#666>=</span> <span style=color:#a2f;font-weight:700>new</span> HashMap<span style=color:#666>&lt;</span>String<span style=color:#666>,</span> Object<span style=color:#666>&gt;();</span>
@@ -288,7 +288,7 @@ Domestic technology power joins forces with Nutz, KindEditor, LHGDialog, My97Dat
 </span><span style=color:#b44>        execute.put(&#34;</span>url<span style=color:#b44>&#34;, url.toString());
 </span><span style=color:#b44>        return execute;
 </span><span style=color:#b44>    }
-</span><span style=color:#b44>    
+</span><span style=color:#b44>
 </span><span style=color:#b44>    @At
 </span><span style=color:#b44>    public Map&lt;String, Object&gt; manager(@Param(&#34;</span>dir<span style=color:#b44>&#34;) String dir,
 </span><span style=color:#b44>            @Param(&#34;</span>path<span style=color:#b44>&#34;) String path, @Param(&#34;</span>order<span style=color:#b44>&#34;) String order,
@@ -315,7 +315,7 @@ Domestic technology power joins forces with Nutz, KindEditor, LHGDialog, My97Dat
 </span><span style=color:#b44>        if (!&#34;&#34;. equals(path)) {
 </span><span style=color:#b44>            String str = curDir.substring(0, curDir.length() - 1);
 </span><span style=color:#b44>            moveupDir = str.lastIndexOf(&#34;</span><span style=color:#666>/</span><span style=color:#b44>&#34;) &gt;= 0 ? str.substring(0, str.lastIndexOf(&#34;</span><span style=color:#666>/</span><span style=color:#b44>&#34;) + 1): &#34;&#34;;
-</span><span style=color:#b44>        }        
+</span><span style=color:#b44>        }
 </span><span style=color:#b44>        Check.. Command
 </span><span style=color:#b44>        if(path.indexOf(&#34;</span><span style=color:#666>..</span><span style=color:#b44>&#34;) &gt;= 0){
 </span><span style=color:#b44>            execute.put(&#34;</span>error<span style=color:#b44>&#34;, 1);
@@ -374,10 +374,10 @@ Domestic technology power joins forces with Nutz, KindEditor, LHGDialog, My97Dat
 </span><span style=color:#b44>        execute.put(&#34;</span>current_dir_path<span style=color:#b44>&#34;, curDir);
 </span><span style=color:#b44>        execute.put(&#34;</span>current_url<span style=color:#b44>&#34;, curPath);
 </span><span style=color:#b44>        execute.put(&#34;</span>total_count<span style=color:#b44>&#34;, fileList.size());
-</span><span style=color:#b44>        execute.put(&#34;</span>file_list<span style=color:#b44>&#34;, fileList);        
+</span><span style=color:#b44>        execute.put(&#34;</span>file_list<span style=color:#b44>&#34;, fileList);
 </span><span style=color:#b44>        return execute;
 </span><span style=color:#b44>    }
-</span><span style=color:#b44>    
+</span><span style=color:#b44>
 </span><span style=color:#b44>    /**
 </span><span style=color:#b44>     :: Determine whether the folder saved by the file upload exists or can be written
 </span><span style=color:#b44>     :: @return &#34;</span><span style=color:#a2f;font-weight:700>true</span><span style=color:#b44>&#34; if it exists and can be written, otherwise &#34;</span><span style=color:#a2f;font-weight:700>false</span><span style=color:#b44>&#34; is returned
@@ -395,7 +395,7 @@ Domestic technology power joins forces with Nutz, KindEditor, LHGDialog, My97Dat
 </span><span style=color:#b44>            return false;
 </span><span style=color:#b44>        return true;
 </span><span style=color:#b44>    }
-</span><span style=color:#b44>    
+</span><span style=color:#b44>
 </span><span style=color:#b44>    /**
 </span><span style=color:#b44>     :: Generate a new file name and manage by date
 </span><span style=color:#b44>     */
@@ -410,9 +410,9 @@ Domestic technology power joins forces with Nutz, KindEditor, LHGDialog, My97Dat
 </span><span style=color:#b44>        SimpleDateFormat fileNameFormat = new SimpleDateFormat(&#34;</span>yyyyMMddkkmmss_S<span style=color:#b44>&#34;);
 </span><span style=color:#b44>        tempPath.append(&#34;</span><span style=color:#666>/</span><span style=color:#b44>&#34;).append(fileNameFormat.format(new Date()));
 </span><span style=color:#b44>        tempPath.append(&#34;</span><span style=color:#666>.</span><span style=color:#b44>&#34;). append(fileExt);
-</span><span style=color:#b44>        savePath = tempPath.toString().replaceAll(&#34;</span><span>\\\\</span><span style=color:#b44>&#34;, &#34;</span><span style=color:#666>/</span><span style=color:#b44>&#34;);    
+</span><span style=color:#b44>        savePath = tempPath.toString().replaceAll(&#34;</span><span>\\\\</span><span style=color:#b44>&#34;, &#34;</span><span style=color:#666>/</span><span style=color:#b44>&#34;);
 </span><span style=color:#b44>    }
-</span><span style=color:#b44>    
+</span><span style=color:#b44>
 </span><span style=color:#b44>    /**
 </span><span style=color:#b44>     :: Copy the file
 </span><span style=color:#b44>     :: @param src source file
@@ -420,8 +420,8 @@ Domestic technology power joins forces with Nutz, KindEditor, LHGDialog, My97Dat
 </span><span style=color:#b44>     */
 </span><span style=color:#b44>    public void copy(File src, String tar) {
 </span><span style=color:#b44>        Determines whether the source file or destination path is empty
-</span><span style=color:#b44>        if (null == src 
-</span><span style=color:#b44>                || null == takes 
+</span><span style=color:#b44>        if (null == src
+</span><span style=color:#b44>                || null == takes
 </span><span style=color:#b44>                || tar.isEmpty()) {
 </span><span style=color:#b44>            return;
 </span><span style=color:#b44>        }
@@ -436,7 +436,7 @@ Domestic technology power joins forces with Nutz, KindEditor, LHGDialog, My97Dat
 </span><span style=color:#b44>            while (-1 != (n = srcIs.read(buffer))) {
 </span><span style=color:#b44>                tarOs.write(buffer, 0, n);
 </span><span style=color:#b44>            }
-</span><span style=color:#b44>        } catch (IOException e) {           
+</span><span style=color:#b44>        } catch (IOException e) {
 </span><span style=color:#b44>            log.error(&#34;</span>Copy File is Fali<span style=color:#666>,</span> Because <span style=color:#b44>&#34;+e);
 </span><span style=color:#b44>        } finally {
 </span><span style=color:#b44>            try {
@@ -451,7 +451,7 @@ Domestic technology power joins forces with Nutz, KindEditor, LHGDialog, My97Dat
 </span><span style=color:#b44>            }
 </span><span style=color:#b44>        }
 </span><span style=color:#b44>    }
-</span><span style=color:#b44>    
+</span><span style=color:#b44>
 </span><span style=color:#b44>    /**
 </span><span style=color:#b44>     Sort by file name
 </span><span style=color:#b44>     */
@@ -517,10 +517,10 @@ Domestic technology power joins forces with Nutz, KindEditor, LHGDialog, My97Dat
 <span style=color:#666>}</span>
 
 </code></pre></div><p>Although the code is streamlined, but the function is a no ambiguity ah, and then enjoy the effect map.</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2012/01-13-nutz-ke-lgh-my97-3.png alt=use-ke-lgh-my97-3></p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2012/01-13-nutz-ke-lgh-my97-4.png alt=use-ke-lgh-my97-4></p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2012/01-13-nutz-ke-lgh-my97-5.png alt=use-ke-lgh-my97-5></p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2012/01-13-nutz-ke-lgh-my97-6.png alt=use-ke-lgh-my97-6></p>
+<p><img src=//imgs.lisenhui.cn/blog/2012/01-13-nutz-ke-lgh-my97-3.png alt=use-ke-lgh-my97-3></p>
+<p><img src=//imgs.lisenhui.cn/blog/2012/01-13-nutz-ke-lgh-my97-4.png alt=use-ke-lgh-my97-4></p>
+<p><img src=//imgs.lisenhui.cn/blog/2012/01-13-nutz-ke-lgh-my97-5.png alt=use-ke-lgh-my97-5></p>
+<p><img src=//imgs.lisenhui.cn/blog/2012/01-13-nutz-ke-lgh-my97-6.png alt=use-ke-lgh-my97-6></p>
 <p>Nutz for JAVA programmers, is in addition to SSH another choice, a good start, if you have to use believe that you will learn to love it, hip-hop, other not much to say, the following directly to the source code to serve it, because the time is tight (will have to take a bus home, Gaga, finally holiday) just write down, write not good also look at everyone understand.</p>
 <p>PS: (<a href=http://dl.iteye.com/topics/download/f1325e10-20b7-3f71-a3e1-a43efd1574b5 target=_blank rel=noopener>http://dl.iteye.com/topics/download/f1325e10-20b7-3f71-a3e1-a43efd1574b5</a>
 )</p>
@@ -780,12 +780,12 @@ Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next tar
 </div>
 <div class=license-info>
 <span class=storage-info>
-本站由
-<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>CDN/Storage</a>
+由
+<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>CDN&Storage</a>
 </span>
 <span class=separator-line>/</span>
 <span class=license-num>
-<a href=http://beian.miit.gov.cn target=_blank>ICP.NO 18047355</a>
+<a href=http://beian.miit.gov.cn target=_blank>ICP.NO 18047355-1</a>
 </span>
 </div>
 <style type=text/css>.vendor-logo{background-image:url(/img/upyun_logo.png);background-size:52px;background-repeat:no-repeat;padding-left:54px}</style>

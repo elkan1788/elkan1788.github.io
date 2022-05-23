@@ -150,10 +150,10 @@ Apache Nifi集群搭建及用kerberos实现用户认证
 <div class=post-body itemprop=articleBody>
 <p>最近这段时间在接触数据流式处理方面的事宜，用到了<strong>Apache NIFI</strong>现把安装配置中学习的一些经验分享下。此篇文章主要是针对集群及用户权限方面，关于<a href=https://nifi.apache.org/ target=_blank rel=noopener>Apache NIFI</a>
 的介绍就不做过多的说明，直接引用官方的首页的说明如下图所示：</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/10-22-Apache-NiFi-01.png alt=NiFi-01.png></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/10-22-Apache-NiFi-01.png alt=NiFi-01.png></p>
 <p><strong>Apahce NIFI</strong>的单机运行是相当的简单，易用，完全就是傻瓜式的。下载解压，进行<code>bin</code>目录执行<code>nifi.sh start</code> 打开浏览器输入<code>http://127.0.0.1:8080/nifi</code>即可看到一个简洁漂亮的WEB UI。那么接下来我们要配置的是它的集群模式，官方说明<em><strong>NIFI</strong></em>采用的是<strong>0</strong>主节点模式，集群中的每个节点在数据集上执行相同的任务，但是每个节点都在不同的数据集上运行（详细的说明请查看<a href=https://nifi.apache.org/docs.html#clustering target=_blank rel=noopener>官方文档</a>
 ），并且内置了<strong>Zookeeper</strong>服务，如下图所示：</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/10-22-zero-master-cluster-http-access.png alt=zero-master-cluster-http-access.png></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/10-22-zero-master-cluster-http-access.png alt=zero-master-cluster-http-access.png></p>
 <h1 id=系统环境及软件版本>系统环境及软件版本</h1>
 <ul>
 <li>
@@ -257,8 +257,8 @@ Initializing database <span style=color:#b44>&#39;/var/kerberos/principal&#39;</
 master key name <span style=color:#b44>&#39;K/M@CENTOS7-MASTER.COM&#39;</span>
 You will be prompted <span style=color:#a2f;font-weight:700>for</span> the database Master Password.
 It is important that you NOT FORGET this password.
-Enter KDC database master key: 
-Re-enter KDC database master key to verify: 
+Enter KDC database master key:
+Re-enter KDC database master key to verify:
 </code></pre></div><h3 id=修改数据库权限>修改数据库权限</h3>
 <p>找到<code>/var/kerberos/krb5kdc/kadm5.acl</code>配置文件，给数据库管理员添加ACL权限，*代表全部权限，操作如下：</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=color:#666>[</span>root@centos7-master ~<span style=color:#666>]</span><span style=color:#080;font-style:italic># vi /var/kerberos/krb5kdc/kadm5.acl</span>
@@ -287,8 +287,8 @@ kadmin: q
 [root@centos7-cluster01 ~]# scp root@centos7-master:/data/root.keytab /data/root.keytab
 [root@centos7-cluster01 ~]# kadmin -p root/admin
 Authenticating as principal root/admin with password.
-Password for root/admin@CENTOS7-MASTER.COM: 
-kadmin: 
+Password for root/admin@CENTOS7-MASTER.COM:
+kadmin:
 </code></pre></div><h3 id=拷贝keytab文件>拷贝keytab文件</h3>
 <p>拷贝<strong>root.keytab</strong>到<code>/data/root.keytab</code>目录，注意此处指的是所有机器</p>
 <h1 id=创建nifi服务证书>创建Nifi服务证书</h1>
@@ -361,7 +361,7 @@ server.2=centos7-cluster01:2888:3888
 </code></pre></div><h2 id=更新状态配置>更新状态配置</h2>
 <p>进入到Nifif安装目录下修改<code>conf/state-management.xml</code>配置，在<strong>zk-provider</strong>节点下添加连接字符串</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-xml data-lang=xml><span style=color:green;font-weight:700>&lt;cluster-provider&gt;</span>
-  <span style=color:green;font-weight:700>&lt;id&gt;</span>zk-provider<span style=color:green;font-weight:700>&lt;/id&gt;</span>    
+  <span style=color:green;font-weight:700>&lt;id&gt;</span>zk-provider<span style=color:green;font-weight:700>&lt;/id&gt;</span>
  <span style=color:green;font-weight:700>&lt;class&gt;</span>org.apache.nifi.controller.state.providers.zookeeper.ZooKeeperStateProvider<span style=color:green;font-weight:700>&lt;/class&gt;</span>
    <span style=color:green;font-weight:700>&lt;property</span> <span style=color:#b44>name=</span><span style=color:#b44>&#34;Connect String&#34;</span><span style=color:green;font-weight:700>&gt;</span>centos7-master:2181,centos7-cluster01:2181<span style=color:green;font-weight:700>&lt;/property&gt;</span>
    <span style=color:green;font-weight:700>&lt;property</span> <span style=color:#b44>name=</span><span style=color:#b44>&#34;Root Node&#34;</span><span style=color:green;font-weight:700>&gt;</span>/nifi<span style=color:green;font-weight:700>&lt;/property&gt;</span>
@@ -411,8 +411,8 @@ nifi.kerberos.service.keytab.location=/data/root.keytab
 <span style=color:green;font-weight:700>&lt;/provider&gt;</span>
 </code></pre></div><h1 id=启动nifi服务>启动NIFI服务</h1>
 <p>先启动主节点的NIFI，而后启动从节点的NIFI，执行命令<code>./bin/nifi.sh start</code>， 然后打开浏览器输入<code>https://centos7-master:9443/nifi/</code>便会跳转到登录页面，输入在第1步骤创建的用户与密码，即可登录成功。界面显示如下：</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/10-22-Apache-NiFi-02.png alt="Apache NiFi02"></p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/10-22-Apache-NiFi-03.png alt="Apache NiFi03"></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/10-22-Apache-NiFi-02.png alt="Apache NiFi02"></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/10-22-Apache-NiFi-03.png alt="Apache NiFi03"></p>
 <p>如上面两图显示，在界面的左上角可以清楚的看到当前节点数为2，用户为**<code>root/admin@CENTOS7-MASTER.COM</code>**，其中<code>centos7-master</code>是协调器，<code>centos7-cluster01</code>是主要节点，主菜单中也增加有了<code>Cluster</code>，<code>User</code>和<code>Policies</code>选项。</p>
 <p>至此<code>Apache NIFI</code>的集群服务与用户认证便完成好啦，后面便可开展下一步的工作。</p>
 <blockquote>
@@ -711,12 +711,12 @@ Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next tar
 </div>
 <div class=license-info>
 <span class=storage-info>
-本站由
-<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>提供CDN/云存储</a>
+由
+<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>提供CDN&存储</a>
 </span>
 <span class=separator-line>/</span>
 <span class=license-num>
-<a href=http://beian.miit.gov.cn target=_blank>粤 ICP 备 18047355 号</a>
+<a href=http://beian.miit.gov.cn target=_blank>粤ICP备18047355-1号</a>
 </span>
 </div>
 <style type=text/css>.vendor-logo{background-image:url(/img/upyun_logo.png);background-size:52px;background-repeat:no-repeat;padding-left:54px}</style>

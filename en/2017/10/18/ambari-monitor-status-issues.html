@@ -149,10 +149,10 @@ An issue with the service in Ambari that is functioning properly but the service
 </header>
 <div class=post-body itemprop=articleBody>
 <p>Many times the maintenance of the environment is indeed a headache event, which does not originally show the monitoring of normal services on Ambari&rsquo;s Dashboard page, there is a strange phenomenon: in the machine query service running process is normal, but partial Ambari&rsquo;s UI interface is displayed as a stop, but the port check shows normal. Here&rsquo;s the picture:</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/10-18-ambari-red.png alt=alert_stopped.png></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/10-18-ambari-red.png alt=alert_stopped.png></p>
 <p>Ben can also let go (anyway, the service is running normally), but helpless obsessive compulsive disorder &ldquo;fault&rdquo; and committed, had to eliminate it out of the heart is comfortable. After several unsuccessful attempts, it turned out that it was as if a colleague had manually started some components, which is why. The processusers who used &lsquo;ps&rsquo; to examine these components found that this was the case, forced the killing of these components, and then restarted them using the Ambari UI, but the end result remained the same.</p>
 <p>Really very depressed, at this time also had to use google, and then found a similar problem of the article, which mentioned the runtime&rsquo;xx.pid&rsquo;permission problem, really a bit ofwake-up call dreamers, hasten to look at these components of the pid file permissions, indeed, because the previous start-up is with super-tube users, and in fact these components have corresponding user maintenance. Delete these&rsquo;xxx.pid&rsquo;files, re-open these services on theAmbari UI, everything is back to normal, and the beautiful green interface is back.</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/10-18-ambari-green.png alt=ambari-green.png></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/10-18-ambari-green.png alt=ambari-green.png></p>
 <p>Reference quote:</p>
 <ul>
 <li><a href=https://community.hortonworks.com/questions/41069/service-is-running-but-ambari-shows-serice-is-stop.html target=_blank rel=noopener>service-is-running-but-ambari-shows-serice-is-stop</a>
@@ -415,12 +415,12 @@ Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next tar
 </div>
 <div class=license-info>
 <span class=storage-info>
-本站由
-<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>CDN/Storage</a>
+由
+<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>CDN&Storage</a>
 </span>
 <span class=separator-line>/</span>
 <span class=license-num>
-<a href=http://beian.miit.gov.cn target=_blank>ICP.NO 18047355</a>
+<a href=http://beian.miit.gov.cn target=_blank>ICP.NO 18047355-1</a>
 </span>
 </div>
 <style type=text/css>.vendor-logo{background-image:url(/img/upyun_logo.png);background-size:52px;background-repeat:no-repeat;padding-left:54px}</style>

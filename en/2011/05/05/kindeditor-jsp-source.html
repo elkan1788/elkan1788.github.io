@@ -150,7 +150,7 @@ Open JSP KindEditor's attachment JAR package source code
 <div class=post-body itemprop=articleBody>
 <p>I didn&rsquo;t expect the response to be so strong when I wrote a JSP version of kindeditor editor in March. However, with the growth of the day and month, this version of the plug-in also exposed some BUG, such as: Struts2 how to integrate, web.xml file configuration upload properties inconvenient to modify and cumbersome, upload pictures (attachments) can not be saved in other disks &mldr; &mldr;&mldr; 。 Now usually developed projects are using KE as an online editor, in order to be better and more convenient to use this editor, in the rest of the time to refactor the original code re-encapsulation, in addition to the previous version of the BUG, but also unified the overall naming specifications, added some new features.</p>
 <p>The version number of the current version of the plug-in is:Kindeditor-plugin0.4RELEASE, and the list of classes in the JAR package is as follows:</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2011/05-05-kindeditor-jsp-ss-1.png alt=kindeditor-jsp-ss-1></p>
+<p><img src=//imgs.lisenhui.cn/blog/2011/05-05-kindeditor-jsp-ss-1.png alt=kindeditor-jsp-ss-1></p>
 <p>The main functions accomplished by this refactoring are the following:
 :: Reconstruct the selection button of upload attachment page press, imitation image upload;
 :: Increased Struts2 environmental integration;
@@ -167,7 +167,7 @@ Open JSP KindEditor's attachment JAR package source code
 <span style=color:#080>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span style=color:green;font-weight:700>&lt;web-app</span> <span style=color:#b44>version=</span><span style=color:#b44>&#34;2.5&#34;</span> <span style=color:#b44>xmlns=</span><span style=color:#b44>&#34;http://java.sun.com/xml/ns/javaee&#34;</span>
  <span style=color:#b44>xmlns:xsi=</span><span style=color:#b44>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
- <span style=color:#b44>xsi:schemaLocation=</span><span style=color:#b44>&#34;http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&#34;</span><span style=color:green;font-weight:700>&gt;</span> 
+ <span style=color:#b44>xsi:schemaLocation=</span><span style=color:#b44>&#34;http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&#34;</span><span style=color:green;font-weight:700>&gt;</span>
  <span style=color:green;font-weight:700>&lt;servlet&gt;</span>
    <span style=color:green;font-weight:700>&lt;servlet-name&gt;</span>KEUploadImgServlet<span style=color:green;font-weight:700>&lt;/servlet-name&gt;</span>
    <span style=color:green;font-weight:700>&lt;servlet-class&gt;</span>com.elkan.kindeditor.servlet.plugin.KEUploadImgServlet<span style=color:green;font-weight:700>&lt;/servlet-class&gt;</span>
@@ -175,7 +175,7 @@ Open JSP KindEditor's attachment JAR package source code
      <span style=color:green;font-weight:700>&lt;param-name&gt;</span>IMGSAVEPATH<span style=color:green;font-weight:700>&lt;/param-name&gt;</span>
      <span style=color:green;font-weight:700>&lt;param-value&gt;</span>/upload/image/<span style=color:green;font-weight:700>&lt;/param-value&gt;</span>
    <span style=color:green;font-weight:700>&lt;/init-param&gt;</span>
-   <span style=color:#080;font-style:italic>&lt;!-- 
+   <span style=color:#080;font-style:italic>&lt;!--
 </span><span style=color:#080;font-style:italic>   By default, pass the picture size
 </span><span style=color:#080;font-style:italic>   &lt;init-param&gt;
 </span><span style=color:#080;font-style:italic>     &lt;param-name&gt;MAXSIZE&lt;/param-name&gt;
@@ -212,7 +212,7 @@ Open JSP KindEditor's attachment JAR package source code
      <span style=color:green;font-weight:700>&lt;param-name&gt;</span>ATTACHSAVEPATH<span style=color:green;font-weight:700>&lt;/param-name&gt;</span>
      <span style=color:green;font-weight:700>&lt;param-value&gt;</span>/upload/attach/<span style=color:green;font-weight:700>&lt;/param-value&gt;</span>
    <span style=color:green;font-weight:700>&lt;/init-param&gt;</span>
-   <span style=color:#080;font-style:italic>&lt;!-- 
+   <span style=color:#080;font-style:italic>&lt;!--
 </span><span style=color:#080;font-style:italic>   Upload attachment size by default
 </span><span style=color:#080;font-style:italic>   &lt;init-param&gt;
 </span><span style=color:#080;font-style:italic>     &lt;param-name&gt;MAXSIZE&lt;/param-name&gt;
@@ -255,7 +255,7 @@ KE.show({
        fileManagerJson<span style=color:#666>:</span> <span style=color:#b44>&#34;/KEPlugin/keplugin/KEManageImages.servlet&#34;</span>,
  The <span style=color:#a2f;font-weight:700>default</span> is . . . <span style=color:#a2f;font-weight:700>for</span> all types <span style=color:#a2f;font-weight:700>of</span> files
  <span style=color:#080;font-style:italic>//accessoryTypes: &#34;doc|docx&#34;,
-</span><span style=color:#080;font-style:italic></span> accessoryUploadJson<span style=color:#666>:</span> <span style=color:#b44>&#34;/KEPlugin/keplugin/KEUploadAttach.servlet&#34;</span>        
+</span><span style=color:#080;font-style:italic></span> accessoryUploadJson<span style=color:#666>:</span> <span style=color:#b44>&#34;/KEPlugin/keplugin/KEUploadAttach.servlet&#34;</span>
 });
 
 </code></pre></div><ol start=2>
@@ -266,7 +266,7 @@ KE.show({
 <span style=color:green;font-weight:700>&lt;web-app</span> <span style=color:#b44>version=</span><span style=color:#b44>&#34;2.5&#34;</span> <span style=color:#b44>xmlns=</span><span style=color:#b44>&#34;http://java.sun.com/xml/ns/javaee&#34;</span> <span style=color:#b44>xmlns:xsi=</span><span style=color:#b44>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span style=color:#b44>xsi:schemalocation=</span><span style=color:#b44>&#34;http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&#34;</span><span style=color:green;font-weight:700>&gt;</span>
   <span style=color:green;font-weight:700>&lt;filter&gt;</span>
     <span style=color:green;font-weight:700>&lt;filter-name&gt;</span>struts2<span style=color:green;font-weight:700>&lt;/filter-name&gt;</span>
-    <span style=color:green;font-weight:700>&lt;filter-class&gt;</span>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter<span style=color:green;font-weight:700>&lt;/filter-class&gt;</span>  
+    <span style=color:green;font-weight:700>&lt;filter-class&gt;</span>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter<span style=color:green;font-weight:700>&lt;/filter-class&gt;</span>
   <span style=color:green;font-weight:700>&lt;/filter&gt;</span>
   <span style=color:green;font-weight:700>&lt;filter-mapping&gt;</span>
     <span style=color:green;font-weight:700>&lt;filter-name&gt;</span>struts2<span style=color:green;font-weight:700>&lt;/filter-name&gt;</span>
@@ -322,22 +322,22 @@ KE.show({
       fileManagerJson <span style=color:#666>:</span> <span style=color:#b44>&#34;/KEPlugin/keplugin/keManagerImages.action&#34;</span>,
       The <span style=color:#a2f;font-weight:700>default</span> is . . . <span style=color:#a2f;font-weight:700>for</span> all types <span style=color:#a2f;font-weight:700>of</span> files
   <span style=color:#080;font-style:italic>//accessoryTypes: &#34;doc|docx&#34;,
-</span><span style=color:#080;font-style:italic></span>        accessoryUploadJson<span style=color:#666>:</span> <span style=color:#b44>&#34;/KEPlugin/keplugin/keUploadAttach.action&#34;</span>       
+</span><span style=color:#080;font-style:italic></span>        accessoryUploadJson<span style=color:#666>:</span> <span style=color:#b44>&#34;/KEPlugin/keplugin/keUploadAttach.action&#34;</span>
 });
 
 </code></pre></div><p>This time also written with the JQuery EasyUI and Syntax Highlighter Grammar Highlight plug-ins, let&rsquo;s start by previewing Kindeditor&rsquo;s refreshing figure in EasyUI mode and shining on the scene&mldr;</p>
 <p>:: Apply the sample home page</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2011/05-05-kindeditor-jsp-ss-2.png alt=kindeditor-jsp-ss-2></p>
+<p><img src=//imgs.lisenhui.cn/blog/2011/05-05-kindeditor-jsp-ss-2.png alt=kindeditor-jsp-ss-2></p>
 <p>:: Servlet version of KE</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2011/05-05-kindeditor-jsp-ss-3.png alt=kindeditor-jsp-ss-3></p>
+<p><img src=//imgs.lisenhui.cn/blog/2011/05-05-kindeditor-jsp-ss-3.png alt=kindeditor-jsp-ss-3></p>
 <p>:: Struts2 version of KE</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2011/05-05-kindeditor-jsp-ss-4.png alt=kindeditor-jsp-ss-4></p>
+<p><img src=//imgs.lisenhui.cn/blog/2011/05-05-kindeditor-jsp-ss-4.png alt=kindeditor-jsp-ss-4></p>
 <p>:: Attachment upload page</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2011/05-05-kindeditor-jsp-ss-5.png alt=kindeditor-jsp-ss-5></p>
+<p><img src=//imgs.lisenhui.cn/blog/2011/05-05-kindeditor-jsp-ss-5.png alt=kindeditor-jsp-ss-5></p>
 <p>:: On The picture management</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/kindeditor-jsp-ss-6.png alt=kindeditor-jsp-ss-6></p>
+<p><img src=//imgs.lisenhui.cn/blog/kindeditor-jsp-ss-6.png alt=kindeditor-jsp-ss-6></p>
 <p>:: KE editor preview effect</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2011/05-05-kindeditor-jsp-ss-7.png alt=kindeditor-jsp-ss-7></p>
+<p><img src=//imgs.lisenhui.cn/blog/2011/05-05-kindeditor-jsp-ss-7.png alt=kindeditor-jsp-ss-7></p>
 <p>For more detailed application features, please see the attachment for download. Finally remember to support the development of domestic technology ah, have an opinion please shoot brick spit slot.</p>
 <p>PS: Download the KindEditor app sample download (<a href=http://download.csdn.net/download/lisenhui_19/3689869%29 target=_blank rel=noopener>http://download.csdn.net/download/lisenhui_19/3689869)</a>
 .</p>
@@ -598,12 +598,12 @@ Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next tar
 </div>
 <div class=license-info>
 <span class=storage-info>
-本站由
-<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>CDN/Storage</a>
+由
+<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>CDN&Storage</a>
 </span>
 <span class=separator-line>/</span>
 <span class=license-num>
-<a href=http://beian.miit.gov.cn target=_blank>ICP.NO 18047355</a>
+<a href=http://beian.miit.gov.cn target=_blank>ICP.NO 18047355-1</a>
 </span>
 </div>
 <style type=text/css>.vendor-logo{background-image:url(/img/upyun_logo.png);background-size:52px;background-repeat:no-repeat;padding-left:54px}</style>

@@ -163,11 +163,11 @@
 <h3 id=travis-ci账户>Travis CI账户</h3>
 <p>如有需要可以单独注册账号，建议直接使用<code>Github Token</code>登录即可。 接下来就是需要生成个<code>Github Token</code>，在<code>Github</code>的个设置面板中找到，或者是直接点击<a href=https://github.com/settings/tokens target=_blank rel=noopener>Github Tokens</a>
 进行创建，如下图所示：</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/08-19-travis-ci-deploy01.png alt=travis-ci-deploy01>
-<img src=//lisenhui.gitee.io/imgs/blog/2017/08-19-travis-ci-deploy02.png alt=travis-ci-deploy02></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/08-19-travis-ci-deploy01.png alt=travis-ci-deploy01>
+<img src=//imgs.lisenhui.cn/blog/2017/08-19-travis-ci-deploy02.png alt=travis-ci-deploy02></p>
 <p>保存好刚刚创建的<code>Token</code>，然后使用<code>Github</code>授权登录<code>Travis CI</code>并跳转至控制面板<a href=https://travis-ci.org/profile/ target=_blank rel=noopener>Travis Profile</a>
 ，选择需要创建的项目(即你的博客项目)如下图所示</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/08-19-travis-ci-deploy03.png alt=travis-ci-deploy03></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/08-19-travis-ci-deploy03.png alt=travis-ci-deploy03></p>
 <h3 id=travis-client安装>Travis Client安装</h3>
 <p><code>Travis Client</code>安装非常的简单，命令如下：</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>sudo gem install travis -v 1.8.8 --no-rdoc --no-ri
@@ -178,7 +178,7 @@
 Successfully logged in as xxxx!
 </code></pre></div><h3 id=ssh私钥加密>SSH私钥加密</h3>
 <p>切换到博客的根据目录，创建一个名为<code>.travis</code>的目录，并把用于Coding和OSChina的私钥拷贝至此，使用如下的命令生成Travis能识别的加密文件：</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>travis encrypt-file id_rsa 
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>travis encrypt-file id_rsa
 Detected repository as elkan1788/my-hexo-blog, is this correct? |yes| yes
 encrypting id_rsa for elkan1788/my-hexo-blog
 storing result as id_rsa.enc
@@ -235,12 +235,12 @@ deploy:
 # offical request
 dist: precise
 
-# which branch trigger  
+# which branch trigger
 branches:
   only:
     - master
 </code></pre></div><p>如果不确定所编写的脚本是否正确，可借助<code>Travis CI</code>进行校验，命令如下：</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>travis lint .travis.yml 
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>travis lint .travis.yml
 Hooray, .travis.yml looks valid :)
 </code></pre></div><h3 id=编辑deploysh脚本>编辑<code>deploy.sh</code>脚本</h3>
 <p>接下来就是编写个发布博客文章到Pages服务器的脚本，主要的流程如下：</p>
@@ -275,7 +275,7 @@ hexo clean <span style=color:#666>&amp;&amp;</span> hexo g <span style=color:#66
 
 </code></pre></div><h2 id=发表文章>发表文章</h2>
 <p>使用<code>hexo new "article tittle"</code>命令创建一篇文章，然后加入你想吐槽的观点，内容等保存，然后用<code>git push</code>命令推送代码到<code>Github</code>服务器，此时登录<code>Travis CI</code>便可以在对应的项目中看到"华丽"的日志输出如下图所示：</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/08-19-travis-ci-deploy04.png alt=travis-ci-deploy04></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/08-19-travis-ci-deploy04.png alt=travis-ci-deploy04></p>
 <p>如果最后的结果是绿色，那么恭喜你，你的博客已经布署成功，赶紧去刷新页面瞅瞅。</p>
 <p>至此所有的配置结束，怎么样，感觉是不是很炫，只要一个简单的<code>git push</code>命令即保存代码又搞定博客站点布署，如有问题欢迎吐槽。</p>
 <p>参考：</p>
@@ -547,12 +547,12 @@ Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next tar
 </div>
 <div class=license-info>
 <span class=storage-info>
-本站由
-<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>提供CDN/云存储</a>
+由
+<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>提供CDN&存储</a>
 </span>
 <span class=separator-line>/</span>
 <span class=license-num>
-<a href=http://beian.miit.gov.cn target=_blank>粤 ICP 备 18047355 号</a>
+<a href=http://beian.miit.gov.cn target=_blank>粤ICP备18047355-1号</a>
 </span>
 </div>
 <style type=text/css>.vendor-logo{background-image:url(/img/upyun_logo.png);background-size:52px;background-repeat:no-repeat;padding-left:54px}</style>

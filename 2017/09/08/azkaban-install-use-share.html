@@ -152,7 +152,7 @@
 <p>在大数据繁杂的ETL或其它数据处理过程当中，有些任务是需要定时执行的，虽然Linux自带了<code>cron</code>命令功能，但是仍不能满足最大的一点就是它不能提供集中式的管理和可视化的编辑。其实在大数据的生态当中已集成有个定时调度框架<code>Oozie</code>，只是实践下来发现其学习成本不低，布署的过程也较复杂。在尝试过其它分布工调度框架后（如阿里的宙斯<code>Zeus</code>），还是选择了社区较多人使用的<code>Azkaban</code>。</p>
 <p><code>Azkaban3</code>相对于上个版本所做的更改还是比较大的，感兴趣的话可以到其官方网站<a href=https://azkaban.github.io/azkaban/docs/latest/ target=_blank rel=noopener>Azkaban</a>
 了解下。接下来主要还是分享下<code>Azkaban3</code>的安装布署，下面是<code>Azkaban3</code>的系统架构设计图：</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install00.png alt=Azkaban-Install00></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/09-08-Azkaban-Install00.png alt=Azkaban-Install00></p>
 <p>图中的3个组件便是<code>Azkaban3</code>的重要组成部分：</p>
 <ul>
 <li>MySQL关系数据存储数据</li>
@@ -430,19 +430,19 @@ bin/azkaban-executor-shutdown.sh &gt; /dev/null 2&gt;&amp;<span style=color:#666
 <p>注意：启动前请确定端口正常未占用，另外留意内存的使用情况。</p>
 </blockquote>
 <p>启动成功后，在浏览器中输入<code>http://localhost:8081</code>便可看到<code>Web Server</code>的界面，如下图所示：</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install01.png alt=Azkaban-Install01></p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install02.png alt=Azkaban-Install02></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/09-08-Azkaban-Install01.png alt=Azkaban-Install01></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/09-08-Azkaban-Install02.png alt=Azkaban-Install02></p>
 <h2 id=demo>Demo</h2>
 <p>在上述启动成功的<code>Web Server</code>中创建中新的项目，命名为：<em>ShellJob-Demo</em>，然后把下面示例<em>Job</em>下载并上传至刚才创建好的项目中，注意不需要解压哦。然后在项目中找到<code>Exectue Flow</code>按钮，然后不断的下一步即可，如下图组所示：</p>
 <p><a href=https://pan.baidu.com/s/19iEqfyShVTnVrfzfdST__A target=_blank rel=noopener>Base Flow Demo 密码: 4f4f</a>
 </p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install03.png alt=Azkaban-Install03></p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install04.png alt=Azkaban-Install04></p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install05.png alt=Azkaban-Install05></p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install06.png alt=Azkaban-Install06></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/09-08-Azkaban-Install03.png alt=Azkaban-Install03></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/09-08-Azkaban-Install04.png alt=Azkaban-Install04></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/09-08-Azkaban-Install05.png alt=Azkaban-Install05></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/09-08-Azkaban-Install06.png alt=Azkaban-Install06></p>
 <p><code>Azkaban3</code>是通过<code>Web Server</code>把任务(Job)提交到<code>Executor Server</code>执行的，因此在界面上是不能直观的看到程序执行过程，但可以通过执行列表中找到正在运行的任务，查看其日志的方式来了解运行过程，如下图组所示：</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install07.png alt=Azkaban-Install07></p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install08.png alt=Azkaban-Install08></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/09-08-Azkaban-Install07.png alt=Azkaban-Install07></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/09-08-Azkaban-Install08.png alt=Azkaban-Install08></p>
 <p>好啦，至此<code>Azkaban3</code>的服务布署及简单示例便完成收工，是不是相对而言比较简单呢。初步阶段来看<code>Azkaban3</code>的使用还是可以贴合业务的场景使用，只是后面提升过程发现它自身也并不完善，比如在上面启动过程中需要手动去更新数据库才能激活<code>Executor Server</code>（只是首次启动时），另外官方并未提供<code>Executor Server</code>运行的管理，分布式运行时需要手动指定<code>Executor Server</code>的<em>ID</em> 等等。但是基本上还是可以满足日常的使用，特别是它的<code>Job Flow</code>设计。最后要是关于<code>Azkaban3</code>有问题可评论中一起讨论，后续也会更新相关的使用教程，敬请关注。</p>
 </div>
 <footer class=post-footer>
@@ -701,12 +701,12 @@ Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next tar
 </div>
 <div class=license-info>
 <span class=storage-info>
-本站由
-<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>提供CDN/云存储</a>
+由
+<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>提供CDN&存储</a>
 </span>
 <span class=separator-line>/</span>
 <span class=license-num>
-<a href=http://beian.miit.gov.cn target=_blank>粤 ICP 备 18047355 号</a>
+<a href=http://beian.miit.gov.cn target=_blank>粤ICP备18047355-1号</a>
 </span>
 </div>
 <style type=text/css>.vendor-logo{background-image:url(/img/upyun_logo.png);background-size:52px;background-repeat:no-repeat;padding-left:54px}</style>

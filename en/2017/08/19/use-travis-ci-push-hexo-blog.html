@@ -163,11 +163,11 @@ Use Github, Travis CI to automatically deploy HexoCoding to OSChina Server
 <p>Travis CI account</p>
 <p>If you need to register your account separately, it is recommended to log in directly using &lsquo;Github Token&rsquo;. The next step is to generate a &lsquo;Github Token&rsquo;, find it in the &lsquo;Github&rsquo; settings panel, or create it directly by clicking on the &ldquo;Github Tokens&rdquo; (<a href=https://github.com/settings/tokens, target=_blank rel=noopener>https://github.com/settings/tokens,</a>
 as shown in the following image:</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/08-19-travis-ci-deploy01.png alt=travis-ci-deploy01>
-<img src=//lisenhui.gitee.io/imgs/blog/2017/08-19-travis-ci-deploy02.png alt=travis-ci-deploy02></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/08-19-travis-ci-deploy01.png alt=travis-ci-deploy01>
+<img src=//imgs.lisenhui.cn/blog/2017/08-19-travis-ci-deploy02.png alt=travis-ci-deploy02></p>
 <p>Save the &lsquo;Token&rsquo; you just created, then sign in to &lsquo;Travis CI&rsquo; with the &lsquo;Github&rsquo; authorization and jump to the control panel (<a href=https://travis-ci.org/profile/ target=_blank rel=noopener>https://travis-ci.org/profile/</a>
 ) to select the item you want to create (that is, your blog project) as shown in the following image</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/08-19-travis-ci-deploy03.png alt=travis-ci-deploy03></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/08-19-travis-ci-deploy03.png alt=travis-ci-deploy03></p>
 <p>Travis Client installation</p>
 <p>The &lsquo;Travis Client&rsquo; installation is very simple and the commands are as follows:</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>sudo gem install travis -v 1.8.8 --no-rdoc --no-ri
@@ -178,7 +178,7 @@ as shown in the following image:</p>
 Successfully logged in as xxxx!
 </code></pre></div><p>SSH private key encryption</p>
 <p>Switch to the blog&rsquo;s directory, create a directory called &lsquo;.travis&rsquo; and copy the private key for Coding and OSChina to this point, using the following commands to generate an encrypted file that Travis can recognize:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>travis encrypt-file id_rsa 
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>travis encrypt-file id_rsa
 Detected repository as elkan1788/my-hexo-blog, is this correct? |yes| yes
 encrypting id_rsa for elkan1788/my-hexo-blog
 storing result as id_rsa.enc
@@ -235,12 +235,12 @@ deploy:
 # offical request
 dist: precise
 
-# which branch trigger  
+# which branch trigger
 branches:
   only:
     - master
 </code></pre></div><p>If you&rsquo;re not sure if the script you&rsquo;re writing is correct, check it with &lsquo;Travis CI&rsquo; and the command is as follows:</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>travis lint .travis.yml 
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>travis lint .travis.yml
 Hooray, .travis.yml looks valid :)
 </code></pre></div><p>Edit the &lsquo;.sh&rsquo; script</p>
 <p>Next, write a script to post a blog post to the Pages server, and the main process is as follows:</p>
@@ -275,7 +275,7 @@ hexo clean <span style=color:#666>&amp;&amp;</span> hexo g <span style=color:#66
 
 </code></pre></div><p>Publish an article</p>
 <p>Create an article using the &lsquo;hexo new &lsquo;article tittle&rsquo;command&rsquo; command, then add the idea you want to spit, save the content, and so on, and then push the code to the &lsquo;Github&rsquo; server with the &lsquo;git push&rsquo; command, where you can log in to &lsquo;Travis CI&rsquo; and you&rsquo;ll see the &lsquo;gorgeous&rsquo; log output in the corresponding project as shown in the following image:</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2017/08-19-travis-ci-deploy04.png alt=travis-ci-deploy04></p>
+<p><img src=//imgs.lisenhui.cn/blog/2017/08-19-travis-ci-deploy04.png alt=travis-ci-deploy04></p>
 <p>If the final result is green, then congratulations, your blog has been successfully put in place, hurry to refresh the page.</p>
 <p>At the end of all configuration, how, feel is not very dazzling, as long as a simple &lsquo;git push&rsquo; command to save the code and do the blog site allocation, if there is a problem welcome spit slot.</p>
 <p>Reference:</p>
@@ -545,12 +545,12 @@ Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next tar
 </div>
 <div class=license-info>
 <span class=storage-info>
-本站由
-<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>CDN/Storage</a>
+由
+<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>CDN&Storage</a>
 </span>
 <span class=separator-line>/</span>
 <span class=license-num>
-<a href=http://beian.miit.gov.cn target=_blank>ICP.NO 18047355</a>
+<a href=http://beian.miit.gov.cn target=_blank>ICP.NO 18047355-1</a>
 </span>
 </div>
 <style type=text/css>.vendor-logo{background-image:url(/img/upyun_logo.png);background-size:52px;background-repeat:no-repeat;padding-left:54px}</style>

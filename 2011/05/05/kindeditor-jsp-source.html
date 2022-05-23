@@ -150,7 +150,7 @@
 <div class=post-body itemprop=articleBody>
 <p>3月份的时候写了个JSP版本的kindeditor编辑器的帖子，没有想到大家的响应会这么强烈。不过随着日月的增长，此版本的插件也就暴露出一些BUG，如：Struts2如何集成，web.xml文件中配置上传属性不便修改且繁琐，上传图片(附件)不能保存于其它盘…………。现在平时开发的项目中都是使用KE作为在线编辑器，为了能更好、更方便的使用此编辑器，在休息的时间对原先的代码进行重构再封装，除对上个版本出现的BUG进行外，还统一整体的命名规范，新增了一些功能。</p>
 <p>当前新版本插件的版本号为：kindeditor-plugin0.4RELEASE，JAR包中类的列表如下：</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2011/05-05-kindeditor-jsp-ss-1.png alt=kindeditor-jsp-ss-1></p>
+<p><img src=//imgs.lisenhui.cn/blog/2011/05-05-kindeditor-jsp-ss-1.png alt=kindeditor-jsp-ss-1></p>
 <p>此次重构所完成的功能主要有以下几点：</p>
 <ul>
 <li>重构上传附件页面的选择按，仿图片上传的选择按钮；</li>
@@ -169,7 +169,7 @@
 <span style=color:#080>&lt;?xml version=&#34;1.0&#34; encoding=&#34;UTF-8&#34;?&gt;</span>
 <span style=color:green;font-weight:700>&lt;web-app</span> <span style=color:#b44>version=</span><span style=color:#b44>&#34;2.5&#34;</span> <span style=color:#b44>xmlns=</span><span style=color:#b44>&#34;http://java.sun.com/xml/ns/javaee&#34;</span>
    <span style=color:#b44>xmlns:xsi=</span><span style=color:#b44>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span>
-   <span style=color:#b44>xsi:schemaLocation=</span><span style=color:#b44>&#34;http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&#34;</span><span style=color:green;font-weight:700>&gt;</span>	
+   <span style=color:#b44>xsi:schemaLocation=</span><span style=color:#b44>&#34;http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&#34;</span><span style=color:green;font-weight:700>&gt;</span>
    <span style=color:green;font-weight:700>&lt;servlet&gt;</span>
        <span style=color:green;font-weight:700>&lt;servlet-name&gt;</span>KEUploadImgServlet<span style=color:green;font-weight:700>&lt;/servlet-name&gt;</span>
        <span style=color:green;font-weight:700>&lt;servlet-class&gt;</span>com.elkan.kindeditor.servlet.plugin.KEUploadImgServlet<span style=color:green;font-weight:700>&lt;/servlet-class&gt;</span>
@@ -177,7 +177,7 @@
            <span style=color:green;font-weight:700>&lt;param-name&gt;</span>IMGSAVEPATH<span style=color:green;font-weight:700>&lt;/param-name&gt;</span>
            <span style=color:green;font-weight:700>&lt;param-value&gt;</span>/upload/image/<span style=color:green;font-weight:700>&lt;/param-value&gt;</span>
        <span style=color:green;font-weight:700>&lt;/init-param&gt;</span>
-       <span style=color:#080;font-style:italic>&lt;!-- 
+       <span style=color:#080;font-style:italic>&lt;!--
 </span><span style=color:#080;font-style:italic>       缺省上传图片大小
 </span><span style=color:#080;font-style:italic>       &lt;init-param&gt;
 </span><span style=color:#080;font-style:italic>           &lt;param-name&gt;MAXSIZE&lt;/param-name&gt;
@@ -214,7 +214,7 @@
            <span style=color:green;font-weight:700>&lt;param-name&gt;</span>ATTACHSAVEPATH<span style=color:green;font-weight:700>&lt;/param-name&gt;</span>
            <span style=color:green;font-weight:700>&lt;param-value&gt;</span>/upload/attach/<span style=color:green;font-weight:700>&lt;/param-value&gt;</span>
        <span style=color:green;font-weight:700>&lt;/init-param&gt;</span>
-       <span style=color:#080;font-style:italic>&lt;!-- 
+       <span style=color:#080;font-style:italic>&lt;!--
 </span><span style=color:#080;font-style:italic>       缺省上传附件大小
 </span><span style=color:#080;font-style:italic>       &lt;init-param&gt;
 </span><span style=color:#080;font-style:italic>           &lt;param-name&gt;MAXSIZE&lt;/param-name&gt;
@@ -257,7 +257,7 @@ KE.show({
        fileManagerJson<span style=color:#666>:</span> <span style=color:#b44>&#34;/KEPlugin/keplugin/KEManageImages.servlet&#34;</span>,
    <span style=color:#080;font-style:italic>//缺省为 *.*表示所有类型文件
 </span><span style=color:#080;font-style:italic></span>   <span style=color:#080;font-style:italic>//accessoryTypes: &#34;doc|docx&#34;,
-</span><span style=color:#080;font-style:italic></span>   accessoryUploadJson<span style=color:#666>:</span> <span style=color:#b44>&#34;/KEPlugin/keplugin/KEUploadAttach.servlet&#34;</span>    		
+</span><span style=color:#080;font-style:italic></span>   accessoryUploadJson<span style=color:#666>:</span> <span style=color:#b44>&#34;/KEPlugin/keplugin/KEUploadAttach.servlet&#34;</span>
 });
 
 </code></pre></div><ol start=2>
@@ -268,7 +268,7 @@ KE.show({
 <span style=color:green;font-weight:700>&lt;web-app</span> <span style=color:#b44>version=</span><span style=color:#b44>&#34;2.5&#34;</span> <span style=color:#b44>xmlns=</span><span style=color:#b44>&#34;http://java.sun.com/xml/ns/javaee&#34;</span> <span style=color:#b44>xmlns:xsi=</span><span style=color:#b44>&#34;http://www.w3.org/2001/XMLSchema-instance&#34;</span> <span style=color:#b44>xsi:schemalocation=</span><span style=color:#b44>&#34;http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd&#34;</span><span style=color:green;font-weight:700>&gt;</span>
 	<span style=color:green;font-weight:700>&lt;filter&gt;</span>
 		<span style=color:green;font-weight:700>&lt;filter-name&gt;</span>struts2<span style=color:green;font-weight:700>&lt;/filter-name&gt;</span>
-		<span style=color:green;font-weight:700>&lt;filter-class&gt;</span>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter<span style=color:green;font-weight:700>&lt;/filter-class&gt;</span>	
+		<span style=color:green;font-weight:700>&lt;filter-class&gt;</span>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter<span style=color:green;font-weight:700>&lt;/filter-class&gt;</span>
 	<span style=color:green;font-weight:700>&lt;/filter&gt;</span>
 	<span style=color:green;font-weight:700>&lt;filter-mapping&gt;</span>
 		<span style=color:green;font-weight:700>&lt;filter-name&gt;</span>struts2<span style=color:green;font-weight:700>&lt;/filter-name&gt;</span>
@@ -324,34 +324,34 @@ KE.show({
     	fileManagerJson <span style=color:#666>:</span> <span style=color:#b44>&#34;/KEPlugin/keplugin/keManagerImages.action&#34;</span>,
     	<span style=color:#080;font-style:italic>//缺省为 *.*表示所有类型文件
 </span><span style=color:#080;font-style:italic></span>	<span style=color:#080;font-style:italic>//accessoryTypes: &#34;doc|docx&#34;,
-</span><span style=color:#080;font-style:italic></span>        accessoryUploadJson<span style=color:#666>:</span> <span style=color:#b44>&#34;/KEPlugin/keplugin/keUploadAttach.action&#34;</span>    		
+</span><span style=color:#080;font-style:italic></span>        accessoryUploadJson<span style=color:#666>:</span> <span style=color:#b44>&#34;/KEPlugin/keplugin/keUploadAttach.action&#34;</span>
 });
 
 </code></pre></div><p>此次还借助JQuery EasyUI和SyntaxHighlighter语法高亮插件写了应用示例，下面我们就先来预览下Kindeditor在EasyUI模式下的清爽身影吧，闪亮登场……</p>
 <ul>
 <li>应用示例首页</li>
 </ul>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2011/05-05-kindeditor-jsp-ss-2.png alt=kindeditor-jsp-ss-2></p>
+<p><img src=//imgs.lisenhui.cn/blog/2011/05-05-kindeditor-jsp-ss-2.png alt=kindeditor-jsp-ss-2></p>
 <ul>
 <li>Servlet版本的KE</li>
 </ul>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2011/05-05-kindeditor-jsp-ss-3.png alt=kindeditor-jsp-ss-3></p>
+<p><img src=//imgs.lisenhui.cn/blog/2011/05-05-kindeditor-jsp-ss-3.png alt=kindeditor-jsp-ss-3></p>
 <ul>
 <li>Struts2版本的KE</li>
 </ul>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2011/05-05-kindeditor-jsp-ss-4.png alt=kindeditor-jsp-ss-4></p>
+<p><img src=//imgs.lisenhui.cn/blog/2011/05-05-kindeditor-jsp-ss-4.png alt=kindeditor-jsp-ss-4></p>
 <ul>
 <li>附件上传页面</li>
 </ul>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2011/05-05-kindeditor-jsp-ss-5.png alt=kindeditor-jsp-ss-5></p>
+<p><img src=//imgs.lisenhui.cn/blog/2011/05-05-kindeditor-jsp-ss-5.png alt=kindeditor-jsp-ss-5></p>
 <ul>
 <li>上传图片管理</li>
 </ul>
-<p><img src=//lisenhui.gitee.io/imgs/blog/kindeditor-jsp-ss-6.png alt=kindeditor-jsp-ss-6></p>
+<p><img src=//imgs.lisenhui.cn/blog/kindeditor-jsp-ss-6.png alt=kindeditor-jsp-ss-6></p>
 <ul>
 <li>KE编辑器预览效果</li>
 </ul>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2011/05-05-kindeditor-jsp-ss-7.png alt=kindeditor-jsp-ss-7></p>
+<p><img src=//imgs.lisenhui.cn/blog/2011/05-05-kindeditor-jsp-ss-7.png alt=kindeditor-jsp-ss-7></p>
 <p>其它更多详细的应用功能，详细请见附件下载。最后要记得要支持国产技术发展呀，有意见请你拍砖吐槽。</p>
 <p>PS：<a href=http://download.csdn.net/download/lisenhui_19/3689869 target=_blank rel=noopener>下载KindEditor应用示例下载</a>
 </p>
@@ -612,12 +612,12 @@ Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next tar
 </div>
 <div class=license-info>
 <span class=storage-info>
-本站由
-<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>提供CDN/云存储</a>
+由
+<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>提供CDN&存储</a>
 </span>
 <span class=separator-line>/</span>
 <span class=license-num>
-<a href=http://beian.miit.gov.cn target=_blank>粤 ICP 备 18047355 号</a>
+<a href=http://beian.miit.gov.cn target=_blank>粤ICP备18047355-1号</a>
 </span>
 </div>
 <style type=text/css>.vendor-logo{background-image:url(/img/upyun_logo.png);background-size:52px;background-repeat:no-repeat;padding-left:54px}</style>

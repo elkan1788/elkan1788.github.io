@@ -153,29 +153,29 @@ IP address query web interface call
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>
 <span style=color:#080>&lt;! DOCTYPE html PUBLIC &#34;-//W3C//DTD HTML 4.01 Transitional//EN&#34; &#34;http://www.w3.org/TR/html4/loose.dtd&#34;&gt;</span>
 &lt;<span style=color:green;font-weight:700>html</span>&gt;
-  &lt;<span style=color:green;font-weight:700>head</span>&gt;    
+  &lt;<span style=color:green;font-weight:700>head</span>&gt;
     &lt;<span style=color:green;font-weight:700>title</span>&gt;ip查询&lt;/<span style=color:green;font-weight:700>title</span>&gt;
   &lt;<span style=color:green;font-weight:700>script</span> <span style=color:#b44>type</span><span style=color:#666>=</span><span style=color:#b44>&#34;text/javascript&#34;</span> <span style=color:#b44>src</span><span style=color:#666>=</span><span style=color:#b44>&#34;https://ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js&#34;</span>&gt;&lt;/<span style=color:green;font-weight:700>script</span>&gt;
   &lt;<span style=color:green;font-weight:700>script</span> <span style=color:#b44>type</span><span style=color:#666>=</span><span style=color:#b44>&#34;text/javascript&#34;</span>&gt;
     $(<span style=color:#a2f;font-weight:700>function</span>(){
-      $(<span style=color:#b44>&#34;&lt;span id=&#39;ipShow&#39;&gt;&lt;/span&gt;&#34;</span>). appendTo(<span style=color:#b44>&#34;body&#34;</span>);     
+      $(<span style=color:#b44>&#34;&lt;span id=&#39;ipShow&#39;&gt;&lt;/span&gt;&#34;</span>). appendTo(<span style=color:#b44>&#34;body&#34;</span>);
       $.getScript(<span style=color:#b44>&#34;http://whois.pconline.com.cn/jsFunction.jsp?callback=jsShow&amp;ip=61.235.82.163&#34;</span>);
     });
-    
+
     <span style=color:#a2f;font-weight:700>function</span> jsShow(location){
       $(<span style=color:#b44>&#34;#ipShow&#34;</span>).html(location);
     }
-  &lt;/<span style=color:green;font-weight:700>script</span>&gt; 
+  &lt;/<span style=color:green;font-weight:700>script</span>&gt;
   &lt;/<span style=color:green;font-weight:700>head</span>&gt;
-    
+
   &lt;<span style=color:green;font-weight:700>body</span>&gt;
   &lt;/<span style=color:green;font-weight:700>body</span>&gt;
 &lt;/<span style=color:green;font-weight:700>html</span>&gt;
 
 </code></pre></div><p>The effect is as follows:</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2011/11-18-whoisip-api-1.png alt=whoisip-api-1></p>
+<p><img src=//imgs.lisenhui.cn/blog/2011/11-18-whoisip-api-1.png alt=whoisip-api-1></p>
 <p>The parameters are as follows:</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2011/11-18-whoisip-api-2.png alt=whoisip-api-2></p>
+<p><img src=//imgs.lisenhui.cn/blog/2011/11-18-whoisip-api-2.png alt=whoisip-api-2></p>
 <p>There is no understanding of the place, you can leave a message to discuss.</p>
 </div>
 <footer class=post-footer>
@@ -432,12 +432,12 @@ Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next tar
 </div>
 <div class=license-info>
 <span class=storage-info>
-本站由
-<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>CDN/Storage</a>
+由
+<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>CDN&Storage</a>
 </span>
 <span class=separator-line>/</span>
 <span class=license-num>
-<a href=http://beian.miit.gov.cn target=_blank>ICP.NO 18047355</a>
+<a href=http://beian.miit.gov.cn target=_blank>ICP.NO 18047355-1</a>
 </span>
 </div>
 <style type=text/css>.vendor-logo{background-image:url(/img/upyun_logo.png);background-size:52px;background-repeat:no-repeat;padding-left:54px}</style>

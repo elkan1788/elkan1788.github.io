@@ -153,9 +153,9 @@ SSH login local VM slowly with Mobaxterm
 <p>When it comes to DNS, I suddenly think it won&rsquo;t be the problem of the local host file (I&rsquo;m used to using <code>hostname</code> to connect to the server), so I try to directly replace the connection address of mobaxterm with the server IP address, and hopefully click the login button. Unfortunately, I still have to wait for a while to enter. I&rsquo;m a little crazy.</p>
 <p>After a little &ldquo;calm down&rdquo; and think about it, I found that the cause of the problem is still not determined. Is it the problem of mobaxterm tool or server configuration? Therefore, the simplest SSH command is used, and the result is very surprising. No matter whether it is connected through IP or <code>hostname</code>, there is no need to wait, and you can enter the terminal operation immediately. So it can be confirmed that it is the reason for mobaxterm tool.</p>
 <p>So I checked the login configuration of mobaxterm. I am used to logging in with the configured user name, but it seems that there is no problem.</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2022/04-04-mobaxterm-login-credential.png alt=mobaxterm-login-credential.png></p>
+<p><img src=//imgs.lisenhui.cn/blog/2022/04-04-mobaxterm-login-credential.png alt=mobaxterm-login-credential.png></p>
 <p>Then click the passwords tab next to the card and find that there are also two passwords stored in it. Is that why?</p>
-<p><img src=//lisenhui.gitee.io/imgs/blog/2022/04-04-mobaxterm-save-password.png alt=mobaxterm-save-password.png></p>
+<p><img src=//imgs.lisenhui.cn/blog/2022/04-04-mobaxterm-save-password.png alt=mobaxterm-save-password.png></p>
 <p>Decisively deleted the two password records in passwords, logged in to the server of the virtual machine again, and finally got the outcome he thought of.🙊</p>
 <h2 id=conclusion>Conclusion</h2>
 <p>I don&rsquo;t know why this phenomenon occurs, that is, the two password records in passwords are still unclear for the time being. If you encounter similar situations in the future, you can refer to the above methods, which may help you.</p>
@@ -415,12 +415,12 @@ Theme by - <a class=powered-link href=//github.com/elkan1788/hugo-theme-next tar
 </div>
 <div class=license-info>
 <span class=storage-info>
-本站由
-<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>CDN/Storage</a>
+由
+<a class=vendor-logo href="https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral" style=font-weight:700 target=_blank>CDN&Storage</a>
 </span>
 <span class=separator-line>/</span>
 <span class=license-num>
-<a href=http://beian.miit.gov.cn target=_blank>ICP.NO 18047355</a>
+<a href=http://beian.miit.gov.cn target=_blank>ICP.NO 18047355-1</a>
 </span>
 </div>
 <style type=text/css>.vendor-logo{background-image:url(/img/upyun_logo.png);background-size:52px;background-repeat:no-repeat;padding-left:54px}</style>
