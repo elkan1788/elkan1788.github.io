@@ -2,7 +2,7 @@
 title: 开放JSP版KindEditor的附件JAR包源码
 url: 2011/05/05/kindeditor-jsp-source.html
 date: "2011-05-05 09:32:12"
-tags: 
+tags:
   - Java
   - KindEditor
 categories:
@@ -12,11 +12,11 @@ categories:
 3月份的时候写了个JSP版本的kindeditor编辑器的帖子，没有想到大家的响应会这么强烈。不过随着日月的增长，此版本的插件也就暴露出一些BUG，如：Struts2如何集成，web.xml文件中配置上传属性不便修改且繁琐，上传图片(附件)不能保存于其它盘…………。现在平时开发的项目中都是使用KE作为在线编辑器，为了能更好、更方便的使用此编辑器，在休息的时间对原先的代码进行重构再封装，除对上个版本出现的BUG进行外，还统一整体的命名规范，新增了一些功能。
 
 <!--more-->
- 
+
 当前新版本插件的版本号为：kindeditor-plugin0.4RELEASE，JAR包中类的列表如下：
- 
-![kindeditor-jsp-ss-1](//lisenhui.gitee.io/imgs/blog/2011/05-05-kindeditor-jsp-ss-1.png)
- 
+
+![kindeditor-jsp-ss-1](//imgs.lisenhui.cn/blog/2011/05-05-kindeditor-jsp-ss-1.png)
+
  此次重构所完成的功能主要有以下几点：
 * 重构上传附件页面的选择按，仿图片上传的选择按钮；
 * 增加Struts2环境集成；
@@ -25,17 +25,17 @@ categories:
 * 增加上传图片的文字水印功能(暂未开放)；
 * 更Kindeditor编辑版本为3.5.6；
 * 上传附件分类管理
- 
+
 如果你要把这个KE插件应用到你的项目中，很简单，如是Servlet环境只须一个步骤即可，Struts2环境则需要两个步骤，具体如下：
- 
+
 1. Servlet环境：只需要在web.xml中配置如下的参数
- 
+
  ```xml
- 
+
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">	
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 	<servlet>
 		<servlet-name>KEUploadImgServlet</servlet-name>
 		<servlet-class>com.elkan.kindeditor.servlet.plugin.KEUploadImgServlet</servlet-class>
@@ -43,7 +43,7 @@ categories:
 			<param-name>IMGSAVEPATH</param-name>
 			<param-value>/upload/image/</param-value>
 		</init-param>
-		<!-- 
+		<!--
 		缺省上传图片大小
 		<init-param>
 			<param-name>MAXSIZE</param-name>
@@ -80,7 +80,7 @@ categories:
 			<param-name>ATTACHSAVEPATH</param-name>
 			<param-value>/upload/attach/</param-value>
 		</init-param>
-		<!-- 
+		<!--
 		缺省上传附件大小
 		<init-param>
 			<param-name>MAXSIZE</param-name>
@@ -112,13 +112,13 @@ categories:
 		<auth-method>BASIC</auth-method>
 	</login-config>
 </web-app>
- 
+
  ```
 
 Jsp页面上KindEditor JS脚本配置[Servlet版本]：
 
  ```javascript
- 
+
  KE.show({
 	id: "editorServlet",
 	resizeMode: 0,
@@ -127,7 +127,7 @@ Jsp页面上KindEditor JS脚本配置[Servlet版本]：
         fileManagerJson: "/KEPlugin/keplugin/KEManageImages.servlet",
 	//缺省为 *.*表示所有类型文件
 	//accessoryTypes: "doc|docx",
-	accessoryUploadJson: "/KEPlugin/keplugin/KEUploadAttach.servlet"    		
+	accessoryUploadJson: "/KEPlugin/keplugin/KEUploadAttach.servlet"
 });
 
 ```
@@ -139,7 +139,7 @@ Jsp页面上KindEditor JS脚本配置[Servlet版本]：
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
 	<filter>
 		<filter-name>struts2</filter-name>
-		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>	
+		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>struts2</filter-name>
@@ -203,7 +203,7 @@ KE.show({
     	fileManagerJson : "/KEPlugin/keplugin/keManagerImages.action",
     	//缺省为 *.*表示所有类型文件
 	//accessoryTypes: "doc|docx",
-        accessoryUploadJson: "/KEPlugin/keplugin/keUploadAttach.action"    		
+        accessoryUploadJson: "/KEPlugin/keplugin/keUploadAttach.action"
 });
 
 ```
@@ -212,30 +212,30 @@ KE.show({
 
 * 应用示例首页
 
-![kindeditor-jsp-ss-2](//lisenhui.gitee.io/imgs/blog/2011/05-05-kindeditor-jsp-ss-2.png)
+![kindeditor-jsp-ss-2](//imgs.lisenhui.cn/blog/2011/05-05-kindeditor-jsp-ss-2.png)
 
 * Servlet版本的KE
 
-![kindeditor-jsp-ss-3](//lisenhui.gitee.io/imgs/blog/2011/05-05-kindeditor-jsp-ss-3.png)
+![kindeditor-jsp-ss-3](//imgs.lisenhui.cn/blog/2011/05-05-kindeditor-jsp-ss-3.png)
 
 * Struts2版本的KE
 
-![kindeditor-jsp-ss-4](//lisenhui.gitee.io/imgs/blog/2011/05-05-kindeditor-jsp-ss-4.png)
+![kindeditor-jsp-ss-4](//imgs.lisenhui.cn/blog/2011/05-05-kindeditor-jsp-ss-4.png)
 
 * 附件上传页面
 
-![kindeditor-jsp-ss-5](//lisenhui.gitee.io/imgs/blog/2011/05-05-kindeditor-jsp-ss-5.png)
+![kindeditor-jsp-ss-5](//imgs.lisenhui.cn/blog/2011/05-05-kindeditor-jsp-ss-5.png)
 
 * 上传图片管理
 
-![kindeditor-jsp-ss-6](//lisenhui.gitee.io/imgs/blog/kindeditor-jsp-ss-6.png)
+![kindeditor-jsp-ss-6](//imgs.lisenhui.cn/blog/kindeditor-jsp-ss-6.png)
 
 * KE编辑器预览效果
 
-![kindeditor-jsp-ss-7](//lisenhui.gitee.io/imgs/blog/2011/05-05-kindeditor-jsp-ss-7.png)
+![kindeditor-jsp-ss-7](//imgs.lisenhui.cn/blog/2011/05-05-kindeditor-jsp-ss-7.png)
 
 其它更多详细的应用功能，详细请见附件下载。最后要记得要支持国产技术发展呀，有意见请你拍砖吐槽。
 
 PS：[下载KindEditor应用示例下载](http://download.csdn.net/download/lisenhui_19/3689869)
- 
- 把下载的压缩包上解压到Tomcat服务器的webapps目录下，启动Tomcat服务器，打开浏览器在地址栏输入：http://localhost:端口号/KEPlugin/index.jsp 就可以看到上面截图的应用示例了，Congratulation! 
+
+ 把下载的压缩包上解压到Tomcat服务器的webapps目录下，启动Tomcat服务器，打开浏览器在地址栏输入：http://localhost:端口号/KEPlugin/index.jsp 就可以看到上面截图的应用示例了，Congratulation!

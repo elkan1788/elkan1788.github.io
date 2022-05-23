@@ -2,7 +2,7 @@
 title: Linux使用SSH免密码登录
 url: 2016/05/29/ssh-login-without-password.html
 date: "2016-05-29 12:34:21"
-tags: 
+tags:
   - Linux
   - SSH
 categories:
@@ -24,11 +24,11 @@ categories:
 
 下面首先在主节点上生成一个`SSH-KEY`, 在终端输入`ssh-keygen -t rsa`, 这里使用默认的存放的目录, 无密码, 连续按2次回车键即可, 如下图所示:
 
-![ssh-login-without-pswd-1](//lisenhui.gitee.io/imgs/blog/2016/05-29-ssh-login-without-pswd-01.png)
+![ssh-login-without-pswd-1](//imgs.lisenhui.cn/blog/2016/05-29-ssh-login-without-pswd-01.png)
 
-然后将生成的`PUB_KEY`文件, 使用`cat`管道命令输出名称为`authorized_keys`的文件, 再用`scp`命令拷贝一份到节点服务器上面(此时是要输入密码的), 如下图所示: 
+然后将生成的`PUB_KEY`文件, 使用`cat`管道命令输出名称为`authorized_keys`的文件, 再用`scp`命令拷贝一份到节点服务器上面(此时是要输入密码的), 如下图所示:
 
-![ssh-login-without-pswd-2](//lisenhui.gitee.io/imgs/blog/2016/05-29-ssh-login-without-pswd-02.png)
+![ssh-login-without-pswd-2](//imgs.lisenhui.cn/blog/2016/05-29-ssh-login-without-pswd-02.png)
 
 如无法执行`scp`命令, 请执行安装命令: `yum install -y openssh-clients`
 
@@ -43,7 +43,7 @@ chmod 600 .ssh/authorized_keys
 那么到这一步我们便可以实现`SSH`免密码登录的功能. 回到主节点服务器, 用`ssh hostname`就可以切换到想到操作的节点机器上面, Good Luck.
 
 
-注意: 
+注意:
 
 * `authorized_keys` 文件一定要在主节点服务器上生成, 不然是无效的, 即拷贝了`PUB_KEY`文件到节点服务器也仍是需要密码登录.
 

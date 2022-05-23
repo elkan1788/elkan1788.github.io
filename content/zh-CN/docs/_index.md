@@ -27,7 +27,7 @@ type: docs
 
 ## 效果预览
 
-![my-hugo-blog.png](https://lisenhui.gitee.io/imgs/blog/my-hugo-blog.png)
+![my-hugo-blog.png](https://imgs.lisenhui.cn/blog/my-hugo-blog.png)
 
 ## 兼容性
 

@@ -36,12 +36,12 @@ Ruby的安装请移步搜索引擎，在此只是提示下建议使用2.0以上�
 
 如有需要可以单独注册账号，建议直接使用`Github Token`登录即可。 接下来就是需要生成个`Github Token`，在`Github`的个设置面板中找到，或者是直接点击[Github Tokens](https://github.com/settings/tokens)进行创建，如下图所示：
 
-![travis-ci-deploy01](//lisenhui.gitee.io/imgs/blog/2017/08-19-travis-ci-deploy01.png)
-![travis-ci-deploy02](//lisenhui.gitee.io/imgs/blog/2017/08-19-travis-ci-deploy02.png)
+![travis-ci-deploy01](//imgs.lisenhui.cn/blog/2017/08-19-travis-ci-deploy01.png)
+![travis-ci-deploy02](//imgs.lisenhui.cn/blog/2017/08-19-travis-ci-deploy02.png)
 
 保存好刚刚创建的`Token`，然后使用`Github`授权登录`Travis CI`并跳转至控制面板[Travis Profile](https://travis-ci.org/profile/)，选择需要创建的项目(即你的博客项目)如下图所示
 
-![travis-ci-deploy03](//lisenhui.gitee.io/imgs/blog/2017/08-19-travis-ci-deploy03.png)
+![travis-ci-deploy03](//imgs.lisenhui.cn/blog/2017/08-19-travis-ci-deploy03.png)
 
 ### Travis Client安装
 
@@ -69,7 +69,7 @@ Successfully logged in as xxxx!
 切换到博客的根据目录，创建一个名为`.travis`的目录，并把用于Coding和OSChina的私钥拷贝至此，使用如下的命令生成Travis能识别的加密文件：
 
 ```
-travis encrypt-file id_rsa 
+travis encrypt-file id_rsa
 Detected repository as elkan1788/my-hexo-blog, is this correct? |yes| yes
 encrypting id_rsa for elkan1788/my-hexo-blog
 storing result as id_rsa.enc
@@ -136,7 +136,7 @@ deploy:
 # offical request
 dist: precise
 
-# which branch trigger  
+# which branch trigger
 branches:
   only:
     - master
@@ -145,7 +145,7 @@ branches:
 如果不确定所编写的脚本是否正确，可借助`Travis CI`进行校验，命令如下：
 
 ```
-travis lint .travis.yml 
+travis lint .travis.yml
 Hooray, .travis.yml looks valid :)
 ```
 
@@ -191,7 +191,7 @@ hexo clean && hexo g && hexo deploy
 
 使用`hexo new "article tittle"`命令创建一篇文章，然后加入你想吐槽的观点，内容等保存，然后用`git push`命令推送代码到`Github`服务器，此时登录`Travis CI`便可以在对应的项目中看到"华丽"的日志输出如下图所示：
 
-![travis-ci-deploy04](//lisenhui.gitee.io/imgs/blog/2017/08-19-travis-ci-deploy04.png)
+![travis-ci-deploy04](//imgs.lisenhui.cn/blog/2017/08-19-travis-ci-deploy04.png)
 
 如果最后的结果是绿色，那么恭喜你，你的博客已经布署成功，赶紧去刷新页面瞅瞅。
 

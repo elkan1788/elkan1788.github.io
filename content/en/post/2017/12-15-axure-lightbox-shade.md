@@ -9,19 +9,19 @@ categories:
   - Axure
 ---
 
-Today, while doing product prototyping, I encountered a difficulty with dynamically emerging the matte layer.  "Helpless" in pursuit of high fidelity effect, or spent a little effort to do a prototype to achieve.  To do a good job back to see the words, in fact, the effect of the difficulty is not great, just to see whether the personal will want to do it. Axure itself provides the functionality of a template, that is, as long as it is implemented once but once and for all. Let's take a look at the process and effect of this mask layer. 
+Today, while doing product prototyping, I encountered a difficulty with dynamically emerging the matte layer.  "Helpless" in pursuit of high fidelity effect, or spent a little effort to do a prototype to achieve.  To do a good job back to see the words, in fact, the effect of the difficulty is not great, just to see whether the personal will want to do it. Axure itself provides the functionality of a template, that is, as long as it is implemented once but once and for all. Let's take a look at the process and effect of this mask layer.
 
 <!--more-->
 
 
-Students who do front-end development know that implementing a mask layer in HTML requires only adding a floating DIV to make it easy. So how do you implement it in Axe? 
+Students who do front-end development know that implementing a mask layer in HTML requires only adding a floating DIV to make it easy. So how do you implement it in Axe?
 
-![axure-lightbox-shade01.png](//lisenhui.gitee.io/imgs/blog/2017/12-15-axure-lightbox-shade01.png)
+![axure-lightbox-shade01.png](//imgs.lisenhui.cn/blog/2017/12-15-axure-lightbox-shade01.png)
 
 As shown in the figure above, the implementation of this mask layer can be divided into two parts:
 
 - The main body content, i.e. the part of the mask layer to cover
-- The matte layer component, i.e. the mask layer and other decorative parts (in Demo, only a loaded animated picture is added to distinguish). 
+- The matte layer component, i.e. the mask layer and other decorative parts (in Demo, only a loaded animated picture is added to distinguish).
 
 So the implementation of the mask layer is clear as follows:
 
@@ -35,22 +35,22 @@ Then use three buttons to show the different effects:
 
 - Open the mask layer
 
-![axure-lightbox-shade02.png](//lisenhui.gitee.io/imgs/blog/2017/12-15-axure-lightbox-shade02.png)
+![axure-lightbox-shade02.png](//imgs.lisenhui.cn/blog/2017/12-15-axure-lightbox-shade02.png)
 
 - Close the mask layer
 
-![axure-lightbox-shade03.png](//lisenhui.gitee.io/imgs/blog/2017/12-15-axure-lightbox-shade03.png)
+![axure-lightbox-shade03.png](//imgs.lisenhui.cn/blog/2017/12-15-axure-lightbox-shade03.png)
 
 - Automatic presentation
 
-![axure-lightbox-shade04.png](//lisenhui.gitee.io/imgs/blog/2017/12-15-axure-lightbox-shade04.png)
+![axure-lightbox-shade04.png](//imgs.lisenhui.cn/blog/2017/12-15-axure-lightbox-shade04.png)
 
 So now let's take a look at the final implementation as follows, see the big screen below (https://7m9t2k.axshare.com/).
 
-![axure-lightbox-shade05.gif](//lisenhui.gitee.io/imgs/blog/2017/12-15-axure-lightbox-shade05.gif)
+![axure-lightbox-shade05.gif](//imgs.lisenhui.cn/blog/2017/12-15-axure-lightbox-shade05.gif)
 
 
-It's easier if you want to do a full-screen matte layer, just add the effect of a light box to the display component. 
+It's easier if you want to do a full-screen matte layer, just add the effect of a light box to the display component.
 
 PS:
 

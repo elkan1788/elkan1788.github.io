@@ -2,14 +2,14 @@
 title: JSP's complete KindEditor online editor
 url: 2011/03/24/kindeditor-jsp-complete.html
 date: "2011-03-24 21:17:53"
-tags: 
+tags:
   - KindEditor
   - Front
 categories:
   - KindEditor
 ---
 
-I've been using FCKEditor online editors before, and of course I've used other   online editors like eWebEditor, TinyMCE, CuteEditor,jHtmlArea, etc.,but they weren't used when the final project was released because they were either dull, too cumbersome to configure, too few features, poor browser compatibility, and so on. Last year, a chance chance gave me an opportunity to get to know kindEditor,   an online editor that, as its name says, is a friendly editor that is not only simple in size, but also quite impressive in its function and skin. There is also a very important factor, it is our people's development of free tools, from the product release to date the pace of renewal has not stopped Oh. Here's a look at my perfect KindEditor.  
+I've been using FCKEditor online editors before, and of course I've used other   online editors like eWebEditor, TinyMCE, CuteEditor,jHtmlArea, etc.,but they weren't used when the final project was released because they were either dull, too cumbersome to configure, too few features, poor browser compatibility, and so on. Last year, a chance chance gave me an opportunity to get to know kindEditor,   an online editor that, as its name says, is a friendly editor that is not only simple in size, but also quite impressive in its function and skin. There is also a very important factor, it is our people's development of free tools, from the product release to date the pace of renewal has not stopped Oh. Here's a look at my perfect KindEditor.
 
 <!--more-->
 
@@ -22,7 +22,7 @@ At present, the official website has updated the KindEditor to version 3.5.2, fr
 3. Add the picture compression function to compress the excess width into the specified value;
 
 4. Add upload attachments;
- 
+
 5. Add pictures, attachments by date folder classification management function;
 
 6. Add the title attribute of uploaded images and attachments, which is the original file name by default;
@@ -31,27 +31,27 @@ At present, the official website has updated the KindEditor to version 3.5.2, fr
 
 8. Modify the paste style from word to reduce the style.
 
-I won't say much about how to use it, there are detailed APIs on   the official website, and at the end of the article I'll give the perfect KindEditor and Demo to see the results first. 
+I won't say much about how to use it, there are detailed APIs on   the official website, and at the end of the article I'll give the perfect KindEditor and Demo to see the results first.
 
 :: A well-developed KE catalog
 
-![kindeditor-jsp-cmp-1](//lisenhui.gitee.io/imgs/blog/2011/03-24-kindeditor-jsp-cmp-1.png)
+![kindeditor-jsp-cmp-1](//imgs.lisenhui.cn/blog/2011/03-24-kindeditor-jsp-cmp-1.png)
 
 :: Full function display
 
-![kindeditor-jsp-cmp-2](//lisenhui.gitee.io/imgs/blog/2011/03-24-kindeditor-jsp-cmp-2.png)
+![kindeditor-jsp-cmp-2](//imgs.lisenhui.cn/blog/2011/03-24-kindeditor-jsp-cmp-2.png)
 
 :: Browse the service catalog
 
-![kindeditor-jsp-cmp-3](//lisenhui.gitee.io/imgs/blog/2011/03-24-kindeditor-jsp-cmp-3.png)
+![kindeditor-jsp-cmp-3](//imgs.lisenhui.cn/blog/2011/03-24-kindeditor-jsp-cmp-3.png)
 
 The attachment shows the effect
 
-![kindeditor-jsp-cmp-4](//lisenhui.gitee.io/imgs/blog/2011/03-24-kindeditor-jsp-cmp-4.png)
+![kindeditor-jsp-cmp-4](//imgs.lisenhui.cn/blog/2011/03-24-kindeditor-jsp-cmp-4.png)
 
-:: Integration effect with Extjs 
+:: Integration effect with Extjs
 
-![kindeditor-jsp-cmp-6](//lisenhui.gitee.io/imgs/blog/2011/03-24-kindeditor-jsp-cmp-6.png)
+![kindeditor-jsp-cmp-6](//imgs.lisenhui.cn/blog/2011/03-24-kindeditor-jsp-cmp-6.png)
 
 Finally, I would like to say that this editor is really very good, I believe you will like it after using it, ha ha, more support for the development of domestic software business.
 

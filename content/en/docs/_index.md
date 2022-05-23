@@ -27,7 +27,7 @@ In order to let the `NexT` theme continue to shine on the `Hugo` high-performanc
 
 ## Preview
 
-![my-hugo-blog.png](https://lisenhui.gitee.io/imgs/blog/my-hugo-blog.png)
+![my-hugo-blog.png](https://imgs.lisenhui.cn/blog/my-hugo-blog.png)
 
 ## Compatibility
 

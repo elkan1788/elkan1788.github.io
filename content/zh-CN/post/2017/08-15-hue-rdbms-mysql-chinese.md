@@ -9,7 +9,7 @@ categories:
   - 大数据
 ---
 
-Hue is a Web applications that enables you to easily interact with an Hadoop cluster. Hue applications let you browse HDFS, Jobs, run Hive, Pig and Cloudera Impala queries, manage the Hive Metastore, HBase, Sqoop, ZooKeeper, MapReduce jobs, and create and schedule worklows with Oozie. 
+Hue is a Web applications that enables you to easily interact with an Hadoop cluster. Hue applications let you browse HDFS, Jobs, run Hive, Pig and Cloudera Impala queries, manage the Hive Metastore, HBase, Sqoop, ZooKeeper, MapReduce jobs, and create and schedule worklows with Oozie.
 
 更加关于HUE的介绍及演示可访问其官方网站：[http://gethue.com](http://gethue.com)
 
@@ -88,7 +88,7 @@ options={ "init_command":"SET NAMES `utf8`"}
 
 实验了一下，乱码问题OK，中文显示正常。
 
-![hue-mysql-chinese.png](//lisenhui.gitee.io/imgs/blog/2017/08-15-hue-mysql-chinese.png)
+![hue-mysql-chinese.png](//imgs.lisenhui.cn/blog/2017/08-15-hue-mysql-chinese.png)
 
 > 其实要不生产环境的话就不用如此的折腾，最简单的办法就是更新`my.ini`配置，你懂的。
 

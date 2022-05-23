@@ -11,7 +11,7 @@ categories:
 
 前些时间做了关于`Apache Nifi`分布式集群的搭建分享，但很多时候要搭建分布式集群机器资源是个问题，而现在的单机的配置还是相当不错的，故现在就做个关于Windows上搭建个伪分布式集群的分享，同时通过另外一种方式实现**Apache Nifi**的授权认证。
 
-# 系统环境及软件版本 
+# 系统环境及软件版本
 
 - Windows8.1
 
@@ -178,24 +178,24 @@ nifi.zookeeper.connect.string=localhost:2181
 ## 安装证书
 
 打开谷歌浏览器，在设置中找到安全选项中找到**管理证书**，点击Import开始导入上面生成的证书：`CN=Admin_OU=ApacheNIFI.p12`，密码在后缀名为`.password`的文件中，如下图所示：
-![WIN-NIFI-CLUSTER-00](//lisenhui.gitee.io/imgs/blog/2017/10-26-WIN-NIFI-CLUSTER-00.png)
-![WIN-NIFI-CLUSTER-01](//lisenhui.gitee.io/imgs/blog/2017/10-26-WIN-NIFI-CLUSTER-01.png)
+![WIN-NIFI-CLUSTER-00](//imgs.lisenhui.cn/blog/2017/10-26-WIN-NIFI-CLUSTER-00.png)
+![WIN-NIFI-CLUSTER-01](//imgs.lisenhui.cn/blog/2017/10-26-WIN-NIFI-CLUSTER-01.png)
 
 
 # 启动Nifi服务
 
 进入到Nifi安装目录，然后在bin目录中找到run-nifi.bat文件并双击运行，注意启动的顺序： nifi-ncm-->nifi-cluster01/2，等待片刻后（可能会有点久，需要一个选举的过程）打开浏览器输入"https://localhost:9443/nifi"，选择刚刚导入的证书，如看到下面的画面表示启动成功：
-![WIN-NIFI-CLUSTER-02](//lisenhui.gitee.io/imgs/blog/2017/10-26-WIN-NIFI-CLUSTER-02.png)
-![WIN-NIFI-CLUSTER-03](//lisenhui.gitee.io/imgs/blog/2017/10-26-WIN-NIFI-CLUSTER-03.png)
+![WIN-NIFI-CLUSTER-02](//imgs.lisenhui.cn/blog/2017/10-26-WIN-NIFI-CLUSTER-02.png)
+![WIN-NIFI-CLUSTER-03](//imgs.lisenhui.cn/blog/2017/10-26-WIN-NIFI-CLUSTER-03.png)
 
 # 用户策略
 
 刚登录NIFI页面时，你会发现图标都是灰色的，需要赋予相应的权限才可以开始编辑权限才可以开始编辑。点击页面左侧面板上的钥匙图标，会弹出访问策略的窗口，如下图所示：
 
 在此会看到用户列表为空，那么就要给相应的行为添加用户，点击**Create**链接即可开始添加，如下图所示：
-![WIN-NIFI-CLUSTER-04](//lisenhui.gitee.io/imgs/blog/2017/10-26-WIN-NIFI-CLUSTER-04.png)
-![WIN-NIFI-CLUSTER-05](//lisenhui.gitee.io/imgs/blog/2017/10-26-WIN-NIFI-CLUSTER-05.png)
-![WIN-NIFI-CLUSTER-044](//lisenhui.gitee.io/imgs/blog/2017/10-26-WIN-NIFI-CLUSTER-044.png)
+![WIN-NIFI-CLUSTER-04](//imgs.lisenhui.cn/blog/2017/10-26-WIN-NIFI-CLUSTER-04.png)
+![WIN-NIFI-CLUSTER-05](//imgs.lisenhui.cn/blog/2017/10-26-WIN-NIFI-CLUSTER-05.png)
+![WIN-NIFI-CLUSTER-044](//imgs.lisenhui.cn/blog/2017/10-26-WIN-NIFI-CLUSTER-044.png)
 
 待所有的权限添加完成后，便可看到NIFI页面的按钮已经点亮，可以开始创建流程。
 
@@ -204,26 +204,26 @@ nifi.zookeeper.connect.string=localhost:2181
 ## 模板上传
 
 下载[DEMO]()压缩包，解压出来有个`WordCountDemo.xml`文件。然后打开浏览器输入NIFI访问地址： `https://localhost:9443/nifi/`，点击左侧面板中的上传按钮上传模板，如下图所示：
-![WIN-NIFI-CLUSTER-06](//lisenhui.gitee.io/imgs/blog/2017/10-26-WIN-NIFI-CLUSTER-06.png)
+![WIN-NIFI-CLUSTER-06](//imgs.lisenhui.cn/blog/2017/10-26-WIN-NIFI-CLUSTER-06.png)
 
 
 ## 创建流程
 
 拖动NIFI页面顶部的模板按钮到画板空白处，点击*ADD*按钮即可，然后双击打开`WordCountDemo`组找到`PutFile`组件，修改目录地址为你机器的实际可访问路径，如下图所示：
 
-![WIN-NIFI-CLUSTER-07](//lisenhui.gitee.io/imgs/blog/2017/10-26-WIN-NIFI-CLUSTER-07.png)
-![WIN-NIFI-CLUSTER-08](//lisenhui.gitee.io/imgs/blog/2017/10-26-WIN-NIFI-CLUSTER-08.png)
+![WIN-NIFI-CLUSTER-07](//imgs.lisenhui.cn/blog/2017/10-26-WIN-NIFI-CLUSTER-07.png)
+![WIN-NIFI-CLUSTER-08](//imgs.lisenhui.cn/blog/2017/10-26-WIN-NIFI-CLUSTER-08.png)
 
 ## 启动流程
 
 点击NIFI页面左下角的`NiFi Flow`链接返回到主面板，点击`WordCountDemo`组，然后点击左侧面板中的开始按钮启动流程，如下图所示：
 
-![WIN-NIFI-CLUSTER-09](//lisenhui.gitee.io/imgs/blog/2017/10-26-WIN-NIFI-CLUSTER-09.png)
+![WIN-NIFI-CLUSTER-09](//imgs.lisenhui.cn/blog/2017/10-26-WIN-NIFI-CLUSTER-09.png)
 
 
 如无异常那么此时你可在目录下找到名为**telltale_heart_wordcount**的文件，打开便可看到如下图的统计内容：
 
-![WIN-NIFI-CLUSTER-10](//lisenhui.gitee.io/imgs/blog/2017/10-26-WIN-NIFI-CLUSTER-10.png)
+![WIN-NIFI-CLUSTER-10](//imgs.lisenhui.cn/blog/2017/10-26-WIN-NIFI-CLUSTER-10.png)
 
 至此在本地搭建NIFI伪集群就完成了，有问题欢迎留言。
 

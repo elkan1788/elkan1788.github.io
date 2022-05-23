@@ -2,7 +2,7 @@
 title: Supervisor introduction and use
 url: 2017/05/18/linux-daemon-supervisor.html
 date: "2017-05-18 07:10:23"
-tags: 
+tags:
   - Supervisor
   - Tools
   - Linux
@@ -17,7 +17,7 @@ Many times our own development or other services do not have a background daemon
 ```
 Supervisor is a client/server system that allows its users to monitor and control a number of processes on UNIX-like operating systems.
 ```
-After reading the description of Supervisor's definition on the [official website](http://www.supervisord.org/), I immediately felt like I had to experiment. Fortunately, Python is inherently supported in Linux systems, so just install PIP to get everything you want. 
+After reading the description of Supervisor's definition on the [official website](http://www.supervisord.org/), I immediately felt like I had to experiment. Fortunately, Python is inherently supported in Linux systems, so just install PIP to get everything you want.
 
 1. Install pip:
 
@@ -124,7 +124,7 @@ supervisorctl reload
 
 Then enter in the browser: http://127.0.0.1:9001, enter login information, the interface shows as follows:
 
-![supervisor-web.png](//lisenhui.gitee.io/imgs/blog/2017/05-18-supervisor-web.png)
+![supervisor-web.png](//imgs.lisenhui.cn/blog/2017/05-18-supervisor-web.png)
 
-Now you can try killing the daemon and see if it restarts automatically again, but if the supervisord service is killed then it won't work. 
+Now you can try killing the daemon and see if it restarts automatically again, but if the supervisord service is killed then it won't work.
 

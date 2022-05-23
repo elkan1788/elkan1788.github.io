@@ -22,7 +22,7 @@ Usually we use 'hexo deploy' locally to post blog posts to remote Pages servers,
  - Finally push the generated blog to the specified Pages server
 
 
-It's just that one of the more troubling questions is how to protect our private keys, and if 'Travis CI' is ready for us, start our journey. 
+It's just that one of the more troubling questions is how to protect our private keys, and if 'Travis CI' is ready for us, start our journey.
 
 <!--more-->
 
@@ -36,12 +36,12 @@ Travis CI account
 
 If you need to register your account separately, it is recommended to log in directly using 'Github Token'. The next step is to generate a 'Github Token', find it in the 'Github' settings panel, or create it directly by clicking on the "Github Tokens" (https://github.com/settings/tokens, as shown in the following image:
 
-![travis-ci-deploy01](//lisenhui.gitee.io/imgs/blog/2017/08-19-travis-ci-deploy01.png)
-![travis-ci-deploy02](//lisenhui.gitee.io/imgs/blog/2017/08-19-travis-ci-deploy02.png)
+![travis-ci-deploy01](//imgs.lisenhui.cn/blog/2017/08-19-travis-ci-deploy01.png)
+![travis-ci-deploy02](//imgs.lisenhui.cn/blog/2017/08-19-travis-ci-deploy02.png)
 
 Save the 'Token' you just created, then sign in to 'Travis CI' with the 'Github' authorization and jump to the control panel (https://travis-ci.org/profile/) to select the item you want to create (that is, your blog project) as shown in the following image
 
-![travis-ci-deploy03](//lisenhui.gitee.io/imgs/blog/2017/08-19-travis-ci-deploy03.png)
+![travis-ci-deploy03](//imgs.lisenhui.cn/blog/2017/08-19-travis-ci-deploy03.png)
 
 Travis Client installation
 
@@ -57,7 +57,7 @@ After the installation is successful, check with the following commands that the
 travis version
 ```
 
-Use the following command to verify the 'Github Token' generated in the next step and log in to 'Travis CI' and return a welcome message. 
+Use the following command to verify the 'Github Token' generated in the next step and log in to 'Travis CI' and return a welcome message.
 
 ```
 travis login -g fb25xxxxxxxxxxx
@@ -69,7 +69,7 @@ SSH private key encryption
 Switch to the blog's directory, create a directory called '.travis' and copy the private key for Coding and OSChina to this point, using the following commands to generate an encrypted file that Travis can recognize:
 
 ```
-travis encrypt-file id_rsa 
+travis encrypt-file id_rsa
 Detected repository as elkan1788/my-hexo-blog, is this correct? |yes| yes
 encrypting id_rsa for elkan1788/my-hexo-blog
 storing result as id_rsa.enc
@@ -136,7 +136,7 @@ deploy:
 # offical request
 dist: precise
 
-# which branch trigger  
+# which branch trigger
 branches:
   only:
     - master
@@ -145,7 +145,7 @@ branches:
 If you're not sure if the script you're writing is correct, check it with 'Travis CI' and the command is as follows:
 
 ```
-travis lint .travis.yml 
+travis lint .travis.yml
 Hooray, .travis.yml looks valid :)
 ```
 
@@ -191,12 +191,12 @@ Publish an article
 
 Create an article using the 'hexo new 'article tittle'command' command, then add the idea you want to spit, save the content, and so on, and then push the code to the 'Github' server with the 'git push' command, where you can log in to 'Travis CI' and you'll see the 'gorgeous' log output in the corresponding project as shown in the following image:
 
-![travis-ci-deploy04](//lisenhui.gitee.io/imgs/blog/2017/08-19-travis-ci-deploy04.png)
+![travis-ci-deploy04](//imgs.lisenhui.cn/blog/2017/08-19-travis-ci-deploy04.png)
 
 If the final result is green, then congratulations, your blog has been successfully put in place, hurry to refresh the page.
 
 
-At the end of all configuration, how, feel is not very dazzling, as long as a simple 'git push' command to save the code and do the blog site allocation, if there is a problem welcome spit slot. 
+At the end of all configuration, how, feel is not very dazzling, as long as a simple 'git push' command to save the code and do the blog site allocation, if there is a problem welcome spit slot.
 
 
 Reference:

@@ -2,7 +2,7 @@
 title: APIDoc自动生成接口文档
 url: 2017/07/18/nodejs-apidoc-generator.html
 date: "2017-07-18 15:23:43"
-tags: 
+tags:
   - API
   - 学习
 categories:
@@ -74,7 +74,7 @@ npm install apidoc -g
  *       "resultComment": "请求数据语法格式有误."
  *     }
  */
- 
+
  /**
  * @apiDefine Suc200
  *
@@ -94,7 +94,7 @@ npm install apidoc -g
  *       "resultComment": "Success"
  *     }
  */
- 
+
  /**
  * @apiDefine AccessKey
  *
@@ -105,15 +105,15 @@ npm install apidoc -g
  *       "access-key": "cfa1fd55a89f45c9800120d6cbff0b33"
  *     }
  */
- 
+
  /**
  * @api {PUT} /dwhealath/synccustomerinfo.do 同步客户基础信息
  * @apiDescription 批量次同步客户的基础信息，建议每个批次不要大于1000条记录。
- * 
- * @apiVersion 1.0.1 
+ *
+ * @apiVersion 1.0.1
  * @apiName customer
  * @apiGroup dwHealth
- * 
+ *
  * @apiUse AccessKey
  *
  * @apiParam {String} cusName  姓名
@@ -146,7 +146,7 @@ npm install apidoc -g
  * @apiUse Err400
  *
  */
- 
+
 ```
 
 # 生成接口文档
@@ -163,7 +163,7 @@ apidoc -i apidoc/ -o apidoc/
 
 文档效果如下图所示：
 
-![nodejs-apidoc-01.png](//lisenhui.gitee.io/imgs/blog/2017/07-18-nodejs-apidoc-01.png)
+![nodejs-apidoc-01.png](//imgs.lisenhui.cn/blog/2017/07-18-nodejs-apidoc-01.png)
 
 # 常见问题
 

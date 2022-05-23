@@ -2,7 +2,7 @@
 title: Kylin集成Zeppelin展示数据
 url: 2017/06/02/kylin-integrate-with-zeppelin.html
 date: "2017-06-02 18:03:23"
-tags: 
+tags:
   - 大数据
   - Kylin
   - Zeppelin
@@ -29,27 +29,27 @@ bin/zeppelin-daemon.sh start
 
 至此就可以打开浏览器然后访问zeppelin的WEB UI， 如下图所示：
 
-![zeppelin-01.png](//lisenhui.gitee.io/imgs/blog/2017/06-02-zeppelin-01.png)
+![zeppelin-01.png](//imgs.lisenhui.cn/blog/2017/06-02-zeppelin-01.png)
 
 
 OK, 接下来就是创建与Kylin的连接，在Zeppelin中叫做`Interpreter`, 点击页面右上角的`anonymous`选择它如下图所示：
 
-![zeppelin-02.png](//lisenhui.gitee.io/imgs/blog/2017/06-02-zeppelin-02.png)
+![zeppelin-02.png](//imgs.lisenhui.cn/blog/2017/06-02-zeppelin-02.png)
 
 同样的点击右上角的`Create`按钮，参考下图填写的数据填写你的真实数据：
 
-![zeppelin-03.png](//lisenhui.gitee.io/imgs/blog/2017/06-02-zeppelin-03.png)
+![zeppelin-03.png](//imgs.lisenhui.cn/blog/2017/06-02-zeppelin-03.png)
 
 保存好后，点击左上角的`Notebook`--> `+ Create new note`如下图所示：
 
-![zeppelin-04.png](//lisenhui.gitee.io/imgs/blog/2017/06-02-zeppelin-04.png)
+![zeppelin-04.png](//imgs.lisenhui.cn/blog/2017/06-02-zeppelin-04.png)
 
 把下面的SQL语句写入到notebook中：
 
 ```
 select fact.part_dt, lookup.categ_lvl2_name, count(distinct seller_id) as sellers
 from kylin_sales fact
-inner join kylin_category_groupings lookup 
+inner join kylin_category_groupings lookup
 on fact.leaf_categ_id = lookup.leaf_categ_id and fact.lstg_site_id = lookup.site_id
 group by fact.part_dt, lookup.categ_lvl2_name
 order by fact.part_dt desc
@@ -57,7 +57,7 @@ order by fact.part_dt desc
 
 点击右边的开始按钮即可完成查询，出来一个表格数据 ，然后选取你所需要的图形报表形式，数据便会自动的渲染，点击`settings`可以有更多的调整。
 
-![zeppelin-05.png](//lisenhui.gitee.io/imgs/blog/2017/06-02-zeppelin-05.png)
+![zeppelin-05.png](//imgs.lisenhui.cn/blog/2017/06-02-zeppelin-05.png)
 
 关于`Zeppelin`其它应用还需要慢慢了解，后续再跟进。
 

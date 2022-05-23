@@ -12,11 +12,11 @@ categories:
 
 Background and introduction
 
-In the big data complex ETL or other data processing processes, some tasks need to be performed on a timed basis, although Linux brings itsown'cron' commandfunction, but still can not meet the biggest point is that it does notprovide centralized management and visual editing. In fact, in the big data ecology has been integrated with a timed scheduling framework 'Oozie', but the practice found that its learning costs are not low, the process of distribution is more complex. After trying other distribution worker scheduling frameworks, such as Ali's Zeus 'Zeus', or 'Azkaban', which is used by more people in the community. 
+In the big data complex ETL or other data processing processes, some tasks need to be performed on a timed basis, although Linux brings itsown'cron' commandfunction, but still can not meet the biggest point is that it does notprovide centralized management and visual editing. In fact, in the big data ecology has been integrated with a timed scheduling framework 'Oozie', but the practice found that its learning costs are not low, the process of distribution is more complex. After trying other distribution worker scheduling frameworks, such as Ali's Zeus 'Zeus', or 'Azkaban', which is used by more people in the community.
 
 'Azkaban3' is still relatively large compared to the changes made in the previous version, and interested parties can be found on its official website, [Azkaban]( https://azkaban.github.io/azkaban/docs/latest/). Next, mainly to share the installation of 'Azkaban 3', the following is 'Azkaban 3' system architecture design:
 
-![Azkaban-Install00](//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install00.png)
+![Azkaban-Install00](//imgs.lisenhui.cn/blog/2017/09-08-Azkaban-Install00.png)
 
 The three components in the figure are an important part of 'Azkaban3':
 
@@ -41,7 +41,7 @@ Finally, the import of the 'SQL' statement that created the table, the official 
 ```shell
 mysql> source /opt/download/azkaban-create-tables.sql
 ```
-Note: Since the project release of 'Azkaban3' is achieved by uploading files, it is necessary to adjust the energy size of the allowed upload package in 'MySQL', and this parameter islocated under 'mysqld':max_allowed_packet s64M, depending on the actual situation to modify the appropriatesize. 
+Note: Since the project release of 'Azkaban3' is achieved by uploading files, it is necessary to adjust the energy size of the allowed upload package in 'MySQL', and this parameter islocated under 'mysqld':max_allowed_packet s64M, depending on the actual situation to modify the appropriatesize.
 
 In fact, there is a way not to modify this parameter, that is, when packaging the 'Azkaban' project, try not to pack dependent files into it, through the reference of the relative path can be. **
 
@@ -132,7 +132,7 @@ azkaban.executorselector.comparator.CpuUsage=1
 
 'azkaban-users.xml' configuration
 
-'Azkaban' uses an account information configuration similar to'Spring Securities' and refers to the following: 
+'Azkaban' uses an account information configuration similar to'Spring Securities' and refers to the following:
 
 ```
 <azkaban-users>
@@ -175,7 +175,7 @@ The official default start-stop script is not very friendly, with a few modifica
  Official default
  # bin/azkaban-web-start.sh "$@" >> logs/webServerLog_`date +%Y%m%d`.out 2>&1 &
 bin/azkaban-web-start.sh > /dev/null 2>&1 &
-``` 
+```
 - Stop Script (bin/shutdown-web.sh)
 
 ```shell
@@ -189,7 +189,7 @@ bin/azkaban-web-shutdown.sh > /dev/null 2>&1 &
 Other configurations
 
 
-Some common configurations can be unified into the 'conf/global.properties'configuration, such as successful project execution, failednotified email, default execution type, and so on. 
+Some common configurations can be unified into the 'conf/global.properties'configuration, such as successful project execution, failednotified email, default execution type, and so on.
 
 Executor Server
 
@@ -203,7 +203,7 @@ Executor Server
 | extlib  | Third-party extensions rely on package |
 | plugins | The Azkaban plug-in is installed |
 
-In principle, it is recommended that only one 'Executor Server' node be assigned to a machine, as it is automatically added to the database 'executors' list when the node starts, and of course the local pseudo-distribution pattern can be configured by port intervention. 
+In principle, it is recommended that only one 'Executor Server' node be assigned to a machine, as it is automatically added to the database 'executors' list when the node starts, and of course the local pseudo-distribution pattern can be configured by port intervention.
 
 The 'Executor Server' is relatively simple to place, with only three updates, as follows:
 
@@ -247,7 +247,7 @@ azkaban.jobtype.plugin.dir=plugins/jobtypes
 ```
 'log4j.properties' configuration
 
-Refer to the configuration in 'Web Server' above and be careful to modify the output path of the log file. 
+Refer to the configuration in 'Web Server' above and be careful to modify the output path of the log file.
 
 Start and stop the script
 
@@ -277,7 +277,7 @@ bin/azkaban-executor-shutdown.sh > /dev/null 2>&1 &
 ```
 Start the preview
 
-By this point, the key configuration required for the 'Azkaban3' operation has been configured, and the next step is to start the corresponding service preview of the labor results. 
+By this point, the key configuration required for the 'Azkaban3' operation has been configured, and the next step is to start the corresponding service preview of the labor results.
 
 Start- and start-ups
 
@@ -293,9 +293,9 @@ Note: Make sure that the port is not properly occupied before starting, and keep
 
 After successful launch, enter 'http://localhost:8081' in your browser to see the 'Web Server' interface, as shown in the following image:
 
-![Azkaban-Install01](//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install01.png)
+![Azkaban-Install01](//imgs.lisenhui.cn/blog/2017/09-08-Azkaban-Install01.png)
 
-![Azkaban-Install02](//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install02.png)
+![Azkaban-Install02](//imgs.lisenhui.cn/blog/2017/09-08-Azkaban-Install02.png)
 
 ## Demo
 
@@ -303,18 +303,18 @@ Create a new project in the 'Web Server' that startedsuccessfully above, named:S
 
 Base Flow Demo Password: 4f4f (https://pan.baidu.com/s/19iEqfyShVTnVrfzfdST__A)
 
-![Azkaban-Install03](//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install03.png)
+![Azkaban-Install03](//imgs.lisenhui.cn/blog/2017/09-08-Azkaban-Install03.png)
 
-![Azkaban-Install04](//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install04.png)
+![Azkaban-Install04](//imgs.lisenhui.cn/blog/2017/09-08-Azkaban-Install04.png)
 
-![Azkaban-Install05](//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install05.png)
+![Azkaban-Install05](//imgs.lisenhui.cn/blog/2017/09-08-Azkaban-Install05.png)
 
-![Azkaban-Install06](//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install06.png)
+![Azkaban-Install06](//imgs.lisenhui.cn/blog/2017/09-08-Azkaban-Install06.png)
 
 'Azkaban3' is performed by submitting a task (Job) to 'Executor Server' through 'Web Server', so it is not intuitive to see the program execution process visually on the interface, but you can understand the running process by finding the running task in the execution list and viewing its logs, as shown in the following group:
 
-![Azkaban-Install07](//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install07.png)
+![Azkaban-Install07](//imgs.lisenhui.cn/blog/2017/09-08-Azkaban-Install07.png)
 
-![Azkaban-Install08](//lisenhui.gitee.io/imgs/blog/2017/09-08-Azkaban-Install08.png)
+![Azkaban-Install08](//imgs.lisenhui.cn/blog/2017/09-08-Azkaban-Install08.png)
 
-Well, isn't it relatively simple to complete the 'Azkaban 3' service and simple examples. At the initial stage, the use of 'Azkaban 3' can still be used in a business-appropriate scenario, but the later promotion process finds that it is not perfect, such as manually updating the database during the above startup process to activate 'Executor Server' (only the first time it starts), and the official does not provide the management of the 'Executor Server' run, the distributed runtime needs to manually specify 'Executor Server's ID' and so on. But it's basically enough for everyday use, especially its 'Job Flow' design. Finally, if you have questions about 'Azkaban3' that can be discussed together in the comments, the relevant usage tutorials will be updated later, so stay tuned. 
+Well, isn't it relatively simple to complete the 'Azkaban 3' service and simple examples. At the initial stage, the use of 'Azkaban 3' can still be used in a business-appropriate scenario, but the later promotion process finds that it is not perfect, such as manually updating the database during the above startup process to activate 'Executor Server' (only the first time it starts), and the official does not provide the management of the 'Executor Server' run, the distributed runtime needs to manually specify 'Executor Server's ID' and so on. But it's basically enough for everyday use, especially its 'Job Flow' design. Finally, if you have questions about 'Azkaban3' that can be discussed together in the comments, the relevant usage tutorials will be updated later, so stay tuned.

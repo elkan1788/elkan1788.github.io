@@ -11,7 +11,7 @@ categories:
 ---
 
 
-In the introduction to the official documentation, it is understood that 'Azkaban' supportsa wide range of types of work, such as: 'Command','HadoopShell','Python', 'Java', 'Hive', 'Pig' and so on. However, here we mainly only to explain the 'Python' and 'Java'job type tasks, other types of work, such as'Commnad','Hive','HadoopShell'relatively simple without explanation, if necessary, you can practice ityourself. 
+In the introduction to the official documentation, it is understood that 'Azkaban' supportsa wide range of types of work, such as: 'Command','HadoopShell','Python', 'Java', 'Hive', 'Pig' and so on. However, here we mainly only to explain the 'Python' and 'Java'job type tasks, other types of work, such as'Commnad','Hive','HadoopShell'relatively simple without explanation, if necessary, you can practice ityourself.
 
 Regardless of which task is submitted, 'Azkaban' is managed by uploading a compressed package by default, so it is recommended that you get into the habit ofnot packing the executed files (code) into the 'Azkaban' engineering package. The benefits are obvious, such as:
 
@@ -64,7 +64,7 @@ public class JobMain {
 }
 ```
 
-In the example code above, dynamic parameter settings are added, and you don'tneed to specify where'MainClass'is when you package it, as long as all the relevant code and dependencies in theproject are packaged into a separate file. 
+In the example code above, dynamic parameter settings are added, and you don'tneed to specify where'MainClass'is when you package it, as long as all the relevant code and dependencies in theproject are packaged into a separate file.
 
 We also need to build an 'Azkaban' engineering script that tells it how to perform our tasks, as shown in the following script:
 
@@ -89,7 +89,7 @@ command=whoami
 
 The effect is as follows:
 
-![Azkaban-Jobs02](//lisenhui.gitee.io/imgs/blog/2017/09-09-azkaban-jobs-02.png)
+![Azkaban-Jobs02](//imgs.lisenhui.cn/blog/2017/09-09-azkaban-jobs-02.png)
 
 Pthon work tasks
 
@@ -112,8 +112,8 @@ script=/home/azkaban/pythondemo/helloworld.py
 
 The effect is as follows:
 
-![Azkaban-Jobs01](//lisenhui.gitee.io/imgs/blog/2017/09-09-azkaban-jobs-01.png)
+![Azkaban-Jobs01](//imgs.lisenhui.cn/blog/2017/09-09-azkaban-jobs-01.png)
 
 A summary
 
-Overall,the scripting of 'Azkaban' tasks is simple and flexible, but there are also pit people. For example, the previous 'Java' work task, in the actual operation process is the need to add'hadoop'dependency package and related configuration, can lookthrough the official documentation to know because the 'Java'task type is derived from'Hadoop Java',so itis no wonder. Fortunately, this is only the configuration of the environment when the problem, the subsequent application development is quite convenient. 
+Overall,the scripting of 'Azkaban' tasks is simple and flexible, but there are also pit people. For example, the previous 'Java' work task, in the actual operation process is the need to add'hadoop'dependency package and related configuration, can lookthrough the official documentation to know because the 'Java'task type is derived from'Hadoop Java',so itis no wonder. Fortunately, this is only the configuration of the environment when the problem, the subsequent application development is quite convenient.

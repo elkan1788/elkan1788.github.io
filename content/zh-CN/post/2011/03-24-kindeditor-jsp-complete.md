@@ -2,7 +2,7 @@
 title: JSP版的完善KindEditor在线编辑器(带附件上传与图片按日期分类管理功能)
 url: 2011/03/24/kindeditor-jsp-complete.html
 date: "2011-03-24 21:17:53"
-tags: 
+tags:
   - KindEditor
   - 前端
 categories:
@@ -22,7 +22,7 @@ categories:
 3. 添加图片压缩功能，对超出的宽高压缩成指定的值；
 
 4. 添加上传附件功能；
- 
+
 5. 添加图片、附件按日期文件夹分类管理的功能；
 
 6. 添加上传图片、附件的title属性，缺省为原文件名；
@@ -35,23 +35,23 @@ categories:
 
 * 完善后的KE目录
 
-![kindeditor-jsp-cmp-1](//lisenhui.gitee.io/imgs/blog/2011/03-24-kindeditor-jsp-cmp-1.png)
+![kindeditor-jsp-cmp-1](//imgs.lisenhui.cn/blog/2011/03-24-kindeditor-jsp-cmp-1.png)
 
 * 完整功能示
 
-![kindeditor-jsp-cmp-2](//lisenhui.gitee.io/imgs/blog/2011/03-24-kindeditor-jsp-cmp-2.png)
+![kindeditor-jsp-cmp-2](//imgs.lisenhui.cn/blog/2011/03-24-kindeditor-jsp-cmp-2.png)
 
 * 浏览服务目录
 
-![kindeditor-jsp-cmp-3](//lisenhui.gitee.io/imgs/blog/2011/03-24-kindeditor-jsp-cmp-3.png)
+![kindeditor-jsp-cmp-3](//imgs.lisenhui.cn/blog/2011/03-24-kindeditor-jsp-cmp-3.png)
 
 * 附件展示效果
 
-![kindeditor-jsp-cmp-4](//lisenhui.gitee.io/imgs/blog/2011/03-24-kindeditor-jsp-cmp-4.png)
+![kindeditor-jsp-cmp-4](//imgs.lisenhui.cn/blog/2011/03-24-kindeditor-jsp-cmp-4.png)
 
 * 与Extjs整合效果
 
-![kindeditor-jsp-cmp-6](//lisenhui.gitee.io/imgs/blog/2011/03-24-kindeditor-jsp-cmp-6.png)
+![kindeditor-jsp-cmp-6](//imgs.lisenhui.cn/blog/2011/03-24-kindeditor-jsp-cmp-6.png)
 
 最后要说的是这款编辑器真的很不错，相信你用过它后一定会喜欢上它的，呵呵，多多支持国内软件事业的发展吧。
 

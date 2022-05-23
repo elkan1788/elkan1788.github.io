@@ -12,9 +12,9 @@ ArticleDecContent = "This blog post article is under the <a href='https://creati
 
 [Footer]
   StorageLink = "https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"
-  StorageName = "CDN/Storage"
+  StorageName = "CDN&Storage"
   ICPLink = "http://beian.miit.gov.cn"
-  ICPNo = "ICP.NO 18047355"
+  ICPNo = "ICP.NO 18047355-1"
 
 [[Socials]]
   Name = "GitHub"

@@ -2,7 +2,7 @@
 title: Domestic technology power joins forces with Nutz, KindEditor, LHGDialog, My97DatePicker
 url: 2012/01/13/nutz-ke-lhg-my97.html
 date: "2012-01-13 10:21:20"
-tags: 
+tags:
   - Useful
   - KindEditor
 categories:
@@ -13,9 +13,9 @@ For a while did not pay attention to the development of domestic IT technology, 
 
 <!--more-->
 
-![use-ke-lgh-my97-1](//lisenhui.gitee.io/imgs/blog/2012/01-13-nutz-ke-lgh-my97-1.png)
+![use-ke-lgh-my97-1](//imgs.lisenhui.cn/blog/2012/01-13-nutz-ke-lgh-my97-1.png)
 
-![use-ke-lgh-my97-2](//lisenhui.gitee.io/imgs/blog/2012/01-13-nutz-ke-lgh-my97-2.png)
+![use-ke-lgh-my97-2](//imgs.lisenhui.cn/blog/2012/01-13-nutz-ke-lgh-my97-2.png)
 
 In this has to praise the 'Nutz' of the united states of high efficiency and simplicity, and the previous version of KE or the upload part of the 'JSP' page translated into the background 'JAVA' code, the only difference is that those same functions of the implementation code streamlined a lot ah, the official website example of the two 'JSP' files have been compressed into a less than 400 lines of 'JAVA' background code, the source code is as follows:
 
@@ -72,8 +72,8 @@ public class KindEditor4Module {
     Allows you to upload an array of file size MAPS
     private static final HashMap<String,Long> sizeMap = new HashMap<String, Long>();
     Upload the file to store the root
-    private String filePath = "/attached/";    
-    
+    private String filePath = "/attached/";
+
     static {
         The initial suffix name MAP array
         extMap.put("image", "gif,jpg,jpeg,png,bmp");
@@ -88,7 +88,7 @@ public class KindEditor4Module {
     }
 
     @At
-    public Map<String, Object> upload(@Param("imgFile") File tempFile, 
+    public Map<String, Object> upload(@Param("imgFile") File tempFile,
             @Param("dir") String dir, ServletContext context) {
         The initial correlation variable
         Map<String, Object> execute = new HashMap<String, Object>();
@@ -156,7 +156,7 @@ public class KindEditor4Module {
         execute.put("url", url.toString());
         return execute;
     }
-    
+
     @At
     public Map<String, Object> manager(@Param("dir") String dir,
             @Param("path") String path, @Param("order") String order,
@@ -183,7 +183,7 @@ public class KindEditor4Module {
         if (!"". equals(path)) {
             String str = curDir.substring(0, curDir.length() - 1);
             moveupDir = str.lastIndexOf("/") >= 0 ? str.substring(0, str.lastIndexOf("/") + 1): "";
-        }        
+        }
         Check.. Command
         if(path.indexOf("..") >= 0){
             execute.put("error", 1);
@@ -242,10 +242,10 @@ public class KindEditor4Module {
         execute.put("current_dir_path", curDir);
         execute.put("current_url", curPath);
         execute.put("total_count", fileList.size());
-        execute.put("file_list", fileList);        
+        execute.put("file_list", fileList);
         return execute;
     }
-    
+
     /**
      :: Determine whether the folder saved by the file upload exists or can be written
      :: @return "true" if it exists and can be written, otherwise "false" is returned
@@ -263,7 +263,7 @@ public class KindEditor4Module {
             return false;
         return true;
     }
-    
+
     /**
      :: Generate a new file name and manage by date
      */
@@ -278,9 +278,9 @@ public class KindEditor4Module {
         SimpleDateFormat fileNameFormat = new SimpleDateFormat("yyyyMMddkkmmss_S");
         tempPath.append("/").append(fileNameFormat.format(new Date()));
         tempPath.append("."). append(fileExt);
-        savePath = tempPath.toString().replaceAll("\\\\", "/");    
+        savePath = tempPath.toString().replaceAll("\\\\", "/");
     }
-    
+
     /**
      :: Copy the file
      :: @param src source file
@@ -288,8 +288,8 @@ public class KindEditor4Module {
      */
     public void copy(File src, String tar) {
         Determines whether the source file or destination path is empty
-        if (null == src 
-                || null == takes 
+        if (null == src
+                || null == takes
                 || tar.isEmpty()) {
             return;
         }
@@ -304,7 +304,7 @@ public class KindEditor4Module {
             while (-1 != (n = srcIs.read(buffer))) {
                 tarOs.write(buffer, 0, n);
             }
-        } catch (IOException e) {           
+        } catch (IOException e) {
             log.error("Copy File is Fali, Because "+e);
         } finally {
             try {
@@ -319,7 +319,7 @@ public class KindEditor4Module {
             }
         }
     }
-    
+
     /**
      Sort by file name
      */
@@ -388,13 +388,13 @@ public class KindEditor4Module {
 
 Although the code is streamlined, but the function is a no ambiguity ah, and then enjoy the effect map.
 
-![use-ke-lgh-my97-3](//lisenhui.gitee.io/imgs/blog/2012/01-13-nutz-ke-lgh-my97-3.png)
+![use-ke-lgh-my97-3](//imgs.lisenhui.cn/blog/2012/01-13-nutz-ke-lgh-my97-3.png)
 
-![use-ke-lgh-my97-4]( //lisenhui.gitee.io/imgs/blog/2012/01-13-nutz-ke-lgh-my97-4.png)
+![use-ke-lgh-my97-4]( //imgs.lisenhui.cn/blog/2012/01-13-nutz-ke-lgh-my97-4.png)
 
-![use-ke-lgh-my97-5]( //lisenhui.gitee.io/imgs/blog/2012/01-13-nutz-ke-lgh-my97-5.png)
+![use-ke-lgh-my97-5]( //imgs.lisenhui.cn/blog/2012/01-13-nutz-ke-lgh-my97-5.png)
 
-![use-ke-lgh-my97-6]( //lisenhui.gitee.io/imgs/blog/2012/01-13-nutz-ke-lgh-my97-6.png)
+![use-ke-lgh-my97-6]( //imgs.lisenhui.cn/blog/2012/01-13-nutz-ke-lgh-my97-6.png)
 
 Nutz for JAVA programmers, is in addition to SSH another choice, a good start, if you have to use believe that you will learn to love it, hip-hop, other not much to say, the following directly to the source code to serve it, because the time is tight (will have to take a bus home, Gaga, finally holiday) just write down, write not good also look at everyone understand.
 

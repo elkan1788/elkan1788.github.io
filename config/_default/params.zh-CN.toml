@@ -12,9 +12,9 @@ ArticleDecContent = "本博客文章除特别声明外，均采用 <a href='http
 
 [Footer]
   StorageLink = "https://www.upyun.com/?utm_source=lianmeng&utm_medium=referral"
-  StorageName = "提供CDN/云存储"
+  StorageName = "提供CDN&存储"
   ICPLink = "http://beian.miit.gov.cn"
-  ICPNo = "粤 ICP 备 18047355 号"
+  ICPNo = "粤ICP备18047355-1号"
 
 [[Socials]]
   Name = "GitHub"

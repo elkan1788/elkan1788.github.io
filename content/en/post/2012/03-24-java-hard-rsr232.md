@@ -2,7 +2,7 @@
 title: Java program and RSR232 serial communication skills
 url: 2012/03/24/java-hard-rsr232.html
 date: "2012-03-24 22:21:20"
-tags: 
+tags:
   - Java
   - RSR232
 categories:
@@ -10,13 +10,13 @@ categories:
 ---
 
 
-I've been learning about J2EE application development and never thought about writing hardware interactions with JAVA, but I just like to try something new that I haven't come into contact with. Searched some resources on the Internet, learned that JAVA write serial communication is quite a lot, then began to prepare for the development of debugging environment. Software program development environment is not a problem, but this hardware environment is a bit difficult. Not to mention their own use of notebook where to string ah, and if you really take this string of hardware to their own will not make, then thought of the virtual machine, think this thing should also have a virtual bar, really with their own guesses as there is really this thing, by the way also downloaded a string of small assistant for debugging. 
+I've been learning about J2EE application development and never thought about writing hardware interactions with JAVA, but I just like to try something new that I haven't come into contact with. Searched some resources on the Internet, learned that JAVA write serial communication is quite a lot, then began to prepare for the development of debugging environment. Software program development environment is not a problem, but this hardware environment is a bit difficult. Not to mention their own use of notebook where to string ah, and if you really take this string of hardware to their own will not make, then thought of the virtual machine, think this thing should also have a virtual bar, really with their own guesses as there is really this thing, by the way also downloaded a string of small assistant for debugging.
 
 <!--more-->
 
 Here's a look at how the software environment is built:
 
- 
+
 :: Download 'comm.jar', 'win32com.dll' and 'javax.comm.properties'. (Accessories are available for download)
 Description: 'comm.jar' provides the java API for communication, 'win32com.dll' provides a local driver interface for 'comm.jar' calls, 'javax.comm.properties' is the class profile for this driver
 Copy 'javacomm.jar' to 'X:\jre\lib\ext' directory below;
@@ -24,10 +24,10 @@ Copy 'javacomm.jar' to 'X:\jre\lib\ext' directory below;
 Copy 'win32com.dll' to 'X:\jre'bin' directory below;
 :: Update the JDK environment inside the IDE, as shown below:
 
-![java-hard-rsr232-1](//lisenhui.gitee.io/imgs/blog/2012/03-24-java-hard-rsr232-1.png)
+![java-hard-rsr232-1](//imgs.lisenhui.cn/blog/2012/03-24-java-hard-rsr232-1.png)
 
-Then there is the hardware virtual environment installation virtual serial port, here I use VSPD6.0 (attachment provides download), after installation to start VSPD to add the ports we need, note that here is the way to add by group, such as COM1 and COM2 is a set of simultaneous additions, and so on. 
- 
+Then there is the hardware virtual environment installation virtual serial port, here I use VSPD6.0 (attachment provides download), after installation to start VSPD to add the ports we need, note that here is the way to add by group, such as COM1 and COM2 is a set of simultaneous additions, and so on.
+
 Once all environments are ready, let's take a quick look at what comm .jar content. From the javadoc of the comm API alone, SUM provides us with only the following 13 classes or interfaces, as follows:
 
 ```java
@@ -41,7 +41,7 @@ javax.comm.ParallelPortEventListener (extends java.util.EventListener)
 javax.comm.SerialPortEventListener (extends java.util.EventListener)
 javax.comm.NoSuchPortException javax.comm.PortInUseException
 javax.comm.UnsupportedCommOperationException
-  
+
 ```
 
 These classes and interfaces named at a glance to know its meaning, do not do a one-to-one introduction, you can go to the official website or the Internet to find more detailed information. Here's a test of whether the built environment is available, with the following main code:
@@ -60,9 +60,9 @@ while (en.hasMoreElements()) {
 
 ```
 
-After running the code, the console has the correct port to output (see figure below), indicating that all environments are ok to go down, otherwise check. 
+After running the code, the console has the correct port to output (see figure below), indicating that all environments are ok to go down, otherwise check.
 
-![java-hard-rsr232-2](//lisenhui.gitee.io/imgs/blog/2012/03-24-java-hard-rsr232-2.png)
+![java-hard-rsr232-2](//imgs.lisenhui.cn/blog/2012/03-24-java-hard-rsr232-2.png)
 
 Finally, the problem of interaction with serial data is to be solved. The main difficulty with this is data reading, because we don't know when the port will have data coming or how long it will be. Typically, serial communication applications have two modes, one is to implement the SerialPortEventListener interface, to listen for and handle various serial events, and the other is to establish a separate receiving thread dedicated to receiving data. After referring to the code of many older generations, the following is the first way to write a simple assistant program, the specific implementation of the detailed code, as follows:
 
@@ -112,41 +112,41 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
   private static final long serialVersionUID = -7270865686330790103L;
 
   protected int WIN_WIDTH = 380;
-  
+
   protected int WIN_HEIGHT = 300;
-  
-  private JComboBox<?> portCombox, rateCombox, dataCombox, stopCombox, parityCombox; 
-  
+
+  private JComboBox<?> portCombox, rateCombox, dataCombox, stopCombox, parityCombox;
+
   private Button openPortBtn, closePortBtn, sendMsgBtn;
-  
+
   private TextField sendTf;
-  
+
   private TextArea readTa;
-  
+
   private JLabel statusLb;
-  
+
   private String portname, rate, data, stop, parity;
-  
+
   protected CommPortIdentifier portId;
-  
+
   protected Enumeration<?> ports;
-  
+
   protected List<String> portList;
 
   protected SerialPort serialPort;
 
-  protected OutputStream outputStream = null; 
+  protected OutputStream outputStream = null;
 
-  protected InputStream inputStream = null; 
-    
+  protected InputStream inputStream = null;
+
   protected String mesg;
-    
+
   protected int sendCount, reciveCount;
-  
+
     /**
      The default constructor
      */
-  public JavaRs232() {    
+  public JavaRs232() {
     super ("Java RS-232 serial communication test program Van Dream Stardust");
     setSize(WIN_WIDTH, WIN_HEIGHT);
     setLocationRelativeTo(null);
@@ -163,12 +163,12 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setVisible(true);
   }
-  
+
   /**
    Initialize each UI component
    :: @since March 22, 2012 11:56:39 PM
    */
-  public void initComponents() {    
+  public void initComponents() {
     Shared constants
     Font lbFont - new Font ("Microsoft Ya black," Font.TRUETYPE_FONT, 14);
 
@@ -176,7 +176,7 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
     JPanel northPane = new JPanel();
     northPane.setLayout(new GridLayout(1, 1));
     Set the components of the left panel
-    JPanel leftPane = new JPanel();   
+    JPanel leftPane = new JPanel();
     leftPane.setOpaque(false);
     leftPane.setLayout(new GridLayout(3,2));
     JLabel portnameLb - new JLabel ("Serial slogan:"
@@ -220,7 +220,7 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
     stopCombox.addActionListener(this);
     openPortBtn - new Button ("Open Port");
     openPortBtn.addActionListener(this);
-    closePortBtn - new Button ("close port"); 
+    closePortBtn - new Button ("close port");
     closePortBtn.addActionListener(this);
     Add components to the panel
     rightPane.add(baudrateLb);
@@ -247,12 +247,12 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
     centerPane.add(sendTf);
     centerPane.add(sendMsgBtn);
     centerPane.add(readTa);
-    
+
     Set up the south component
     statusLb = new JLabel();
     statusLb.setText(initStatus());
     statusLb.setOpaque(true);
-    
+
     Gets the container for the main form and consolidates the layout north, middle, and south of the three panels above
     JPanel contentPane = (JPanel)getContentPane();
     contentPane.setLayout(new BorderLayout());
@@ -262,7 +262,7 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
     contentPane.add(centerPane, BorderLayout.CENTER);
     contentPane.add(statusLb, BorderLayout.SOUTH);
   }
-  
+
   /**
    The initialization status label displays text
    * @return String
@@ -274,7 +274,7 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
     data = dataCombox.getSelectedItem().toString();
     stop = stopCombox.getSelectedItem().toString();
     parity = parityCombox.getSelectedItem().toString();
-    
+
     StringBuffer str - new String Buffer ("Current string slogan:"
     str.append (portname).append ("porter rate:");
     str.append (rate).append ("data bit:");
@@ -283,7 +283,7 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
     str.append(parity);
     return str.toString();
   }
-  
+
   /**
    :: Scan all COM ports on this machine
    :: @since March 23, 2012 12:02:42 AM
@@ -301,18 +301,18 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
         }
       }
     }
-    if(null == portList 
+    if(null == portList
         || portList.isEmpty()) {
       ShowErrMesgbox ("No available serial port number found, program cannot start!");
       System.exit(0);
     }
   }
-  
+
   /**
    Open the serial port
    :: @since 2012-3-23 at 12:03:07 AM
    */
-  public void openSerialPort() { 
+  public void openSerialPort() {
     Gets the port you want to open
     try {
       portId = CommPortIdentifier.getPortIdentifier(portname);
@@ -330,7 +330,7 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
       setComponentsEnabled(true);
       return ;
     }
-    
+
     Set the port parameters
     try {
       int rate = Integer.parseInt(this.rate);
@@ -342,62 +342,62 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
       showErrMesgbox(e.getMessage());
     }
 
-    Open the port's IO flow pipeline 
-    try { 
-      outputStream = serialPort.getOutputStream(); 
-      inputStream = serialPort.getInputStream(); 
+    Open the port's IO flow pipeline
+    try {
+      outputStream = serialPort.getOutputStream();
+      inputStream = serialPort.getInputStream();
     } catch (IOException e) {
       showErrMesgbox(e.getMessage());
-    } 
+    }
 
     Add a listener to the port
-    try { 
-      serialPort.addEventListener(this); 
+    try {
+      serialPort.addEventListener(this);
     } catch (TooManyListenersException e) {
       showErrMesgbox(e.getMessage());
-    } 
+    }
 
-    serialPort.notifyOnDataAvailable(true); 
-  } 
-  
+    serialPort.notifyOnDataAvailable(true);
+  }
+
   /**
    Send data to the serial port
    :: @since 2012-3-23 at 12:05:00 AM
    */
-  public void sendDataToSeriaPort() { 
-    try { 
+  public void sendDataToSeriaPort() {
+    try {
       sendCount++;
-      outputStream.write(mesg.getBytes()); 
-      outputStream.flush(); 
+      outputStream.write(mesg.getBytes());
+      outputStream.flush();
 
-    } catch (IOException e) { 
+    } catch (IOException e) {
       showErrMesgbox(e.getMessage());
-    } 
-    
+    }
+
     statusLb.setText ("Send: "sendCount plus" receive: ""-reciveCount");
-  } 
-  
+  }
+
   /**
    :: Close the serial port
    :: @since 2012-3-23 at 12:05:28 AM
    */
-  public void closeSerialPort() { 
-    try { 
+  public void closeSerialPort() {
+    try {
       if(outputStream != null)
         outputStream.close();
       if(serialPort != null)
-        serialPort.close(); 
+        serialPort.close();
       serialPort = null;
       statusLb.setText (portname plus "serial port is closed!");
       sendCount = 0;
       reciveCount = 0;
       sendTf.setText("");
       readTa.setText("");
-    } catch (Exception e) { 
+    } catch (Exception e) {
       showErrMesgbox(e.getMessage());
-    } 
-  }   
-  
+    }
+  }
+
   /**
    :: Display an error or warning message
    :: @param msg information
@@ -419,7 +419,7 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
       statusLb.setText(initStatus());
     }
     if(e.getSource() == openPortBtn){
-      setComponentsEnabled(false);      
+      setComponentsEnabled(false);
       openSerialPort();
     }
     if(e.getSource() == closePortBtn){
@@ -428,7 +428,7 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
       }
       setComponentsEnabled(true);
     }
-    
+
     if(e.getSource() == sendMsgBtn){
       if(serialPort == null){
         ShowErrMesgbox ("Please open the serial port first!");
@@ -475,7 +475,7 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
       }
     }
   }
-  
+
   /**
    Set the switch status of each component
    :: @param the enabled status
@@ -490,14 +490,14 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
     stopCombox.setEnabled(enabled);
     parityCombox.setEnabled(enabled);
   }
-  
+
   /**
    Run the main function
    * @param args
    :: @since 2012-3-23 at 12:06:45 AM
    */
   public static void main(String[] args) {
-    new JavaRs232();    
+    new JavaRs232();
   }
 }
 
@@ -507,20 +507,20 @@ The code is written, press the F11 key to enter the debugging state, everything 
 
 :: Start the interface
 
-![java-hard-rsr232-3](//lisenhui.gitee.io/imgs/blog/2012/03-24-java-hard-rsr232-3.png)
+![java-hard-rsr232-3](//imgs.lisenhui.cn/blog/2012/03-24-java-hard-rsr232-3.png)
 
 Port detection
 
-![java-hard-rsr232-4](//lisenhui.gitee.io/imgs/blog/2012/03-24-java-hard-rsr232-4.png)
+![java-hard-rsr232-4](//imgs.lisenhui.cn/blog/2012/03-24-java-hard-rsr232-4.png)
 
 :: Communication testing
 
-![java-hard-rsr232-5](//lisenhui.gitee.io/imgs/blog/2012/03-24-java-hard-rsr232-5.png)
+![java-hard-rsr232-5](//imgs.lisenhui.cn/blog/2012/03-24-java-hard-rsr232-5.png)
 
 Finally take the time to beautify the program, the effect is more beautiful
 
-![java-hard-rsr232-6](//lisenhui.gitee.io/imgs/blog/2012/03-24-java-hard-rsr232-6.png)
+![java-hard-rsr232-6](//imgs.lisenhui.cn/blog/2012/03-24-java-hard-rsr232-6.png)
 
-![java-hard-rsr232-7](//lisenhui.gitee.io/imgs/blog/2012/03-24-java-hard-rsr232-7.png)
+![java-hard-rsr232-7](//imgs.lisenhui.cn/blog/2012/03-24-java-hard-rsr232-7.png)
 
 PS: (http://dl.iteye.com/topics/download/80f67e6e-45eb-31ff-8086-da09f8d5762e)

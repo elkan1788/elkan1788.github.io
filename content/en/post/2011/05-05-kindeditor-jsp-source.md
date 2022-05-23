@@ -2,21 +2,21 @@
 title: Open JSP KindEditor's attachment JAR package source code
 url: 2011/05/05/kindeditor-jsp-source.html
 date: "2011-05-05 09:32:12"
-tags: 
+tags:
   - Java
   - KindEditor
 categories:
   - KindEditor
 ---
 
-I didn't expect the response to be so strong when I wrote a JSP version of kindeditor editor in March. However, with the growth of the day and month, this version of the plug-in also exposed some BUG, such as: Struts2 how to integrate, web.xml file  configuration upload properties inconvenient to modify and cumbersome, upload pictures (attachments) can not be saved in other disks ... ...... 。 Now usually developed projects are using KE as an online editor, in order to be better and more convenient to use this editor, in the rest of the time to refactor the original code re-encapsulation, in addition to the previous version of the BUG, but also unified the overall naming specifications, added some new features. 
+I didn't expect the response to be so strong when I wrote a JSP version of kindeditor editor in March. However, with the growth of the day and month, this version of the plug-in also exposed some BUG, such as: Struts2 how to integrate, web.xml file  configuration upload properties inconvenient to modify and cumbersome, upload pictures (attachments) can not be saved in other disks ... ...... 。 Now usually developed projects are using KE as an online editor, in order to be better and more convenient to use this editor, in the rest of the time to refactor the original code re-encapsulation, in addition to the previous version of the BUG, but also unified the overall naming specifications, added some new features.
 
 <!--more-->
- 
+
 The version number of the current version of the plug-in is:Kindeditor-plugin0.4RELEASE, and the list of classes in the JAR package is as follows:
- 
-![kindeditor-jsp-ss-1](//lisenhui.gitee.io/imgs/blog/2011/05-05-kindeditor-jsp-ss-1.png)
- 
+
+![kindeditor-jsp-ss-1](//imgs.lisenhui.cn/blog/2011/05-05-kindeditor-jsp-ss-1.png)
+
  The main functions accomplished by this refactoring are the following:
 :: Reconstruct the selection button of upload attachment page press, imitation image upload;
 :: Increased Struts2 environmental integration;
@@ -25,17 +25,17 @@ The version number of the current version of the plug-in is:Kindeditor-plugin0.4
 :: Add the text watermark function of the image (not yet open);
 :: More Kindeditor edited version for 3.5.6;
 :: Upload attachment classification management
- 
+
 If you want to apply this KE plug-in to your project, it's simple, if the servlet environment takes only one step, the Struts2 environment requires two steps, as follows:
- 
+
 1. Servlet environment: You only need to configure .xml parameters in the web environment
- 
+
  ```xml
- 
+
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"> 
+  xsi:schemaLocation="http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
   <servlet>
     <servlet-name>KEUploadImgServlet</servlet-name>
     <servlet-class>com.elkan.kindeditor.servlet.plugin.KEUploadImgServlet</servlet-class>
@@ -43,7 +43,7 @@ If you want to apply this KE plug-in to your project, it's simple, if the servle
       <param-name>IMGSAVEPATH</param-name>
       <param-value>/upload/image/</param-value>
     </init-param>
-    <!-- 
+    <!--
     By default, pass the picture size
     <init-param>
       <param-name>MAXSIZE</param-name>
@@ -80,7 +80,7 @@ If you want to apply this KE plug-in to your project, it's simple, if the servle
       <param-name>ATTACHSAVEPATH</param-name>
       <param-value>/upload/attach/</param-value>
     </init-param>
-    <!-- 
+    <!--
     Upload attachment size by default
     <init-param>
       <param-name>MAXSIZE</param-name>
@@ -112,13 +112,13 @@ If you want to apply this KE plug-in to your project, it's simple, if the servle
     <auth-method>BASIC</auth-method>
   </login-config>
 </web-app>
- 
+
  ```
 
  KindEditor JS script  configuration on the Jsp page:
 
  ```javascript
- 
+
  KE.show({
   id: "editorServlet",
   resizeMode: 0,
@@ -127,7 +127,7 @@ If you want to apply this KE plug-in to your project, it's simple, if the servle
         fileManagerJson: "/KEPlugin/keplugin/KEManageImages.servlet",
   The default is . . . for all types of files
   //accessoryTypes: "doc|docx",
-  accessoryUploadJson: "/KEPlugin/keplugin/KEUploadAttach.servlet"        
+  accessoryUploadJson: "/KEPlugin/keplugin/KEUploadAttach.servlet"
 });
 
 ```
@@ -139,7 +139,7 @@ If you want to apply this KE plug-in to your project, it's simple, if the servle
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemalocation="http://java.sun.com/xml/ns/javaee   http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
   <filter>
     <filter-name>struts2</filter-name>
-    <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>  
+    <filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
   </filter>
   <filter-mapping>
     <filter-name>struts2</filter-name>
@@ -203,7 +203,7 @@ KE.show({
       fileManagerJson : "/KEPlugin/keplugin/keManagerImages.action",
       The default is . . . for all types of files
   //accessoryTypes: "doc|docx",
-        accessoryUploadJson: "/KEPlugin/keplugin/keUploadAttach.action"       
+        accessoryUploadJson: "/KEPlugin/keplugin/keUploadAttach.action"
 });
 
 ```
@@ -212,30 +212,30 @@ This time also written with the JQuery  EasyUI  and Syntax Highlighter    Gramma
 
 :: Apply the sample home page
 
-![kindeditor-jsp-ss-2](//lisenhui.gitee.io/imgs/blog/2011/05-05-kindeditor-jsp-ss-2.png)
+![kindeditor-jsp-ss-2](//imgs.lisenhui.cn/blog/2011/05-05-kindeditor-jsp-ss-2.png)
 
 :: Servlet version of KE
 
-![kindeditor-jsp-ss-3](//lisenhui.gitee.io/imgs/blog/2011/05-05-kindeditor-jsp-ss-3.png)
+![kindeditor-jsp-ss-3](//imgs.lisenhui.cn/blog/2011/05-05-kindeditor-jsp-ss-3.png)
 
 :: Struts2 version of KE
 
-![kindeditor-jsp-ss-4](//lisenhui.gitee.io/imgs/blog/2011/05-05-kindeditor-jsp-ss-4.png)
+![kindeditor-jsp-ss-4](//imgs.lisenhui.cn/blog/2011/05-05-kindeditor-jsp-ss-4.png)
 
 :: Attachment upload page
 
-![kindeditor-jsp-ss-5](//lisenhui.gitee.io/imgs/blog/2011/05-05-kindeditor-jsp-ss-5.png)
+![kindeditor-jsp-ss-5](//imgs.lisenhui.cn/blog/2011/05-05-kindeditor-jsp-ss-5.png)
 
 :: On The picture management
 
-![kindeditor-jsp-ss-6](//lisenhui.gitee.io/imgs/blog/kindeditor-jsp-ss-6.png)
+![kindeditor-jsp-ss-6](//imgs.lisenhui.cn/blog/kindeditor-jsp-ss-6.png)
 
 :: KE editor preview effect
 
-![kindeditor-jsp-ss-7](//lisenhui.gitee.io/imgs/blog/2011/05-05-kindeditor-jsp-ss-7.png)
+![kindeditor-jsp-ss-7](//imgs.lisenhui.cn/blog/2011/05-05-kindeditor-jsp-ss-7.png)
 
-For more detailed application features, please see the attachment for download. Finally remember to support the development of domestic technology ah, have an opinion please shoot brick spit slot.  
+For more detailed application features, please see the attachment for download. Finally remember to support the development of domestic technology ah, have an opinion please shoot brick spit slot.
 
 PS: Download the KindEditor app sample download (http://download.csdn.net/download/lisenhui_19/3689869).
- 
+
 Unzip the downloaded package into the Webapps directory of the Tomcat server, launch the Tomcat server, open the browser and enter it in the address bar: http://localhost:portnumber/KEPlugin/index.jspyou can see the application example above, Congratulation!

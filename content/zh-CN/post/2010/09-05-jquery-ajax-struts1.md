@@ -2,7 +2,7 @@
 title: JQuery+Strusts1.x实现Ajax无刷新登录
 url: 2010/09/05/jquery-ajax-struts1.html
 date: "2010-09-05 10:11:53"
-tags: 
+tags:
   - Juqery
   - 前端
   - Struts
@@ -14,7 +14,7 @@ categories:
 
 <!--more-->
 
-所用的JS插件： JQuery1.3.2汉化版、JQuery.form2.43 
+所用的JS插件： JQuery1.3.2汉化版、JQuery.form2.43
 
 
 下面我们先来看看页面中核心的JS代码：
@@ -23,24 +23,24 @@ categories:
 
 function submitForm()
  {
-    // 用jquery.form插件实现对表单数据系列化   
+    // 用jquery.form插件实现对表单数据系列化
     var form = $("form[name=AdminLoginForm]");
-    // 配置jquery.form中ajaxForm的参数   
-    // success 操作成功时的回调函数   
-    // resetForm 是否刷新表单   
-    // dataType 接收服务器返回数据的类型, 有script, xml, json等   
+    // 配置jquery.form中ajaxForm的参数
+    // success 操作成功时的回调函数
+    // resetForm 是否刷新表单
+    // dataType 接收服务器返回数据的类型, 有script, xml, json等
     var options = {
         success: showResponse,
         resetForm: false,
         dataType: "script"
     };
-    // ajax发送表单数据到服务器   
+    // ajax发送表单数据到服务器
     form.ajaxForm(options);
     return false;
 
 }
 
-//回调函数   
+//回调函数
 function showResponse(responseText, statusText) {
     if (statusText == "success")
     {
@@ -63,43 +63,43 @@ function showResponse(responseText, statusText) {
 
 ```
 
-public ActionForward execute(ActionMapping mapping, ActionForm form,           
-            HttpServletRequest request, HttpServletResponse response)           
-            throws Exception {           
-       // 输出的方式与编码格式           
-       response.setContentType("text/html; charset=utf-8");           
-       PrintWriter out = response.getWriter();           
-       // 获取表单数据           
-       AdminLoginForm adminLogin = (AdminLoginForm) form;           
-       // 获取服务器产生的验证码           
-       String validateCode = request.getSession().getAttribute("validateCode").toString();           
-       try {           
-          // 判断用户输入的验证码是否正确           
-          if (adminLogin.getVerifycode().equalsIgnoreCase(validateCode)) {           
-               // 用户名的状态           
-               boolean isUser = false;           
-               // 验证用户名是否存在           
-               if(!adminLogin.getUsername().equalsIgnoreCase("elkan")){           
-                       out.print("你输入的用户名不存在，请重新输入！");           
-                       return null;           
-                   }else{           
-                       isUser = true;           
-                   }           
-                // 验证密码是否正解           
-               if(adminLogin.getUserpswd().equalsIgnoreCase("lisenhui2010") && isUser){           
-                    out.print("登录成功！");           
-                }else{           
-                    out.print("密码错误，请重新输入！");           
-                    return null;           
-                }           
-            } else {           
-                out.print("验证码输入错误请重新输入！");           
-                return null;           
-            }                      
-         } catch (Exception e) {           
-            out.print(e.toString());           
-        }           
-      return null;           
+public ActionForward execute(ActionMapping mapping, ActionForm form,
+            HttpServletRequest request, HttpServletResponse response)
+            throws Exception {
+       // 输出的方式与编码格式
+       response.setContentType("text/html; charset=utf-8");
+       PrintWriter out = response.getWriter();
+       // 获取表单数据
+       AdminLoginForm adminLogin = (AdminLoginForm) form;
+       // 获取服务器产生的验证码
+       String validateCode = request.getSession().getAttribute("validateCode").toString();
+       try {
+          // 判断用户输入的验证码是否正确
+          if (adminLogin.getVerifycode().equalsIgnoreCase(validateCode)) {
+               // 用户名的状态
+               boolean isUser = false;
+               // 验证用户名是否存在
+               if(!adminLogin.getUsername().equalsIgnoreCase("elkan")){
+                       out.print("你输入的用户名不存在，请重新输入！");
+                       return null;
+                   }else{
+                       isUser = true;
+                   }
+                // 验证密码是否正解
+               if(adminLogin.getUserpswd().equalsIgnoreCase("lisenhui2010") && isUser){
+                    out.print("登录成功！");
+                }else{
+                    out.print("密码错误，请重新输入！");
+                    return null;
+                }
+            } else {
+                out.print("验证码输入错误请重新输入！");
+                return null;
+            }
+         } catch (Exception e) {
+            out.print(e.toString());
+        }
+      return null;
  }
 
 ```
@@ -108,27 +108,27 @@ public ActionForward execute(ActionMapping mapping, ActionForm form,
 
 ```
 
-<action-mappings>    
-   
-   <action         
-       input="/webstage/adminLogin.jsp"       
-       name="AdminLoginForm"       
-       path="/AdminLogin"       
-       scope="request"       
-       type="com.elkan.struts.actions.AdminLogin"       
-       validate="false"/>  
-     
+<action-mappings>
+
+   <action
+       input="/webstage/adminLogin.jsp"
+       name="AdminLoginForm"
+       path="/AdminLogin"
+       scope="request"
+       type="com.elkan.struts.actions.AdminLogin"
+       validate="false"/>
+
 </action-mappings>
 
 ```
 
 说了那么多，下面先来看看通上面的代码所实现的效果吧：
 
-![struts1-ajax-1](//lisenhui.gitee.io/imgs/blog/2010/09-05-struts1-ajax-1.jpg)
+![struts1-ajax-1](//imgs.lisenhui.cn/blog/2010/09-05-struts1-ajax-1.jpg)
 
-![struts1-ajax-2](//lisenhui.gitee.io/imgs/blog/2010/09-05-struts1-ajax-2.jpg)
+![struts1-ajax-2](//imgs.lisenhui.cn/blog/2010/09-05-struts1-ajax-2.jpg)
 
-![struts1-ajax-3](//lisenhui.gitee.io/imgs/blog/2010/09-05-struts1-ajax-3.jpg)
+![struts1-ajax-3](//imgs.lisenhui.cn/blog/2010/09-05-struts1-ajax-3.jpg)
 
 
 看到上面的效果，你是不是也想展示一下自己的身手呢，那就赶紧动手吧，相信有了上面的那些代码的提示做个DEMO应该不会很难吧，如果有什么问题的话可以留言给我。谢谢支持。

@@ -2,7 +2,7 @@
 title: Java程序与RSR232串口通讯小练手
 url: 2012/03/24/java-hard-rsr232.html
 date: "2012-03-24 22:21:20"
-tags: 
+tags:
   - Java
   - RSR232
 categories:
@@ -16,7 +16,7 @@ categories:
 
 下面就先看看软件环境的搭建：
 
- 
+
 * 下载`comm.jar`、`win32com.dll`和`javax.comm.properties`。 (附件提供下载)
 * 介绍：`comm.jar`提供了通讯用的java API，`win32com.dll`提供了供`comm.jar`调用的本地驱动接口，`javax.comm.properties`是这个驱动的类配置文件
 * 拷贝`javacomm.jar`到`X:\jre\lib\ext`目录下面;
@@ -24,10 +24,10 @@ categories:
 * 拷贝`win32com.dll`到`X:\jre\bin`目录下面;
 * 更新下IDE里面的JDK环境，如下图：
 
-![java-hard-rsr232-1](//lisenhui.gitee.io/imgs/blog/2012/03-24-java-hard-rsr232-1.png)
+![java-hard-rsr232-1](//imgs.lisenhui.cn/blog/2012/03-24-java-hard-rsr232-1.png)
 
 接着是硬件虚拟环境安装虚拟串口，这里我用的是VSPD6.0(附件提供下载)，安装好后启动VSPD添加我们所需要的端口，注意这里是按组的方式添加的，例如COM1和COM2是一组同时添加，以此类推。
- 
+
 所有环境都准备好后，先来简单认识下comm.jar的内容。单从comm API的javadoc来看，SUM提供给我们的只有区区以下13个类或接口，具体如下：
 
 ```java
@@ -41,7 +41,7 @@ javax.comm.ParallelPortEventListener (extends java.util.EventListener)
 javax.comm.SerialPortEventListener (extends java.util.EventListener)
 javax.comm.NoSuchPortException javax.comm.PortInUseException
 javax.comm.UnsupportedCommOperationException
-	
+
 ```
 
 这些类和接口命名一看便知其意，就不做一一介绍啦，可以到官网或网上找到更详细的信息。下面先测试下所搭建的环境是否可用，主要代码如下：
@@ -62,7 +62,7 @@ while (en.hasMoreElements()) {
 
 运行代码后，控制台有输出正确的端口(如下图)，说明所有环境正常可进行下步工作，否则请检查。
 
-![java-hard-rsr232-2](//lisenhui.gitee.io/imgs/blog/2012/03-24-java-hard-rsr232-2.png)
+![java-hard-rsr232-2](//imgs.lisenhui.cn/blog/2012/03-24-java-hard-rsr232-2.png)
 
 最后要解决的就是与串口数据交互的问题。在这个问题上，最主要的难点就是数据读取，因为我们不知道端口什么时候会有数据到来，也不知数据长度如何。通常，串口通信应用程序有两种模式，一种是实现SerialPortEventListener接口，监听各种串口事件并作相应处理；另一种就是建立一个独立的接收线程专门负责数据的接收。参考众多老前辈的代码后，下面就采用第一种方式写了个简单的助手程序，具体的实现请看详细代码，如下：
 
@@ -112,41 +112,41 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
 	private static final long serialVersionUID = -7270865686330790103L;
 
 	protected int WIN_WIDTH = 380;
-	
+
 	protected int WIN_HEIGHT = 300;
-	
-	private JComboBox<?> portCombox, rateCombox, dataCombox, stopCombox, parityCombox; 
-	
+
+	private JComboBox<?> portCombox, rateCombox, dataCombox, stopCombox, parityCombox;
+
 	private Button openPortBtn, closePortBtn, sendMsgBtn;
-	
+
 	private TextField sendTf;
-	
+
 	private TextArea readTa;
-	
+
 	private JLabel statusLb;
-	
+
 	private String portname, rate, data, stop, parity;
-	
+
 	protected CommPortIdentifier portId;
-	
+
 	protected Enumeration<?> ports;
-	
+
 	protected List<String> portList;
 
 	protected SerialPort serialPort;
 
-	protected OutputStream outputStream = null; 
+	protected OutputStream outputStream = null;
 
-	protected InputStream inputStream = null; 
-    
+	protected InputStream inputStream = null;
+
 	protected String mesg;
-    
+
 	protected int sendCount, reciveCount;
-	
+
     /**
      * 默认构造函数
      */
-	public JavaRs232() {		
+	public JavaRs232() {
 		super("Java RS-232串口通信测试程序   凡梦星尘");
 		setSize(WIN_WIDTH, WIN_HEIGHT);
 		setLocationRelativeTo(null);
@@ -163,12 +163,12 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setVisible(true);
 	}
-	
+
 	/**
 	 * 初始化各UI组件
 	 * @since 2012-3-22 下午11:56:39
 	 */
-	public void initComponents() {		
+	public void initComponents() {
 		// 共用常量
 		Font lbFont = new Font("微软雅黑", Font.TRUETYPE_FONT, 14);
 
@@ -176,7 +176,7 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
 		JPanel northPane = new JPanel();
 		northPane.setLayout(new GridLayout(1, 1));
 		// 设置左边面板各组件
-		JPanel leftPane = new JPanel();		
+		JPanel leftPane = new JPanel();
 		leftPane.setOpaque(false);
 		leftPane.setLayout(new GridLayout(3,2));
 		JLabel portnameLb = new JLabel("串口号：");
@@ -220,7 +220,7 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
 		stopCombox.addActionListener(this);
 		openPortBtn = new Button("打开端口");
 		openPortBtn.addActionListener(this);
-		closePortBtn = new Button("关闭端口");	
+		closePortBtn = new Button("关闭端口");
 		closePortBtn.addActionListener(this);
 		// 添加组件至面板
 		rightPane.add(baudrateLb);
@@ -247,12 +247,12 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
 		centerPane.add(sendTf);
 		centerPane.add(sendMsgBtn);
 		centerPane.add(readTa);
-		
+
 		// 设置南边组件
 		statusLb = new JLabel();
 		statusLb.setText(initStatus());
 		statusLb.setOpaque(true);
-		
+
 		// 获取主窗体的容器,并将以上三面板以北、中、南的布局整合
 		JPanel contentPane = (JPanel)getContentPane();
 		contentPane.setLayout(new BorderLayout());
@@ -262,7 +262,7 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
 		contentPane.add(centerPane, BorderLayout.CENTER);
 		contentPane.add(statusLb, BorderLayout.SOUTH);
 	}
-	
+
 	/**
 	 * 初始化状态标签显示文本
 	 * @return String
@@ -274,7 +274,7 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
 		data = dataCombox.getSelectedItem().toString();
 		stop = stopCombox.getSelectedItem().toString();
 		parity = parityCombox.getSelectedItem().toString();
-		
+
 		StringBuffer str = new StringBuffer("当前串口号:");
 		str.append(portname).append(" 波特率:");
 		str.append(rate).append(" 数据位:");
@@ -283,7 +283,7 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
 		str.append(parity);
 		return str.toString();
 	}
-	
+
 	/**
 	 * 扫描本机的所有COM端口
 	 * @since 2012-3-23 上午12:02:42
@@ -301,18 +301,18 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
 				}
 			}
 		}
-		if(null == portList 
+		if(null == portList
 				|| portList.isEmpty()) {
 			showErrMesgbox("未找到可用的串行端口号,程序无法启动!");
 			System.exit(0);
 		}
 	}
-	
+
 	/**
 	 * 打开串行端口
 	 * @since 2012-3-23 上午12:03:07
 	 */
-	public void openSerialPort() { 
+	public void openSerialPort() {
 		// 获取要打开的端口
 		try {
 			portId = CommPortIdentifier.getPortIdentifier(portname);
@@ -330,7 +330,7 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
 			setComponentsEnabled(true);
 			return ;
 		}
-		
+
 		// 设置端口参数
 		try {
 			int rate = Integer.parseInt(this.rate);
@@ -342,62 +342,62 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
 			showErrMesgbox(e.getMessage());
 		}
 
-		// 打开端口的IO流管道 
-		try { 
-			outputStream = serialPort.getOutputStream(); 
-			inputStream = serialPort.getInputStream(); 
+		// 打开端口的IO流管道
+		try {
+			outputStream = serialPort.getOutputStream();
+			inputStream = serialPort.getInputStream();
 		} catch (IOException e) {
 			showErrMesgbox(e.getMessage());
-		} 
+		}
 
 		// 给端口添加监听器
-		try { 
-			serialPort.addEventListener(this); 
+		try {
+			serialPort.addEventListener(this);
 		} catch (TooManyListenersException e) {
 			showErrMesgbox(e.getMessage());
-		} 
+		}
 
-		serialPort.notifyOnDataAvailable(true); 
-	} 
-	
+		serialPort.notifyOnDataAvailable(true);
+	}
+
 	/**
 	 * 给串行端口发送数据
 	 * @since 2012-3-23 上午12:05:00
 	 */
-	public void sendDataToSeriaPort() { 
-		try { 
+	public void sendDataToSeriaPort() {
+		try {
 			sendCount++;
-			outputStream.write(mesg.getBytes()); 
-			outputStream.flush(); 
+			outputStream.write(mesg.getBytes());
+			outputStream.flush();
 
-		} catch (IOException e) { 
+		} catch (IOException e) {
 			showErrMesgbox(e.getMessage());
-		} 
-		
+		}
+
 		statusLb.setText("  发送: "+sendCount+"                                      接收: "+reciveCount);
-	} 
-	
+	}
+
 	/**
 	 * 关闭串行端口
 	 * @since 2012-3-23 上午12:05:28
 	 */
-	public void closeSerialPort() { 
-		try { 
+	public void closeSerialPort() {
+		try {
 			if(outputStream != null)
 				outputStream.close();
 			if(serialPort != null)
-				serialPort.close(); 
+				serialPort.close();
 			serialPort = null;
 			statusLb.setText(portname+"串口已经关闭!");
 			sendCount = 0;
 			reciveCount = 0;
 			sendTf.setText("");
 			readTa.setText("");
-		} catch (Exception e) { 
+		} catch (Exception e) {
 			showErrMesgbox(e.getMessage());
-		} 
-	} 	
-	
+		}
+	}
+
 	/**
 	 * 显示错误或警告信息
 	 * @param msg 信息
@@ -419,7 +419,7 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
 			statusLb.setText(initStatus());
 		}
 		if(e.getSource() == openPortBtn){
-			setComponentsEnabled(false);			
+			setComponentsEnabled(false);
 			openSerialPort();
 		}
 		if(e.getSource() == closePortBtn){
@@ -428,7 +428,7 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
 			}
 			setComponentsEnabled(true);
 		}
-		
+
 		if(e.getSource() == sendMsgBtn){
 			if(serialPort == null){
 				showErrMesgbox("请先打开串行端口!");
@@ -475,7 +475,7 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
 			}
 		}
 	}
-	
+
 	/**
 	 * 设置各组件的开关状态
 	 * @param enabled 状态
@@ -490,14 +490,14 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
 		stopCombox.setEnabled(enabled);
 		parityCombox.setEnabled(enabled);
 	}
-	
+
 	/**
 	 * 运行主函数
 	 * @param args
 	 * @since 2012-3-23 上午12:06:45
 	 */
 	public static void main(String[] args) {
-		new JavaRs232();		
+		new JavaRs232();
 	}
 }
 
@@ -507,20 +507,20 @@ public class JavaRs232 extends JFrame implements ActionListener, SerialPortEvent
 
 * 启动界面
 
-![java-hard-rsr232-3](//lisenhui.gitee.io/imgs/blog/2012/03-24-java-hard-rsr232-3.png)
+![java-hard-rsr232-3](//imgs.lisenhui.cn/blog/2012/03-24-java-hard-rsr232-3.png)
 
 * 端口检测
 
-![java-hard-rsr232-4](//lisenhui.gitee.io/imgs/blog/2012/03-24-java-hard-rsr232-4.png)
+![java-hard-rsr232-4](//imgs.lisenhui.cn/blog/2012/03-24-java-hard-rsr232-4.png)
 
 * 通讯测试
 
-![java-hard-rsr232-5](//lisenhui.gitee.io/imgs/blog/2012/03-24-java-hard-rsr232-5.png)
+![java-hard-rsr232-5](//imgs.lisenhui.cn/blog/2012/03-24-java-hard-rsr232-5.png)
 
 * 最后再抽空来美化程序下，效果更漂亮
 
-![java-hard-rsr232-6](//lisenhui.gitee.io/imgs/blog/2012/03-24-java-hard-rsr232-6.png)
+![java-hard-rsr232-6](//imgs.lisenhui.cn/blog/2012/03-24-java-hard-rsr232-6.png)
 
-![java-hard-rsr232-7](//lisenhui.gitee.io/imgs/blog/2012/03-24-java-hard-rsr232-7.png)
+![java-hard-rsr232-7](//imgs.lisenhui.cn/blog/2012/03-24-java-hard-rsr232-7.png)
 
 PS: [示例源下载](http://dl.iteye.com/topics/download/80f67e6e-45eb-31ff-8086-da09f8d5762e)

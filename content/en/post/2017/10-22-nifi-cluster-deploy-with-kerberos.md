@@ -1,5 +1,5 @@
 ---
-title: Apache Nifi clustering and user authentication with kerberos 
+title: Apache Nifi clustering and user authentication with kerberos
 url: 2017/10/22/ninfi-cluster-deploy-with-kerberos.html
 date: 2017-10-22 11:42:29
 tags:
@@ -11,17 +11,17 @@ categories:
 
 Recently, some of the lessons learned from the installation configuration are being shared with the help of the .Apache NIFI for contact with data streaming processing. This article is primarily about clusters and user rights, and the description of the "Apache NIFI" (https://nifi.apache.org/) is not much of a description, with a direct reference to the official home page as follows:
 
-![NiFi-01.png](//lisenhui.gitee.io/imgs/blog/2017/10-22-Apache-NiFi-01.png)
+![NiFi-01.png](//imgs.lisenhui.cn/blog/2017/10-22-Apache-NiFi-01.png)
 
 <!--more-->
 
 
 Apahce  NIFI's stand-alone operation is fairly simple, easy to use, and completely fooly. Download the decompression and perform 'nifi.sh start' on the 'bin' directory to open the browser input 'http://127.0.0.1:8080/nifi' to see a simple and beautiful WEB UI. So what we're going to configure next is its cluster pattern, which is officially stated, with each node in the cluster performing the same tasks on the dataset, but each node is running on a different dataset (see the official documentation for detailed instructions( https://nifi.apache.org/docs.html
 
-![zero-master-cluster-http-access.png](//lisenhui.gitee.io/imgs/blog/2017/10-22-zero-master-cluster-http-access.png)
+![zero-master-cluster-http-access.png](//imgs.lisenhui.cn/blog/2017/10-22-zero-master-cluster-http-access.png)
 
 
-The system environment and software version 
+The system environment and software version
 
 - CentOS7
 
@@ -120,8 +120,8 @@ Initializing database '/var/kerberos/principal' for realm 'CENTOS7-MASTER. COM',
 master key name 'K/M@CENTOS7-MASTER. COM'
 You will be prompted for the database Master Password.
 It is important that you NOT FORGET this password.
-Enter KDC database master key: 
-Re-enter KDC database master key to verify: 
+Enter KDC database master key:
+Re-enter KDC database master key to verify:
 ```
 
 Modify the database permissions
@@ -174,8 +174,8 @@ Copy the 'krb5.conf'and'root.keytab'of the primarynode to the from node service,
 [root@centos7-cluster01 ~]# scp root@centos7-master:/data/root.keytab /data/root.keytab
 [root@centos7-cluster01 ~]# kadmin -p root/admin
 Authenticating as principal root/admin with password.
-Password for root/admin@CENTOS7-MASTER.COM: 
-kadmin: 
+Password for root/admin@CENTOS7-MASTER.COM:
+kadmin:
 ```
 
 Copy the keytab file
@@ -271,7 +271,7 @@ Go to the Nifif installation directory to modify the 'conf/state-management.xml'
 
 ```xml
 <cluster-provider>
-  <id>zk-provider</id>    
+  <id>zk-provider</id>
  <class>org.apache.nifi.controller.state.providers.zookeeper.ZooKeeperStateProvider</class>
    <property name="Connect String">centos7-master:2181,centos7-cluster01:2181</property>
    <property name="Root Node">/nifi</property>
@@ -300,7 +300,7 @@ Configure Nifi  Admin initialization
 
 ## Update NIFI Deployment
 
-Go to the Nifif installation directory to modify the'conf/nifi.properties'fileand add the 'kerberos5' login fit as follows: 
+Go to the Nifif installation directory to modify the'conf/nifi.properties'fileand add the 'kerberos5' login fit as follows:
 
 ```properties
 nifi.kerberos.krb5.file=/etc/krb5.conf
@@ -346,13 +346,13 @@ Start the NIFI service
 
 Start the NIFI of the primary node, then start the NIFI from the node, execute the command './bin/nifi.sh start', then open the browser input 'https://centos7-master:9443/nifi/' and you will jump to the login page and enter the user and password created in step 1 to log in successfully. The interface appears as follows:
 
-![Apache NiFi02](//lisenhui.gitee.io/imgs/blog/2017/10-22-Apache-NiFi-02.png)
+![Apache NiFi02](//imgs.lisenhui.cn/blog/2017/10-22-Apache-NiFi-02.png)
 
-![Apache NiFi03](//lisenhui.gitee.io/imgs/blog/2017/10-22-Apache-NiFi-03.png)
+![Apache NiFi03](//imgs.lisenhui.cn/blog/2017/10-22-Apache-NiFi-03.png)
 
-As shown in the above two figures, in the upper left corner of the interface can clearly see that the current number of nodes is 2, the user is 'root/admin@CENTOS7-MASTER.COM', where 'centos7-master' is the coordinator, 'centos 7-cluster01' is the main node, the main menu also added 'Cluster', 'User' and 'Policies' options. 
+As shown in the above two figures, in the upper left corner of the interface can clearly see that the current number of nodes is 2, the user is 'root/admin@CENTOS7-MASTER.COM', where 'centos7-master' is the coordinator, 'centos 7-cluster01' is the main node, the main menu also added 'Cluster', 'User' and 'Policies' options.
 
-At this point, 'Apache NIFI' cluster services and user authentication are complete, and then we can take the next step. 
+At this point, 'Apache NIFI' cluster services and user authentication are complete, and then we can take the next step.
 
 The pits encountered:
 The user name or password is not valid when you log on for the first time, and the user's password can be updated via kadmin

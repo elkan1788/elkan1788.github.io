@@ -9,7 +9,7 @@ categories:
   - Big data
 ---
 
-Hue is a Web applications that enables you to easily interact with an Hadoop cluster. Hue applications let you browse HDFS, Jobs, run Hive, Pig and Cloudera Impala queries, manage the Hive Metastore, HBase, Sqoop, ZooKeeper, MapReduce jobs, and create and schedule worklows with Oozie. 
+Hue is a Web applications that enables you to easily interact with an Hadoop cluster. Hue applications let you browse HDFS, Jobs, run Hive, Pig and Cloudera Impala queries, manage the Hive Metastore, HBase, Sqoop, ZooKeeper, MapReduce jobs, and create and schedule worklows with Oozie.
 
 For more information and presentations on HUE,visit its officialwebsite: [http://gethue.com](http://gethue.com).
 
@@ -86,9 +86,9 @@ This configuration is very simple to understand is also difficult, but in the ac
 options={ "init_command":"SET NAMES `utf8`"}
 ```
 
-Experimented for a little, garbled code problem OK, Chinese display normal. 
+Experimented for a little, garbled code problem OK, Chinese display normal.
 
-![hue-mysql-chinese.png](//lisenhui.gitee.io/imgs/blog/2017/08-15-hue-mysql-chinese.png)
+![hue-mysql-chinese.png](//imgs.lisenhui.cn/blog/2017/08-15-hue-mysql-chinese.png)
 
 In fact, if you do not have the production environment, you do not have to toss, the simplest way is to update the 'my.ini' configuration, you know.
 

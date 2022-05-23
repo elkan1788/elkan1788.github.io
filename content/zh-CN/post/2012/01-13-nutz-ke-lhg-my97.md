@@ -2,7 +2,7 @@
 title: 国内技术强强联手之Nutz+KindEditor+LHGDialog+My97DatePicker
 url: 2012/01/13/nutz-ke-lhg-my97.html
 date: "2012-01-13 10:21:20"
-tags: 
+tags:
   - Nutz
   - KindEditor
 categories:
@@ -13,9 +13,9 @@ categories:
 
 <!--more-->
 
-![nutz-ke-lgh-my97-1](//lisenhui.gitee.io/imgs/blog/2012/01-13-nutz-ke-lgh-my97-1.png)
+![nutz-ke-lgh-my97-1](//imgs.lisenhui.cn/blog/2012/01-13-nutz-ke-lgh-my97-1.png)
 
-![nutz-ke-lgh-my97-2](//lisenhui.gitee.io/imgs/blog/2012/01-13-nutz-ke-lgh-my97-2.png)
+![nutz-ke-lgh-my97-2](//imgs.lisenhui.cn/blog/2012/01-13-nutz-ke-lgh-my97-2.png)
 
 在此不得不称赞下`Nutz`的高效简约之美，和以前的KE版本一样还是把上传部分的`JSP`页面翻译成后台`JAVA`代码，唯一不同的就是那些相同功能的实现代码精简了好多呀，官网示例中的两个`JSP`文件被有压缩成了一个只有不到400行的`JAVA`后台代码，源码如下：
 
@@ -72,8 +72,8 @@ public class KindEditor4Module {
     // 允许上传文件大小MAP数组
     private static final HashMap<String,Long> sizeMap = new HashMap<String, Long>();
     // 上传文件存放根目录
-    private String filePath = "/attached/";    
-    
+    private String filePath = "/attached/";
+
     static {
         // 初始后缀名称MAP数组
         extMap.put("image", "gif,jpg,jpeg,png,bmp");
@@ -88,7 +88,7 @@ public class KindEditor4Module {
     }
 
     @At
-    public Map<String, Object> upload(@Param("imgFile") File tempFile, 
+    public Map<String, Object> upload(@Param("imgFile") File tempFile,
             @Param("dir") String dir, ServletContext context) {
         // 初始相关变量
         Map<String, Object> execute = new HashMap<String, Object>();
@@ -156,7 +156,7 @@ public class KindEditor4Module {
         execute.put("url", url.toString());
         return execute;
     }
-    
+
     @At
     public Map<String, Object> manager(@Param("dir") String dir,
             @Param("path") String path, @Param("order") String order,
@@ -183,7 +183,7 @@ public class KindEditor4Module {
         if (!"".equals(path)) {
             String str = curDir.substring(0, curDir.length() - 1);
             moveupDir = str.lastIndexOf("/") >= 0 ? str.substring(0, str.lastIndexOf("/") + 1) : "";
-        }        
+        }
         // 检查..命令
         if(path.indexOf("..") >= 0){
             execute.put("error", 1);
@@ -242,10 +242,10 @@ public class KindEditor4Module {
         execute.put("current_dir_path", curDir);
         execute.put("current_url", curPath);
         execute.put("total_count", fileList.size());
-        execute.put("file_list", fileList);        
+        execute.put("file_list", fileList);
         return execute;
     }
-    
+
     /**
      * 判断文件上传保存的文件夹是否存在或可写
      * @return 如果存在且可写返回"true",否则返回"false"
@@ -263,7 +263,7 @@ public class KindEditor4Module {
             return false;
         return true;
     }
-    
+
     /**
      * 生成新的文件名,且按日期分类管理
      */
@@ -278,9 +278,9 @@ public class KindEditor4Module {
         SimpleDateFormat fileNameFormat = new SimpleDateFormat("yyyyMMddkkmmss_S");
         tempPath.append("/").append(fileNameFormat.format(new Date()));
         tempPath.append(".").append(fileExt);
-        savePath = tempPath.toString().replaceAll("\\\\", "/");    
+        savePath = tempPath.toString().replaceAll("\\\\", "/");
     }
-    
+
     /**
      * 拷贝文件
      * @param src 源文件
@@ -288,8 +288,8 @@ public class KindEditor4Module {
      */
     public void copy(File src, String tar) {
         // 判断源文件或目标路径是否为空
-        if (null == src 
-                || null == tar 
+        if (null == src
+                || null == tar
                 || tar.isEmpty()) {
             return;
         }
@@ -304,7 +304,7 @@ public class KindEditor4Module {
             while (-1 != (n = srcIs.read(buffer))) {
                 tarOs.write(buffer, 0, n);
             }
-        } catch (IOException e) {           
+        } catch (IOException e) {
             log.error("Copy File is Fali, Because "+e);
         } finally {
             try {
@@ -319,7 +319,7 @@ public class KindEditor4Module {
             }
         }
     }
-    
+
     /**
      * 根据文件名称排序
      */
@@ -388,13 +388,13 @@ public class KindEditor4Module {
 
 虽说代码精简了，但是功能却是一个没有含糊呀，接着欣赏效果图吧。
 
-![nutz-ke-lgh-my97-3](//lisenhui.gitee.io/imgs/blog/2012/01-13-nutz-ke-lgh-my97-3.png)
+![nutz-ke-lgh-my97-3](//imgs.lisenhui.cn/blog/2012/01-13-nutz-ke-lgh-my97-3.png)
 
-![nutz-ke-lgh-my97-4](//lisenhui.gitee.io/imgs/blog/2012/01-13-nutz-ke-lgh-my97-4.png)
+![nutz-ke-lgh-my97-4](//imgs.lisenhui.cn/blog/2012/01-13-nutz-ke-lgh-my97-4.png)
 
-![nutz-ke-lgh-my97-5](//lisenhui.gitee.io/imgs/blog/2012/01-13-nutz-ke-lgh-my97-5.png)
+![nutz-ke-lgh-my97-5](//imgs.lisenhui.cn/blog/2012/01-13-nutz-ke-lgh-my97-5.png)
 
-![nutz-ke-lgh-my97-6](//lisenhui.gitee.io/imgs/blog/2012/01-13-nutz-ke-lgh-my97-6.png)
+![nutz-ke-lgh-my97-6](//imgs.lisenhui.cn/blog/2012/01-13-nutz-ke-lgh-my97-6.png)
 
 Nutz对于JAVA程序员来说，是除SSH外的另一个选择，一个美好的开始，如果你有使用相信你定会深学的爱上它，嘻~，别的就不多说了，下面直接把源码给奉上吧，因为时间紧迫(待会就要坐车回家了，嘎~，终于放假了)就只是随笔写了下，写的不好还望大家见谅。
 
