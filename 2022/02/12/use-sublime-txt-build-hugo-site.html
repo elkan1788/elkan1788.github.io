@@ -209,10 +209,14 @@
 <td>注释</td>
 <td><code>Ctrl + Shift + /</code></td>
 </tr>
+<tr>
+<td>代码块</td>
+<td><code>mdc+Tab</code></td>
+</tr>
 </tbody>
 </table>
 <blockquote>
-<p>注： 除引用较为特殊外，其他组合键都是可以连按两次进行取消的,很遗憾没有表格和代码块快捷方式。</p>
+<p>注： 除引用较为特殊外，其他组合键都是可以连按两次进行取消的,很遗憾没有表格快捷方式。</p>
 </blockquote>
 <p>最后就是要创建 <code>Hugofy</code> 启动站点服务的快捷方式，不过在此之前需先配置下站点路径等参数，打开 <code>Preferences -> Package Settings -> Hugofy -> Settings - Users</code> 选项，参考如下配置调整自身实际情况：</p>
 <div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
@@ -232,9 +236,9 @@
 
 }
 </code></pre></div><p>接着打开 <code>Preferences -> Key Bindings</code> 选项，加入你想设置的快捷键，参考如下：</p>
-<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{ 
-    <span style=color:green;font-weight:700>&#34;keys&#34;</span>: [<span style=color:#b44>&#34;ctrl+alt+h&#34;</span>], 
-    <span style=color:green;font-weight:700>&#34;command&#34;</span>: <span style=color:#b44>&#34;hugoserver&#34;</span> 
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-json data-lang=json>{
+    <span style=color:green;font-weight:700>&#34;keys&#34;</span>: [<span style=color:#b44>&#34;ctrl+alt+h&#34;</span>],
+    <span style=color:green;font-weight:700>&#34;command&#34;</span>: <span style=color:#b44>&#34;hugoserver&#34;</span>
 }
 </code></pre></div><p>那么此时只要按下 <code>Ctrl + Alt + H</code> 组合键，后台就会启动 <code>Hugo</code> 站点服务，打开浏览器即可访问站点。</p>
 <h2 id=总结>总结</h2>

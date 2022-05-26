@@ -70,7 +70,7 @@ Socials 作者社交账号，支持多个
 Git MarkdownEditing Hugo Snippets Hugofy 直接在 Sublime Text 使用 Ctrl+Shift+P 快捷键输入 pci 选择第一项，逐一输入上述插件名称安装。
 快捷键设置 这里 Git 和 Hugo Snippets 是没有快捷键可使用的，只能通过 Ctrl+Shift+P 快捷键 + 关键字来执行相关的命令，参考如下：
 Ctrl+Shift+P + git(关键字)： 会显示出 Git 的命令，如add, commit, push等常用操作功能； Ctrl+Shift+P + snippet hugo(关键字)： 会显示出 Hugo 的语法，移动上下键选择便可插入代码块； 而 MarkdownEditing 在文档编辑过程中，除自动识别语法字符外，比如当输入 _ 字符会自动补全可直接写文档。另外也提供了一些快捷输入的组合按键，参考如下：
-功能说明 组合键 标题 Ctrl + 1~n 粗体 Alt + B 斜体 Alt + I 插入图片 Win + Shift + K 链接 Ctrl + Alt + V 引用 Ctrl + Shift + . 取消引用 Ctrl + Shift + , 注释 Ctrl + Shift + / 注： 除引用较为特殊外，其他组合键都是可以连按两次进行取消的,很遗憾没有表格和代码块快捷方式。
+功能说明 组合键 标题 Ctrl + 1~n 粗体 Alt + B 斜体 Alt + I 插入图片 Win + Shift + K 链接 Ctrl + Alt + V 引用 Ctrl + Shift + . 取消引用 Ctrl + Shift + , 注释 Ctrl + Shift + / 代码块 mdc+Tab 注： 除引用较为特殊外，其他组合键都是可以连按两次进行取消的,很遗憾没有表格快捷方式。
 最后就是要创建 Hugofy 启动站点服务的快捷方式，不过在此之前需先配置下站点路径等参数，打开 Preferences -> Package Settings -> Hugofy -> Settings - Users 选项，参考如下配置调整自身实际情况：
 { // 站点根目录的上一级 "Directory": "C:\\Users\\senhui.li\\Documents\\GitRepos", "Server": { // 生成草稿 "DRAFTS_FLAG": true, // 服务端口 "PORT": 1313, // 不需要添加主题参数 "THEME_FLAG": false }, // 站点存放的目录名称 "Sitename": "elkan1788.github.io" } 接着打开 Preferences -> Key Bindings 选项，加入你想设置的快捷键，参考如下：
 { "keys": ["ctrl+alt+h"], "command": "hugoserver" } 那么此时只要按下 Ctrl + Alt + H 组合键，后台就会启动 Hugo 站点服务，打开浏览器即可访问站点。
