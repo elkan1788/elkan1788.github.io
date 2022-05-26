@@ -45,8 +45,9 @@ tags:
 | 引用 | `Ctrl + Shift + .` |
 | 取消引用 | `Ctrl + Shift + ,` |
 | 注释 | `Ctrl + Shift + /` |
+| 代码块 | `mdc+Tab` |
 
-> 注： 除引用较为特殊外，其他组合键都是可以连按两次进行取消的,很遗憾没有表格和代码块快捷方式。
+> 注： 除引用较为特殊外，其他组合键都是可以连按两次进行取消的,很遗憾没有表格快捷方式。
 
 最后就是要创建 `Hugofy` 启动站点服务的快捷方式，不过在此之前需先配置下站点路径等参数，打开 `Preferences -> Package Settings -> Hugofy -> Settings - Users` 选项，参考如下配置调整自身实际情况：
 
@@ -72,9 +73,9 @@ tags:
 接着打开 `Preferences -> Key Bindings` 选项，加入你想设置的快捷键，参考如下：
 
 ```json
-{ 
-    "keys": ["ctrl+alt+h"], 
-    "command": "hugoserver" 
+{
+    "keys": ["ctrl+alt+h"],
+    "command": "hugoserver"
 }
 ```
 

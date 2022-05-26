@@ -29,14 +29,14 @@ According to the operation process mentioned above, there are four plug-ins to b
 - Hugofy
 
 
->Directly enter 'PCI' in `Sublime Text` with the shortcut of 'Ctrl + Shift + p', select the first item, and enter the above plug-in names one by one for installation.
+>Directly enter `PCI` in `Sublime Text` with the shortcut of `Ctrl + Shift + p`, select the first item, and enter the above plug-in names one by one for installation.
 
 
 
 ## Shortcut key settings
 
 
-There are no shortcut keys for 'git' and 'Hugo snippets' here. You can only use the `Ctrl + Shift + P` shortcut key + keyword to execute relevant commands. Refer to the following:
+There are no shortcut keys for `git` and `Hugo snippets` here. You can only use the `Ctrl + Shift + P` shortcut key + keyword to execute relevant commands. Refer to the following:
 
 
 -  `Ctrl + Shift + P`  + git (keyword): git commands will be displayed, such as add, commit, push and other common operation functions;
@@ -55,11 +55,12 @@ In the process of document editing, `Markdownediting` not only automatically rec
 | Insert picture |  ` Win + Shift + K `|
 | Links |  ` Ctrl + Alt + V `|
 | Reference | ` Ctrl + Shift +. `|
-| Dereference |  ` Ctrl + Shift +, `| 
+| Dereference |  ` Ctrl + Shift +, `|
 | Comments |  ` Ctrl + Shift + / `|
+| Code block |  ` mdc + Tab `|
 
 
->Note: except for special references, other key combinations can be cancelled by pressing twice. Unfortunately, there are no shortcuts to tables and code blocks.
+>Note: except for special references, other key combinations can be cancelled by pressing twice. Unfortunately, there are no shortcuts to tables.
 
 
 Finally, you need to create a shortcut for `Hugofy` to start the site service, but before that, you need to configure the site path and other parameters, open the `Preferences - > Package settings - > Hugofy - > Settings - Users` option, and adjust your actual situation with reference to the following configuration:
@@ -115,7 +116,7 @@ At this time, just press the combination of `Ctrl + Alt + H`, the background wil
 ## Summary
 
 
-Since then, you can `swim` in the family bucket of `Sublime Text`. If you like, come and join us and share your valuable experience with many netizens.
+Since then, you can silky build your site with Hugo throught `Sublime Text`. You can also share your experience about Hugo.
 
 
 
