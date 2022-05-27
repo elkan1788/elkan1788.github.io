@@ -1,3 +1,4 @@
 public/
-config/dev/
+config/
+!config/_default/
 *.lock
