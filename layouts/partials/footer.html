@@ -23,12 +23,20 @@
     由 
     <a class="vendor-logo" href="{{ .Site.Params.Footer.StorageLink }}" style="font-weight:700" target="_blank">{{ .Site.Params.Footer.StorageName | safeHTML }}</a>
   </span>
-  <span class="separator-line">/</span>
+  <!-- <span class="separator-line">/</span>
   <span class="license-num"> 
     <a href="{{ .Site.Params.Footer.ICPLink }}" target="_blank">{{ .Site.Params.Footer.ICPNo }}</a>
-  </span>
+  </span> -->
+</div>
+<div class="beian">
+  <a href="https://beian.miit.gov.cn" target="_blank">{{ .Site.Params.Footer.ICPNo }}</a>
+  <img src="/img/gongan.png" alt="沪公网安备">
+  <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011402009770" target="_blank">沪公网安备 31011402009770 号</a>
 </div>
 <style type="text/css">
+  .license-info, .beian a, .beian img {
+    display: inline-block;
+  }
   .vendor-logo {
     background-image: url(/img/upyun_logo.png);
     background-size: 52px auto;
