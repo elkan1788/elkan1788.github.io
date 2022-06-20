@@ -61,3 +61,7 @@ ArticleDecContent = "This blog post article is under the <a href='https://creati
 [[Links]]
   Name = "Hairway"
   Permalink = "https://www.hairway.cn"
+  
+[[Links]]
+  Name = "Finisky Garden"
+  Permalink = "https://finisky.github.io"
