@@ -1,0 +1,12 @@
+
+.xyears-blog {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.xyears-blog > a {
+  margin-right: 6px;
+  border-bottom: 0px;
+}
