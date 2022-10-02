@@ -16,7 +16,7 @@ tzzs/server-shell
 &lt;a href="https://gohugo.io/tools/editors/#sublime-text" title="&amp;lt;strong&amp;gt;插件&amp;lt;/strong&amp;gt;" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
 &lt;strong>插件&lt;/strong>
 &lt;i class="fa fa-external-link-alt">&lt;/i>
-&lt;/a>，于是乎有了重新整合 &lt;code>Hugo&lt;/code> 使用环境的想法，哈。&lt;/p></description></item><item><title>Sublime Text安装插件失败</title><link>https://lisenhui.cn/tech/use-sublime-txt-build-hugo-site.html</link><pubDate>Tue, 08 Feb 2022 12:31:13 +0800</pubDate><guid>https://lisenhui.cn/tech/use-sublime-txt-build-hugo-site.html</guid><description>&lt;p>近期因公司之前分配的电脑出了点毛病，无奈只能重新换个新电脑，所以环境也得从头进行搭建。而一直使用的 &lt;code>Sublime Text&lt;/code> 是绿色版本，直接拷贝过来后启动，编辑等操作都是正常的，但在尝试安装新的插件时就遇了如下的问题。&lt;/p></description></item><item><title>优化Hugo Next主题的过程2</title><link>https://lisenhui.cn/blog/make-next-theme-pithy2.html</link><pubDate>Fri, 09 Jul 2021 17:53:06 +0800</pubDate><guid>https://lisenhui.cn/blog/make-next-theme-pithy2.html</guid><description>&lt;h2 id="1背景">1.背景&lt;/h2>
+&lt;/a>，于是乎有了重新整合 &lt;code>Hugo&lt;/code> 使用环境的想法，哈。&lt;/p></description></item><item><title>Sublime Text安装插件失败</title><link>https://lisenhui.cn/tech/use-sublime-txt-build-hugo-site.html</link><pubDate>Tue, 08 Feb 2022 12:31:13 +0800</pubDate><guid>https://lisenhui.cn/tech/use-sublime-txt-build-hugo-site.html</guid><description>&lt;p>近期因公司之前分配的电脑出了点毛病，无奈只能重新换个新电脑，所以环境也得从头进行搭建。而一直使用的 &lt;code>Sublime Text&lt;/code> 是绿色版本，直接拷贝过来后启动，编辑等操作都是正常的，但在尝试安装新的插件时就遇了如下的问题。&lt;/p></description></item><item><title>优化Hugo Next主题的过程2</title><link>https://lisenhui.cn/blog/make-next-theme-pithy2.html</link><pubDate>Fri, 09 Jul 2021 17:53:06 +0800</pubDate><guid>https://lisenhui.cn/blog/make-next-theme-pithy2.html</guid><description>&lt;h2 id="背景">背景&lt;/h2>
 &lt;p>自上次优化&lt;code>NexT&lt;/code>主题并分享到Github仓库中
 &lt;a href="https://github.com/elkan1788/hugo-theme-next" title="&amp;lt;strong&amp;gt;hugo-theme-next&amp;lt;/strong&amp;gt;" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
 &lt;strong>hugo-theme-next&lt;/strong>
@@ -30,7 +30,7 @@ tzzs/server-shell
 &lt;a href="https://mp.weixin.qq.com/s/fPvCU8Dj4c60QMmy_s9rmA" title="《&amp;lt;strong&amp;gt;Istio 官网翻译工作组成立暨志愿者招募&amp;lt;/strong&amp;gt;》" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
 《&lt;strong>Istio 官网翻译工作组成立暨志愿者招募&lt;/strong>》
 &lt;i class="fa fa-external-link-alt">&lt;/i>
-&lt;/a>的动态，没有任何的犹豫，下班后便联系 Jimmy 申请加入翻译工作，并在随后的时间完成自己的首次翻译，也成功被合并到了 Istio 官方仓库的主分支当中。如果你也有和我一样的想法，那么欢迎您也来一起加入，期待。&lt;/p></description></item><item><title>使用Github Action自动同步仓库到Gitee</title><link>https://lisenhui.cn/tech/add-sync-gitee-action.html</link><pubDate>Thu, 25 Feb 2021 12:52:25 +0800</pubDate><guid>https://lisenhui.cn/tech/add-sync-gitee-action.html</guid><description>&lt;h2 id="1背景">1.背景&lt;/h2>
+&lt;/a>的动态，没有任何的犹豫，下班后便联系 Jimmy 申请加入翻译工作，并在随后的时间完成自己的首次翻译，也成功被合并到了 Istio 官方仓库的主分支当中。如果你也有和我一样的想法，那么欢迎您也来一起加入，期待。&lt;/p></description></item><item><title>使用Github Action自动同步仓库到Gitee</title><link>https://lisenhui.cn/tech/add-sync-gitee-action.html</link><pubDate>Thu, 25 Feb 2021 12:52:25 +0800</pubDate><guid>https://lisenhui.cn/tech/add-sync-gitee-action.html</guid><description>&lt;h2 id="背景">背景&lt;/h2>
 &lt;p>作为程序员出生的你，肯定知道备份的重要性。再说现在大环境背景下，美国的政治关系还是比较混乱的，而对于存放在Github上面的项目，也不再是技术自由的国度啦。所以说我们的代码还是有必要进行“双”备份的，接下来就是介绍下，如何使用Github上面的Action功能，将Github上面的代码同步备份到国内的Gitee仓库站点。&lt;/p></description></item><item><title>GitExtensions推送Github失败记录</title><link>https://lisenhui.cn/tech/git-extensions-push-fail.html</link><pubDate>Mon, 22 Feb 2021 15:42:39 +0800</pubDate><guid>https://lisenhui.cn/tech/git-extensions-push-fail.html</guid><description>&lt;h2 id="问题现身">问题现身&lt;/h2>
 &lt;p>555~，今天体验了一把安装最新程序的“快感”！！！&lt;/p>
 &lt;p>在使用Git Extensisons推送最新写的文章到Github时，遇到了个SSH KEY认证无效的莫名错误。事情的发生是这样的：今天在首次打开Git Extensions软件时，它非常友好的弹出更新提示窗口，然后就手不自觉的点击了下确认按钮。结果更新好后，在推送文章到Github时就发生了如下面一样神奇的错误阻拦：&lt;/p>
@@ -54,7 +54,7 @@ tzzs/server-shell
 &lt;/div>
 &lt;/div></description></item><item><title>Github个人信息卡片</title><link>https://lisenhui.cn/tech/github-personal-profile-card.html</link><pubDate>Sun, 24 Jan 2021 12:21:10 +0800</pubDate><guid>https://lisenhui.cn/tech/github-personal-profile-card.html</guid><description>&lt;p>Github上总是会有一些新奇的东西出现，这不无意间又发现了个有趣的玩法，可以用它来作为你的个人开发者名信片展现。具体展现效果如下：&lt;/p>
 &lt;p>&lt;img src="//imgs.lisenhui.cn/blog/2021/01-24-elkan1788-profile-02.png" alt="01-24-elkan1788-profile-02.png">&lt;/p>
-&lt;p>操作起来也不繁琐，类似以前的pages服务那样，只准备个特定的仓库就可以，具体操作如下：&lt;/p></description></item><item><title>优化Hugo Next主题的过程</title><link>https://lisenhui.cn/blog/make-next-theme-pithy.html</link><pubDate>Fri, 02 Oct 2020 10:32:51 +0000</pubDate><guid>https://lisenhui.cn/blog/make-next-theme-pithy.html</guid><description>&lt;h2 id="1-背景">1. 背景&lt;/h2>
+&lt;p>操作起来也不繁琐，类似以前的pages服务那样，只准备个特定的仓库就可以，具体操作如下：&lt;/p></description></item><item><title>优化Hugo Next主题的过程</title><link>https://lisenhui.cn/blog/make-next-theme-pithy.html</link><pubDate>Fri, 02 Oct 2020 10:32:51 +0000</pubDate><guid>https://lisenhui.cn/blog/make-next-theme-pithy.html</guid><description>&lt;h2 id="背景">背景&lt;/h2>
 &lt;p>经过一番考虑还是把个人博客从Hexo引擎迁移到Hugo引擎，博客主题依旧还是沿用NexT。其实本来还担心又要折腾弄个全新的博客主题，后来Github上看到兰陵子分享的
 &lt;a href="https://github.com/xtfly/hugo-theme-next" title="NexT" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
 NexT

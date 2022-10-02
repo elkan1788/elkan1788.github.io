@@ -7,7 +7,7 @@
 &lt;a href="https://gohugo.io/tools/editors/#sublime-text" title="&amp;lt;strong&amp;gt;插件&amp;lt;/strong&amp;gt;" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
 &lt;strong>插件&lt;/strong>
 &lt;i class="fa fa-external-link-alt">&lt;/i>
-&lt;/a>，于是乎有了重新整合 &lt;code>Hugo&lt;/code> 使用环境的想法，哈。&lt;/p></description></item><item><title>优化Hugo Next主题的过程2</title><link>https://lisenhui.cn/blog/make-next-theme-pithy2.html</link><pubDate>Fri, 09 Jul 2021 17:53:06 +0800</pubDate><guid>https://lisenhui.cn/blog/make-next-theme-pithy2.html</guid><description>&lt;h2 id="1背景">1.背景&lt;/h2>
+&lt;/a>，于是乎有了重新整合 &lt;code>Hugo&lt;/code> 使用环境的想法，哈。&lt;/p></description></item><item><title>优化Hugo Next主题的过程2</title><link>https://lisenhui.cn/blog/make-next-theme-pithy2.html</link><pubDate>Fri, 09 Jul 2021 17:53:06 +0800</pubDate><guid>https://lisenhui.cn/blog/make-next-theme-pithy2.html</guid><description>&lt;h2 id="背景">背景&lt;/h2>
 &lt;p>自上次优化&lt;code>NexT&lt;/code>主题并分享到Github仓库中
 &lt;a href="https://github.com/elkan1788/hugo-theme-next" title="&amp;lt;strong&amp;gt;hugo-theme-next&amp;lt;/strong&amp;gt;" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
 &lt;strong>hugo-theme-next&lt;/strong>
