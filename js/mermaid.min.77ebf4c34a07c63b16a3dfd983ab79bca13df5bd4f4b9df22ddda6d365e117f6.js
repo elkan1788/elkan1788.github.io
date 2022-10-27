@@ -1,0 +1,1 @@
+NexT.plugins.others.mermaid=function(){const e=NexT.utils.getCDNResource(NexT.CONFIG.page.mermaid.js);NexT.utils.getScript(e,function(){mermaid.initialize({sequence:{showSequenceNumbers:!0,actorMargin:50,diagramMarginX:10,diagramMarginY:10}})})}
