@@ -40,8 +40,9 @@
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div></description></item><item><title>Apache Nifi在Windows环境下搭建伪群集及证书登录</title><link>https://lisenhui.cn/tech/nifi-windows-local-cluster.html</link><pubDate>Thu, 26 Oct 2017 17:50:52 +0000</pubDate><guid>https://lisenhui.cn/tech/nifi-windows-local-cluster.html</guid><description>&lt;p>前些时间做了关于&lt;code>Apache Nifi&lt;/code>分布式集群的搭建分享，但很多时候要搭建分布式集群机器资源是个问题，而现在的单机的配置还是相当不错的，故现在就做个关于Windows上搭建个伪分布式集群的分享，同时通过另外一种方式实现&lt;strong>Apache Nifi&lt;/strong>的授权认证。&lt;/p>
-&lt;h1 id="系统环境及软件版本">系统环境及软件版本&lt;/h1>
-&lt;ul>
+&lt;h1 id="系统环境及软件版本">系统环境及软件版本
+&lt;a class="header-anchor" href="#%e7%b3%bb%e7%bb%9f%e7%8e%af%e5%a2%83%e5%8f%8a%e8%bd%af%e4%bb%b6%e7%89%88%e6%9c%ac">&lt;/a>
+&lt;/h1>&lt;ul>
 &lt;li>
 &lt;p>Windows8.1&lt;/p>
 &lt;/li>
@@ -118,8 +119,9 @@ Apache NIFI
 &lt;li>
 &lt;p>在分布式布署环境中，当执行Task免去了在不同节点中拷贝工程包的麻烦&lt;/p>
 &lt;/li>
-&lt;/ul></description></item><item><title>定时调度任务器Azkaban安装</title><link>https://lisenhui.cn/tech/azkaban-install-use-share.html</link><pubDate>Fri, 08 Sep 2017 14:29:42 +0000</pubDate><guid>https://lisenhui.cn/tech/azkaban-install-use-share.html</guid><description>&lt;h1 id="背景与介绍">背景与介绍&lt;/h1>
-&lt;p>在大数据繁杂的ETL或其它数据处理过程当中，有些任务是需要定时执行的，虽然Linux自带了&lt;code>cron&lt;/code>命令功能，但是仍不能满足最大的一点就是它不能提供集中式的管理和可视化的编辑。其实在大数据的生态当中已集成有个定时调度框架&lt;code>Oozie&lt;/code>，只是实践下来发现其学习成本不低，布署的过程也较复杂。在尝试过其它分布工调度框架后（如阿里的宙斯&lt;code>Zeus&lt;/code>），还是选择了社区较多人使用的&lt;code>Azkaban&lt;/code>。&lt;/p>
+&lt;/ul></description></item><item><title>定时调度任务器Azkaban安装</title><link>https://lisenhui.cn/tech/azkaban-install-use-share.html</link><pubDate>Fri, 08 Sep 2017 14:29:42 +0000</pubDate><guid>https://lisenhui.cn/tech/azkaban-install-use-share.html</guid><description>&lt;h1 id="背景与介绍">背景与介绍
+&lt;a class="header-anchor" href="#%e8%83%8c%e6%99%af%e4%b8%8e%e4%bb%8b%e7%bb%8d">&lt;/a>
+&lt;/h1>&lt;p>在大数据繁杂的ETL或其它数据处理过程当中，有些任务是需要定时执行的，虽然Linux自带了&lt;code>cron&lt;/code>命令功能，但是仍不能满足最大的一点就是它不能提供集中式的管理和可视化的编辑。其实在大数据的生态当中已集成有个定时调度框架&lt;code>Oozie&lt;/code>，只是实践下来发现其学习成本不低，布署的过程也较复杂。在尝试过其它分布工调度框架后（如阿里的宙斯&lt;code>Zeus&lt;/code>），还是选择了社区较多人使用的&lt;code>Azkaban&lt;/code>。&lt;/p>
 &lt;p>&lt;code>Azkaban3&lt;/code>相对于上个版本所做的更改还是比较大的，感兴趣的话可以到其官方网站
 &lt;a href="https://azkaban.github.io/azkaban/docs/latest/" title="Azkaban" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
 Azkaban
@@ -136,9 +138,9 @@ Azkaban
 &lt;a href="http://gethue.com" title="http://gethue.com" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
 http://gethue.com
 &lt;i class="fa fa-external-link-alt">&lt;/i>
-&lt;/a>&lt;/p></description></item><item><title>Kylin集成Zeppelin展示数据</title><link>https://lisenhui.cn/tech/kylin-integrate-with-zeppelin.html</link><pubDate>Fri, 02 Jun 2017 18:03:23 +0000</pubDate><guid>https://lisenhui.cn/tech/kylin-integrate-with-zeppelin.html</guid><description>&lt;p>实际上kylin自带的WEB UI已经集成了建议的图形报表，有常见的线形，柱形及饼图，用于数据的初步展示是完全够用的。如果要更加丰富的展示，那可以考虑使用别的工具，现在就试试官方推荐的Apache Zeppelin。&lt;/p></description></item><item><title>Sqoop工具导入数据到Hive小记</title><link>https://lisenhui.cn/tech/sqoop-import-data-to-hive.html</link><pubDate>Wed, 24 May 2017 20:18:53 +0000</pubDate><guid>https://lisenhui.cn/tech/sqoop-import-data-to-hive.html</guid><description>&lt;p>最近正在捣鼓构建数据仓库的事宜，正好有部分维度表的数据需要来自于RDBMS的数据，在HADOOP环境最流行的莫过于Apache的Sqoop工具，按官方的文档操作下来也很顺畅的，不过当要应用到业务场景上时问题便出现了。&lt;/p></description></item><item><title>Zookeeper崩溃后无法加载事务日志</title><link>https://lisenhui.cn/tech/zookeeper-unload-data-exception.html</link><pubDate>Mon, 15 May 2017 12:34:21 +0000</pubDate><guid>https://lisenhui.cn/tech/zookeeper-unload-data-exception.html</guid><description>&lt;p>今天在生产的HDP环境中，遇到一件非常诡异的事情。明明搭建了2台zookeeper集群，却是莫明其妙的不见了，而且HDP服务还不报错，认真的检查过环境还是没有找到异常的信息，真是说不明白了。&lt;/p>
-&lt;p>言归正传， 还是说说后面遇的问题吧： 生产环境zookeeper崩溃，查看日志发现是磁盘空间已经写满。起初以为是很简单的操作，删除无用的日志文件释放磁盘空间（这是不得不吐槽下HDP的日志文件是超多的，奈何生产环境又不敢不预留长些的时间），然后重启zookeeper满心欢喜的等待着服务恢复正常。然而这次没有看到成功的提示，异常不断各服务连接zookeeper都失败了。这时真的是郁闷了，空间明明已经是充足的。异常信息如下：&lt;/p></description></item><item><title>离线安装HDP2.6(1)-Ambari Server</title><link>https://lisenhui.cn/tech/offline-install-hdp-ambari-notes.html</link><pubDate>Mon, 17 Apr 2017 19:52:31 +0000</pubDate><guid>https://lisenhui.cn/tech/offline-install-hdp-ambari-notes.html</guid><description>&lt;h2 id="1参考文档">1.参考文档&lt;/h2>
-&lt;p>FYI:
+&lt;/a>&lt;/p></description></item><item><title>Kylin集成Zeppelin展示数据</title><link>https://lisenhui.cn/tech/kylin-integrate-with-zeppelin.html</link><pubDate>Fri, 02 Jun 2017 18:03:23 +0000</pubDate><guid>https://lisenhui.cn/tech/kylin-integrate-with-zeppelin.html</guid><description>&lt;p>实际上kylin自带的WEB UI已经集成了建议的图形报表，有常见的线形，柱形及饼图，用于数据的初步展示是完全够用的。如果要更加丰富的展示，那可以考虑使用别的工具，现在就试试官方推荐的Apache Zeppelin。&lt;/p></description></item><item><title>Sqoop工具导入数据到Hive小记</title><link>https://lisenhui.cn/tech/sqoop-import-data-to-hive.html</link><pubDate>Wed, 24 May 2017 20:18:53 +0000</pubDate><guid>https://lisenhui.cn/tech/sqoop-import-data-to-hive.html</guid><description>&lt;p>最近正在捣鼓构建数据仓库的事宜，正好有部分维度表的数据需要来自于RDBMS的数据，在HADOOP环境最流行的莫过于Apache的Sqoop工具，按官方的文档操作下来也很顺畅的，不过当要应用到业务场景上时问题便出现了。&lt;/p></description></item><item><title>离线安装HDP2.6(1)-Ambari Server</title><link>https://lisenhui.cn/tech/offline-install-hdp-ambari-notes.html</link><pubDate>Mon, 17 Apr 2017 19:52:31 +0000</pubDate><guid>https://lisenhui.cn/tech/offline-install-hdp-ambari-notes.html</guid><description>&lt;h2 id="1参考文档">1.参考文档
+&lt;a class="header-anchor" href="#1%e5%8f%82%e8%80%83%e6%96%87%e6%a1%a3">&lt;/a>
+&lt;/h2>&lt;p>FYI:
 &lt;a href="https://docs.hortonworks.com/HDPDocuments/Ambari-2.5.0.3/bk_ambari-installation/content/ch_Getting_Ready.html" title="HDP Install Documents" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
 HDP Install Documents
 &lt;i class="fa fa-external-link-alt">&lt;/i>

@@ -10,8 +10,9 @@
 &lt;li>
 &lt;p>在分布式布署环境中，当执行Task免去了在不同节点中拷贝工程包的麻烦&lt;/p>
 &lt;/li>
-&lt;/ul></description></item><item><title>定时调度任务器Azkaban安装</title><link>https://lisenhui.cn/tech/azkaban-install-use-share.html</link><pubDate>Fri, 08 Sep 2017 14:29:42 +0000</pubDate><guid>https://lisenhui.cn/tech/azkaban-install-use-share.html</guid><description>&lt;h1 id="背景与介绍">背景与介绍&lt;/h1>
-&lt;p>在大数据繁杂的ETL或其它数据处理过程当中，有些任务是需要定时执行的，虽然Linux自带了&lt;code>cron&lt;/code>命令功能，但是仍不能满足最大的一点就是它不能提供集中式的管理和可视化的编辑。其实在大数据的生态当中已集成有个定时调度框架&lt;code>Oozie&lt;/code>，只是实践下来发现其学习成本不低，布署的过程也较复杂。在尝试过其它分布工调度框架后（如阿里的宙斯&lt;code>Zeus&lt;/code>），还是选择了社区较多人使用的&lt;code>Azkaban&lt;/code>。&lt;/p>
+&lt;/ul></description></item><item><title>定时调度任务器Azkaban安装</title><link>https://lisenhui.cn/tech/azkaban-install-use-share.html</link><pubDate>Fri, 08 Sep 2017 14:29:42 +0000</pubDate><guid>https://lisenhui.cn/tech/azkaban-install-use-share.html</guid><description>&lt;h1 id="背景与介绍">背景与介绍
+&lt;a class="header-anchor" href="#%e8%83%8c%e6%99%af%e4%b8%8e%e4%bb%8b%e7%bb%8d">&lt;/a>
+&lt;/h1>&lt;p>在大数据繁杂的ETL或其它数据处理过程当中，有些任务是需要定时执行的，虽然Linux自带了&lt;code>cron&lt;/code>命令功能，但是仍不能满足最大的一点就是它不能提供集中式的管理和可视化的编辑。其实在大数据的生态当中已集成有个定时调度框架&lt;code>Oozie&lt;/code>，只是实践下来发现其学习成本不低，布署的过程也较复杂。在尝试过其它分布工调度框架后（如阿里的宙斯&lt;code>Zeus&lt;/code>），还是选择了社区较多人使用的&lt;code>Azkaban&lt;/code>。&lt;/p>
 &lt;p>&lt;code>Azkaban3&lt;/code>相对于上个版本所做的更改还是比较大的，感兴趣的话可以到其官方网站
 &lt;a href="https://azkaban.github.io/azkaban/docs/latest/" title="Azkaban" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
 Azkaban
