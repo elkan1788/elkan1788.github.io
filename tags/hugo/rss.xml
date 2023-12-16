@@ -1,21 +1,29 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/hugo/</link><description>Recent content in Hugo on 热爱生活与梦想</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 07 Aug 2022 20:55:56 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/tags/hugo/rss.xml" rel="self" type="application/rss+xml"/><item><title>博客站点升级使用 Hugo NexT 最新主题</title><link>https://lisenhui.cn/blog/upgrade-blog-use-new-theme.html</link><pubDate>Sun, 07 Aug 2022 20:55:56 +0800</pubDate><guid>https://lisenhui.cn/blog/upgrade-blog-use-new-theme.html</guid><description>&lt;p>时隔 2 年的时间后，如今又再一次开始折腾自己的博客站点，看来是自己有点太躁动啦😂。在上海疫情期间也真有点压抑的，为了消除这份不安的情绪，决定参考
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hugo on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/hugo/</link><description>Recent content in Hugo on 热爱生活与梦想</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Sun, 07 Aug 2022 20:55:56 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/tags/hugo/rss.xml" rel="self" type="application/rss+xml"/><item><title>博客站点升级使用 Hugo NexT 最新主题</title><link>https://lisenhui.cn/blog/upgrade-blog-use-new-theme.html</link><pubDate>Sun, 07 Aug 2022 20:55:56 +0800</pubDate><guid>https://lisenhui.cn/blog/upgrade-blog-use-new-theme.html</guid><description>&lt;p>时隔 2 年的时间后，如今又再一次开始折腾自己的博客站点，看来是自己有点太躁动啦&amp;#x1f602;。在上海疫情期间也真有点压抑的，为了消除这份不安的情绪，决定参考 
 &lt;a href="https://theme-next.js.org/" title="&amp;lt;strong&amp;gt;Hexo NexT&amp;lt;/strong&amp;gt;" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
-&lt;strong>Hexo NexT&lt;/strong>
-&lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;strong>Hexo NexT&lt;/strong>
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
 &lt;/a>从零开始全面重构 &lt;code>NexT&lt;/code> 主题，也在独自奋斗的2个多月断断续续时间里完成主体功能所有移植工作（其实一直想有人参与进来共建，直接跑到人家 Hexo NexT 用户群“呼喊”，但也是没有浪花泛起，只好是自己继续独立前行）。 这不乘着周末的时间，把自己的站点也是升级到最新开发的主题，同时也是为后续想升级旧版本 &lt;code>Hugo NexT&lt;/code> 的用户打个样吧。&lt;/p></description></item><item><title>使用Sublime Text搭建Hugo使用环境</title><link>https://lisenhui.cn/tech/use-sublime-txt-build-hugo-site.html</link><pubDate>Sat, 12 Feb 2022 16:32:10 +0800</pubDate><guid>https://lisenhui.cn/tech/use-sublime-txt-build-hugo-site.html</guid><description>&lt;p>自从捣鼓 &lt;code>Hugo&lt;/code> 建站以来也有好长一段时间啦，但是之前的使用环境比较的 &lt;em>“松散”&lt;/em> ，比如编辑博客文章用的是 &lt;code>Sublime Text&lt;/code> 文本工具，再通过 &lt;code>CMD&lt;/code> 命令行工具调用 &lt;code>Hugo&lt;/code>执行本地预览，最后再
 使用 &lt;code>Git Extension&lt;/code> 图形工具将博客文章发布到 &lt;code>Github Pages&lt;/code> 供网友们浏览。 从整个操作流程上来看还是可以的，只是在过程中要切换不同的工具操作，而恰好看到 &lt;code>Hugo&lt;/code> 官网上有个 &lt;code>Sublime Text&lt;/code> 的
 &lt;a href="https://gohugo.io/tools/editors/#sublime-text" title="&amp;lt;strong&amp;gt;插件&amp;lt;/strong&amp;gt;" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
-&lt;strong>插件&lt;/strong>
-&lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;strong>插件&lt;/strong>
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
 &lt;/a>，于是乎有了重新整合 &lt;code>Hugo&lt;/code> 使用环境的想法，哈。&lt;/p></description></item><item><title>优化Hugo Next主题的过程2</title><link>https://lisenhui.cn/blog/make-next-theme-pithy2.html</link><pubDate>Fri, 09 Jul 2021 17:53:06 +0800</pubDate><guid>https://lisenhui.cn/blog/make-next-theme-pithy2.html</guid><description>&lt;h2 id="背景">背景
 &lt;a class="header-anchor" href="#%e8%83%8c%e6%99%af">&lt;/a>
 &lt;/h2>&lt;p>自上次优化&lt;code>NexT&lt;/code>主题并分享到Github仓库中
 &lt;a href="https://github.com/elkan1788/hugo-theme-next" title="&amp;lt;strong&amp;gt;hugo-theme-next&amp;lt;/strong&amp;gt;" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
-&lt;strong>hugo-theme-next&lt;/strong>
-&lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;strong>hugo-theme-next&lt;/strong>
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
 &lt;/a>后，也是受到了不少&lt;code>NexT&lt;/code>主题喜爱者的使用和邮件反馈。于是决定还是要花点心思来维护它，便把自己之前一些想法也重新加入到&lt;code>NexT&lt;/code>主题中，同时对部分插件的功能做了更新。&lt;/p>
 &lt;p>此次优化后发布的版本代号为&lt;code>3.x&lt;/code>，原因是整体结构和之前的变化较为大（主要是在配置方面的体现），为此也重写主题的相关介绍等信息，目前正在申请加入官方的主题列表中(
 &lt;a href="https://deploy-preview-73--hugothemes.netlify.app/themes/hugo-theme-next/" title="点击预览" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
-点击预览
-&lt;i class="fa fa-external-link-alt">&lt;/i>
+ 点击预览
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
 &lt;/a>)，欢迎大家的使用和反馈。&lt;/p></description></item><item><title>博客引擎迁移至Hugo计划</title><link>https://lisenhui.cn/blog/move-site-2-hugo-plan.html</link><pubDate>Sat, 15 Aug 2020 10:22:09 +0000</pubDate><guid>https://lisenhui.cn/blog/move-site-2-hugo-plan.html</guid><description>&lt;p>近期发现自己的个人博客空间突然之间不能访问，一番查证后发现原来是之前使用的page服务商已经停止提供服务。无奈只好重新迁移回到Github Pages。但这就是又得到重新准备Hexo的相关开发环境，还得辛苦的调试才能成功。而恰好这时在网上有看到过Hugo静态站点引擎的文章，一款基于Go语言开发的极速框架，开发环境部署也简便快速。另外近期原有的域名也快到期了，正好就一起把博客空间整理整理吧。&lt;/p></description></item></channel></rss>

@@ -13,11 +13,11 @@
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
 &lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FATAL ERROR&lt;span style="color:#f92672">:&lt;/span> No supported authentication methods &lt;span style="color:#a6e22e">available&lt;/span> &lt;span style="color:#f92672">(&lt;/span>server sent&lt;span style="color:#f92672">:&lt;/span> publickey&lt;span style="color:#f92672">)&lt;/span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fatal: Could not read from remote repository&lt;span style="color:#f92672">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FATAL ERROR: No supported authentication methods &lt;span style="color:#a6e22e">available&lt;/span> (server sent: publickey)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fatal: Could not read from remote repository.
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Please make sure you have the correct access rights
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>and the repository exists&lt;span style="color:#f92672">.&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>and the repository exists.
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div></description></item><item><title>Supervisor介绍与使用</title><link>https://lisenhui.cn/tech/linux-daemon-supervisor.html</link><pubDate>Thu, 18 May 2017 07:10:23 +0000</pubDate><guid>https://lisenhui.cn/tech/linux-daemon-supervisor.html</guid><description>&lt;p>很多时候我们自己开发的或别的服务都没有后台的守护进程，那么进程很容易就会被不小心的杀死，此时就需要有个程序去监控和维护这些程序服务。网上搜罗了一番后发现&lt;code>Supervisor&lt;/code>组件正好能实现我们想要的，同时还支持对这些程序的统一管理，Nice!&lt;/p></description></item></channel></rss>

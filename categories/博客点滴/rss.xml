@@ -1,34 +1,46 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>博客点滴 on 热爱生活与梦想</title><link>https://lisenhui.cn/categories/%E5%8D%9A%E5%AE%A2%E7%82%B9%E6%BB%B4/</link><description>Recent content in 博客点滴 on 热爱生活与梦想</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 04 Oct 2022 16:32:53 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/categories/%E5%8D%9A%E5%AE%A2%E7%82%B9%E6%BB%B4/rss.xml" rel="self" type="application/rss+xml"/><item><title>结合 Github Action 实现自动上传 Algolia 索引</title><link>https://lisenhui.cn/tech/automatic-upload-algolia-index-with-action.html</link><pubDate>Tue, 04 Oct 2022 16:32:53 +0800</pubDate><guid>https://lisenhui.cn/tech/automatic-upload-algolia-index-with-action.html</guid><description>&lt;p>起初本站的文章搜索功能使用是本地搜索支持，但后来发现有众多网友（包括 Hugo 官网文档搜索）都使用的是
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>博客点滴 on 热爱生活与梦想</title><link>https://lisenhui.cn/categories/%E5%8D%9A%E5%AE%A2%E7%82%B9%E6%BB%B4/</link><description>Recent content in 博客点滴 on 热爱生活与梦想</description><generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Tue, 04 Oct 2022 16:32:53 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/categories/%E5%8D%9A%E5%AE%A2%E7%82%B9%E6%BB%B4/rss.xml" rel="self" type="application/rss+xml"/><item><title>结合 Github Action 实现自动上传 Algolia 索引</title><link>https://lisenhui.cn/tech/automatic-upload-algolia-index-with-action.html</link><pubDate>Tue, 04 Oct 2022 16:32:53 +0800</pubDate><guid>https://lisenhui.cn/tech/automatic-upload-algolia-index-with-action.html</guid><description>&lt;p>起初本站的文章搜索功能使用是本地搜索支持，但后来发现有众多网友（包括 Hugo 官网文档搜索）都使用的是 
 &lt;a href="https://www.algolia.com/" title="Algolia" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
-Algolia
-&lt;i class="fa fa-external-link-alt">&lt;/i>
+ Algolia
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
 &lt;/a> 在线搜索引擎，便顺手也给自己的站点移植到该搜索引擎上面。既然提到搜索引擎自然是少了索引文件的维护，接下来就给大家分享下结合 &lt;code>Github Action&lt;/code> 实现自动化的流程。&lt;/p></description></item><item><title>Openresty+Github Action实现远程自动部署</title><link>https://lisenhui.cn/tech/use-openresty-ghaction-remote-deploy.html</link><pubDate>Sat, 17 Sep 2022 19:13:39 +0800</pubDate><guid>https://lisenhui.cn/tech/use-openresty-ghaction-remote-deploy.html</guid><description>&lt;p>近期频发的收到云厂商关于服务器资源到期的提醒，当初为了躲避云厂商所谓的注册域名 IP 检测监控，无奈之下借着“新”用户的优惠政策，采购了一款最最实惠的云服务，周期为 1 年时间，如今也已是到了“寿终正寝”的时候啦， 因此不得已又要考虑给博客空间找新的部署服务器啦。后来得到热心朋友的资助，在其现有的云服务器上开辟了小空间提供给鄙人博客访问，真是感激万分呀！&lt;/p></description></item><item><title>使用自定义域名激活Vercel部署的Waline服务</title><link>https://lisenhui.cn/blog/use-custom-domain-active-vercel-waline.html</link><pubDate>Thu, 01 Sep 2022 21:23:03 +0800</pubDate><guid>https://lisenhui.cn/blog/use-custom-domain-active-vercel-waline.html</guid><description>&lt;p>近期对于部分 Waline 评论插件的用户来说，或许是非常的困扰时期。先是服务商 LeanCloud 发布国内提供的服务，从8月份起需要绑定自有案例域名才能正常运行。而这两天 Vercel (Waline 官方提供的免费部署方案，也是大部用户的选择)旗下的 &lt;code>vercel.app&lt;/code> 域名又遭受 DNS 污染攻击，在国内无法直接访问此域名，导致众多 Waline 用户的服务直接陷入“宕机”状态，真可谓是雪上加霜。&lt;/p>
-&lt;p>有句话说的好：“只要思想不滑坡，办法总比困难多”。接下来就是给大家分享下，如何通过自定义域名的方式来解决上面遇到的2个问题，此方法仅供各位网友参考参考。 😄&lt;/p></description></item><item><title>博客站点升级使用 Hugo NexT 最新主题</title><link>https://lisenhui.cn/blog/upgrade-blog-use-new-theme.html</link><pubDate>Sun, 07 Aug 2022 20:55:56 +0800</pubDate><guid>https://lisenhui.cn/blog/upgrade-blog-use-new-theme.html</guid><description>&lt;p>时隔 2 年的时间后，如今又再一次开始折腾自己的博客站点，看来是自己有点太躁动啦😂。在上海疫情期间也真有点压抑的，为了消除这份不安的情绪，决定参考
+&lt;p>有句话说的好：“只要思想不滑坡，办法总比困难多”。接下来就是给大家分享下，如何通过自定义域名的方式来解决上面遇到的2个问题，此方法仅供各位网友参考参考。 &amp;#x1f604;&lt;/p></description></item><item><title>博客站点升级使用 Hugo NexT 最新主题</title><link>https://lisenhui.cn/blog/upgrade-blog-use-new-theme.html</link><pubDate>Sun, 07 Aug 2022 20:55:56 +0800</pubDate><guid>https://lisenhui.cn/blog/upgrade-blog-use-new-theme.html</guid><description>&lt;p>时隔 2 年的时间后，如今又再一次开始折腾自己的博客站点，看来是自己有点太躁动啦&amp;#x1f602;。在上海疫情期间也真有点压抑的，为了消除这份不安的情绪，决定参考 
 &lt;a href="https://theme-next.js.org/" title="&amp;lt;strong&amp;gt;Hexo NexT&amp;lt;/strong&amp;gt;" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
-&lt;strong>Hexo NexT&lt;/strong>
-&lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;strong>Hexo NexT&lt;/strong>
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
 &lt;/a>从零开始全面重构 &lt;code>NexT&lt;/code> 主题，也在独自奋斗的2个多月断断续续时间里完成主体功能所有移植工作（其实一直想有人参与进来共建，直接跑到人家 Hexo NexT 用户群“呼喊”，但也是没有浪花泛起，只好是自己继续独立前行）。 这不乘着周末的时间，把自己的站点也是升级到最新开发的主题，同时也是为后续想升级旧版本 &lt;code>Hugo NexT&lt;/code> 的用户打个样吧。&lt;/p></description></item><item><title>让 Nginx 将 HTTP 请求转发到 HTTPS 安全模式</title><link>https://lisenhui.cn/blog/make-nginx-support-http-ssl-request.html</link><pubDate>Mon, 30 May 2022 15:55:03 +0800</pubDate><guid>https://lisenhui.cn/blog/make-nginx-support-http-ssl-request.html</guid><description>&lt;p>在某次博主的交流讨论时，忽然间发现自己站点原定让 HTTP 转发 HTTPS 的支持功能，实际上并不没有生效。如果是直接输入域名访问的话，那么会出现 400 的错误页面。当初为了让全站支持 HTTPS 也是耗费了不少精力，没想到却是这个结果。&lt;/p></description></item><item><title>用unpkg替换jsdelivr作为本站CDN提供者</title><link>https://lisenhui.cn/blog/repleace-jsdelivr-with-unpkg-as-cdn-vender.html</link><pubDate>Fri, 20 May 2022 19:03:27 +0800</pubDate><guid>https://lisenhui.cn/blog/repleace-jsdelivr-with-unpkg-as-cdn-vender.html</guid><description>前几天就有看到网友在讨论 jsdelivr 服务被墙的消息，可能是刚开始的缘故吧，当时发现自己的站点倒还算是正常的，只也没坚挺几天也面临加载 jsdelivr 资源的失败问题。</description></item><item><title>TravisCI 远程部署站点服务</title><link>https://lisenhui.cn/tech/use-travisci-remote-deploy-site.html</link><pubDate>Tue, 22 Mar 2022 22:13:43 +0800</pubDate><guid>https://lisenhui.cn/tech/use-travisci-remote-deploy-site.html</guid><description>背景 之前一直都是将自己的博客站点托管在 Github Pages 服务上面，但无奈国内的访问速度确实是让人堪忧，时不时还会出现打不开现象，确实影响到访问查看的体验。</description></item><item><title>使用Sublime Text搭建Hugo使用环境</title><link>https://lisenhui.cn/tech/use-sublime-txt-build-hugo-site.html</link><pubDate>Sat, 12 Feb 2022 16:32:10 +0800</pubDate><guid>https://lisenhui.cn/tech/use-sublime-txt-build-hugo-site.html</guid><description>&lt;p>自从捣鼓 &lt;code>Hugo&lt;/code> 建站以来也有好长一段时间啦，但是之前的使用环境比较的 &lt;em>“松散”&lt;/em> ，比如编辑博客文章用的是 &lt;code>Sublime Text&lt;/code> 文本工具，再通过 &lt;code>CMD&lt;/code> 命令行工具调用 &lt;code>Hugo&lt;/code>执行本地预览，最后再
 使用 &lt;code>Git Extension&lt;/code> 图形工具将博客文章发布到 &lt;code>Github Pages&lt;/code> 供网友们浏览。 从整个操作流程上来看还是可以的，只是在过程中要切换不同的工具操作，而恰好看到 &lt;code>Hugo&lt;/code> 官网上有个 &lt;code>Sublime Text&lt;/code> 的
 &lt;a href="https://gohugo.io/tools/editors/#sublime-text" title="&amp;lt;strong&amp;gt;插件&amp;lt;/strong&amp;gt;" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
-&lt;strong>插件&lt;/strong>
-&lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;strong>插件&lt;/strong>
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
 &lt;/a>，于是乎有了重新整合 &lt;code>Hugo&lt;/code> 使用环境的想法，哈。&lt;/p></description></item><item><title>优化Hugo Next主题的过程2</title><link>https://lisenhui.cn/blog/make-next-theme-pithy2.html</link><pubDate>Fri, 09 Jul 2021 17:53:06 +0800</pubDate><guid>https://lisenhui.cn/blog/make-next-theme-pithy2.html</guid><description>&lt;h2 id="背景">背景
 &lt;a class="header-anchor" href="#%e8%83%8c%e6%99%af">&lt;/a>
 &lt;/h2>&lt;p>自上次优化&lt;code>NexT&lt;/code>主题并分享到Github仓库中
 &lt;a href="https://github.com/elkan1788/hugo-theme-next" title="&amp;lt;strong&amp;gt;hugo-theme-next&amp;lt;/strong&amp;gt;" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
-&lt;strong>hugo-theme-next&lt;/strong>
-&lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;strong>hugo-theme-next&lt;/strong>
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
 &lt;/a>后，也是受到了不少&lt;code>NexT&lt;/code>主题喜爱者的使用和邮件反馈。于是决定还是要花点心思来维护它，便把自己之前一些想法也重新加入到&lt;code>NexT&lt;/code>主题中，同时对部分插件的功能做了更新。&lt;/p>
 &lt;p>此次优化后发布的版本代号为&lt;code>3.x&lt;/code>，原因是整体结构和之前的变化较为大（主要是在配置方面的体现），为此也重写主题的相关介绍等信息，目前正在申请加入官方的主题列表中(
 &lt;a href="https://deploy-preview-73--hugothemes.netlify.app/themes/hugo-theme-next/" title="点击预览" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
-点击预览
-&lt;i class="fa fa-external-link-alt">&lt;/i>
+ 点击预览
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
 &lt;/a>)，欢迎大家的使用和反馈。&lt;/p></description></item><item><title>优化Hugo Next主题的过程</title><link>https://lisenhui.cn/blog/make-next-theme-pithy.html</link><pubDate>Fri, 02 Oct 2020 10:32:51 +0000</pubDate><guid>https://lisenhui.cn/blog/make-next-theme-pithy.html</guid><description>&lt;h2 id="背景">背景
 &lt;a class="header-anchor" href="#%e8%83%8c%e6%99%af">&lt;/a>
 &lt;/h2>&lt;p>经过一番考虑还是把个人博客从Hexo引擎迁移到Hugo引擎，博客主题依旧还是沿用NexT。其实本来还担心又要折腾弄个全新的博客主题，后来Github上看到兰陵子分享的
 &lt;a href="https://github.com/xtfly/hugo-theme-next" title="NexT" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
-NexT
-&lt;i class="fa fa-external-link-alt">&lt;/i>
+ NexT
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
 &lt;/a>主题，就直接拿过来引用。但在部署后发现还是有些地方需要改善，在此记录下改造优化的过程。如果正好你也喜欢这个主题，那么欢迎拿去使用，也欢迎交流反馈。&lt;/p></description></item><item><title>停止使用原中文域名公告</title><link>https://lisenhui.cn/blog/stop-use-chinese-domain-notice.html</link><pubDate>Thu, 17 Sep 2020 22:42:12 +0000</pubDate><guid>https://lisenhui.cn/blog/stop-use-chinese-domain-notice.html</guid><description>&lt;p>从今天起正式启用&lt;code>lisenhui.cn&lt;/code>作为本博客空间唯一域名。&lt;/p>
 &lt;p>早上的时候收到了域名服务商的通知短信，提示域名需要续费。才发现不知不觉中，原来工作后注册的第一个域名，已经陪伴自己走过了7个年头啦。当时也就是觉得中文域名比较特别，然后就自己的名字注册了&lt;code>李森辉.cn&lt;/code>的域名。&lt;/p></description></item><item><title>博客引擎迁移至Hugo计划</title><link>https://lisenhui.cn/blog/move-site-2-hugo-plan.html</link><pubDate>Sat, 15 Aug 2020 10:22:09 +0000</pubDate><guid>https://lisenhui.cn/blog/move-site-2-hugo-plan.html</guid><description>&lt;p>近期发现自己的个人博客空间突然之间不能访问，一番查证后发现原来是之前使用的page服务商已经停止提供服务。无奈只好重新迁移回到Github Pages。但这就是又得到重新准备Hexo的相关开发环境，还得辛苦的调试才能成功。而恰好这时在网上有看到过Hugo静态站点引擎的文章，一款基于Go语言开发的极速框架，开发环境部署也简便快速。另外近期原有的域名也快到期了，正好就一起把博客空间整理整理吧。&lt;/p></description></item><item><title>使用Github，Travis CI自动布署Hexo博客到Coding，OSChina服务器</title><link>https://lisenhui.cn/tech/use-travis-ci-push-hexo-blog.html</link><pubDate>Sat, 19 Aug 2017 15:40:26 +0000</pubDate><guid>https://lisenhui.cn/tech/use-travis-ci-push-hexo-blog.html</guid><description>&lt;p>通常我们都是在本地用&lt;code>hexo deploy&lt;/code>发布博客文章到远程的Pages服务器，可别忘记了我们是还需要提交代码的，所以是不是觉得有点麻烦还得分开两步进行操作。这时突然想起是否可用&lt;code>Travis CI&lt;/code>工具来完成这个布署的操作呢？答案是肯定的，整体的流程大致如下：&lt;/p>
 &lt;ul>
@@ -41,27 +53,39 @@ NexT
 &lt;blockquote>
 &lt;p>介绍另一款静态网站工具
 &lt;a href="https://github.com/wendal/gor" title="&amp;lt;code&amp;gt;Gor&amp;lt;/code&amp;gt;" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
-&lt;code>Gor&lt;/code>
-&lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;code>Gor&lt;/code>
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
 &lt;/a>，它是鄙人一直崇拜的大拿
 &lt;a href="http://wendal.net/" title="Wendal" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
-Wendal
-&lt;i class="fa fa-external-link-alt">&lt;/i>
+ Wendal
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
 &lt;/a>的杰作，熟悉&lt;code>GO&lt;/code>语言的朋友有可以关注下。&lt;/p>
-&lt;/blockquote></description></item><item><title>Hexo blog Hello World</title><link>https://lisenhui.cn/tech/hexo-hello-world.html</link><pubDate>Mon, 31 Jul 2017 18:32:53 +0000</pubDate><guid>https://lisenhui.cn/tech/hexo-hello-world.html</guid><description>&lt;p>Welcome to
+&lt;/blockquote></description></item><item><title>Hexo blog Hello World</title><link>https://lisenhui.cn/tech/hexo-hello-world.html</link><pubDate>Mon, 31 Jul 2017 18:32:53 +0000</pubDate><guid>https://lisenhui.cn/tech/hexo-hello-world.html</guid><description>&lt;p>Welcome to 
 &lt;a href="https://hexo.io/" title="Hexo" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
-Hexo
-&lt;i class="fa fa-external-link-alt">&lt;/i>
-&lt;/a>! This is your very first post. Check
+ Hexo
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>! This is your very first post. Check 
 &lt;a href="https://hexo.io/docs/" title="documentation" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
-documentation
-&lt;i class="fa fa-external-link-alt">&lt;/i>
-&lt;/a> for more info. If you get any problems when using Hexo, you can find the answer in
+ documentation
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a> for more info. If you get any problems when using Hexo, you can find the answer in 
 &lt;a href="https://hexo.io/docs/troubleshooting.html" title="troubleshooting" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
-troubleshooting
-&lt;i class="fa fa-external-link-alt">&lt;/i>
-&lt;/a> or you can ask me on
+ troubleshooting
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a> or you can ask me on 
 &lt;a href="https://github.com/hexojs/hexo/issues" title="GitHub" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
-GitHub
-&lt;i class="fa fa-external-link-alt">&lt;/i>
+ GitHub
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
 &lt;/a>.&lt;/p></description></item></channel></rss>
