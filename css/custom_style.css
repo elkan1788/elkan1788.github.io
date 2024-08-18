@@ -1,6 +1,6 @@
 
 .xyears-blog {
-  margin-top: 8px;
+  margin-top: 1px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,6 +9,14 @@
 .xyears-blog > a {
   margin-right: 6px;
   border-bottom: 0px;
+}
+
+.not-by-ai {
+  margin-top: 9px;
+}
+
+.not-by-ai img {
+  width: 110px;
 }
 
 .footer-inner .vendors-list img[src$=".png"] {
