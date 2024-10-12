@@ -13,26 +13,26 @@
 &lt;/li>
 &lt;/ul>
 &lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th style="text-align:center">Nifi安装目录&lt;/th>
-&lt;th style="text-align:center">WEB端口&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td style="text-align:center">xxx\nifi-ncm&lt;/td>
-&lt;td style="text-align:center">9443&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:center">xxx\nifi-cluster01&lt;/td>
-&lt;td style="text-align:center">9444&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:center">xxx\nifi-cluster02&lt;/td>
-&lt;td style="text-align:center">9445&lt;/td>
-&lt;/tr>
-&lt;/tbody>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: center">Nifi安装目录&lt;/th>
+ &lt;th style="text-align: center">WEB端口&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: center">xxx\nifi-ncm&lt;/td>
+ &lt;td style="text-align: center">9443&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">xxx\nifi-cluster01&lt;/td>
+ &lt;td style="text-align: center">9444&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">xxx\nifi-cluster02&lt;/td>
+ &lt;td style="text-align: center">9445&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
 &lt;/table>
 &lt;blockquote>
 &lt;p>(其它版本可参考此篇文章)

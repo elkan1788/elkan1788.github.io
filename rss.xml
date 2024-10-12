@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>热爱生活与梦想</title><link>https://lisenhui.cn/</link><description>Recent content on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 19 Aug 2024 20:19:51 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/rss.xml" rel="self" type="application/rss+xml"/><item><title>Linux系统中删除目录软链接的注意项</title><link>https://lisenhui.cn/tech/delete-soft-link-on-linux.html</link><pubDate>Mon, 19 Aug 2024 20:19:51 +0800</pubDate><guid>https://lisenhui.cn/tech/delete-soft-link-on-linux.html</guid><description>对于软链接的操作在Linux系统中还是较为常见，相当于是Windows系统中的快捷方式，平时经常会用它来做些类似mv命令重命名的操作，让些烦</description></item><item><title>Java程序调用外网API时CA问题</title><link>https://lisenhui.cn/tech/java-security-cacerts-issue.html</link><pubDate>Tue, 13 Aug 2024 20:12:11 +0800</pubDate><guid>https://lisenhui.cn/tech/java-security-cacerts-issue.html</guid><description>前面在配置一个Java应用程序的API调用功能，可当启用此功能参数后，发现API调用没能成功，跟进下后台的日志报错信息，找到如下三行关键栈日</description></item><item><title>如何不关机重启WSL2恢复虚拟服务</title><link>https://lisenhui.cn/tech/how-to-restart-wsl2.html</link><pubDate>Mon, 20 May 2024 19:16:16 +0800</pubDate><guid>https://lisenhui.cn/tech/how-to-restart-wsl2.html</guid><description>&lt;p>对于Windows系统WSL技术较熟悉的小伙伴对于WSL和WSL2两个版本间的架构差异应该都比较了解，有不少人可能都会吐槽WSL2其实是一种倒退，只不过今天我们不讨论这点，而是来分享下在使用WSL2服务遇到的问题，及亲测有效的解决方案。&lt;/p></description></item><item><title>在Windows上安装Podman容器平台做虚拟化</title><link>https://lisenhui.cn/tech/install-podman-container-on-win.html</link><pubDate>Sun, 17 Mar 2024 20:33:22 +0800</pubDate><guid>https://lisenhui.cn/tech/install-podman-container-on-win.html</guid><description>&lt;p>想起之前读大学的时候大家还在捣鼓如何在电脑上安装 &lt;code>Windows+Linux&lt;/code>双系统，而如今微软早已发布了WSL（Windows Subsystem for Linux）的方案让两套系统可直接同时运行，真可谓是实现了鱼和熊掌同时可”兼得“。当然今天我们的主角并不是 &lt;code>WSL&lt;/code>啦，只不过是需要基于此技术之上来进行操作，实现对我们想要使用的 &lt;code>Podman&lt;/code>容器化管理平台支持。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>热爱生活与梦想</title><link>https://lisenhui.cn/</link><description>Recent content on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 19 Aug 2024 20:19:51 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/rss.xml" rel="self" type="application/rss+xml"/><item><title>Linux系统中删除目录软链接的注意项</title><link>https://lisenhui.cn/tech/delete-soft-link-on-linux.html</link><pubDate>Mon, 19 Aug 2024 20:19:51 +0800</pubDate><guid>https://lisenhui.cn/tech/delete-soft-link-on-linux.html</guid><description>&lt;p>对于软链接的操作在Linux系统中还是较为常见，相当于是Windows系统中的快捷方式，平时经常会用它来做些类似&lt;code>mv&lt;/code>命令重命名的操作，让些烦乱的文件管理更加的清晰些，比如源文件目录或文件名称太过冗余，可通过创建软链接进行简化，同时也是省去了文件的搬迁，大大提升了操作的效率。&lt;/p></description></item><item><title>Java程序调用外网API时CA问题</title><link>https://lisenhui.cn/tech/java-security-cacerts-issue.html</link><pubDate>Tue, 13 Aug 2024 20:12:11 +0800</pubDate><guid>https://lisenhui.cn/tech/java-security-cacerts-issue.html</guid><description>&lt;p>前面在配置一个Java应用程序的API调用功能，可当启用此功能参数后，发现API调用没能成功，跟进下后台的日志报错信息，找到如下三行关键栈日志：&lt;/p></description></item><item><title>如何不关机重启WSL2恢复虚拟服务</title><link>https://lisenhui.cn/tech/how-to-restart-wsl2.html</link><pubDate>Mon, 20 May 2024 19:16:16 +0800</pubDate><guid>https://lisenhui.cn/tech/how-to-restart-wsl2.html</guid><description>&lt;p>对于Windows系统WSL技术较熟悉的小伙伴对于WSL和WSL2两个版本间的架构差异应该都比较了解，有不少人可能都会吐槽WSL2其实是一种倒退，只不过今天我们不讨论这点，而是来分享下在使用WSL2服务遇到的问题，及亲测有效的解决方案。&lt;/p></description></item><item><title>在Windows上安装Podman容器平台做虚拟化</title><link>https://lisenhui.cn/tech/install-podman-container-on-win.html</link><pubDate>Sun, 17 Mar 2024 20:33:22 +0800</pubDate><guid>https://lisenhui.cn/tech/install-podman-container-on-win.html</guid><description>&lt;p>想起之前读大学的时候大家还在捣鼓如何在电脑上安装 &lt;code>Windows+Linux&lt;/code>双系统，而如今微软早已发布了WSL（Windows Subsystem for Linux）的方案让两套系统可直接同时运行，真可谓是实现了鱼和熊掌同时可”兼得“。当然今天我们的主角并不是 &lt;code>WSL&lt;/code>啦，只不过是需要基于此技术之上来进行操作，实现对我们想要使用的 &lt;code>Podman&lt;/code>容器化管理平台支持。&lt;/p>
 &lt;blockquote>
 &lt;p>注：如电脑上还没开启 &lt;code>WSL&lt;/code>功能的话，请自行搜索网上的教程启动，才能进行接下来的操作。&lt;/p>
 &lt;/blockquote></description></item><item><title>记一次无法弹出移动硬盘的记录</title><link>https://lisenhui.cn/tech/unmountd-mobile-disk-log.html</link><pubDate>Sat, 02 Mar 2024 20:05:27 +0800</pubDate><guid>https://lisenhui.cn/tech/unmountd-mobile-disk-log.html</guid><description>&lt;p>或许在当下云计算时代，已经很少有人会用到移动硬盘或U盘的经验，亦或者大多数人都没有弹出移动设备后再拨出的习惯。笔者因早年在使用U盘时经历过直接拨出U盘导致其报废的“惨痛”教训，因此对&lt;strong>移出设备&lt;/strong>的操作是铭记于心，万不敢直接拨插移动设备。但就是这个只需点击一次移出设备的操作，很多时候就会让我们有些烦恼，因为它有时候总喜欢和你对着干。这不今天就遇上一件无法解释的诡异现象:移动硬盘无法弹出，尝试过之前的各种妙招后仍是无济于事，最后也只是能祭出万能的&lt;strong>关机大法&lt;/strong>才算是得以解脱。&lt;/p></description></item><item><title>为友情链接添加自动检测脚本</title><link>https://lisenhui.cn/blog/add-friend-link-check-script.html</link><pubDate>Sun, 25 Feb 2024 10:13:53 +0800</pubDate><guid>https://lisenhui.cn/blog/add-friend-link-check-script.html</guid><description>&lt;p>友情链接是博客的重要组成部之一，很多博主日常也会时常进行链接的交换，即是发展自己的互联网友人圈子，也算得上是为自己的博客引流。不过在如今信息大爆炸的时代，也渐渐有些博主实在“有些乏力”来维护自己的站点，其中的缘由可能有诸多，最终便是出现我们偶尔会遇到的情况，某个站点突然之间可能就无法访问。为此便有想法给自己的站点添加个友情链接检测脚本，剔除掉那些已经失效的友情链接，让用户访问时的跳转体验更好加。&lt;/p></description></item><item><title>重新激活Github的2FA认证</title><link>https://lisenhui.cn/tech/actived-github-2fa-auth.html</link><pubDate>Wed, 08 Nov 2023 20:37:20 +0800</pubDate><guid>https://lisenhui.cn/tech/actived-github-2fa-auth.html</guid><description>&lt;p>近期有段时间没有登录 &lt;code>GitHub&lt;/code> 仓库站点，今天查看邮箱发现
@@ -25,18 +25,35 @@
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
 &lt;/a> Action 集成，实现远程执行服务端的命令，来拉取最新生成的静态文件。&lt;/p></description></item><item><title>博客站点升级使用 Hugo NexT 最新主题</title><link>https://lisenhui.cn/blog/upgrade-blog-use-new-theme.html</link><pubDate>Sun, 07 Aug 2022 20:55:56 +0800</pubDate><guid>https://lisenhui.cn/blog/upgrade-blog-use-new-theme.html</guid><description>&lt;p>时隔 2 年的时间后，如今又再一次开始折腾自己的博客站点，看来是自己有点太躁动啦&amp;#x1f602;。在上海疫情期间也真有点压抑的，为了消除这份不安的情绪，决定参考 
-&lt;a href="https://theme-next.js.org/" title="&amp;lt;strong&amp;gt;Hexo NexT&amp;lt;/strong&amp;gt;" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+&lt;a href="https://theme-next.js.org/" title="Hexo NexT" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  &lt;strong>Hexo NexT&lt;/strong>
  
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
-&lt;/a>从零开始全面重构 &lt;code>NexT&lt;/code> 主题，也在独自奋斗的2个多月断断续续时间里完成主体功能所有移植工作（其实一直想有人参与进来共建，直接跑到人家 Hexo NexT 用户群“呼喊”，但也是没有浪花泛起，只好是自己继续独立前行）。 这不乘着周末的时间，把自己的站点也是升级到最新开发的主题，同时也是为后续想升级旧版本 &lt;code>Hugo NexT&lt;/code> 的用户打个样吧。&lt;/p></description></item><item><title>友情链接</title><link>https://lisenhui.cn/flinks.html</link><pubDate>Sun, 07 Aug 2022 19:12:52 +0800</pubDate><guid>https://lisenhui.cn/flinks.html</guid><description>如想要交换友情链接，请将本站信息加入到你的站点友情链接中(可点击右上角图标直接复制)： 1 2 3 4 - name: 凡梦星尘空间站 desc: 再平凡的人也有属于他的梦想</description></item><item><title>创建属于你自己的org永久域名</title><link>https://lisenhui.cn/tech/create-your-forever-org-domain.html</link><pubDate>Sat, 18 Jun 2022 20:39:58 +0800</pubDate><guid>https://lisenhui.cn/tech/create-your-forever-org-domain.html</guid><description>&lt;p>或许你也曾想拥有一个属于自己的域名，但又苦于囊中羞涩无力购买，亦或是在国内域名生效前都要实名备案。那么今天就给你带来一个好消息，你可以申请注册一个属于自己的 org 域名，而且不需要花费任何的费用，也不用进行备案就能使用（仅限国外服务器），就问你心动了有没有 &amp;#x1f606;&lt;/p>
+&lt;/a>从零开始全面重构 &lt;code>NexT&lt;/code> 主题，也在独自奋斗的2个多月断断续续时间里完成主体功能所有移植工作（其实一直想有人参与进来共建，直接跑到人家 Hexo NexT 用户群“呼喊”，但也是没有浪花泛起，只好是自己继续独立前行）。 这不乘着周末的时间，把自己的站点也是升级到最新开发的主题，同时也是为后续想升级旧版本 &lt;code>Hugo NexT&lt;/code> 的用户打个样吧。&lt;/p></description></item><item><title>友情链接</title><link>https://lisenhui.cn/flinks.html</link><pubDate>Sun, 07 Aug 2022 19:12:52 +0800</pubDate><guid>https://lisenhui.cn/flinks.html</guid><description>&lt;p>如想要交换友情链接，请将本站信息加入到你的站点友情链接中(可点击右上角图标直接复制)：&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-yaml" data-lang="yaml">&lt;span style="display:flex;">&lt;span>- &lt;span style="color:#f92672">name&lt;/span>: &lt;span style="color:#ae81ff">凡梦星尘空间站&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">desc&lt;/span>: &lt;span style="color:#ae81ff">再平凡的人也有属于他的梦想！&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">avatar&lt;/span>: &lt;span style="color:#ae81ff">https://elkan1788.github.io/imgs/avatar.png&lt;/span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f92672">link&lt;/span>: &lt;span style="color:#ae81ff">https://lisenhui.cn&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>并在评论区留下你的站点信息，格式参考如上，我会尽快在第一时间回复并添加友链，谢谢支持！ &amp;#x2764;&amp;#xfe0f;&lt;/p></description></item><item><title>创建属于你自己的org永久域名</title><link>https://lisenhui.cn/tech/create-your-forever-org-domain.html</link><pubDate>Sat, 18 Jun 2022 20:39:58 +0800</pubDate><guid>https://lisenhui.cn/tech/create-your-forever-org-domain.html</guid><description>&lt;p>或许你也曾想拥有一个属于自己的域名，但又苦于囊中羞涩无力购买，亦或是在国内域名生效前都要实名备案。那么今天就给你带来一个好消息，你可以申请注册一个属于自己的 org 域名，而且不需要花费任何的费用，也不用进行备案就能使用（仅限国外服务器），就问你心动了有没有 &amp;#x1f606;&lt;/p>
 &lt;div class="note info ">
  注意： 这里注册的并不是一级域名，而是属于二级域名，要是介意不用往下细看了。
-&lt;/div></description></item><item><title>让 Nginx 将 HTTP 请求转发到 HTTPS 安全模式</title><link>https://lisenhui.cn/blog/make-nginx-support-http-ssl-request.html</link><pubDate>Mon, 30 May 2022 15:55:03 +0800</pubDate><guid>https://lisenhui.cn/blog/make-nginx-support-http-ssl-request.html</guid><description>&lt;p>在某次博主的交流讨论时，忽然间发现自己站点原定让 HTTP 转发 HTTPS 的支持功能，实际上并不没有生效。如果是直接输入域名访问的话，那么会出现 400 的错误页面。当初为了让全站支持 HTTPS 也是耗费了不少精力，没想到却是这个结果。&lt;/p></description></item><item><title>用unpkg替换jsdelivr作为本站CDN提供者</title><link>https://lisenhui.cn/blog/repleace-jsdelivr-with-unpkg-as-cdn-vender.html</link><pubDate>Fri, 20 May 2022 19:03:27 +0800</pubDate><guid>https://lisenhui.cn/blog/repleace-jsdelivr-with-unpkg-as-cdn-vender.html</guid><description>前几天就有看到网友在讨论 jsdelivr 服务被墙的消息，可能是刚开始的缘故吧，当时发现自己的站点倒还算是正常的，只也没坚挺几天也面临加载 jsdelivr 资源的失败问题。</description></item><item><title>VirtualBox6.x版本CPU时钟Bug导致虚拟机无法开机</title><link>https://lisenhui.cn/tech/virtualbox6-cup-clock-not-started.html</link><pubDate>Thu, 21 Apr 2022 18:39:47 +0800</pubDate><guid>https://lisenhui.cn/tech/virtualbox6-cup-clock-not-started.html</guid><description>&lt;p>下午在启动平时常用的虚拟环境时，发现进度条卡在中间老半天都不会动，情况不太正常，以前启动时间最多也就是 10 几分钟就能看到桌面。点击键盘的方向键看打印的日志，一直在重复如下图所示的 Bug 信息，即使后面等待了半个多小时进入系统后，这个日志信息也不断的在终端界面上输出。&lt;/p></description></item><item><title>使用Mobaxterm登录本地虚拟机很慢</title><link>https://lisenhui.cn/tech/sshlogin-localvm-slowly-mobaxterm.html</link><pubDate>Mon, 04 Apr 2022 11:53:34 +0800</pubDate><guid>https://lisenhui.cn/tech/sshlogin-localvm-slowly-mobaxterm.html</guid><description>&lt;p>近期因本地虚拟机有问题但重新搭建了个新环境，结果在使用 MobaXterm 工具登录终端时发现每次都要等待个 4 ~ 5 秒才可以进入，操作检验不是很好，不明白为何本地环境连接会是这么的慢，所以还是得想办法分析下。&lt;/p>
-&lt;p>看有些网友也有类似的困惑，提示说可能是 SSH 登录时要通过 DNS 来寻址的原因。参考文章上说法找到 &lt;code>/etc/ssh/sshd_config&lt;/code> 把里面的 &lt;code>UseDNS&lt;/code> 配置项设置为 &lt;code>no&lt;/code>，但是发现其已经是关闭的状态。那会是什么原因引起呢？&lt;/p></description></item><item><title>TravisCI 远程部署站点服务</title><link>https://lisenhui.cn/tech/use-travisci-remote-deploy-site.html</link><pubDate>Tue, 22 Mar 2022 22:13:43 +0800</pubDate><guid>https://lisenhui.cn/tech/use-travisci-remote-deploy-site.html</guid><description>背景 之前一直都是将自己的博客站点托管在 Github Pages 服务上面，但无奈国内的访问速度确实是让人堪忧，时不时还会出现打不开现象，确实影响到访问查看的体验。</description></item><item><title>使用Sublime Text搭建Hugo使用环境</title><link>https://lisenhui.cn/tech/use-sublime-txt-build-hugo-site.html</link><pubDate>Sat, 12 Feb 2022 16:32:10 +0800</pubDate><guid>https://lisenhui.cn/tech/use-sublime-txt-build-hugo-site.html</guid><description>&lt;p>自从捣鼓 &lt;code>Hugo&lt;/code> 建站以来也有好长一段时间啦，但是之前的使用环境比较的 &lt;em>“松散”&lt;/em> ，比如编辑博客文章用的是 &lt;code>Sublime Text&lt;/code> 文本工具，再通过 &lt;code>CMD&lt;/code> 命令行工具调用 &lt;code>Hugo&lt;/code>执行本地预览，最后再
+&lt;/div></description></item><item><title>让 Nginx 将 HTTP 请求转发到 HTTPS 安全模式</title><link>https://lisenhui.cn/blog/make-nginx-support-http-ssl-request.html</link><pubDate>Mon, 30 May 2022 15:55:03 +0800</pubDate><guid>https://lisenhui.cn/blog/make-nginx-support-http-ssl-request.html</guid><description>&lt;p>在某次博主的交流讨论时，忽然间发现自己站点原定让 HTTP 转发 HTTPS 的支持功能，实际上并不没有生效。如果是直接输入域名访问的话，那么会出现 400 的错误页面。当初为了让全站支持 HTTPS 也是耗费了不少精力，没想到却是这个结果。&lt;/p></description></item><item><title>用unpkg替换jsdelivr作为本站CDN提供者</title><link>https://lisenhui.cn/blog/repleace-jsdelivr-with-unpkg-as-cdn-vender.html</link><pubDate>Fri, 20 May 2022 19:03:27 +0800</pubDate><guid>https://lisenhui.cn/blog/repleace-jsdelivr-with-unpkg-as-cdn-vender.html</guid><description>&lt;p>前几天就有看到网友在讨论 &lt;code>jsdelivr&lt;/code> 服务被墙的消息，可能是刚开始的缘故吧，当时发现自己的站点倒还算是正常的，只也没坚挺几天也面临加载 &lt;code>jsdelivr&lt;/code> 资源的失败问题。一番排查下来，发现受影响的部分还是比较小的，至少当时站点的 CSS 文件没有托管到 CDN 上，只要更换受影响部分的 CDN 链接引用便是。&lt;/p></description></item><item><title>VirtualBox6.x版本CPU时钟Bug导致虚拟机无法开机</title><link>https://lisenhui.cn/tech/virtualbox6-cup-clock-not-started.html</link><pubDate>Thu, 21 Apr 2022 18:39:47 +0800</pubDate><guid>https://lisenhui.cn/tech/virtualbox6-cup-clock-not-started.html</guid><description>&lt;p>下午在启动平时常用的虚拟环境时，发现进度条卡在中间老半天都不会动，情况不太正常，以前启动时间最多也就是 10 几分钟就能看到桌面。点击键盘的方向键看打印的日志，一直在重复如下图所示的 Bug 信息，即使后面等待了半个多小时进入系统后，这个日志信息也不断的在终端界面上输出。&lt;/p></description></item><item><title>使用Mobaxterm登录本地虚拟机很慢</title><link>https://lisenhui.cn/tech/sshlogin-localvm-slowly-mobaxterm.html</link><pubDate>Mon, 04 Apr 2022 11:53:34 +0800</pubDate><guid>https://lisenhui.cn/tech/sshlogin-localvm-slowly-mobaxterm.html</guid><description>&lt;p>近期因本地虚拟机有问题但重新搭建了个新环境，结果在使用 MobaXterm 工具登录终端时发现每次都要等待个 4 ~ 5 秒才可以进入，操作检验不是很好，不明白为何本地环境连接会是这么的慢，所以还是得想办法分析下。&lt;/p>
+&lt;p>看有些网友也有类似的困惑，提示说可能是 SSH 登录时要通过 DNS 来寻址的原因。参考文章上说法找到 &lt;code>/etc/ssh/sshd_config&lt;/code> 把里面的 &lt;code>UseDNS&lt;/code> 配置项设置为 &lt;code>no&lt;/code>，但是发现其已经是关闭的状态。那会是什么原因引起呢？&lt;/p></description></item><item><title>TravisCI 远程部署站点服务</title><link>https://lisenhui.cn/tech/use-travisci-remote-deploy-site.html</link><pubDate>Tue, 22 Mar 2022 22:13:43 +0800</pubDate><guid>https://lisenhui.cn/tech/use-travisci-remote-deploy-site.html</guid><description>&lt;h2 id="背景">背景
+&lt;a class="header-anchor" href="#%e8%83%8c%e6%99%af">&lt;/a>
+&lt;/h2>&lt;p>之前一直都是将自己的博客站点托管在 &lt;code>Github Pages&lt;/code> 服务上面，但无奈国内的访问速度确实是让人堪忧，时不时还会出现打不开现象，确实影响到访问查看的体验。另外近期腾讯云的 ICP 备案又开始各种检查“臊”操作，一旦发现域名解析 IP 地址不是其云服务的话就会终止 ICP 备案，那后果可想而知肯定是域名会被终止访问引起一连串的不可预知问题（毕竟重走 ICP 审批流程也是非常的烦恼）。于是便只好订阅了腾讯云的轻服务产品，把站点静态内容托管在其上面。&lt;/p></description></item><item><title>使用Sublime Text搭建Hugo使用环境</title><link>https://lisenhui.cn/tech/use-sublime-txt-build-hugo-site.html</link><pubDate>Sat, 12 Feb 2022 16:32:10 +0800</pubDate><guid>https://lisenhui.cn/tech/use-sublime-txt-build-hugo-site.html</guid><description>&lt;p>自从捣鼓 &lt;code>Hugo&lt;/code> 建站以来也有好长一段时间啦，但是之前的使用环境比较的 &lt;em>“松散”&lt;/em> ，比如编辑博客文章用的是 &lt;code>Sublime Text&lt;/code> 文本工具，再通过 &lt;code>CMD&lt;/code> 命令行工具调用 &lt;code>Hugo&lt;/code>执行本地预览，最后再
 使用 &lt;code>Git Extension&lt;/code> 图形工具将博客文章发布到 &lt;code>Github Pages&lt;/code> 供网友们浏览。 从整个操作流程上来看还是可以的，只是在过程中要切换不同的工具操作，而恰好看到 &lt;code>Hugo&lt;/code> 官网上有个 &lt;code>Sublime Text&lt;/code> 的
-&lt;a href="https://gohugo.io/tools/editors/#sublime-text" title="&amp;lt;strong&amp;gt;插件&amp;lt;/strong&amp;gt;" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+&lt;a href="https://gohugo.io/tools/editors/#sublime-text" title="插件" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  &lt;strong>插件&lt;/strong>
  
  &lt;i class="fa fa-external-link-alt">&lt;/i>
@@ -44,7 +61,7 @@
 &lt;/a>，于是乎有了重新整合 &lt;code>Hugo&lt;/code> 使用环境的想法，哈。&lt;/p></description></item><item><title>Sublime Text安装插件失败</title><link>https://lisenhui.cn/tech/use-sublime-txt-build-hugo-site.html</link><pubDate>Tue, 08 Feb 2022 12:31:13 +0800</pubDate><guid>https://lisenhui.cn/tech/use-sublime-txt-build-hugo-site.html</guid><description>&lt;p>近期因公司之前分配的电脑出了点毛病，无奈只能重新换个新电脑，所以环境也得从头进行搭建。而一直使用的 &lt;code>Sublime Text&lt;/code> 是绿色版本，直接拷贝过来后启动，编辑等操作都是正常的，但在尝试安装新的插件时就遇了如下的问题。&lt;/p></description></item><item><title>优化Hugo Next主题的过程2</title><link>https://lisenhui.cn/blog/make-next-theme-pithy2.html</link><pubDate>Fri, 09 Jul 2021 17:53:06 +0800</pubDate><guid>https://lisenhui.cn/blog/make-next-theme-pithy2.html</guid><description>&lt;h2 id="背景">背景
 &lt;a class="header-anchor" href="#%e8%83%8c%e6%99%af">&lt;/a>
 &lt;/h2>&lt;p>自上次优化&lt;code>NexT&lt;/code>主题并分享到Github仓库中
-&lt;a href="https://github.com/elkan1788/hugo-theme-next" title="&amp;lt;strong&amp;gt;hugo-theme-next&amp;lt;/strong&amp;gt;" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+&lt;a href="https://github.com/elkan1788/hugo-theme-next" title="hugo-theme-next" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  &lt;strong>hugo-theme-next&lt;/strong>
  
  &lt;i class="fa fa-external-link-alt">&lt;/i>
@@ -57,7 +74,7 @@
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
 &lt;/a>)，欢迎大家的使用和反馈。&lt;/p></description></item><item><title>替换SpringBoot里的文件</title><link>https://lisenhui.cn/tech/replace-files-in-springboot.html</link><pubDate>Wed, 14 Apr 2021 17:43:20 +0800</pubDate><guid>https://lisenhui.cn/tech/replace-files-in-springboot.html</guid><description>&lt;p>现在使用&lt;code>Spring Boot&lt;/code>架构的应用开发来说是非常的普遍，统一化的打包部署确实带来不少便利，但当遇到问题时也是会比较棘手。或许你会觉得很惊讶，但如果说这是产品部署运维过程中遇到的难题需要修改&lt;code>Spring Boot&lt;/code>应用程序，你就会觉得困难也是不奇怪的。本文就来分享下如何使用&lt;code>jar&lt;/code>命令应对线上部署产品时，要临时替换&lt;code>Spring Boot&lt;/code>应用中的Jar包的操作。&lt;/p></description></item><item><title>加入Istio官方翻译组织的历程记录</title><link>https://lisenhui.cn/tech/join-istio-translation-org.html</link><pubDate>Sat, 20 Mar 2021 11:48:53 +0800</pubDate><guid>https://lisenhui.cn/tech/join-istio-translation-org.html</guid><description>&lt;p>作为曾经的程序猿，自己也一直“享受”着来自开源社区的那些无私分享。这些开源项目对自己的影响和启发还是很大的，之前就有想过如何去回馈开源社区，也开贡献过自己的一些项目，参与过一些开源项目，但都还是仅限国内的项目。不久前正好看到 Jimmy Song 在微信朋友圈发布
-&lt;a href="https://mp.weixin.qq.com/s/fPvCU8Dj4c60QMmy_s9rmA" title="《&amp;lt;strong&amp;gt;Istio 官网翻译工作组成立暨志愿者招募&amp;lt;/strong&amp;gt;》" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+&lt;a href="https://mp.weixin.qq.com/s/fPvCU8Dj4c60QMmy_s9rmA" title="《Istio 官网翻译工作组成立暨志愿者招募》" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  《&lt;strong>Istio 官网翻译工作组成立暨志愿者招募&lt;/strong>》
  
  &lt;i class="fa fa-external-link-alt">&lt;/i>
@@ -142,7 +159,52 @@
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>ERROR: Current user has no permission to create Hive table in working directory: &lt;span style="color:#f92672">/&lt;/span>user&lt;span style="color:#f92672">/&lt;/span>kylin
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div></description></item><item><title>关于我</title><link>https://lisenhui.cn/about.html</link><pubDate>Tue, 05 Feb 2019 20:12:52 +0800</pubDate><guid>https://lisenhui.cn/about.html</guid><description>希望是无所谓有，无所谓无的，这正如地上的路。 其实地上本没有路，走的人多了，也便成了路。 鲁迅 绰号 凡梦星尘(elkan1788) 留言箱： elkan1788@139.com 历史正</description></item><item><title>Win10常用的快捷操作方式</title><link>https://lisenhui.cn/tech/win10-quick-operations.html</link><pubDate>Wed, 08 Aug 2018 12:54:53 +0000</pubDate><guid>https://lisenhui.cn/tech/win10-quick-operations.html</guid><description>&lt;p>常言道“工欲善其事，必先利其器。”&lt;/p>
+&lt;/div></description></item><item><title>关于我</title><link>https://lisenhui.cn/about.html</link><pubDate>Tue, 05 Feb 2019 20:12:52 +0800</pubDate><guid>https://lisenhui.cn/about.html</guid><description>&lt;blockquote class="blockquote-center">
+ &lt;p>希望是无所谓有，无所谓无的，这正如地上的路。&lt;/p>
+&lt;p>其实地上本没有路，走的人多了，也便成了路。&lt;/p>
+&lt;p>&lt;strong>鲁迅&lt;/strong>&lt;/p>
+
+&lt;/blockquote>
+&lt;p>&lt;strong>绰号&lt;/strong>&lt;/p>
+&lt;p>凡梦星尘(elkan1788)&lt;/p>
+&lt;p>留言箱： 
+&lt;a href="mailto:elkan1788@139.com" title="elkan1788@139.com" >
+ elkan1788@139.com
+ 
+&lt;/a>&lt;/p>
+&lt;p>&lt;strong>历史正文&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;a href="http://blog.csdn.net/lisenhui_19" title="CSDN Blog" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ CSDN Blog
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="http://senhui19.iteye.com/" title="ITEye Blog1" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ ITEye Blog1
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="http://elkan1788.iteye.com/" title="ITEye Blog2" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ ITEye Blog2
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/li>
+&lt;li>
+&lt;a href="http://elkan1788.github.io/" title="GitHub Page" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ GitHub Page
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;div class="note info no-icon">
+ &lt;p>奔波于大都市中求生的一枚攻城狮/码农，“ &lt;strong>完美&lt;/strong> ”是对代码的基本要求。&lt;/p></description></item><item><title>Win10常用的快捷操作方式</title><link>https://lisenhui.cn/tech/win10-quick-operations.html</link><pubDate>Wed, 08 Aug 2018 12:54:53 +0000</pubDate><guid>https://lisenhui.cn/tech/win10-quick-operations.html</guid><description>&lt;p>常言道“工欲善其事，必先利其器。”&lt;/p>
 &lt;p>不过从&lt;code>Mac&lt;/code>再过渡回来到&lt;code>Windows&lt;/code>确实是有诸多的不习惯，但仍是要学会克服，无它，工作是生存的根本技能。于是从网络上扒了下关于&lt;code>Win10&lt;/code>快捷键的分布，还是挺有趣的。记录也下部分常用快捷键，如下：&lt;/p></description></item><item><title>Axure教程：动态面板内容超出界线显示</title><link>https://lisenhui.cn/tech/axure-lightbox-shade.html</link><pubDate>Mon, 12 Mar 2018 10:11:53 +0000</pubDate><guid>https://lisenhui.cn/tech/axure-lightbox-shade.html</guid><description>&lt;h1 id="问题">问题
 &lt;a class="header-anchor" href="#%e9%97%ae%e9%a2%98">&lt;/a>
 &lt;/h1>&lt;p>随着用户需求的不断更新，产品原型的设计也在不断迭代升级，那么是必会让整体的设计复杂增加，各中组件相互影响的因素就更多。这不现在就遇到在动态面板上显示一个隐藏的元件时，结果下拉的组件显示不完全了，真的好是郁闷，如下图所示：&lt;/p>
@@ -161,26 +223,26 @@
 &lt;/li>
 &lt;/ul>
 &lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th style="text-align:center">Nifi安装目录&lt;/th>
-&lt;th style="text-align:center">WEB端口&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td style="text-align:center">xxx\nifi-ncm&lt;/td>
-&lt;td style="text-align:center">9443&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:center">xxx\nifi-cluster01&lt;/td>
-&lt;td style="text-align:center">9444&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:center">xxx\nifi-cluster02&lt;/td>
-&lt;td style="text-align:center">9445&lt;/td>
-&lt;/tr>
-&lt;/tbody>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: center">Nifi安装目录&lt;/th>
+ &lt;th style="text-align: center">WEB端口&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: center">xxx\nifi-ncm&lt;/td>
+ &lt;td style="text-align: center">9443&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">xxx\nifi-cluster01&lt;/td>
+ &lt;td style="text-align: center">9444&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">xxx\nifi-cluster02&lt;/td>
+ &lt;td style="text-align: center">9445&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
 &lt;/table>
 &lt;blockquote>
 &lt;p>(其它版本可参考此篇文章)
@@ -296,7 +358,7 @@
 &lt;/div></description></item><item><title>使用Hexo重新构建个人博客站点</title><link>https://lisenhui.cn/tech/use-hexo-rebuild-blog-site.html</link><pubDate>Wed, 02 Aug 2017 16:04:35 +0000</pubDate><guid>https://lisenhui.cn/tech/use-hexo-rebuild-blog-site.html</guid><description>&lt;p>其实在&lt;code>Github Page&lt;/code>上面也是混迹许久啦，虽然现在各种Blog网站层出不穷，但是作为IT界的程序猿还是喜欢自己动手捣鼓捣鼓，成功固然是欣喜失败也会不气妥。 &lt;code>Github Page&lt;/code>刚出道时使用的是&lt;code>Jekyll&lt;/code>，简单的解释其实就是一个静态化网站的工具，这不现在又兴起一个名为&lt;code>Hexo&lt;/code>(**&lt;code>Nodejs&lt;/code>**实现)的工具。两者的目标皆是一致的，只不过对比下来发现&lt;code>Hexo&lt;/code>上手确实要容易些，加者它能轻松的在本地实现调试，故有想法想再次折腾一翻，构建个&lt;code>Hexo&lt;/code>版本的个人博客。&lt;/p>
 &lt;blockquote>
 &lt;p>介绍另一款静态网站工具
-&lt;a href="https://github.com/wendal/gor" title="&amp;lt;code&amp;gt;Gor&amp;lt;/code&amp;gt;" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+&lt;a href="https://github.com/wendal/gor" title="Gor" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  &lt;code>Gor&lt;/code>
  
  &lt;i class="fa fa-external-link-alt">&lt;/i>

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Teches on 热爱生活与梦想</title><link>https://lisenhui.cn/tech/</link><description>Recent content in Teches on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 19 Aug 2024 20:19:51 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/tech/rss.xml" rel="self" type="application/rss+xml"/><item><title>Linux系统中删除目录软链接的注意项</title><link>https://lisenhui.cn/tech/delete-soft-link-on-linux.html</link><pubDate>Mon, 19 Aug 2024 20:19:51 +0800</pubDate><guid>https://lisenhui.cn/tech/delete-soft-link-on-linux.html</guid><description>对于软链接的操作在Linux系统中还是较为常见，相当于是Windows系统中的快捷方式，平时经常会用它来做些类似mv命令重命名的操作，让些烦</description></item><item><title>Java程序调用外网API时CA问题</title><link>https://lisenhui.cn/tech/java-security-cacerts-issue.html</link><pubDate>Tue, 13 Aug 2024 20:12:11 +0800</pubDate><guid>https://lisenhui.cn/tech/java-security-cacerts-issue.html</guid><description>前面在配置一个Java应用程序的API调用功能，可当启用此功能参数后，发现API调用没能成功，跟进下后台的日志报错信息，找到如下三行关键栈日</description></item><item><title>如何不关机重启WSL2恢复虚拟服务</title><link>https://lisenhui.cn/tech/how-to-restart-wsl2.html</link><pubDate>Mon, 20 May 2024 19:16:16 +0800</pubDate><guid>https://lisenhui.cn/tech/how-to-restart-wsl2.html</guid><description>&lt;p>对于Windows系统WSL技术较熟悉的小伙伴对于WSL和WSL2两个版本间的架构差异应该都比较了解，有不少人可能都会吐槽WSL2其实是一种倒退，只不过今天我们不讨论这点，而是来分享下在使用WSL2服务遇到的问题，及亲测有效的解决方案。&lt;/p></description></item><item><title>在Windows上安装Podman容器平台做虚拟化</title><link>https://lisenhui.cn/tech/install-podman-container-on-win.html</link><pubDate>Sun, 17 Mar 2024 20:33:22 +0800</pubDate><guid>https://lisenhui.cn/tech/install-podman-container-on-win.html</guid><description>&lt;p>想起之前读大学的时候大家还在捣鼓如何在电脑上安装 &lt;code>Windows+Linux&lt;/code>双系统，而如今微软早已发布了WSL（Windows Subsystem for Linux）的方案让两套系统可直接同时运行，真可谓是实现了鱼和熊掌同时可”兼得“。当然今天我们的主角并不是 &lt;code>WSL&lt;/code>啦，只不过是需要基于此技术之上来进行操作，实现对我们想要使用的 &lt;code>Podman&lt;/code>容器化管理平台支持。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Teches on 热爱生活与梦想</title><link>https://lisenhui.cn/tech/</link><description>Recent content in Teches on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 19 Aug 2024 20:19:51 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/tech/rss.xml" rel="self" type="application/rss+xml"/><item><title>Linux系统中删除目录软链接的注意项</title><link>https://lisenhui.cn/tech/delete-soft-link-on-linux.html</link><pubDate>Mon, 19 Aug 2024 20:19:51 +0800</pubDate><guid>https://lisenhui.cn/tech/delete-soft-link-on-linux.html</guid><description>&lt;p>对于软链接的操作在Linux系统中还是较为常见，相当于是Windows系统中的快捷方式，平时经常会用它来做些类似&lt;code>mv&lt;/code>命令重命名的操作，让些烦乱的文件管理更加的清晰些，比如源文件目录或文件名称太过冗余，可通过创建软链接进行简化，同时也是省去了文件的搬迁，大大提升了操作的效率。&lt;/p></description></item><item><title>Java程序调用外网API时CA问题</title><link>https://lisenhui.cn/tech/java-security-cacerts-issue.html</link><pubDate>Tue, 13 Aug 2024 20:12:11 +0800</pubDate><guid>https://lisenhui.cn/tech/java-security-cacerts-issue.html</guid><description>&lt;p>前面在配置一个Java应用程序的API调用功能，可当启用此功能参数后，发现API调用没能成功，跟进下后台的日志报错信息，找到如下三行关键栈日志：&lt;/p></description></item><item><title>如何不关机重启WSL2恢复虚拟服务</title><link>https://lisenhui.cn/tech/how-to-restart-wsl2.html</link><pubDate>Mon, 20 May 2024 19:16:16 +0800</pubDate><guid>https://lisenhui.cn/tech/how-to-restart-wsl2.html</guid><description>&lt;p>对于Windows系统WSL技术较熟悉的小伙伴对于WSL和WSL2两个版本间的架构差异应该都比较了解，有不少人可能都会吐槽WSL2其实是一种倒退，只不过今天我们不讨论这点，而是来分享下在使用WSL2服务遇到的问题，及亲测有效的解决方案。&lt;/p></description></item><item><title>在Windows上安装Podman容器平台做虚拟化</title><link>https://lisenhui.cn/tech/install-podman-container-on-win.html</link><pubDate>Sun, 17 Mar 2024 20:33:22 +0800</pubDate><guid>https://lisenhui.cn/tech/install-podman-container-on-win.html</guid><description>&lt;p>想起之前读大学的时候大家还在捣鼓如何在电脑上安装 &lt;code>Windows+Linux&lt;/code>双系统，而如今微软早已发布了WSL（Windows Subsystem for Linux）的方案让两套系统可直接同时运行，真可谓是实现了鱼和熊掌同时可”兼得“。当然今天我们的主角并不是 &lt;code>WSL&lt;/code>啦，只不过是需要基于此技术之上来进行操作，实现对我们想要使用的 &lt;code>Podman&lt;/code>容器化管理平台支持。&lt;/p>
 &lt;blockquote>
 &lt;p>注：如电脑上还没开启 &lt;code>WSL&lt;/code>功能的话，请自行搜索网上的教程启动，才能进行接下来的操作。&lt;/p>
 &lt;/blockquote></description></item><item><title>记一次无法弹出移动硬盘的记录</title><link>https://lisenhui.cn/tech/unmountd-mobile-disk-log.html</link><pubDate>Sat, 02 Mar 2024 20:05:27 +0800</pubDate><guid>https://lisenhui.cn/tech/unmountd-mobile-disk-log.html</guid><description>&lt;p>或许在当下云计算时代，已经很少有人会用到移动硬盘或U盘的经验，亦或者大多数人都没有弹出移动设备后再拨出的习惯。笔者因早年在使用U盘时经历过直接拨出U盘导致其报废的“惨痛”教训，因此对&lt;strong>移出设备&lt;/strong>的操作是铭记于心，万不敢直接拨插移动设备。但就是这个只需点击一次移出设备的操作，很多时候就会让我们有些烦恼，因为它有时候总喜欢和你对着干。这不今天就遇上一件无法解释的诡异现象:移动硬盘无法弹出，尝试过之前的各种妙招后仍是无济于事，最后也只是能祭出万能的&lt;strong>关机大法&lt;/strong>才算是得以解脱。&lt;/p></description></item><item><title>重新激活Github的2FA认证</title><link>https://lisenhui.cn/tech/actived-github-2fa-auth.html</link><pubDate>Wed, 08 Nov 2023 20:37:20 +0800</pubDate><guid>https://lisenhui.cn/tech/actived-github-2fa-auth.html</guid><description>&lt;p>近期有段时间没有登录 &lt;code>GitHub&lt;/code> 仓库站点，今天查看邮箱发现
@@ -22,7 +22,7 @@
  注意： 这里注册的并不是一级域名，而是属于二级域名，要是介意不用往下细看了。
 &lt;/div></description></item><item><title>VirtualBox6.x版本CPU时钟Bug导致虚拟机无法开机</title><link>https://lisenhui.cn/tech/virtualbox6-cup-clock-not-started.html</link><pubDate>Thu, 21 Apr 2022 18:39:47 +0800</pubDate><guid>https://lisenhui.cn/tech/virtualbox6-cup-clock-not-started.html</guid><description>&lt;p>下午在启动平时常用的虚拟环境时，发现进度条卡在中间老半天都不会动，情况不太正常，以前启动时间最多也就是 10 几分钟就能看到桌面。点击键盘的方向键看打印的日志，一直在重复如下图所示的 Bug 信息，即使后面等待了半个多小时进入系统后，这个日志信息也不断的在终端界面上输出。&lt;/p></description></item><item><title>使用Mobaxterm登录本地虚拟机很慢</title><link>https://lisenhui.cn/tech/sshlogin-localvm-slowly-mobaxterm.html</link><pubDate>Mon, 04 Apr 2022 11:53:34 +0800</pubDate><guid>https://lisenhui.cn/tech/sshlogin-localvm-slowly-mobaxterm.html</guid><description>&lt;p>近期因本地虚拟机有问题但重新搭建了个新环境，结果在使用 MobaXterm 工具登录终端时发现每次都要等待个 4 ~ 5 秒才可以进入，操作检验不是很好，不明白为何本地环境连接会是这么的慢，所以还是得想办法分析下。&lt;/p>
 &lt;p>看有些网友也有类似的困惑，提示说可能是 SSH 登录时要通过 DNS 来寻址的原因。参考文章上说法找到 &lt;code>/etc/ssh/sshd_config&lt;/code> 把里面的 &lt;code>UseDNS&lt;/code> 配置项设置为 &lt;code>no&lt;/code>，但是发现其已经是关闭的状态。那会是什么原因引起呢？&lt;/p></description></item><item><title>Sublime Text安装插件失败</title><link>https://lisenhui.cn/tech/use-sublime-txt-build-hugo-site.html</link><pubDate>Tue, 08 Feb 2022 12:31:13 +0800</pubDate><guid>https://lisenhui.cn/tech/use-sublime-txt-build-hugo-site.html</guid><description>&lt;p>近期因公司之前分配的电脑出了点毛病，无奈只能重新换个新电脑，所以环境也得从头进行搭建。而一直使用的 &lt;code>Sublime Text&lt;/code> 是绿色版本，直接拷贝过来后启动，编辑等操作都是正常的，但在尝试安装新的插件时就遇了如下的问题。&lt;/p></description></item><item><title>替换SpringBoot里的文件</title><link>https://lisenhui.cn/tech/replace-files-in-springboot.html</link><pubDate>Wed, 14 Apr 2021 17:43:20 +0800</pubDate><guid>https://lisenhui.cn/tech/replace-files-in-springboot.html</guid><description>&lt;p>现在使用&lt;code>Spring Boot&lt;/code>架构的应用开发来说是非常的普遍，统一化的打包部署确实带来不少便利，但当遇到问题时也是会比较棘手。或许你会觉得很惊讶，但如果说这是产品部署运维过程中遇到的难题需要修改&lt;code>Spring Boot&lt;/code>应用程序，你就会觉得困难也是不奇怪的。本文就来分享下如何使用&lt;code>jar&lt;/code>命令应对线上部署产品时，要临时替换&lt;code>Spring Boot&lt;/code>应用中的Jar包的操作。&lt;/p></description></item><item><title>加入Istio官方翻译组织的历程记录</title><link>https://lisenhui.cn/tech/join-istio-translation-org.html</link><pubDate>Sat, 20 Mar 2021 11:48:53 +0800</pubDate><guid>https://lisenhui.cn/tech/join-istio-translation-org.html</guid><description>&lt;p>作为曾经的程序猿，自己也一直“享受”着来自开源社区的那些无私分享。这些开源项目对自己的影响和启发还是很大的，之前就有想过如何去回馈开源社区，也开贡献过自己的一些项目，参与过一些开源项目，但都还是仅限国内的项目。不久前正好看到 Jimmy Song 在微信朋友圈发布
-&lt;a href="https://mp.weixin.qq.com/s/fPvCU8Dj4c60QMmy_s9rmA" title="《&amp;lt;strong&amp;gt;Istio 官网翻译工作组成立暨志愿者招募&amp;lt;/strong&amp;gt;》" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+&lt;a href="https://mp.weixin.qq.com/s/fPvCU8Dj4c60QMmy_s9rmA" title="《Istio 官网翻译工作组成立暨志愿者招募》" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  《&lt;strong>Istio 官网翻译工作组成立暨志愿者招募&lt;/strong>》
  
  &lt;i class="fa fa-external-link-alt">&lt;/i>
@@ -117,26 +117,26 @@
 &lt;/li>
 &lt;/ul>
 &lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th style="text-align:center">Nifi安装目录&lt;/th>
-&lt;th style="text-align:center">WEB端口&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td style="text-align:center">xxx\nifi-ncm&lt;/td>
-&lt;td style="text-align:center">9443&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:center">xxx\nifi-cluster01&lt;/td>
-&lt;td style="text-align:center">9444&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:center">xxx\nifi-cluster02&lt;/td>
-&lt;td style="text-align:center">9445&lt;/td>
-&lt;/tr>
-&lt;/tbody>
+ &lt;thead>
+ &lt;tr>
+ &lt;th style="text-align: center">Nifi安装目录&lt;/th>
+ &lt;th style="text-align: center">WEB端口&lt;/th>
+ &lt;/tr>
+ &lt;/thead>
+ &lt;tbody>
+ &lt;tr>
+ &lt;td style="text-align: center">xxx\nifi-ncm&lt;/td>
+ &lt;td style="text-align: center">9443&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">xxx\nifi-cluster01&lt;/td>
+ &lt;td style="text-align: center">9444&lt;/td>
+ &lt;/tr>
+ &lt;tr>
+ &lt;td style="text-align: center">xxx\nifi-cluster02&lt;/td>
+ &lt;td style="text-align: center">9445&lt;/td>
+ &lt;/tr>
+ &lt;/tbody>
 &lt;/table>
 &lt;blockquote>
 &lt;p>(其它版本可参考此篇文章)
