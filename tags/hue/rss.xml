@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hue on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/hue/</link><description>Recent content in Hue on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 15 Aug 2017 15:13:39 +0000</lastBuildDate><atom:link href="https://lisenhui.cn/tags/hue/rss.xml" rel="self" type="application/rss+xml"/><item><title>Hue中集成MySQL数据显示乱码</title><link>https://lisenhui.cn/tech/hue-rdbms-mysql-chinese.html</link><pubDate>Tue, 15 Aug 2017 15:13:39 +0000</pubDate><guid>https://lisenhui.cn/tech/hue-rdbms-mysql-chinese.html</guid><description>&lt;p>Hue is a Web applications that enables you to easily interact with an Hadoop cluster. Hue applications let you browse HDFS, Jobs, run Hive, Pig and Cloudera Impala queries, manage the Hive Metastore, HBase, Sqoop, ZooKeeper, MapReduce jobs, and create and schedule worklows with Oozie.&lt;/p>
+&lt;p>更加关于HUE的介绍及演示可访问其官方网站：
+&lt;a href="http://gethue.com" title="http://gethue.com" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ http://gethue.com
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p></description></item></channel></rss>

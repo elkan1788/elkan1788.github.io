@@ -1,0 +1,963 @@
+<!doctype html><html lang=zh-CN data-theme=dark><head><meta charset=UTF-8><meta name=viewport content="width=device-width"><meta name=theme-color content="#222" media="(prefers-color-scheme: dark)"><meta name=generator content="Hugo 0.138.0"><link rel="shortcut icon" type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/imgs/icons/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=/imgs/icons/favicon-32x32.png><link rel=apple-touch-icon sizes=180x180 href=/imgs/icons/apple-touch-icon.png><meta itemprop=name content="Java程序与RSR232串口通讯小练手"><meta itemprop=description content="再平凡的人也有属于他的梦想 ✨"><meta name=description content="再平凡的人也有属于他的梦想 ✨"><meta itemprop=datePublished zgotmplz><meta itemprop=dateModified zgotmplz><meta itemprop=image content="https://lisenhui.cn/imgs/avatar.png"><meta itemprop=keywords content="Java,RSR232"><meta property="og:type" content="article"><meta property="og:title" content="Java程序与RSR232串口通讯小练手"><meta property="og:description" content="再平凡的人也有属于他的梦想 ✨"><meta property="og:image" content="/imgs/avatar.png"><meta property="og:image:width" content="312"><meta property="og:image:height" content="312"><meta property="og:image:type" content="image/jpeg/png/svg/jpg"><meta property="og:url" content="https://lisenhui.cn/tech/java-hard-rsr232.html"><meta property="og:site_name" content="热爱生活与梦想"><meta property="og:locale" content="zh-CN"><meta property="article:author" content="凡梦星尘"><meta property="article:published_time" content="2012-03-24 22:21:20 +0000 UTC"><meta property="article:modified_time" content="2012-03-24 22:21:20 +0000 UTC"><link type=text/css rel=stylesheet href=https://s4.zstatic.net/ajax/libs/font-awesome/6.6.0/css/all.min.css><link type=text/css rel=stylesheet href=https://s4.zstatic.net/ajax/libs/animate.css/4.1.1/animate.min.css><link type=text/css rel=stylesheet href=https://s4.zstatic.net/ajax/libs/viewerjs/1.11.6/viewer.min.css><link rel=stylesheet href=/css/main.min.995b14f0e601c18678b4526e43601f600532d294655f92d033a6753caa9e32ea.css><link rel=stylesheet type=text/css href=/css/custom_style.css><script type=text/javascript>(function(){localDB={set:function(e,t,n){if(n===0)return;const s=new Date,o=n*864e5,i={value:t,expiry:s.getTime()+o};localStorage.setItem(e,JSON.stringify(i))},get:function(e){const t=localStorage.getItem(e);if(!t)return void 0;const n=JSON.parse(t),s=new Date;return s.getTime()>n.expiry?(localStorage.removeItem(e),void 0):n.value}},theme={active:function(){const e=localDB.get("theme");if(e==null)return;theme.toggle(e),window.matchMedia("(prefers-color-scheme: dark)").addListener(function(e){theme.toggle(e.matches?"dark":"light")})},toggle:function(e){document.documentElement.setAttribute("data-theme",e),localDB.set("theme",e,2);const t=document.querySelector("iframe.giscus-frame");if(t){const n={setConfig:{theme:e}};t.contentWindow.postMessage({giscus:n},"https://giscus.app")}}},theme.active()})(window)</script><script class=next-config data-name=page type=application/json>{"comments":true,"isHome":false,"isPage":true,"path":"java-hard-rsr232.html","permalink":"https://lisenhui.cn/tech/java-hard-rsr232.html","title":"Java程序与RSR232串口通讯小练手","waline":{"commentcnt":{"alias":"@waline/client","alias_name":"waline","file":"dist/comment.js","name":"comment","version":"2.15.8"},"pagecnt":{"alias":"@waline/client","alias_name":"waline","file":"dist/pageview.js","name":"pageview","version":"2.15.8"}}}</script><script type=text/javascript>document.addEventListener("DOMContentLoaded",()=>{var e=document.createElement("script");e.charset="UTF-8",e.id="LA_COLLECT",e.src="https://sdk.51.la/js-sdk-pro.min.js",e.async="true",e.onload=function(){LA.init({id:"JhW0FuUlJYQmqAJt",ck:"JhW0FuUlJYQmqAJt",autoTrack:!0})},document.head.appendChild(e)})</script><title>Java程序与RSR232串口通讯小练手 - 热爱生活与梦想</title><noscript><link rel=stylesheet href=/css/noscript.css></noscript></head><body itemscope itemtype=http://schema.org/WebPage class=use-motion><div class=headband></div><main class=main><header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle aria-label role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div></div><div class=site-meta><a href=/ class=brand rel=start><i class=logo-line></i><h1 class=site-title>热爱生活与梦想</h1><i class=logo-line></i></a><p class=site-subtitle itemprop=description>没有伞的孩子要学会努力奔跑 ✊</p></div><div class=site-nav-right><div class="toggle popup-trigger"><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul class="main-menu menu"><li class="menu-item menu-item-home"><a href=/ class=hvr-icon-pulse rel=section><i class="fa fa-home hvr-icon"></i>首页</a></li><li class="menu-item menu-item-about"><a href=/about.html class=hvr-icon-pulse rel=section><i class="fa fa-user hvr-icon"></i>关于</a></li><li class="menu-item menu-item-blog"><a href=/blog/ class=hvr-icon-pulse rel=section><i class="fa fa-blog hvr-icon"></i>博客点滴</a></li><li class="menu-item menu-item-tech"><a href=/tech/ class=hvr-icon-pulse rel=section><i class="fa fa-swatchbook hvr-icon"></i>技术锦囊</a></li><li class="menu-item menu-item-life"><a href=/life/ class=hvr-icon-pulse rel=section><i class="fa fa-pizza-slice hvr-icon"></i>生活花絮</a></li><li class="menu-item menu-item-flinks"><a href=/flinks.html class=hvr-icon-pulse rel=section><i class="fa fa-link hvr-icon"></i>友情链接</a></li><li class="menu-item menu-item-archives"><a href=/archives/ class=hvr-icon-pulse rel=section><i class="fa fa-archive hvr-icon"></i>归档
+<span class=badge>81</span></a></li><li class="menu-item menu-item-commonweal"><a href=/404.html class=hvr-icon-pulse rel=section><i class="fa fa-heartbeat hvr-icon"></i>公益 404</a></li><li class="menu-item menu-item-search"><a role=button class="popup-trigger hvr-icon-pulse"><i class="fa fa-search fa-fw hvr-icon"></i>搜索</a></li></ul></nav><div class=search-pop-overlay><div class="popup search-popup"><div class=search-header><span class=search-icon><i class="fa fa-search"></i></span><div class=search-input-container></div><span class=popup-btn-close role=button><i class="fa fa-times-circle"></i></span></div><div class=search-result-container><div class=algolia-hits></div></div><div class=search-footer><div class=algolia-pagination></div><div class=search-meta-info><div class="search-hit-stats algolia-stats"></div><div class=search-vendor><span>Search By</span>
+<a title=Algolia target=_blank href="https://www.algolia.com/?utm_source=instantsearch.js&utm_medium=website&utm_content=lisenhui.cn&utm_campaign=poweredby"><img src=/imgs/algolia-logo.svg></a></div></div></div></div></div></div><div class="toggle sidebar-toggle" role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div><aside class=sidebar><div class="sidebar-inner sidebar-overview-active"><ul class=sidebar-nav><li class=sidebar-nav-toc>文章目录</li><li class=sidebar-nav-overview>站点概览</li></ul><div class=sidebar-panel-container><div class="post-toc-wrap sidebar-panel"><div class="post-toc animated"><nav id=TableOfContents></nav></div></div><div class="site-overview-wrap sidebar-panel"><div class="site-author site-overview-item animated" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image alt=凡梦星尘 src=/imgs/img-lazy-loading.gif data-src=/imgs/avatar.png><p class=site-author-name itemprop=name>凡梦星尘</p><div class=site-description itemprop=description>再平凡的人也有属于他的梦想 ✨</div></div><div class="site-state-wrap site-overview-item animated"><nav class=site-state><div class="site-state-item site-state-posts"><a href=/archives/><span class=site-state-item-count>81</span>
+<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>26</span>
+<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>119</span>
+<span class=site-state-item-name>标签</span></a></div></nav></div><div class="links-of-social site-overview-item animated"><span class=links-of-social-item><a href=https://github.com/elkan1788 title="Github → https://github.com/elkan1788" rel=noopener class=hvr-icon-pulse target=_blank><i class="fab fa-github fa-fw hvr-icon"></i>
+Github
+</a></span><span class=links-of-social-item><a href=https://www.zhihu.com/people/lisenhui title="知乎 → https://www.zhihu.com/people/lisenhui" rel=noopener class=hvr-icon-pulse target=_blank><i class="fa fa-book fa-fw hvr-icon"></i>
+知乎</a></span></div><div class="cc-license animated" itemprop=license><a href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh class=cc-opacity rel=noopener target=_blank title=共享知识><img src=/imgs/img-lazy-loading.gif data-src=/imgs/cc/big/by_nc_sa.svg alt=共享知识></a></div><div class=xyears-blog><a href=https://www.foreverblog.cn/blog/3306.html title=十年之约 target=_blank><img src=/imgs/img-lazy-loading.gif data-src=https://img.foreverblog.cn/logo_en_default.png alt=十年之约 style=height:16px>
+</a><a href=https://www.foreverblog.cn/go.html title=穿梭虫洞-随机访问十年之约友链博客 target=_blank><img src=/imgs/img-lazy-loading.gif data-src=https://img.foreverblog.cn/wormhole_3.gif alt=穿梭虫洞-随机访问十年之约友链博客 style=height:24px></a></div><div class=not-by-ai><img src=/imgs/img-lazy-loading.gif data-src=/imgs/not-by-ai.png title=声明内容非AI生成 alt=声明内容非AI生成></div></div></div></div><div id=siteinfo-card-widget class=sidebar-card-widget><div class=item-headline><i class="fas fa-chart-line"></i>
+<span>网站资讯</span></div><div class=siteinfo><div class=siteinfo-item><div class=item-name><i class="fa-solid fa-calendar-check"></i>已运行：</div><div class=item-count id=runTimes data-publishdate=2010-09-05T10:11:53+00:00></div></div><div id=la-siteinfo-widget style=display:none></div><div class=siteinfo-item><div class=item-name><i class="fa fa-user-plus"></i>今日访问：</div><div class=item-count id=today_site_pv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-user-clock"></i>昨日访问：</div><div class=item-count id=yesterday_site_pv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-arrows-down-to-people"></i>本月访问：</div><div class=item-count id=month_site_pv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-users"></i>总访问量：</div><div class=item-count id=total_site_pv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-font"></i>总字数：</div><div class=item-count id=wordsCount data-count=94957></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-mug-hot"></i>阅读约：</div><div class=item-count id=readTimes data-times=232></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-clock-rotate-left"></i>最后更新于：</div><div class=item-count id=last-push-date data-lastpushdate=2024-10-15T19:08:29+08:00></div></div></div></div></aside><div class=sidebar-dimmer></div></header><div class=tool-buttons><div id=goto-comments class="button goto-comments" title=直达评论><i class="fas fa-comments"></i></div><div id=toggle-theme class=button title=深浅模式切换><i class="fas fa-adjust"></i></div><div class=back-to-top role=button title=返回顶部><i class="fa fa-arrow-up"></i>
+<span>0%</span></div></div><div class=reading-progress-bar></div><a role=button class="book-mark-link book-mark-link-fixed"></a><a href=https://github.com/elkan1788 rel="noopener external nofollow noreferrer" target=_blank title="Follow me on GitHub" class="exturl github-corner"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0 0 115 115h15l12 27L250 250V0z"/><path d="M128.3 109C113.8 99.7 119 89.6 119 89.6 122 82.7 120.5 78.6 120.5 78.6 119.2 72 123.4 76.3 123.4 76.3 127.3 80.9 125.5 87.3 125.5 87.3 122.9 97.6 130.6 101.9 134.4 103.2" fill="currentcolor" style="transform-origin:130px 106px" class="octo-arm"/><path d="M115 115C114.9 115.1 118.7 116.5 119.8 115.4l13.9-13.8C136.9 99.2 139.9 98.4 142.2 98.6 133.8 88 127.5 74.4 143.8 58 148.5 53.4 154 51.2 159.7 51 160.3 49.4 163.2 43.6 171.4 40.1 171.4 40.1 176.1 42.5 178.8 56.2 183.1 58.6 187.2 61.8 190.9 65.4 194.5 69 197.7 73.2 200.1 77.6 213.8 80.2 216.3 84.9 216.3 84.9 212.7 93.1 206.9 96 205.4 96.6 205.1 102.4 203 107.8 198.3 112.5 181.9 128.9 168.3 122.5 157.7 114.1 157.9 116.9 156.7 120.9 152.7 124.9L141 136.5C139.8 137.7 141.6 141.9 141.8 141.8z" fill="currentcolor" class="octo-body"/></svg></a><noscript><div class=noscript-warning>Theme NexT works best with JavaScript enabled</div></noscript><div class="main-inner post posts-expand"><div class=post-block><article itemscope itemtype=http://schema.org/Article class=post-content lang><link itemprop=mainEntityOfPage href=https://lisenhui.cn/tech/java-hard-rsr232.html><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=image content="/imgs/avatar.png"><meta itemprop=name content="凡梦星尘"></span><span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="凡梦星尘"><meta itemprop=description content="再平凡的人也有属于他的梦想 ✨"></span><span hidden itemprop=post itemscope itemtype=http://schema.org/CreativeWork><meta itemprop=name content="Java程序与RSR232串口通讯小练手"><meta itemprop=description content="一直以来都是在学习J2EE方面的应用系统开发，从未想过用JAVA来编写硬件交互程序，不过自己就是喜欢尝试一些未曾接触的新东西。在网上搜索了些资源，了解到JAVA写串口通讯的还是蛮多的，那么便着手准备开发调试环境。软件程序开发环境搭建不成问题，可这硬件环境就有点犯难啦。更何况自己用的是笔记本哪来的串口呀，再说要是真拿这串口硬件来自己也不会弄，随即想到了虚拟机，觉得这东西应该也有虚拟的吧，果真跟自己的猜测一样还真有这东西，顺便也下载了个串口小助手做为调试之用。"></span><header class=post-header><h1 class=post-title itemprop="name headline">Java程序与RSR232串口通讯小练手
+<a href=https://github.com/elkan1788/myblog-sources/tree/main/content/tech/2012/03-24-java-hard-rsr232.md rel="noopener external nofollow noreferrer" target=_blank class="exturl post-edit-link" title=编辑><i class="fa fa-pen-nib"></i></a></h1><div class=post-meta-container><div class=post-meta-items><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-calendar"></i>
+</span><span class=post-meta-item-text title=发表于>发表于：
+</span><time title="创建时间：2012-03-24 22:21:20 +0000 UTC" itemprop="dateCreated datePublished" datetime="2012-03-24 22:21:20 +0000 UTC">2012-03-24
+</time></span><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-folder-open"></i>
+</span><span class=post-meta-item-text title=分类于>分类于：
+</span><span itemprop=about itemscope itemtype=http://schema.org/Thing><a href=/categories/java%E5%B7%A5%E5%8E%82 itemprop=url rel=index><span itemprop=name>技术锦囊/Java工厂</span></a></span></span></div><div class=post-meta-items><span class=post-meta-item title=字数><span class=post-meta-item-icon><i class="fas fa-solid fa-file-word"></i>
+</span><span class=post-meta-item-text>字数：</span>
+<span>3364</span>
+</span><span class=post-meta-item title=阅读><span class=post-meta-item-icon><i class="fas fa-solid fa-clock"></i>
+</span><span class=post-meta-item-text>阅读：&ap;</span>
+<span>7分钟</span>
+</span><span class=post-meta-item title=浏览><span class=post-meta-item-icon><i class="fas fa-solid fa-eye"></i>
+</span><span class=post-meta-item-text>浏览：
+</span><span id=pageview-count data-path=/tech/java-hard-rsr232.html><i class="fa fa-sync fa-spin"></i>
+</span></span><span class=post-meta-item title><span class=post-meta-item-icon><i class="fas fa-solid fa-comments"></i>
+</span><span class=post-meta-item-text title=评论>评论：
+</span><span id=comments-count class=waline-comment-count data-path=/tech/java-hard-rsr232.html><i class="fa fa-sync fa-spin"></i></span></span></div></div></header><div class=post-body itemprop=articleBody><p>一直以来都是在学习J2EE方面的应用系统开发，从未想过用JAVA来编写硬件交互程序，不过自己就是喜欢尝试一些未曾接触的新东西。在网上搜索了些资源，了解到JAVA写串口通讯的还是蛮多的，那么便着手准备开发调试环境。软件程序开发环境搭建不成问题，可这硬件环境就有点犯难啦。更何况自己用的是笔记本哪来的串口呀，再说要是真拿这串口硬件来自己也不会弄，随即想到了虚拟机，觉得这东西应该也有虚拟的吧，果真跟自己的猜测一样还真有这东西，顺便也下载了个串口小助手做为调试之用。</p><p>下面就先看看软件环境的搭建：</p><ul><li>下载<code>comm.jar</code>、<code>win32com.dll</code>和<code>javax.comm.properties</code>。 (附件提供下载)</li><li>介绍：<code>comm.jar</code>提供了通讯用的java API，<code>win32com.dll</code>提供了供<code>comm.jar</code>调用的本地驱动接口，<code>javax.comm.properties</code>是这个驱动的类配置文件</li><li>拷贝<code>javacomm.jar</code>到<code>X:\jre\lib\ext</code>目录下面;</li><li>拷贝<code>javax.comm.properties</code>到<code>X:\jre\lib</code>目录下面;</li><li>拷贝<code>win32com.dll</code>到<code>X:\jre\bin</code>目录下面;</li><li>更新下IDE里面的JDK环境，如下图：</li></ul><p><img src=/imgs/img-lazy-loading.gif data-src=//imgs.lisenhui.cn/blog/2012/03-24-java-hard-rsr232-1.png alt=java-hard-rsr232-1></p><p>接着是硬件虚拟环境安装虚拟串口，这里我用的是VSPD6.0(附件提供下载)，安装好后启动VSPD添加我们所需要的端口，注意这里是按组的方式添加的，例如COM1和COM2是一组同时添加，以此类推。</p><p>所有环境都准备好后，先来简单认识下comm.jar的内容。单从comm API的javadoc来看，SUM提供给我们的只有区区以下13个类或接口，具体如下：</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>
+</span></span><span style=display:flex><span>javax.<span style=color:#a6e22e>comm</span>.<span style=color:#a6e22e>CommDriver</span>
+</span></span><span style=display:flex><span>javax.<span style=color:#a6e22e>comm</span>.<span style=color:#a6e22e>CommPort</span> javax.<span style=color:#a6e22e>comm</span>.<span style=color:#a6e22e>ParallelPort</span>
+</span></span><span style=display:flex><span>javax.<span style=color:#a6e22e>comm</span>.<span style=color:#a6e22e>SerialPort</span> javax.<span style=color:#a6e22e>comm</span>.<span style=color:#a6e22e>CommPortIdentifier</span>
+</span></span><span style=display:flex><span>javax.<span style=color:#a6e22e>comm</span>.<span style=color:#a6e22e>CommPortOwnershipListener</span>
+</span></span><span style=display:flex><span>javax.<span style=color:#a6e22e>comm</span>.<span style=color:#a6e22e>ParallelPortEvent</span> javax.<span style=color:#a6e22e>comm</span>.<span style=color:#a6e22e>SerialPortEvent</span>
+</span></span><span style=display:flex><span>javax.<span style=color:#a6e22e>comm</span>.<span style=color:#a6e22e>ParallelPortEventListener</span> (<span style=color:#66d9ef>extends</span> java.<span style=color:#a6e22e>util</span>.<span style=color:#a6e22e>EventListener</span>)
+</span></span><span style=display:flex><span>javax.<span style=color:#a6e22e>comm</span>.<span style=color:#a6e22e>SerialPortEventListener</span> (<span style=color:#66d9ef>extends</span> java.<span style=color:#a6e22e>util</span>.<span style=color:#a6e22e>EventListener</span>)
+</span></span><span style=display:flex><span>javax.<span style=color:#a6e22e>comm</span>.<span style=color:#a6e22e>NoSuchPortException</span> javax.<span style=color:#a6e22e>comm</span>.<span style=color:#a6e22e>PortInUseException</span>
+</span></span><span style=display:flex><span>javax.<span style=color:#a6e22e>comm</span>.<span style=color:#a6e22e>UnsupportedCommOperationException</span>
+</span></span></code></pre></td></tr></table></div></div><p>这些类和接口命名一看便知其意，就不做一一介绍啦，可以到官网或网上找到更详细的信息。下面先测试下所搭建的环境是否可用，主要代码如下：</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">10
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>
+</span></span><span style=display:flex><span>Enumeration<span style=color:#f92672>&lt;?&gt;</span> en <span style=color:#f92672>=</span> CommPortIdentifier.<span style=color:#a6e22e>getPortIdentifiers</span>();
+</span></span><span style=display:flex><span>CommPortIdentifier portId;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>while</span> (en.<span style=color:#a6e22e>hasMoreElements</span>()) {
+</span></span><span style=display:flex><span>	portId <span style=color:#f92672>=</span> (CommPortIdentifier) en.<span style=color:#a6e22e>nextElement</span>();
+</span></span><span style=display:flex><span>	<span style=color:#75715e>// 如果端口类型是串口，则打印出其端口信息</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>if</span> (portId.<span style=color:#a6e22e>getPortType</span>() <span style=color:#f92672>==</span> CommPortIdentifier.<span style=color:#a6e22e>PORT_SERIAL</span>) {
+</span></span><span style=display:flex><span>		System.<span style=color:#a6e22e>out</span>.<span style=color:#a6e22e>println</span>(portId.<span style=color:#a6e22e>getName</span>());
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></td></tr></table></div></div><p>运行代码后，控制台有输出正确的端口(如下图)，说明所有环境正常可进行下步工作，否则请检查。</p><p><img src=/imgs/img-lazy-loading.gif data-src=//imgs.lisenhui.cn/blog/2012/03-24-java-hard-rsr232-2.png alt=java-hard-rsr232-2></p><p>最后要解决的就是与串口数据交互的问题。在这个问题上，最主要的难点就是数据读取，因为我们不知道端口什么时候会有数据到来，也不知数据长度如何。通常，串口通信应用程序有两种模式，一种是实现SerialPortEventListener接口，监听各种串口事件并作相应处理；另一种就是建立一个独立的接收线程专门负责数据的接收。参考众多老前辈的代码后，下面就采用第一种方式写了个简单的助手程序，具体的实现请看详细代码，如下：</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 49
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 50
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 51
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 52
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 53
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 54
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 55
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 56
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 57
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 58
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 59
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 60
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 61
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 62
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 63
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 64
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 65
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 66
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 67
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 68
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 69
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 70
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 71
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 72
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 73
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 74
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 75
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 76
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 77
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 78
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 79
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 80
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 81
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 82
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 83
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 84
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 85
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 86
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 87
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 88
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 89
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 90
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 91
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 92
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 93
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 94
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 95
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 96
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 97
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 98
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 99
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">100
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">101
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">102
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">103
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">104
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">105
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">106
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">107
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">108
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">109
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">110
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">111
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">112
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">113
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">114
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">115
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">116
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">117
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">118
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">119
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">120
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">121
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">122
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">123
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">124
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">125
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">126
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">127
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">128
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">129
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">130
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">131
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">132
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">133
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">134
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">135
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">136
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">137
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">138
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">139
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">140
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">141
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">142
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">143
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">144
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">145
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">146
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">147
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">148
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">149
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">150
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">151
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">152
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">153
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">154
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">155
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">156
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">157
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">158
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">159
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">160
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">161
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">162
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">163
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">164
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">165
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">166
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">167
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">168
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">169
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">170
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">171
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">172
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">173
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">174
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">175
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">176
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">177
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">178
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">179
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">180
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">181
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">182
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">183
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">184
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">185
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">186
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">187
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">188
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">189
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">190
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">191
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">192
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">193
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">194
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">195
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">196
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">197
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">198
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">199
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">200
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">201
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">202
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">203
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">204
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">205
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">206
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">207
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">208
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">209
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">210
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">211
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">212
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">213
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">214
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">215
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">216
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">217
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">218
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">219
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">220
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">221
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">222
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">223
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">224
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">225
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">226
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">227
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">228
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">229
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">230
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">231
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">232
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">233
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">234
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">235
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">236
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">237
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">238
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">239
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">240
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">241
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">242
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">243
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">244
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">245
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">246
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">247
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">248
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">249
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">250
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">251
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">252
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">253
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">254
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">255
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">256
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">257
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">258
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">259
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">260
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">261
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">262
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">263
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">264
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">265
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">266
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">267
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">268
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">269
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">270
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">271
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">272
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">273
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">274
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">275
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">276
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">277
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">278
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">279
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">280
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">281
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">282
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">283
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">284
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">285
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">286
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">287
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">288
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">289
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">290
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">291
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">292
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">293
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">294
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">295
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">296
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">297
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">298
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">299
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">300
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">301
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">302
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">303
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">304
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">305
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">306
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">307
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">308
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">309
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">310
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">311
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">312
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">313
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">314
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">315
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">316
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">317
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">318
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">319
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">320
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">321
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">322
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">323
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">324
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">325
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">326
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">327
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">328
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">329
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">330
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">331
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">332
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">333
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">334
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">335
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">336
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">337
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">338
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">339
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">340
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">341
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">342
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">343
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">344
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">345
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">346
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">347
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">348
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">349
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">350
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">351
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">352
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">353
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">354
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">355
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">356
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">357
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">358
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">359
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">360
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">361
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">362
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">363
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">364
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">365
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">366
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">367
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">368
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">369
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">370
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">371
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">372
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">373
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">374
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">375
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">376
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">377
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">378
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">379
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">380
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">381
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">382
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">383
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">384
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">385
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">386
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">387
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">388
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">389
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">390
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">391
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">392
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">393
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">394
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">395
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">396
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">397
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">398
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">399
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">400
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">401
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">402
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">403
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">404
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">405
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">406
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">407
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">408
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">409
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">410
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">411
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">412
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">413
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">414
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">415
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">416
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">417
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">418
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">419
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">420
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">421
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">422
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">423
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">424
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">425
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">426
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">427
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">428
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">429
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">430
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">431
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">432
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">433
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-java data-lang=java><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>package</span> com.elkan1788.view;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.awt.BorderLayout;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.awt.Button;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.awt.Color;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.awt.Font;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.awt.GridLayout;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.awt.Image;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.awt.TextArea;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.awt.TextField;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.awt.event.ActionEvent;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.awt.event.ActionListener;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.io.IOException;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.io.InputStream;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.io.OutputStream;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.util.ArrayList;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.util.Enumeration;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.util.List;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> java.util.TooManyListenersException;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> javax.comm.CommPortIdentifier;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> javax.comm.NoSuchPortException;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> javax.comm.PortInUseException;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> javax.comm.SerialPort;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> javax.comm.SerialPortEvent;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> javax.comm.SerialPortEventListener;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> javax.comm.UnsupportedCommOperationException;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> javax.imageio.ImageIO;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> javax.swing.JComboBox;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> javax.swing.JFrame;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> javax.swing.JLabel;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> javax.swing.JOptionPane;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> javax.swing.JPanel;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> javax.swing.SwingConstants;
+</span></span><span style=display:flex><span><span style=color:#f92672>import</span> javax.swing.border.EmptyBorder;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>public</span> <span style=color:#66d9ef>class</span> <span style=color:#a6e22e>JavaRs232</span> <span style=color:#66d9ef>extends</span> JFrame <span style=color:#66d9ef>implements</span> ActionListener, SerialPortEventListener {
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * JDK Serial Version UID
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>final</span> <span style=color:#66d9ef>long</span> serialVersionUID <span style=color:#f92672>=</span> <span style=color:#f92672>-</span>7270865686330790103L;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>int</span> WIN_WIDTH <span style=color:#f92672>=</span> 380;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>int</span> WIN_HEIGHT <span style=color:#f92672>=</span> 300;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> JComboBox<span style=color:#f92672>&lt;?&gt;</span> portCombox, rateCombox, dataCombox, stopCombox, parityCombox;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> Button openPortBtn, closePortBtn, sendMsgBtn;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> TextField sendTf;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> TextArea readTa;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> JLabel statusLb;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>private</span> String portname, rate, data, stop, parity;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>protected</span> CommPortIdentifier portId;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>protected</span> Enumeration<span style=color:#f92672>&lt;?&gt;</span> ports;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>protected</span> List<span style=color:#f92672>&lt;</span>String<span style=color:#f92672>&gt;</span> portList;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>protected</span> SerialPort serialPort;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>protected</span> OutputStream outputStream <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>protected</span> InputStream inputStream <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>protected</span> String mesg;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>protected</span> <span style=color:#66d9ef>int</span> sendCount, reciveCount;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    <span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     * 默认构造函数
+</span></span></span><span style=display:flex><span><span style=color:#75715e>     */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#a6e22e>JavaRs232</span>() {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>super</span>(<span style=color:#e6db74>&#34;Java RS-232串口通信测试程序   凡梦星尘&#34;</span>);
+</span></span><span style=display:flex><span>		setSize(WIN_WIDTH, WIN_HEIGHT);
+</span></span><span style=display:flex><span>		setLocationRelativeTo(<span style=color:#66d9ef>null</span>);
+</span></span><span style=display:flex><span>		Image icon <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>			icon <span style=color:#f92672>=</span> ImageIO.<span style=color:#a6e22e>read</span>(JavaRs232.<span style=color:#a6e22e>class</span>.<span style=color:#a6e22e>getResourceAsStream</span>(<span style=color:#e6db74>&#34;/res/rs232.png&#34;</span>));
+</span></span><span style=display:flex><span>		} <span style=color:#66d9ef>catch</span> (IOException e) {
+</span></span><span style=display:flex><span>			showErrMesgbox(e.<span style=color:#a6e22e>getMessage</span>());
+</span></span><span style=display:flex><span>		}
+</span></span><span style=display:flex><span>		setIconImage(icon);
+</span></span><span style=display:flex><span>		setResizable(<span style=color:#66d9ef>false</span>);
+</span></span><span style=display:flex><span>		scanPorts();
+</span></span><span style=display:flex><span>		initComponents();
+</span></span><span style=display:flex><span>		setDefaultCloseOperation(JFrame.<span style=color:#a6e22e>EXIT_ON_CLOSE</span>);
+</span></span><span style=display:flex><span>		setVisible(<span style=color:#66d9ef>true</span>);
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 初始化各UI组件
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @since 2012-3-22 下午11:56:39
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>initComponents</span>() {
+</span></span><span style=display:flex><span>		<span style=color:#75715e>// 共用常量</span>
+</span></span><span style=display:flex><span>		Font lbFont <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Font(<span style=color:#e6db74>&#34;微软雅黑&#34;</span>, Font.<span style=color:#a6e22e>TRUETYPE_FONT</span>, 14);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>		<span style=color:#75715e>// 创建左边面板</span>
+</span></span><span style=display:flex><span>		JPanel northPane <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JPanel();
+</span></span><span style=display:flex><span>		northPane.<span style=color:#a6e22e>setLayout</span>(<span style=color:#66d9ef>new</span> GridLayout(1, 1));
+</span></span><span style=display:flex><span>		<span style=color:#75715e>// 设置左边面板各组件</span>
+</span></span><span style=display:flex><span>		JPanel leftPane <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JPanel();
+</span></span><span style=display:flex><span>		leftPane.<span style=color:#a6e22e>setOpaque</span>(<span style=color:#66d9ef>false</span>);
+</span></span><span style=display:flex><span>		leftPane.<span style=color:#a6e22e>setLayout</span>(<span style=color:#66d9ef>new</span> GridLayout(3,2));
+</span></span><span style=display:flex><span>		JLabel portnameLb <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JLabel(<span style=color:#e6db74>&#34;串口号：&#34;</span>);
+</span></span><span style=display:flex><span>		portnameLb.<span style=color:#a6e22e>setFont</span>(lbFont);
+</span></span><span style=display:flex><span>		portnameLb.<span style=color:#a6e22e>setHorizontalAlignment</span>(SwingConstants.<span style=color:#a6e22e>RIGHT</span>);
+</span></span><span style=display:flex><span>		portCombox <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JComboBox<span style=color:#f92672>&lt;</span>String<span style=color:#f92672>&gt;</span>((String <span style=color:#f92672>[]</span>)portList.<span style=color:#a6e22e>toArray</span>(<span style=color:#66d9ef>new</span> String<span style=color:#f92672>[</span>0<span style=color:#f92672>]</span>));
+</span></span><span style=display:flex><span>		portCombox.<span style=color:#a6e22e>addActionListener</span>(<span style=color:#66d9ef>this</span>);
+</span></span><span style=display:flex><span>		JLabel databitsLb <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JLabel(<span style=color:#e6db74>&#34;数据位：&#34;</span>);
+</span></span><span style=display:flex><span>		databitsLb.<span style=color:#a6e22e>setFont</span>(lbFont);
+</span></span><span style=display:flex><span>		databitsLb.<span style=color:#a6e22e>setHorizontalAlignment</span>(SwingConstants.<span style=color:#a6e22e>RIGHT</span>);
+</span></span><span style=display:flex><span>		dataCombox <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JComboBox<span style=color:#f92672>&lt;</span>Integer<span style=color:#f92672>&gt;</span>(<span style=color:#66d9ef>new</span> Integer<span style=color:#f92672>[]</span>{5, 6, 7, 8});
+</span></span><span style=display:flex><span>		dataCombox.<span style=color:#a6e22e>setSelectedIndex</span>(3);
+</span></span><span style=display:flex><span>		dataCombox.<span style=color:#a6e22e>addActionListener</span>(<span style=color:#66d9ef>this</span>);
+</span></span><span style=display:flex><span>		JLabel parityLb <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JLabel(<span style=color:#e6db74>&#34;校验位：&#34;</span>);
+</span></span><span style=display:flex><span>		parityLb.<span style=color:#a6e22e>setFont</span>(lbFont);
+</span></span><span style=display:flex><span>		parityLb.<span style=color:#a6e22e>setHorizontalAlignment</span>(SwingConstants.<span style=color:#a6e22e>RIGHT</span>);
+</span></span><span style=display:flex><span>		parityCombox <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JComboBox<span style=color:#f92672>&lt;</span>String<span style=color:#f92672>&gt;</span>(<span style=color:#66d9ef>new</span> String<span style=color:#f92672>[]</span>{<span style=color:#e6db74>&#34;NONE&#34;</span>,<span style=color:#e6db74>&#34;ODD&#34;</span>,<span style=color:#e6db74>&#34;EVEN&#34;</span>,<span style=color:#e6db74>&#34;MARK&#34;</span>,<span style=color:#e6db74>&#34;SPACE&#34;</span>});
+</span></span><span style=display:flex><span>		parityCombox.<span style=color:#a6e22e>addActionListener</span>(<span style=color:#66d9ef>this</span>);
+</span></span><span style=display:flex><span>		<span style=color:#75715e>// 添加组件至面板</span>
+</span></span><span style=display:flex><span>		leftPane.<span style=color:#a6e22e>add</span>(portnameLb);
+</span></span><span style=display:flex><span>		leftPane.<span style=color:#a6e22e>add</span>(portCombox);
+</span></span><span style=display:flex><span>		leftPane.<span style=color:#a6e22e>add</span>(databitsLb);
+</span></span><span style=display:flex><span>		leftPane.<span style=color:#a6e22e>add</span>(dataCombox);
+</span></span><span style=display:flex><span>		leftPane.<span style=color:#a6e22e>add</span>(parityLb);
+</span></span><span style=display:flex><span>		leftPane.<span style=color:#a6e22e>add</span>(parityCombox);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>		<span style=color:#75715e>//创建右边面板</span>
+</span></span><span style=display:flex><span>		JPanel rightPane <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JPanel();
+</span></span><span style=display:flex><span>		rightPane.<span style=color:#a6e22e>setLayout</span>(<span style=color:#66d9ef>new</span> GridLayout(3,2));
+</span></span><span style=display:flex><span>		<span style=color:#75715e>// 设置右边面板各组件</span>
+</span></span><span style=display:flex><span>		JLabel baudrateLb <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JLabel(<span style=color:#e6db74>&#34;波特率：&#34;</span>);
+</span></span><span style=display:flex><span>		baudrateLb.<span style=color:#a6e22e>setFont</span>(lbFont);
+</span></span><span style=display:flex><span>		baudrateLb.<span style=color:#a6e22e>setHorizontalAlignment</span>(SwingConstants.<span style=color:#a6e22e>RIGHT</span>);
+</span></span><span style=display:flex><span>		rateCombox <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JComboBox<span style=color:#f92672>&lt;</span>Integer<span style=color:#f92672>&gt;</span>(<span style=color:#66d9ef>new</span> Integer<span style=color:#f92672>[]</span>{2400,4800,9600,14400,19200,38400,56000});
+</span></span><span style=display:flex><span>		rateCombox.<span style=color:#a6e22e>setSelectedIndex</span>(2);
+</span></span><span style=display:flex><span>		rateCombox.<span style=color:#a6e22e>addActionListener</span>(<span style=color:#66d9ef>this</span>);
+</span></span><span style=display:flex><span>		JLabel stopbitsLb <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JLabel(<span style=color:#e6db74>&#34;停止位：&#34;</span>);
+</span></span><span style=display:flex><span>		stopbitsLb.<span style=color:#a6e22e>setFont</span>(lbFont);
+</span></span><span style=display:flex><span>		stopbitsLb.<span style=color:#a6e22e>setHorizontalAlignment</span>(SwingConstants.<span style=color:#a6e22e>RIGHT</span>);
+</span></span><span style=display:flex><span>		stopCombox <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JComboBox<span style=color:#f92672>&lt;</span>String<span style=color:#f92672>&gt;</span>(<span style=color:#66d9ef>new</span> String<span style=color:#f92672>[]</span>{<span style=color:#e6db74>&#34;1&#34;</span>,<span style=color:#e6db74>&#34;2&#34;</span>,<span style=color:#e6db74>&#34;1.5&#34;</span>});
+</span></span><span style=display:flex><span>		stopCombox.<span style=color:#a6e22e>addActionListener</span>(<span style=color:#66d9ef>this</span>);
+</span></span><span style=display:flex><span>		openPortBtn <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Button(<span style=color:#e6db74>&#34;打开端口&#34;</span>);
+</span></span><span style=display:flex><span>		openPortBtn.<span style=color:#a6e22e>addActionListener</span>(<span style=color:#66d9ef>this</span>);
+</span></span><span style=display:flex><span>		closePortBtn <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Button(<span style=color:#e6db74>&#34;关闭端口&#34;</span>);
+</span></span><span style=display:flex><span>		closePortBtn.<span style=color:#a6e22e>addActionListener</span>(<span style=color:#66d9ef>this</span>);
+</span></span><span style=display:flex><span>		<span style=color:#75715e>// 添加组件至面板</span>
+</span></span><span style=display:flex><span>		rightPane.<span style=color:#a6e22e>add</span>(baudrateLb);
+</span></span><span style=display:flex><span>		rightPane.<span style=color:#a6e22e>add</span>(rateCombox);
+</span></span><span style=display:flex><span>		rightPane.<span style=color:#a6e22e>add</span>(stopbitsLb);
+</span></span><span style=display:flex><span>		rightPane.<span style=color:#a6e22e>add</span>(stopCombox);
+</span></span><span style=display:flex><span>		rightPane.<span style=color:#a6e22e>add</span>(openPortBtn);
+</span></span><span style=display:flex><span>		rightPane.<span style=color:#a6e22e>add</span>(closePortBtn);
+</span></span><span style=display:flex><span>		<span style=color:#75715e>// 将左右面板组合添加到北边的面板</span>
+</span></span><span style=display:flex><span>		northPane.<span style=color:#a6e22e>add</span>(leftPane);
+</span></span><span style=display:flex><span>		northPane.<span style=color:#a6e22e>add</span>(rightPane);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>		<span style=color:#75715e>// 创建中间面板</span>
+</span></span><span style=display:flex><span>		JPanel centerPane <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JPanel();
+</span></span><span style=display:flex><span>		<span style=color:#75715e>// 设置中间面板各组件</span>
+</span></span><span style=display:flex><span>		sendTf <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> TextField(42);
+</span></span><span style=display:flex><span>		readTa <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> TextArea(8,50);
+</span></span><span style=display:flex><span>		readTa.<span style=color:#a6e22e>setEditable</span>(<span style=color:#66d9ef>false</span>);
+</span></span><span style=display:flex><span>		readTa.<span style=color:#a6e22e>setBackground</span>(<span style=color:#66d9ef>new</span> Color(225,242,250));
+</span></span><span style=display:flex><span>		centerPane.<span style=color:#a6e22e>add</span>(sendTf);
+</span></span><span style=display:flex><span>		sendMsgBtn <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Button(<span style=color:#e6db74>&#34; 发送 &#34;</span>);
+</span></span><span style=display:flex><span>		sendMsgBtn.<span style=color:#a6e22e>addActionListener</span>(<span style=color:#66d9ef>this</span>);
+</span></span><span style=display:flex><span>		<span style=color:#75715e>// 添加组件至面板</span>
+</span></span><span style=display:flex><span>		centerPane.<span style=color:#a6e22e>add</span>(sendTf);
+</span></span><span style=display:flex><span>		centerPane.<span style=color:#a6e22e>add</span>(sendMsgBtn);
+</span></span><span style=display:flex><span>		centerPane.<span style=color:#a6e22e>add</span>(readTa);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>		<span style=color:#75715e>// 设置南边组件</span>
+</span></span><span style=display:flex><span>		statusLb <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> JLabel();
+</span></span><span style=display:flex><span>		statusLb.<span style=color:#a6e22e>setText</span>(initStatus());
+</span></span><span style=display:flex><span>		statusLb.<span style=color:#a6e22e>setOpaque</span>(<span style=color:#66d9ef>true</span>);
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>		<span style=color:#75715e>// 获取主窗体的容器,并将以上三面板以北、中、南的布局整合</span>
+</span></span><span style=display:flex><span>		JPanel contentPane <span style=color:#f92672>=</span> (JPanel)getContentPane();
+</span></span><span style=display:flex><span>		contentPane.<span style=color:#a6e22e>setLayout</span>(<span style=color:#66d9ef>new</span> BorderLayout());
+</span></span><span style=display:flex><span>		contentPane.<span style=color:#a6e22e>setBorder</span>(<span style=color:#66d9ef>new</span> EmptyBorder(0, 0, 0, 0));
+</span></span><span style=display:flex><span>		contentPane.<span style=color:#a6e22e>setOpaque</span>(<span style=color:#66d9ef>false</span>);
+</span></span><span style=display:flex><span>		contentPane.<span style=color:#a6e22e>add</span>(northPane, BorderLayout.<span style=color:#a6e22e>NORTH</span>);
+</span></span><span style=display:flex><span>		contentPane.<span style=color:#a6e22e>add</span>(centerPane, BorderLayout.<span style=color:#a6e22e>CENTER</span>);
+</span></span><span style=display:flex><span>		contentPane.<span style=color:#a6e22e>add</span>(statusLb, BorderLayout.<span style=color:#a6e22e>SOUTH</span>);
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 初始化状态标签显示文本
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @return String
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @since 2012-3-23 上午12:01:53
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> String <span style=color:#a6e22e>initStatus</span>() {
+</span></span><span style=display:flex><span>		portname <span style=color:#f92672>=</span> portCombox.<span style=color:#a6e22e>getSelectedItem</span>().<span style=color:#a6e22e>toString</span>();
+</span></span><span style=display:flex><span>		rate <span style=color:#f92672>=</span> rateCombox.<span style=color:#a6e22e>getSelectedItem</span>().<span style=color:#a6e22e>toString</span>();
+</span></span><span style=display:flex><span>		data <span style=color:#f92672>=</span> dataCombox.<span style=color:#a6e22e>getSelectedItem</span>().<span style=color:#a6e22e>toString</span>();
+</span></span><span style=display:flex><span>		stop <span style=color:#f92672>=</span> stopCombox.<span style=color:#a6e22e>getSelectedItem</span>().<span style=color:#a6e22e>toString</span>();
+</span></span><span style=display:flex><span>		parity <span style=color:#f92672>=</span> parityCombox.<span style=color:#a6e22e>getSelectedItem</span>().<span style=color:#a6e22e>toString</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>		StringBuffer str <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> StringBuffer(<span style=color:#e6db74>&#34;当前串口号:&#34;</span>);
+</span></span><span style=display:flex><span>		str.<span style=color:#a6e22e>append</span>(portname).<span style=color:#a6e22e>append</span>(<span style=color:#e6db74>&#34; 波特率:&#34;</span>);
+</span></span><span style=display:flex><span>		str.<span style=color:#a6e22e>append</span>(rate).<span style=color:#a6e22e>append</span>(<span style=color:#e6db74>&#34; 数据位:&#34;</span>);
+</span></span><span style=display:flex><span>		str.<span style=color:#a6e22e>append</span>(data).<span style=color:#a6e22e>append</span>(<span style=color:#e6db74>&#34; 停止位:&#34;</span>);
+</span></span><span style=display:flex><span>		str.<span style=color:#a6e22e>append</span>(stop).<span style=color:#a6e22e>append</span>(<span style=color:#e6db74>&#34; 校验位:&#34;</span>);
+</span></span><span style=display:flex><span>		str.<span style=color:#a6e22e>append</span>(parity);
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>return</span> str.<span style=color:#a6e22e>toString</span>();
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 扫描本机的所有COM端口
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @since 2012-3-23 上午12:02:42
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>scanPorts</span>() {
+</span></span><span style=display:flex><span>		portList <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> ArrayList<span style=color:#f92672>&lt;</span>String<span style=color:#f92672>&gt;</span>();
+</span></span><span style=display:flex><span>		Enumeration<span style=color:#f92672>&lt;?&gt;</span> en <span style=color:#f92672>=</span> CommPortIdentifier.<span style=color:#a6e22e>getPortIdentifiers</span>();
+</span></span><span style=display:flex><span>		CommPortIdentifier portId;
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>while</span>(en.<span style=color:#a6e22e>hasMoreElements</span>()){
+</span></span><span style=display:flex><span>			portId <span style=color:#f92672>=</span> (CommPortIdentifier) en.<span style=color:#a6e22e>nextElement</span>();
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>if</span>(portId.<span style=color:#a6e22e>getPortType</span>() <span style=color:#f92672>==</span> CommPortIdentifier.<span style=color:#a6e22e>PORT_SERIAL</span>){
+</span></span><span style=display:flex><span>				String name <span style=color:#f92672>=</span> portId.<span style=color:#a6e22e>getName</span>();
+</span></span><span style=display:flex><span>				<span style=color:#66d9ef>if</span>(<span style=color:#f92672>!</span>portList.<span style=color:#a6e22e>contains</span>(name)) {
+</span></span><span style=display:flex><span>					portList.<span style=color:#a6e22e>add</span>(name);
+</span></span><span style=display:flex><span>				}
+</span></span><span style=display:flex><span>			}
+</span></span><span style=display:flex><span>		}
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span>(<span style=color:#66d9ef>null</span> <span style=color:#f92672>==</span> portList
+</span></span><span style=display:flex><span>				<span style=color:#f92672>||</span> portList.<span style=color:#a6e22e>isEmpty</span>()) {
+</span></span><span style=display:flex><span>			showErrMesgbox(<span style=color:#e6db74>&#34;未找到可用的串行端口号,程序无法启动!&#34;</span>);
+</span></span><span style=display:flex><span>			System.<span style=color:#a6e22e>exit</span>(0);
+</span></span><span style=display:flex><span>		}
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 打开串行端口
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @since 2012-3-23 上午12:03:07
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>openSerialPort</span>() {
+</span></span><span style=display:flex><span>		<span style=color:#75715e>// 获取要打开的端口</span>
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>			portId <span style=color:#f92672>=</span> CommPortIdentifier.<span style=color:#a6e22e>getPortIdentifier</span>(portname);
+</span></span><span style=display:flex><span>		} <span style=color:#66d9ef>catch</span> (NoSuchPortException e) {
+</span></span><span style=display:flex><span>			showErrMesgbox(<span style=color:#e6db74>&#34;抱歉,没有找到&#34;</span><span style=color:#f92672>+</span>portname<span style=color:#f92672>+</span><span style=color:#e6db74>&#34;串行端口号!&#34;</span>);
+</span></span><span style=display:flex><span>			setComponentsEnabled(<span style=color:#66d9ef>true</span>);
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>return</span> ;
+</span></span><span style=display:flex><span>		}
+</span></span><span style=display:flex><span>		<span style=color:#75715e>// 打开端口</span>
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>			serialPort <span style=color:#f92672>=</span> (SerialPort) portId.<span style=color:#a6e22e>open</span>(<span style=color:#e6db74>&#34;JavaRs232&#34;</span>, 2000);
+</span></span><span style=display:flex><span>			statusLb.<span style=color:#a6e22e>setText</span>(portname<span style=color:#f92672>+</span><span style=color:#e6db74>&#34;串口已经打开!&#34;</span>);
+</span></span><span style=display:flex><span>		} <span style=color:#66d9ef>catch</span> (PortInUseException e) {
+</span></span><span style=display:flex><span>			showErrMesgbox(portname<span style=color:#f92672>+</span><span style=color:#e6db74>&#34;端口已被占用,请检查!&#34;</span>);
+</span></span><span style=display:flex><span>			setComponentsEnabled(<span style=color:#66d9ef>true</span>);
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>return</span> ;
+</span></span><span style=display:flex><span>		}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>		<span style=color:#75715e>// 设置端口参数</span>
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>int</span> rate <span style=color:#f92672>=</span> Integer.<span style=color:#a6e22e>parseInt</span>(<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>rate</span>);
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>int</span> data <span style=color:#f92672>=</span> Integer.<span style=color:#a6e22e>parseInt</span>(<span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>data</span>);
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>int</span> stop <span style=color:#f92672>=</span> stopCombox.<span style=color:#a6e22e>getSelectedIndex</span>()<span style=color:#f92672>+</span>1;
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>int</span> parity <span style=color:#f92672>=</span> parityCombox.<span style=color:#a6e22e>getSelectedIndex</span>();
+</span></span><span style=display:flex><span>			serialPort.<span style=color:#a6e22e>setSerialPortParams</span>(rate,data,stop,parity);
+</span></span><span style=display:flex><span>		} <span style=color:#66d9ef>catch</span> (UnsupportedCommOperationException e) {
+</span></span><span style=display:flex><span>			showErrMesgbox(e.<span style=color:#a6e22e>getMessage</span>());
+</span></span><span style=display:flex><span>		}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>		<span style=color:#75715e>// 打开端口的IO流管道</span>
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>			outputStream <span style=color:#f92672>=</span> serialPort.<span style=color:#a6e22e>getOutputStream</span>();
+</span></span><span style=display:flex><span>			inputStream <span style=color:#f92672>=</span> serialPort.<span style=color:#a6e22e>getInputStream</span>();
+</span></span><span style=display:flex><span>		} <span style=color:#66d9ef>catch</span> (IOException e) {
+</span></span><span style=display:flex><span>			showErrMesgbox(e.<span style=color:#a6e22e>getMessage</span>());
+</span></span><span style=display:flex><span>		}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>		<span style=color:#75715e>// 给端口添加监听器</span>
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>			serialPort.<span style=color:#a6e22e>addEventListener</span>(<span style=color:#66d9ef>this</span>);
+</span></span><span style=display:flex><span>		} <span style=color:#66d9ef>catch</span> (TooManyListenersException e) {
+</span></span><span style=display:flex><span>			showErrMesgbox(e.<span style=color:#a6e22e>getMessage</span>());
+</span></span><span style=display:flex><span>		}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>		serialPort.<span style=color:#a6e22e>notifyOnDataAvailable</span>(<span style=color:#66d9ef>true</span>);
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 给串行端口发送数据
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @since 2012-3-23 上午12:05:00
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>sendDataToSeriaPort</span>() {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>			sendCount<span style=color:#f92672>++</span>;
+</span></span><span style=display:flex><span>			outputStream.<span style=color:#a6e22e>write</span>(mesg.<span style=color:#a6e22e>getBytes</span>());
+</span></span><span style=display:flex><span>			outputStream.<span style=color:#a6e22e>flush</span>();
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>		} <span style=color:#66d9ef>catch</span> (IOException e) {
+</span></span><span style=display:flex><span>			showErrMesgbox(e.<span style=color:#a6e22e>getMessage</span>());
+</span></span><span style=display:flex><span>		}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>		statusLb.<span style=color:#a6e22e>setText</span>(<span style=color:#e6db74>&#34;  发送: &#34;</span><span style=color:#f92672>+</span>sendCount<span style=color:#f92672>+</span><span style=color:#e6db74>&#34;                                      接收: &#34;</span><span style=color:#f92672>+</span>reciveCount);
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 关闭串行端口
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @since 2012-3-23 上午12:05:28
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>closeSerialPort</span>() {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>if</span>(outputStream <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span>)
+</span></span><span style=display:flex><span>				outputStream.<span style=color:#a6e22e>close</span>();
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>if</span>(serialPort <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span>)
+</span></span><span style=display:flex><span>				serialPort.<span style=color:#a6e22e>close</span>();
+</span></span><span style=display:flex><span>			serialPort <span style=color:#f92672>=</span> <span style=color:#66d9ef>null</span>;
+</span></span><span style=display:flex><span>			statusLb.<span style=color:#a6e22e>setText</span>(portname<span style=color:#f92672>+</span><span style=color:#e6db74>&#34;串口已经关闭!&#34;</span>);
+</span></span><span style=display:flex><span>			sendCount <span style=color:#f92672>=</span> 0;
+</span></span><span style=display:flex><span>			reciveCount <span style=color:#f92672>=</span> 0;
+</span></span><span style=display:flex><span>			sendTf.<span style=color:#a6e22e>setText</span>(<span style=color:#e6db74>&#34;&#34;</span>);
+</span></span><span style=display:flex><span>			readTa.<span style=color:#a6e22e>setText</span>(<span style=color:#e6db74>&#34;&#34;</span>);
+</span></span><span style=display:flex><span>		} <span style=color:#66d9ef>catch</span> (Exception e) {
+</span></span><span style=display:flex><span>			showErrMesgbox(e.<span style=color:#a6e22e>getMessage</span>());
+</span></span><span style=display:flex><span>		}
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 显示错误或警告信息
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @param msg 信息
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @since 2012-3-23 上午12:05:47
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>showErrMesgbox</span>(String msg) {
+</span></span><span style=display:flex><span>		JOptionPane.<span style=color:#a6e22e>showMessageDialog</span>(<span style=color:#66d9ef>this</span>, msg);
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 各组件行为事件监听
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>actionPerformed</span>(ActionEvent e) {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span>(e.<span style=color:#a6e22e>getSource</span>() <span style=color:#f92672>==</span> portCombox
+</span></span><span style=display:flex><span>				<span style=color:#f92672>||</span> e.<span style=color:#a6e22e>getSource</span>() <span style=color:#f92672>==</span> rateCombox
+</span></span><span style=display:flex><span>				<span style=color:#f92672>||</span> e.<span style=color:#a6e22e>getSource</span>() <span style=color:#f92672>==</span> dataCombox
+</span></span><span style=display:flex><span>				<span style=color:#f92672>||</span> e.<span style=color:#a6e22e>getSource</span>() <span style=color:#f92672>==</span> stopCombox
+</span></span><span style=display:flex><span>				<span style=color:#f92672>||</span> e.<span style=color:#a6e22e>getSource</span>() <span style=color:#f92672>==</span> parityCombox){
+</span></span><span style=display:flex><span>			statusLb.<span style=color:#a6e22e>setText</span>(initStatus());
+</span></span><span style=display:flex><span>		}
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span>(e.<span style=color:#a6e22e>getSource</span>() <span style=color:#f92672>==</span> openPortBtn){
+</span></span><span style=display:flex><span>			setComponentsEnabled(<span style=color:#66d9ef>false</span>);
+</span></span><span style=display:flex><span>			openSerialPort();
+</span></span><span style=display:flex><span>		}
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span>(e.<span style=color:#a6e22e>getSource</span>() <span style=color:#f92672>==</span> closePortBtn){
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>if</span>(serialPort <span style=color:#f92672>!=</span> <span style=color:#66d9ef>null</span>){
+</span></span><span style=display:flex><span>				closeSerialPort();
+</span></span><span style=display:flex><span>			}
+</span></span><span style=display:flex><span>			setComponentsEnabled(<span style=color:#66d9ef>true</span>);
+</span></span><span style=display:flex><span>		}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>if</span>(e.<span style=color:#a6e22e>getSource</span>() <span style=color:#f92672>==</span> sendMsgBtn){
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>if</span>(serialPort <span style=color:#f92672>==</span> <span style=color:#66d9ef>null</span>){
+</span></span><span style=display:flex><span>				showErrMesgbox(<span style=color:#e6db74>&#34;请先打开串行端口!&#34;</span>);
+</span></span><span style=display:flex><span>				<span style=color:#66d9ef>return</span> ;
+</span></span><span style=display:flex><span>			}
+</span></span><span style=display:flex><span>			mesg <span style=color:#f92672>=</span> sendTf.<span style=color:#a6e22e>getText</span>();
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>if</span>(<span style=color:#66d9ef>null</span> <span style=color:#f92672>==</span> mesg <span style=color:#f92672>||</span> mesg.<span style=color:#a6e22e>isEmpty</span>()){
+</span></span><span style=display:flex><span>				showErrMesgbox(<span style=color:#e6db74>&#34;请输入你要发送的内容!&#34;</span>);
+</span></span><span style=display:flex><span>				<span style=color:#66d9ef>return</span> ;
+</span></span><span style=display:flex><span>			}
+</span></span><span style=display:flex><span>			sendDataToSeriaPort();
+</span></span><span style=display:flex><span>		}
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 端口事件监听
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>serialEvent</span>(SerialPortEvent event) {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>switch</span> (event.<span style=color:#a6e22e>getEventType</span>()) {
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>case</span> SerialPortEvent.<span style=color:#a6e22e>BI</span>:
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>case</span> SerialPortEvent.<span style=color:#a6e22e>OE</span>:
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>case</span> SerialPortEvent.<span style=color:#a6e22e>FE</span>:
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>case</span> SerialPortEvent.<span style=color:#a6e22e>PE</span>:
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>case</span> SerialPortEvent.<span style=color:#a6e22e>CD</span>:
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>case</span> SerialPortEvent.<span style=color:#a6e22e>CTS</span>:
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>case</span> SerialPortEvent.<span style=color:#a6e22e>DSR</span>:
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>case</span> SerialPortEvent.<span style=color:#a6e22e>RI</span>:
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>case</span> SerialPortEvent.<span style=color:#a6e22e>OUTPUT_BUFFER_EMPTY</span>:
+</span></span><span style=display:flex><span>				<span style=color:#66d9ef>break</span>;
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>case</span> SerialPortEvent.<span style=color:#a6e22e>DATA_AVAILABLE</span>:
+</span></span><span style=display:flex><span>				<span style=color:#66d9ef>byte</span><span style=color:#f92672>[]</span> readBuffer <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#66d9ef>byte</span><span style=color:#f92672>[</span>50<span style=color:#f92672>]</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>			<span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>				<span style=color:#66d9ef>while</span> (inputStream.<span style=color:#a6e22e>available</span>() <span style=color:#f92672>&gt;</span> 0) {
+</span></span><span style=display:flex><span>					inputStream.<span style=color:#a6e22e>read</span>(readBuffer);
+</span></span><span style=display:flex><span>				}
+</span></span><span style=display:flex><span>				StringBuilder receivedMsg <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> StringBuilder(<span style=color:#e6db74>&#34;/-- &#34;</span>);
+</span></span><span style=display:flex><span>				receivedMsg.<span style=color:#a6e22e>append</span>(<span style=color:#66d9ef>new</span> String(readBuffer).<span style=color:#a6e22e>trim</span>()).<span style=color:#a6e22e>append</span>(<span style=color:#e6db74>&#34; --/\n&#34;</span>);
+</span></span><span style=display:flex><span>				readTa.<span style=color:#a6e22e>append</span>(receivedMsg.<span style=color:#a6e22e>toString</span>());
+</span></span><span style=display:flex><span>				reciveCount<span style=color:#f92672>++</span>;
+</span></span><span style=display:flex><span>				statusLb.<span style=color:#a6e22e>setText</span>(<span style=color:#e6db74>&#34;  发送: &#34;</span><span style=color:#f92672>+</span>sendCount<span style=color:#f92672>+</span><span style=color:#e6db74>&#34;  接收: &#34;</span><span style=color:#f92672>+</span>reciveCount);
+</span></span><span style=display:flex><span>			} <span style=color:#66d9ef>catch</span> (IOException e) {
+</span></span><span style=display:flex><span>				showErrMesgbox(e.<span style=color:#a6e22e>getMessage</span>());
+</span></span><span style=display:flex><span>			}
+</span></span><span style=display:flex><span>		}
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 设置各组件的开关状态
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @param enabled 状态
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @since 2012-3-23 上午12:06:24
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>setComponentsEnabled</span>(<span style=color:#66d9ef>boolean</span> enabled) {
+</span></span><span style=display:flex><span>		openPortBtn.<span style=color:#a6e22e>setEnabled</span>(enabled);
+</span></span><span style=display:flex><span>		openPortBtn.<span style=color:#a6e22e>setEnabled</span>(enabled);
+</span></span><span style=display:flex><span>		portCombox.<span style=color:#a6e22e>setEnabled</span>(enabled);
+</span></span><span style=display:flex><span>		rateCombox.<span style=color:#a6e22e>setEnabled</span>(enabled);
+</span></span><span style=display:flex><span>		dataCombox.<span style=color:#a6e22e>setEnabled</span>(enabled);
+</span></span><span style=display:flex><span>		stopCombox.<span style=color:#a6e22e>setEnabled</span>(enabled);
+</span></span><span style=display:flex><span>		parityCombox.<span style=color:#a6e22e>setEnabled</span>(enabled);
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>	<span style=color:#75715e>/**
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * 运行主函数
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @param args
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 * @since 2012-3-23 上午12:06:45
+</span></span></span><span style=display:flex><span><span style=color:#75715e>	 */</span>
+</span></span><span style=display:flex><span>	<span style=color:#66d9ef>public</span> <span style=color:#66d9ef>static</span> <span style=color:#66d9ef>void</span> <span style=color:#a6e22e>main</span>(String<span style=color:#f92672>[]</span> args) {
+</span></span><span style=display:flex><span>		<span style=color:#66d9ef>new</span> JavaRs232();
+</span></span><span style=display:flex><span>	}
+</span></span><span style=display:flex><span>}
+</span></span></code></pre></td></tr></table></div></div><p>代码编写完成，按下F11键进入调试状态，一切运行正常良好，请看图：</p><ul><li>启动界面</li></ul><p><img src=/imgs/img-lazy-loading.gif data-src=//imgs.lisenhui.cn/blog/2012/03-24-java-hard-rsr232-3.png alt=java-hard-rsr232-3></p><ul><li>端口检测</li></ul><p><img src=/imgs/img-lazy-loading.gif data-src=//imgs.lisenhui.cn/blog/2012/03-24-java-hard-rsr232-4.png alt=java-hard-rsr232-4></p><ul><li>通讯测试</li></ul><p><img src=/imgs/img-lazy-loading.gif data-src=//imgs.lisenhui.cn/blog/2012/03-24-java-hard-rsr232-5.png alt=java-hard-rsr232-5></p><ul><li>最后再抽空来美化程序下，效果更漂亮</li></ul><p><img src=/imgs/img-lazy-loading.gif data-src=//imgs.lisenhui.cn/blog/2012/03-24-java-hard-rsr232-6.png alt=java-hard-rsr232-6></p><p><img src=/imgs/img-lazy-loading.gif data-src=//imgs.lisenhui.cn/blog/2012/03-24-java-hard-rsr232-7.png alt=java-hard-rsr232-7></p><p>PS:
+<a href=http://dl.iteye.com/topics/download/80f67e6e-45eb-31ff-8086-da09f8d5762e title=示例源下载 rel="noopener external nofollow noreferrer" target=_blank class=exturl>示例源下载
+<i class="fa fa-external-link-alt"></i></a></p></div><footer class=post-footer><div class=post-tags><a href=/tags/java/>Java
+</a><a href=/tags/rsr232/>RSR232</a></div><div class=post-share-tools><div class=post-share-loading><i class="fa-solid fa-ellipsis fa-spin"></i></div><div class=sharethis-inline-share-buttons></div></div><hr><div class=reward-container><div><i class="fa-solid fa-mug-hot"></i>请我喝杯咖啡吧 ヾ(^▽^*)))</div><button>
+赞赏</button><div class=post-reward><div class=post-reward-item><img src=/imgs/img-lazy-loading.gif data-src=/imgs/ali-pay.png alt="凡梦星尘 - 支付宝">
+<span>支付宝</span></div><div class=post-reward-item><img src=/imgs/img-lazy-loading.gif data-src=/imgs/wechat-pay.png alt="凡梦星尘 - 微信">
+<span>微信</span></div></div></div><div class=post-copyright><img src=/imgs/cc/cc.svg width=75 height=75 align=right alt=共享知识><ul><li class=post-copyright-title><strong>文章标题：</strong>
+Java程序与RSR232串口通讯小练手</li><li class=post-copyright-author><strong>本文作者： </strong>凡梦星尘</li><li class=post-copyright-link><strong>本文链接：</strong>
+<a id=post-cr-link href=https://lisenhui.cn/tech/java-hard-rsr232.html title=Java程序与RSR232串口通讯小练手>https://lisenhui.cn/tech/java-hard-rsr232.html</a></li><li class=post-copyright-license><strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <i class="fab fa-fw fa-creative-commons"></i><a target=_blank href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh>BY-NC-SA</a> 许可协议。转载请注明出处！</li></ul></div><div class=followme><span>欢迎关注我的其它发布渠道</span><div class=social-list><div class=social-item><a target=_blank class=social-link href=/imgs/qq-channel.jpg><span class=icon><i class="fab fa-qq"></i>
+</span><span class=label>QQ</span></a></div><div class=social-item><a target=_blank class=social-link href=/rss.xml><span class=icon><i class="fa fa-rss"></i>
+</span><span class=label>RSS</span></a></div></div></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/tech/nutz-jdoc-chinese.html rel=next title=Nutz源码Jdoc在IDE中补全提示时出现乱码解决办法><i class="fa fa-chevron-left"></i> Nutz源码Jdoc在IDE中补全提示时出现乱码解决办法</a></div><div class="post-nav-prev post-nav-item"><a href=/tech/nutz-ke-lhg-my97.html rel=prev title=国内技术强强联手之Nutz+KindEditor+LHGDialog+My97DatePicker>国内技术强强联手之Nutz+KindEditor+LHGDialog+My97DatePicker
+<i class="fa fa-chevron-right"></i></a></div></div></footer></article></div><div id=comments class=post-comments><div class=comment-head><div class=comment-headline><i class="fas fa-comments fa-fw"></i>
+<span>评论交流</span></div><div class=comment-switch><span class=first-comment>Waline</span>
+<span class=switch-btn></span>
+<span class=second-comment>Giscus</span></div></div><div class=comment-wrap><div><div class=comment-loading><i class="fa fa-sync fa-spin"></i></div><div class=waline-container></div></div><div><div class=comment-loading><i class="fa fa-sync fa-spin"></i></div><div class=giscus-container></div></div></div></div></div></main><footer class=footer><div class=footer-inner><div class=copyright>&copy;
+<span itemprop=copyrightYear>2010 - 2024
+</span><span class=with-love><i class="fa fa-heart"></i>
+</span><span class=author itemprop=copyrightHolder>凡梦星尘</span></div><div class=powered-by>由 <a href=https://gohugo.io title=0.138.0 target=_blank>Hugo</a> & <a href=https://github.com/hugo-next/hugo-theme-next title=4.7.0 target=_blank>Hugo NexT.Gemini</a> 强力驱动</div><div class=beian><a href=https://beian.miit.gov.cn target=_blank>粤ICP备18047355号-1</a>
+<img src=/imgs/gongan.png alt=沪公网安备>
+<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011402009770" target=_blank>沪公网安备 31011402009770 号</a></div><div class=vendors-list><a target=_blank href=https://vercel.com title=Vercel><img src=/imgs/img-lazy-loading.gif data-src=/imgs/vendors/vercel.svg alt=Vercel>
+</a><a target=_blank href="https://www.upyun.com/?utm_source=lianmeng&amp;utm_medium=referral" title=又拍云><img src=/imgs/img-lazy-loading.gif data-src=/imgs/vendors/upyun.png alt=又拍云>
+</a><a target=_blank href=https://github.com title=Github><img src=/imgs/img-lazy-loading.gif data-src=/imgs/vendors/github.svg alt=Github>
+</a><a target=_blank href=https://www.leancloud.cn title=LeanCloud><img src=/imgs/img-lazy-loading.gif data-src=https://www.leancloud.cn/favicon.png alt=LeanCloud>
+</a><a target=_blank href=https://www.zstatic.net title=zstatic><img src=/imgs/img-lazy-loading.gif data-src=https://www.zstatic.net/logo.png alt=zstatic>
+</a><span>提供CDN/云资源支持</span></div></div></footer><script type=text/javascript src=https://s4.zstatic.net/ajax/libs/animejs/3.2.2/anime.min.js crossorigin=anonymous defer></script><script type=text/javascript src=https://s4.zstatic.net/ajax/libs/viewerjs/1.11.6/viewer.min.js crossorigin=anonymous defer></script><script class=next-config data-name=main type=application/json>{"algolia":{"cfg":{"apikey":"639c3c5992507251ead7be2153913cd0","appid":"NC5VDOMBRG","enable":true,"hits":{"perpage":10},"indexname":"site_indexes","limit":1e3},"instantjs":{"file":"dist/instantsearch.production.min.js","name":"instantsearch.js","version":"4.73.2"},"js":{"file":"dist/algoliasearch-lite.umd.js","name":"algoliasearch","version":"4.24.0"}},"bookmark":{"color":"#1b1b1b","enable":true,"save":"manual"},"copybtn":true,"darkmode":true,"giscus":{"cfg":{"category":"Comments","categoryid":"DIC_kwDOE8dfY84CQqz_","emit":false,"inputposition":"top","mapping":"title","reactions":false,"repo":"elkan1788/elkan1788.github.io","repoid":"MDEwOlJlcG9zaXRvcnkzMzE4MzMxODc=","theme":"preferred_color_scheme"},"js":"https://giscus.app/client.js"},"hostname":"https://lisenhui.cn/","i18n":{"ds_day":" 天前","ds_days":" 天 ","ds_hour":" 小时前","ds_hours":" 小时 ","ds_just":"刚刚","ds_min":" 分钟前","ds_mins":" 分钟","ds_month":" 个月前","ds_years":" 年 ","empty":"没有找到任何搜索结果：${query}","hits":"找到 ${hits} 个搜索结果","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","placeholder":"搜索..."},"lang":"zh-CN","lawidget":{"id":"JhW0FuUlJYQmqAJt","js":"https://v6-widget.51.la/v6/laId/quote.js?theme=0\u0026col=true\u0026f=12\u0026display=0,0,0,1,0,1,1,1"},"lazyload":false,"motion":{"async":true,"enable":true,"transition":{"collheader":"fadeInLeft","postblock":"fadeIn","postbody":"fadeInDown","postheader":"fadeInDown","sidebar":"rotateInUpRight"}},"postmeta":{"comments":{"enable":true,"plugin":"waline"},"views":{"enable":true,"plugin":"waline"}},"root":"/","scheme":"Gemini","share":{"enable":true,"sharethis":{"id":"66aeda3e566923001d52f16c","js":"https://platform-api.sharethis.com/js/sharethis.js#property=id\u0026product=inline-share-buttons\u0026source=platform"}},"sidebar":{"display":"post","offset":12,"padding":18,"position":"left","width":256},"vendor":{"plugins":"zstatic","router":{"home":"https://www.zstatic.net","logo":"https://www.zstatic.net/logo.png","name":"zstatic","type":"modern","url":"https://s4.zstatic.net/ajax/libs"}},"version":"4.7.0","waline":{"cfg":{"emoji":false,"imguploader":false,"placeholder":"请文明发言哟 ヾ(≧▽≦*)o \n\n可用快捷键选取表情符号：😀😄😁🥳👻👽👀🚄\n(Window系统：Win+.，Mac系统：Control+Command+Space)","reaction":true,"reactiontext":["点赞","踩一下","得意","不屑","尴尬","睡觉"],"reactiontitle":"你认为这篇文章怎么样？","requiredmeta":["nick","mail"],"serverurl":"https://waline.lisenhui.cn/","sofa":"快来发表你的意见吧 (≧∀≦)ゞ","wordlimit":200},"css":{"alias":"@waline/client","file":"dist/waline.css","name":"waline","version":"2.15.8"},"js":{"alias":"@waline/client","file":"dist/waline.js","name":"waline","version":"2.15.8"}}}</script><script type=text/javascript src=/js/main.min.b8f002fefcd479f8376fd74f4ffe0bd8894cd678ff20e351dbe55bb876d24420.js defer></script></body></html>

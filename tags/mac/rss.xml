@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mac on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/mac/</link><description>Recent content in Mac on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 16 Aug 2017 13:50:55 +0000</lastBuildDate><atom:link href="https://lisenhui.cn/tags/mac/rss.xml" rel="self" type="application/rss+xml"/><item><title>在Mac/Linux系统下安装pymssql模块</title><link>https://lisenhui.cn/tech/mac-install-pymssql-module.html</link><pubDate>Wed, 16 Aug 2017 13:50:55 +0000</pubDate><guid>https://lisenhui.cn/tech/mac-install-pymssql-module.html</guid><description>&lt;p>在非&lt;code>Windows&lt;/code>环境下去访问，连接 MSSQL 数据，本身就是件苦差事来的。自写&lt;code>Python&lt;/code>程序以来在&lt;code>ORM&lt;/code>方面都是使用&lt;code>pyxxx&lt;/code>的模块，果不其然连接 MSSQL 也有个模块叫&lt;code>pymssql&lt;/code>，只是实际使用中并不是特别的顺利。如笔者所处的环境就是如此，开发环境为&lt;code>OSX 10.11&lt;/code>，发布环境为&lt;code>CentOS 6.4&lt;/code>，按官方的安装步骤实行下来，Linux 环境是&lt;code>OK&lt;/code>的，只是 Mac 环境下安装失败，错误的堆栈信息如下：&lt;/p></description></item><item><title>发布jar到Maven时遭遇gpg签名失败</title><link>https://lisenhui.cn/tech/maven-deploy-center-sign-failed.html</link><pubDate>Wed, 17 May 2017 17:02:23 +0000</pubDate><guid>https://lisenhui.cn/tech/maven-deploy-center-sign-failed.html</guid><description>&lt;p>有许久没维护自己开源的项目了，此次在修复BUG发布时遭遇失败，检查后发现原因是因为gpg签名失败，没办法换了MAC电脑有些操作不熟悉是有点郁闷的。&lt;/p>
+&lt;p>关于如何将自己的JAR共享到Maven中央仓库，网上有很多的资源，大家可以自行尝试一下，其实也不难的，完全没必要担心英语的问题。&lt;/p>
+&lt;blockquote>
+&lt;p>分享一个别人整理的GitBook: 
+&lt;a href="https://skyao.gitbooks.io/leaning-maven/content/publish/central/" title="发布到中央仓库" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 发布到中央仓库
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>&lt;/p>
+&lt;/blockquote></description></item><item><title>Github push失败：Could not resolve hostname</title><link>https://lisenhui.cn/tech/github-push-failed.html</link><pubDate>Tue, 16 May 2017 10:21:43 +0000</pubDate><guid>https://lisenhui.cn/tech/github-push-failed.html</guid><description>&lt;p>平时最常用的git push命令突然间居然不可以用（错误日志如下），脑子首先蹦出的想法就是：难道Github又被墙了么！以前出现过类似这样的现象，需要通过指定hosts来加速访问。&lt;/p>
+&lt;p>git push 执行后返回的错误日志：&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>ssh: Could not resolve hostname github.com:elkan1788: nodename nor servname provided, or not known
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fatal: Could not read from remote repository.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Please make sure you have the correct access rights
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

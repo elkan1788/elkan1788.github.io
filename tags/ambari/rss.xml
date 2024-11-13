@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Ambari on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/ambari/</link><description>Recent content in Ambari on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 18 Oct 2017 16:13:36 +0000</lastBuildDate><atom:link href="https://lisenhui.cn/tags/ambari/rss.xml" rel="self" type="application/rss+xml"/><item><title>关于Ambari中服务运行正常UI却显示服务停止的问题</title><link>https://lisenhui.cn/tech/ambari-monitor-status-issues.html</link><pubDate>Wed, 18 Oct 2017 16:13:36 +0000</pubDate><guid>https://lisenhui.cn/tech/ambari-monitor-status-issues.html</guid><description>&lt;p>很多时候环境的维护的确是件头痛的事件，这不本来在Ambari的Dashboard页面显示正常服务的监控，实然间出现了个奇怪的现象： 在机器查询服务的运行进程是正常的，可偏偏Ambari的UI界面却显示状为停止，但端口检查又显示正常的。如下图：&lt;/p>
+&lt;p>&lt;img src="https://lisenhui.cn/imgs/img-lazy-loading.gif" data-src="//imgs.lisenhui.cn/blog/2017/10-18-ambari-red.png" alt="alert_stopped.png" />&lt;/p></description></item><item><title>HiveServer2因JDBC版本引起的问题</title><link>https://lisenhui.cn/tech/hive2-jdbc-connector-issues.html</link><pubDate>Tue, 17 Oct 2017 17:33:04 +0000</pubDate><guid>https://lisenhui.cn/tech/hive2-jdbc-connector-issues.html</guid><description>&lt;p>之前一直都是用&lt;code>HDP&lt;/code>来搭建和管理&lt;strong>Hadoop&lt;/strong>环境，在安装完成调试时也未曾出现过棘手的问题，但这次在&lt;code>Centos6x&lt;/code>系统上布署好后却是遇到奇怪的问题：&lt;/p>
+&lt;blockquote>
+&lt;p>表面上看来&lt;strong>Hive&lt;/strong>服务是正常运行的，进程运行正常，页面UI也正常，日志也没错误输出。简单的建表的语句都能执行，可偏偏在导入本地/&lt;strong>HDFS&lt;/strong>数据时，便就抛出异常啦。错误的堆栈信息如下：&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version &lt;span style="color:#66d9ef">for&lt;/span> the right syntax to use near &lt;span style="color:#e6db74">&amp;#39;OPTION SQL_SELECT_LIMIT=DEFAULT&amp;#39;&lt;/span> at line &lt;span style="color:#ae81ff">1&lt;/span> 
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;blockquote>
+&lt;p>另外一个问题在使用&lt;strong>Ambari&lt;/strong>提供的&lt;code>HiveView&lt;/code> UI进行HDFS数据导入提示文件不存在，错误信息如下：&lt;/p>
+&lt;/blockquote>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>org.apache.hive.service.cli.HiveSQLException: Error &lt;span style="color:#66d9ef">while&lt;/span> compiling statement: FAILED: SemanticException Line 1:17 Invalid path &lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>/tmp/xxx/xxxxx.csv&lt;span style="color:#e6db74">&amp;#39;&amp;#39;&lt;/span>: No files matching path hdfs:/...
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

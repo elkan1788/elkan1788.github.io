@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>工具 on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/%E5%B7%A5%E5%85%B7/</link><description>Recent content in 工具 on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 21 Apr 2022 18:39:47 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/tags/%E5%B7%A5%E5%85%B7/rss.xml" rel="self" type="application/rss+xml"/><item><title>VirtualBox6.x版本CPU时钟Bug导致虚拟机无法开机</title><link>https://lisenhui.cn/tech/virtualbox6-cup-clock-not-started.html</link><pubDate>Thu, 21 Apr 2022 18:39:47 +0800</pubDate><guid>https://lisenhui.cn/tech/virtualbox6-cup-clock-not-started.html</guid><description>&lt;p>下午在启动平时常用的虚拟环境时，发现进度条卡在中间老半天都不会动，情况不太正常，以前启动时间最多也就是 10 几分钟就能看到桌面。点击键盘的方向键看打印的日志，一直在重复如下图所示的 Bug 信息，即使后面等待了半个多小时进入系统后，这个日志信息也不断的在终端界面上输出。&lt;/p></description></item><item><title>GitExtensions推送Github失败记录</title><link>https://lisenhui.cn/tech/git-extensions-push-fail.html</link><pubDate>Mon, 22 Feb 2021 15:42:39 +0800</pubDate><guid>https://lisenhui.cn/tech/git-extensions-push-fail.html</guid><description>&lt;h2 id="问题现身">问题现身
+&lt;a class="header-anchor" href="#%e9%97%ae%e9%a2%98%e7%8e%b0%e8%ba%ab">&lt;/a>
+&lt;/h2>&lt;p>555~，今天体验了一把安装最新程序的“快感”！！！&lt;/p>
+&lt;p>在使用Git Extensisons推送最新写的文章到Github时，遇到了个SSH KEY认证无效的莫名错误。事情的发生是这样的：今天在首次打开Git Extensions软件时，它非常友好的弹出更新提示窗口，然后就手不自觉的点击了下确认按钮。结果更新好后，在推送文章到Github时就发生了如下面一样神奇的错误阻拦：&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FATAL ERROR: No supported authentication methods &lt;span style="color:#a6e22e">available&lt;/span> (server sent: publickey)
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fatal: Could not read from remote repository.
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Please make sure you have the correct access rights
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>and the repository exists.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Supervisor介绍与使用</title><link>https://lisenhui.cn/tech/linux-daemon-supervisor.html</link><pubDate>Thu, 18 May 2017 07:10:23 +0000</pubDate><guid>https://lisenhui.cn/tech/linux-daemon-supervisor.html</guid><description>&lt;p>很多时候我们自己开发的或别的服务都没有后台的守护进程，那么进程很容易就会被不小心的杀死，此时就需要有个程序去监控和维护这些程序服务。网上搜罗了一番后发现&lt;code>Supervisor&lt;/code>组件正好能实现我们想要的，同时还支持对这些程序的统一管理，Nice!&lt;/p></description></item></channel></rss>

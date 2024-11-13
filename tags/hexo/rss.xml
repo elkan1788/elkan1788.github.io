@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Hexo on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/hexo/</link><description>Recent content in Hexo on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 19 Aug 2017 15:40:26 +0000</lastBuildDate><atom:link href="https://lisenhui.cn/tags/hexo/rss.xml" rel="self" type="application/rss+xml"/><item><title>使用Github，Travis CI自动布署Hexo博客到Coding，OSChina服务器</title><link>https://lisenhui.cn/tech/use-travis-ci-push-hexo-blog.html</link><pubDate>Sat, 19 Aug 2017 15:40:26 +0000</pubDate><guid>https://lisenhui.cn/tech/use-travis-ci-push-hexo-blog.html</guid><description>&lt;p>通常我们都是在本地用&lt;code>hexo deploy&lt;/code>发布博客文章到远程的Pages服务器，可别忘记了我们是还需要提交代码的，所以是不是觉得有点麻烦还得分开两步进行操作。这时突然想起是否可用&lt;code>Travis CI&lt;/code>工具来完成这个布署的操作呢？答案是肯定的，整体的流程大致如下：&lt;/p>
+&lt;ul>
+&lt;li>在本地(又或者Github网站)上编辑文章&lt;/li>
+&lt;li>提交文章到Github服务器&lt;/li>
+&lt;li>Travis CI收到通知，同步最新的Github代码，并执行用户自定义好的&lt;code>Travis&lt;/code>脚本生成静态博客&lt;/li>
+&lt;li>最终再把生成好的博客推送到指定的Pages服务器&lt;/li>
+&lt;/ul>
+&lt;p>只是这其中有点比较麻烦的问题就是如何保护我们的私钥，还好&lt;code>Travis CI&lt;/code>已经为我们准备好啦，那么就开始我们的捣腾之旅吧。&lt;/p></description></item><item><title>使用Hexo重新构建个人博客站点</title><link>https://lisenhui.cn/tech/use-hexo-rebuild-blog-site.html</link><pubDate>Wed, 02 Aug 2017 16:04:35 +0000</pubDate><guid>https://lisenhui.cn/tech/use-hexo-rebuild-blog-site.html</guid><description>&lt;p>其实在&lt;code>Github Page&lt;/code>上面也是混迹许久啦，虽然现在各种Blog网站层出不穷，但是作为IT界的程序猿还是喜欢自己动手捣鼓捣鼓，成功固然是欣喜失败也会不气妥。 &lt;code>Github Page&lt;/code>刚出道时使用的是&lt;code>Jekyll&lt;/code>，简单的解释其实就是一个静态化网站的工具，这不现在又兴起一个名为&lt;code>Hexo&lt;/code>(**&lt;code>Nodejs&lt;/code>**实现)的工具。两者的目标皆是一致的，只不过对比下来发现&lt;code>Hexo&lt;/code>上手确实要容易些，加者它能轻松的在本地实现调试，故有想法想再次折腾一翻，构建个&lt;code>Hexo&lt;/code>版本的个人博客。&lt;/p>
+&lt;blockquote>
+&lt;p>介绍另一款静态网站工具
+&lt;a href="https://github.com/wendal/gor" title="Gor" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ &lt;code>Gor&lt;/code>
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>，它是鄙人一直崇拜的大拿
+&lt;a href="http://wendal.net/" title="Wendal" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ Wendal
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>的杰作，熟悉&lt;code>GO&lt;/code>语言的朋友有可以关注下。&lt;/p>
+&lt;/blockquote></description></item></channel></rss>

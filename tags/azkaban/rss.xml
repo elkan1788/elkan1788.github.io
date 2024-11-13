@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Azkaban on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/azkaban/</link><description>Recent content in Azkaban on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 09 Sep 2017 18:45:42 +0000</lastBuildDate><atom:link href="https://lisenhui.cn/tags/azkaban/rss.xml" rel="self" type="application/rss+xml"/><item><title>Azkaban所支持的Job类型及示例</title><link>https://lisenhui.cn/tech/azkaban-execute-jobs.html</link><pubDate>Sat, 09 Sep 2017 18:45:42 +0000</pubDate><guid>https://lisenhui.cn/tech/azkaban-execute-jobs.html</guid><description>&lt;p>在官方文档的介绍中，了解到&lt;code>Azkaban&lt;/code>所支持的工作类型还是很丰富的，如：&lt;code>Command&lt;/code>，&lt;code>HadoopShell&lt;/code>，&lt;code>Python&lt;/code>，&lt;code>Java&lt;/code>，&lt;code>Hive&lt;/code>，&lt;code>Pig&lt;/code>等等。不过在此我们主要具体只来讲解下&lt;code>Python&lt;/code>与&lt;code>Java&lt;/code>的工作类型任务，其它工作类型的话，比如&lt;code>Commnad&lt;/code>，&lt;code>Hive&lt;/code>，&lt;code>HadoopShell&lt;/code>相对比较简单就不做详解，有需要的话可以自行实践一下。&lt;/p>
+&lt;p>不管提交哪一种任务，&lt;code>Azkaban&lt;/code>默认都是通过上传压缩包来管理，那么在此建议大家养成一个习惯，不要所执行的文件(代码)打包到&lt;code>Azkaban&lt;/code>的工程包里面。这样带来的好处是显而易见的，比如：&lt;/p>
+&lt;ul>
+&lt;li>
+&lt;p>工程创建的速度快，不需要上传执行部分文件&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>避免了修改&lt;code>MySQL&lt;/code>中的&lt;code>max_allow_packet&lt;/code>参数以解决工程文件上传失败的问题&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>在分布式布署环境中，当执行Task免去了在不同节点中拷贝工程包的麻烦&lt;/p>
+&lt;/li>
+&lt;/ul></description></item><item><title>定时调度任务器Azkaban安装</title><link>https://lisenhui.cn/tech/azkaban-install-use-share.html</link><pubDate>Fri, 08 Sep 2017 14:29:42 +0000</pubDate><guid>https://lisenhui.cn/tech/azkaban-install-use-share.html</guid><description>&lt;h1 id="背景与介绍">背景与介绍
+&lt;a class="header-anchor" href="#%e8%83%8c%e6%99%af%e4%b8%8e%e4%bb%8b%e7%bb%8d">&lt;/a>
+&lt;/h1>&lt;p>在大数据繁杂的ETL或其它数据处理过程当中，有些任务是需要定时执行的，虽然Linux自带了&lt;code>cron&lt;/code>命令功能，但是仍不能满足最大的一点就是它不能提供集中式的管理和可视化的编辑。其实在大数据的生态当中已集成有个定时调度框架&lt;code>Oozie&lt;/code>，只是实践下来发现其学习成本不低，布署的过程也较复杂。在尝试过其它分布工调度框架后（如阿里的宙斯&lt;code>Zeus&lt;/code>），还是选择了社区较多人使用的&lt;code>Azkaban&lt;/code>。&lt;/p>
+&lt;p>&lt;code>Azkaban3&lt;/code>相对于上个版本所做的更改还是比较大的，感兴趣的话可以到其官方网站
+&lt;a href="https://azkaban.github.io/azkaban/docs/latest/" title="Azkaban" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ Azkaban
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>了解下。接下来主要还是分享下&lt;code>Azkaban3&lt;/code>的安装布署，下面是&lt;code>Azkaban3&lt;/code>的系统架构设计图：&lt;/p>
+&lt;p>&lt;img src="https://lisenhui.cn/imgs/img-lazy-loading.gif" data-src="//imgs.lisenhui.cn/blog/2017/09-08-Azkaban-Install00.png" alt="Azkaban-Install00" />&lt;/p>
+&lt;p>图中的3个组件便是&lt;code>Azkaban3&lt;/code>的重要组成部分：&lt;/p>
+&lt;ul>
+&lt;li>MySQL关系数据存储数据&lt;/li>
+&lt;li>Web Server GUI管理服务提供者&lt;/li>
+&lt;li>Executor Server 分布式节点服务布署&lt;/li>
+&lt;/ul></description></item></channel></rss>

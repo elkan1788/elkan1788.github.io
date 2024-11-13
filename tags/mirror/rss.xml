@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mirror on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/mirror/</link><description>Recent content in Mirror on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 11 Aug 2017 14:17:01 +0000</lastBuildDate><atom:link href="https://lisenhui.cn/tags/mirror/rss.xml" rel="self" type="application/rss+xml"/><item><title>Python pip中国镜像服务器地址</title><link>https://lisenhui.cn/tech/python-pip-install-chinese-mirror.html</link><pubDate>Fri, 11 Aug 2017 14:17:01 +0000</pubDate><guid>https://lisenhui.cn/tech/python-pip-install-chinese-mirror.html</guid><description>&lt;p>今天在安装一个&lt;code>Python&lt;/code>模块&amp;ndash;&amp;gt;&lt;code>pymysql&lt;/code>结果等待时间特别的长，最后超时失败啦，起初是以为是网络带宽问题，让IT调整后仍是失败，随后尝试查找国内的镜像，还有真人也遇到过相同的问题。镜像列表如下：&lt;/p>
+&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>https://pypi.douban.com/simple/ 豆瓣
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>http://mirrors.aliyun.com/pypi/simple/ 阿里
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>http://pypi.hustunique.com/simple/ 华中理工大学
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>http://pypi.sdutlinux.org/simple/ 山东理工大学
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>http://pypi.mirrors.ustc.edu.cn/simple/ 中国科学技术大学
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>https://pypi.tuna.tsinghua.edu.cn/simple 清华
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

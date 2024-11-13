@@ -1,0 +1,308 @@
+<!doctype html><html lang=zh-CN data-theme=dark><head><meta charset=UTF-8><meta name=viewport content="width=device-width"><meta name=theme-color content="#222" media="(prefers-color-scheme: dark)"><meta name=generator content="Hugo 0.138.0"><link rel="shortcut icon" type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/x-icon href=/imgs/icons/favicon.ico><link rel=icon type=image/png sizes=16x16 href=/imgs/icons/favicon-16x16.png><link rel=icon type=image/png sizes=32x32 href=/imgs/icons/favicon-32x32.png><link rel=apple-touch-icon sizes=180x180 href=/imgs/icons/apple-touch-icon.png><meta itemprop=name content="MapDB 同步读写示例"><meta itemprop=description content="再平凡的人也有属于他的梦想 ✨"><meta name=description content="再平凡的人也有属于他的梦想 ✨"><meta itemprop=datePublished zgotmplz><meta itemprop=dateModified zgotmplz><meta itemprop=image content="https://lisenhui.cn/imgs/avatar.png"><meta itemprop=keywords content="Java,MapDB,内存数据库"><meta property="og:type" content="article"><meta property="og:title" content="MapDB 同步读写示例"><meta property="og:description" content="再平凡的人也有属于他的梦想 ✨"><meta property="og:image" content="/imgs/avatar.png"><meta property="og:image:width" content="312"><meta property="og:image:height" content="312"><meta property="og:image:type" content="image/jpeg/png/svg/jpg"><meta property="og:url" content="https://lisenhui.cn/tech/mapdb-write-read-sync.html"><meta property="og:site_name" content="热爱生活与梦想"><meta property="og:locale" content="zh-CN"><meta property="article:author" content="凡梦星尘"><meta property="article:published_time" content="2016-01-19 21:11:20 +0000 UTC"><meta property="article:modified_time" content="2016-01-19 21:11:20 +0000 UTC"><link type=text/css rel=stylesheet href=https://s4.zstatic.net/ajax/libs/font-awesome/6.6.0/css/all.min.css><link type=text/css rel=stylesheet href=https://s4.zstatic.net/ajax/libs/animate.css/4.1.1/animate.min.css><link type=text/css rel=stylesheet href=https://s4.zstatic.net/ajax/libs/viewerjs/1.11.6/viewer.min.css><link rel=stylesheet href=/css/main.min.995b14f0e601c18678b4526e43601f600532d294655f92d033a6753caa9e32ea.css><link rel=stylesheet type=text/css href=/css/custom_style.css><script type=text/javascript>(function(){localDB={set:function(e,t,n){if(n===0)return;const s=new Date,o=n*864e5,i={value:t,expiry:s.getTime()+o};localStorage.setItem(e,JSON.stringify(i))},get:function(e){const t=localStorage.getItem(e);if(!t)return void 0;const n=JSON.parse(t),s=new Date;return s.getTime()>n.expiry?(localStorage.removeItem(e),void 0):n.value}},theme={active:function(){const e=localDB.get("theme");if(e==null)return;theme.toggle(e),window.matchMedia("(prefers-color-scheme: dark)").addListener(function(e){theme.toggle(e.matches?"dark":"light")})},toggle:function(e){document.documentElement.setAttribute("data-theme",e),localDB.set("theme",e,2);const t=document.querySelector("iframe.giscus-frame");if(t){const n={setConfig:{theme:e}};t.contentWindow.postMessage({giscus:n},"https://giscus.app")}}},theme.active()})(window)</script><script class=next-config data-name=page type=application/json>{"comments":true,"isHome":false,"isPage":true,"path":"mapdb-write-read-sync.html","permalink":"https://lisenhui.cn/tech/mapdb-write-read-sync.html","title":"MapDB 同步读写示例","waline":{"commentcnt":{"alias":"@waline/client","alias_name":"waline","file":"dist/comment.js","name":"comment","version":"2.15.8"},"pagecnt":{"alias":"@waline/client","alias_name":"waline","file":"dist/pageview.js","name":"pageview","version":"2.15.8"}}}</script><script type=text/javascript>document.addEventListener("DOMContentLoaded",()=>{var e=document.createElement("script");e.charset="UTF-8",e.id="LA_COLLECT",e.src="https://sdk.51.la/js-sdk-pro.min.js",e.async="true",e.onload=function(){LA.init({id:"JhW0FuUlJYQmqAJt",ck:"JhW0FuUlJYQmqAJt",autoTrack:!0})},document.head.appendChild(e)})</script><title>MapDB 同步读写示例 - 热爱生活与梦想</title><noscript><link rel=stylesheet href=/css/noscript.css></noscript></head><body itemscope itemtype=http://schema.org/WebPage class=use-motion><div class=headband></div><main class=main><header class=header itemscope itemtype=http://schema.org/WPHeader><div class=header-inner><div class=site-brand-container><div class=site-nav-toggle><div class=toggle aria-label role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div></div><div class=site-meta><a href=/ class=brand rel=start><i class=logo-line></i><h1 class=site-title>热爱生活与梦想</h1><i class=logo-line></i></a><p class=site-subtitle itemprop=description>没有伞的孩子要学会努力奔跑 ✊</p></div><div class=site-nav-right><div class="toggle popup-trigger"><i class="fa fa-search fa-fw fa-lg"></i></div></div></div><nav class=site-nav><ul class="main-menu menu"><li class="menu-item menu-item-home"><a href=/ class=hvr-icon-pulse rel=section><i class="fa fa-home hvr-icon"></i>首页</a></li><li class="menu-item menu-item-about"><a href=/about.html class=hvr-icon-pulse rel=section><i class="fa fa-user hvr-icon"></i>关于</a></li><li class="menu-item menu-item-blog"><a href=/blog/ class=hvr-icon-pulse rel=section><i class="fa fa-blog hvr-icon"></i>博客点滴</a></li><li class="menu-item menu-item-tech"><a href=/tech/ class=hvr-icon-pulse rel=section><i class="fa fa-swatchbook hvr-icon"></i>技术锦囊</a></li><li class="menu-item menu-item-life"><a href=/life/ class=hvr-icon-pulse rel=section><i class="fa fa-pizza-slice hvr-icon"></i>生活花絮</a></li><li class="menu-item menu-item-flinks"><a href=/flinks.html class=hvr-icon-pulse rel=section><i class="fa fa-link hvr-icon"></i>友情链接</a></li><li class="menu-item menu-item-archives"><a href=/archives/ class=hvr-icon-pulse rel=section><i class="fa fa-archive hvr-icon"></i>归档
+<span class=badge>81</span></a></li><li class="menu-item menu-item-commonweal"><a href=/404.html class=hvr-icon-pulse rel=section><i class="fa fa-heartbeat hvr-icon"></i>公益 404</a></li><li class="menu-item menu-item-search"><a role=button class="popup-trigger hvr-icon-pulse"><i class="fa fa-search fa-fw hvr-icon"></i>搜索</a></li></ul></nav><div class=search-pop-overlay><div class="popup search-popup"><div class=search-header><span class=search-icon><i class="fa fa-search"></i></span><div class=search-input-container></div><span class=popup-btn-close role=button><i class="fa fa-times-circle"></i></span></div><div class=search-result-container><div class=algolia-hits></div></div><div class=search-footer><div class=algolia-pagination></div><div class=search-meta-info><div class="search-hit-stats algolia-stats"></div><div class=search-vendor><span>Search By</span>
+<a title=Algolia target=_blank href="https://www.algolia.com/?utm_source=instantsearch.js&utm_medium=website&utm_content=lisenhui.cn&utm_campaign=poweredby"><img src=/imgs/algolia-logo.svg></a></div></div></div></div></div></div><div class="toggle sidebar-toggle" role=button><span class=toggle-line></span>
+<span class=toggle-line></span>
+<span class=toggle-line></span></div><aside class=sidebar><div class="sidebar-inner sidebar-overview-active"><ul class=sidebar-nav><li class=sidebar-nav-toc>文章目录</li><li class=sidebar-nav-overview>站点概览</li></ul><div class=sidebar-panel-container><div class="post-toc-wrap sidebar-panel"><div class="post-toc animated"><nav id=TableOfContents></nav></div></div><div class="site-overview-wrap sidebar-panel"><div class="site-author site-overview-item animated" itemprop=author itemscope itemtype=http://schema.org/Person><img class=site-author-image itemprop=image alt=凡梦星尘 src=/imgs/img-lazy-loading.gif data-src=/imgs/avatar.png><p class=site-author-name itemprop=name>凡梦星尘</p><div class=site-description itemprop=description>再平凡的人也有属于他的梦想 ✨</div></div><div class="site-state-wrap site-overview-item animated"><nav class=site-state><div class="site-state-item site-state-posts"><a href=/archives/><span class=site-state-item-count>81</span>
+<span class=site-state-item-name>日志</span></a></div><div class="site-state-item site-state-categories"><a href=/categories/><span class=site-state-item-count>26</span>
+<span class=site-state-item-name>分类</span></a></div><div class="site-state-item site-state-tags"><a href=/tags/><span class=site-state-item-count>119</span>
+<span class=site-state-item-name>标签</span></a></div></nav></div><div class="links-of-social site-overview-item animated"><span class=links-of-social-item><a href=https://github.com/elkan1788 title="Github → https://github.com/elkan1788" rel=noopener class=hvr-icon-pulse target=_blank><i class="fab fa-github fa-fw hvr-icon"></i>
+Github
+</a></span><span class=links-of-social-item><a href=https://www.zhihu.com/people/lisenhui title="知乎 → https://www.zhihu.com/people/lisenhui" rel=noopener class=hvr-icon-pulse target=_blank><i class="fa fa-book fa-fw hvr-icon"></i>
+知乎</a></span></div><div class="cc-license animated" itemprop=license><a href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh class=cc-opacity rel=noopener target=_blank title=共享知识><img src=/imgs/img-lazy-loading.gif data-src=/imgs/cc/big/by_nc_sa.svg alt=共享知识></a></div><div class=xyears-blog><a href=https://www.foreverblog.cn/blog/3306.html title=十年之约 target=_blank><img src=/imgs/img-lazy-loading.gif data-src=https://img.foreverblog.cn/logo_en_default.png alt=十年之约 style=height:16px>
+</a><a href=https://www.foreverblog.cn/go.html title=穿梭虫洞-随机访问十年之约友链博客 target=_blank><img src=/imgs/img-lazy-loading.gif data-src=https://img.foreverblog.cn/wormhole_3.gif alt=穿梭虫洞-随机访问十年之约友链博客 style=height:24px></a></div><div class=not-by-ai><img src=/imgs/img-lazy-loading.gif data-src=/imgs/not-by-ai.png title=声明内容非AI生成 alt=声明内容非AI生成></div></div></div></div><div id=siteinfo-card-widget class=sidebar-card-widget><div class=item-headline><i class="fas fa-chart-line"></i>
+<span>网站资讯</span></div><div class=siteinfo><div class=siteinfo-item><div class=item-name><i class="fa-solid fa-calendar-check"></i>已运行：</div><div class=item-count id=runTimes data-publishdate=2010-09-05T10:11:53+00:00></div></div><div id=la-siteinfo-widget style=display:none></div><div class=siteinfo-item><div class=item-name><i class="fa fa-user-plus"></i>今日访问：</div><div class=item-count id=today_site_pv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-user-clock"></i>昨日访问：</div><div class=item-count id=yesterday_site_pv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-arrows-down-to-people"></i>本月访问：</div><div class=item-count id=month_site_pv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-users"></i>总访问量：</div><div class=item-count id=total_site_pv><i class="fa fa-sync fa-spin"></i></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-font"></i>总字数：</div><div class=item-count id=wordsCount data-count=94957></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-mug-hot"></i>阅读约：</div><div class=item-count id=readTimes data-times=232></div></div><div class=siteinfo-item><div class=item-name><i class="fa fa-clock-rotate-left"></i>最后更新于：</div><div class=item-count id=last-push-date data-lastpushdate=2024-10-15T19:08:29+08:00></div></div></div></div></aside><div class=sidebar-dimmer></div></header><div class=tool-buttons><div id=goto-comments class="button goto-comments" title=直达评论><i class="fas fa-comments"></i></div><div id=toggle-theme class=button title=深浅模式切换><i class="fas fa-adjust"></i></div><div class=back-to-top role=button title=返回顶部><i class="fa fa-arrow-up"></i>
+<span>0%</span></div></div><div class=reading-progress-bar></div><a role=button class="book-mark-link book-mark-link-fixed"></a><a href=https://github.com/elkan1788 rel="noopener external nofollow noreferrer" target=_blank title="Follow me on GitHub" class="exturl github-corner"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0 0 115 115h15l12 27L250 250V0z"/><path d="M128.3 109C113.8 99.7 119 89.6 119 89.6 122 82.7 120.5 78.6 120.5 78.6 119.2 72 123.4 76.3 123.4 76.3 127.3 80.9 125.5 87.3 125.5 87.3 122.9 97.6 130.6 101.9 134.4 103.2" fill="currentcolor" style="transform-origin:130px 106px" class="octo-arm"/><path d="M115 115C114.9 115.1 118.7 116.5 119.8 115.4l13.9-13.8C136.9 99.2 139.9 98.4 142.2 98.6 133.8 88 127.5 74.4 143.8 58 148.5 53.4 154 51.2 159.7 51 160.3 49.4 163.2 43.6 171.4 40.1 171.4 40.1 176.1 42.5 178.8 56.2 183.1 58.6 187.2 61.8 190.9 65.4 194.5 69 197.7 73.2 200.1 77.6 213.8 80.2 216.3 84.9 216.3 84.9 212.7 93.1 206.9 96 205.4 96.6 205.1 102.4 203 107.8 198.3 112.5 181.9 128.9 168.3 122.5 157.7 114.1 157.9 116.9 156.7 120.9 152.7 124.9L141 136.5C139.8 137.7 141.6 141.9 141.8 141.8z" fill="currentcolor" class="octo-body"/></svg></a><noscript><div class=noscript-warning>Theme NexT works best with JavaScript enabled</div></noscript><div class="main-inner post posts-expand"><div class=post-block><article itemscope itemtype=http://schema.org/Article class=post-content lang><link itemprop=mainEntityOfPage href=https://lisenhui.cn/tech/mapdb-write-read-sync.html><span hidden itemprop=author itemscope itemtype=http://schema.org/Person><meta itemprop=image content="/imgs/avatar.png"><meta itemprop=name content="凡梦星尘"></span><span hidden itemprop=publisher itemscope itemtype=http://schema.org/Organization><meta itemprop=name content="凡梦星尘"><meta itemprop=description content="再平凡的人也有属于他的梦想 ✨"></span><span hidden itemprop=post itemscope itemtype=http://schema.org/CreativeWork><meta itemprop=name content="MapDB 同步读写示例"><meta itemprop=description content="MapDB 是一个快速、易用的嵌入式Java数据库引擎. 最主要的特点之一就是支持磁盘存储,直接把内存中的Hash Map同步写入到磁盘. 另外特别惊喜的是它支持ACID事务,MVCC隔离, 且有全职的开发者支持.
+看完官方的文档与示例后,基本上可以确定它符合业务场景的使用要求.另外发现官方正在重构3.x的版本, 但应该不会这么快发布吧.用google搜索了下关于MapDB的使用案例, 也不是很多. 可能是本来官方的文档就齐全有关吧,API也不复杂,跟着官方的文档走一遍就可以上手了."></span><header class=post-header><h1 class=post-title itemprop="name headline">MapDB 同步读写示例
+<a href=https://github.com/elkan1788/myblog-sources/tree/main/content/tech/2016/01-19-mapdb-write-read-sync.md rel="noopener external nofollow noreferrer" target=_blank class="exturl post-edit-link" title=编辑><i class="fa fa-pen-nib"></i></a></h1><div class=post-meta-container><div class=post-meta-items><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-calendar"></i>
+</span><span class=post-meta-item-text title=发表于>发表于：
+</span><time title="创建时间：2016-01-19 21:11:20 +0000 UTC" itemprop="dateCreated datePublished" datetime="2016-01-19 21:11:20 +0000 UTC">2016-01-19
+</time></span><span class=post-meta-item><span class=post-meta-item-icon><i class="fas fa-solid fa-folder-open"></i>
+</span><span class=post-meta-item-text title=分类于>分类于：
+</span><span itemprop=about itemscope itemtype=http://schema.org/Thing><a href=/categories/%E6%95%B0%E6%8D%AE%E7%BC%93%E5%AD%98 itemprop=url rel=index><span itemprop=name>技术锦囊/数据缓存</span></a></span></span></div><div class=post-meta-items><span class=post-meta-item title=字数><span class=post-meta-item-icon><i class="fas fa-solid fa-file-word"></i>
+</span><span class=post-meta-item-text>字数：</span>
+<span>1472</span>
+</span><span class=post-meta-item title=阅读><span class=post-meta-item-icon><i class="fas fa-solid fa-clock"></i>
+</span><span class=post-meta-item-text>阅读：&ap;</span>
+<span>3分钟</span>
+</span><span class=post-meta-item title=浏览><span class=post-meta-item-icon><i class="fas fa-solid fa-eye"></i>
+</span><span class=post-meta-item-text>浏览：
+</span><span id=pageview-count data-path=/tech/mapdb-write-read-sync.html><i class="fa fa-sync fa-spin"></i>
+</span></span><span class=post-meta-item title><span class=post-meta-item-icon><i class="fas fa-solid fa-comments"></i>
+</span><span class=post-meta-item-text title=评论>评论：
+</span><span id=comments-count class=waline-comment-count data-path=/tech/mapdb-write-read-sync.html><i class="fa fa-sync fa-spin"></i></span></span></div></div></header><div class=post-body itemprop=articleBody><p>MapDB 是一个快速、易用的嵌入式Java数据库引擎. 最主要的特点之一就是支持磁盘存储,直接把内存中的Hash Map同步写入到磁盘. 另外特别惊喜的是它支持ACID事务,MVCC隔离, 且有全职的开发者支持.</p><p>看完官方的文档与示例后,基本上可以确定它符合业务场景的使用要求.另外发现官方正在重构3.x的版本, 但应该不会这么快发布吧.用google搜索了下关于MapDB的使用案例, 也不是很多. 可能是本来官方的文档就齐全有关吧,API也不复杂,跟着官方的文档走一遍就可以上手了.</p><p>动手测试了简单的示例后, 突然冒出一个疑问, 如何实现同时操作磁盘上的一个数据库, 以及同一个HashMap呢? 这里需要明白的, MapDB存储到磁盘上的数据库文件,并非只是存放了一个HashMap, 这有点类似数据库里可以有多张表的概念相同. 那么数据库是可以支持多连接的, MapDB是否也同样支持呢?(理想确实很丰满,但现实太骨感了!)</p><p>初步检验的结果是, MapDB并不支持同时访问磁盘上的同一文件. 那么也就是只能创建一个长连接, 直到业务功能处理完成再关闭它. 幸运的是它支持对已经存在或是运行中的同一个HashMap进行读写操作. 下面来看看简单的示例代码:</p><div class=highlight><div style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><table style=border-spacing:0;padding:0;margin:0;border:0><tr><td style=vertical-align:top;padding:0;margin:0;border:0><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">  9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 34
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 35
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 36
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 37
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 38
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 39
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 40
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 41
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 42
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 43
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 44
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 45
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 46
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 47
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 48
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 49
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 50
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 51
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 52
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 53
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 54
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 55
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 56
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 57
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 58
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 59
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 60
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 61
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 62
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 63
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 64
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 65
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 66
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 67
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 68
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 69
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 70
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 71
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 72
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 73
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 74
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 75
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 76
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 77
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 78
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 79
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 80
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 81
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 82
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 83
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 84
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 85
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 86
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 87
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 88
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 89
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 90
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 91
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 92
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 93
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 94
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 95
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 96
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 97
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 98
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f"> 99
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">100
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">101
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">102
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">103
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">104
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">105
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">106
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">107
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">108
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">109
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">110
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">111
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">112
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">113
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">114
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">115
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">116
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">117
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">118
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">119
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">120
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">121
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">122
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">123
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:.4em;padding:0 .4em;color:#7f7f7f">124
+</span></code></pre></td><td style=vertical-align:top;padding:0;margin:0;border:0;width:100%><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-shell data-lang=shell><span style=display:flex><span>
+</span></span><span style=display:flex><span>import org.mapdb.BTreeMap;
+</span></span><span style=display:flex><span>import org.mapdb.DB;
+</span></span><span style=display:flex><span>import org.mapdb.DBMaker;
+</span></span><span style=display:flex><span>import org.testng.annotations.AfterTest;
+</span></span><span style=display:flex><span>import org.testng.annotations.BeforeTest;
+</span></span><span style=display:flex><span>import org.testng.annotations.Test;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>import java.io.File;
+</span></span><span style=display:flex><span>import java.util.Map;
+</span></span><span style=display:flex><span>import java.util.Random;
+</span></span><span style=display:flex><span>import java.util.SortedMap;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>import static org.testng.Assert.*;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>/**
+</span></span><span style=display:flex><span> * MapDB 测试
+</span></span><span style=display:flex><span> *
+</span></span><span style=display:flex><span> * @author 凡梦星尘<span style=color:#f92672>(</span>elkan1788@gmail.com<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span> * @since 2016.1.19
+</span></span><span style=display:flex><span> */
+</span></span><span style=display:flex><span>public class MapDBTest <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    private DB diskDB;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    Map&lt;Integer, String&gt; data;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    @BeforeTest
+</span></span><span style=display:flex><span>    public void init<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>        // 文件名字可以自己定义
+</span></span><span style=display:flex><span>        File dbFile <span style=color:#f92672>=</span> new File<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;D:/mapdb.data&#34;</span><span style=color:#f92672>)</span>;
+</span></span><span style=display:flex><span>        // DB有且只打开一次连接
+</span></span><span style=display:flex><span>        diskDB <span style=color:#f92672>=</span> DBMaker.fileDB<span style=color:#f92672>(</span>dbFile<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>                // 很是好奇,关闭锁定,还是不支持多事务访问同一个数据库文件
+</span></span><span style=display:flex><span>                .fileLockDisable<span style=color:#f92672>()</span>
+</span></span><span style=display:flex><span>                // 最好开启,在程度异常或JVM关闭可正常关闭数据库
+</span></span><span style=display:flex><span>                // 有过一次无法访问未关闭数据库文件的异常
+</span></span><span style=display:flex><span>                .closeOnJvmShutdown<span style=color:#f92672>()</span>
+</span></span><span style=display:flex><span>                // 如果不需要回滚的可以关闭,提高读写效率
+</span></span><span style=display:flex><span>                .transactionDisable<span style=color:#f92672>()</span>
+</span></span><span style=display:flex><span>                // 这里测试所没不保留磁盘文件
+</span></span><span style=display:flex><span>                .deleteFilesAfterClose<span style=color:#f92672>()</span>
+</span></span><span style=display:flex><span>                // 这里没有找到读取的API,或者就是不支持多连接的吧
+</span></span><span style=display:flex><span>                .make<span style=color:#f92672>()</span>;
+</span></span><span style=display:flex><span>    <span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    @AfterTest
+</span></span><span style=display:flex><span>    public void destroy<span style=color:#f92672>()</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>        assertTrue<span style=color:#f92672>(</span>!data.isEmpty<span style=color:#f92672>())</span>;
+</span></span><span style=display:flex><span>        // 本应该是99才对,但会合并内存中其它数据
+</span></span><span style=display:flex><span>        Map&lt;Integer, String&gt; temp <span style=color:#f92672>=</span> diskDB.treeMap<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;sort_mapdb&#34;</span><span style=color:#f92672>)</span>;
+</span></span><span style=display:flex><span>        assertEquals<span style=color:#f92672>(</span>temp.size<span style=color:#f92672>()</span>, 100<span style=color:#f92672>)</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        // 这里需要注意下,有可能make成功的数据库也是关闭的
+</span></span><span style=display:flex><span>        // 如果不做检查的话,可能抛出:IllegalAccessError<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;DB was already closed&#34;</span><span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#f92672>(</span>diskDB.isClosed<span style=color:#f92672>())</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>            diskDB.isClosed<span style=color:#f92672>()</span>;
+</span></span><span style=display:flex><span>        <span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    @Test<span style=color:#f92672>(</span>invocationCount <span style=color:#f92672>=</span> 10<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>    public void testSyncWrite<span style=color:#f92672>()</span> throws Exception <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>        // 支持多种类型Map,如B+ tree, sort等等
+</span></span><span style=display:flex><span>        // 但value貌似支持引用类型, 不支持Object, 可能是
+</span></span><span style=display:flex><span>        // 跟序列化到磁盘存储有关
+</span></span><span style=display:flex><span>        data <span style=color:#f92672>=</span> diskDB.treeMapCreate<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;nice_mapdb&#34;</span><span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>                // 开启快速计数器
+</span></span><span style=display:flex><span>                .counterEnable<span style=color:#f92672>()</span>
+</span></span><span style=display:flex><span>                // 这步很关键,如果不带get,那么就只是make,无法支持多连接
+</span></span><span style=display:flex><span>                .makeOrGet<span style=color:#f92672>()</span>;
+</span></span><span style=display:flex><span>        int len <span style=color:#f92672>=</span> 99;
+</span></span><span style=display:flex><span>        int ran <span style=color:#f92672>=</span> new Random<span style=color:#f92672>()</span>.nextInt<span style=color:#f92672>(</span>100<span style=color:#f92672>)</span>+1;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>while</span> <span style=color:#f92672>(</span>--len &gt;<span style=color:#f92672>=</span> 0<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>            data.put<span style=color:#f92672>(</span>len * ran, <span style=color:#e6db74>&#34;value-&#34;</span>+len * ran<span style=color:#f92672>)</span>;
+</span></span><span style=display:flex><span>        <span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        assertFalse<span style=color:#f92672>(</span>data.isEmpty<span style=color:#f92672>())</span>;
+</span></span><span style=display:flex><span>    <span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    @Test<span style=color:#f92672>(</span>invocationCount <span style=color:#f92672>=</span> 10<span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>    public void testReadAndDel<span style=color:#f92672>()</span> throws Exception <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>        data <span style=color:#f92672>=</span> diskDB.treeMapCreate<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;nice_mapdb&#34;</span><span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>                .counterEnable<span style=color:#f92672>()</span>
+</span></span><span style=display:flex><span>                .makeOrGet<span style=color:#f92672>()</span>;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> <span style=color:#f92672>(</span>!data.isEmpty<span style=color:#f92672>())</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>            <span style=color:#66d9ef>for</span> <span style=color:#f92672>(</span>Integer key : data.keySet<span style=color:#f92672>())</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>                <span style=color:#66d9ef>if</span> <span style=color:#f92672>(</span>key % 2 <span style=color:#f92672>==</span> <span style=color:#ae81ff>0</span> <span style=color:#f92672>||</span> key % 5 <span style=color:#f92672>==</span> 0<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>                    data.remove<span style=color:#f92672>(</span>key<span style=color:#f92672>)</span>;
+</span></span><span style=display:flex><span>                <span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>            <span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>            assertTrue<span style=color:#f92672>(</span>data.size<span style=color:#f92672>()</span> &gt; 0<span style=color:#f92672>)</span>;
+</span></span><span style=display:flex><span>        <span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>    <span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>    @Test
+</span></span><span style=display:flex><span>    public void testOtherMap<span style=color:#f92672>()</span> throws Exception <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>        SortedMap&lt;Integer, String&gt; data <span style=color:#f92672>=</span> diskDB.treeMapCreate<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;sort_mapdb&#34;</span><span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>                                        .counterEnable<span style=color:#f92672>()</span>
+</span></span><span style=display:flex><span>                                        .makeOrGet<span style=color:#f92672>()</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        int len <span style=color:#f92672>=</span> 99;
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>while</span> <span style=color:#f92672>(</span>--len &gt;<span style=color:#f92672>=</span> 0<span style=color:#f92672>)</span> <span style=color:#f92672>{</span>
+</span></span><span style=display:flex><span>            data.put<span style=color:#f92672>(</span>len, <span style=color:#e6db74>&#34;sorted-&#34;</span>+len<span style=color:#f92672>)</span>;
+</span></span><span style=display:flex><span>        <span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        assertNotNull<span style=color:#f92672>(</span>data<span style=color:#f92672>)</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        // 创建另一个map
+</span></span><span style=display:flex><span>        BTreeMap&lt;Integer, String&gt; btree <span style=color:#f92672>=</span> diskDB.treeMapCreate<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;sort_mapdb2&#34;</span><span style=color:#f92672>)</span>
+</span></span><span style=display:flex><span>                                        .counterEnable<span style=color:#f92672>()</span>
+</span></span><span style=display:flex><span>                                        .makeOrGet<span style=color:#f92672>()</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        // 很是奇怪, 为何这里的name没有效果, 会自动合并到同时一时内存所有treeMap中
+</span></span><span style=display:flex><span>        SortedMap&lt;Integer, String&gt; tree <span style=color:#f92672>=</span> diskDB.treeMap<span style=color:#f92672>(</span><span style=color:#e6db74>&#34;sort_mapdb1&#34;</span><span style=color:#f92672>)</span>;
+</span></span><span style=display:flex><span>        tree.put<span style=color:#f92672>(</span>100, <span style=color:#e6db74>&#34;sorted-100&#34;</span><span style=color:#f92672>)</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        btree.put<span style=color:#f92672>(</span>100, <span style=color:#e6db74>&#34;sorted-101&#34;</span><span style=color:#f92672>)</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>        assertEquals<span style=color:#f92672>(</span>tree.get<span style=color:#f92672>(</span>100<span style=color:#f92672>)</span>, <span style=color:#e6db74>&#34;sorted-100&#34;</span><span style=color:#f92672>)</span>;
+</span></span><span style=display:flex><span>        assertEquals<span style=color:#f92672>(</span>data.get<span style=color:#f92672>(</span>100<span style=color:#f92672>)</span>, <span style=color:#e6db74>&#34;sorted-100&#34;</span><span style=color:#f92672>)</span>;
+</span></span><span style=display:flex><span>    <span style=color:#f92672>}</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#f92672>}</span>
+</span></span></code></pre></td></tr></table></div></div><p>在这里没有详细的探讨关于MapDB是如何实现与磁盘持久化同步, 直接使用官方默认的值, 当然你也可以自己配置读写同步的心跳时间间隔. 在测试的过程观察发现, MapDB在创建磁盘的数据库文件时, 初始化大小写为2MB, 然后在同步内存数据时, 会先产生出一个临时文件, 当这个临时文件达到一定大小时就会合并到主体数据库文件. 至于其它的功能和代码中的疑问, 有待继续观察, 欢迎共同交流.</p><p>参考资料:</p><ul><li><a href=http://www.mapdb.org/ title="MapDB 官网" rel="noopener external nofollow noreferrer" target=_blank class=exturl>MapDB 官网
+<i class="fa fa-external-link-alt"></i></a></li><li><a href=https://github.com/jankotek/MapDB/tree/master/src/test/java/examples title=官方示例 rel="noopener external nofollow noreferrer" target=_blank class=exturl>官方示例
+<i class="fa fa-external-link-alt"></i></a></li><li><a href=http://hill007299.iteye.com/blog/2031208 title=MapDB实现分析 rel="noopener external nofollow noreferrer" target=_blank class=exturl>MapDB实现分析
+<i class="fa fa-external-link-alt"></i></a></li></ul></div><footer class=post-footer><div class=post-tags><a href=/tags/java/>Java
+</a><a href=/tags/mapdb/>MapDB
+</a><a href=/tags/%E5%86%85%E5%AD%98%E6%95%B0%E6%8D%AE%E5%BA%93/>内存数据库</a></div><div class=post-share-tools><div class=post-share-loading><i class="fa-solid fa-ellipsis fa-spin"></i></div><div class=sharethis-inline-share-buttons></div></div><hr><div class=reward-container><div><i class="fa-solid fa-mug-hot"></i>请我喝杯咖啡吧 ヾ(^▽^*)))</div><button>
+赞赏</button><div class=post-reward><div class=post-reward-item><img src=/imgs/img-lazy-loading.gif data-src=/imgs/ali-pay.png alt="凡梦星尘 - 支付宝">
+<span>支付宝</span></div><div class=post-reward-item><img src=/imgs/img-lazy-loading.gif data-src=/imgs/wechat-pay.png alt="凡梦星尘 - 微信">
+<span>微信</span></div></div></div><div class=post-copyright><img src=/imgs/cc/cc.svg width=75 height=75 align=right alt=共享知识><ul><li class=post-copyright-title><strong>文章标题：</strong>
+MapDB 同步读写示例</li><li class=post-copyright-author><strong>本文作者： </strong>凡梦星尘</li><li class=post-copyright-link><strong>本文链接：</strong>
+<a id=post-cr-link href=https://lisenhui.cn/tech/mapdb-write-read-sync.html title="MapDB 同步读写示例">https://lisenhui.cn/tech/mapdb-write-read-sync.html</a></li><li class=post-copyright-license><strong>版权声明： </strong>本博客所有文章除特别声明外，均采用 <i class="fab fa-fw fa-creative-commons"></i><a target=_blank href=https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh>BY-NC-SA</a> 许可协议。转载请注明出处！</li></ul></div><div class=followme><span>欢迎关注我的其它发布渠道</span><div class=social-list><div class=social-item><a target=_blank class=social-link href=/imgs/qq-channel.jpg><span class=icon><i class="fab fa-qq"></i>
+</span><span class=label>QQ</span></a></div><div class=social-item><a target=_blank class=social-link href=/rss.xml><span class=icon><i class="fa fa-rss"></i>
+</span><span class=label>RSS</span></a></div></div></div><div class=post-nav><div class="post-nav-next post-nav-item"><a href=/tech/mpsdk4j-intro-mapaccount.html rel=next title=mpsdk4j的点滴记录--MPAccount><i class="fa fa-chevron-left"></i> mpsdk4j的点滴记录--MPAccount</a></div><div class="post-nav-prev post-nav-item"><a href=/tech/redis-install-settings.html rel=prev title="Redis 安装与配置">Redis 安装与配置
+<i class="fa fa-chevron-right"></i></a></div></div></footer></article></div><div id=comments class=post-comments><div class=comment-head><div class=comment-headline><i class="fas fa-comments fa-fw"></i>
+<span>评论交流</span></div><div class=comment-switch><span class=first-comment>Waline</span>
+<span class=switch-btn></span>
+<span class=second-comment>Giscus</span></div></div><div class=comment-wrap><div><div class=comment-loading><i class="fa fa-sync fa-spin"></i></div><div class=waline-container></div></div><div><div class=comment-loading><i class="fa fa-sync fa-spin"></i></div><div class=giscus-container></div></div></div></div></div></main><footer class=footer><div class=footer-inner><div class=copyright>&copy;
+<span itemprop=copyrightYear>2010 - 2024
+</span><span class=with-love><i class="fa fa-heart"></i>
+</span><span class=author itemprop=copyrightHolder>凡梦星尘</span></div><div class=powered-by>由 <a href=https://gohugo.io title=0.138.0 target=_blank>Hugo</a> & <a href=https://github.com/hugo-next/hugo-theme-next title=4.7.0 target=_blank>Hugo NexT.Gemini</a> 强力驱动</div><div class=beian><a href=https://beian.miit.gov.cn target=_blank>粤ICP备18047355号-1</a>
+<img src=/imgs/gongan.png alt=沪公网安备>
+<a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=31011402009770" target=_blank>沪公网安备 31011402009770 号</a></div><div class=vendors-list><a target=_blank href=https://vercel.com title=Vercel><img src=/imgs/img-lazy-loading.gif data-src=/imgs/vendors/vercel.svg alt=Vercel>
+</a><a target=_blank href="https://www.upyun.com/?utm_source=lianmeng&amp;utm_medium=referral" title=又拍云><img src=/imgs/img-lazy-loading.gif data-src=/imgs/vendors/upyun.png alt=又拍云>
+</a><a target=_blank href=https://github.com title=Github><img src=/imgs/img-lazy-loading.gif data-src=/imgs/vendors/github.svg alt=Github>
+</a><a target=_blank href=https://www.leancloud.cn title=LeanCloud><img src=/imgs/img-lazy-loading.gif data-src=https://www.leancloud.cn/favicon.png alt=LeanCloud>
+</a><a target=_blank href=https://www.zstatic.net title=zstatic><img src=/imgs/img-lazy-loading.gif data-src=https://www.zstatic.net/logo.png alt=zstatic>
+</a><span>提供CDN/云资源支持</span></div></div></footer><script type=text/javascript src=https://s4.zstatic.net/ajax/libs/animejs/3.2.2/anime.min.js crossorigin=anonymous defer></script><script type=text/javascript src=https://s4.zstatic.net/ajax/libs/viewerjs/1.11.6/viewer.min.js crossorigin=anonymous defer></script><script class=next-config data-name=main type=application/json>{"algolia":{"cfg":{"apikey":"639c3c5992507251ead7be2153913cd0","appid":"NC5VDOMBRG","enable":true,"hits":{"perpage":10},"indexname":"site_indexes","limit":1e3},"instantjs":{"file":"dist/instantsearch.production.min.js","name":"instantsearch.js","version":"4.73.2"},"js":{"file":"dist/algoliasearch-lite.umd.js","name":"algoliasearch","version":"4.24.0"}},"bookmark":{"color":"#1b1b1b","enable":true,"save":"manual"},"copybtn":true,"darkmode":true,"giscus":{"cfg":{"category":"Comments","categoryid":"DIC_kwDOE8dfY84CQqz_","emit":false,"inputposition":"top","mapping":"title","reactions":false,"repo":"elkan1788/elkan1788.github.io","repoid":"MDEwOlJlcG9zaXRvcnkzMzE4MzMxODc=","theme":"preferred_color_scheme"},"js":"https://giscus.app/client.js"},"hostname":"https://lisenhui.cn/","i18n":{"ds_day":" 天前","ds_days":" 天 ","ds_hour":" 小时前","ds_hours":" 小时 ","ds_just":"刚刚","ds_min":" 分钟前","ds_mins":" 分钟","ds_month":" 个月前","ds_years":" 年 ","empty":"没有找到任何搜索结果：${query}","hits":"找到 ${hits} 个搜索结果","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","placeholder":"搜索..."},"lang":"zh-CN","lawidget":{"id":"JhW0FuUlJYQmqAJt","js":"https://v6-widget.51.la/v6/laId/quote.js?theme=0\u0026col=true\u0026f=12\u0026display=0,0,0,1,0,1,1,1"},"lazyload":false,"motion":{"async":true,"enable":true,"transition":{"collheader":"fadeInLeft","postblock":"fadeIn","postbody":"fadeInDown","postheader":"fadeInDown","sidebar":"rotateInUpRight"}},"postmeta":{"comments":{"enable":true,"plugin":"waline"},"views":{"enable":true,"plugin":"waline"}},"root":"/","scheme":"Gemini","share":{"enable":true,"sharethis":{"id":"66aeda3e566923001d52f16c","js":"https://platform-api.sharethis.com/js/sharethis.js#property=id\u0026product=inline-share-buttons\u0026source=platform"}},"sidebar":{"display":"post","offset":12,"padding":18,"position":"left","width":256},"vendor":{"plugins":"zstatic","router":{"home":"https://www.zstatic.net","logo":"https://www.zstatic.net/logo.png","name":"zstatic","type":"modern","url":"https://s4.zstatic.net/ajax/libs"}},"version":"4.7.0","waline":{"cfg":{"emoji":false,"imguploader":false,"placeholder":"请文明发言哟 ヾ(≧▽≦*)o \n\n可用快捷键选取表情符号：😀😄😁🥳👻👽👀🚄\n(Window系统：Win+.，Mac系统：Control+Command+Space)","reaction":true,"reactiontext":["点赞","踩一下","得意","不屑","尴尬","睡觉"],"reactiontitle":"你认为这篇文章怎么样？","requiredmeta":["nick","mail"],"serverurl":"https://waline.lisenhui.cn/","sofa":"快来发表你的意见吧 (≧∀≦)ゞ","wordlimit":200},"css":{"alias":"@waline/client","file":"dist/waline.css","name":"waline","version":"2.15.8"},"js":{"alias":"@waline/client","file":"dist/waline.js","name":"waline","version":"2.15.8"}}}</script><script type=text/javascript src=/js/main.min.b8f002fefcd479f8376fd74f4ffe0bd8894cd678ff20e351dbe55bb876d24420.js defer></script></body></html>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Struts2 on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/struts2/</link><description>Recent content in Struts2 on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 17 Oct 2011 22:10:20 +0000</lastBuildDate><atom:link href="https://lisenhui.cn/tags/struts2/rss.xml" rel="self" type="application/rss+xml"/><item><title>JSP版本的KindEidtor在线编辑器第二季：Servlet+Struts2集成版</title><link>https://lisenhui.cn/tech/kindeditor-jsp-struts2-servlet.html</link><pubDate>Mon, 17 Oct 2011 22:10:20 +0000</pubDate><guid>https://lisenhui.cn/tech/kindeditor-jsp-struts2-servlet.html</guid><description>&lt;p>前段时间我在论坛上发布了一篇名为
+&lt;a href="http://elkan1788.github.io/OnlineEditor/2011-03-24/kindeditor-jsp-complete.html" title="《JSP版的完善KindEditor在线编辑器(带附件上传与图片按日期分类管理功能)》" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ 《JSP版的完善KindEditor在线编辑器(带附件上传与图片按日期分类管理功能)》
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>得到了大家的积极响应，不过令我觉得有点遗憾的是，有很多人都不是真的讨论技术问题，而是向我索取源码，说实在的自已的劳动成果就这样白白奉献出来，觉得有点对不起自己了，要知道我们国内的技术员都是没有金钱后盾啊。唉，最近都太忙了就没有怎么太在意这件事，今晚刚好有空过来看看。看了那么多人留下的印记后，觉得自己也应该要无私一下才是吧，咱老毛说的对：要像雷锋同志学习，呵呵…… 其实在上面我已经说过了，这个JAR里面的功能我只是把官网的JSP代码改编而已，废话就先不多说了，下面直接上码吧，可要接稳了哦。&lt;/p></description></item></channel></rss>
