@@ -1,1 +1,12 @@
 User-agent: *
+Disallow: /3rd/
+Disallow: /css/
+Disallow: /imgs/
+Disallow: /fonts/
+Disallow: .jpg$
+Disallow: .jpeg$
+Disallow: .gif$
+Disallow: .png$
+Disallow: .bmp$
+Disallow: .web$
+Sitemap: https://lisenhui.cn//sitemap.xml
