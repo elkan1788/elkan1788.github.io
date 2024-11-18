@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>容器虚拟化 on 热爱生活与梦想</title><link>https://lisenhui.cn/categories/%E5%AE%B9%E5%99%A8%E8%99%9A%E6%8B%9F%E5%8C%96/</link><description>Recent content in 容器虚拟化 on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 18 Nov 2024 18:36:09 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/categories/%E5%AE%B9%E5%99%A8%E8%99%9A%E6%8B%9F%E5%8C%96/rss.xml" rel="self" type="application/rss+xml"/><item><title>道云提供的免费Docker镜像服务</title><link>https://lisenhui.cn/tech/daocloud-proxy-for-docker-images.html</link><pubDate>Mon, 18 Nov 2024 18:36:09 +0800</pubDate><guid>https://lisenhui.cn/tech/daocloud-proxy-for-docker-images.html</guid><description>&lt;p>前段时间看到博友圈的小伙伴发表了篇名为：
+&lt;a href="https://wangyunzi.com/posts/147/" title="docker代理问题" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ docker代理问题
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>的分享，里面详细记录她是如何通过Cloudfare路由功能实现代理Docker镜像的服务，想要自己倒腾的小伙伴可以参考一二。当时看到她这篇文章，就想起年初时自己为Docker镜像代理而烦恼的情境，后来借助Google成功解决这问题，不过与前面这位博友的方法不同，是抱了某厂商的大腿直接使用，并没有自己去搭建和管理代理服务。&lt;/p>
+&lt;blockquote>
+&lt;p>注：“博友”是自己给一群爱好写博客的朋友们所起的简写描述，大家可千万别误会为是那赌博的群体呀。😂&lt;/p>
+&lt;/blockquote></description></item></channel></rss>
