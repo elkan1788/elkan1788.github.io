@@ -1,4 +1,10 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>热爱生活与梦想</title><link>https://lisenhui.cn/</link><description>Recent content on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 18 Nov 2024 18:36:09 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/rss.xml" rel="self" type="application/rss+xml"/><item><title>DaoCloud道客提供的免费Docker镜像代理服务</title><link>https://lisenhui.cn/tech/daocloud-proxy-for-docker-images.html</link><pubDate>Mon, 18 Nov 2024 18:36:09 +0800</pubDate><guid>https://lisenhui.cn/tech/daocloud-proxy-for-docker-images.html</guid><description>&lt;p>前段时间看到博友圈的小伙伴发表了篇名为：《
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>热爱生活与梦想</title><link>https://lisenhui.cn/</link><description>Recent content on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 01 Dec 2024 20:23:36 +0000</lastBuildDate><atom:link href="https://lisenhui.cn/rss.xml" rel="self" type="application/rss+xml"/><item><title>Go语言中“糟糕”的日期时间格式化设计</title><link>https://lisenhui.cn/blog/golang-bad-design-for-datetime-format.html</link><pubDate>Sun, 01 Dec 2024 20:23:36 +0000</pubDate><guid>https://lisenhui.cn/blog/golang-bad-design-for-datetime-format.html</guid><description>&lt;p>趁着周末的闲暇时间，着手对许久未更新维护的&lt;code>hugo-theme-next&lt;/code>主题进行相关&lt;code>Issues&lt;/code>的修复和优化，其中有块与文章更新时间相关的u问题：
+&lt;a href="https://github.com/hugo-next/hugo-theme-next/issues/109" title="#109" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ #109
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>，修复时正好发现配置文件中的日期时间格式化有点不宜理解，本来想对它做下调整改进，但却是结果遇到莫明奇妙的错误，深入了解一番才发现，这是Go语言的设计规范要求。好吧，也很是无奈啦。顺便也记录下对于Go语言中日期时间格式化的一些学习和理解，方便后续使用本主题用户阅读与参考。&lt;/p></description></item><item><title>DaoCloud道客提供的免费Docker镜像代理服务</title><link>https://lisenhui.cn/tech/daocloud-proxy-for-docker-images.html</link><pubDate>Mon, 18 Nov 2024 18:36:09 +0800</pubDate><guid>https://lisenhui.cn/tech/daocloud-proxy-for-docker-images.html</guid><description>&lt;p>前段时间看到博友圈的小伙伴发表了篇名为：《
 &lt;a href="https://wangyunzi.com/posts/147/" title="docker代理问题" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  docker代理问题
  
