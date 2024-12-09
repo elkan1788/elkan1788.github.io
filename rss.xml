@@ -1,7 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>热爱生活与梦想</title><link>https://lisenhui.cn/</link><description>Recent content on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 04 Dec 2024 18:46:05 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/rss.xml" rel="self" type="application/rss+xml"/><item><title>Win10隐匿的VPN设置和L2TP连接常见错误</title><link>https://lisenhui.cn/tech/win10-vpn-deep-hide-settings.html</link><pubDate>Wed, 04 Dec 2024 18:46:05 +0800</pubDate><guid>https://lisenhui.cn/tech/win10-vpn-deep-hide-settings.html</guid><description>&lt;p>近期在Windows10操作系统上配置VPN连接遇到了点“麻烦”，在明确VPN连接地址和认证信息都准确无误的情况下，还是不能无法正常连接VPN网络服务。但切换到另一台Windows11操作系统中配置VPN又是可以成功连接使用，还真是百思不得其解。而这又是工作电脑升级到Windows11操作系统的话估计比较麻烦，秉承不放弃的执着精神，一番倒腾后还好幸运的找到了”破解“之法，成功连接使用上了VPN网络服务。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>热爱生活与梦想</title><link>https://lisenhui.cn/</link><description>Recent content on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 08 Dec 2024 17:12:35 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/rss.xml" rel="self" type="application/rss+xml"/><item><title>给Hugo文章增加阅读更多跳转的锚点定位功能</title><link>https://lisenhui.cn/blog/make-post-readmore-anchor-feature.html</link><pubDate>Sun, 08 Dec 2024 17:12:35 +0800</pubDate><guid>https://lisenhui.cn/blog/make-post-readmore-anchor-feature.html</guid><description>&lt;p>早期在进行
+&lt;a href="https://github.com/hugo-next/hugo-theme-next" title="hugo-theme-next" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ &lt;code>hugo-theme-next&lt;/code>
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>的主题开发时，但想着给首页跳转至文章内容阅读时，能够有个定位到文章后续内容的锚定点功能，而不至于说从头开始阅读影响体验。而恰巧官方在其
+&lt;a href="https://github.com/gohugoio/hugo/releases/tag/v0.134.0" title="hugo-0.134.0-release" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ hugo-0.134.0-release
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>发布中新增加这个万众推崇功能的支持实现，为Hugo用户带来全新的体验值得点赞加赏。&lt;/p></description></item><item><title>Win10隐匿的VPN设置和L2TP连接常见错误</title><link>https://lisenhui.cn/tech/win10-vpn-deep-hide-settings.html</link><pubDate>Wed, 04 Dec 2024 18:46:05 +0800</pubDate><guid>https://lisenhui.cn/tech/win10-vpn-deep-hide-settings.html</guid><description>&lt;p>近期在Windows10操作系统上配置VPN连接遇到了点“麻烦”，在明确VPN连接地址和认证信息都准确无误的情况下，还是不能无法正常连接VPN网络服务。但切换到另一台Windows11操作系统中配置VPN又是可以成功连接使用，还真是百思不得其解。而这又是工作电脑升级到Windows11操作系统的话估计比较麻烦，秉承不放弃的执着精神，一番倒腾后还好幸运的找到了“破解”之法，成功连接使用上了VPN网络服务。&lt;/p>
 &lt;blockquote>
 &lt;p>注：声明下此处的VPN网络服务，并非是大家眼中的科学上网，而是公司或其他组织特定的私域办公网络环境，为保证网络安全而启用的VPN网络服务。&lt;/p>
-&lt;/blockquote></description></item><item><title>Go语言中“糟糕”的日期时间格式化设计</title><link>https://lisenhui.cn/blog/golang-bad-design-for-datetime-format.html</link><pubDate>Sun, 01 Dec 2024 20:23:36 +0000</pubDate><guid>https://lisenhui.cn/blog/golang-bad-design-for-datetime-format.html</guid><description>&lt;p>趁着周末的闲暇时间，着手对许久未更新维护的&lt;code>hugo-theme-next&lt;/code>主题进行相关&lt;code>Issues&lt;/code>的修复和优化，其中有块与文章更新时间相关的问题：
+&lt;/blockquote></description></item><item><title>Go语言中“糟糕”的日期时间格式化设计</title><link>https://lisenhui.cn/blog/golang-bad-design-for-datetime-format.html</link><pubDate>Sun, 01 Dec 2024 20:23:36 +0000</pubDate><guid>https://lisenhui.cn/blog/golang-bad-design-for-datetime-format.html</guid><description>&lt;p>趁着周末的闲暇时间，着手对许久未更新维护的
+&lt;a href="https://github.com/hugo-next/hugo-theme-next" title="hugo-theme-next" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ &lt;code>hugo-theme-next&lt;/code>
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>主题进行相关&lt;code>Issues&lt;/code>的修复和优化，其中有块与文章更新时间相关的问题：
 &lt;a href="https://github.com/hugo-next/hugo-theme-next/issues/109" title="#109" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  #109
  
