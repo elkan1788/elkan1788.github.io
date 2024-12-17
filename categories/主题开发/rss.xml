@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>主题开发 on 热爱生活与梦想</title><link>https://lisenhui.cn/categories/%E4%B8%BB%E9%A2%98%E5%BC%80%E5%8F%91/</link><description>Recent content in 主题开发 on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 08 Dec 2024 17:12:35 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/categories/%E4%B8%BB%E9%A2%98%E5%BC%80%E5%8F%91/rss.xml" rel="self" type="application/rss+xml"/><item><title>给Hugo文章增加阅读更多跳转的锚点定位功能</title><link>https://lisenhui.cn/blog/make-post-readmore-anchor-feature.html</link><pubDate>Sun, 08 Dec 2024 17:12:35 +0800</pubDate><guid>https://lisenhui.cn/blog/make-post-readmore-anchor-feature.html</guid><description>&lt;p>早期在进行
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>主题开发 on 热爱生活与梦想</title><link>https://lisenhui.cn/categories/%E4%B8%BB%E9%A2%98%E5%BC%80%E5%8F%91/</link><description>Recent content in 主题开发 on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 15 Dec 2024 20:22:35 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/categories/%E4%B8%BB%E9%A2%98%E5%BC%80%E5%8F%91/rss.xml" rel="self" type="application/rss+xml"/><item><title>修复Mathjax行内显示公式的问题</title><link>https://lisenhui.cn/blog/fixed-mathjax-inline-display.html</link><pubDate>Sun, 15 Dec 2024 20:22:35 +0800</pubDate><guid>https://lisenhui.cn/blog/fixed-mathjax-inline-display.html</guid><description>&lt;p>
+&lt;a href="https://github.com/hugo-next/hugo-theme-next" title="hugo-theme-next" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ &lt;code>hugo-theme-next&lt;/code>
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>的主题默认便是可支持使用&lt;code>mathjax&lt;/code>或&lt;code>katex&lt;/code>两种不同组件，通过它们来实现对数学公式的渲染输出显示。只不过自己对数学公式的使用了解的也比较少，测试时直接就是复用网上的文章来验证数学公式渲染是否正常。结果当遇到真正的数学“专家”用户时，便是暴露出在了无法在同行文字内显示数学公式的问题
+&lt;a href="https://github.com/Hugo-next/Hugo-theme-next/issues/90" title="Issue#90" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ Issue#90
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a>，趁此便是参考评论区大家提供的建议尝试修复这“千年老&amp;#x1f41b;”。&lt;/p></description></item><item><title>给Hugo文章增加阅读更多跳转的锚点定位功能</title><link>https://lisenhui.cn/blog/make-post-readmore-anchor-feature.html</link><pubDate>Sun, 08 Dec 2024 17:12:35 +0800</pubDate><guid>https://lisenhui.cn/blog/make-post-readmore-anchor-feature.html</guid><description>&lt;p>早期在进行
 &lt;a href="https://github.com/hugo-next/hugo-theme-next" title="hugo-theme-next" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  &lt;code>hugo-theme-next&lt;/code>
  
