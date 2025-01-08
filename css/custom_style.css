@@ -1,18 +1,22 @@
 
-.xyears-blog {
-  margin-top: 1px;
+.xyears-blog, .boyouquan-blog {
+  margin: 3px 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.xyears-blog > a {
-  margin-right: 6px;
+.xyears-blog img, .boyouquan-blog img {
+  max-height: 22px;
+}
+
+.xyears-blog > a, .boyouquan-blog > a {
+  margin-right: 8px;
   border-bottom: 0px;
 }
 
 .not-by-ai {
-  margin-top: 9px;
+  margin-top: 6px;
 }
 
 .not-by-ai img {
