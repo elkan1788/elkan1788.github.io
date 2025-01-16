@@ -20,7 +20,7 @@
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
 &lt;/a>了解下。接下来主要还是分享下&lt;code>Azkaban3&lt;/code>的安装布署，下面是&lt;code>Azkaban3&lt;/code>的系统架构设计图：&lt;/p>
-&lt;p>&lt;img src="https://lisenhui.cn/imgs/img-lazy-loading.gif" data-src="//imgs.lisenhui.cn/blog/2017/09-08-Azkaban-Install00.png" alt="Azkaban-Install00" />&lt;/p>
+&lt;p>&lt;img src="https://lisenhui.cn/imgs/img-lazy-loading.gif" data-src="//imgs.lisenhui.cn/blog/2017/09-08-Azkaban-Install00.png!alias" alt="Azkaban-Install00" />&lt;/p>
 &lt;p>图中的3个组件便是&lt;code>Azkaban3&lt;/code>的重要组成部分：&lt;/p>
 &lt;ul>
 &lt;li>MySQL关系数据存储数据&lt;/li>

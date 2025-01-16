@@ -85,8 +85,8 @@
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
 &lt;/a>的介绍就不做过多的说明，直接引用官方的首页的说明如下图所示：&lt;/p>
-&lt;p>&lt;img src="https://lisenhui.cn/imgs/img-lazy-loading.gif" data-src="//imgs.lisenhui.cn/blog/2017/10-22-Apache-NiFi-01.png" alt="NiFi-01.png" />&lt;/p></description></item><item><title>关于Ambari中服务运行正常UI却显示服务停止的问题</title><link>https://lisenhui.cn/tech/ambari-monitor-status-issues.html</link><pubDate>Wed, 18 Oct 2017 16:13:36 +0000</pubDate><guid>https://lisenhui.cn/tech/ambari-monitor-status-issues.html</guid><description>&lt;p>很多时候环境的维护的确是件头痛的事件，这不本来在Ambari的Dashboard页面显示正常服务的监控，实然间出现了个奇怪的现象： 在机器查询服务的运行进程是正常的，可偏偏Ambari的UI界面却显示状为停止，但端口检查又显示正常的。如下图：&lt;/p>
-&lt;p>&lt;img src="https://lisenhui.cn/imgs/img-lazy-loading.gif" data-src="//imgs.lisenhui.cn/blog/2017/10-18-ambari-red.png" alt="alert_stopped.png" />&lt;/p></description></item><item><title>HiveServer2因JDBC版本引起的问题</title><link>https://lisenhui.cn/tech/hive2-jdbc-connector-issues.html</link><pubDate>Tue, 17 Oct 2017 17:33:04 +0000</pubDate><guid>https://lisenhui.cn/tech/hive2-jdbc-connector-issues.html</guid><description>&lt;p>之前一直都是用&lt;code>HDP&lt;/code>来搭建和管理&lt;strong>Hadoop&lt;/strong>环境，在安装完成调试时也未曾出现过棘手的问题，但这次在&lt;code>Centos6x&lt;/code>系统上布署好后却是遇到奇怪的问题：&lt;/p>
+&lt;p>&lt;img src="https://lisenhui.cn/imgs/img-lazy-loading.gif" data-src="//imgs.lisenhui.cn/blog/2017/10-22-Apache-NiFi-01.png!alias" alt="NiFi-01.png" />&lt;/p></description></item><item><title>关于Ambari中服务运行正常UI却显示服务停止的问题</title><link>https://lisenhui.cn/tech/ambari-monitor-status-issues.html</link><pubDate>Wed, 18 Oct 2017 16:13:36 +0000</pubDate><guid>https://lisenhui.cn/tech/ambari-monitor-status-issues.html</guid><description>&lt;p>很多时候环境的维护的确是件头痛的事件，这不本来在Ambari的Dashboard页面显示正常服务的监控，实然间出现了个奇怪的现象： 在机器查询服务的运行进程是正常的，可偏偏Ambari的UI界面却显示状为停止，但端口检查又显示正常的。如下图：&lt;/p>
+&lt;p>&lt;img src="https://lisenhui.cn/imgs/img-lazy-loading.gif" data-src="//imgs.lisenhui.cn/blog/2017/10-18-ambari-red.png!alias" alt="alert_stopped.png" />&lt;/p></description></item><item><title>HiveServer2因JDBC版本引起的问题</title><link>https://lisenhui.cn/tech/hive2-jdbc-connector-issues.html</link><pubDate>Tue, 17 Oct 2017 17:33:04 +0000</pubDate><guid>https://lisenhui.cn/tech/hive2-jdbc-connector-issues.html</guid><description>&lt;p>之前一直都是用&lt;code>HDP&lt;/code>来搭建和管理&lt;strong>Hadoop&lt;/strong>环境，在安装完成调试时也未曾出现过棘手的问题，但这次在&lt;code>Centos6x&lt;/code>系统上布署好后却是遇到奇怪的问题：&lt;/p>
 &lt;blockquote>
 &lt;p>表面上看来&lt;strong>Hive&lt;/strong>服务是正常运行的，进程运行正常，页面UI也正常，日志也没错误输出。简单的建表的语句都能执行，可偏偏在导入本地/&lt;strong>HDFS&lt;/strong>数据时，便就抛出异常啦。错误的堆栈信息如下：&lt;/p>
 &lt;/blockquote>
@@ -131,7 +131,7 @@
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
 &lt;/a>了解下。接下来主要还是分享下&lt;code>Azkaban3&lt;/code>的安装布署，下面是&lt;code>Azkaban3&lt;/code>的系统架构设计图：&lt;/p>
-&lt;p>&lt;img src="https://lisenhui.cn/imgs/img-lazy-loading.gif" data-src="//imgs.lisenhui.cn/blog/2017/09-08-Azkaban-Install00.png" alt="Azkaban-Install00" />&lt;/p>
+&lt;p>&lt;img src="https://lisenhui.cn/imgs/img-lazy-loading.gif" data-src="//imgs.lisenhui.cn/blog/2017/09-08-Azkaban-Install00.png!alias" alt="Azkaban-Install00" />&lt;/p>
 &lt;p>图中的3个组件便是&lt;code>Azkaban3&lt;/code>的重要组成部分：&lt;/p>
 &lt;ul>
 &lt;li>MySQL关系数据存储数据&lt;/li>
