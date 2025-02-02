@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Python秘籍 on 热爱生活与梦想</title><link>https://lisenhui.cn/categories/python%E7%A7%98%E7%B1%8D/</link><description>Recent content in Python秘籍 on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 17 Aug 2017 18:20:18 +0000</lastBuildDate><atom:link href="https://lisenhui.cn/categories/python%E7%A7%98%E7%B1%8D/rss.xml" rel="self" type="application/rss+xml"/><item><title>pymssql连接azure云的MSSQL数据库</title><link>https://lisenhui.cn/tech/pymssql-azure-mssql-datasource-connect.html</link><pubDate>Thu, 17 Aug 2017 18:20:18 +0000</pubDate><guid>https://lisenhui.cn/tech/pymssql-azure-mssql-datasource-connect.html</guid><description>&lt;p>码好代码在测试环境做好测试后，满怀信心的去布署上线到生产环境，结果就是一堆的异常，具体查看了后发现是连接数据库的问题，异常信息如下：&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-0-1">&lt;a class="lnlinks" href="#hl-0-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-2">&lt;a class="lnlinks" href="#hl-0-2">2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-3">&lt;a class="lnlinks" href="#hl-0-3">3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-4">&lt;a class="lnlinks" href="#hl-0-4">4&lt;/a>
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f92672">(&lt;/span>40532, &lt;span style="color:#e6db74">&amp;#39;Cannot open server &amp;#34;1433D&amp;#34; requested by the login. 
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">The login failed.DB-Lib error message 20018, severity 20:\n
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">General SQL Server error: Check messages from the SQL Server\n
-&lt;/span>&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#e6db74">DB-Lib error message 20002, severity 9:\nAdaptive Server connection failed\n&amp;#39;&lt;/span>&lt;span style="color:#f92672">)&lt;/span>
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="o">(&lt;/span>40532, &lt;span class="s1">&amp;#39;Cannot open server &amp;#34;1433D&amp;#34; requested by the login. 
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">The login failed.DB-Lib error message 20018, severity 20:\n
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">General SQL Server error: Check messages from the SQL Server\n
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">DB-Lib error message 20002, severity 9:\nAdaptive Server connection failed\n&amp;#39;&lt;/span>&lt;span class="o">)&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div></description></item><item><title>在Mac/Linux系统下安装pymssql模块</title><link>https://lisenhui.cn/tech/mac-install-pymssql-module.html</link><pubDate>Wed, 16 Aug 2017 13:50:55 +0000</pubDate><guid>https://lisenhui.cn/tech/mac-install-pymssql-module.html</guid><description>&lt;p>在非&lt;code>Windows&lt;/code>环境下去访问，连接 MSSQL 数据，本身就是件苦差事来的。自写&lt;code>Python&lt;/code>程序以来在&lt;code>ORM&lt;/code>方面都是使用&lt;code>pyxxx&lt;/code>的模块，果不其然连接 MSSQL 也有个模块叫&lt;code>pymssql&lt;/code>，只是实际使用中并不是特别的顺利。如笔者所处的环境就是如此，开发环境为&lt;code>OSX 10.11&lt;/code>，发布环境为&lt;code>CentOS 6.4&lt;/code>，按官方的安装步骤实行下来，Linux 环境是&lt;code>OK&lt;/code>的，只是 Mac 环境下安装失败，错误的堆栈信息如下：&lt;/p></description></item><item><title>Python在命令行即时输出</title><link>https://lisenhui.cn/tech/python-output-conosle-intime.html</link><pubDate>Sun, 13 Aug 2017 14:19:14 +0000</pubDate><guid>https://lisenhui.cn/tech/python-output-conosle-intime.html</guid><description>&lt;p>在程序遇到问题需要DEBUG时，通过会增加一些**&lt;code>print&lt;/code>**语句输出。于是乎按惯例也在&lt;code>Python&lt;/code>的代码中加入print调试，然后输入&lt;code>python xxxx.py&lt;/code>，满怀信心的期待着调试信息的满屏滚动，结果是过了好阵子才显示出来。为何会这样呢？&lt;/p>
 &lt;p>根据网友建议增加个&lt;code>-u&lt;/code>参数就OK，后来查了下原因：&lt;code>Python&lt;/code>在默认情况会先把&lt;code>print&lt;/code>输出到缓冲中，待缓冲满或程序后才会输出。所以可以在运行&lt;code>Python&lt;/code>程序时加入此参数是非常的有用。&lt;/p></description></item><item><title>Python pip中国镜像服务器地址</title><link>https://lisenhui.cn/tech/python-pip-install-chinese-mirror.html</link><pubDate>Fri, 11 Aug 2017 14:17:01 +0000</pubDate><guid>https://lisenhui.cn/tech/python-pip-install-chinese-mirror.html</guid><description>&lt;p>今天在安装一个&lt;code>Python&lt;/code>模块&amp;ndash;&amp;gt;&lt;code>pymysql&lt;/code>结果等待时间特别的长，最后超时失败啦，起初是以为是网络带宽问题，让IT调整后仍是失败，随后尝试查找国内的镜像，还有真人也遇到过相同的问题。镜像列表如下：&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-0-1">&lt;a class="lnlinks" href="#hl-0-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-2">&lt;a class="lnlinks" href="#hl-0-2">2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-3">&lt;a class="lnlinks" href="#hl-0-3">3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-4">&lt;a class="lnlinks" href="#hl-0-4">4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-5">&lt;a class="lnlinks" href="#hl-0-5">5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-6">&lt;a class="lnlinks" href="#hl-0-6">6&lt;/a>
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>https://pypi.douban.com/simple/ 豆瓣
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>http://mirrors.aliyun.com/pypi/simple/ 阿里
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>http://pypi.hustunique.com/simple/ 华中理工大学
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>http://pypi.sdutlinux.org/simple/ 山东理工大学
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>http://pypi.mirrors.ustc.edu.cn/simple/ 中国科学技术大学
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>https://pypi.tuna.tsinghua.edu.cn/simple 清华
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">https://pypi.douban.com/simple/ 豆瓣
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">http://mirrors.aliyun.com/pypi/simple/ 阿里
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">http://pypi.hustunique.com/simple/ 华中理工大学
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">http://pypi.sdutlinux.org/simple/ 山东理工大学
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">http://pypi.mirrors.ustc.edu.cn/simple/ 中国科学技术大学
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">https://pypi.tuna.tsinghua.edu.cn/simple 清华&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div></description></item></channel></rss>

@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Maven on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/maven/</link><description>Recent content in Maven on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 17 May 2017 17:02:23 +0000</lastBuildDate><atom:link href="https://lisenhui.cn/tags/maven/rss.xml" rel="self" type="application/rss+xml"/><item><title>发布jar到Maven时遭遇gpg签名失败</title><link>https://lisenhui.cn/tech/maven-deploy-center-sign-failed.html</link><pubDate>Wed, 17 May 2017 17:02:23 +0000</pubDate><guid>https://lisenhui.cn/tech/maven-deploy-center-sign-failed.html</guid><description>&lt;p>有许久没维护自己开源的项目了，此次在修复BUG发布时遭遇失败，检查后发现原因是因为gpg签名失败，没办法换了MAC电脑有些操作不熟悉是有点郁闷的。&lt;/p>
 &lt;p>关于如何将自己的JAR共享到Maven中央仓库，网上有很多的资源，大家可以自行尝试一下，其实也不难的，完全没必要担心英语的问题。&lt;/p>
-&lt;blockquote>
-&lt;p>分享一个别人整理的GitBook: 
+
+ &lt;blockquote>
+ &lt;p>分享一个别人整理的GitBook: 
 &lt;a href="https://skyao.gitbooks.io/leaning-maven/content/publish/central/" title="发布到中央仓库" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  发布到中央仓库
  
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
 &lt;/a>&lt;/p>
-&lt;/blockquote></description></item></channel></rss>
+ &lt;/blockquote></description></item></channel></rss>

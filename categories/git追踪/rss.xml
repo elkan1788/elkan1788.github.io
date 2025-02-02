@@ -16,40 +16,40 @@
 &lt;a class="header-anchor" href="#%e9%97%ae%e9%a2%98%e7%8e%b0%e8%ba%ab">&lt;/a>
 &lt;/h2>&lt;p>555~，今天体验了一把安装最新程序的“快感”！！！&lt;/p>
 &lt;p>在使用Git Extensisons推送最新写的文章到Github时，遇到了个SSH KEY认证无效的莫名错误。事情的发生是这样的：今天在首次打开Git Extensions软件时，它非常友好的弹出更新提示窗口，然后就手不自觉的点击了下确认按钮。结果更新好后，在推送文章到Github时就发生了如下面一样神奇的错误阻拦：&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-0-1">&lt;a class="lnlinks" href="#hl-0-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-2">&lt;a class="lnlinks" href="#hl-0-2">2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-3">&lt;a class="lnlinks" href="#hl-0-3">3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-4">&lt;a class="lnlinks" href="#hl-0-4">4&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-5">&lt;a class="lnlinks" href="#hl-0-5">5&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-6">&lt;a class="lnlinks" href="#hl-0-6">6&lt;/a>
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-java" data-lang="java">&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>FATAL ERROR: No supported authentication methods &lt;span style="color:#a6e22e">available&lt;/span> (server sent: publickey)
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fatal: Could not read from remote repository.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Please make sure you have the correct access rights
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>and the repository exists.
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="n">FATAL&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">ERROR&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">No&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">supported&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">authentication&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">methods&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">available&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">server&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">sent&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">publickey&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nl">fatal&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">Could&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">not&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">read&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">remote&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">repository&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="n">Please&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">make&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">sure&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">you&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">have&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">the&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">correct&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">access&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">rights&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="n">and&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">the&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">repository&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">exists&lt;/span>&lt;span class="p">.&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div></description></item><item><title>Github个人信息卡片</title><link>https://lisenhui.cn/tech/github-personal-profile-card.html</link><pubDate>Sun, 24 Jan 2021 12:21:10 +0800</pubDate><guid>https://lisenhui.cn/tech/github-personal-profile-card.html</guid><description>&lt;p>Github上总是会有一些新奇的东西出现，这不无意间又发现了个有趣的玩法，可以用它来作为你的个人开发者名信片展现。具体展现效果如下：&lt;/p>
 &lt;p>&lt;img src="https://lisenhui.cn/imgs/img-lazy-loading.gif" data-src="//imgs.lisenhui.cn/blog/2021/01-24-elkan1788-profile-02.png!alias" alt="01-24-elkan1788-profile-02.png" />&lt;/p>
 &lt;p>操作起来也不繁琐，类似以前的pages服务那样，只准备个特定的仓库就可以，具体操作如下：&lt;/p></description></item><item><title>Github push失败：Could not resolve hostname</title><link>https://lisenhui.cn/tech/github-push-failed.html</link><pubDate>Tue, 16 May 2017 10:21:43 +0000</pubDate><guid>https://lisenhui.cn/tech/github-push-failed.html</guid><description>&lt;p>平时最常用的git push命令突然间居然不可以用（错误日志如下），脑子首先蹦出的想法就是：难道Github又被墙了么！以前出现过类似这样的现象，需要通过指定hosts来加速访问。&lt;/p>
 &lt;p>git push 执行后返回的错误日志：&lt;/p>
-&lt;div class="highlight">&lt;div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-&lt;table style="border-spacing:0;padding:0;margin:0;border:0;">&lt;tr>&lt;td style="vertical-align:top;padding:0;margin:0;border:0;">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-&lt;/span>&lt;span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-0-1">&lt;a class="lnlinks" href="#hl-0-1">1&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-2">&lt;a class="lnlinks" href="#hl-0-2">2&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-3">&lt;a class="lnlinks" href="#hl-0-3">3&lt;/a>
+&lt;/span>&lt;span class="lnt" id="hl-0-4">&lt;a class="lnlinks" href="#hl-0-4">4&lt;/a>
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-shell" data-lang="shell">&lt;span style="display:flex;">&lt;span>ssh: Could not resolve hostname github.com:elkan1788: nodename nor servname provided, or not known
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>fatal: Could not read from remote repository.
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>Please make sure you have the correct access rights
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">ssh: Could not resolve hostname github.com:elkan1788: nodename nor servname provided, or not known
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">fatal: Could not &lt;span class="nb">read&lt;/span> from remote repository.
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Please make sure you have the correct access rights&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div></description></item><item><title>Git 操作命令收集</title><link>https://lisenhui.cn/tech/git-commands-collect.html</link><pubDate>Fri, 29 Jan 2016 12:34:21 +0000</pubDate><guid>https://lisenhui.cn/tech/git-commands-collect.html</guid><description>&lt;p>都说好性不如烂笔头, 一点也没有错呀. 虽然学习Git已经有1个多年头, 但是有些时候那比较少用的命令总是一时想不起来.所以还是决定把它写到blog里面, 不仅把经验分享出去, 而且也便于自己查找, 此博文会持续累加.&lt;/p></description></item></channel></rss>

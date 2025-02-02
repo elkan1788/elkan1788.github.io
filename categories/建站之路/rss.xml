@@ -6,8 +6,9 @@
  
 &lt;/a>从零开始全面重构 &lt;code>NexT&lt;/code> 主题，也在独自奋斗的2个多月断断续续时间里完成主体功能所有移植工作（其实一直想有人参与进来共建，直接跑到人家 Hexo NexT 用户群“呼喊”，但也是没有浪花泛起，只好是自己继续独立前行）。 这不乘着周末的时间，把自己的站点也是升级到最新开发的主题，同时也是为后续想升级旧版本 &lt;code>Hugo NexT&lt;/code> 的用户打个样吧。&lt;/p></description></item><item><title>停止使用原中文域名公告</title><link>https://lisenhui.cn/blog/stop-use-chinese-domain-notice.html</link><pubDate>Thu, 17 Sep 2020 22:42:12 +0000</pubDate><guid>https://lisenhui.cn/blog/stop-use-chinese-domain-notice.html</guid><description>&lt;p>从今天起正式启用&lt;code>lisenhui.cn&lt;/code>作为本博客空间唯一域名。&lt;/p>
 &lt;p>早上的时候收到了域名服务商的通知短信，提示域名需要续费。才发现不知不觉中，原来工作后注册的第一个域名，已经陪伴自己走过了7个年头啦。当时也就是觉得中文域名比较特别，然后就自己的名字注册了&lt;code>李森辉.cn&lt;/code>的域名。&lt;/p></description></item><item><title>博客引擎迁移至Hugo计划</title><link>https://lisenhui.cn/blog/move-site-2-hugo-plan.html</link><pubDate>Sat, 15 Aug 2020 10:22:09 +0000</pubDate><guid>https://lisenhui.cn/blog/move-site-2-hugo-plan.html</guid><description>&lt;p>近期发现自己的个人博客空间突然之间不能访问，一番查证后发现原来是之前使用的page服务商已经停止提供服务。无奈只好重新迁移回到Github Pages。但这就是又得到重新准备Hexo的相关开发环境，还得辛苦的调试才能成功。而恰好这时在网上有看到过Hugo静态站点引擎的文章，一款基于Go语言开发的极速框架，开发环境部署也简便快速。另外近期原有的域名也快到期了，正好就一起把博客空间整理整理吧。&lt;/p></description></item><item><title>使用Hexo重新构建个人博客站点</title><link>https://lisenhui.cn/tech/use-hexo-rebuild-blog-site.html</link><pubDate>Wed, 02 Aug 2017 16:04:35 +0000</pubDate><guid>https://lisenhui.cn/tech/use-hexo-rebuild-blog-site.html</guid><description>&lt;p>其实在&lt;code>Github Page&lt;/code>上面也是混迹许久啦，虽然现在各种Blog网站层出不穷，但是作为IT界的程序猿还是喜欢自己动手捣鼓捣鼓，成功固然是欣喜失败也会不气妥。 &lt;code>Github Page&lt;/code>刚出道时使用的是&lt;code>Jekyll&lt;/code>，简单的解释其实就是一个静态化网站的工具，这不现在又兴起一个名为&lt;code>Hexo&lt;/code>(**&lt;code>Nodejs&lt;/code>**实现)的工具。两者的目标皆是一致的，只不过对比下来发现&lt;code>Hexo&lt;/code>上手确实要容易些，加者它能轻松的在本地实现调试，故有想法想再次折腾一翻，构建个&lt;code>Hexo&lt;/code>版本的个人博客。&lt;/p>
-&lt;blockquote>
-&lt;p>介绍另一款静态网站工具
+
+ &lt;blockquote>
+ &lt;p>介绍另一款静态网站工具
 &lt;a href="https://github.com/wendal/gor" title="Gor" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  &lt;code>Gor&lt;/code>
  
@@ -20,7 +21,7 @@
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
 &lt;/a>的杰作，熟悉&lt;code>GO&lt;/code>语言的朋友有可以关注下。&lt;/p>
-&lt;/blockquote></description></item><item><title>Hexo blog Hello World</title><link>https://lisenhui.cn/tech/hexo-hello-world.html</link><pubDate>Mon, 31 Jul 2017 18:32:53 +0000</pubDate><guid>https://lisenhui.cn/tech/hexo-hello-world.html</guid><description>&lt;p>Welcome to 
+ &lt;/blockquote></description></item><item><title>Hexo blog Hello World</title><link>https://lisenhui.cn/tech/hexo-hello-world.html</link><pubDate>Mon, 31 Jul 2017 18:32:53 +0000</pubDate><guid>https://lisenhui.cn/tech/hexo-hello-world.html</guid><description>&lt;p>Welcome to 
 &lt;a href="https://hexo.io/" title="Hexo" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  Hexo
  

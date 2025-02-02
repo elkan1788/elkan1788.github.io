@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>学习 on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/%E5%AD%A6%E4%B9%A0/</link><description>Recent content in 学习 on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 02 Aug 2017 16:04:35 +0000</lastBuildDate><atom:link href="https://lisenhui.cn/tags/%E5%AD%A6%E4%B9%A0/rss.xml" rel="self" type="application/rss+xml"/><item><title>使用Hexo重新构建个人博客站点</title><link>https://lisenhui.cn/tech/use-hexo-rebuild-blog-site.html</link><pubDate>Wed, 02 Aug 2017 16:04:35 +0000</pubDate><guid>https://lisenhui.cn/tech/use-hexo-rebuild-blog-site.html</guid><description>&lt;p>其实在&lt;code>Github Page&lt;/code>上面也是混迹许久啦，虽然现在各种Blog网站层出不穷，但是作为IT界的程序猿还是喜欢自己动手捣鼓捣鼓，成功固然是欣喜失败也会不气妥。 &lt;code>Github Page&lt;/code>刚出道时使用的是&lt;code>Jekyll&lt;/code>，简单的解释其实就是一个静态化网站的工具，这不现在又兴起一个名为&lt;code>Hexo&lt;/code>(**&lt;code>Nodejs&lt;/code>**实现)的工具。两者的目标皆是一致的，只不过对比下来发现&lt;code>Hexo&lt;/code>上手确实要容易些，加者它能轻松的在本地实现调试，故有想法想再次折腾一翻，构建个&lt;code>Hexo&lt;/code>版本的个人博客。&lt;/p>
-&lt;blockquote>
-&lt;p>介绍另一款静态网站工具
+
+ &lt;blockquote>
+ &lt;p>介绍另一款静态网站工具
 &lt;a href="https://github.com/wendal/gor" title="Gor" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  &lt;code>Gor&lt;/code>
  
@@ -13,7 +14,7 @@
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
 &lt;/a>的杰作，熟悉&lt;code>GO&lt;/code>语言的朋友有可以关注下。&lt;/p>
-&lt;/blockquote></description></item><item><title>Hexo blog Hello World</title><link>https://lisenhui.cn/tech/hexo-hello-world.html</link><pubDate>Mon, 31 Jul 2017 18:32:53 +0000</pubDate><guid>https://lisenhui.cn/tech/hexo-hello-world.html</guid><description>&lt;p>Welcome to 
+ &lt;/blockquote></description></item><item><title>Hexo blog Hello World</title><link>https://lisenhui.cn/tech/hexo-hello-world.html</link><pubDate>Mon, 31 Jul 2017 18:32:53 +0000</pubDate><guid>https://lisenhui.cn/tech/hexo-hello-world.html</guid><description>&lt;p>Welcome to 
 &lt;a href="https://hexo.io/" title="Hexo" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  Hexo
  

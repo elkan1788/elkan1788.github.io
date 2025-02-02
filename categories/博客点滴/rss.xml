@@ -1,4 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>博客点滴 on 热爱生活与梦想</title><link>https://lisenhui.cn/categories/%E5%8D%9A%E5%AE%A2%E7%82%B9%E6%BB%B4/</link><description>Recent content in 博客点滴 on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 15 Dec 2024 20:22:35 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/categories/%E5%8D%9A%E5%AE%A2%E7%82%B9%E6%BB%B4/rss.xml" rel="self" type="application/rss+xml"/><item><title>修复Mathjax行内显示公式的问题</title><link>https://lisenhui.cn/blog/fixed-mathjax-inline-display.html</link><pubDate>Sun, 15 Dec 2024 20:22:35 +0800</pubDate><guid>https://lisenhui.cn/blog/fixed-mathjax-inline-display.html</guid><description>&lt;p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>博客点滴 on 热爱生活与梦想</title><link>https://lisenhui.cn/categories/%E5%8D%9A%E5%AE%A2%E7%82%B9%E6%BB%B4/</link><description>Recent content in 博客点滴 on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sat, 01 Feb 2025 21:19:03 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/categories/%E5%8D%9A%E5%AE%A2%E7%82%B9%E6%BB%B4/rss.xml" rel="self" type="application/rss+xml"/><item><title>HugoNexT4.7.2 新功能和升级提示</title><link>https://lisenhui.cn/blog/hugo-next-v472-features-and-tips.html</link><pubDate>Sat, 01 Feb 2025 21:19:03 +0800</pubDate><guid>https://lisenhui.cn/blog/hugo-next-v472-features-and-tips.html</guid><description>&lt;p>真是人算不如天算呀，原来是计划在大年夜前发&lt;code>Hugo NexT v4.7.2&lt;/code>这个大版本的，可谁曾料想到身体遭受到一场突如其来的病毒感染，就连春节的气氛也是全被搅混无啦。由于此次版本发布发动的内容稍为有些多，在此写个升级的小提示分享下。这不趁着假期的小尾巴，赶紧是把剩余的工作给做完吧，为众多的&lt;code>Hugo NexT&lt;/code>粉丝送上一份迟到的新年“贺礼” &amp;#x1f381;。&lt;/p></description></item><item><title>改善代码块折叠和选中功能</title><link>https://lisenhui.cn/blog/improve-code-block-collapse-and-selected.html</link><pubDate>Sun, 19 Jan 2025 19:16:24 +0800</pubDate><guid>https://lisenhui.cn/blog/improve-code-block-collapse-and-selected.html</guid><description>&lt;p>对于技术类的分享文章而言，或多或少会需要使用到代码块的功能，&lt;code>Hugo NexT&lt;/code>主题中默认也是支持代码块的展示，只不过无法支持代码块进行折叠和展开的操作，且在代码选中时的样式与背景也不太容易区分，同时也还发现其他的一些小问题，那么此刻便是把它们全都整合到一起进行优化。最后几乎都可以说是完全的重构，想了解的具体其原由请看下文。&lt;/p></description></item><item><title>支持Github风格的警告样式</title><link>https://lisenhui.cn/blog/support-github-style-alert.html</link><pubDate>Tue, 14 Jan 2025 20:14:41 +0800</pubDate><guid>https://lisenhui.cn/blog/support-github-style-alert.html</guid><description>&lt;p>早期在&lt;code>Hugo NexT&lt;/code>主题中使用短代码方式实现过对不同类型消息的样式支持，只不过是使用时需要用户书写完整短代码不是很方便，同时输出的效果是独立的块占用空间比较大。后来发现Hugo框架在新版中支持了自定义 &lt;code>blockquote&lt;/code>的渲染方式，于是乎便有点有新的想法，让用户直接使用&lt;code>Markdown&lt;/code>语法来书写不同消息内容，输出的效果实现类似于&lt;code>Github&lt;/code>的警告样式，这样使用起来会更加方便。下面就来看看相关实现思路和使用方式吧。&lt;/p></description></item><item><title>新增音乐短代码功能支持</title><link>https://lisenhui.cn/blog/add-music-shortcode-support.html</link><pubDate>Mon, 06 Jan 2025 19:12:29 +0800</pubDate><guid>https://lisenhui.cn/blog/add-music-shortcode-support.html</guid><description>&lt;p>文字描述是人类自我表达的一种方式，而音乐也是另一种表达的方式，给文章添加上音乐作为背景，或许更能让读者深切体会到作者的情境引起共鸣之意。通过 
+&lt;a href="https://github.com/MoePlayer/APlayer" title="APlayer" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ APlayer
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a> 和 
+&lt;a href="https://github.com/metowolf/MetingJS" title="MetingJS" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ MetingJS
+ 
+ &lt;i class="fa fa-external-link-alt">&lt;/i>
+ 
+&lt;/a> 库能够很轻松的实现在文章中内嵌音乐的播放功能，同时也支持多种音乐平台的音乐播放，下面就来看看具体的操作方法和实现效果吧。&lt;/p></description></item><item><title>给文章添加摘要和过期提示功能</title><link>https://lisenhui.cn/blog/add-post-summary-and-expired-tips.html</link><pubDate>Fri, 03 Jan 2025 20:10:50 +0800</pubDate><guid>https://lisenhui.cn/blog/add-post-summary-and-expired-tips.html</guid><description>&lt;p>早期在&lt;code>Hugo NexT&lt;/code>主题的开发路线中就有考虑到要给文章的摘要和过期提示功能，但是由于个人的时间和精力有限，迟迟没有将这些功能上线。其实这两个功能的作用也算是比较实用，方便读者能够快速预览一些长文章的内容，同时对于“年限”较长的文章也是给到读者内容可能失效提醒。整体功能的实现并不算复杂，只不过要结合扩展性等方面的考虑，经过一番思索后便有初步的想法，同时在此记录下开发的过程。&lt;/p></description></item><item><title>修复Mathjax行内显示公式的问题</title><link>https://lisenhui.cn/blog/fixed-mathjax-inline-display.html</link><pubDate>Sun, 15 Dec 2024 20:22:35 +0800</pubDate><guid>https://lisenhui.cn/blog/fixed-mathjax-inline-display.html</guid><description>&lt;p>
 &lt;a href="https://github.com/hugo-next/hugo-theme-next" title="hugo-theme-next" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  &lt;code>hugo-theme-next&lt;/code>
  
@@ -88,8 +100,9 @@
 &lt;li>最终再把生成好的博客推送到指定的Pages服务器&lt;/li>
 &lt;/ul>
 &lt;p>只是这其中有点比较麻烦的问题就是如何保护我们的私钥，还好&lt;code>Travis CI&lt;/code>已经为我们准备好啦，那么就开始我们的捣腾之旅吧。&lt;/p></description></item><item><title>使用Hexo重新构建个人博客站点</title><link>https://lisenhui.cn/tech/use-hexo-rebuild-blog-site.html</link><pubDate>Wed, 02 Aug 2017 16:04:35 +0000</pubDate><guid>https://lisenhui.cn/tech/use-hexo-rebuild-blog-site.html</guid><description>&lt;p>其实在&lt;code>Github Page&lt;/code>上面也是混迹许久啦，虽然现在各种Blog网站层出不穷，但是作为IT界的程序猿还是喜欢自己动手捣鼓捣鼓，成功固然是欣喜失败也会不气妥。 &lt;code>Github Page&lt;/code>刚出道时使用的是&lt;code>Jekyll&lt;/code>，简单的解释其实就是一个静态化网站的工具，这不现在又兴起一个名为&lt;code>Hexo&lt;/code>(**&lt;code>Nodejs&lt;/code>**实现)的工具。两者的目标皆是一致的，只不过对比下来发现&lt;code>Hexo&lt;/code>上手确实要容易些，加者它能轻松的在本地实现调试，故有想法想再次折腾一翻，构建个&lt;code>Hexo&lt;/code>版本的个人博客。&lt;/p>
-&lt;blockquote>
-&lt;p>介绍另一款静态网站工具
+
+ &lt;blockquote>
+ &lt;p>介绍另一款静态网站工具
 &lt;a href="https://github.com/wendal/gor" title="Gor" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  &lt;code>Gor&lt;/code>
  
@@ -102,7 +115,7 @@
  &lt;i class="fa fa-external-link-alt">&lt;/i>
  
 &lt;/a>的杰作，熟悉&lt;code>GO&lt;/code>语言的朋友有可以关注下。&lt;/p>
-&lt;/blockquote></description></item><item><title>Hexo blog Hello World</title><link>https://lisenhui.cn/tech/hexo-hello-world.html</link><pubDate>Mon, 31 Jul 2017 18:32:53 +0000</pubDate><guid>https://lisenhui.cn/tech/hexo-hello-world.html</guid><description>&lt;p>Welcome to 
+ &lt;/blockquote></description></item><item><title>Hexo blog Hello World</title><link>https://lisenhui.cn/tech/hexo-hello-world.html</link><pubDate>Mon, 31 Jul 2017 18:32:53 +0000</pubDate><guid>https://lisenhui.cn/tech/hexo-hello-world.html</guid><description>&lt;p>Welcome to 
 &lt;a href="https://hexo.io/" title="Hexo" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
  Hexo
  
