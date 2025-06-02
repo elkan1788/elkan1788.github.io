@@ -35,7 +35,11 @@
 &lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="n">and&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">the&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">repository&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">exists&lt;/span>&lt;span class="p">.&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div></description></item><item><title>Github个人信息卡片</title><link>https://lisenhui.cn/tech/github-personal-profile-card.html</link><pubDate>Sun, 24 Jan 2021 12:21:10 +0800</pubDate><guid>https://lisenhui.cn/tech/github-personal-profile-card.html</guid><description>&lt;p>Github上总是会有一些新奇的东西出现，这不无意间又发现了个有趣的玩法，可以用它来作为你的个人开发者名信片展现。具体展现效果如下：&lt;/p>
-&lt;p>&lt;img src="https://lisenhui.cn/imgs/img-lazy-loading.gif" data-src="//imgs.lisenhui.cn/blog/2021/01-24-elkan1788-profile-02.png!alias" alt="01-24-elkan1788-profile-02.png" />&lt;/p>
+&lt;p>&lt;div class="post-img-wrapper">
+ &lt;div class="img-container">
+ &lt;img src="https://lisenhui.cn/imgs/img-lazy-loading.gif" data-src="//imgs.lisenhui.cn/blog/2021/01-24-elkan1788-profile-02.png!alias" alt="01-24-elkan1788-profile-02.png" title="01-24-elkan1788-profile-02.png" />
+ &lt;/div>
+&lt;/div>&lt;/p>
 &lt;p>操作起来也不繁琐，类似以前的pages服务那样，只准备个特定的仓库就可以，具体操作如下：&lt;/p></description></item><item><title>Github push失败：Could not resolve hostname</title><link>https://lisenhui.cn/tech/github-push-failed.html</link><pubDate>Tue, 16 May 2017 10:21:43 +0000</pubDate><guid>https://lisenhui.cn/tech/github-push-failed.html</guid><description>&lt;p>平时最常用的git push命令突然间居然不可以用（错误日志如下），脑子首先蹦出的想法就是：难道Github又被墙了么！以前出现过类似这样的现象，需要通过指定hosts来加速访问。&lt;/p>
 &lt;p>git push 执行后返回的错误日志：&lt;/p>
 

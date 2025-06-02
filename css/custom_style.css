@@ -26,3 +26,23 @@
 .footer-inner .vendors-list img[src$=".png"] {
   filter: none;
 }
+
+.post-body .post-img-wrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.post-body .post-img-wrapper .img-container {
+  width: 100%;
+}
+
+.post-body .post-img-wrapper .img-caption { 
+  width:  100%;
+  text-align: center;
+}
+
+.post-body p {
+  margin: 0;
+}
