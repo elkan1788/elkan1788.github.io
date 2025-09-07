@@ -1,59 +1,59 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git追踪 on 热爱生活与梦想</title><link>https://lisenhui.cn/categories/git%E8%BF%BD%E8%B8%AA/</link><description>Recent content in Git追踪 on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 08 Nov 2023 20:37:20 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/categories/git%E8%BF%BD%E8%B8%AA/rss.xml" rel="self" type="application/rss+xml"/><item><title>重新激活Github的2FA认证</title><link>https://lisenhui.cn/tech/actived-github-2fa-auth.html</link><pubDate>Wed, 08 Nov 2023 20:37:20 +0800</pubDate><guid>https://lisenhui.cn/tech/actived-github-2fa-auth.html</guid><description>&lt;p>近期有段时间没有登录 &lt;code>GitHub&lt;/code> 仓库站点，今天查看邮箱发现
-&lt;a href="https://github.com/hugo-next/hugo-theme-next" title="hugo-theme-next" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Git追踪 on 热爱生活与梦想</title><link>https://lisenhui.cn/categories/git%E8%BF%BD%E8%B8%AA/</link><description>Recent content in Git追踪 on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 08 Nov 2023 20:37:20 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/categories/git%E8%BF%BD%E8%B8%AA/rss.xml" rel="self" type="application/rss+xml"/><item><title>重新激活Github的2FA认证</title><link>https://lisenhui.cn/tech/actived-github-2fa-auth.html</link><pubDate>Wed, 08 Nov 2023 20:37:20 +0800</pubDate><guid>https://lisenhui.cn/tech/actived-github-2fa-auth.html</guid><description>&lt;p&gt;近期有段时间没有登录 &lt;code&gt;GitHub&lt;/code&gt; 仓库站点，今天查看邮箱发现
+&lt;a href="https://github.com/hugo-next/hugo-theme-next" title="hugo-theme-next" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
  hugo-theme-next
  
- &lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
-&lt;/a>项目上有新的 &lt;code>PR&lt;/code>进来，便想上来查看下具体情况。结果发现Github官方已经全面启用&lt;code>2FA&lt;/code>安全认证要求，只是之前自己“偷懒”并没有做这个功能的认证，原来还有可以使用密码方式绕过去的，但现在也关闭了此入口，难道真的要芭比Q啦。&lt;/p></description></item><item><title>Github Action执行时遇到SSH key invalid format错误</title><link>https://lisenhui.cn/tech/github-action-ssh-key-invalid.html</link><pubDate>Thu, 11 Aug 2022 21:21:59 +0800</pubDate><guid>https://lisenhui.cn/tech/github-action-ssh-key-invalid.html</guid><description>&lt;p>&lt;code>Github Action&lt;/code>是款非常不错的&lt;code>CI/CD&lt;/code>工具，自从它问世以来发展的速度真可谓是快，在 &lt;code>Github&lt;/code> 的官方市场中几乎能找到所有你想要使用的&lt;code>Action&lt;/code>脚本进行引用。本博客也是基于&lt;code>Github Action&lt;/code>进行远程部署的，与常规的&lt;code>Github Pages&lt;/code>服务不同，本站的静态文件是部署在国内某云厂商的静态服务器上面的，通过 
-&lt;a href="https://github.com/tzzs/server-shell" title="tzzs/server-shell" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+&lt;/a&gt;项目上有新的 &lt;code&gt;PR&lt;/code&gt;进来，便想上来查看下具体情况。结果发现Github官方已经全面启用&lt;code&gt;2FA&lt;/code&gt;安全认证要求，只是之前自己“偷懒”并没有做这个功能的认证，原来还有可以使用密码方式绕过去的，但现在也关闭了此入口，难道真的要芭比Q啦。&lt;/p&gt;</description></item><item><title>Github Action执行时遇到SSH key invalid format错误</title><link>https://lisenhui.cn/tech/github-action-ssh-key-invalid.html</link><pubDate>Thu, 11 Aug 2022 21:21:59 +0800</pubDate><guid>https://lisenhui.cn/tech/github-action-ssh-key-invalid.html</guid><description>&lt;p&gt;&lt;code&gt;Github Action&lt;/code&gt;是款非常不错的&lt;code&gt;CI/CD&lt;/code&gt;工具，自从它问世以来发展的速度真可谓是快，在 &lt;code&gt;Github&lt;/code&gt; 的官方市场中几乎能找到所有你想要使用的&lt;code&gt;Action&lt;/code&gt;脚本进行引用。本博客也是基于&lt;code&gt;Github Action&lt;/code&gt;进行远程部署的，与常规的&lt;code&gt;Github Pages&lt;/code&gt;服务不同，本站的静态文件是部署在国内某云厂商的静态服务器上面的，通过 
+&lt;a href="https://github.com/tzzs/server-shell" title="tzzs/server-shell" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
  tzzs/server-shell
  
- &lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
-&lt;/a> Action 集成，实现远程执行服务端的命令，来拉取最新生成的静态文件。&lt;/p></description></item><item><title>使用Github Action自动同步仓库到Gitee</title><link>https://lisenhui.cn/tech/add-sync-gitee-action.html</link><pubDate>Thu, 25 Feb 2021 12:52:25 +0800</pubDate><guid>https://lisenhui.cn/tech/add-sync-gitee-action.html</guid><description>&lt;h2 id="背景">背景
-&lt;a class="header-anchor" href="#%e8%83%8c%e6%99%af">&lt;/a>
-&lt;/h2>&lt;p>作为程序员出生的你，肯定知道备份的重要性。再说现在大环境背景下，美国的政治关系还是比较混乱的，而对于存放在Github上面的项目，也不再是技术自由的国度啦。所以说我们的代码还是有必要进行“双”备份的，接下来就是介绍下，如何使用Github上面的Action功能，将Github上面的代码同步备份到国内的Gitee仓库站点。&lt;/p></description></item><item><title>GitExtensions推送Github失败记录</title><link>https://lisenhui.cn/tech/git-extensions-push-fail.html</link><pubDate>Mon, 22 Feb 2021 15:42:39 +0800</pubDate><guid>https://lisenhui.cn/tech/git-extensions-push-fail.html</guid><description>&lt;h2 id="问题现身">问题现身
-&lt;a class="header-anchor" href="#%e9%97%ae%e9%a2%98%e7%8e%b0%e8%ba%ab">&lt;/a>
-&lt;/h2>&lt;p>555~，今天体验了一把安装最新程序的“快感”！！！&lt;/p>
-&lt;p>在使用Git Extensisons推送最新写的文章到Github时，遇到了个SSH KEY认证无效的莫名错误。事情的发生是这样的：今天在首次打开Git Extensions软件时，它非常友好的弹出更新提示窗口，然后就手不自觉的点击了下确认按钮。结果更新好后，在推送文章到Github时就发生了如下面一样神奇的错误阻拦：&lt;/p>
+&lt;/a&gt; Action 集成，实现远程执行服务端的命令，来拉取最新生成的静态文件。&lt;/p&gt;</description></item><item><title>使用Github Action自动同步仓库到Gitee</title><link>https://lisenhui.cn/tech/add-sync-gitee-action.html</link><pubDate>Thu, 25 Feb 2021 12:52:25 +0800</pubDate><guid>https://lisenhui.cn/tech/add-sync-gitee-action.html</guid><description>&lt;h2 id="背景"&gt;背景
+&lt;a class="header-anchor" href="#%e8%83%8c%e6%99%af"&gt;&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;作为程序员出生的你，肯定知道备份的重要性。再说现在大环境背景下，美国的政治关系还是比较混乱的，而对于存放在Github上面的项目，也不再是技术自由的国度啦。所以说我们的代码还是有必要进行“双”备份的，接下来就是介绍下，如何使用Github上面的Action功能，将Github上面的代码同步备份到国内的Gitee仓库站点。&lt;/p&gt;</description></item><item><title>GitExtensions推送Github失败记录</title><link>https://lisenhui.cn/tech/git-extensions-push-fail.html</link><pubDate>Mon, 22 Feb 2021 15:42:39 +0800</pubDate><guid>https://lisenhui.cn/tech/git-extensions-push-fail.html</guid><description>&lt;h2 id="问题现身"&gt;问题现身
+&lt;a class="header-anchor" href="#%e9%97%ae%e9%a2%98%e7%8e%b0%e8%ba%ab"&gt;&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;555~，今天体验了一把安装最新程序的“快感”！！！&lt;/p&gt;
+&lt;p&gt;在使用Git Extensisons推送最新写的文章到Github时，遇到了个SSH KEY认证无效的莫名错误。事情的发生是这样的：今天在首次打开Git Extensions软件时，它非常友好的弹出更新提示窗口，然后就手不自觉的点击了下确认按钮。结果更新好后，在推送文章到Github时就发生了如下面一样神奇的错误阻拦：&lt;/p&gt;
 
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-0-1">&lt;a class="lnlinks" href="#hl-0-1">1&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-2">&lt;a class="lnlinks" href="#hl-0-2">2&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-3">&lt;a class="lnlinks" href="#hl-0-3">3&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-4">&lt;a class="lnlinks" href="#hl-0-4">4&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-5">&lt;a class="lnlinks" href="#hl-0-5">5&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-6">&lt;a class="lnlinks" href="#hl-0-6">6&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="n">FATAL&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">ERROR&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">No&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">supported&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">authentication&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">methods&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">available&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">server&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">sent&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">publickey&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nl">fatal&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">Could&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">not&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">read&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">from&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">remote&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">repository&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="n">Please&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">make&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">sure&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">you&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">have&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">the&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">correct&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">access&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">rights&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="n">and&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">the&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">repository&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">exists&lt;/span>&lt;span class="p">.&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item><item><title>Github个人信息卡片</title><link>https://lisenhui.cn/tech/github-personal-profile-card.html</link><pubDate>Sun, 24 Jan 2021 12:21:10 +0800</pubDate><guid>https://lisenhui.cn/tech/github-personal-profile-card.html</guid><description>&lt;p>Github上总是会有一些新奇的东西出现，这不无意间又发现了个有趣的玩法，可以用它来作为你的个人开发者名信片展现。具体展现效果如下：&lt;/p>
-&lt;p>&lt;div class="post-img-wrapper">
- &lt;div class="img-container">
- &lt;img src="https://lisenhui.cn/imgs/img-lazy-loading.gif" data-src="//imgs.lisenhui.cn/blog/2021/01-24-elkan1788-profile-02.png!alias" alt="01-24-elkan1788-profile-02.png" title="01-24-elkan1788-profile-02.png" />
- &lt;/div>
-&lt;/div>&lt;/p>
-&lt;p>操作起来也不繁琐，类似以前的pages服务那样，只准备个特定的仓库就可以，具体操作如下：&lt;/p></description></item><item><title>Github push失败：Could not resolve hostname</title><link>https://lisenhui.cn/tech/github-push-failed.html</link><pubDate>Tue, 16 May 2017 10:21:43 +0000</pubDate><guid>https://lisenhui.cn/tech/github-push-failed.html</guid><description>&lt;p>平时最常用的git push命令突然间居然不可以用（错误日志如下），脑子首先蹦出的想法就是：难道Github又被墙了么！以前出现过类似这样的现象，需要通过指定hosts来加速访问。&lt;/p>
-&lt;p>git push 执行后返回的错误日志：&lt;/p>
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt" id="hl-0-1"&gt;&lt;a class="lnlinks" href="#hl-0-1"&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-2"&gt;&lt;a class="lnlinks" href="#hl-0-2"&gt;2&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-3"&gt;&lt;a class="lnlinks" href="#hl-0-3"&gt;3&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-4"&gt;&lt;a class="lnlinks" href="#hl-0-4"&gt;4&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-5"&gt;&lt;a class="lnlinks" href="#hl-0-5"&gt;5&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-6"&gt;&lt;a class="lnlinks" href="#hl-0-6"&gt;6&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-java" data-lang="java"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="n"&gt;FATAL&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;ERROR&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;No&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;supported&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;authentication&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;methods&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;available&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;server&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sent&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;publickey&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nl"&gt;fatal&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Could&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;not&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;read&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;from&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;remote&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;repository&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="n"&gt;Please&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;make&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;sure&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;you&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;have&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;correct&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;access&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;rights&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="n"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;the&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;repository&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;exists&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description></item><item><title>Github个人信息卡片</title><link>https://lisenhui.cn/tech/github-personal-profile-card.html</link><pubDate>Sun, 24 Jan 2021 12:21:10 +0800</pubDate><guid>https://lisenhui.cn/tech/github-personal-profile-card.html</guid><description>&lt;p&gt;Github上总是会有一些新奇的东西出现，这不无意间又发现了个有趣的玩法，可以用它来作为你的个人开发者名信片展现。具体展现效果如下：&lt;/p&gt;
+&lt;p&gt;&lt;div class="post-img-wrapper"&gt;
+ &lt;div class="img-container"&gt;
+ &lt;img src="https://lisenhui.cn/imgs/img-lazy-loading.gif" data-src="//imgs.lisenhui.cn/blog/2021/01-24-elkan1788-profile-02.png!alias" alt="01-24-elkan1788-profile-02.png" title="01-24-elkan1788-profile-02.png" /&gt;
+ &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;操作起来也不繁琐，类似以前的pages服务那样，只准备个特定的仓库就可以，具体操作如下：&lt;/p&gt;</description></item><item><title>Github push失败：Could not resolve hostname</title><link>https://lisenhui.cn/tech/github-push-failed.html</link><pubDate>Tue, 16 May 2017 10:21:43 +0000</pubDate><guid>https://lisenhui.cn/tech/github-push-failed.html</guid><description>&lt;p&gt;平时最常用的git push命令突然间居然不可以用（错误日志如下），脑子首先蹦出的想法就是：难道Github又被墙了么！以前出现过类似这样的现象，需要通过指定hosts来加速访问。&lt;/p&gt;
+&lt;p&gt;git push 执行后返回的错误日志：&lt;/p&gt;
 
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-0-1">&lt;a class="lnlinks" href="#hl-0-1">1&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-2">&lt;a class="lnlinks" href="#hl-0-2">2&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-3">&lt;a class="lnlinks" href="#hl-0-3">3&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-4">&lt;a class="lnlinks" href="#hl-0-4">4&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">ssh: Could not resolve hostname github.com:elkan1788: nodename nor servname provided, or not known
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">fatal: Could not &lt;span class="nb">read&lt;/span> from remote repository.
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Please make sure you have the correct access rights&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item><item><title>Git 操作命令收集</title><link>https://lisenhui.cn/tech/git-commands-collect.html</link><pubDate>Fri, 29 Jan 2016 12:34:21 +0000</pubDate><guid>https://lisenhui.cn/tech/git-commands-collect.html</guid><description>&lt;p>都说好性不如烂笔头, 一点也没有错呀. 虽然学习Git已经有1个多年头, 但是有些时候那比较少用的命令总是一时想不起来.所以还是决定把它写到blog里面, 不仅把经验分享出去, 而且也便于自己查找, 此博文会持续累加.&lt;/p></description></item></channel></rss>
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt" id="hl-0-1"&gt;&lt;a class="lnlinks" href="#hl-0-1"&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-2"&gt;&lt;a class="lnlinks" href="#hl-0-2"&gt;2&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-3"&gt;&lt;a class="lnlinks" href="#hl-0-3"&gt;3&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-4"&gt;&lt;a class="lnlinks" href="#hl-0-4"&gt;4&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ssh: Could not resolve hostname github.com:elkan1788: nodename nor servname provided, or not known
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;fatal: Could not &lt;span class="nb"&gt;read&lt;/span&gt; from remote repository.
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Please make sure you have the correct access rights&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description></item><item><title>Git 操作命令收集</title><link>https://lisenhui.cn/tech/git-commands-collect.html</link><pubDate>Fri, 29 Jan 2016 12:34:21 +0000</pubDate><guid>https://lisenhui.cn/tech/git-commands-collect.html</guid><description>&lt;p&gt;都说好性不如烂笔头, 一点也没有错呀. 虽然学习Git已经有1个多年头, 但是有些时候那比较少用的命令总是一时想不起来.所以还是决定把它写到blog里面, 不仅把经验分享出去, 而且也便于自己查找, 此博文会持续累加.&lt;/p&gt;</description></item></channel></rss>

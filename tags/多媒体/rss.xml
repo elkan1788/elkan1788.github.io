@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>多媒体 on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/%E5%A4%9A%E5%AA%92%E4%BD%93/</link><description>Recent content in 多媒体 on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 06 Jan 2025 19:12:29 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/tags/%E5%A4%9A%E5%AA%92%E4%BD%93/rss.xml" rel="self" type="application/rss+xml"/><item><title>新增音乐短代码功能支持</title><link>https://lisenhui.cn/blog/add-music-shortcode-support.html</link><pubDate>Mon, 06 Jan 2025 19:12:29 +0800</pubDate><guid>https://lisenhui.cn/blog/add-music-shortcode-support.html</guid><description>&lt;p>文字描述是人类自我表达的一种方式，而音乐也是另一种表达的方式，给文章添加上音乐作为背景，或许更能让读者深切体会到作者的情境引起共鸣之意。通过 
-&lt;a href="https://github.com/MoePlayer/APlayer" title="APlayer" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>多媒体 on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/%E5%A4%9A%E5%AA%92%E4%BD%93/</link><description>Recent content in 多媒体 on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 06 Jan 2025 19:12:29 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/tags/%E5%A4%9A%E5%AA%92%E4%BD%93/rss.xml" rel="self" type="application/rss+xml"/><item><title>新增音乐短代码功能支持</title><link>https://lisenhui.cn/blog/add-music-shortcode-support.html</link><pubDate>Mon, 06 Jan 2025 19:12:29 +0800</pubDate><guid>https://lisenhui.cn/blog/add-music-shortcode-support.html</guid><description>&lt;p&gt;文字描述是人类自我表达的一种方式，而音乐也是另一种表达的方式，给文章添加上音乐作为背景，或许更能让读者深切体会到作者的情境引起共鸣之意。通过 
+&lt;a href="https://github.com/MoePlayer/APlayer" title="APlayer" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
  APlayer
  
- &lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
-&lt;/a> 和 
-&lt;a href="https://github.com/metowolf/MetingJS" title="MetingJS" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+&lt;/a&gt; 和 
+&lt;a href="https://github.com/metowolf/MetingJS" title="MetingJS" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
  MetingJS
  
- &lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
-&lt;/a> 库能够很轻松的实现在文章中内嵌音乐的播放功能，同时也支持多种音乐平台的音乐播放，下面就来看看具体的操作方法和实现效果吧。&lt;/p></description></item></channel></rss>
+&lt;/a&gt; 库能够很轻松的实现在文章中内嵌音乐的播放功能，同时也支持多种音乐平台的音乐播放，下面就来看看具体的操作方法和实现效果吧。&lt;/p&gt;</description></item></channel></rss>

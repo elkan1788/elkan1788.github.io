@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>锚点 on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/%E9%94%9A%E7%82%B9/</link><description>Recent content in 锚点 on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 08 Dec 2024 17:12:35 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/tags/%E9%94%9A%E7%82%B9/rss.xml" rel="self" type="application/rss+xml"/><item><title>给Hugo文章增加阅读更多跳转的锚点定位功能</title><link>https://lisenhui.cn/blog/make-post-readmore-anchor-feature.html</link><pubDate>Sun, 08 Dec 2024 17:12:35 +0800</pubDate><guid>https://lisenhui.cn/blog/make-post-readmore-anchor-feature.html</guid><description>&lt;p>早期在进行
-&lt;a href="https://github.com/hugo-next/hugo-theme-next" title="hugo-theme-next" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
- &lt;code>hugo-theme-next&lt;/code>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>锚点 on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/%E9%94%9A%E7%82%B9/</link><description>Recent content in 锚点 on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 08 Dec 2024 17:12:35 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/tags/%E9%94%9A%E7%82%B9/rss.xml" rel="self" type="application/rss+xml"/><item><title>给Hugo文章增加阅读更多跳转的锚点定位功能</title><link>https://lisenhui.cn/blog/make-post-readmore-anchor-feature.html</link><pubDate>Sun, 08 Dec 2024 17:12:35 +0800</pubDate><guid>https://lisenhui.cn/blog/make-post-readmore-anchor-feature.html</guid><description>&lt;p&gt;早期在进行
+&lt;a href="https://github.com/hugo-next/hugo-theme-next" title="hugo-theme-next" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
+ &lt;code&gt;hugo-theme-next&lt;/code&gt;
  
- &lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
-&lt;/a>的主题开发时，但想着给首页跳转至文章内容阅读时，能够有个定位到文章后续内容的锚定点功能，而不至于说从头开始阅读影响体验。而恰巧官方在其
-&lt;a href="https://github.com/gohugoio/hugo/releases/tag/v0.134.0" title="hugo-0.134.0-release" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+&lt;/a&gt;的主题开发时，但想着给首页跳转至文章内容阅读时，能够有个定位到文章后续内容的锚定点功能，而不至于说从头开始阅读影响体验。而恰巧官方在其
+&lt;a href="https://github.com/gohugoio/hugo/releases/tag/v0.134.0" title="hugo-0.134.0-release" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
  hugo-0.134.0-release
  
- &lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
-&lt;/a>发布中新增加这个万众推崇功能的支持实现，为Hugo用户带来全新的体验值得点赞加赏。&lt;/p></description></item></channel></rss>
+&lt;/a&gt;发布中新增加这个万众推崇功能的支持实现，为Hugo用户带来全新的体验值得点赞加赏。&lt;/p&gt;</description></item></channel></rss>

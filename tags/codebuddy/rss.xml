@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CodeBuddy on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/codebuddy/</link><description>Recent content in CodeBuddy on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 30 May 2025 09:32:22 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/tags/codebuddy/rss.xml" rel="self" type="application/rss+xml"/><item><title>使用腾讯云 CodeBuddy 构建 SSL 证书管理器</title><link>https://lisenhui.cn/tech/use-tencent-codebuddy-build-ssl-manager.html</link><pubDate>Fri, 30 May 2025 09:32:22 +0800</pubDate><guid>https://lisenhui.cn/tech/use-tencent-codebuddy-build-ssl-manager.html</guid><description>&lt;p>从腾讯云的官微上了解到&lt;code>CodeBuddy&lt;/code>这款代码编程助手，起初以为只是的一种提供对话式 AI 编码提示的工具，但通过深入了解后发现其实它里面还自带了&lt;code>Craft&lt;/code>智能体，能够帮助你构建完整的软件工程项目。搜罗了众多网友的种草体验后，决定还是要亲测下它的实际使用（交付能力）效果。正好此前想做个 SSL 证书管理工具，来管理自己手里头不同域名的 SSL 证书运维，接下来一起看看个人的实测结果究竟如何。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>CodeBuddy on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/codebuddy/</link><description>Recent content in CodeBuddy on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Fri, 30 May 2025 09:32:22 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/tags/codebuddy/rss.xml" rel="self" type="application/rss+xml"/><item><title>使用腾讯云 CodeBuddy 构建 SSL 证书管理器</title><link>https://lisenhui.cn/tech/use-tencent-codebuddy-build-ssl-manager.html</link><pubDate>Fri, 30 May 2025 09:32:22 +0800</pubDate><guid>https://lisenhui.cn/tech/use-tencent-codebuddy-build-ssl-manager.html</guid><description>&lt;p&gt;从腾讯云的官微上了解到&lt;code&gt;CodeBuddy&lt;/code&gt;这款代码编程助手，起初以为只是的一种提供对话式 AI 编码提示的工具，但通过深入了解后发现其实它里面还自带了&lt;code&gt;Craft&lt;/code&gt;智能体，能够帮助你构建完整的软件工程项目。搜罗了众多网友的种草体验后，决定还是要亲测下它的实际使用（交付能力）效果。正好此前想做个 SSL 证书管理工具，来管理自己手里头不同域名的 SSL 证书运维，接下来一起看看个人的实测结果究竟如何。&lt;/p&gt;
 
 
 
- &lt;div class="post-alert-note">
- &lt;div class="post-alert-title">
- &lt;i class="fa-solid fa-bell">&lt;/i>
- &lt;span>
+ &lt;div class="post-alert-note"&gt;
+ &lt;div class="post-alert-title"&gt;
+ &lt;i class="fa-solid fa-bell"&gt;&lt;/i&gt;
+ &lt;span&gt;
  
  注意
  
- &lt;/span>
- &lt;/div>
- &lt;div class="post-alert-content">
- &lt;p>还是有些高估自己的学习能力，本想可以一天完成的编码工作，但实践下来后发现还是得分开完成，下面记录的前半部分功能交付，欢迎持续关注。&lt;/p>
- &lt;/div>
- &lt;/div></description></item></channel></rss>
+ &lt;/span&gt;
+ &lt;/div&gt;
+ &lt;div class="post-alert-content"&gt;
+ &lt;p&gt;还是有些高估自己的学习能力，本想可以一天完成的编码工作，但实践下来后发现还是得分开完成，下面记录的前半部分功能交付，欢迎持续关注。&lt;/p&gt;
+ &lt;/div&gt;
+ &lt;/div&gt;</description></item></channel></rss>

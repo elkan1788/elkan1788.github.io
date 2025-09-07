@@ -1,50 +1,50 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Github on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/github/</link><description>Recent content in Github on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 14 Jan 2025 20:14:41 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/tags/github/rss.xml" rel="self" type="application/rss+xml"/><item><title>支持Github风格的警告样式</title><link>https://lisenhui.cn/blog/support-github-style-alert.html</link><pubDate>Tue, 14 Jan 2025 20:14:41 +0800</pubDate><guid>https://lisenhui.cn/blog/support-github-style-alert.html</guid><description>&lt;p>早期在&lt;code>Hugo NexT&lt;/code>主题中使用短代码方式实现过对不同类型消息的样式支持，只不过是使用时需要用户书写完整短代码不是很方便，同时输出的效果是独立的块占用空间比较大。后来发现Hugo框架在新版中支持了自定义 &lt;code>blockquote&lt;/code>的渲染方式，于是乎便有点有新的想法，让用户直接使用&lt;code>Markdown&lt;/code>语法来书写不同消息内容，输出的效果实现类似于&lt;code>Github&lt;/code>的警告样式，这样使用起来会更加方便。下面就来看看相关实现思路和使用方式吧。&lt;/p></description></item><item><title>重新激活Github的2FA认证</title><link>https://lisenhui.cn/tech/actived-github-2fa-auth.html</link><pubDate>Wed, 08 Nov 2023 20:37:20 +0800</pubDate><guid>https://lisenhui.cn/tech/actived-github-2fa-auth.html</guid><description>&lt;p>近期有段时间没有登录 &lt;code>GitHub&lt;/code> 仓库站点，今天查看邮箱发现
-&lt;a href="https://github.com/hugo-next/hugo-theme-next" title="hugo-theme-next" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Github on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/github/</link><description>Recent content in Github on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 14 Jan 2025 20:14:41 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/tags/github/rss.xml" rel="self" type="application/rss+xml"/><item><title>支持Github风格的警告样式</title><link>https://lisenhui.cn/blog/support-github-style-alert.html</link><pubDate>Tue, 14 Jan 2025 20:14:41 +0800</pubDate><guid>https://lisenhui.cn/blog/support-github-style-alert.html</guid><description>&lt;p&gt;早期在&lt;code&gt;Hugo NexT&lt;/code&gt;主题中使用短代码方式实现过对不同类型消息的样式支持，只不过是使用时需要用户书写完整短代码不是很方便，同时输出的效果是独立的块占用空间比较大。后来发现Hugo框架在新版中支持了自定义 &lt;code&gt;blockquote&lt;/code&gt;的渲染方式，于是乎便有点有新的想法，让用户直接使用&lt;code&gt;Markdown&lt;/code&gt;语法来书写不同消息内容，输出的效果实现类似于&lt;code&gt;Github&lt;/code&gt;的警告样式，这样使用起来会更加方便。下面就来看看相关实现思路和使用方式吧。&lt;/p&gt;</description></item><item><title>重新激活Github的2FA认证</title><link>https://lisenhui.cn/tech/actived-github-2fa-auth.html</link><pubDate>Wed, 08 Nov 2023 20:37:20 +0800</pubDate><guid>https://lisenhui.cn/tech/actived-github-2fa-auth.html</guid><description>&lt;p&gt;近期有段时间没有登录 &lt;code&gt;GitHub&lt;/code&gt; 仓库站点，今天查看邮箱发现
+&lt;a href="https://github.com/hugo-next/hugo-theme-next" title="hugo-theme-next" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
  hugo-theme-next
  
- &lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
-&lt;/a>项目上有新的 &lt;code>PR&lt;/code>进来，便想上来查看下具体情况。结果发现Github官方已经全面启用&lt;code>2FA&lt;/code>安全认证要求，只是之前自己“偷懒”并没有做这个功能的认证，原来还有可以使用密码方式绕过去的，但现在也关闭了此入口，难道真的要芭比Q啦。&lt;/p></description></item><item><title>结合 Github Action 实现自动上传 Algolia 索引</title><link>https://lisenhui.cn/tech/automatic-upload-algolia-index-with-action.html</link><pubDate>Tue, 04 Oct 2022 16:32:53 +0800</pubDate><guid>https://lisenhui.cn/tech/automatic-upload-algolia-index-with-action.html</guid><description>&lt;p>起初本站的文章搜索功能使用是本地搜索支持，但后来发现有众多网友（包括 Hugo 官网文档搜索）都使用的是 
-&lt;a href="https://www.algolia.com/" title="Algolia" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+&lt;/a&gt;项目上有新的 &lt;code&gt;PR&lt;/code&gt;进来，便想上来查看下具体情况。结果发现Github官方已经全面启用&lt;code&gt;2FA&lt;/code&gt;安全认证要求，只是之前自己“偷懒”并没有做这个功能的认证，原来还有可以使用密码方式绕过去的，但现在也关闭了此入口，难道真的要芭比Q啦。&lt;/p&gt;</description></item><item><title>结合 Github Action 实现自动上传 Algolia 索引</title><link>https://lisenhui.cn/tech/automatic-upload-algolia-index-with-action.html</link><pubDate>Tue, 04 Oct 2022 16:32:53 +0800</pubDate><guid>https://lisenhui.cn/tech/automatic-upload-algolia-index-with-action.html</guid><description>&lt;p&gt;起初本站的文章搜索功能使用是本地搜索支持，但后来发现有众多网友（包括 Hugo 官网文档搜索）都使用的是 
+&lt;a href="https://www.algolia.com/" title="Algolia" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
  Algolia
  
- &lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
-&lt;/a> 在线搜索引擎，便顺手也给自己的站点移植到该搜索引擎上面。既然提到搜索引擎自然是少了索引文件的维护，接下来就给大家分享下结合 &lt;code>Github Action&lt;/code> 实现自动化的流程。&lt;/p></description></item><item><title>Openresty+Github Action实现远程自动部署</title><link>https://lisenhui.cn/tech/use-openresty-ghaction-remote-deploy.html</link><pubDate>Sat, 17 Sep 2022 19:13:39 +0800</pubDate><guid>https://lisenhui.cn/tech/use-openresty-ghaction-remote-deploy.html</guid><description>&lt;p>近期频发的收到云厂商关于服务器资源到期的提醒，当初为了躲避云厂商所谓的注册域名 IP 检测监控，无奈之下借着“新”用户的优惠政策，采购了一款最最实惠的云服务，周期为 1 年时间，如今也已是到了“寿终正寝”的时候啦， 因此不得已又要考虑给博客空间找新的部署服务器啦。后来得到热心朋友的资助，在其现有的云服务器上开辟了小空间提供给鄙人博客访问，真是感激万分呀！&lt;/p></description></item><item><title>Github Action执行时遇到SSH key invalid format错误</title><link>https://lisenhui.cn/tech/github-action-ssh-key-invalid.html</link><pubDate>Thu, 11 Aug 2022 21:21:59 +0800</pubDate><guid>https://lisenhui.cn/tech/github-action-ssh-key-invalid.html</guid><description>&lt;p>&lt;code>Github Action&lt;/code>是款非常不错的&lt;code>CI/CD&lt;/code>工具，自从它问世以来发展的速度真可谓是快，在 &lt;code>Github&lt;/code> 的官方市场中几乎能找到所有你想要使用的&lt;code>Action&lt;/code>脚本进行引用。本博客也是基于&lt;code>Github Action&lt;/code>进行远程部署的，与常规的&lt;code>Github Pages&lt;/code>服务不同，本站的静态文件是部署在国内某云厂商的静态服务器上面的，通过 
-&lt;a href="https://github.com/tzzs/server-shell" title="tzzs/server-shell" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+&lt;/a&gt; 在线搜索引擎，便顺手也给自己的站点移植到该搜索引擎上面。既然提到搜索引擎自然是少了索引文件的维护，接下来就给大家分享下结合 &lt;code&gt;Github Action&lt;/code&gt; 实现自动化的流程。&lt;/p&gt;</description></item><item><title>Openresty+Github Action实现远程自动部署</title><link>https://lisenhui.cn/tech/use-openresty-ghaction-remote-deploy.html</link><pubDate>Sat, 17 Sep 2022 19:13:39 +0800</pubDate><guid>https://lisenhui.cn/tech/use-openresty-ghaction-remote-deploy.html</guid><description>&lt;p&gt;近期频发的收到云厂商关于服务器资源到期的提醒，当初为了躲避云厂商所谓的注册域名 IP 检测监控，无奈之下借着“新”用户的优惠政策，采购了一款最最实惠的云服务，周期为 1 年时间，如今也已是到了“寿终正寝”的时候啦， 因此不得已又要考虑给博客空间找新的部署服务器啦。后来得到热心朋友的资助，在其现有的云服务器上开辟了小空间提供给鄙人博客访问，真是感激万分呀！&lt;/p&gt;</description></item><item><title>Github Action执行时遇到SSH key invalid format错误</title><link>https://lisenhui.cn/tech/github-action-ssh-key-invalid.html</link><pubDate>Thu, 11 Aug 2022 21:21:59 +0800</pubDate><guid>https://lisenhui.cn/tech/github-action-ssh-key-invalid.html</guid><description>&lt;p&gt;&lt;code&gt;Github Action&lt;/code&gt;是款非常不错的&lt;code&gt;CI/CD&lt;/code&gt;工具，自从它问世以来发展的速度真可谓是快，在 &lt;code&gt;Github&lt;/code&gt; 的官方市场中几乎能找到所有你想要使用的&lt;code&gt;Action&lt;/code&gt;脚本进行引用。本博客也是基于&lt;code&gt;Github Action&lt;/code&gt;进行远程部署的，与常规的&lt;code&gt;Github Pages&lt;/code&gt;服务不同，本站的静态文件是部署在国内某云厂商的静态服务器上面的，通过 
+&lt;a href="https://github.com/tzzs/server-shell" title="tzzs/server-shell" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
  tzzs/server-shell
  
- &lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
-&lt;/a> Action 集成，实现远程执行服务端的命令，来拉取最新生成的静态文件。&lt;/p></description></item><item><title>使用Github Action自动同步仓库到Gitee</title><link>https://lisenhui.cn/tech/add-sync-gitee-action.html</link><pubDate>Thu, 25 Feb 2021 12:52:25 +0800</pubDate><guid>https://lisenhui.cn/tech/add-sync-gitee-action.html</guid><description>&lt;h2 id="背景">背景
-&lt;a class="header-anchor" href="#%e8%83%8c%e6%99%af">&lt;/a>
-&lt;/h2>&lt;p>作为程序员出生的你，肯定知道备份的重要性。再说现在大环境背景下，美国的政治关系还是比较混乱的，而对于存放在Github上面的项目，也不再是技术自由的国度啦。所以说我们的代码还是有必要进行“双”备份的，接下来就是介绍下，如何使用Github上面的Action功能，将Github上面的代码同步备份到国内的Gitee仓库站点。&lt;/p></description></item><item><title>Github个人信息卡片</title><link>https://lisenhui.cn/tech/github-personal-profile-card.html</link><pubDate>Sun, 24 Jan 2021 12:21:10 +0800</pubDate><guid>https://lisenhui.cn/tech/github-personal-profile-card.html</guid><description>&lt;p>Github上总是会有一些新奇的东西出现，这不无意间又发现了个有趣的玩法，可以用它来作为你的个人开发者名信片展现。具体展现效果如下：&lt;/p>
-&lt;p>&lt;div class="post-img-wrapper">
- &lt;div class="img-container">
- &lt;img src="https://lisenhui.cn/imgs/img-lazy-loading.gif" data-src="//imgs.lisenhui.cn/blog/2021/01-24-elkan1788-profile-02.png!alias" alt="01-24-elkan1788-profile-02.png" title="01-24-elkan1788-profile-02.png" />
- &lt;/div>
-&lt;/div>&lt;/p>
-&lt;p>操作起来也不繁琐，类似以前的pages服务那样，只准备个特定的仓库就可以，具体操作如下：&lt;/p></description></item><item><title>使用Github，Travis CI自动布署Hexo博客到Coding，OSChina服务器</title><link>https://lisenhui.cn/tech/use-travis-ci-push-hexo-blog.html</link><pubDate>Sat, 19 Aug 2017 15:40:26 +0000</pubDate><guid>https://lisenhui.cn/tech/use-travis-ci-push-hexo-blog.html</guid><description>&lt;p>通常我们都是在本地用&lt;code>hexo deploy&lt;/code>发布博客文章到远程的Pages服务器，可别忘记了我们是还需要提交代码的，所以是不是觉得有点麻烦还得分开两步进行操作。这时突然想起是否可用&lt;code>Travis CI&lt;/code>工具来完成这个布署的操作呢？答案是肯定的，整体的流程大致如下：&lt;/p>
-&lt;ul>
-&lt;li>在本地(又或者Github网站)上编辑文章&lt;/li>
-&lt;li>提交文章到Github服务器&lt;/li>
-&lt;li>Travis CI收到通知，同步最新的Github代码，并执行用户自定义好的&lt;code>Travis&lt;/code>脚本生成静态博客&lt;/li>
-&lt;li>最终再把生成好的博客推送到指定的Pages服务器&lt;/li>
-&lt;/ul>
-&lt;p>只是这其中有点比较麻烦的问题就是如何保护我们的私钥，还好&lt;code>Travis CI&lt;/code>已经为我们准备好啦，那么就开始我们的捣腾之旅吧。&lt;/p></description></item><item><title>Github push失败：Could not resolve hostname</title><link>https://lisenhui.cn/tech/github-push-failed.html</link><pubDate>Tue, 16 May 2017 10:21:43 +0000</pubDate><guid>https://lisenhui.cn/tech/github-push-failed.html</guid><description>&lt;p>平时最常用的git push命令突然间居然不可以用（错误日志如下），脑子首先蹦出的想法就是：难道Github又被墙了么！以前出现过类似这样的现象，需要通过指定hosts来加速访问。&lt;/p>
-&lt;p>git push 执行后返回的错误日志：&lt;/p>
+&lt;/a&gt; Action 集成，实现远程执行服务端的命令，来拉取最新生成的静态文件。&lt;/p&gt;</description></item><item><title>使用Github Action自动同步仓库到Gitee</title><link>https://lisenhui.cn/tech/add-sync-gitee-action.html</link><pubDate>Thu, 25 Feb 2021 12:52:25 +0800</pubDate><guid>https://lisenhui.cn/tech/add-sync-gitee-action.html</guid><description>&lt;h2 id="背景"&gt;背景
+&lt;a class="header-anchor" href="#%e8%83%8c%e6%99%af"&gt;&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;作为程序员出生的你，肯定知道备份的重要性。再说现在大环境背景下，美国的政治关系还是比较混乱的，而对于存放在Github上面的项目，也不再是技术自由的国度啦。所以说我们的代码还是有必要进行“双”备份的，接下来就是介绍下，如何使用Github上面的Action功能，将Github上面的代码同步备份到国内的Gitee仓库站点。&lt;/p&gt;</description></item><item><title>Github个人信息卡片</title><link>https://lisenhui.cn/tech/github-personal-profile-card.html</link><pubDate>Sun, 24 Jan 2021 12:21:10 +0800</pubDate><guid>https://lisenhui.cn/tech/github-personal-profile-card.html</guid><description>&lt;p&gt;Github上总是会有一些新奇的东西出现，这不无意间又发现了个有趣的玩法，可以用它来作为你的个人开发者名信片展现。具体展现效果如下：&lt;/p&gt;
+&lt;p&gt;&lt;div class="post-img-wrapper"&gt;
+ &lt;div class="img-container"&gt;
+ &lt;img src="https://lisenhui.cn/imgs/img-lazy-loading.gif" data-src="//imgs.lisenhui.cn/blog/2021/01-24-elkan1788-profile-02.png!alias" alt="01-24-elkan1788-profile-02.png" title="01-24-elkan1788-profile-02.png" /&gt;
+ &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;操作起来也不繁琐，类似以前的pages服务那样，只准备个特定的仓库就可以，具体操作如下：&lt;/p&gt;</description></item><item><title>使用Github，Travis CI自动布署Hexo博客到Coding，OSChina服务器</title><link>https://lisenhui.cn/tech/use-travis-ci-push-hexo-blog.html</link><pubDate>Sat, 19 Aug 2017 15:40:26 +0000</pubDate><guid>https://lisenhui.cn/tech/use-travis-ci-push-hexo-blog.html</guid><description>&lt;p&gt;通常我们都是在本地用&lt;code&gt;hexo deploy&lt;/code&gt;发布博客文章到远程的Pages服务器，可别忘记了我们是还需要提交代码的，所以是不是觉得有点麻烦还得分开两步进行操作。这时突然想起是否可用&lt;code&gt;Travis CI&lt;/code&gt;工具来完成这个布署的操作呢？答案是肯定的，整体的流程大致如下：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;在本地(又或者Github网站)上编辑文章&lt;/li&gt;
+&lt;li&gt;提交文章到Github服务器&lt;/li&gt;
+&lt;li&gt;Travis CI收到通知，同步最新的Github代码，并执行用户自定义好的&lt;code&gt;Travis&lt;/code&gt;脚本生成静态博客&lt;/li&gt;
+&lt;li&gt;最终再把生成好的博客推送到指定的Pages服务器&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;只是这其中有点比较麻烦的问题就是如何保护我们的私钥，还好&lt;code&gt;Travis CI&lt;/code&gt;已经为我们准备好啦，那么就开始我们的捣腾之旅吧。&lt;/p&gt;</description></item><item><title>Github push失败：Could not resolve hostname</title><link>https://lisenhui.cn/tech/github-push-failed.html</link><pubDate>Tue, 16 May 2017 10:21:43 +0000</pubDate><guid>https://lisenhui.cn/tech/github-push-failed.html</guid><description>&lt;p&gt;平时最常用的git push命令突然间居然不可以用（错误日志如下），脑子首先蹦出的想法就是：难道Github又被墙了么！以前出现过类似这样的现象，需要通过指定hosts来加速访问。&lt;/p&gt;
+&lt;p&gt;git push 执行后返回的错误日志：&lt;/p&gt;
 
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-0-1">&lt;a class="lnlinks" href="#hl-0-1">1&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-2">&lt;a class="lnlinks" href="#hl-0-2">2&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-3">&lt;a class="lnlinks" href="#hl-0-3">3&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-4">&lt;a class="lnlinks" href="#hl-0-4">4&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">ssh: Could not resolve hostname github.com:elkan1788: nodename nor servname provided, or not known
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">fatal: Could not &lt;span class="nb">read&lt;/span> from remote repository.
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Please make sure you have the correct access rights&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item></channel></rss>
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt" id="hl-0-1"&gt;&lt;a class="lnlinks" href="#hl-0-1"&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-2"&gt;&lt;a class="lnlinks" href="#hl-0-2"&gt;2&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-3"&gt;&lt;a class="lnlinks" href="#hl-0-3"&gt;3&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-4"&gt;&lt;a class="lnlinks" href="#hl-0-4"&gt;4&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;ssh: Could not resolve hostname github.com:elkan1788: nodename nor servname provided, or not known
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;fatal: Could not &lt;span class="nb"&gt;read&lt;/span&gt; from remote repository.
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;Please make sure you have the correct access rights&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description></item></channel></rss>

@@ -1,41 +1,41 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>学习 on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/%E5%AD%A6%E4%B9%A0/</link><description>Recent content in 学习 on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 02 Aug 2017 16:04:35 +0000</lastBuildDate><atom:link href="https://lisenhui.cn/tags/%E5%AD%A6%E4%B9%A0/rss.xml" rel="self" type="application/rss+xml"/><item><title>使用Hexo重新构建个人博客站点</title><link>https://lisenhui.cn/tech/use-hexo-rebuild-blog-site.html</link><pubDate>Wed, 02 Aug 2017 16:04:35 +0000</pubDate><guid>https://lisenhui.cn/tech/use-hexo-rebuild-blog-site.html</guid><description>&lt;p>其实在&lt;code>Github Page&lt;/code>上面也是混迹许久啦，虽然现在各种Blog网站层出不穷，但是作为IT界的程序猿还是喜欢自己动手捣鼓捣鼓，成功固然是欣喜失败也会不气妥。 &lt;code>Github Page&lt;/code>刚出道时使用的是&lt;code>Jekyll&lt;/code>，简单的解释其实就是一个静态化网站的工具，这不现在又兴起一个名为&lt;code>Hexo&lt;/code>(**&lt;code>Nodejs&lt;/code>**实现)的工具。两者的目标皆是一致的，只不过对比下来发现&lt;code>Hexo&lt;/code>上手确实要容易些，加者它能轻松的在本地实现调试，故有想法想再次折腾一翻，构建个&lt;code>Hexo&lt;/code>版本的个人博客。&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>学习 on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/%E5%AD%A6%E4%B9%A0/</link><description>Recent content in 学习 on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Wed, 02 Aug 2017 16:04:35 +0000</lastBuildDate><atom:link href="https://lisenhui.cn/tags/%E5%AD%A6%E4%B9%A0/rss.xml" rel="self" type="application/rss+xml"/><item><title>使用Hexo重新构建个人博客站点</title><link>https://lisenhui.cn/tech/use-hexo-rebuild-blog-site.html</link><pubDate>Wed, 02 Aug 2017 16:04:35 +0000</pubDate><guid>https://lisenhui.cn/tech/use-hexo-rebuild-blog-site.html</guid><description>&lt;p&gt;其实在&lt;code&gt;Github Page&lt;/code&gt;上面也是混迹许久啦，虽然现在各种Blog网站层出不穷，但是作为IT界的程序猿还是喜欢自己动手捣鼓捣鼓，成功固然是欣喜失败也会不气妥。 &lt;code&gt;Github Page&lt;/code&gt;刚出道时使用的是&lt;code&gt;Jekyll&lt;/code&gt;，简单的解释其实就是一个静态化网站的工具，这不现在又兴起一个名为&lt;code&gt;Hexo&lt;/code&gt;(**&lt;code&gt;Nodejs&lt;/code&gt;**实现)的工具。两者的目标皆是一致的，只不过对比下来发现&lt;code&gt;Hexo&lt;/code&gt;上手确实要容易些，加者它能轻松的在本地实现调试，故有想法想再次折腾一翻，构建个&lt;code&gt;Hexo&lt;/code&gt;版本的个人博客。&lt;/p&gt;
 
- &lt;blockquote>
- &lt;p>介绍另一款静态网站工具
-&lt;a href="https://github.com/wendal/gor" title="Gor" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
- &lt;code>Gor&lt;/code>
+ &lt;blockquote&gt;
+ &lt;p&gt;介绍另一款静态网站工具
+&lt;a href="https://github.com/wendal/gor" title="Gor" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
+ &lt;code&gt;Gor&lt;/code&gt;
  
- &lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
-&lt;/a>，它是鄙人一直崇拜的大拿
-&lt;a href="http://wendal.net/" title="Wendal" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+&lt;/a&gt;，它是鄙人一直崇拜的大拿
+&lt;a href="http://wendal.net/" title="Wendal" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
  Wendal
  
- &lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
-&lt;/a>的杰作，熟悉&lt;code>GO&lt;/code>语言的朋友有可以关注下。&lt;/p>
- &lt;/blockquote></description></item><item><title>Hexo blog Hello World</title><link>https://lisenhui.cn/tech/hexo-hello-world.html</link><pubDate>Mon, 31 Jul 2017 18:32:53 +0000</pubDate><guid>https://lisenhui.cn/tech/hexo-hello-world.html</guid><description>&lt;p>Welcome to 
-&lt;a href="https://hexo.io/" title="Hexo" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+&lt;/a&gt;的杰作，熟悉&lt;code&gt;GO&lt;/code&gt;语言的朋友有可以关注下。&lt;/p&gt;
+ &lt;/blockquote&gt;</description></item><item><title>Hexo blog Hello World</title><link>https://lisenhui.cn/tech/hexo-hello-world.html</link><pubDate>Mon, 31 Jul 2017 18:32:53 +0000</pubDate><guid>https://lisenhui.cn/tech/hexo-hello-world.html</guid><description>&lt;p&gt;Welcome to 
+&lt;a href="https://hexo.io/" title="Hexo" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
  Hexo
  
- &lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
-&lt;/a>! This is your very first post. Check 
-&lt;a href="https://hexo.io/docs/" title="documentation" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+&lt;/a&gt;! This is your very first post. Check 
+&lt;a href="https://hexo.io/docs/" title="documentation" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
  documentation
  
- &lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
-&lt;/a> for more info. If you get any problems when using Hexo, you can find the answer in 
-&lt;a href="https://hexo.io/docs/troubleshooting.html" title="troubleshooting" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in 
+&lt;a href="https://hexo.io/docs/troubleshooting.html" title="troubleshooting" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
  troubleshooting
  
- &lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
-&lt;/a> or you can ask me on 
-&lt;a href="https://github.com/hexojs/hexo/issues" title="GitHub" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+&lt;/a&gt; or you can ask me on 
+&lt;a href="https://github.com/hexojs/hexo/issues" title="GitHub" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
  GitHub
  
- &lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
-&lt;/a>.&lt;/p></description></item><item><title>APIDoc自动生成接口文档</title><link>https://lisenhui.cn/tech/nodejs-apidoc-generator.html</link><pubDate>Tue, 18 Jul 2017 15:23:43 +0000</pubDate><guid>https://lisenhui.cn/tech/nodejs-apidoc-generator.html</guid><description>&lt;p>对于项目开发常见的前后端分离模式来说，中间在后端完成接口开发交付对接时，前端人员往往苦于没有接口文档会经常&amp;quot;跑去&amp;quot;骚扰后端人员，真是苦不堪言哪。要是此时有个文档化的说明那就轻松多啦，现在后端流行的文档生成利器有&lt;code>Swagger&lt;/code>，它虽然方便，但是也有弊端得写在的后台的代码中，而且启动整个后台项目才能访问。或许有时还真不太方便的，另外就是项目初期要对接口做个规划也无法用这个方法，难道就没有别的办法了嘛？&lt;/p></description></item></channel></rss>
+&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>APIDoc自动生成接口文档</title><link>https://lisenhui.cn/tech/nodejs-apidoc-generator.html</link><pubDate>Tue, 18 Jul 2017 15:23:43 +0000</pubDate><guid>https://lisenhui.cn/tech/nodejs-apidoc-generator.html</guid><description>&lt;p&gt;对于项目开发常见的前后端分离模式来说，中间在后端完成接口开发交付对接时，前端人员往往苦于没有接口文档会经常&amp;quot;跑去&amp;quot;骚扰后端人员，真是苦不堪言哪。要是此时有个文档化的说明那就轻松多啦，现在后端流行的文档生成利器有&lt;code&gt;Swagger&lt;/code&gt;，它虽然方便，但是也有弊端得写在的后台的代码中，而且启动整个后台项目才能访问。或许有时还真不太方便的，另外就是项目初期要对接口做个规划也无法用这个方法，难道就没有别的办法了嘛？&lt;/p&gt;</description></item></channel></rss>

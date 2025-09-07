@@ -1,16 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pymssql on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/pymssql/</link><description>Recent content in Pymssql on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 17 Aug 2017 18:20:18 +0000</lastBuildDate><atom:link href="https://lisenhui.cn/tags/pymssql/rss.xml" rel="self" type="application/rss+xml"/><item><title>pymssql连接azure云的MSSQL数据库</title><link>https://lisenhui.cn/tech/pymssql-azure-mssql-datasource-connect.html</link><pubDate>Thu, 17 Aug 2017 18:20:18 +0000</pubDate><guid>https://lisenhui.cn/tech/pymssql-azure-mssql-datasource-connect.html</guid><description>&lt;p>码好代码在测试环境做好测试后，满怀信心的去布署上线到生产环境，结果就是一堆的异常，具体查看了后发现是连接数据库的问题，异常信息如下：&lt;/p>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Pymssql on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/pymssql/</link><description>Recent content in Pymssql on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 17 Aug 2017 18:20:18 +0000</lastBuildDate><atom:link href="https://lisenhui.cn/tags/pymssql/rss.xml" rel="self" type="application/rss+xml"/><item><title>pymssql连接azure云的MSSQL数据库</title><link>https://lisenhui.cn/tech/pymssql-azure-mssql-datasource-connect.html</link><pubDate>Thu, 17 Aug 2017 18:20:18 +0000</pubDate><guid>https://lisenhui.cn/tech/pymssql-azure-mssql-datasource-connect.html</guid><description>&lt;p&gt;码好代码在测试环境做好测试后，满怀信心的去布署上线到生产环境，结果就是一堆的异常，具体查看了后发现是连接数据库的问题，异常信息如下：&lt;/p&gt;
 
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-0-1">&lt;a class="lnlinks" href="#hl-0-1">1&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-2">&lt;a class="lnlinks" href="#hl-0-2">2&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-3">&lt;a class="lnlinks" href="#hl-0-3">3&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-4">&lt;a class="lnlinks" href="#hl-0-4">4&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="o">(&lt;/span>40532, &lt;span class="s1">&amp;#39;Cannot open server &amp;#34;1433D&amp;#34; requested by the login. 
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">The login failed.DB-Lib error message 20018, severity 20:\n
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">General SQL Server error: Check messages from the SQL Server\n
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="s1">DB-Lib error message 20002, severity 9:\nAdaptive Server connection failed\n&amp;#39;&lt;/span>&lt;span class="o">)&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item></channel></rss>
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt" id="hl-0-1"&gt;&lt;a class="lnlinks" href="#hl-0-1"&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-2"&gt;&lt;a class="lnlinks" href="#hl-0-2"&gt;2&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-3"&gt;&lt;a class="lnlinks" href="#hl-0-3"&gt;3&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-4"&gt;&lt;a class="lnlinks" href="#hl-0-4"&gt;4&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="o"&gt;(&lt;/span&gt;40532, &lt;span class="s1"&gt;&amp;#39;Cannot open server &amp;#34;1433D&amp;#34; requested by the login. 
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s1"&gt;The login failed.DB-Lib error message 20018, severity 20:\n
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s1"&gt;General SQL Server error: Check messages from the SQL Server\n
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="s1"&gt;DB-Lib error message 20002, severity 9:\nAdaptive Server connection failed\n&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;)&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description></item></channel></rss>

@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Algolia on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/algolia/</link><description>Recent content in Algolia on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 04 Oct 2022 16:32:53 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/tags/algolia/rss.xml" rel="self" type="application/rss+xml"/><item><title>结合 Github Action 实现自动上传 Algolia 索引</title><link>https://lisenhui.cn/tech/automatic-upload-algolia-index-with-action.html</link><pubDate>Tue, 04 Oct 2022 16:32:53 +0800</pubDate><guid>https://lisenhui.cn/tech/automatic-upload-algolia-index-with-action.html</guid><description>&lt;p>起初本站的文章搜索功能使用是本地搜索支持，但后来发现有众多网友（包括 Hugo 官网文档搜索）都使用的是 
-&lt;a href="https://www.algolia.com/" title="Algolia" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Algolia on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/algolia/</link><description>Recent content in Algolia on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Tue, 04 Oct 2022 16:32:53 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/tags/algolia/rss.xml" rel="self" type="application/rss+xml"/><item><title>结合 Github Action 实现自动上传 Algolia 索引</title><link>https://lisenhui.cn/tech/automatic-upload-algolia-index-with-action.html</link><pubDate>Tue, 04 Oct 2022 16:32:53 +0800</pubDate><guid>https://lisenhui.cn/tech/automatic-upload-algolia-index-with-action.html</guid><description>&lt;p&gt;起初本站的文章搜索功能使用是本地搜索支持，但后来发现有众多网友（包括 Hugo 官网文档搜索）都使用的是 
+&lt;a href="https://www.algolia.com/" title="Algolia" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
  Algolia
  
- &lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
-&lt;/a> 在线搜索引擎，便顺手也给自己的站点移植到该搜索引擎上面。既然提到搜索引擎自然是少了索引文件的维护，接下来就给大家分享下结合 &lt;code>Github Action&lt;/code> 实现自动化的流程。&lt;/p></description></item></channel></rss>
+&lt;/a&gt; 在线搜索引擎，便顺手也给自己的站点移植到该搜索引擎上面。既然提到搜索引擎自然是少了索引文件的维护，接下来就给大家分享下结合 &lt;code&gt;Github Action&lt;/code&gt; 实现自动化的流程。&lt;/p&gt;</description></item></channel></rss>

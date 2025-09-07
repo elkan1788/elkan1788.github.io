@@ -1,186 +1,186 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>大数据 on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</link><description>Recent content in 大数据 on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 28 Sep 2020 17:02:33 +0000</lastBuildDate><atom:link href="https://lisenhui.cn/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/rss.xml" rel="self" type="application/rss+xml"/><item><title>安装CDH6过程中几个入坑记录</title><link>https://lisenhui.cn/tech/install-cdh-issues-notes.html</link><pubDate>Mon, 28 Sep 2020 17:02:33 +0000</pubDate><guid>https://lisenhui.cn/tech/install-cdh-issues-notes.html</guid><description>&lt;p>其实CDH环境部署安装并非是什么难事，正所谓是熟能生巧嘛。但正好不巧的就是太久没有操作过，便是会遇到一些“奇奇怪怪”的问题，而后花费些功夫才能解决好，事后也就顺道把它们记录下来，避免以后再犯。&lt;/p></description></item><item><title>本地部署Zeppelin集成Kylin制作数据分析</title><link>https://lisenhui.cn/tech/local-deploy-kylin-integrat-zeppelin.html</link><pubDate>Fri, 07 Jun 2019 21:40:46 +0800</pubDate><guid>https://lisenhui.cn/tech/local-deploy-kylin-integrat-zeppelin.html</guid><description>&lt;p>通过&lt;code>Kylin&lt;/code>自带的简单图表展示来进行数据分析的你是否觉得还不够过瘾？想在酷炫的仪表盘上进行数据分析？今天就给大家带来一款上手较快，简单易用的数据驱动式Notebook工具——&lt;code>Apache Zeppelin&lt;/code>。将&lt;code>Zeppelin&lt;/code>与Kylin 集成后，你就可以通过它来定制你的数据可视化报告，更直观地体验&lt;code>Kylin&lt;/code>的分析“神”速啦～&lt;/p>
-&lt;p>与&lt;code>Kylin&lt;/code>一样， Apache&lt;code>Zeppelin&lt;/code>也是 Apache 软件基金会的顶级项目，是一款基于Web的Notebook（类似于IPython的Notebook），支持友好交互式的数据分析体验，原生就支持Spark、Scala、SQL、Shell、Markdown等编程或脚本语言，可以访问其官方网站
-&lt;a href="https://zeppelin.apache.org" title="Apache Zeppelin" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>大数据 on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/</link><description>Recent content in 大数据 on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Mon, 28 Sep 2020 17:02:33 +0000</lastBuildDate><atom:link href="https://lisenhui.cn/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/rss.xml" rel="self" type="application/rss+xml"/><item><title>安装CDH6过程中几个入坑记录</title><link>https://lisenhui.cn/tech/install-cdh-issues-notes.html</link><pubDate>Mon, 28 Sep 2020 17:02:33 +0000</pubDate><guid>https://lisenhui.cn/tech/install-cdh-issues-notes.html</guid><description>&lt;p&gt;其实CDH环境部署安装并非是什么难事，正所谓是熟能生巧嘛。但正好不巧的就是太久没有操作过，便是会遇到一些“奇奇怪怪”的问题，而后花费些功夫才能解决好，事后也就顺道把它们记录下来，避免以后再犯。&lt;/p&gt;</description></item><item><title>本地部署Zeppelin集成Kylin制作数据分析</title><link>https://lisenhui.cn/tech/local-deploy-kylin-integrat-zeppelin.html</link><pubDate>Fri, 07 Jun 2019 21:40:46 +0800</pubDate><guid>https://lisenhui.cn/tech/local-deploy-kylin-integrat-zeppelin.html</guid><description>&lt;p&gt;通过&lt;code&gt;Kylin&lt;/code&gt;自带的简单图表展示来进行数据分析的你是否觉得还不够过瘾？想在酷炫的仪表盘上进行数据分析？今天就给大家带来一款上手较快，简单易用的数据驱动式Notebook工具——&lt;code&gt;Apache Zeppelin&lt;/code&gt;。将&lt;code&gt;Zeppelin&lt;/code&gt;与Kylin 集成后，你就可以通过它来定制你的数据可视化报告，更直观地体验&lt;code&gt;Kylin&lt;/code&gt;的分析“神”速啦～&lt;/p&gt;
+&lt;p&gt;与&lt;code&gt;Kylin&lt;/code&gt;一样， Apache&lt;code&gt;Zeppelin&lt;/code&gt;也是 Apache 软件基金会的顶级项目，是一款基于Web的Notebook（类似于IPython的Notebook），支持友好交互式的数据分析体验，原生就支持Spark、Scala、SQL、Shell、Markdown等编程或脚本语言，可以访问其官方网站
+&lt;a href="https://zeppelin.apache.org" title="Apache Zeppelin" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
  Apache Zeppelin
  
- &lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
-&lt;/a>了解更多的信息。&lt;/p></description></item><item><title>本地搭建Kylin运行环境实践</title><link>https://lisenhui.cn/tech/practice-of-local-deploy-kylin.html</link><pubDate>Tue, 09 Apr 2019 18:38:36 +0800</pubDate><guid>https://lisenhui.cn/tech/practice-of-local-deploy-kylin.html</guid><description>&lt;p>&lt;code>Apache Kylin&lt;/code>是运行在&lt;code>Hadoop&lt;/code>集群之上的&lt;code>OLAP&lt;/code>数据分析应用服务，在&lt;code>Hadoop&lt;/code>生态中，大家对它的认可度和赞誉都很高，全球有超过1000+企业都在使用“麒麟”（Apache Kylin）这只神兽。而&lt;code>Hadoop&lt;/code>集群的部署又并非易事，那这是否就阻碍了我们探究&lt;code>Apache Kylin&lt;/code>的步伐呢？答案是否定的，通过借助强大的虚拟技术，在自己本地就能体验到“麒麟”的魅力，那么接下来就让我们一起进入“麒麟”的数据世界。&lt;/p></description></item><item><title>不能在HDFS Data节点上创建临时文件</title><link>https://lisenhui.cn/tech/unable-create-tmp-file-in-hdfs-nodes.html</link><pubDate>Thu, 21 Mar 2019 19:04:51 +0000</pubDate><guid>https://lisenhui.cn/tech/unable-create-tmp-file-in-hdfs-nodes.html</guid><description>&lt;p>在新创建的&lt;code>Hadoop&lt;/code>边缘节点上，尝试通过&lt;code>Hive CLI&lt;/code>模式进行数据插入操作，结果没有出现意想中的成功信息，反倒是捕获到如下的异常：&lt;/p>
+&lt;/a&gt;了解更多的信息。&lt;/p&gt;</description></item><item><title>本地搭建Kylin运行环境实践</title><link>https://lisenhui.cn/tech/practice-of-local-deploy-kylin.html</link><pubDate>Tue, 09 Apr 2019 18:38:36 +0800</pubDate><guid>https://lisenhui.cn/tech/practice-of-local-deploy-kylin.html</guid><description>&lt;p&gt;&lt;code&gt;Apache Kylin&lt;/code&gt;是运行在&lt;code&gt;Hadoop&lt;/code&gt;集群之上的&lt;code&gt;OLAP&lt;/code&gt;数据分析应用服务，在&lt;code&gt;Hadoop&lt;/code&gt;生态中，大家对它的认可度和赞誉都很高，全球有超过1000+企业都在使用“麒麟”（Apache Kylin）这只神兽。而&lt;code&gt;Hadoop&lt;/code&gt;集群的部署又并非易事，那这是否就阻碍了我们探究&lt;code&gt;Apache Kylin&lt;/code&gt;的步伐呢？答案是否定的，通过借助强大的虚拟技术，在自己本地就能体验到“麒麟”的魅力，那么接下来就让我们一起进入“麒麟”的数据世界。&lt;/p&gt;</description></item><item><title>不能在HDFS Data节点上创建临时文件</title><link>https://lisenhui.cn/tech/unable-create-tmp-file-in-hdfs-nodes.html</link><pubDate>Thu, 21 Mar 2019 19:04:51 +0000</pubDate><guid>https://lisenhui.cn/tech/unable-create-tmp-file-in-hdfs-nodes.html</guid><description>&lt;p&gt;在新创建的&lt;code&gt;Hadoop&lt;/code&gt;边缘节点上，尝试通过&lt;code&gt;Hive CLI&lt;/code&gt;模式进行数据插入操作，结果没有出现意想中的成功信息，反倒是捕获到如下的异常：&lt;/p&gt;
 
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-0-1">&lt;a class="lnlinks" href="#hl-0-1"> 1&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-2">&lt;a class="lnlinks" href="#hl-0-2"> 2&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-3">&lt;a class="lnlinks" href="#hl-0-3"> 3&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-4">&lt;a class="lnlinks" href="#hl-0-4"> 4&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-5">&lt;a class="lnlinks" href="#hl-0-5"> 5&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-6">&lt;a class="lnlinks" href="#hl-0-6"> 6&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-7">&lt;a class="lnlinks" href="#hl-0-7"> 7&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-8">&lt;a class="lnlinks" href="#hl-0-8"> 8&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-9">&lt;a class="lnlinks" href="#hl-0-9"> 9&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-10">&lt;a class="lnlinks" href="#hl-0-10">10&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-11">&lt;a class="lnlinks" href="#hl-0-11">11&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-12">&lt;a class="lnlinks" href="#hl-0-12">12&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-13">&lt;a class="lnlinks" href="#hl-0-13">13&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-14">&lt;a class="lnlinks" href="#hl-0-14">14&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-15">&lt;a class="lnlinks" href="#hl-0-15">15&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-16">&lt;a class="lnlinks" href="#hl-0-16">16&lt;/a>
-&lt;/span>&lt;span class="lnt" id="hl-0-17">&lt;a class="lnlinks" href="#hl-0-17">17&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-java" data-lang="java">&lt;span class="line">&lt;span class="cl">&lt;span class="nl">FAILED&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">SemanticException&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">[&lt;/span>&lt;span class="n">Error&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">10293&lt;/span>&lt;span class="o">]&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">Unable&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">to&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">create&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">temp&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">file&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">for&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">insert&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">values&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">File&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">tmp&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">hive&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">kylin&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">9c84de0a&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">fca2&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">4d3c&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">8f72&lt;/span>&lt;span class="o">-&lt;/span>&lt;span class="n">47436a4adb83&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">_tmp_space&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">db&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">Values__Tmp__Table__1&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">data_file&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">could&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">only&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">be&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">replicated&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">to&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">0&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">nodes&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">instead&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">of&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">minReplication&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="o">=&lt;/span>&lt;span class="n">1&lt;/span>&lt;span class="p">).&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">There&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">are&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">1&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">datanode&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">s&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">running&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">and&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">1&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="nf">node&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">s&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">are&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">excluded&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">in&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="k">this&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">operation&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">	&lt;/span>&lt;span class="n">at&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">org&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">apache&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">hadoop&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">hdfs&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">server&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">blockmanagement&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">BlockManager&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">chooseTarget4NewBlock&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">BlockManager&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">java&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="n">1720&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">	&lt;/span>&lt;span class="n">at&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">org&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">apache&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">hadoop&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">hdfs&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">server&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">namenode&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">FSNamesystem&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">getAdditionalBlock&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">FSNamesystem&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">java&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="n">3440&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">	&lt;/span>&lt;span class="n">at&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">org&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">apache&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">hadoop&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">hdfs&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">server&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">namenode&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">NameNodeRpcServer&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">addBlock&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">NameNodeRpcServer&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">java&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="n">686&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">	&lt;/span>&lt;span class="n">at&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">org&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">apache&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">hadoop&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">hdfs&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">server&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">namenode&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">AuthorizationProviderProxyClientProtocol&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">addBlock&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">AuthorizationProviderProxyClientProtocol&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">java&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="n">217&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">	&lt;/span>&lt;span class="n">at&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">org&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">apache&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">hadoop&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">hdfs&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">protocolPB&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">ClientNamenodeProtocolServerSideTranslatorPB&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">addBlock&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ClientNamenodeProtocolServerSideTranslatorPB&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">java&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="n">506&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">	&lt;/span>&lt;span class="n">at&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">org&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">apache&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">hadoop&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">hdfs&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">protocol&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">proto&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">callBlockingMethod&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ClientNamenodeProtocolProtos&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">java&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">	&lt;/span>&lt;span class="n">at&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">org&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">apache&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">hadoop&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">ipc&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">ProtobufRpcEngine$Server$ProtoBufRpcInvoker&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">call&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">ProtobufRpcEngine&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">java&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="n">617&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">	&lt;/span>&lt;span class="n">at&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">org&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">apache&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">hadoop&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">ipc&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">RPC$Server&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">call&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">RPC&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">java&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="n">1073&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">	&lt;/span>&lt;span class="n">at&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">org&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">apache&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">hadoop&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">ipc&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">Server$Handler$1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">run&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Server&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">java&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="n">2226&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">	&lt;/span>&lt;span class="n">at&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">org&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">apache&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">hadoop&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">ipc&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">Server$Handler$1&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">run&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Server&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">java&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="n">2222&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">	&lt;/span>&lt;span class="n">at&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">java&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">security&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">AccessController&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">doPrivileged&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Native&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">Method&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">	&lt;/span>&lt;span class="n">at&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">javax&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">security&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">auth&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">Subject&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">doAs&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Subject&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">java&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="n">415&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">	&lt;/span>&lt;span class="n">at&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">org&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">apache&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">hadoop&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">security&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">UserGroupInformation&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">doAs&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">UserGroupInformation&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">java&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="n">1917&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">	&lt;/span>&lt;span class="n">at&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">org&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">apache&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">hadoop&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">ipc&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">Server$Handler&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">run&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="n">Server&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="na">java&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="n">2220&lt;/span>&lt;span class="p">)&lt;/span>&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">
-&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w">&lt;/span>&lt;span class="nl">ERROR&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">Current&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">user&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">has&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">no&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">permission&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">to&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">create&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">Hive&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">table&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">in&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">working&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="n">directory&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">user&lt;/span>&lt;span class="o">/&lt;/span>&lt;span class="n">kylin&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item><item><title>Apache Nifi在Windows环境下搭建伪群集及证书登录</title><link>https://lisenhui.cn/tech/nifi-windows-local-cluster.html</link><pubDate>Thu, 26 Oct 2017 17:50:52 +0000</pubDate><guid>https://lisenhui.cn/tech/nifi-windows-local-cluster.html</guid><description>&lt;p>前些时间做了关于&lt;code>Apache Nifi&lt;/code>分布式集群的搭建分享，但很多时候要搭建分布式集群机器资源是个问题，而现在的单机的配置还是相当不错的，故现在就做个关于Windows上搭建个伪分布式集群的分享，同时通过另外一种方式实现&lt;strong>Apache Nifi&lt;/strong>的授权认证。&lt;/p>
-&lt;h1 id="系统环境及软件版本">系统环境及软件版本
-&lt;a class="header-anchor" href="#%e7%b3%bb%e7%bb%9f%e7%8e%af%e5%a2%83%e5%8f%8a%e8%bd%af%e4%bb%b6%e7%89%88%e6%9c%ac">&lt;/a>
-&lt;/h1>&lt;ul>
-&lt;li>
-&lt;p>Windows8.1&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>JDK1.8.0_131&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Nifi-1.4.0&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th style="text-align: center">Nifi安装目录&lt;/th>
- &lt;th style="text-align: center">WEB端口&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td style="text-align: center">xxx\nifi-ncm&lt;/td>
- &lt;td style="text-align: center">9443&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td style="text-align: center">xxx\nifi-cluster01&lt;/td>
- &lt;td style="text-align: center">9444&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td style="text-align: center">xxx\nifi-cluster02&lt;/td>
- &lt;td style="text-align: center">9445&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt" id="hl-0-1"&gt;&lt;a class="lnlinks" href="#hl-0-1"&gt; 1&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-2"&gt;&lt;a class="lnlinks" href="#hl-0-2"&gt; 2&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-3"&gt;&lt;a class="lnlinks" href="#hl-0-3"&gt; 3&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-4"&gt;&lt;a class="lnlinks" href="#hl-0-4"&gt; 4&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-5"&gt;&lt;a class="lnlinks" href="#hl-0-5"&gt; 5&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-6"&gt;&lt;a class="lnlinks" href="#hl-0-6"&gt; 6&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-7"&gt;&lt;a class="lnlinks" href="#hl-0-7"&gt; 7&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-8"&gt;&lt;a class="lnlinks" href="#hl-0-8"&gt; 8&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-9"&gt;&lt;a class="lnlinks" href="#hl-0-9"&gt; 9&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-10"&gt;&lt;a class="lnlinks" href="#hl-0-10"&gt;10&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-11"&gt;&lt;a class="lnlinks" href="#hl-0-11"&gt;11&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-12"&gt;&lt;a class="lnlinks" href="#hl-0-12"&gt;12&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-13"&gt;&lt;a class="lnlinks" href="#hl-0-13"&gt;13&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-14"&gt;&lt;a class="lnlinks" href="#hl-0-14"&gt;14&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-15"&gt;&lt;a class="lnlinks" href="#hl-0-15"&gt;15&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-16"&gt;&lt;a class="lnlinks" href="#hl-0-16"&gt;16&lt;/a&gt;
+&lt;/span&gt;&lt;span class="lnt" id="hl-0-17"&gt;&lt;a class="lnlinks" href="#hl-0-17"&gt;17&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-java" data-lang="java"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="nl"&gt;FAILED&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;SemanticException&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;[&lt;/span&gt;&lt;span class="n"&gt;Error&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;10293&lt;/span&gt;&lt;span class="o"&gt;]&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Unable&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;temp&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;file&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;for&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;insert&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;values&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;File&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;tmp&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;hive&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;kylin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;9c84de0a&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;fca2&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;4d3c&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;8f72&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;47436a4adb83&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;_tmp_space&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;db&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;Values__Tmp__Table__1&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;data_file&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;could&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;only&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;be&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;replicated&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;0&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;nodes&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;instead&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;of&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;minReplication&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="n"&gt;1&lt;/span&gt;&lt;span class="p"&gt;).&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;There&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;are&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;datanode&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;running&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;and&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;1&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="nf"&gt;node&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;are&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;excluded&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="k"&gt;this&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;operation&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;	&lt;/span&gt;&lt;span class="n"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;apache&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;hadoop&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;hdfs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;server&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;blockmanagement&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;BlockManager&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;chooseTarget4NewBlock&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;BlockManager&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;java&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;1720&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;	&lt;/span&gt;&lt;span class="n"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;apache&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;hadoop&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;hdfs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;server&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;namenode&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;FSNamesystem&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;getAdditionalBlock&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;FSNamesystem&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;java&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;3440&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;	&lt;/span&gt;&lt;span class="n"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;apache&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;hadoop&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;hdfs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;server&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;namenode&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;NameNodeRpcServer&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addBlock&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;NameNodeRpcServer&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;java&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;686&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;	&lt;/span&gt;&lt;span class="n"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;apache&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;hadoop&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;hdfs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;server&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;namenode&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;AuthorizationProviderProxyClientProtocol&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addBlock&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;AuthorizationProviderProxyClientProtocol&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;java&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;217&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;	&lt;/span&gt;&lt;span class="n"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;apache&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;hadoop&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;hdfs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;protocolPB&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ClientNamenodeProtocolServerSideTranslatorPB&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;addBlock&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ClientNamenodeProtocolServerSideTranslatorPB&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;java&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;506&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;	&lt;/span&gt;&lt;span class="n"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;apache&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;hadoop&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;hdfs&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;protocol&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;proto&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ClientNamenodeProtocolProtos$ClientNamenodeProtocol$2&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;callBlockingMethod&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ClientNamenodeProtocolProtos&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;java&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;	&lt;/span&gt;&lt;span class="n"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;apache&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;hadoop&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ipc&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ProtobufRpcEngine$Server$ProtoBufRpcInvoker&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;call&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;ProtobufRpcEngine&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;java&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;617&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;	&lt;/span&gt;&lt;span class="n"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;apache&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;hadoop&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ipc&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;RPC$Server&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;call&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;RPC&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;java&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;1073&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;	&lt;/span&gt;&lt;span class="n"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;apache&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;hadoop&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ipc&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;Server$Handler$1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Server&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;java&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;2226&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;	&lt;/span&gt;&lt;span class="n"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;apache&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;hadoop&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ipc&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;Server$Handler$1&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Server&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;java&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;2222&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;	&lt;/span&gt;&lt;span class="n"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;java&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;security&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;AccessController&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;doPrivileged&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Native&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Method&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;	&lt;/span&gt;&lt;span class="n"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;javax&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;security&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;auth&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;Subject&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;doAs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Subject&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;java&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;415&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;	&lt;/span&gt;&lt;span class="n"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;apache&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;hadoop&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;security&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;UserGroupInformation&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;doAs&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;UserGroupInformation&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;java&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;1917&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;	&lt;/span&gt;&lt;span class="n"&gt;at&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;org&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;apache&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;hadoop&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;ipc&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;Server$Handler&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;run&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;Server&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="na"&gt;java&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="n"&gt;2220&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;&lt;span class="w"&gt;&lt;/span&gt;&lt;span class="nl"&gt;ERROR&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Current&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;has&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;no&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;permission&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;create&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;Hive&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;table&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;in&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;working&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="n"&gt;directory&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="w"&gt; &lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;user&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;kylin&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description></item><item><title>Apache Nifi在Windows环境下搭建伪群集及证书登录</title><link>https://lisenhui.cn/tech/nifi-windows-local-cluster.html</link><pubDate>Thu, 26 Oct 2017 17:50:52 +0000</pubDate><guid>https://lisenhui.cn/tech/nifi-windows-local-cluster.html</guid><description>&lt;p&gt;前些时间做了关于&lt;code&gt;Apache Nifi&lt;/code&gt;分布式集群的搭建分享，但很多时候要搭建分布式集群机器资源是个问题，而现在的单机的配置还是相当不错的，故现在就做个关于Windows上搭建个伪分布式集群的分享，同时通过另外一种方式实现&lt;strong&gt;Apache Nifi&lt;/strong&gt;的授权认证。&lt;/p&gt;
+&lt;h1 id="系统环境及软件版本"&gt;系统环境及软件版本
+&lt;a class="header-anchor" href="#%e7%b3%bb%e7%bb%9f%e7%8e%af%e5%a2%83%e5%8f%8a%e8%bd%af%e4%bb%b6%e7%89%88%e6%9c%ac"&gt;&lt;/a&gt;
+&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Windows8.1&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;JDK1.8.0_131&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Nifi-1.4.0&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;Nifi安装目录&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;WEB端口&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;xxx\nifi-ncm&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;9443&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;xxx\nifi-cluster01&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;9444&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;xxx\nifi-cluster02&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;9445&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
 
- &lt;blockquote>
- &lt;p>(其它版本可参考此篇文章)
-另在测试中发个问题，使用&lt;code>Apache Nifi&lt;/code>内嵌的&lt;code>Zookeeper&lt;/code>搭建伪集群里启动总是提示端口占用的问题，故放弃只采用了单结点启动。&lt;/p>
- &lt;/blockquote></description></item><item><title>Apache Nifi集群搭建及用kerberos实现用户认证</title><link>https://lisenhui.cn/tech/ninfi-cluster-deploy-with-kerberos.html</link><pubDate>Sun, 22 Oct 2017 11:42:29 +0000</pubDate><guid>https://lisenhui.cn/tech/ninfi-cluster-deploy-with-kerberos.html</guid><description>&lt;p>最近这段时间在接触数据流式处理方面的事宜，用到了&lt;strong>Apache NIFI&lt;/strong>现把安装配置中学习的一些经验分享下。此篇文章主要是针对集群及用户权限方面，关于
-&lt;a href="https://nifi.apache.org/" title="Apache NIFI" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ &lt;blockquote&gt;
+ &lt;p&gt;(其它版本可参考此篇文章)
+另在测试中发个问题，使用&lt;code&gt;Apache Nifi&lt;/code&gt;内嵌的&lt;code&gt;Zookeeper&lt;/code&gt;搭建伪集群里启动总是提示端口占用的问题，故放弃只采用了单结点启动。&lt;/p&gt;
+ &lt;/blockquote&gt;</description></item><item><title>Apache Nifi集群搭建及用kerberos实现用户认证</title><link>https://lisenhui.cn/tech/ninfi-cluster-deploy-with-kerberos.html</link><pubDate>Sun, 22 Oct 2017 11:42:29 +0000</pubDate><guid>https://lisenhui.cn/tech/ninfi-cluster-deploy-with-kerberos.html</guid><description>&lt;p&gt;最近这段时间在接触数据流式处理方面的事宜，用到了&lt;strong&gt;Apache NIFI&lt;/strong&gt;现把安装配置中学习的一些经验分享下。此篇文章主要是针对集群及用户权限方面，关于
+&lt;a href="https://nifi.apache.org/" title="Apache NIFI" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
  Apache NIFI
  
- &lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
-&lt;/a>的介绍就不做过多的说明，直接引用官方的首页的说明如下图所示：&lt;/p>
-&lt;p>&lt;div class="post-img-wrapper">
- &lt;div class="img-container">
- &lt;img src="https://lisenhui.cn/imgs/img-lazy-loading.gif" data-src="//imgs.lisenhui.cn/blog/2017/10-22-Apache-NiFi-01.png!alias" alt="NiFi-01.png" title="NiFi-01.png" />
- &lt;/div>
-&lt;/div>&lt;/p></description></item><item><title>关于Ambari中服务运行正常UI却显示服务停止的问题</title><link>https://lisenhui.cn/tech/ambari-monitor-status-issues.html</link><pubDate>Wed, 18 Oct 2017 16:13:36 +0000</pubDate><guid>https://lisenhui.cn/tech/ambari-monitor-status-issues.html</guid><description>&lt;p>很多时候环境的维护的确是件头痛的事件，这不本来在Ambari的Dashboard页面显示正常服务的监控，实然间出现了个奇怪的现象： 在机器查询服务的运行进程是正常的，可偏偏Ambari的UI界面却显示状为停止，但端口检查又显示正常的。如下图：&lt;/p>
-&lt;p>&lt;div class="post-img-wrapper">
- &lt;div class="img-container">
- &lt;img src="https://lisenhui.cn/imgs/img-lazy-loading.gif" data-src="//imgs.lisenhui.cn/blog/2017/10-18-ambari-red.png!alias" alt="alert_stopped.png" title="alert_stopped.png" />
- &lt;/div>
-&lt;/div>&lt;/p></description></item><item><title>HiveServer2因JDBC版本引起的问题</title><link>https://lisenhui.cn/tech/hive2-jdbc-connector-issues.html</link><pubDate>Tue, 17 Oct 2017 17:33:04 +0000</pubDate><guid>https://lisenhui.cn/tech/hive2-jdbc-connector-issues.html</guid><description>&lt;p>之前一直都是用&lt;code>HDP&lt;/code>来搭建和管理&lt;strong>Hadoop&lt;/strong>环境，在安装完成调试时也未曾出现过棘手的问题，但这次在&lt;code>Centos6x&lt;/code>系统上布署好后却是遇到奇怪的问题：&lt;/p>
+&lt;/a&gt;的介绍就不做过多的说明，直接引用官方的首页的说明如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;div class="post-img-wrapper"&gt;
+ &lt;div class="img-container"&gt;
+ &lt;img src="https://lisenhui.cn/imgs/img-lazy-loading.gif" data-src="//imgs.lisenhui.cn/blog/2017/10-22-Apache-NiFi-01.png!alias" alt="NiFi-01.png" title="NiFi-01.png" /&gt;
+ &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;</description></item><item><title>关于Ambari中服务运行正常UI却显示服务停止的问题</title><link>https://lisenhui.cn/tech/ambari-monitor-status-issues.html</link><pubDate>Wed, 18 Oct 2017 16:13:36 +0000</pubDate><guid>https://lisenhui.cn/tech/ambari-monitor-status-issues.html</guid><description>&lt;p&gt;很多时候环境的维护的确是件头痛的事件，这不本来在Ambari的Dashboard页面显示正常服务的监控，实然间出现了个奇怪的现象： 在机器查询服务的运行进程是正常的，可偏偏Ambari的UI界面却显示状为停止，但端口检查又显示正常的。如下图：&lt;/p&gt;
+&lt;p&gt;&lt;div class="post-img-wrapper"&gt;
+ &lt;div class="img-container"&gt;
+ &lt;img src="https://lisenhui.cn/imgs/img-lazy-loading.gif" data-src="//imgs.lisenhui.cn/blog/2017/10-18-ambari-red.png!alias" alt="alert_stopped.png" title="alert_stopped.png" /&gt;
+ &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;</description></item><item><title>HiveServer2因JDBC版本引起的问题</title><link>https://lisenhui.cn/tech/hive2-jdbc-connector-issues.html</link><pubDate>Tue, 17 Oct 2017 17:33:04 +0000</pubDate><guid>https://lisenhui.cn/tech/hive2-jdbc-connector-issues.html</guid><description>&lt;p&gt;之前一直都是用&lt;code&gt;HDP&lt;/code&gt;来搭建和管理&lt;strong&gt;Hadoop&lt;/strong&gt;环境，在安装完成调试时也未曾出现过棘手的问题，但这次在&lt;code&gt;Centos6x&lt;/code&gt;系统上布署好后却是遇到奇怪的问题：&lt;/p&gt;
 
- &lt;blockquote>
- &lt;p>表面上看来&lt;strong>Hive&lt;/strong>服务是正常运行的，进程运行正常，页面UI也正常，日志也没错误输出。简单的建表的语句都能执行，可偏偏在导入本地/&lt;strong>HDFS&lt;/strong>数据时，便就抛出异常啦。错误的堆栈信息如下：&lt;/p>
- &lt;/blockquote>
+ &lt;blockquote&gt;
+ &lt;p&gt;表面上看来&lt;strong&gt;Hive&lt;/strong&gt;服务是正常运行的，进程运行正常，页面UI也正常，日志也没错误输出。简单的建表的语句都能执行，可偏偏在导入本地/&lt;strong&gt;HDFS&lt;/strong&gt;数据时，便就抛出异常啦。错误的堆栈信息如下：&lt;/p&gt;
+ &lt;/blockquote&gt;
 
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-0-1">&lt;a class="lnlinks" href="#hl-0-1">1&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax&lt;span class="p">;&lt;/span> check the manual that corresponds to your MySQL server version &lt;span class="k">for&lt;/span> the right syntax to use near &lt;span class="s1">&amp;#39;OPTION SQL_SELECT_LIMIT=DEFAULT&amp;#39;&lt;/span> at line &lt;span class="m">1&lt;/span> &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div>
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt" id="hl-0-1"&gt;&lt;a class="lnlinks" href="#hl-0-1"&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: You have an error in your SQL syntax&lt;span class="p"&gt;;&lt;/span&gt; check the manual that corresponds to your MySQL server version &lt;span class="k"&gt;for&lt;/span&gt; the right syntax to use near &lt;span class="s1"&gt;&amp;#39;OPTION SQL_SELECT_LIMIT=DEFAULT&amp;#39;&lt;/span&gt; at line &lt;span class="m"&gt;1&lt;/span&gt; &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;
 
 
- &lt;blockquote>
- &lt;p>另外一个问题在使用&lt;strong>Ambari&lt;/strong>提供的&lt;code>HiveView&lt;/code> UI进行HDFS数据导入提示文件不存在，错误信息如下：&lt;/p>
- &lt;/blockquote>
+ &lt;blockquote&gt;
+ &lt;p&gt;另外一个问题在使用&lt;strong&gt;Ambari&lt;/strong&gt;提供的&lt;code&gt;HiveView&lt;/code&gt; UI进行HDFS数据导入提示文件不存在，错误信息如下：&lt;/p&gt;
+ &lt;/blockquote&gt;
 
-&lt;div class="highlight">&lt;div class="chroma">
-&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt" id="hl-1-1">&lt;a class="lnlinks" href="#hl-1-1">1&lt;/a>
-&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
-&lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">org.apache.hive.service.cli.HiveSQLException: Error &lt;span class="k">while&lt;/span> compiling statement: FAILED: SemanticException Line 1:17 Invalid path &lt;span class="s1">&amp;#39;&amp;#39;&lt;/span>/tmp/xxx/xxxxx.csv&lt;span class="s1">&amp;#39;&amp;#39;&lt;/span>: No files matching path hdfs:/...&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
-&lt;/div>
-&lt;/div></description></item><item><title>Azkaban所支持的Job类型及示例</title><link>https://lisenhui.cn/tech/azkaban-execute-jobs.html</link><pubDate>Sat, 09 Sep 2017 18:45:42 +0000</pubDate><guid>https://lisenhui.cn/tech/azkaban-execute-jobs.html</guid><description>&lt;p>在官方文档的介绍中，了解到&lt;code>Azkaban&lt;/code>所支持的工作类型还是很丰富的，如：&lt;code>Command&lt;/code>，&lt;code>HadoopShell&lt;/code>，&lt;code>Python&lt;/code>，&lt;code>Java&lt;/code>，&lt;code>Hive&lt;/code>，&lt;code>Pig&lt;/code>等等。不过在此我们主要具体只来讲解下&lt;code>Python&lt;/code>与&lt;code>Java&lt;/code>的工作类型任务，其它工作类型的话，比如&lt;code>Commnad&lt;/code>，&lt;code>Hive&lt;/code>，&lt;code>HadoopShell&lt;/code>相对比较简单就不做详解，有需要的话可以自行实践一下。&lt;/p>
-&lt;p>不管提交哪一种任务，&lt;code>Azkaban&lt;/code>默认都是通过上传压缩包来管理，那么在此建议大家养成一个习惯，不要所执行的文件(代码)打包到&lt;code>Azkaban&lt;/code>的工程包里面。这样带来的好处是显而易见的，比如：&lt;/p>
-&lt;ul>
-&lt;li>
-&lt;p>工程创建的速度快，不需要上传执行部分文件&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>避免了修改&lt;code>MySQL&lt;/code>中的&lt;code>max_allow_packet&lt;/code>参数以解决工程文件上传失败的问题&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>在分布式布署环境中，当执行Task免去了在不同节点中拷贝工程包的麻烦&lt;/p>
-&lt;/li>
-&lt;/ul></description></item><item><title>定时调度任务器Azkaban安装</title><link>https://lisenhui.cn/tech/azkaban-install-use-share.html</link><pubDate>Fri, 08 Sep 2017 14:29:42 +0000</pubDate><guid>https://lisenhui.cn/tech/azkaban-install-use-share.html</guid><description>&lt;h1 id="背景与介绍">背景与介绍
-&lt;a class="header-anchor" href="#%e8%83%8c%e6%99%af%e4%b8%8e%e4%bb%8b%e7%bb%8d">&lt;/a>
-&lt;/h1>&lt;p>在大数据繁杂的ETL或其它数据处理过程当中，有些任务是需要定时执行的，虽然Linux自带了&lt;code>cron&lt;/code>命令功能，但是仍不能满足最大的一点就是它不能提供集中式的管理和可视化的编辑。其实在大数据的生态当中已集成有个定时调度框架&lt;code>Oozie&lt;/code>，只是实践下来发现其学习成本不低，布署的过程也较复杂。在尝试过其它分布工调度框架后（如阿里的宙斯&lt;code>Zeus&lt;/code>），还是选择了社区较多人使用的&lt;code>Azkaban&lt;/code>。&lt;/p>
-&lt;p>&lt;code>Azkaban3&lt;/code>相对于上个版本所做的更改还是比较大的，感兴趣的话可以到其官方网站
-&lt;a href="https://azkaban.github.io/azkaban/docs/latest/" title="Azkaban" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+&lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
+&lt;table class="lntable"&gt;&lt;tr&gt;&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code&gt;&lt;span class="lnt" id="hl-1-1"&gt;&lt;a class="lnlinks" href="#hl-1-1"&gt;1&lt;/a&gt;
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;
+&lt;td class="lntd"&gt;
+&lt;pre tabindex="0" class="chroma"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span class="line"&gt;&lt;span class="cl"&gt;org.apache.hive.service.cli.HiveSQLException: Error &lt;span class="k"&gt;while&lt;/span&gt; compiling statement: FAILED: SemanticException Line 1:17 Invalid path &lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;/tmp/xxx/xxxxx.csv&lt;span class="s1"&gt;&amp;#39;&amp;#39;&lt;/span&gt;: No files matching path hdfs:/...&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;
+&lt;/div&gt;
+&lt;/div&gt;</description></item><item><title>Azkaban所支持的Job类型及示例</title><link>https://lisenhui.cn/tech/azkaban-execute-jobs.html</link><pubDate>Sat, 09 Sep 2017 18:45:42 +0000</pubDate><guid>https://lisenhui.cn/tech/azkaban-execute-jobs.html</guid><description>&lt;p&gt;在官方文档的介绍中，了解到&lt;code&gt;Azkaban&lt;/code&gt;所支持的工作类型还是很丰富的，如：&lt;code&gt;Command&lt;/code&gt;，&lt;code&gt;HadoopShell&lt;/code&gt;，&lt;code&gt;Python&lt;/code&gt;，&lt;code&gt;Java&lt;/code&gt;，&lt;code&gt;Hive&lt;/code&gt;，&lt;code&gt;Pig&lt;/code&gt;等等。不过在此我们主要具体只来讲解下&lt;code&gt;Python&lt;/code&gt;与&lt;code&gt;Java&lt;/code&gt;的工作类型任务，其它工作类型的话，比如&lt;code&gt;Commnad&lt;/code&gt;，&lt;code&gt;Hive&lt;/code&gt;，&lt;code&gt;HadoopShell&lt;/code&gt;相对比较简单就不做详解，有需要的话可以自行实践一下。&lt;/p&gt;
+&lt;p&gt;不管提交哪一种任务，&lt;code&gt;Azkaban&lt;/code&gt;默认都是通过上传压缩包来管理，那么在此建议大家养成一个习惯，不要所执行的文件(代码)打包到&lt;code&gt;Azkaban&lt;/code&gt;的工程包里面。这样带来的好处是显而易见的，比如：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;工程创建的速度快，不需要上传执行部分文件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;避免了修改&lt;code&gt;MySQL&lt;/code&gt;中的&lt;code&gt;max_allow_packet&lt;/code&gt;参数以解决工程文件上传失败的问题&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;在分布式布署环境中，当执行Task免去了在不同节点中拷贝工程包的麻烦&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>定时调度任务器Azkaban安装</title><link>https://lisenhui.cn/tech/azkaban-install-use-share.html</link><pubDate>Fri, 08 Sep 2017 14:29:42 +0000</pubDate><guid>https://lisenhui.cn/tech/azkaban-install-use-share.html</guid><description>&lt;h1 id="背景与介绍"&gt;背景与介绍
+&lt;a class="header-anchor" href="#%e8%83%8c%e6%99%af%e4%b8%8e%e4%bb%8b%e7%bb%8d"&gt;&lt;/a&gt;
+&lt;/h1&gt;&lt;p&gt;在大数据繁杂的ETL或其它数据处理过程当中，有些任务是需要定时执行的，虽然Linux自带了&lt;code&gt;cron&lt;/code&gt;命令功能，但是仍不能满足最大的一点就是它不能提供集中式的管理和可视化的编辑。其实在大数据的生态当中已集成有个定时调度框架&lt;code&gt;Oozie&lt;/code&gt;，只是实践下来发现其学习成本不低，布署的过程也较复杂。在尝试过其它分布工调度框架后（如阿里的宙斯&lt;code&gt;Zeus&lt;/code&gt;），还是选择了社区较多人使用的&lt;code&gt;Azkaban&lt;/code&gt;。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;Azkaban3&lt;/code&gt;相对于上个版本所做的更改还是比较大的，感兴趣的话可以到其官方网站
+&lt;a href="https://azkaban.github.io/azkaban/docs/latest/" title="Azkaban" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
  Azkaban
  
- &lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
-&lt;/a>了解下。接下来主要还是分享下&lt;code>Azkaban3&lt;/code>的安装布署，下面是&lt;code>Azkaban3&lt;/code>的系统架构设计图：&lt;/p>
-&lt;p>&lt;div class="post-img-wrapper">
- &lt;div class="img-container">
- &lt;img src="https://lisenhui.cn/imgs/img-lazy-loading.gif" data-src="//imgs.lisenhui.cn/blog/2017/09-08-Azkaban-Install00.png!alias" alt="Azkaban-Install00" title="Azkaban-Install00" />
- &lt;/div>
-&lt;/div>&lt;/p>
-&lt;p>图中的3个组件便是&lt;code>Azkaban3&lt;/code>的重要组成部分：&lt;/p>
-&lt;ul>
-&lt;li>MySQL关系数据存储数据&lt;/li>
-&lt;li>Web Server GUI管理服务提供者&lt;/li>
-&lt;li>Executor Server 分布式节点服务布署&lt;/li>
-&lt;/ul></description></item><item><title>Hue中集成MySQL数据显示乱码</title><link>https://lisenhui.cn/tech/hue-rdbms-mysql-chinese.html</link><pubDate>Tue, 15 Aug 2017 15:13:39 +0000</pubDate><guid>https://lisenhui.cn/tech/hue-rdbms-mysql-chinese.html</guid><description>&lt;p>Hue is a Web applications that enables you to easily interact with an Hadoop cluster. Hue applications let you browse HDFS, Jobs, run Hive, Pig and Cloudera Impala queries, manage the Hive Metastore, HBase, Sqoop, ZooKeeper, MapReduce jobs, and create and schedule worklows with Oozie.&lt;/p>
-&lt;p>更加关于HUE的介绍及演示可访问其官方网站：
-&lt;a href="http://gethue.com" title="http://gethue.com" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+&lt;/a&gt;了解下。接下来主要还是分享下&lt;code&gt;Azkaban3&lt;/code&gt;的安装布署，下面是&lt;code&gt;Azkaban3&lt;/code&gt;的系统架构设计图：&lt;/p&gt;
+&lt;p&gt;&lt;div class="post-img-wrapper"&gt;
+ &lt;div class="img-container"&gt;
+ &lt;img src="https://lisenhui.cn/imgs/img-lazy-loading.gif" data-src="//imgs.lisenhui.cn/blog/2017/09-08-Azkaban-Install00.png!alias" alt="Azkaban-Install00" title="Azkaban-Install00" /&gt;
+ &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;
+&lt;p&gt;图中的3个组件便是&lt;code&gt;Azkaban3&lt;/code&gt;的重要组成部分：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;MySQL关系数据存储数据&lt;/li&gt;
+&lt;li&gt;Web Server GUI管理服务提供者&lt;/li&gt;
+&lt;li&gt;Executor Server 分布式节点服务布署&lt;/li&gt;
+&lt;/ul&gt;</description></item><item><title>Hue中集成MySQL数据显示乱码</title><link>https://lisenhui.cn/tech/hue-rdbms-mysql-chinese.html</link><pubDate>Tue, 15 Aug 2017 15:13:39 +0000</pubDate><guid>https://lisenhui.cn/tech/hue-rdbms-mysql-chinese.html</guid><description>&lt;p&gt;Hue is a Web applications that enables you to easily interact with an Hadoop cluster. Hue applications let you browse HDFS, Jobs, run Hive, Pig and Cloudera Impala queries, manage the Hive Metastore, HBase, Sqoop, ZooKeeper, MapReduce jobs, and create and schedule worklows with Oozie.&lt;/p&gt;
+&lt;p&gt;更加关于HUE的介绍及演示可访问其官方网站：
+&lt;a href="http://gethue.com" title="http://gethue.com" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
  http://gethue.com
  
- &lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
-&lt;/a>&lt;/p></description></item><item><title>Kylin集成Zeppelin展示数据</title><link>https://lisenhui.cn/tech/kylin-integrate-with-zeppelin.html</link><pubDate>Fri, 02 Jun 2017 18:03:23 +0000</pubDate><guid>https://lisenhui.cn/tech/kylin-integrate-with-zeppelin.html</guid><description>&lt;p>实际上kylin自带的WEB UI已经集成了建议的图形报表，有常见的线形，柱形及饼图，用于数据的初步展示是完全够用的。如果要更加丰富的展示，那可以考虑使用别的工具，现在就试试官方推荐的Apache Zeppelin。&lt;/p></description></item><item><title>Sqoop工具导入数据到Hive小记</title><link>https://lisenhui.cn/tech/sqoop-import-data-to-hive.html</link><pubDate>Wed, 24 May 2017 20:18:53 +0000</pubDate><guid>https://lisenhui.cn/tech/sqoop-import-data-to-hive.html</guid><description>&lt;p>最近正在捣鼓构建数据仓库的事宜，正好有部分维度表的数据需要来自于RDBMS的数据，在HADOOP环境最流行的莫过于Apache的Sqoop工具，按官方的文档操作下来也很顺畅的，不过当要应用到业务场景上时问题便出现了。&lt;/p></description></item><item><title>离线安装HDP2.6(1)-Ambari Server</title><link>https://lisenhui.cn/tech/offline-install-hdp-ambari-notes.html</link><pubDate>Mon, 17 Apr 2017 19:52:31 +0000</pubDate><guid>https://lisenhui.cn/tech/offline-install-hdp-ambari-notes.html</guid><description>&lt;h2 id="1参考文档">1.参考文档
-&lt;a class="header-anchor" href="#1%e5%8f%82%e8%80%83%e6%96%87%e6%a1%a3">&lt;/a>
-&lt;/h2>&lt;p>FYI: 
-&lt;a href="https://docs.hortonworks.com/HDPDocuments/Ambari-2.5.0.3/bk_ambari-installation/content/ch_Getting_Ready.html" title="HDP Install Documents" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+&lt;/a&gt;&lt;/p&gt;</description></item><item><title>Kylin集成Zeppelin展示数据</title><link>https://lisenhui.cn/tech/kylin-integrate-with-zeppelin.html</link><pubDate>Fri, 02 Jun 2017 18:03:23 +0000</pubDate><guid>https://lisenhui.cn/tech/kylin-integrate-with-zeppelin.html</guid><description>&lt;p&gt;实际上kylin自带的WEB UI已经集成了建议的图形报表，有常见的线形，柱形及饼图，用于数据的初步展示是完全够用的。如果要更加丰富的展示，那可以考虑使用别的工具，现在就试试官方推荐的Apache Zeppelin。&lt;/p&gt;</description></item><item><title>Sqoop工具导入数据到Hive小记</title><link>https://lisenhui.cn/tech/sqoop-import-data-to-hive.html</link><pubDate>Wed, 24 May 2017 20:18:53 +0000</pubDate><guid>https://lisenhui.cn/tech/sqoop-import-data-to-hive.html</guid><description>&lt;p&gt;最近正在捣鼓构建数据仓库的事宜，正好有部分维度表的数据需要来自于RDBMS的数据，在HADOOP环境最流行的莫过于Apache的Sqoop工具，按官方的文档操作下来也很顺畅的，不过当要应用到业务场景上时问题便出现了。&lt;/p&gt;</description></item><item><title>离线安装HDP2.6(1)-Ambari Server</title><link>https://lisenhui.cn/tech/offline-install-hdp-ambari-notes.html</link><pubDate>Mon, 17 Apr 2017 19:52:31 +0000</pubDate><guid>https://lisenhui.cn/tech/offline-install-hdp-ambari-notes.html</guid><description>&lt;h2 id="1参考文档"&gt;1.参考文档
+&lt;a class="header-anchor" href="#1%e5%8f%82%e8%80%83%e6%96%87%e6%a1%a3"&gt;&lt;/a&gt;
+&lt;/h2&gt;&lt;p&gt;FYI: 
+&lt;a href="https://docs.hortonworks.com/HDPDocuments/Ambari-2.5.0.3/bk_ambari-installation/content/ch_Getting_Ready.html" title="HDP Install Documents" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
  HDP Install Documents
  
- &lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
-&lt;/a>&lt;/p>
-&lt;p>
-&lt;a href="https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.0/bk_command-line-installation/content/prepare-environment.html#ref-2822d0e9-bd88-4714-910a-750c5b95a996" title="HDP Install Manual" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;
+&lt;a href="https://docs.hortonworks.com/HDPDocuments/HDP2/HDP-2.6.0/bk_command-line-installation/content/prepare-environment.html#ref-2822d0e9-bd88-4714-910a-750c5b95a996" title="HDP Install Manual" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
  HDP Install Manual
  
- &lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
-&lt;/a>&lt;/p></description></item></channel></rss>
+&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

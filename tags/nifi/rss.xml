@@ -1,52 +1,52 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nifi on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/nifi/</link><description>Recent content in Nifi on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 26 Oct 2017 17:50:52 +0000</lastBuildDate><atom:link href="https://lisenhui.cn/tags/nifi/rss.xml" rel="self" type="application/rss+xml"/><item><title>Apache Nifi在Windows环境下搭建伪群集及证书登录</title><link>https://lisenhui.cn/tech/nifi-windows-local-cluster.html</link><pubDate>Thu, 26 Oct 2017 17:50:52 +0000</pubDate><guid>https://lisenhui.cn/tech/nifi-windows-local-cluster.html</guid><description>&lt;p>前些时间做了关于&lt;code>Apache Nifi&lt;/code>分布式集群的搭建分享，但很多时候要搭建分布式集群机器资源是个问题，而现在的单机的配置还是相当不错的，故现在就做个关于Windows上搭建个伪分布式集群的分享，同时通过另外一种方式实现&lt;strong>Apache Nifi&lt;/strong>的授权认证。&lt;/p>
-&lt;h1 id="系统环境及软件版本">系统环境及软件版本
-&lt;a class="header-anchor" href="#%e7%b3%bb%e7%bb%9f%e7%8e%af%e5%a2%83%e5%8f%8a%e8%bd%af%e4%bb%b6%e7%89%88%e6%9c%ac">&lt;/a>
-&lt;/h1>&lt;ul>
-&lt;li>
-&lt;p>Windows8.1&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>JDK1.8.0_131&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Nifi-1.4.0&lt;/p>
-&lt;/li>
-&lt;/ul>
-&lt;table>
- &lt;thead>
- &lt;tr>
- &lt;th style="text-align: center">Nifi安装目录&lt;/th>
- &lt;th style="text-align: center">WEB端口&lt;/th>
- &lt;/tr>
- &lt;/thead>
- &lt;tbody>
- &lt;tr>
- &lt;td style="text-align: center">xxx\nifi-ncm&lt;/td>
- &lt;td style="text-align: center">9443&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td style="text-align: center">xxx\nifi-cluster01&lt;/td>
- &lt;td style="text-align: center">9444&lt;/td>
- &lt;/tr>
- &lt;tr>
- &lt;td style="text-align: center">xxx\nifi-cluster02&lt;/td>
- &lt;td style="text-align: center">9445&lt;/td>
- &lt;/tr>
- &lt;/tbody>
-&lt;/table>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Nifi on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/nifi/</link><description>Recent content in Nifi on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Thu, 26 Oct 2017 17:50:52 +0000</lastBuildDate><atom:link href="https://lisenhui.cn/tags/nifi/rss.xml" rel="self" type="application/rss+xml"/><item><title>Apache Nifi在Windows环境下搭建伪群集及证书登录</title><link>https://lisenhui.cn/tech/nifi-windows-local-cluster.html</link><pubDate>Thu, 26 Oct 2017 17:50:52 +0000</pubDate><guid>https://lisenhui.cn/tech/nifi-windows-local-cluster.html</guid><description>&lt;p&gt;前些时间做了关于&lt;code&gt;Apache Nifi&lt;/code&gt;分布式集群的搭建分享，但很多时候要搭建分布式集群机器资源是个问题，而现在的单机的配置还是相当不错的，故现在就做个关于Windows上搭建个伪分布式集群的分享，同时通过另外一种方式实现&lt;strong&gt;Apache Nifi&lt;/strong&gt;的授权认证。&lt;/p&gt;
+&lt;h1 id="系统环境及软件版本"&gt;系统环境及软件版本
+&lt;a class="header-anchor" href="#%e7%b3%bb%e7%bb%9f%e7%8e%af%e5%a2%83%e5%8f%8a%e8%bd%af%e4%bb%b6%e7%89%88%e6%9c%ac"&gt;&lt;/a&gt;
+&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Windows8.1&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;JDK1.8.0_131&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Nifi-1.4.0&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+ &lt;tr&gt;
+ &lt;th style="text-align: center"&gt;Nifi安装目录&lt;/th&gt;
+ &lt;th style="text-align: center"&gt;WEB端口&lt;/th&gt;
+ &lt;/tr&gt;
+ &lt;/thead&gt;
+ &lt;tbody&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;xxx\nifi-ncm&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;9443&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;xxx\nifi-cluster01&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;9444&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;tr&gt;
+ &lt;td style="text-align: center"&gt;xxx\nifi-cluster02&lt;/td&gt;
+ &lt;td style="text-align: center"&gt;9445&lt;/td&gt;
+ &lt;/tr&gt;
+ &lt;/tbody&gt;
+&lt;/table&gt;
 
- &lt;blockquote>
- &lt;p>(其它版本可参考此篇文章)
-另在测试中发个问题，使用&lt;code>Apache Nifi&lt;/code>内嵌的&lt;code>Zookeeper&lt;/code>搭建伪集群里启动总是提示端口占用的问题，故放弃只采用了单结点启动。&lt;/p>
- &lt;/blockquote></description></item><item><title>Apache Nifi集群搭建及用kerberos实现用户认证</title><link>https://lisenhui.cn/tech/ninfi-cluster-deploy-with-kerberos.html</link><pubDate>Sun, 22 Oct 2017 11:42:29 +0000</pubDate><guid>https://lisenhui.cn/tech/ninfi-cluster-deploy-with-kerberos.html</guid><description>&lt;p>最近这段时间在接触数据流式处理方面的事宜，用到了&lt;strong>Apache NIFI&lt;/strong>现把安装配置中学习的一些经验分享下。此篇文章主要是针对集群及用户权限方面，关于
-&lt;a href="https://nifi.apache.org/" title="Apache NIFI" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+ &lt;blockquote&gt;
+ &lt;p&gt;(其它版本可参考此篇文章)
+另在测试中发个问题，使用&lt;code&gt;Apache Nifi&lt;/code&gt;内嵌的&lt;code&gt;Zookeeper&lt;/code&gt;搭建伪集群里启动总是提示端口占用的问题，故放弃只采用了单结点启动。&lt;/p&gt;
+ &lt;/blockquote&gt;</description></item><item><title>Apache Nifi集群搭建及用kerberos实现用户认证</title><link>https://lisenhui.cn/tech/ninfi-cluster-deploy-with-kerberos.html</link><pubDate>Sun, 22 Oct 2017 11:42:29 +0000</pubDate><guid>https://lisenhui.cn/tech/ninfi-cluster-deploy-with-kerberos.html</guid><description>&lt;p&gt;最近这段时间在接触数据流式处理方面的事宜，用到了&lt;strong&gt;Apache NIFI&lt;/strong&gt;现把安装配置中学习的一些经验分享下。此篇文章主要是针对集群及用户权限方面，关于
+&lt;a href="https://nifi.apache.org/" title="Apache NIFI" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
  Apache NIFI
  
- &lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
-&lt;/a>的介绍就不做过多的说明，直接引用官方的首页的说明如下图所示：&lt;/p>
-&lt;p>&lt;div class="post-img-wrapper">
- &lt;div class="img-container">
- &lt;img src="https://lisenhui.cn/imgs/img-lazy-loading.gif" data-src="//imgs.lisenhui.cn/blog/2017/10-22-Apache-NiFi-01.png!alias" alt="NiFi-01.png" title="NiFi-01.png" />
- &lt;/div>
-&lt;/div>&lt;/p></description></item></channel></rss>
+&lt;/a&gt;的介绍就不做过多的说明，直接引用官方的首页的说明如下图所示：&lt;/p&gt;
+&lt;p&gt;&lt;div class="post-img-wrapper"&gt;
+ &lt;div class="img-container"&gt;
+ &lt;img src="https://lisenhui.cn/imgs/img-lazy-loading.gif" data-src="//imgs.lisenhui.cn/blog/2017/10-22-Apache-NiFi-01.png!alias" alt="NiFi-01.png" title="NiFi-01.png" /&gt;
+ &lt;/div&gt;
+&lt;/div&gt;&lt;/p&gt;</description></item></channel></rss>

@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mathjax on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/mathjax/</link><description>Recent content in Mathjax on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 15 Dec 2024 20:22:35 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/tags/mathjax/rss.xml" rel="self" type="application/rss+xml"/><item><title>修复Mathjax行内显示公式的问题</title><link>https://lisenhui.cn/blog/fixed-mathjax-inline-display.html</link><pubDate>Sun, 15 Dec 2024 20:22:35 +0800</pubDate><guid>https://lisenhui.cn/blog/fixed-mathjax-inline-display.html</guid><description>&lt;p>
-&lt;a href="https://github.com/hugo-next/hugo-theme-next" title="hugo-theme-next" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
- &lt;code>hugo-theme-next&lt;/code>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mathjax on 热爱生活与梦想</title><link>https://lisenhui.cn/tags/mathjax/</link><description>Recent content in Mathjax on 热爱生活与梦想</description><generator>Hugo</generator><language>zh-CN</language><lastBuildDate>Sun, 15 Dec 2024 20:22:35 +0800</lastBuildDate><atom:link href="https://lisenhui.cn/tags/mathjax/rss.xml" rel="self" type="application/rss+xml"/><item><title>修复Mathjax行内显示公式的问题</title><link>https://lisenhui.cn/blog/fixed-mathjax-inline-display.html</link><pubDate>Sun, 15 Dec 2024 20:22:35 +0800</pubDate><guid>https://lisenhui.cn/blog/fixed-mathjax-inline-display.html</guid><description>&lt;p&gt;
+&lt;a href="https://github.com/hugo-next/hugo-theme-next" title="hugo-theme-next" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
+ &lt;code&gt;hugo-theme-next&lt;/code&gt;
  
- &lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
-&lt;/a>的主题默认便是可支持使用&lt;code>mathjax&lt;/code>或&lt;code>katex&lt;/code>两种不同组件，通过它们来实现对数学公式的渲染输出显示。只不过自己对数学公式的使用了解的也比较少，测试时直接就是复用网上的文章来验证数学公式渲染是否正常。结果当遇到真正的数学“专家”用户时，便是暴露出在了无法在同行文字内显示数学公式的问题
-&lt;a href="https://github.com/Hugo-next/Hugo-theme-next/issues/90" title="Issue#90" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl">
+&lt;/a&gt;的主题默认便是可支持使用&lt;code&gt;mathjax&lt;/code&gt;或&lt;code&gt;katex&lt;/code&gt;两种不同组件，通过它们来实现对数学公式的渲染输出显示。只不过自己对数学公式的使用了解的也比较少，测试时直接就是复用网上的文章来验证数学公式渲染是否正常。结果当遇到真正的数学“专家”用户时，便是暴露出在了无法在同行文字内显示数学公式的问题
+&lt;a href="https://github.com/Hugo-next/Hugo-theme-next/issues/90" title="Issue#90" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
  Issue#90
  
- &lt;i class="fa fa-external-link-alt">&lt;/i>
+ &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
-&lt;/a>，趁此便是参考评论区大家提供的建议尝试修复这“千年老&amp;#x1f41b;”。&lt;/p></description></item></channel></rss>
+&lt;/a&gt;，趁此便是参考评论区大家提供的建议尝试修复这“千年老&amp;#x1f41b;”。&lt;/p&gt;</description></item></channel></rss>
