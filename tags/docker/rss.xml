@@ -8,8 +8,10 @@
 
  &lt;blockquote&gt;
  &lt;p&gt;注：“博友”是自己给一群爱好写博客的朋友们所起的简写描述，大家可千万别误会为是那赌博的群体呀。😂&lt;/p&gt;
+
  &lt;/blockquote&gt;</description></item><item><title>在Windows上安装Podman容器平台做虚拟化</title><link>https://lisenhui.cn/tech/install-podman-container-on-win.html</link><pubDate>Sun, 17 Mar 2024 20:33:22 +0800</pubDate><guid>https://lisenhui.cn/tech/install-podman-container-on-win.html</guid><description>&lt;p&gt;想起之前读大学的时候大家还在捣鼓如何在电脑上安装 &lt;code&gt;Windows+Linux&lt;/code&gt;双系统，而如今微软早已发布了WSL（Windows Subsystem for Linux）的方案让两套系统可直接同时运行，真可谓是实现了鱼和熊掌同时可”兼得“。当然今天我们的主角并不是 &lt;code&gt;WSL&lt;/code&gt;啦，只不过是需要基于此技术之上来进行操作，实现对我们想要使用的 &lt;code&gt;Podman&lt;/code&gt;容器化管理平台支持。&lt;/p&gt;
 
  &lt;blockquote&gt;
  &lt;p&gt;注：如电脑上还没开启 &lt;code&gt;WSL&lt;/code&gt;功能的话，请自行搜索网上的教程启动，才能进行接下来的操作。&lt;/p&gt;
+
  &lt;/blockquote&gt;</description></item></channel></rss>

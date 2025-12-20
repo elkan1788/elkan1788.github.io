@@ -9,6 +9,7 @@
  &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
 &lt;/a&gt;&lt;/p&gt;
+
  &lt;/blockquote&gt;</description></item><item><title>Github push失败：Could not resolve hostname</title><link>https://lisenhui.cn/tech/github-push-failed.html</link><pubDate>Tue, 16 May 2017 10:21:43 +0000</pubDate><guid>https://lisenhui.cn/tech/github-push-failed.html</guid><description>&lt;p&gt;平时最常用的git push命令突然间居然不可以用（错误日志如下），脑子首先蹦出的想法就是：难道Github又被墙了么！以前出现过类似这样的现象，需要通过指定hosts来加速访问。&lt;/p&gt;
 &lt;p&gt;git push 执行后返回的错误日志：&lt;/p&gt;
 

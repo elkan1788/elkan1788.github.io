@@ -38,6 +38,7 @@
  &lt;blockquote&gt;
  &lt;p&gt;(其它版本可参考此篇文章)
 另在测试中发个问题，使用&lt;code&gt;Apache Nifi&lt;/code&gt;内嵌的&lt;code&gt;Zookeeper&lt;/code&gt;搭建伪集群里启动总是提示端口占用的问题，故放弃只采用了单结点启动。&lt;/p&gt;
+
  &lt;/blockquote&gt;</description></item><item><title>Apache Nifi集群搭建及用kerberos实现用户认证</title><link>https://lisenhui.cn/tech/ninfi-cluster-deploy-with-kerberos.html</link><pubDate>Sun, 22 Oct 2017 11:42:29 +0000</pubDate><guid>https://lisenhui.cn/tech/ninfi-cluster-deploy-with-kerberos.html</guid><description>&lt;p&gt;最近这段时间在接触数据流式处理方面的事宜，用到了&lt;strong&gt;Apache NIFI&lt;/strong&gt;现把安装配置中学习的一些经验分享下。此篇文章主要是针对集群及用户权限方面，关于
 &lt;a href="https://nifi.apache.org/" title="Apache NIFI" rel="noopener external nofollow noreferrer" target="_blank" class=" exturl"&gt;
  Apache NIFI

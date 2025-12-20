@@ -2,6 +2,7 @@
 
  &lt;blockquote&gt;
  &lt;p&gt;注：当排除的内容并不多时，也可以直接使用&lt;code&gt;exclude&lt;/code&gt;参数会更方便些。&lt;/p&gt;
+
  &lt;/blockquote&gt;</description></item><item><title>在Linux上安装中文字体</title><link>https://lisenhui.cn/tech/install-linux-chinese-fonts.html</link><pubDate>Mon, 21 Oct 2019 19:04:51 +0000</pubDate><guid>https://lisenhui.cn/tech/install-linux-chinese-fonts.html</guid><description>&lt;h2 id="背景"&gt;背景
 &lt;a class="header-anchor" href="#%e8%83%8c%e6%99%af"&gt;&lt;/a&gt;
 &lt;/h2&gt;&lt;p&gt;平时一般都很少在Linux服务机器上使用UI桌面，但也还是有机会遇到，这不今天便遇到Linux版本的火狐浏览器显示中文乱码。无论怎么调试浏览器的相关设置，都没有办法凑效，甚是有点郁闷。&lt;/p&gt;

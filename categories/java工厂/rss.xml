@@ -9,4 +9,5 @@
  &lt;i class="fa fa-external-link-alt"&gt;&lt;/i&gt;
  
 &lt;/a&gt;&lt;/p&gt;
+
  &lt;/blockquote&gt;</description></item><item><title>Java程序与RSR232串口通讯小练手</title><link>https://lisenhui.cn/tech/java-hard-rsr232.html</link><pubDate>Sat, 24 Mar 2012 22:21:20 +0000</pubDate><guid>https://lisenhui.cn/tech/java-hard-rsr232.html</guid><description>&lt;p&gt;一直以来都是在学习J2EE方面的应用系统开发，从未想过用JAVA来编写硬件交互程序，不过自己就是喜欢尝试一些未曾接触的新东西。在网上搜索了些资源，了解到JAVA写串口通讯的还是蛮多的，那么便着手准备开发调试环境。软件程序开发环境搭建不成问题，可这硬件环境就有点犯难啦。更何况自己用的是笔记本哪来的串口呀，再说要是真拿这串口硬件来自己也不会弄，随即想到了虚拟机，觉得这东西应该也有虚拟的吧，果真跟自己的猜测一样还真有这东西，顺便也下载了个串口小助手做为调试之用。&lt;/p&gt;</description></item></channel></rss>

@@ -7,6 +7,7 @@
 
  &lt;blockquote&gt;
  &lt;p&gt;表面上看来&lt;strong&gt;Hive&lt;/strong&gt;服务是正常运行的，进程运行正常，页面UI也正常，日志也没错误输出。简单的建表的语句都能执行，可偏偏在导入本地/&lt;strong&gt;HDFS&lt;/strong&gt;数据时，便就抛出异常啦。错误的堆栈信息如下：&lt;/p&gt;
+
  &lt;/blockquote&gt;
 
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
@@ -21,6 +22,7 @@
 
  &lt;blockquote&gt;
  &lt;p&gt;另外一个问题在使用&lt;strong&gt;Ambari&lt;/strong&gt;提供的&lt;code&gt;HiveView&lt;/code&gt; UI进行HDFS数据导入提示文件不存在，错误信息如下：&lt;/p&gt;
+
  &lt;/blockquote&gt;
 
 &lt;div class="highlight"&gt;&lt;div class="chroma"&gt;
